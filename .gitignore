@@ -151,6 +151,8 @@ activemq-data/
 .env
 .envrc
 .venv
+.venv-asset/
+.uv-cache/
 env/
 venv/
 ENV/
@@ -216,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local clinical evidence, credentials and generated review artefacts
+data/
+.env.*
+*.sqlite3
+*.sqlite3-*
+*.db
+terminology-private/
+reports-local/

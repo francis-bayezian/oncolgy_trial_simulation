@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "semantics": "For each target group: 'levels' is the ordered hierarchy from broadest to the observation unit; a dimension left out is not a borrowing dimension for that group (for example treatment for baseline sex). 'tau_prior_scale' is the half-normal prior scale of the between-sibling standard deviation at that level, on the analysis scale (logit for proportions, log for ratios, years for age). A large scale says siblings may differ a lot (the dimension matters, borrowing is weak); a small scale says they are expected to be similar (strong borrowing). Every tau is then estimated from the data; the prior only matters where evidence is sparse.",
+  "groups": {
+    "efficacy_proportion": {
+      "applies_to_domains": ["response", "progression", "biomarker", "patient_reported", "mortality", "treatment_course", "survival"],
+      "analysis_scale": "logit",
+      "root_sd": 2.0,
+      "levels": ["disease_family", "disease", "setting", "modality", "class_signature", "regimen", "study", "arm"],
+      "tau_prior_scale": [1.0, 0.7, 0.7, 0.7, 0.5, 0.4, 0.4, 0.2]
+    },
+    "safety_proportion": {
+      "applies_to_domains": ["safety"],
+      "analysis_scale": "logit",
+      "root_sd": 2.0,
+      "levels": ["modality", "class_signature", "regimen", "disease_family", "study", "arm"],
+      "tau_prior_scale": [0.8, 0.5, 0.4, 0.3, 0.4, 0.2]
+    },
+    "baseline_sex": {
+      "applies_to_domains": ["baseline"],
+      "analysis_scale": "logit",
+      "root_sd": 2.0,
+      "levels": ["disease_family", "disease", "setting", "study"],
+      "tau_prior_scale": [1.5, 1.0, 0.5, 0.5]
+    },
+    "baseline_age": {
+      "applies_to_domains": ["baseline"],
+      "analysis_scale": "identity_years",
+      "root_sd": 30.0,
+      "levels": ["disease_family", "disease", "setting", "study"],
+      "tau_prior_scale": [6.0, 4.0, 3.0, 3.0]
+    },
+    "relative_effect": {
+      "applies_to_domains": ["comparative"],
+      "analysis_scale": "log_ratio",
+      "root_sd": 1.0,
+      "levels": ["disease_family", "disease", "setting", "class_pair", "regimen_pair", "study"],
+      "tau_prior_scale": [0.4, 0.3, 0.3, 0.3, 0.2, 0.2]
+    }
+  }
+}

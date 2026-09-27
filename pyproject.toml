@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clinical-evidence-asset"
+version = "0.1.0"
+description = "Source-linked oncology clinical evidence profiles"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "httpx>=0.27,<1",
+  "requests>=2.32,<3",
+  "openai>=2,<3",
+  "spacy==3.7.5",
+  "scispacy==0.5.4",
+  "scikit-learn==1.1.3",
+  "medspacy==1.3.1",
+  "loguru>=0.7,<1",
+  "pyarrow>=15,<25",
+  "jsonschema>=4,<5",
+  "pdfplumber>=0.11,<0.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+nlp-models = [
+  "en_core_sci_sm @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz",
+  "en_ner_bionlp13cg_md @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bionlp13cg_md-0.5.4.tar.gz",
+  "en_ner_bc5cdr_md @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz",
+  "en_ner_jnlpba_md @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_jnlpba_md-0.5.4.tar.gz",
+]
+
+[project.scripts]
+clinical-asset = "clinical_asset.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["clinical_asset*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100

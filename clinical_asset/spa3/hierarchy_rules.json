@@ -1,0 +1,57 @@
+{
+  "version": "3.0.0",
+  "semantics": "As Milestone 2 (levels from broadest to the observation unit; half-normal prior scale of the between-sibling SD per level on the analysis scale), with three changes. Binomial groups end at the arm level and use the exact binomial likelihood there. Baseline age starts with the population class derived from the eligibility age range (PEDIATRIC, AYA, ADULT, MIXED) so paediatric and adult trials never pool as exchangeable siblings. Categorical baselines (race, ethnicity) are modelled as sequential conditional binomials (stick-breaking), each with its own tree. 'future_study_tail' lists the random-effect tail families compared by leave-one-study-out; the one with the best mean log predictive density is published per group.",
+  "future_study_tail": ["normal", "student_t_7", "student_t_4"],
+  "groups": {
+    "efficacy_proportion": {
+      "likelihood": "binomial",
+      "applies_to_domains": ["response", "progression", "biomarker", "patient_reported", "mortality", "treatment_course", "survival"],
+      "analysis_scale": "logit",
+      "root_sd": 2.0,
+      "parameter_level": "regimen",
+      "levels": ["disease_family", "disease", "setting", "modality", "class_signature", "regimen", "study", "arm"],
+      "tau_prior_scale": [1.0, 0.7, 0.7, 0.7, 0.5, 0.4, 0.4, 0.2]
+    },
+    "safety_proportion": {
+      "likelihood": "binomial",
+      "applies_to_domains": ["safety"],
+      "analysis_scale": "logit",
+      "root_sd": 2.0,
+      "parameter_level": "disease_family",
+      "levels": ["modality", "class_signature", "regimen", "disease_family", "study", "arm"],
+      "tau_prior_scale": [0.8, 0.5, 0.4, 0.3, 0.4, 0.2]
+    },
+    "baseline_sex": {
+      "likelihood": "binomial",
+      "analysis_scale": "logit",
+      "root_sd": 2.0,
+      "parameter_level": "setting",
+      "levels": ["disease_family", "disease", "setting", "study", "arm"],
+      "tau_prior_scale": [1.5, 1.0, 0.5, 0.5, 0.1]
+    },
+    "baseline_categorical": {
+      "likelihood": "binomial (one tree per stick-breaking step)",
+      "analysis_scale": "logit",
+      "root_sd": 3.0,
+      "parameter_level": "setting",
+      "levels": ["disease_family", "disease", "setting", "study", "arm"],
+      "tau_prior_scale": [1.0, 0.7, 0.5, 0.7, 0.1]
+    },
+    "baseline_age": {
+      "likelihood": "normal (latent mean after inverting eligibility truncation)",
+      "analysis_scale": "identity_years",
+      "root_sd": 30.0,
+      "parameter_level": "setting",
+      "levels": ["age_class", "disease_family", "disease", "setting", "study"],
+      "tau_prior_scale": [15.0, 6.0, 4.0, 3.0, 3.0]
+    },
+    "baseline_age_sd": {
+      "likelihood": "normal on log within-study SD",
+      "analysis_scale": "log_years",
+      "root_sd": 1.0,
+      "parameter_level": "setting",
+      "levels": ["age_class", "disease_family", "disease", "setting", "study"],
+      "tau_prior_scale": [0.5, 0.3, 0.2, 0.2, 0.2]
+    }
+  }
+}
