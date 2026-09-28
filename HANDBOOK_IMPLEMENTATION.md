@@ -499,7 +499,7 @@ Two design scenarios assume a 65% control rate (the isotretinoin scenario). They
 
 ## Four-protocol blind run (2026-09-27)
 
-The results record is [data/trial/results_record.md](data/trial/results_record.md). Engines added for these designs:
+The results record is [data/trial/unblinded/results_record.md](data/trial/unblinded/results_record.md). Engines added for these designs:
 
 - clinical_asset/protocol/design_rules.py: decision rules with exact operating characteristics.
 - clinical_asset/trial/binary.py: per-arm binary rules, and descriptive estimation when no rule is executable.

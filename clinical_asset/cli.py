@@ -149,34 +149,6 @@ def main(argv: list[str] | None = None) -> int:
     batch.add_argument("--force", action="store_true", help="Reprocess trials that already have output.")
     commands.add_parser("load-database", help="Load clinical profiles into data/clinical_asset.sqlite.")
     commands.add_parser("build-parameters", help="Fit Simulation Parameter Asset V1 (milestone 1) from frozen Asset V1.")
-    pa = commands.add_parser("build-planning-asset", help="Classify historical accrual date quality, excluding holdouts.")
-    pa.add_argument("--manifest", type=Path, default=Path("data/manifest/subset_treatment_phase23_result_pub.json"))
-    pa.add_argument("--holdout", type=Path, default=Path("data/manifest/holdout_test_trials.json"))
-    pa.add_argument("--raw-dir", type=Path, default=Path("data/raw/ctgov"))
-    pa.add_argument("--out", type=Path, default=Path("data/planning_asset_v1/accrual"))
-    po = commands.add_parser("build-planning-operations", help="Extract screening and retention evidence from registry flow.")
-    po.add_argument("--manifest", type=Path, default=Path("data/manifest/subset_treatment_phase23_result_pub.json"))
-    po.add_argument("--holdout", type=Path, default=Path("data/manifest/holdout_test_trials.json"))
-    po.add_argument("--raw-dir", type=Path, default=Path("data/raw/ctgov"))
-    po.add_argument("--out", type=Path, default=Path("data/planning_asset_v1/operations"))
-    pp = commands.add_parser("build-planning-report", help="Build one unified planning report from locked protocol inputs.")
-    pp.add_argument("--studyspec", type=Path, required=True)
-    pp.add_argument("--asset", type=Path, default=Path("data/planning_asset_v1/accrual"))
-    pp.add_argument("--cohorts", type=Path)
-    pp.add_argument("--eligibility", type=Path)
-    pp.add_argument("--operations", type=Path, default=Path("data/planning_asset_v1/operations"))
-    pp.add_argument("--results", type=Path, help="Optional locked binary or time-to-event simulation results")
-    pp.add_argument("--outcomes", type=Path, help="Locked outcome model for a conditional event calendar")
-    pp.add_argument("--event-threshold", type=int, action="append", default=[], help="Scenario event count; may be repeated")
-    pp.add_argument("--scenario-results", type=Path, help="Optional scenario output directory to include in unified report")
-    pp.add_argument("--out", type=Path, required=True)
-    pp.add_argument("--draws", type=int, default=5000)
-    ps = commands.add_parser("simulate-planning-scenarios", help="Compare explicit operational assumptions for one locked protocol.")
-    ps.add_argument("--studyspec", type=Path, required=True)
-    ps.add_argument("--scenarios", type=Path, required=True, help="JSON file with a scenarios array")
-    ps.add_argument("--outcomes", type=Path, help="Locked outcome model, required for event thresholds")
-    ps.add_argument("--out", type=Path, required=True)
-    ps.add_argument("--draws", type=int, default=5000)
     commands.add_parser("build-parameters-v2", help="Milestone 2: hierarchical borrowing, survival, censored toxicity.")
     v3 = commands.add_parser("build-parameters-v3", help="Milestone 3: exact binomial calibration, survival fusion, baseline generator.")
     v3.add_argument("--workers", type=int, default=6)
@@ -256,6 +228,72 @@ def main(argv: list[str] | None = None) -> int:
     cu.add_argument("--registry", type=Path, required=True)
     cu.add_argument("--fetched-at", required=True)
     cu.add_argument("--out", type=Path, required=True)
+    rs = commands.add_parser("run-safety", help="Simulated adverse-event counts per arm from the locked outcome model (any design).")
+    rs.add_argument("--outcomes", type=Path, required=True, help="locked outcome model directory")
+    rs.add_argument("--cohorts", type=Path, required=True, help="locked cohorts directory")
+    rs.add_argument("--out", type=Path, required=True)
+    rs.add_argument("--safety-asset", type=Path, help="safety asset V3 directory (default: the outcome model's V2 class-signature rates)")
+    xd = commands.add_parser("extend-drug-classes", help="Classify protocol agents missing from the drug-class map (same mapper; base map unchanged).")
+    xd.add_argument("--studyspec", type=Path, action="append", required=True)
+    xd.add_argument("--created", required=True)
+    mc = commands.add_parser("map-protocol-conditions", help="Map protocol condition texts to disease families (the evidence build's mapper; cached).")
+    mc.add_argument("--studyspec", type=Path, action="append", required=True)
+    bt = commands.add_parser("build-trial-outputs", help="Datasets, registry-style tables and feasibility analyses from the simulated patients.")
+    for name in ("studyspec", "eligibility", "cohorts", "outcomes", "safety", "planning"):
+        bt.add_argument(f"--{name}", type=Path, required=True, help=f"locked {name} directory")
+    bt.add_argument("--results", type=Path)
+    bt.add_argument("--accrual-asset", type=Path, default=Path("data/planning_asset_v2_2/operational"))
+    bt.add_argument("--out", type=Path, required=True)
+    cbl = commands.add_parser("compare-registry-baseline", help="Registry baseline table against the evidence model's 90% predictive intervals.")
+    cbl.add_argument("--studyspec", type=Path, required=True)
+    cbl.add_argument("--registry", type=Path, required=True)
+    cbl.add_argument("--fetched-at", required=True)
+    cbl.add_argument("--locked-at", required=True, help="when the protocol's predictions were locked")
+    cbl.add_argument("--out", type=Path, required=True)
+    cs = commands.add_parser("compare-registry-safety", help="Blind comparison of locked adverse-event predictions with the registry.")
+    cs.add_argument("--results", type=Path, required=True, help="locked safety results directory")
+    cs.add_argument("--registry", type=Path, required=True)
+    cs.add_argument("--fetched-at", required=True)
+    cs.add_argument("--out", type=Path, required=True)
+    ce = commands.add_parser("compare-registry-escalation", help="Compare locked dose-ladder escalation results with the registry dose result.")
+    ce.add_argument("--results", type=Path, required=True)
+    ce.add_argument("--registry", type=Path, required=True)
+    ce.add_argument("--fetched-at", required=True)
+    ce.add_argument("--out", type=Path, required=True)
+    cp = commands.add_parser("compare-registry-planning", help="Blind comparison of a locked planning report with the registry timeline.")
+    cp.add_argument("--planning", type=Path, required=True, help="locked planning report directory")
+    cp.add_argument("--registry", type=Path, required=True)
+    cp.add_argument("--fetched-at", required=True)
+    cp.add_argument("--out", type=Path, required=True)
+    ba = commands.add_parser("build-accrual-asset", help="Planning asset 1: historical accrual evidence and model (holdouts excluded).")
+    ba.add_argument("--raw-dir", type=Path, default=Path("data/raw/ctgov"))
+    ba.add_argument("--holdout", type=Path, default=Path("data/manifest/holdout_test_trials.json"))
+    ba.add_argument("--family-map", type=Path, default=Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
+    ba.add_argument("--out", type=Path, default=Path("data/planning_asset_v1/accrual"))
+    ba.add_argument("--created", required=True, help="build date (ISO) recorded in the manifest")
+    fo = commands.add_parser("fetch-operational-corpus", help="Operational asset V2: registry corpus incl. terminated/withdrawn trials (light fields).")
+    fo.add_argument("--out", type=Path, default=Path("data/raw/ctgov_operational"))
+    fo.add_argument("--retrieved", required=True, help="retrieval date (ISO) recorded in the manifest")
+    bo2 = commands.add_parser("build-operational-asset", help="Operational asset V2: failure model and accrual-rate model (holdouts excluded).")
+    bo2.add_argument("--corpus", type=Path, default=Path("data/raw/ctgov_operational"))
+    bo2.add_argument("--v1-windows", type=Path, default=Path("data/planning_asset_v1/accrual/windows.json"))
+    bo2.add_argument("--holdout", type=Path, default=Path("data/manifest/holdout_test_trials.json"))
+    bo2.add_argument("--family-map", type=Path, default=Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
+    bo2.add_argument("--out", type=Path, default=Path("data/planning_asset_v2/operational"))
+    bo2.add_argument("--created", required=True)
+    bs3 = commands.add_parser("build-safety-asset-v3", help="Safety asset V3: regimen, dose, phase, age and disease specific adverse-event models.")
+    bs3.add_argument("--out", type=Path, default=Path("data/safety_asset_v3"))
+    bs3.add_argument("--created", required=True)
+    bs3.add_argument("--workers", type=int, default=6)
+    bpr = commands.add_parser("build-planning-report", help="Unified trial planning report from locked artefacts.")
+    bpr.add_argument("--studyspec", type=Path, required=True)
+    bpr.add_argument("--cohorts", type=Path, required=True)
+    bpr.add_argument("--eligibility", type=Path, required=True)
+    bpr.add_argument("--results", type=Path)
+    bpr.add_argument("--outcomes", type=Path)
+    bpr.add_argument("--accrual-asset", type=Path)
+    bpr.add_argument("--out", type=Path, required=True)
+    bpr.add_argument("--blind", action="store_true", help="the trial's registry timeline has not been read")
     lk = commands.add_parser("lock-stage", help="Lock a simulation stage's outputs (checksummed, read-only), chained to its inputs.")
     lk.add_argument("--stage", type=Path, required=True, help="stage output directory")
     lk.add_argument("--out", type=Path, required=True, help="new lock directory (must not exist)")
@@ -271,27 +309,6 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        if args.command == "build-planning-asset":
-            from .planning.asset import build
-            print(json.dumps(build(args.manifest, args.holdout, args.raw_dir, args.out), indent=1))
-            return 0
-        if args.command == "build-planning-operations":
-            from .planning.operations import build
-            print(json.dumps(build(args.manifest, args.holdout, args.raw_dir, args.out), indent=1))
-            return 0
-        if args.command == "build-planning-report":
-            from .planning.report import build
-            result = build(args.studyspec, args.asset, args.out, args.cohorts, args.eligibility,
-                           args.draws, operations_dir=args.operations, results_dir=args.results,
-                           outcomes_dir=args.outcomes, event_thresholds=args.event_threshold,
-                           scenario_dir=args.scenario_results)
-            print(json.dumps({"protocol_id": result["protocol_id"], "status": result["accrual"]["status"]}))
-            return 0
-        if args.command == "simulate-planning-scenarios":
-            from .planning.scenarios import simulate
-            result = simulate(args.studyspec, args.scenarios, args.out, args.outcomes, args.draws)
-            print(json.dumps({"protocol_id": result["protocol_id"], "scenarios": len(result["scenarios"])}))
-            return 0
         if args.command == "discover":
             if args.limit < 1:
                 parser.error("--limit must be positive.")
@@ -397,6 +414,101 @@ def main(argv: list[str] | None = None) -> int:
             from .trial.compare import run_compare_unresolved
             doc = run_compare_unresolved(args.results, args.results_file, args.registry, args.fetched_at, args.out)
             print(json.dumps({"order_verified": doc["order_verified"], "measures": len(doc["registry_measures"])}, indent=1))
+            return 0
+        if args.command == "run-safety":
+            from .trial.safety import run_safety
+            doc = run_safety(args.outcomes, args.cohorts, args.out, safety_asset=args.safety_asset)
+            print(json.dumps({"status": doc["status"], "arms": {a["arm_id"]: len(a["events"]) for a in doc["arms"]}}, indent=1))
+            return 0
+        if args.command == "extend-drug-classes":
+            from .llm import LunaClient
+            from .trial.safety import extend_class_map
+
+            model = LunaClient(cache_dir=Path("data/cache/llm"), max_calls=50)
+            print(json.dumps(extend_class_map(model, args.studyspec, args.created), indent=1))
+            return 0
+        if args.command == "map-protocol-conditions":
+            from .llm import LunaClient
+            from .planning.operational import condition_family
+            from .trial.studyspec import load_studyspec
+
+            model = LunaClient(cache_dir=Path("data/cache/llm"), max_calls=50)
+            out = {}
+            for lock in args.studyspec:
+                spec, _ = load_studyspec(lock)
+                cond = spec["metadata"].get("condition")
+                cond = " ".join(((cond.get("text") if isinstance(cond, dict) else cond) or "").split())
+                out[str(lock)] = {"condition": cond, "family": condition_family(cond, model)}
+            print(json.dumps(out, indent=1))
+            return 0
+        if args.command == "build-trial-outputs":
+            from .trial.outputs import build as build_outputs
+            doc = build_outputs(args.studyspec, args.eligibility, args.cohorts, args.outcomes, args.safety, args.planning, args.results,
+                                args.out, accrual_asset=args.accrual_asset)
+            print(json.dumps({"datasets": doc["datasets"], "out": str(args.out)}, indent=1))
+            return 0
+        if args.command == "compare-registry-baseline":
+            from .trial.outputs import compare_baseline
+            doc = compare_baseline(args.studyspec, args.registry, args.fetched_at, args.locked_at, args.out)
+            print(json.dumps(doc.get("summary") or doc.get("status"), indent=1, default=str))
+            return 0
+        if args.command == "compare-registry-safety":
+            from .trial.safety import run_compare_safety
+            doc = run_compare_safety(args.results, args.registry, args.fetched_at, args.out)
+            print(json.dumps({k: doc[k] for k in ("order_verified", "registry_at_risk", "matched_terms", "matched_inside_90")}, indent=1))
+            return 0
+        if args.command == "compare-registry-escalation":
+            from .trial.escalation import run_compare as run_escalation_compare
+            doc = run_escalation_compare(args.results, args.registry, args.fetched_at, args.out)
+            print(json.dumps({"order_verified": doc["order_verified"], "items": [i["status"] for i in doc["items"]]}, indent=1))
+            return 0
+        if args.command == "compare-registry-planning":
+            from .llm import LunaClient
+            from .planning.validate import run as run_planning_compare
+            from .protocol.schemas import SYSTEM as PROTOCOL_SYSTEM
+
+            model = LunaClient(cache_dir=Path("data/cache/llm_protocol"), max_calls=200, effort="high",
+                               max_output_tokens=32000, system=PROTOCOL_SYSTEM, timeout=900)
+            doc = run_planning_compare(args.planning, args.registry, args.fetched_at, args.out, model)
+            print(json.dumps({"order_verified": doc["order_verified"], "historical_model": doc["historical_model"]["status"]}, indent=1))
+            return 0
+        if args.command == "build-accrual-asset":
+            from .llm import LunaClient
+            from .planning.accrual import build as build_accrual
+            from .protocol.schemas import SYSTEM as PROTOCOL_SYSTEM
+
+            model = LunaClient(cache_dir=Path("data/cache/llm_protocol"), max_calls=1000, effort="high",
+                               max_output_tokens=32000, system=PROTOCOL_SYSTEM, timeout=900)
+            manifest = build_accrual(model, args.raw_dir, args.holdout, args.family_map, args.out, args.created)
+            manifest["model_calls"] = model.calls
+            print(json.dumps({k: v for k, v in manifest.items() if k != "model"}, indent=1, default=str))
+            return 0
+        if args.command == "fetch-operational-corpus":
+            from .planning.operational import fetch_corpus
+            print(json.dumps(fetch_corpus(args.out, args.retrieved), indent=1))
+            return 0
+        if args.command == "build-operational-asset":
+            from .llm import LunaClient
+            from .planning.operational import build as build_operational
+            from .protocol.schemas import SYSTEM as PROTOCOL_SYSTEM
+
+            model = LunaClient(cache_dir=Path("data/cache/llm_protocol"), max_calls=2000, effort="high",
+                               max_output_tokens=32000, system=PROTOCOL_SYSTEM, timeout=900)
+            manifest = build_operational(model, args.corpus, args.v1_windows, args.holdout, args.family_map, args.out, args.created)
+            manifest["model_calls"] = model.calls
+            print(json.dumps(manifest, indent=1, default=str))
+            return 0
+        if args.command == "build-safety-asset-v3":
+            from .safety3 import build as build_safety3
+            manifest = build_safety3(Path("data/raw/ctgov"), Path("data/manifest/holdout_test_trials.json"),
+                                     Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"), Path("data/spa_work/drug_classes.json"),
+                                     Path("data/simulation_parameters_v2/toxicity/censored_toxicity_parameters.parquet"), args.out, args.created, args.workers)
+            print(json.dumps(manifest, indent=1))
+            return 0
+        if args.command == "build-planning-report":
+            from .planning.report import build as build_plan
+            r = build_plan(args.studyspec, args.cohorts, args.eligibility, args.results, args.outcomes, args.out, args.blind, args.accrual_asset)
+            print(json.dumps({"protocol_id": r["protocol_id"], "blind": r["blind"], "out": str(args.out)}, indent=1))
             return 0
         if args.command == "lock-stage":
             from .trial import lock as stage_lock

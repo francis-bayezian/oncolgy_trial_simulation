@@ -420,17 +420,29 @@ def _draw(rng, probs: dict, n: int) -> list:
 # ----------------------------------------------------------------------------- stage runner
 
 
+def protocol_query(spec: dict):
+    """The Simulation Parameter Asset V3 baseline query of a protocol: age limits and age class, and the disease family
+    of its condition (the evidence build's disease mapper, cached; 'other' leaves the family unknown)."""
+    from ..planning.operational import condition_family
+    from ..spa3.baseline import age_class
+    from ..spa3.protocol import ProtocolQuery
+
+    lo, hi = age_limits(spec)
+    cond = spec["metadata"].get("condition")
+    family = condition_family(" ".join(((cond.get("text") if isinstance(cond, dict) else cond) or "").split()))[0]
+    return ProtocolQuery(min_age=lo, max_age=hi, sex="ALL", age_class=age_class(*age_class_bounds(spec)),
+                         disease_family=None if family == "other" else family)
+
+
 def build_population(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Path, n: int = 10000, seed: int = 20260927,
                      votes: int = 3, generator: Any = None) -> dict:
-    from ..spa3.protocol import BaselineGenerator, ProtocolQuery
+    from ..spa3.protocol import BaselineGenerator
     from .studyspec import load_facts, load_studyspec
 
     spec, spec_record = load_studyspec(spec_lock)
     facts, facts_record = load_facts(facts_lock)
-    lo, hi = age_limits(spec)
     generator = generator or BaselineGenerator.load()
-    from ..spa3.baseline import age_class
-    query = ProtocolQuery(min_age=lo, max_age=hi, sex="ALL", age_class=age_class(*age_class_bounds(spec)))
+    query = protocol_query(spec)
     params = generator.parameters(query, None, True, seed)
     v3 = generator.sample(params, n, seed)
     bindings = bind_facts(model_client, spec, facts, votes=votes, section_text=_section_text_of(facts_record))

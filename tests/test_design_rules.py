@@ -1,5 +1,7 @@
 """Design rules: binary decision rules and dose escalation (synthetic fixtures; no protocol-specific content)."""
 
+from scipy import stats
+
 from clinical_asset.protocol import design_rules as dr
 
 
@@ -55,7 +57,7 @@ def test_escalation_count_rules_are_parsed():
                                       {"action": "stop_dose_exceeds_mtd", "dlt_count_quote": "2 or more", "dlt_count_comparator": "at_least",
                                        "patients_quote": "up to 6", "evidence_quote": ""}]})
     assert e["issues"] == [] and e["cohort_size"] == 3 and e["dose_levels"] == ["25 mg", "50 mg"]
-    assert e["rules"][2] == {"action": "stop_dose_exceeds_mtd", "dlt": 2, "comparator": "at_least", "patients": 6}
+    assert e["rules"][2] == {"action": "stop_dose_exceeds_mtd", "dlt": 2, "comparator": "at_least", "patients": 6, "increment": None, "quote_index": 2}
 
 
 def test_no_means_zero_and_a_percentage_is_never_a_count():
@@ -78,7 +80,7 @@ def test_a_rule_stated_for_several_arms_becomes_one_rule_per_arm():
 
 
 def test_a_dose_escalation_rule_is_built_into_the_spec():
-    raw = {"rule_id": "e", "design_family": "three_plus_three", "applies_to_quote": "", "cohort_size_quote": "3", "dose_level_quotes": ["25 mg"],
+    raw = {"rule_id": "e", "design_family": "three_plus_three", "applies_to_quote": "", "cohort_size_quote": "3", "dose_level_quotes": ["25 mg", "50 mg"],
            "starting_dose_quote": "", "mtd_definition_quote": "", "dlt_window_quote": "", "evidence_quote": "",
            "rules": [{"action": "escalate", "dlt_count_quote": "0", "dlt_count_comparator": "exactly", "patients_quote": "3", "evidence_quote": ""},
                      {"action": "stop_dose_exceeds_mtd", "dlt_count_quote": "2", "dlt_count_comparator": "at_least", "patients_quote": "6",
@@ -86,4 +88,60 @@ def test_a_dose_escalation_rule_is_built_into_the_spec():
     rules = dr.build([{"output": {"binary_rules": [], "dose_escalation": [raw]}, "sections": ["1"], "document": "d"}],
                      lambda r: None, lambda src, quote, field: {"text": quote} if quote else None, [])
     assert rules[0]["kind"] == "dose_escalation" and rules[0]["compile_issues"] == [] and len(rules[0]["rule_quotes"]) == 2
-    assert "escalate if exactly 0 of 3 patients have a DLT" in rules[0]["rendering_basis"]
+    assert "if exactly 0 of 3 patients have a DLT: escalate to the next dose" in rules[0]["rendering_basis"]
+
+
+def test_a_dose_ladder_is_compiled_from_the_starting_dose_stages_and_row_increments():
+    row = {"dlt_count_comparator": "exactly", "evidence_quote": ""}
+    e = dr.escalation_rule({"design_family": "three_plus_three", "cohort_size_quote": "", "dose_level_quotes": [], "starting_dose_quote": "Starting dose of 25 mg",
+                            "max_dose_quote": "", "dosage_form_quotes": ["25 mg capsules"], "increment_sequence_quote": "",
+                            "stages": [{"stage_kind": "accelerated_titration", "cohort_size_quote": "1 patient", "increment_quote": "Twice the Previous Dose",
+                                        "switch_condition_quote": "until 1 patient experiences a toxicity of >= Grade 2 or a DLT", "evidence_quote": ""},
+                                       {"stage_kind": "rule_based", "cohort_size_quote": "3", "increment_quote": "", "switch_condition_quote": "", "evidence_quote": ""}],
+                            "mtd_definition_quote": "", "dlt_window_quote": "", "applies_to_quote": "", "evidence_quote": "",
+                            "rules": [{**row, "action": "escalate", "dlt_count_quote": "0", "patients_quote": "3", "increment_quote": "increase of <=50%"},
+                                      {**row, "action": "expand_cohort", "dlt_count_quote": "1", "patients_quote": "3", "increment_quote": ""},
+                                      {**row, "action": "expand_previous_level", "dlt_count_quote": "2 or more", "dlt_count_comparator": "at_least",
+                                       "patients_quote": "3", "increment_quote": ""},
+                                      {**row, "action": "escalate", "dlt_count_quote": "1", "patients_quote": "6", "increment_quote": "increase of <=33%"}]})
+    assert e["issues"] == []
+    assert e["ladder"]["start"] == {"value": 25.0, "unit": "mg"} and e["ladder"]["stages"][0]["increment"] == {"factor": 2.0, "bound": "exact"}
+    assert e["ladder"]["stages"][0]["switch"] == {"patients": 1, "grade_at_least": 2, "or_dlt": True, "drug_related": False}
+    assert e["rules"][3]["increment"] == {"factor": 1.33, "bound": "at_most"}
+    incomplete = dr.escalation_rule({**{k: v for k, v in e.items()}, "design_family": "three_plus_three", "cohort_size_quote": "3", "dose_level_quotes": [],
+                                     "starting_dose_quote": "", "stages": [], "rules": [{**row, "action": "escalate", "dlt_count_quote": "0", "patients_quote": "3",
+                                                                                         "increment_quote": ""},
+                                                                                        {**row, "action": "stop_dose_exceeds_mtd", "dlt_count_quote": "2",
+                                                                                         "patients_quote": "3", "increment_quote": ""}]})
+    assert any("dose ladder incomplete" in i for i in incomplete["issues"])
+
+
+def _base(**kw):
+    base = {"design_family": "two_stage_other", "family": "two_stage_other", "p0_quote": "", "p1_quote": "", "alpha_quote": "", "beta_quote": "",
+            "success_if_at_least_quote": "", "early_termination_probability_quote": "", "stages": []}
+    return {**base, **kw}
+
+
+def test_a_stated_power_is_converted_to_beta():
+    stage = {"stage_quote": "", "cumulative_n_quote": "17", "stop_if_at_most_quote": "", "continue_if_at_least_quote": "", "stop_if_events_at_least_quote": ""}
+    r = dr.binary_rule(_base(stages=[stage], success_if_at_least_quote="3 or more", p0_quote="0.05", p1_quote="0.35", alpha_quote="0.05",
+                             beta_quote="desired power of 0.9"))
+    assert abs(r["beta"] - 0.1) < 1e-9 and "power" in r["beta_derivation"]
+
+
+def test_a_toxicity_rule_stops_on_too_many_events_via_the_complement():
+    stage = {"stage_quote": "", "cumulative_n_quote": "6", "stop_if_at_most_quote": "", "continue_if_at_least_quote": "",
+             "stop_if_events_at_least_quote": "two or more (>= 2)"}
+    r = dr.binary_rule(_base(design_family="single_stage", family="single_stage", outcome="toxicity", stages=[stage]))
+    assert r["issues"] == [] and r["outcome"] == "toxicity" and r["success_if_at_least"] == 5      # at most 1 of 6 with a DLT
+    q = 0.2                                                                                    # true DLT rate
+    assert abs(dr.prob_success(r, 1 - q) - stats.binom.cdf(1, 6, q)) < 1e-12
+
+
+def test_a_non_binding_futility_stop_is_ignored_for_the_error_rates():
+    stages = [{"stage_quote": "", "cumulative_n_quote": "6", "stop_if_at_most_quote": "0", "continue_if_at_least_quote": "", "stop_if_events_at_least_quote": ""},
+              {"stage_quote": "", "cumulative_n_quote": "17", "stop_if_at_most_quote": "", "continue_if_at_least_quote": "", "stop_if_events_at_least_quote": ""}]
+    r = dr.binary_rule(_base(stages=stages, success_if_at_least_quote="3 or more", p0_quote="0.05", p1_quote="0.35", alpha_quote="0.05",
+                             beta_quote="power 0.9", early_stop_binding="non_binding"))
+    oc = r["operating_characteristics"]["at_p0"]
+    assert abs(oc["prob_success_ignoring_interim"] - stats.binom.sf(2, 17, 0.05)) < 1e-12

@@ -746,3 +746,39 @@ def test_a_sex_specific_requirement_in_any_shape_is_flagged():
     conditional = {"node": "IF", "condition": female, "then": {"node": "OR", "children": [a, b]}}
     assert typecheck._subgroup_conjunction(either) and not typecheck._subgroup_conjunction(conditional)
     assert not typecheck._subgroup_conjunction(female) and not typecheck._subgroup_conjunction(a)
+
+
+def test_a_category_test_on_age_is_undecidable_at_runtime_and_a_static_error():
+    from clinical_asset.protocol import typecheck
+
+    leaf = {"node": "LEAF", "kind": "category", "status": "EXECUTABLE", "variable": "demographic:age", "op": "in", "categories": ["adult"]}
+    assert ex.evaluate(leaf, {"demographic:age": {"value": 38.0, "unit": "year"}}) is None
+    spec = {"eligibility": [{"criterion_id": "EL1", "kind": "inclusion", "logic": leaf}], "stratification": {"strata": []},
+            "treatment_phases": [], "grade_definitions": [], "interventions": [], "radiotherapy": [], "dose_modifications": [],
+            "endpoints": [], "arms": [], "randomization": {}, "interim_analyses": []}
+    assert any("age tested as a category" in i for i in typecheck.check(spec)[0]["EL1"])
+
+
+def test_rejections_that_do_not_change_execution_are_accepted_only_by_majority():
+    class Stub:
+        def __init__(self, harmless):
+            self.harmless = harmless
+
+        def extract(self, task, schema, payload):
+            assert task == "protocol_materiality"
+            return {"verdicts": [{"item_id": i["item_id"], "changes_execution": not self.harmless.get(i["item_id"], False),
+                                  "reason": "r"} for i in payload["items"]]}
+
+    c = object.__new__(comp.ProtocolCompiler)
+    c.critical_votes, c.workers = 3, 2
+    flags = []
+
+    def ballots():
+        return {k: {"component": "design_rules", "rendering": "x", "votes": 3,
+                    "cast": [{"verdict": "INCOMPLETE", "reviewer_note": "omits the sites where it runs"}] * 3,
+                    "item": {"semantic_status": "INCOMPLETE", "verification": {"verdict": "INCOMPLETE"}}} for k in ("DR1", "DR2")}
+    b = ballots()
+    c.model = Stub({"DR1": True})
+    c._materiality(b, {}, lambda *a: flags.append(a))
+    assert b["DR1"]["item"]["semantic_status"] == "FAITHFUL" and "accepted_non_operational" in b["DR1"]["item"]["verification"]
+    assert b["DR2"]["item"]["semantic_status"] == "INCOMPLETE"

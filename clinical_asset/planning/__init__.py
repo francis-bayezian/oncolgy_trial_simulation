@@ -1,1 +1,1 @@
-"""Evidence-constrained trial planning. Registry timelines are never treated as enrollment dates."""
+"""Trial planning and feasibility: historical operations assets and the planning engine."""

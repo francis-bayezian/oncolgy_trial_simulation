@@ -105,6 +105,13 @@ def check(spec: dict) -> tuple[dict[str, list[str]], list[str]]:
             for item_id in where[var]:
                 issues[item_id].append(f"variable {var} used both as a number and as a category")
 
+    # ---- category tests on the canonical numeric demographic (age is a number of years, not a category)
+    for item_id, _component, tree in _trees(spec):
+        for leaf in ex.leaves(tree):
+            if leaf.get("variable") == "demographic:age" and leaf.get("kind") == "category":
+                issues[item_id].append(f"age tested as a category {leaf.get('categories')}: an age requirement must be a numeric "
+                                       "limit (use the protocol's stated age, e.g. 'adult' defined as at least 18 years), or it is unresolved")
+
     # ---- subgroup requirements compiled as unconditional
     for c in spec["eligibility"]:
         if c.get("kind") == "inclusion" and _subgroup_conjunction(c.get("logic")):

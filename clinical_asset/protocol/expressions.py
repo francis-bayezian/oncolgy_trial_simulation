@@ -301,6 +301,8 @@ def evaluate(node: dict | None, patient: dict) -> bool | None:
     if leaf == "flag":
         return bool(x) == bool(node["expected"])
     if leaf == "category":
+        if isinstance(x, (int, float)) and not isinstance(x, bool):
+            return None  # a category test on a numeric value cannot be decided (a compilation type error, never a 'no')
         values = set(x) if isinstance(x, (list, set, tuple)) else {x}
         allowed = {str(c).casefold() for c in node["categories"]}
         hit = any(str(v).casefold() in allowed for v in values)

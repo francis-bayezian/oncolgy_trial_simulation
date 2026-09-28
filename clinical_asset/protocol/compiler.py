@@ -955,8 +955,29 @@ class ProtocolCompiler:
                 flag("static_check", iid, issue)
             del component
 
+    def _dedupe_escalation(self, spec: dict) -> None:
+        """One rule per escalation table: repair rebuilds rules one at a time, so compiles of the same table can coexist.
+        The verified, then the most complete, compile is kept; the others are recorded as merged."""
+        rules = spec.get("decision_rules") or []
+        keep, merged = {}, []
+        for r in rules:
+            if r["kind"] != "dose_escalation":
+                continue
+            sig = repr([(x["action"], x["dlt"], x["comparator"], x["patients"]) for x in r["rule"]["rules"]])
+            rank = (r.get("semantic_status") == "FAITHFUL", *drules._completeness(r))
+            if sig not in keep or rank > keep[sig][0]:
+                if sig in keep:
+                    merged.append(keep[sig][1]["decision_rule_id"])
+                keep[sig] = (rank, r)
+            else:
+                merged.append(r["decision_rule_id"])
+        if merged:
+            spec["decision_rules"] = [r for r in rules if r["decision_rule_id"] not in merged]
+            spec.setdefault("resolutions", []).append({"kind": "merged_duplicate_escalation_compiles", "removed": merged})
+
     def _finalise_status(self, spec: dict) -> None:
         """Summary status per item from its semantic, static and runtime axes."""
+        self._dedupe_escalation(spec)
         for component, item, _ in self._items(spec):
             if item.get("criticality_before_repair"):  # the verifier has now judged the repaired item
                 item["criticality"] = ir.criticality(component, item)
@@ -1157,6 +1178,7 @@ class ProtocolCompiler:
             groups.setdefault("design_rules", []).append((r, drules.render_rule(r), " | ".join(
                 dict.fromkeys(x for x in [render._q(r.get("evidence"))] + _verified_quotes(r) if x))))  # a rule is built from several passages
         renderings = {_item_id(it): r for items in groups.values() for it, r, _ in items}
+        evidence_of = {_item_id(it): ev for items in groups.values() for it, _, ev in items}
         rt_renderings = {c["course_id"]: render.radiotherapy_course(c) for c in spec["radiotherapy"]}
 
         def related(component: str, it: dict) -> list[str]:
@@ -1232,11 +1254,51 @@ class ProtocolCompiler:
                 it["verification"]["votes"] = [x["verdict"] for x in box["cast"]]
                 it["verification"]["vote_notes"] = [x["reviewer_note"] for x in box["cast"]
                                                     if x["verdict"] != "FAITHFUL" and x.get("reviewer_note")]
-                it["semantic_status"] = {"FAITHFUL": "FAITHFUL", "INCOMPLETE": "INCOMPLETE", "INCORRECT": "INCORRECT"}.get(
-                    v["verdict"], "UNVERIFIED")
-                if v["verdict"] not in {"FAITHFUL", "NOT_A_RULE"}:
-                    flag(component, iid, f"independent verification: {v['verdict']} ({v['problem']}) - {v['reviewer_note']}",
-                         None, v["problem_quote"] or None)
+            # every judged item gets its semantic status, whether one vote (IMPORTANT) or a majority (CRITICAL) decided it
+            it["semantic_status"] = {"FAITHFUL": "FAITHFUL", "INCOMPLETE": "INCOMPLETE", "INCORRECT": "INCORRECT"}.get(
+                v["verdict"], "UNVERIFIED")
+            if v["verdict"] not in {"FAITHFUL", "NOT_A_RULE"}:
+                flag(component, iid, f"independent verification: {v['verdict']} ({v['problem']}) - {v['reviewer_note']}",
+                     None, v["problem_quote"] or None)
+        self._materiality(ballots, evidence_of, flag)
+
+    def _materiality(self, ballots: dict, evidence_of: dict, flag, batch: int = 10) -> None:
+        """Rejected items whose named problems would not change anything a simulation executes (site scope, wording,
+        rationale, documentation) are accepted (user decision 2026-09-28). Independent votes (as many as for a CRITICAL
+        item) judge, from the reviewers' own notes, whether each problem changes execution; a strict majority saying
+        it does not is required, and unsure counts as 'changes'."""
+        todo = [(iid, box) for iid, box in ballots.items() if box["item"].get("semantic_status") in {"INCOMPLETE", "INCORRECT"}]
+        if not todo:
+            return
+        votes = self.critical_votes
+        jobs = [(todo[i:i + batch], v) for i in range(0, len(todo), batch) for v in range(votes)]
+
+        def run(job):
+            chunk, vote = job
+            payload = {"instructions": sc.MATERIALITY_INSTRUCTIONS,
+                       "items": [{"item_id": iid, "rendering": box["rendering"], "evidence": evidence_of.get(iid, ""),
+                                  "reviewer_notes": [x.get("reviewer_note") for x in box["cast"] if x["verdict"] != "FAITHFUL"]} for iid, box in chunk]}
+            if vote:
+                payload["independent_review"] = f"review {vote + 1} of {votes}: judge from scratch"
+            try:
+                return self.model.extract("protocol_materiality", sc.MATERIALITY, payload).get("verdicts", [])
+            except Exception:  # noqa: BLE001 - a failed call is no vote (and so never an acceptance)
+                return []
+        with ThreadPoolExecutor(self.workers) as pool:
+            results = [v for vs in pool.map(run, jobs) for v in vs]
+        cast: dict[str, list] = {}
+        for v in results:
+            cast.setdefault(v.get("item_id"), []).append(v)
+        for iid, box in todo:
+            ballots_i = cast.get(iid, [])
+            harmless = [v for v in ballots_i if v.get("changes_execution") is False]
+            if len(harmless) * 2 > votes:
+                it = box["item"]
+                it["semantic_status"] = "FAITHFUL"
+                it["verification"]["accepted_non_operational"] = {
+                    "materiality_votes": [v.get("changes_execution") for v in ballots_i], "reasons": [v.get("reason") for v in harmless],
+                    "policy": "accepted: every problem the reviewers named leaves the executed rule unchanged (user decision 2026-09-28)"}
+                flag(box["component"], iid, "accepted: the reviewers' objections were judged not to change execution (majority)")
 
     def _component_text(self, docs: list[Document], component: str) -> str:
         wanted = TASKS[component][0] if component in TASKS else set()

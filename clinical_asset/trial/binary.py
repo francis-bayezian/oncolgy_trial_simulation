@@ -109,12 +109,21 @@ def bind_cited_rates(model: Any, spec: dict, facts: list[dict], section_text: An
     return items
 
 
+def _engine_rate(rule: dict, p: float) -> float:
+    """A toxicity rule is held on patients without the event: its engine rate is 1 - the event rate."""
+    return 1 - p if rule["rule"].get("outcome") == "toxicity" else p
+
+
 def exact_curve(rule: dict, grid: list[float]) -> list[dict]:
+    """For a response rule p is the response rate and 'prob_of_interest' the probability the arm is declared of
+    interest; for a toxicity rule p is the event (e.g. DLT) rate and 'prob_of_interest' the probability the study proceeds."""
     b = rule["rule"]
-    if b.get("success_if_at_least") is None:        # descriptive: no decision is defined
-        return [{"p": p, "prob_of_interest": None, "prob_early_stop": dr.prob_early_stop(b, p), "expected_n": dr.expected_n(b, p)} for p in grid]
-    return [{"p": p, "prob_of_interest": dr.prob_success(b, p), "prob_early_stop": dr.prob_early_stop(b, p), "expected_n": dr.expected_n(b, p)}
-            for p in grid]
+    out = []
+    for p in grid:
+        q = _engine_rate(rule, p)
+        out.append({"p": p, "prob_of_interest": None if b.get("success_if_at_least") is None else dr.prob_success(b, q),
+                    "prob_early_stop": dr.prob_early_stop(b, q), "expected_n": dr.expected_n(b, q)})
+    return out
 
 
 def descriptive_rules(spec: dict) -> list[dict]:
@@ -144,7 +153,7 @@ def simulate_rule(rule: dict, p: float, rng: np.random.Generator, replicates: in
         x, prev = 0, 0
         stop = False
         for k, s in enumerate(b["stages"]):
-            x += int(rng.binomial(s["n"] - prev, p))
+            x += int(rng.binomial(s["n"] - prev, _engine_rate(rule, p)))
             prev = s["n"]
             if k < len(b["stages"]) - 1 and x <= s["stop_if_at_most"]:
                 stop = True
@@ -187,6 +196,7 @@ def run_binary(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Pa
     cited = bind_cited_rates(model_client, spec, facts, _section_text_of(facts_record), votes=votes)
     rng = np.random.default_rng(seed)
     per_rule = []
+    primary_name = next((_q(e.get("name")) for e in spec["endpoints"] if e["role"] == "primary"), None)
     for rule in rules:
         b = rule["rule"]
         design = sorted({p for p in (b["p0"], b["p1"]) if p is not None})
@@ -203,6 +213,7 @@ def run_binary(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Pa
             "cited_evidence": [{"fact_id": c["fact_id"], "rate": c["rate"],
                                 "prob_of_interest": None if b["success_if_at_least"] is None else dr.prob_success(b, c["rate"])} for c in usable],
             "descriptive": bool(rule.get("descriptive")),
+            "evidence_prior": evidence_prior(spec, rule, b, primary_name, model_client, rng),
             "arm_status": [next((a["status"] for a in spec["arms"] if a["arm_id"] == aid), None) for aid in rule["arms"]]})
     doc = {"binary_version": BINARY_VERSION, "seed": seed, "replicates": replicates,
            "inputs": {"studyspec": spec_record["files"]["studyspec.json"], "facts": facts_record["files"]["population_facts.json"]},
@@ -255,3 +266,33 @@ def exact_interval_width(n: int, p: float) -> float:  # used by reports of descr
     lo, hi = exact_interval(x, n)
     return hi - lo
 
+
+def evidence_prior(spec: dict, rule: dict, b: dict, endpoint_name: str | None, model_client: Any, rng: np.random.Generator) -> dict:
+    """What the evidence build predicts for this arm's endpoint (see efficacy_prior): the predictive rate, the predictive
+    probability that the rule declares the arm of interest (averaged over the rate), and the 90% interval of the observed
+    rate at the design's final sample size. A toxicity rule has no response prior."""
+    from pathlib import Path as _P
+
+    from . import efficacy_prior as ep
+    from .safety import class_map, v3_features
+
+    if b.get("outcome") == "toxicity":
+        return {"status": "NOT_APPLICABLE", "reason": "a toxicity rule"}
+    name = _q(rule.get("endpoint")) or endpoint_name or ""
+    target = ep.endpoint_target(name, model_client)
+    if target is None:
+        return {"status": "UNRESOLVED", "reason": f"the endpoint '{name[:80]}' is not a response proportion the evidence build models"}
+    label = next((_q(a["label"]) for a in spec["arms"] if a["arm_id"] in (rule.get("arms") or [])), "") or ""
+    feats = v3_features(spec, label, class_map(), {}, _P("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
+    prior = ep.arm_prior(target, feats["disease_family"], [x["agent"] for x in feats["agents"]], feats["classes"])
+    if prior["status"] != "RESOLVED":
+        return prior
+    draws = prior.pop("draws")
+    sample = rng.choice(draws, size=min(400, draws.size), replace=False)
+    n_final = b["stages"][-1]["n"] if b.get("stages") and b["stages"][-1].get("n") else None
+    out = {**prior, "draws_sample": [round(float(x), 5) for x in rng.choice(draws, size=min(1000, draws.size), replace=False)]}
+    if n_final:
+        out["observed_rate_90_at_design_n"] = ep.observed_interval(draws, n_final, rng)
+    if b.get("success_if_at_least") is not None:
+        out["predictive_prob_of_interest"] = float(np.mean([dr.prob_success(b, float(p)) for p in sample]))
+    return out

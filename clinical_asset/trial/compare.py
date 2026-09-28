@@ -297,6 +297,12 @@ def compare_binary(binary: dict, registry: dict, predictions_locked_at: str, reg
             entry.update({"prediction_at_observed_rate": {"p": curve[nearest]["p"], "prob_of_interest": curve[nearest]["prob_of_interest"],
                                                           "expected_enrolled": curve[nearest]["expected_n"], "enrolled_90": [sim["enrolled"]["q05"], sim["enrolled"]["q95"]]},
                           "design_decision_at_observed": _decision(rule["rule"], round(responders), int(n))})
+            prior = rule.get("evidence_prior") or {}
+            if prior.get("status") == "RESOLVED" and prior.get("draws_sample") and n:
+                from .efficacy_prior import observed_interval
+                lo, hi = observed_interval(np.array(prior["draws_sample"]), round(n), np.random.default_rng(0))
+                entry["evidence_prior_prediction"] = {"level": prior["level"], "target": prior["target"], "predicted_rate": prior["rate"],
+                                                      "observed_rate_90_at_registry_n": [lo, hi], "registry_rate_in_interval": lo <= rate <= hi}
             for c in rule["cited_evidence"]:
                 sim_c = next(s for s in rule["simulated"] if abs(s["p"] - c["rate"]) < 1e-9)
                 o = sim_c["observed_rate"]
@@ -369,13 +375,16 @@ def run_compare_unresolved(results_lock: Path, results_file: str, registry_file:
     rs = registry.get("resultsSection", {})
     measures = []
     for m in rs.get("outcomeMeasuresModule", {}).get("outcomeMeasures", []):
-        values = [(g["title"], _value(m, g["id"])[0]) for g in m.get("groups", [])]
+        analysed = {c["groupId"]: c.get("value") for d in m.get("denoms", []) for c in d.get("counts", [])}
+        values = [(g["title"], _value(m, g["id"])[0], analysed.get(g["id"])) for g in m.get("groups", [])]
         measures.append({"type": m["type"], "title": m["title"], "unit": m.get("unitOfMeasure"), "values": values})
     doc = {"compare_version": COMPARE_VERSION, "design": "primary prediction unresolved", "predictions_locked_at": rec["locked_at"],
            "registry_fetched_at": registry_fetched_at, "order_verified": rec["locked_at"] < registry_fetched_at,
            "locked_results": [{"rule": r.get("decision_rule_id"), "result": r.get("result", "simulated")} for r in results.get("rules", [])],
            "registry": {"nct_id": registry["protocolSection"]["identificationModule"]["nctId"],
                         "org_study_id": registry["protocolSection"]["identificationModule"]["orgStudyIdInfo"]["id"]},
+           "registry_status": {k: registry["protocolSection"]["statusModule"].get(k) for k in ("overallStatus", "whyStopped")},
+           "registry_enrollment": registry["protocolSection"]["designModule"].get("enrollmentInfo"),
            "registry_measures": measures}
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -383,10 +392,19 @@ def run_compare_unresolved(results_lock: Path, results_file: str, registry_file:
     lines = [f"# Blind comparison with the registry results: primary prediction unresolved ({COMPARE_VERSION})", "",
              (f"Registry {doc['registry']['nct_id']} (study {doc['registry']['org_study_id']}). Predictions locked at {doc['predictions_locked_at']}; "
               f"registry fetched at {registry_fetched_at}; order verified: {doc['order_verified']}."), "", "## Locked simulation results", ""]
-    lines += [f"- {r['rule']}: {r['result']}" for r in doc["locked_results"]] or ["- none"]
-    lines += ["", "## Registry measures (not predicted)", ""]
+    lines += [f"- {r['rule']}: {r['result']}" for r in doc["locked_results"]] or [
+        "- none: no decision rule in the locked StudySpec was executable, so no primary result was simulated"]
+    st, en = doc["registry_status"], doc["registry_enrollment"] or {}
+    lines += ["", "## Registry status", "", f"- {st['overallStatus']}" + (f" ({st['whyStopped']})" if st.get("whyStopped") else "")
+              + f"; enrolled {en.get('count')} ({en.get('type')})", "", "## Registry measures (not predicted)", ""]
+
+    def _shown(v, n):
+        if v is None:
+            return "no participants analysed" if str(n) == "0" else "no value reported"
+        return f"{v} (n = {n})" if n is not None else str(v)
+
     for m in measures:
-        vals = "; ".join(f"{t}: {v}" for t, v in m["values"][:8])
+        vals = "; ".join(f"{t}: {_shown(v, n)}" for t, v, n in m["values"][:8])
         lines.append(f"- [{m['type']}] {m['title']} ({m['unit']}): {vals}")
     (out_dir / "comparison_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     return doc

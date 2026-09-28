@@ -456,6 +456,16 @@ VERIFY = obj({"verdicts": {"type": "array", "items": obj({
                     "wrong_action", "other"),
     "problem_quote": TEXT,
     "reviewer_note": TEXT})}})
+MATERIALITY = obj({"verdicts": {"type": "array", "items": obj({
+    "item_id": TEXT, "changes_execution": {"type": "boolean"}, "reason": TEXT})}})
+MATERIALITY_INSTRUCTIONS = (
+    "Each item is a compiled protocol rule that independent reviewers rejected, with their notes. For each item decide "
+    "whether the problems the reviewers name would change what a simulation executing the rendered rule does: which "
+    "patients qualify, which dose, arm or action is chosen, when a decision is taken, how many patients are treated or "
+    "assessed, or any number the rule computes. changes_execution is false ONLY if every named problem concerns wording, "
+    "the sites or countries where a procedure is run, administrative or documentation detail, rationale, or a qualifier "
+    "that leaves every executed decision identical; it is true otherwise, and true when unsure. reason: one sentence."
+)
 VERIFY_INSTRUCTIONS = (
     "You are an independent reviewer of compiled protocol rules. Judge every item on its own: a problem in one "
     "item never applies to another. For each item, 'rendering' is the compiled rule in plain language and "

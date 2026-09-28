@@ -20,7 +20,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 CACHE = Path("data/protocol_work/documents")
-EXTRACTOR_VERSION = "ingest-1.0.0"
+EXTRACTOR_VERSION = "ingest-1.1.0"
 NUMBERED = re.compile(r"^(\d{1,2}(?:\.\d{1,2}){0,4})\.?\s+(\S.{1,200})$")
 APPENDIX = re.compile(r"^(APPENDIX\s+[A-Z0-9IVXLC]+)\s*[:.\-]?\s*(.*)$", re.IGNORECASE)
 TOC_LINE = re.compile(r"\.{3,}\s*\d+\s*$|\s\d{1,3}$")
@@ -117,6 +117,44 @@ def _heading_like(title: str) -> bool:
     return sum(c.isalpha() for c in visible) >= 0.6 * len(visible)
 
 
+def _heading_weight(title: str) -> float:
+    """How much a candidate looks like a section heading: capitals, few words, no sentence punctuation at the end."""
+    t = " ".join(title.split())
+    words = t.split()
+    w = 1.0 + (1.0 if t.upper() == t else 0.0) + (0.5 if len(words) <= 8 else 0.0)
+    if t.endswith((".", ",", ";", ":", "(")) or (words and words[-1][:1].islower() and len(words) > 8):
+        w -= 0.75
+    return max(w, 0.25)
+
+
+def _outline_chain(candidates: list[tuple[int, tuple[int, ...], str | None, float]]) -> set[int]:
+    """The numbered headings of the document: among candidate lines (position, outline key, top-level style, weight),
+    the chain of valid successors starting at 1 with the largest total weight. Choosing the chain globally avoids
+    locking onto a false '1' (a table row or list item) and then following a list's numbering."""
+    best_chain: tuple[float, list[int]] = (0.0, [])
+    for style in ("N", "N.0"):
+        usable = [c for c in candidates if c[2] in (None, style)]
+        score: list[float] = []
+        back: list[int | None] = []
+        for i, (_, key, _, w) in enumerate(usable):
+            s_best, j_best = (w, None) if key == (1,) else (float("-inf"), None)
+            for j in range(i):
+                if score[j] > float("-inf") and _valid_successor(usable[j][1], key) and score[j] + w > s_best:
+                    s_best, j_best = score[j] + w, j
+            score.append(s_best)
+            back.append(j_best)
+        if not score or max(score) == float("-inf"):
+            continue
+        end = max(range(len(score)), key=lambda k: score[k])
+        if score[end] > best_chain[0]:
+            chain, k = [], end
+            while k is not None:
+                chain.append(usable[k][0])
+                k = back[k]
+            best_chain = (score[end], chain)
+    return set(best_chain[1])
+
+
 def _top_style(number: str) -> str:
     return "N.0" if number.endswith(".0") else "N"
 
@@ -145,7 +183,7 @@ def _running_lines(pages: list[list[Line]]) -> set[str]:
 
 def extract(path: Path, use_cache: bool = True) -> Document:
     doc_id = sha256(path)
-    cache_file = CACHE / f"{doc_id}.json"
+    cache_file = CACHE / f"{doc_id}.{EXTRACTOR_VERSION}.json"
     if use_cache and cache_file.exists():
         return load(cache_file)
     import pdfplumber
@@ -166,28 +204,32 @@ def extract(path: Path, use_cache: bool = True) -> Document:
     kept = [[line for line in lines if re.sub(r"\d+", "#", line.text.strip()) not in running] for lines in raw_pages]
     removed = sorted(running)
 
+    contents = [_is_contents_page(lines, len(kept)) for lines in kept]
+    candidates, position = [], 0
+    for lines, contents_page in zip(kept, contents, strict=True):
+        for line in lines:
+            m = NUMBERED.match(line.text)
+            if not contents_page and m and not TOC_LINE.search(line.text) and _heading_like(m.group(2)):
+                key = _outline_key(m.group(1))
+                candidates.append((position, key, _top_style(m.group(1)) if len(key) == 1 else None, _heading_weight(m.group(2))))
+            position += 1
+    chosen = _outline_chain(candidates)
+
     sections: list[Section] = []
     front: list[Line] = []
-    previous: tuple[int, ...] | None = None
-    top_style: str | None = None  # "N.0" or "N": top-level headings keep the style of the first one
     in_appendix = False
-    for lines in kept:
-        contents_page = _is_contents_page(lines, len(kept))
+    position = -1
+    for lines, contents_page in zip(kept, contents, strict=True):
         for line in lines:
+            position += 1
             text = line.text
             heading = None
             if contents_page:
                 (sections[-1].lines if sections else front).append(line)
                 continue
             m = NUMBERED.match(text)
-            if m and not in_appendix and not TOC_LINE.search(text) and _heading_like(m.group(2)):
-                key = _outline_key(m.group(1))
-                style = _top_style(m.group(1)) if len(key) == 1 else None
-                if _valid_successor(previous, key) and (style is None or top_style in (None, style)):
-                    heading = (m.group(1), m.group(2).strip(), len(key))
-                    previous = key
-                    if style is not None:
-                        top_style = style
+            if m and not in_appendix and position in chosen:
+                heading = (m.group(1), m.group(2).strip(), len(_outline_key(m.group(1))))
             a = APPENDIX.match(text)
             if heading is None and a and not TOC_LINE.search(text) and text.upper() == text:
                 heading = (a.group(1).upper(), a.group(2).strip(), 1)

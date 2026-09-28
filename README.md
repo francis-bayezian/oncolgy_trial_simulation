@@ -1,7 +1,5 @@
 # Clinical Evidence Asset v1
 
-The new trial planning layer builds an evidence-quality accrual asset, extracts screening and retention flow, and writes unified planning reports from locked StudySpecs. Its current results and limitations are documented in [planning status](docs/PLANNING_STATUS.md).
-
 This project extracts source-supported clinical evidence from completed interventional oncology trials with posted ClinicalTrials.gov results. Its purpose is to support later patient modelling, not to generate patients from unreported associations. The current workflow is **local only**. It does not read from or write to Neon, and it has no database initialisation or publish command.
 
 The output groups reported facts by treatment. A demographic or clinical subgroup is added only when a source explicitly links that subgroup, treatment and outcome. Baseline and outcome analysis descriptions remain context for a measurement; they do not create extra patient groups. If the source does not establish a relationship, the JSON says so instead of estimating it.
