@@ -116,7 +116,7 @@ def _classes(sig: str) -> set[str]:
 
 
 def estimate(target_variable: str, family: str, classes: list[str], agents: list[str], age_group: str, phase: str | None = None,
-             exclude_studies: set[str] | None = None, min_studies: int = MIN_STUDIES) -> dict:
+             exclude_studies: set[str] | None = None, min_studies: int = MIN_STUDIES, order: list[str] | None = None) -> dict:
     recs = [r for r in records(target_variable) if r["disease_family"] == family and r["study"] not in (exclude_studies or set())]
     if not recs:
         return {"status": "UNRESOLVED", "reason": f"no study of {target_variable} in the {family} family"}
@@ -125,15 +125,9 @@ def estimate(target_variable: str, family: str, classes: list[str], agents: list
 
     def regimen_of(r):
         return {x.strip().casefold() for x in (r.get("regimen") or "").split("+") if x.strip()}
-    overlap = [r for r in recs if mine and _classes(r["class_signature"]) & mine]
-    same_age = [r for r in recs if r["age_group"] == age_group]
-    ladder = [("same regimen", [r for r in recs if agent_set and regimen_of(r) == agent_set]),
-              (f"{age_group} {phase} trials with overlapping drug classes", [r for r in overlap if r["age_group"] == age_group and phase and r["phase"] == phase]),
-              (f"{age_group} trials with overlapping drug classes", [r for r in overlap if r["age_group"] == age_group]),
-              (f"{age_group} {phase} trials", [r for r in same_age if phase and r["phase"] == phase]),
-              (f"{age_group} trials", same_age),
-              ("trials with overlapping drug classes", overlap),
-              ("whole disease family", recs)]
+    rungs = _rungs(recs, mine, agent_set, age_group, phase, regimen_of)
+    order = ladder_order(target_variable) if order is None else order
+    ladder = [(rungs[k][0], rungs[k][1]) for k in order if k in rungs] + [("whole disease family", recs)]
     level, chosen = next(((lv, rs) for lv, rs in ladder if len({r["study"] for r in rs}) >= min_studies), ladder[-1])
     breakdown = {}
     for key, f in (("age group", lambda r: r["age_group"]), ("phase", lambda r: r["phase"]),
@@ -142,7 +136,7 @@ def estimate(target_variable: str, family: str, classes: list[str], agents: list
         for r in recs:
             groups.setdefault(f(r), []).append(r)
         breakdown[key] = {g: pooled(rs) for g, rs in sorted(groups.items(), key=lambda kv: -len(kv[1]))}
-    own = [r for r in overlap if r["age_group"] == age_group]
+    own = rungs["age_classes"][1]
     own_studies = len({r["study"] for r in own})
     return {"status": "RESOLVED", "target": target_variable, "family": family, "headline_subgroup": level, "headline": pooled(chosen),
             "breakdown": breakdown,
@@ -151,6 +145,63 @@ def estimate(target_variable: str, family: str, classes: list[str], agents: list
                                   "note": ("the evidence holds too few trials like this protocol: the headline borrows from other subgroups"
                                            if own_studies < min_studies else "represented")},
             "family_mixture_studies": len({r["study"] for r in recs})}
+
+
+RUNG_KEYS = ("regimen", "age_phase_classes", "age_classes", "age_phase", "age", "classes", "phase")
+LADDER_FILE = Path("data/validation/subgroup_ladder.json")
+
+
+def _rungs(recs, mine, agent_set, age_group, phase, regimen_of) -> dict:
+    overlap = [r for r in recs if mine and _classes(r["class_signature"]) & mine]
+    same_age = [r for r in recs if r["age_group"] == age_group]
+    return {"regimen": ("same regimen", [r for r in recs if agent_set and regimen_of(r) == agent_set]),
+            "age_phase_classes": (f"{age_group} {phase} trials with overlapping drug classes",
+                                  [r for r in overlap if r["age_group"] == age_group and phase and r["phase"] == phase]),
+            "age_classes": (f"{age_group} trials with overlapping drug classes", [r for r in overlap if r["age_group"] == age_group]),
+            "age_phase": (f"{age_group} {phase} trials", [r for r in same_age if phase and r["phase"] == phase]),
+            "age": (f"{age_group} trials", same_age),
+            "classes": ("trials with overlapping drug classes", overlap),
+            "phase": (f"{phase} trials", [r for r in recs if phase and r["phase"] == phase])}
+
+
+def ladder_order(target_variable: str) -> list[str]:
+    """The rung order chosen on held-out studies (choose_ladder); the default order until one is chosen."""
+    if LADDER_FILE.exists():
+        doc = json.loads(LADDER_FILE.read_text(encoding="utf-8"))
+        if target_variable in doc:
+            return doc[target_variable]["order"]
+    return ["regimen", "age_phase_classes", "age_classes", "age_phase", "age", "classes"]
+
+
+def choose_ladder(target_variable: str, min_studies: int = MIN_STUDIES) -> dict:
+    """Leave-one-study-out over the evidence: each rung alone (falling back to the disease family when the rung holds
+    fewer than `min_studies` other studies) predicts every held-out study; rungs are ordered by median absolute error
+    where they apply, best first. No protocol under test is in the evidence."""
+    recs = records(target_variable)
+    by_study: dict[str, list] = {}
+    for r in recs:
+        by_study.setdefault(r["study"], []).append(r)
+    errors: dict[str, list] = {k: [] for k in RUNG_KEYS}
+    family_errors = []
+    for study, arms in by_study.items():
+        a = max(arms, key=lambda r: r["n"])
+        obs = a["count"] / a["n"]
+        others = [r for r in recs if r["disease_family"] == a["disease_family"] and r["study"] != study]
+        fam = pooled(others)
+        if fam is None:
+            continue
+        family_errors.append(abs(fam["estimate"] - obs))
+        agents = {x.strip().casefold() for x in (a.get("regimen") or "").split("+") if x.strip()}
+        rungs = _rungs(others, _classes(a["class_signature"]), agents, a["age_group"], a["phase"],
+                       lambda r: {x.strip().casefold() for x in (r.get("regimen") or "").split("+") if x.strip()})
+        for k, (_, rs) in rungs.items():
+            if len({r["study"] for r in rs}) >= min_studies:
+                errors[k].append(abs(pooled(rs)["estimate"] - obs))
+    summary = {k: {"applies_to": len(v), "median_abs_error": float(np.median(v)) if v else None} for k, v in errors.items()}
+    usable = [k for k, v in summary.items() if v["median_abs_error"] is not None and v["applies_to"] >= 20]
+    order = sorted(usable, key=lambda k: summary[k]["median_abs_error"])
+    return {"order": order, "rungs": summary, "whole_family_median_abs_error": float(np.median(family_errors)),
+            "held_out_studies": len(family_errors), "rule": f"each rung alone, leave-one-study-out; at least {min_studies} other studies; at least 20 applicable studies"}
 
 
 def arm_age_group(spec: dict) -> str:
