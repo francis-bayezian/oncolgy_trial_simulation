@@ -38,3 +38,12 @@ def test_random_effects_pooling_is_exact_without_heterogeneity_and_widens_with_i
     spread = [{"study": f"s{i}", "count": c, "n": 100} for i, c in enumerate((5, 15, 30, 45, 60))]
     q = sg.pooled(spread)
     assert q["between_study_tau_logit"] > 0.5 and q["ci95"][1] - q["ci95"][0] > p["ci95"][1] - p["ci95"][0]
+
+
+def test_arms_of_unstated_status_enroll_when_none_is_stated_open():
+    from clinical_asset.trial.recruitment import randomization_plan
+
+    spec = {"arms": [{"arm_id": "A", "label": "a", "status": "unclear"}, {"arm_id": "B", "label": "b", "status": "closed"}],
+            "randomization": {}, "stratification": {"strata": []}}
+    plan = randomization_plan(spec)
+    assert [a["arm_id"] for a in plan["arms"]] == ["A"] and "assumed to enroll" in plan["arm_status_note"]

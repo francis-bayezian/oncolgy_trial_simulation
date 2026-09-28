@@ -145,3 +145,9 @@ def test_a_non_binding_futility_stop_is_ignored_for_the_error_rates():
                              beta_quote="power 0.9", early_stop_binding="non_binding"))
     oc = r["operating_characteristics"]["at_p0"]
     assert abs(oc["prob_success_ignoring_interim"] - stats.binom.sf(2, 17, 0.05)) < 1e-12
+
+
+def test_count_thresholds_read_fractions_and_strict_inequalities():
+    assert dr.bound("p_Efficacy < 8/22", "at_most") == [7.0] and dr.bound("0 or 1", "at_most") == [1.0]
+    assert dr.bound("> 4/22", "at_least") == [5.0] and dr.bound("2 or more", "at_least") == [2.0]
+    assert dr.bound("p_Efficacy <21/51", "at_least") == [21.0]           # a failure condition leaves the success count at 21

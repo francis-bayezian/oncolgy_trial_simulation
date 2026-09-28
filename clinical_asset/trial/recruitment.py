@@ -53,12 +53,28 @@ def accrual_plan(spec: dict) -> dict:
     scenarios.sort(key=lambda x: x["rate_per_year"])
     for sc in scenarios:
         sc["scenario"] = f"accrual_{sc['rate_per_year']:g}_per_year"
+    if not scenarios and target:
+        # no stated rate, but a stated accrual period for the target ('uniform accrual ... over a 36-month period'):
+        # the rate it implies, labelled as derived
+        for s in sizes:
+            text = _q(s.get("evidence")) or ""
+            m = re.search(r"(\d+(?:\.\d+)?)\s*-?\s*(month|year)", text, re.IGNORECASE) if s["quantity"] == "accrual_duration" else None
+            if m:
+                years = float(m.group(1)) / (12 if m.group(2).casefold() == "month" else 1)
+                rate = target["patients"] / years
+                scenarios.append({"rate_per_year": rate, "evidence": text, "derived": f"target {target['patients']} over {years:g} years",
+                                  "scenario": f"accrual_{rate:.0f}_per_year_derived"})
+                break
     return {"target": target, "scenarios": scenarios, "excluded_rates": excluded}
 
 
 def randomization_plan(spec: dict) -> dict:
     r = spec.get("randomization") or {}
     open_arms = [a for a in spec["arms"] if a.get("status") == "open"]
+    arm_status_note = "arms stated as open"
+    if not open_arms:          # no arm is stated to be open: every arm not stated to be closed enrolls (flagged)
+        open_arms = [a for a in spec["arms"] if a.get("status") != "closed"]
+        arm_status_note = "no arm is stated to be open in the compiled version: every arm not stated to be closed is assumed to enroll"
     randomized = []
     for q in r.get("arms") or []:
         text = (_q(q) or "").casefold()
@@ -72,6 +88,7 @@ def randomization_plan(spec: dict) -> dict:
     method_text = " ".join(filter(None, [_q(r.get("method")), _q(r.get("timing"))]))
     return {"arms": [{"arm_id": a["arm_id"], "label": _q(a["label"]), "description": " ".join((_q(a.get("description")) or "").split())}
                      for a in randomized],
+            "arm_status_note": arm_status_note,
             "ratio": ratio if ratio_ok else None,
             "ratio_derivation": (r.get("allocation") or {}).get("derivation") if ratio_ok else "NOT_STATED",
             "method_text": method_text,

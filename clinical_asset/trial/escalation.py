@@ -232,7 +232,11 @@ def run(spec_lock: Path, out_dir: Path, replicates: int = 5000, seed: int = 2026
         entry = {"decision_rule_id": r["decision_rule_id"], "status": r.get("status"), "design_family": r["design_family"], "rule": r["rule"]}
         levels = len(r["rule"]["dose_levels"])
         ladder = (r["rule"].get("ladder") or {}).get("start")
-        if r.get("status") != "EXECUTABLE" or not r["rule"]["rules"]:
+        from .binary import accept_review
+
+        runnable = r.get("status") == "EXECUTABLE" or (accept_review() and r.get("status") == "REVIEW_REQUIRED" and not r["rule"].get("issues"))
+        entry["run_despite_review"] = r.get("status") != "EXECUTABLE"
+        if not runnable or not r["rule"]["rules"]:
             entry["result"] = "UNRESOLVED: the escalation rule is not executable in the StudySpec"
         elif levels == 0 and not ladder:
             entry["result"] = "UNRESOLVED: the protocol states neither dose levels nor a starting dose with increments"

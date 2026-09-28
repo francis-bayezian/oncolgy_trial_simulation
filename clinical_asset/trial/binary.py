@@ -51,8 +51,24 @@ def _q(x):
     return (x or {}).get("text") if isinstance(x, dict) else x
 
 
+def accept_review() -> bool:
+    """User decision 2026-09-28 (blind runs): rules the verifiers flagged REVIEW_REQUIRED still run when their compiled
+    rule is complete, and every result says so. Set PIPELINE_ACCEPT_REVIEW=0 to require EXECUTABLE rules only."""
+    import os
+
+    return os.environ.get("PIPELINE_ACCEPT_REVIEW", "1") != "0"
+
+
 def binary_rules(spec: dict) -> list[dict]:
-    return [r for r in spec.get("decision_rules") or [] if r["kind"] == "binary" and r.get("status") == "EXECUTABLE"]
+    out = []
+    for r in spec.get("decision_rules") or []:
+        if r["kind"] != "binary":
+            continue
+        if r.get("status") == "EXECUTABLE":
+            out.append(r)
+        elif accept_review() and r.get("status") == "REVIEW_REQUIRED" and not r.get("compile_issues") and r["rule"].get("success_if_at_least") is not None:
+            out.append({**r, "run_despite_review": True})
+    return out
 
 
 def arm_text(spec: dict, rule: dict) -> str:
@@ -213,6 +229,8 @@ def run_binary(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Pa
             "cited_evidence": [{"fact_id": c["fact_id"], "rate": c["rate"],
                                 "prob_of_interest": None if b["success_if_at_least"] is None else dr.prob_success(b, c["rate"])} for c in usable],
             "descriptive": bool(rule.get("descriptive")),
+            "run_despite_review": bool(rule.get("run_despite_review")),
+            "verifier_note": (rule.get("verification") or {}).get("reviewer_note") if rule.get("run_despite_review") else None,
             "evidence_prior": evidence_prior(spec, rule, b, primary_name, model_client, rng),
             "arm_status": [next((a["status"] for a in spec["arms"] if a["arm_id"] == aid), None) for aid in rule["arms"]]})
     doc = {"binary_version": BINARY_VERSION, "seed": seed, "replicates": replicates,

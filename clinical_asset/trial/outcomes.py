@@ -448,6 +448,7 @@ def build_outcome_model(model_client: Any, spec_lock: Path, facts_lock: Path, ou
         "assessment_timing": "EFS events are observed at their true time: detection at the next scheduled assessment is not applied",
         "efs_origin": "enrollment (= randomization): the protocol does not state the EFS time origin (user decision 2026-09-27)",
     }
+    evidence_fill(spec, model)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "outcome_model.json").write_text(json.dumps(model, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
@@ -456,3 +457,53 @@ def build_outcome_model(model_client: Any, spec_lock: Path, facts_lock: Path, ou
                     "asset_ae_signature": {k: v["class_signature"] for k, v in asset_aes.items()},
                     "bindings_usable": sum(it["status"] == "USABLE" for it in bindings["items"]), "bindings": len(bindings["items"])})
     return summary
+
+
+# ----------------------------------------------------------------------------- evidence where the protocol states nothing
+
+ENDPOINT_WORDS = (("progression_free_survival", ("progression-free", "progression free", "pfs")), ("overall_survival", ("overall survival", " os")),
+                  ("event_free_survival", ("event-free", "event free", "efs")), ("disease_free_survival", ("disease-free", "disease free", "dfs")))
+
+
+def _months(text: str) -> float | None:
+    m = re.search(r"(\d+(?:\.\d+)?)\s*-?\s*(month|year|week)", text or "", re.IGNORECASE)
+    if not m:
+        return None
+    v, unit = float(m.group(1)), m.group(2).casefold()
+    return v if unit == "month" else v * 12 if unit == "year" else v * 12 / 52.18
+
+
+def evidence_fill(spec: dict, model: dict) -> None:
+    """When the protocol states no control-arm curve, the control arm's median from the most similar subgroup of the
+    evidence (reported medians, random-effects pooled) gives an exponential control curve, labelled as evidence. When
+    it states no evaluable-patient analysis rule but states its analysis as a number of events, the analysis is
+    event-driven: the stated events, the target accrual, and the stated accrual plus follow-up as the latest time."""
+    from ..planning.report import protocol_features
+    from .safety import class_map, v3_features
+    from .subgroups import arm_age_group, estimate_median
+
+    primary = next((e for e in spec["endpoints"] if e["role"] == "primary"), None)
+    name = " " + " ".join(((_q(primary.get("name")) if primary else "") or "").split()).casefold()
+    variable = next((v for v, words in ENDPOINT_WORDS if any(w in name for w in words)), None)
+    if model["control_efs"].get("status") != "RESOLVED" and primary and primary.get("type") == "time_to_event" and variable and model.get("control_arm_id"):
+        label = next((a["label"] for a in model["arms"] if a["arm_id"] == model["control_arm_id"]), "")
+        feats = v3_features(spec, label, class_map(), {}, Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
+        phase = protocol_features(spec, None, Path("x"))["phase"]
+        est = estimate_median(variable, feats["disease_family"], feats["classes"], [x["agent"] for x in feats["agents"]], arm_age_group(spec), phase)
+        if est.get("status") == "RESOLVED":
+            lam = math.log(2) / (est["median_months"] / 12)
+            model["control_efs_protocol"] = model["control_efs"]
+            model["control_efs"] = {"status": "RESOLVED", "family": "exponential (evidence)", "cure_fraction": 0.0, "failure_rate_per_year": lam,
+                                    "source": "evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol)",
+                                    "evidence": est, "endpoint_variable": variable}
+    rule = model["analysis_rule"]
+    if not rule.get("evaluable_target"):
+        sizes = spec.get("sample_size") or []
+        events = [float(x["value"]) for x in sizes if x["quantity"] == "full_information_events" and x.get("value")
+                  and "event" in (str(x.get("unit")) + " " + str(_q(x.get("evidence")) or "")).casefold()]
+        accrual = [float(x["value"]) for x in sizes if x["quantity"] in ("target_accrual", "maximum_accrual") and x.get("value")]
+        periods = [_months(_q(x.get("evidence")) or "") for x in sizes if x["quantity"] in ("accrual_duration", "followup_duration")]
+        if events and accrual:
+            rule.update({"evaluable_target": int(max(accrual)), "min_followup_years": 0.0, "event_target": int(max(events)),
+                         "max_followup_years": (sum(p for p in periods if p) / 12) if any(periods) else None,
+                         "wording": "event-driven analysis compiled from the stated full-information events and target accrual"})

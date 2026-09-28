@@ -106,6 +106,29 @@ def _count(text: str | None) -> list[float]:
     return [] if "%" in (text or "") else _numbers(text)
 
 
+_FRACTION = re.compile(r"(\d+)\s*/\s*(\d+)")
+_STRICT_LESS = re.compile(r"(?<![<≤])<(?!=)|\bfewer than\b|\bless than\b|\bbelow\b", re.IGNORECASE)
+_STRICT_MORE = re.compile(r"(?<![>≥])>(?!=)|\bmore than\b|\bgreater than\b|\babove\b|\bexceed", re.IGNORECASE)
+_INCLUSIVE = re.compile(r"≤|<=|≥|>=|or fewer|or less|or more|at least|at most", re.IGNORECASE)
+
+
+def bound(text: str | None, kind: str) -> list[float]:
+    """A count threshold as the rule uses it. 'k/n' counts k; for an 'at_most' threshold a strict '< k' / 'fewer than
+    k' is at most k - 1; for an 'at_least' threshold a strict '> k' / 'more than k' is at least k + 1 (a failure
+    condition written as '< k' leaves the success threshold at k). '2 or more', '<= 3' are taken as written."""
+    t = text or ""
+    frac = _FRACTION.search(t)
+    values = [float(frac.group(1))] if frac else _numbers(t)
+    if not values:
+        return []
+    inclusive = bool(_INCLUSIVE.search(t))
+    if kind == "at_most":
+        v = max(values)
+        return [v - 1 if _STRICT_LESS.search(t) and not inclusive else v]
+    v = min(values)
+    return [v + 1 if _STRICT_MORE.search(t) and not inclusive else v]
+
+
 def _rate(text: str | None) -> float | None:
     """'15%' -> 0.15, 'p0=0.15' -> 0.15, '0.10' -> 0.10."""
     if not text:
@@ -199,14 +222,14 @@ def binary_rule(raw: dict) -> dict:
         if toxicity:
             # a toxicity rule stops when at least k patients have the event; it is held as the equivalent rule on patients
             # WITHOUT the event (at most n - k of them), so the same exact computations apply to the complement rate
-            ev = _numbers(s.get("stop_if_events_at_least_quote"))
+            ev = bound(s.get("stop_if_events_at_least_quote"), "at_least")
             at_most = (int(n[-1]) - int(min(ev))) if n and ev else None
             stages.append({"n": int(n[-1]) if n else None, "stop_if_at_most": at_most, "stop_if_events_at_least": int(min(ev)) if ev else None})
             if not n:
                 issues.append(f"stage {k + 1}: no cumulative sample size")
             continue
-        stop = _numbers(s["stop_if_at_most_quote"])
-        cont = _numbers(s["continue_if_at_least_quote"])
+        stop = bound(s["stop_if_at_most_quote"], "at_most")
+        cont = bound(s["continue_if_at_least_quote"], "at_least")
         at_most = max(stop) if stop else (min(cont) - 1 if cont else None)
         if not n:
             issues.append(f"stage {k + 1}: no cumulative sample size")
@@ -220,7 +243,7 @@ def binary_rule(raw: dict) -> dict:
         if stages:
             stages[-1] = {**final, "stop_if_at_most": None}
     else:
-        success = _count(raw["success_if_at_least_quote"])
+        success = [] if "%" in (raw["success_if_at_least_quote"] or "") else bound(raw["success_if_at_least_quote"], "at_least")
     rule = {"stages": stages, "success_if_at_least": int(min(success)) if success else None, "family": raw.get("family", ""),
             "outcome": "toxicity" if toxicity else "response", "early_stop_binding": raw.get("early_stop_binding") or "not_stated",
             "p0": _rate(raw["p0_quote"]), "p1": _rate(raw["p1_quote"]), "alpha": _rate(raw["alpha_quote"]), "beta": beta,
@@ -439,8 +462,9 @@ def render_rule(r: dict) -> str:
         stages = "; ".join(parts)
         if tox:
             last = b["stages"][-1] if b["stages"] else {}
-            threshold = (f"the study stops if at least {last.get('stop_if_events_at_least')} of the {last.get('n')} patients have the event "
-                         f"(e.g. a DLT) and proceeds if at most {last.get('stop_if_events_at_least', 1) - 1} do")
+            k = last.get("stop_if_events_at_least")
+            threshold = (f"the study stops if at least {k} of the {last.get('n')} patients have the event (e.g. a DLT) and proceeds if at most "
+                         f"{k - 1} do" if k is not None else "no final event threshold is stated")
         else:
             threshold = f"of interest if at least {b['success_if_at_least']} responses" + (f" (derived: {b['success_derivation']})" if b.get("success_derivation") else "")
         if r.get("decision_quote"):

@@ -250,6 +250,12 @@ def main(argv: list[str] | None = None) -> int:
     cbl.add_argument("--fetched-at", required=True)
     cbl.add_argument("--locked-at", required=True, help="when the protocol's predictions were locked")
     cbl.add_argument("--out", type=Path, required=True)
+    cmd = commands.add_parser("compare-registry-medians", help="Registry median time-to-event against the locked control-arm prediction.")
+    cmd.add_argument("--outcomes", type=Path, required=True)
+    cmd.add_argument("--safety", type=Path, help="locked safety directory (arm agents to identify the control group)")
+    cmd.add_argument("--registry", type=Path, required=True)
+    cmd.add_argument("--fetched-at", required=True)
+    cmd.add_argument("--out", type=Path, required=True)
     cs = commands.add_parser("compare-registry-safety", help="Blind comparison of locked adverse-event predictions with the registry.")
     cs.add_argument("--results", type=Path, required=True, help="locked safety results directory")
     cs.add_argument("--registry", type=Path, required=True)
@@ -451,6 +457,11 @@ def main(argv: list[str] | None = None) -> int:
             from .trial.outputs import compare_baseline
             doc = compare_baseline(args.studyspec, args.registry, args.fetched_at, args.locked_at, args.out)
             print(json.dumps(doc.get("summary") or doc.get("status"), indent=1, default=str))
+            return 0
+        if args.command == "compare-registry-medians":
+            from .trial.compare_medians import run as run_medians
+            doc = run_medians(args.outcomes, args.registry, args.fetched_at, args.out, args.safety)
+            print(json.dumps({"order_verified": doc["order_verified"], "measures": len(doc["items"])}, indent=1))
             return 0
         if args.command == "compare-registry-safety":
             from .trial.safety import run_compare_safety

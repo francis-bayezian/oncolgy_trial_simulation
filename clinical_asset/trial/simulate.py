@@ -135,12 +135,20 @@ def simulate_arrays(enroll_day: np.ndarray, arm: np.ndarray, strata: np.ndarray,
         raise ValueError(f"the cohort holds {reached[-1]} evaluable subjects, fewer than the target {target}")
     n = int(np.searchsorted(reached, target) + 1)             # accrual stops when the target is reached
     enroll, arm, strata = enroll_day[:n], arm[:n], strata[:n]
-    analysis_day = float(enroll[-1] + rule["min_followup_years"] * DAY)
     experimental = arm != control
     efs = np.where(experimental, sample_efs_years(n, model["control_efs"], hr, rng), sample_efs_years(n, model["control_efs"], 1.0, rng)) * DAY
     ltf = model["loss_to_follow_up"]
     loss = rng.exponential(DAY / ltf["rate_per_year"], size=n) if ltf["status"] == "RESOLVED" else np.full(n, np.inf)
     off_study = (model.get("off_study_limit") or {}).get("days") or np.inf
+    if rule.get("event_target"):
+        # event-driven analysis: when the stated number of events has been observed (calendar time), or at the latest
+        # stated follow-up when it never is
+        observed = np.sort(enroll[(efs < loss) & (efs < off_study)] + efs[(efs < loss) & (efs < off_study)])
+        k = int(rule["event_target"])
+        latest = float(enroll[-1] + (rule.get("max_followup_years") or 5.0) * DAY)
+        analysis_day = float(min(observed[k - 1], latest)) if len(observed) >= k else latest
+    else:
+        analysis_day = float(enroll[-1] + rule["min_followup_years"] * DAY)
     admin = analysis_day - enroll
     end = np.minimum.reduce([efs, loss, np.full(n, off_study), admin])
     event = efs <= np.minimum.reduce([loss, np.full(n, off_study), admin])

@@ -217,3 +217,72 @@ def arm_age_group(spec: dict) -> str:
 
 def _norm(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", (t or "").casefold()).strip("_")
+
+
+# ----------------------------------------------------------------------------- survival medians (months) by subgroup
+
+_TO_MONTHS = {"month": 1.0, "months": 1.0, "week": 12 / 52.18, "weeks": 12 / 52.18, "day": 12 / 365.25, "days": 12 / 365.25,
+              "year": 12.0, "years": 12.0}
+
+
+@lru_cache(maxsize=4)
+def median_records(variable: str) -> tuple:
+    """Study arms reporting the median of a time-to-event endpoint (months), with disease family, drug classes,
+    regimen, arm type, phase and age group (V1 evidence table, verified)."""
+    import pyarrow.parquet as pq
+
+    from ..spa2.taxonomy import regimen_signature
+
+    evidence_provenance()
+    families = json.loads(Path("data/spa_work/disease_families.json").read_text(encoding="utf-8"))
+    classes = json.loads(Path("data/spa_work/drug_classes.json").read_text(encoding="utf-8"))
+    cols = ["nct_id", "variable", "statistic_family", "value", "unit", "denominator", "disease", "regimen", "arm_type", "registry_group"]
+    out = []
+    for r in pq.read_table(V1_TABLE, columns=cols).to_pylist():
+        if r["variable"] != variable or r["statistic_family"] != "median_time" or not r["value"] or not r["denominator"]:
+            continue
+        factor = _TO_MONTHS.get(str(r["unit"] or "").casefold())
+        if not factor:
+            continue
+        fam = (families.get(r["disease"]) or {})
+        comps = [c.strip() for c in str(r["regimen"] or "").split(" + ") if c.strip()]
+        out.append({"study": r["nct_id"], "arm": f"{r['nct_id']}|{r['registry_group']}", "months": float(r["value"]) * factor, "n": int(r["denominator"]),
+                    "disease_family": fam.get("label", "other") if (fam.get("confidence") or 0) >= 0.7 else "other",
+                    "class_signature": regimen_signature(comps, classes)[0] if comps else "unclassified", "regimen": r["regimen"] or "",
+                    "arm_type": r["arm_type"], **study_attributes(r["nct_id"])})
+    return tuple(out)
+
+
+def pooled_median(recs: list[dict]) -> dict | None:
+    """Random-effects average of log medians (approximate variance 2/n per arm: about half of the patients have had
+    the event by the median), as a median in months with confidence intervals."""
+    if not recs:
+        return None
+    y = np.log([r["months"] for r in recs])
+    v = np.array([2.0 / max(r["n"], 2) for r in recs])
+    w = 1 / v
+    mu_f = float(np.sum(w * y) / np.sum(w))
+    q, df = float(np.sum(w * (y - mu_f) ** 2)), len(recs) - 1
+    c = float(np.sum(w) - np.sum(w ** 2) / np.sum(w))
+    tau2 = max(0.0, (q - df) / c) if df > 0 and c > 0 else 0.0
+    ws = 1 / (v + tau2)
+    mu, se = float(np.sum(ws * y) / np.sum(ws)), math.sqrt(1 / float(np.sum(ws)))
+    return {"median_months": math.exp(mu), "ci95": [math.exp(mu - 1.96 * se), math.exp(mu + 1.96 * se)],
+            "single_trial_80": [math.exp(mu - 1.2816 * math.hypot(se, math.sqrt(tau2))), math.exp(mu + 1.2816 * math.hypot(se, math.sqrt(tau2)))],
+            "studies": len({r["study"] for r in recs}), "arms": len(recs), "patients": int(sum(r["n"] for r in recs))}
+
+
+def estimate_median(variable: str, family: str, classes: list[str], agents: list[str], age_group: str, phase: str | None,
+                    min_studies: int = MIN_STUDIES) -> dict:
+    """The most specific subgroup (the data-chosen rung order) holding at least `min_studies` studies, for a control
+    arm's median; the whole disease family last."""
+    recs = [r for r in median_records(variable) if r["disease_family"] == family]
+    if not recs:
+        return {"status": "UNRESOLVED", "reason": f"no reported {variable} median in the {family} family"}
+    mine = set(classes) - {"other", "unclassified"}
+    agent_set = {a.casefold() for a in agents if a}
+    rungs = _rungs(recs, mine, agent_set, age_group, phase,
+                   lambda r: {x.strip().casefold() for x in (r.get("regimen") or "").split("+") if x.strip()})
+    ladder = [(rungs[k][0], rungs[k][1]) for k in ladder_order("serious_adverse_event") if k in rungs] + [("whole disease family", recs)]
+    level, chosen = next(((lv, rs) for lv, rs in ladder if len({r["study"] for r in rs}) >= min_studies), ladder[-1])
+    return {"status": "RESOLVED", "variable": variable, "family": family, "subgroup": level, **pooled_median(chosen)}

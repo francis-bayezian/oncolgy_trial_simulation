@@ -10,47 +10,67 @@ P=".venv/Scripts/python.exe -m clinical_asset.cli"; L=data/locked/$ID; T=$OUT_RO
 ASSET=data/planning_asset_v2_2/operational; ASSET_LOCK=data/locked/planning_asset/operational_v2.2.0/lock.json
 SAFETY=${SAFETY_ASSET:-data/locked/safety_asset/v3.1.0}
 mkdir -p "$T"
-lock() { $P lock-stage --stage "$1" --out "$2" --kind "$3" --version "$V" "${@:4}" --code clinical_asset > /dev/null; echo "locked $2"; }
+lock() { if [ -d "$2" ]; then echo "exists $2 (kept)"; return; fi
+  $P lock-stage --stage "$1" --out "$2" --kind "$3" --version "$V" "${@:4}" --code clinical_asset > /dev/null; echo "locked $2"; }
+locked() { [ -d "$1" ]; }
 
-$P lock-studyspec --spec "$SPEC_DIR" --protocol "$PDF" --out "$L/studyspec_v$V" --version "$V" > /dev/null; echo "locked $L/studyspec_v$V"
+if [ -d "$L/studyspec_v$V" ]; then echo "exists $L/studyspec_v$V (resuming)"; else
+  $P lock-studyspec --spec "$SPEC_DIR" --protocol "$PDF" --out "$L/studyspec_v$V" --version "$V" > /dev/null; echo "locked $L/studyspec_v$V"; fi
 SPEC=$L/studyspec_v$V
 # the protocol's condition and any agent new to the drug-class map are mapped by the evidence build's mappers (cached)
 $P map-protocol-conditions --studyspec "$SPEC" > "$T/condition_family.json"
 $P extend-drug-classes --studyspec "$SPEC" --created "$(date +%F)" > "$T/drug_classes.json"
-if [ "$FACTS" = new ]; then
+if [ "$FACTS" = new ] && ! locked "$L/protocol_facts_v$V"; then
   $P extract-facts --protocol "$PDF" --out "$T/facts" > "$T/facts.log"
   $P lock-facts --facts "$T/facts" --protocol "$PDF" --out "$L/protocol_facts_v$V" --version "$V" > /dev/null; echo "locked $L/protocol_facts_v$V"
+  FACTS_LOCK=$L/protocol_facts_v$V
+elif [ "$FACTS" = new ]; then
   FACTS_LOCK=$L/protocol_facts_v$V
 else
   FACTS_LOCK=$L/protocol_facts_v$FACTS
 fi
-$P build-population --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/population" --n 10000 --seed 20260927 > /dev/null
+locked "$L/population_v$V" || $P build-population --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/population" --n 10000 --seed 20260927 > /dev/null
 lock "$T/population" "$L/population_v$V" population --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json \
   --input simulation_parameters_v3=data/simulation_parameters_v3/manifest.json
-$P build-eligibility --studyspec "$SPEC" --population "$L/population_v$V" --out "$T/eligibility" > /dev/null
+locked "$L/eligibility_v$V" || $P build-eligibility --studyspec "$SPEC" --population "$L/population_v$V" --out "$T/eligibility" > /dev/null
 lock "$T/eligibility" "$L/eligibility_v$V" eligibility --input studyspec=$SPEC/lock.json --input population=$L/population_v$V/lock.json
-$P build-cohorts --studyspec "$SPEC" --population "$L/population_v$V" --eligibility "$L/eligibility_v$V" --out "$T/cohorts" --seed 20260927 > /dev/null
+locked "$L/cohorts_v$V" || $P build-cohorts --studyspec "$SPEC" --population "$L/population_v$V" --eligibility "$L/eligibility_v$V" --out "$T/cohorts" --seed 20260927 > /dev/null
 lock "$T/cohorts" "$L/cohorts_v$V" cohorts --input studyspec=$SPEC/lock.json --input population=$L/population_v$V/lock.json \
   --input eligibility=$L/eligibility_v$V/lock.json
-$P build-outcome-model --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/outcomes" > "$T/outcomes.log"
+locked "$L/outcomes_v$V" || $P build-outcome-model --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/outcomes" > "$T/outcomes.log"
 lock "$T/outcomes" "$L/outcomes_v$V" outcomes --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json \
   --input simulation_parameters_v3=data/simulation_parameters_v3/manifest.json --input simulation_parameters_v2=data/simulation_parameters_v2/manifest.json
 OUT=$L/outcomes_v$V
 
+if [ "$ENGINE" = auto ]; then
+  ENGINE=$(.venv/Scripts/python.exe -c "
+import json
+s = json.load(open('$SPEC/studyspec.json', encoding='utf-8'))
+esc = any(r['kind'] == 'dose_escalation' for r in s.get('decision_rules') or [])
+tte = any(e['role'] == 'primary' and e.get('type') == 'time_to_event' for e in s['endpoints']) and len(s['arms']) > 1
+print('escalation' if esc else 'tte' if tte else 'binary')")
+  echo "engine chosen from the StudySpec: $ENGINE"
+fi
+unresolved_results() {   # the engine could not run: an UNRESOLVED result with its reason, and the chain goes on
+  mkdir -p "$T/results"; .venv/Scripts/python.exe -c "
+import json, sys; json.dump({'status': 'UNRESOLVED', 'engine': '$ENGINE', 'reason': open('$T/results.log', encoding='utf-8', errors='replace').read()[-600:]},
+open('$T/results/unresolved_results.json', 'w'), indent=1)"; }
+if ! locked "$L/results_v$V"; then
 case "$ENGINE" in
   tte)
     $P run-trials --studyspec "$SPEC" --population "$L/population_v$V" --eligibility "$L/eligibility_v$V" --cohorts "$L/cohorts_v$V" \
-      --outcomes "$OUT" --out "$T/results" > /dev/null
+      --outcomes "$OUT" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json --input population=$L/population_v$V/lock.json \
       --input eligibility=$L/eligibility_v$V/lock.json --input cohorts=$L/cohorts_v$V/lock.json --input outcomes=$OUT/lock.json ;;
   binary)
-    $P run-binary --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/results" > "$T/results.log"
+    $P run-binary --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json \
       --input cohorts=$L/cohorts_v$V/lock.json ;;
   escalation)
-    $P run-escalation --studyspec "$SPEC" --out "$T/results" > /dev/null
+    $P run-escalation --studyspec "$SPEC" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json ;;
 esac
+fi
 
 $P build-planning-report --studyspec "$SPEC" --cohorts "$L/cohorts_v$V" --eligibility "$L/eligibility_v$V" --results "$L/results_v$V" \
   --outcomes "$OUT" --accrual-asset "$ASSET" --out "$T/planning" $([ -z "$NCT" ] && echo --blind) > /dev/null

@@ -228,6 +228,8 @@ def _report(doc: dict, model: dict) -> str:
              f"Asset evidence on the effect: {doc['asset_prior']['decision']} ({doc['asset_prior']['comparisons']} comparisons).", "",
              "## Probability of success of the primary analysis by true hazard ratio", ""]
     names = list(doc["success_curve"])
+    if not names:
+        return "\n".join(lines + ["No accrual scenario could be simulated (no stated or derivable accrual rate)."]) + "\n"
     lines.append("| true HR | " + " | ".join(names) + " |")
     lines.append("| ---: | " + " | ".join("---:" for _ in names) + " |")
     for i, row in enumerate(doc["success_curve"][names[0]]):

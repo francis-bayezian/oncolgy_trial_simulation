@@ -181,6 +181,37 @@ def _running_lines(pages: list[list[Line]]) -> set[str]:
     return {pattern for pattern, c in counts.items() if c >= threshold and pattern}
 
 
+def ocr_pages(path: Path, doc_id: str, dpi: int = 200) -> list[list[Line]]:
+    """Lines of text read from the rendered page images (cached per document). OCR returns text boxes; boxes whose
+    vertical centres lie within half a box height are one line, joined left to right. Without an OCR engine the
+    document is refused: an unreadable protocol is never compiled as if it were empty."""
+    cache = CACHE / f"{doc_id}.ocr.json"
+    if cache.exists():
+        return [[Line(**x) for x in page] for page in json.loads(cache.read_text(encoding="utf-8"))]
+    try:
+        import numpy as np
+        import pypdfium2 as pdfium
+        from rapidocr_onnxruntime import RapidOCR
+    except ImportError as exc:
+        raise RuntimeError(f"{path}: no extractable text (unmapped fonts or scanned pages) and no OCR engine installed") from exc
+    engine, pdf, pages = RapidOCR(), pdfium.PdfDocument(str(path)), []
+    scale = dpi / 72
+    for number in range(len(pdf)):
+        result, _ = engine(np.array(pdf[number].render(scale=scale).to_pil()))
+        boxes = sorted(((sum(p[1] for p in box) / 4, box[0][0], max(p[1] for p in box) - min(p[1] for p in box), text)
+                        for box, text, conf in (result or []) if text.strip()), key=lambda b: (b[0], b[1]))
+        rows: list[list] = []
+        for centre, x, height, text in boxes:
+            if rows and abs(rows[-1][0] - centre) <= max(4.0, height / 2):
+                rows[-1][2].append((x, text))
+            else:
+                rows.append([centre, height, [(x, text)]])
+        pages.append([Line(number + 1, round(c / scale, 2), " ".join(t for _, t in sorted(parts))) for c, _, parts in rows])
+    CACHE.mkdir(parents=True, exist_ok=True)
+    cache.write_text(json.dumps([[asdict(line) for line in page] for page in pages], ensure_ascii=False), encoding="utf-8")
+    return pages
+
+
 def extract(path: Path, use_cache: bool = True) -> Document:
     doc_id = sha256(path)
     cache_file = CACHE / f"{doc_id}.{EXTRACTOR_VERSION}.json"
@@ -200,6 +231,14 @@ def extract(path: Path, use_cache: bool = True) -> Document:
                 rows = [[(cell or "").strip() for cell in row] for row in found.extract(x_tolerance=1.5, y_tolerance=5)]
                 if len(rows) >= 2 and max(len(r) for r in rows) >= 2:
                     tables.append(Table(number, float(found.bbox[1]), rows))
+    all_lines = [line.text for lines in raw_pages for line in lines]
+    if not all_lines or sum("(cid:" in t for t in all_lines) > 0.3 * len(all_lines):
+        # the PDF's fonts carry no character map (text extracts as glyph codes) or it holds no text: read the page images
+        # OCR drops the space after a section number ('9.7CriteriaFor...'): restore it so the outline can be found
+        raw_pages = [[Line(x.page, x.top, re.sub(r"^(\d{1,2}(?:\.\d{1,2}){0,4})\.?(?=[A-Za-z])", r"\1 ", x.text)) for x in page]
+                     for page in ocr_pages(path, doc_id)]
+        tables = []
+        metadata["text_source"] = "ocr (rapidocr): the PDF text layer was unreadable"
     running = _running_lines(raw_pages)
     kept = [[line for line in lines if re.sub(r"\d+", "#", line.text.strip()) not in running] for lines in raw_pages]
     removed = sorted(running)
