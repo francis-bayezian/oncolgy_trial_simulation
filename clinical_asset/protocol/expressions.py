@@ -42,6 +42,14 @@ COMPARATORS: list[tuple[str, str]] = sorted([
     ("between", "between"),
 ], key=lambda item: -len(item[0]))
 NUMBER = re.compile(r"(?<![\w.])[-+]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:\s*[¼-¾⅓⅔])?")
+# PDFs typeset in the Symbol font carry math signs as Private Use Area code points (U+F000 + the Symbol code): map them
+# to their Unicode meaning before any comparison is read ('ECOG PS  2' is 'ECOG PS ≤ 2').
+SYMBOL_FONT = str.maketrans({"": "≤", "": "≥", "": "<", "": ">", "": "=", "": "±",
+                             "": "×", "": "-", "": "≠", "": "≈", "": "°"})
+
+
+def symbols(text: str | None) -> str | None:
+    return text.translate(SYMBOL_FONT) if text else text
 
 
 def parse_number(text: str | None) -> float | None:
@@ -93,7 +101,7 @@ def numbers(text: str | None) -> list[float]:
 def parse_comparator(text: str | None) -> str | None:
     if not text:
         return None
-    t = " " + re.sub(r"\s+", " ", text.casefold()).strip() + " "
+    t = " " + re.sub(r"\s+", " ", symbols(text).casefold()).strip() + " "
     for phrase, op in COMPARATORS:
         if phrase.isalpha() or " " in phrase:
             if re.search(r"(?<![a-z])" + re.escape(phrase) + r"(?![a-z])", t):
@@ -107,7 +115,7 @@ def parse_range(text: str | None) -> dict | None:
     """'2 to < 6 years', '1.5 - 1.9', '≥ 16 years', 'between 3 and 21' -> bounds with inclusivity."""
     if not text:
         return None
-    t = text.replace("≤", "<=").replace("≥", ">=").replace("–", "-").replace("—", "-")
+    t = symbols(text).replace("≤", "<=").replace("≥", ">=").replace("–", "-").replace("—", "-")
     nums = [(m.start(), float(m.group(0).replace(",", ""))) for m in NUMBER.finditer(t)]
     if len(nums) >= 2:
         (p1, lo), (p2, hi) = nums[0], nums[1]

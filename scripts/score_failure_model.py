@@ -67,6 +67,8 @@ def score(P, rows):
 
 
 def main():
+    import sys
+    sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
     ap.add_argument("--asset", default="data/locked/planning_asset/operational_v2.2.0")
     ap.add_argument("--cutoff-year", type=int, default=2016)

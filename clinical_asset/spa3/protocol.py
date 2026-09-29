@@ -198,7 +198,10 @@ class BaselineGenerator:
     disease_family_map: dict = field(default_factory=dict)
 
     @classmethod
-    def load(cls, root: Path = Path("data/simulation_parameters_v3/baseline")) -> "BaselineGenerator":
+    def load(cls, root: Path | None = None) -> "BaselineGenerator":
+        if root is None:                       # the V3 build in force (an as-of-T0 build under an evidence cut-off)
+            from ..cutoff import asset
+            root = asset("v3") / "baseline"
         spec = json.loads((root / "generator_spec.json").read_text(encoding="utf-8"))
         families_path = Path(spec.get("disease_family_map", ""))
         families = json.loads(families_path.read_text(encoding="utf-8")) if families_path.is_file() else {}

@@ -305,15 +305,22 @@ def stage_survival(rows: list[dict], families: dict, classes: dict, v2_manifest:
 
 
 def build(workers: int = 6, loo_per_level: int = 40, baseline_backtests: int = 80, out_dir: Path | None = None,
-          smoke: bool = False, resume: bool = False) -> dict:
+          smoke: bool = False, resume: bool = False, exclude_file: Path | None = None, raw_dir: Path | None = None) -> dict:
     """smoke=True runs every stage on small subsets (for testing the pipeline), into out_dir.
     resume=True reuses stored 3A results (fits, calibration, binomial baseline models) and reruns
-    the remaining stages."""
-    global OUT
+    the remaining stages. exclude_file (holdout format {"nct_ids": [...]}) drops those trials' evidence rows and
+    raw_dir replaces the raw registry directory: together they build the asset as of an evidence cut-off.
+    The survival fusion stage reads V2 survival draws, which are not re-cut."""
+    global OUT, RAW
     if out_dir is not None:
         OUT = Path(out_dir)
+    if raw_dir is not None:
+        RAW = Path(raw_dir)
     v2_manifest = json.loads((V2 / "manifest.json").read_text(encoding="utf-8"))
     rows = pq.read_table(V1 / "evidence_table.parquet").to_pylist()
+    if exclude_file is not None:
+        excluded = set(json.loads(Path(exclude_file).read_text(encoding="utf-8"))["nct_ids"])
+        rows = [r for r in rows if r["nct_id"] not in excluded]
     families = json.loads((WORK / "disease_families.json").read_text(encoding="utf-8"))
     classes = json.loads((WORK / "drug_classes.json").read_text(encoding="utf-8"))
     OUT.mkdir(parents=True, exist_ok=True)

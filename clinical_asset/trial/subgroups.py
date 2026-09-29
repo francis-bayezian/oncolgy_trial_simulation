@@ -37,7 +37,9 @@ def evidence_provenance() -> dict:
     Simulation Parameter Asset V3 manifest (the table V3 was fitted on); anything else stops the estimate."""
     import hashlib
 
-    recorded = json.loads(Path("data/simulation_parameters_v3/manifest.json").read_text(encoding="utf-8"))["inputs"]["parameter_asset_v1"]["evidence_table_sha256"]
+    from ..cutoff import asset
+
+    recorded = json.loads((asset("v3") / "manifest.json").read_text(encoding="utf-8"))["inputs"]["parameter_asset_v1"]["evidence_table_sha256"]
     actual = hashlib.sha256(V1_TABLE.read_bytes()).hexdigest()
     if actual != recorded:
         raise RuntimeError(f"{V1_TABLE} does not match the checksum frozen in the V3 manifest: the evidence has changed")
@@ -51,8 +53,11 @@ def _targets() -> dict:
 
     from ..spa2 import borrow as b2
 
+    from ..cutoff import excluded
+
     evidence_provenance()                       # refuses changed evidence
-    rows = pq.read_table(V1_TABLE).to_pylist()
+    drop = excluded()                           # an evidence cut-off in force drops later trials
+    rows = [r for r in pq.read_table(V1_TABLE).to_pylist() if r["nct_id"] not in drop]
     families = json.loads(Path("data/spa_work/disease_families.json").read_text(encoding="utf-8"))
     classes = json.loads(Path("data/spa_work/drug_classes.json").read_text(encoding="utf-8"))
     return b2.build_records(rows, families, classes)
@@ -237,9 +242,12 @@ def median_records(variable: str) -> tuple:
     families = json.loads(Path("data/spa_work/disease_families.json").read_text(encoding="utf-8"))
     classes = json.loads(Path("data/spa_work/drug_classes.json").read_text(encoding="utf-8"))
     cols = ["nct_id", "variable", "statistic_family", "value", "unit", "denominator", "disease", "regimen", "arm_type", "registry_group"]
+    from ..cutoff import excluded
+
+    drop = excluded()
     out = []
     for r in pq.read_table(V1_TABLE, columns=cols).to_pylist():
-        if r["variable"] != variable or r["statistic_family"] != "median_time" or not r["value"] or not r["denominator"]:
+        if r["nct_id"] in drop or r["variable"] != variable or r["statistic_family"] != "median_time" or not r["value"] or not r["denominator"]:
             continue
         factor = _TO_MONTHS.get(str(r["unit"] or "").casefold())
         if not factor:

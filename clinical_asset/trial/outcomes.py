@@ -396,10 +396,14 @@ def regimen_classes(spec: dict, arm_label: str, drug_classes: dict[str, str]) ->
 
 
 def build_outcome_model(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Path, votes: int = 3,
-                        v3_survival: Path = Path("data/simulation_parameters_v3/survival/fused_survival_index.jsonl"),
+                        v3_survival: Path | None = None,
                         v2_toxicity: Path = Path("data/simulation_parameters_v2/toxicity/censored_toxicity_parameters.parquet"),
                         v2_classes: Path = Path("data/simulation_parameters_v2/hierarchy/drug_class_map.parquet")) -> dict:
     import pyarrow.parquet as pq
+
+    from ..cutoff import asset
+
+    v3_survival = v3_survival or asset("v3") / "survival" / "fused_survival_index.jsonl"   # as of T0 under a cut-off
 
     from .population import _section_text_of
     from .recruitment import randomization_plan

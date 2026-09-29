@@ -8,6 +8,7 @@ replaced: when historical evidence exists it is shown next to it.
 """
 
 import json
+import re
 from pathlib import Path
 
 import numpy as np
@@ -15,12 +16,62 @@ import numpy as np
 from ..protocol import design_rules as dr
 from . import events
 
-REPORT_VERSION = "planning-report-1.0.0"
+REPORT_VERSION = "planning-report-1.1.0"
 WORLDS = 5000
 
 
 def _q(x):
     return (x or {}).get("text") if isinstance(x, dict) else x
+
+
+YEARS_PER_UNIT = {"day": 1 / 365.25, "week": 7 / 365.25, "month": 1 / 12, "year": 1.0}
+ACCRUAL_WORDS = re.compile(r"\b(?:enrol|enroll|accru|recruit)\w*", re.I)
+SITE_COUNT = re.compile(r"\b(?:approximately|about|around|up to|a total of)?\s*(\d{1,4})\s+(?:[A-Za-z]+\s+){0,2}?(?:sites|centres|centers|institutions)\b"
+                        r"(?![^.]{0,40}\bof\b)", re.I)
+
+
+def accrual_durations_years(spec: dict) -> list[dict]:
+    """Stated accrual durations in years: only items with a time unit whose wording is about enrolment (a screening
+    window or a count of subjects is not an accrual duration)."""
+    out = []
+    for s in _stated(spec, "accrual_duration"):
+        unit = re.sub(r"s$", "", (s["unit"] or "").strip().casefold())
+        if unit in YEARS_PER_UNIT and ACCRUAL_WORDS.search(s["wording"] or ""):
+            out.append({**s, "years": s["value"] * YEARS_PER_UNIT[unit]})
+    return out
+
+
+def _protocol_text(spec_lock: Path) -> str | None:
+    """The locked protocol's text, after checking the PDF still matches the hash in the StudySpec lock."""
+    from ..protocol.ingest import extract, sha256
+
+    lock = json.loads((Path(spec_lock) / "lock.json").read_text(encoding="utf-8"))
+    pdf = (lock.get("inputs") or {}).get("protocol_pdf") or {}
+    if not pdf.get("path") or not Path(pdf["path"]).exists() or sha256(Path(pdf["path"])) != pdf.get("sha256"):
+        return None
+    return " ".join(extract(Path(pdf["path"])).full_text().split())
+
+
+def stated_site_count(text: str | None) -> dict:
+    """The number of sites the protocol plans, as stated ('Approximately 100 investigative sites ... are planned'):
+    the largest stated count, with its quote. Deterministic; UNRESOLVED when the protocol states none."""
+    hits = [(int(m.group(1)), m.group(0).strip()) for m in SITE_COUNT.finditer(text or "") if int(m.group(1)) >= 2]
+    if not hits:
+        return {"status": "UNRESOLVED", "reason": "the protocol states no number of sites"}
+    n, quote = max(hits)
+    return {"status": "RESOLVED", "value": n, "quote": quote, "source": "protocol (quoted)"}
+
+
+def sponsor_class(spec: dict) -> dict:
+    """The registry sponsor class of the protocol's sponsor, when its name carries a company legal form (reference
+    data: sponsor_industry_forms); otherwise UNRESOLVED and the models average over sponsor classes."""
+    from ..reference import vocabulary
+
+    name = " ".join((_q(spec["metadata"].get("sponsor")) or "").split())
+    forms = vocabulary().get("sponsor_industry_forms", [])
+    if name and any(re.search(rf"(?:^|[\s,]){re.escape(f)}(?:$|[\s,.])", name + " ", re.I) for f in forms):
+        return {"status": "RESOLVED", "value": "INDUSTRY", "quote": name, "source": "protocol (quoted): company legal form"}
+    return {"status": "UNRESOLVED", "reason": f"sponsor '{name}' has no company legal form" if name else "no sponsor stated"}
 
 
 def _stated(spec: dict, quantity: str) -> list[dict]:
@@ -41,8 +92,11 @@ def build(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, results_l
     rng = np.random.default_rng(seed)
     plan = recruitment["accrual_plan"]
     n_max = plan["target"]["patients"] if plan.get("target") else None
-    durations = [s["value"] for s in _stated(spec, "accrual_duration") if s["value"] < 100]    # years; a calendar year is not a duration
+    durations = [round(s["years"], 3) for s in accrual_durations_years(spec) if s["years"] < 100]
     deadlines = tuple(sorted(set(durations))) or (1.0, 2.0, 3.0, 5.0)
+    text = _protocol_text(spec_lock)
+    stated = {"site_count": stated_site_count(text) if text else {"status": "UNRESOLVED", "reason": "locked protocol PDF not available"},
+              "sponsor_class": sponsor_class(spec)}
 
     report = {"report_version": REPORT_VERSION, "protocol_id": _q(spec["metadata"].get("protocol_id")) or spec_lock.parent.name,
               "blind": blind, "note": ("planning predictions locked before any registry timeline was read" if blind else
@@ -74,8 +128,9 @@ def build(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, results_l
     report["accrual"] = {"target_patients": n_max, "target_source": (plan.get("target") or {}).get("source"),
                          "stated_accrual_durations_years": durations, "protocol_scenarios": scenarios,
                          "excluded_rates": plan.get("excluded_rates", []),
-                         "historical_model": _historical(accrual_asset, spec, n_max, deadlines, rng),
-                         "failure_model": _failure(accrual_asset, spec, n_max)}
+                         "stated_operational": stated,
+                         "historical_model": _historical(accrual_asset, spec, n_max, deadlines, rng, stated=stated),
+                         "failure_model": _failure(accrual_asset, spec, n_max, stated=stated)}
 
     # sample size and decision timing
     report["sample_size"] = {"maximum": n_max, "evaluable_targets": [s["value"] for s in _stated(spec, "evaluable_target")],
@@ -143,7 +198,8 @@ def protocol_features(spec: dict, n_max: int | None, family_map_file: Path, fami
             "arms": len(spec["arms"]), "sponsor_class": None}
 
 
-def _historical(asset: Path | None, spec: dict, n_max: int | None, deadlines: tuple = (), rng=None, draws: int = 8000) -> dict:
+def _historical(asset: Path | None, spec: dict, n_max: int | None, deadlines: tuple = (), rng=None, draws: int = 8000,
+                stated: dict | None = None) -> dict:
     """The historical accrual model's prediction for this protocol, next to (never instead of) the protocol's own rate."""
     if asset is None or not (Path(asset) / "accrual_model.json").exists():
         return {"status": "PENDING", "reason": "historical accrual asset not built yet"}
@@ -155,9 +211,15 @@ def _historical(asset: Path | None, spec: dict, n_max: int | None, deadlines: tu
     feats = protocol_features(spec, n_max, Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
     hist = [r for r in pq.read_table(Path(asset) / "study_level_rates.parquet").to_pylist() if r["quality"] != "ACCRUAL_UNUSABLE"]
     same_phase = [r for r in hist if r["phase"] == feats["phase"]] or hist
-    sites = np.array([r.get("site_count") or r["listed_sites"] or 1 for r in same_phase])
     rng = rng or np.random.default_rng(0)
-    picks = rng.choice(sites, size=200)               # SITE_COUNT_UNKNOWN: average over same-phase trials' site counts
+    site = (stated or {}).get("site_count") or {}
+    if site.get("status") == "RESOLVED":
+        picks = np.full(200, site["value"])
+        site_note = f"protocol (quoted): '{site['quote']}'"
+    else:
+        sites = np.array([r.get("site_count") or r["listed_sites"] or 1 for r in same_phase])
+        picks = rng.choice(sites, size=200)           # SITE_COUNT_UNKNOWN: average over same-phase trials' site counts
+        site_note = "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase"
     log_rate = np.concatenate([predict(model, {**feats, "listed_sites": int(k)}, draws=draws // 200, seed=int(i))["log_rate"]
                                for i, k in enumerate(picks)])
     per_month = np.exp(log_rate)
@@ -169,17 +231,17 @@ def _historical(asset: Path | None, spec: dict, n_max: int | None, deadlines: tu
     source = (f"historical accrual model {version} (completed and terminated non-holdout trials)" if model["manifest"].get("operational_version")
               else f"historical accrual model {version} (completed non-holdout trials)")
     return {"status": "RESOLVED", "source": source, "features": feats,
-            "site_count": "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase",
+            "site_count": site_note,
             "patients_per_month": q(per_month), "patients_per_year": q(per_month * 12),
             "enrollment_duration_years": q(months / 12) if months is not None else None,
             "p_enrollment_complete_by": {f"{d:g}y": float(np.mean(months / 12 <= d)) for d in deadlines} if months is not None else {},
             "calibration": model["manifest"].get("cross_validation") or model["manifest"]["rate_model"]["cross_validation"], "family_known": feats["disease_family"] in model["families"]}
 
 
-def _failure(asset: Path | None, spec: dict, n_max: int | None) -> dict:
+def _failure(asset: Path | None, spec: dict, n_max: int | None, stated: dict | None = None) -> dict:
     """P(the trial is withdrawn / terminated for poor accrual / terminated otherwise / completes), from the operational
-    asset's failure model. The sponsor class is not a StudySpec field: the prediction is averaged over the sponsor
-    classes of historical trials of the same phase (SPONSOR_CLASS_UNKNOWN)."""
+    asset's failure model. The sponsor class is read from the sponsor's name when it carries a company legal form;
+    otherwise the prediction is averaged over the sponsor classes of historical trials of the same phase (SPONSOR_CLASS_UNKNOWN)."""
     if asset is None or not (Path(asset) / "failure_model.json").exists():
         return {"status": "PENDING", "reason": "no failure model in the operational asset"}
     import pyarrow.parquet as pq
@@ -190,15 +252,21 @@ def _failure(asset: Path | None, spec: dict, n_max: int | None) -> dict:
     manifest = json.loads((Path(asset) / "manifest.json").read_text(encoding="utf-8"))
     feats = protocol_features(spec, n_max, Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
     hist = pq.read_table(Path(asset) / "trial_outcomes.parquet", columns=["phase", "sponsor_class"]).to_pylist()
-    same = [r["sponsor_class"] for r in hist if r["phase"] == feats["phase"]] or [r["sponsor_class"] for r in hist]
-    classes = sorted(set(same))
-    weights = np.array([same.count(c) for c in classes], dtype=float) / len(same)
+    sp = (stated or {}).get("sponsor_class") or {}
+    if sp.get("status") == "RESOLVED":
+        classes, weights = [sp["value"]], np.array([1.0])
+        sponsor_note = f"{sp['value']} ({sp['source']}: '{sp['quote']}')"
+    else:
+        same = [r["sponsor_class"] for r in hist if r["phase"] == feats["phase"]] or [r["sponsor_class"] for r in hist]
+        classes = sorted(set(same))
+        weights = np.array([same.count(c) for c in classes], dtype=float) / len(same)
+        sponsor_note = "SPONSOR_CLASS_UNKNOWN: averaged over the sponsor classes of historical trials of the same phase"
     probs = predict_failure(model, [{**feats, "sponsor_class": c} for c in classes])
     p = dict(zip(OUTCOMES, (weights @ probs).tolist(), strict=True))
     cv = manifest["failure_model"]["cross_validation"]
     return {"status": "RESOLVED", "source": f"operational asset {manifest.get('operational_version')} failure model",
             "features": {k: feats[k] for k in ("phase", "randomized", "pediatric", "start_year", "arms", "disease_family")},
-            "sponsor_class": "SPONSOR_CLASS_UNKNOWN: averaged over the sponsor classes of historical trials of the same phase",
+            "sponsor_class": sponsor_note,
             "probabilities": p, "p_accrual_failure": p["withdrawn"] + p["terminated_accrual"],
             "base_rates": cv["base_rates"], "calibration": {k: cv[k] for k in ("log_loss", "base_rate_log_loss", "accrual_failure_auc", "accrual_failure_reliability")}}
 

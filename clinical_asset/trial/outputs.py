@@ -329,9 +329,12 @@ def _decisions(results_lock: Path | None) -> dict:
 
     if results_lock is None:
         return {"status": "UNRESOLVED", "reason": "no science results"}
-    for name in ("binary_results.json", "trial_results.json", "escalation_results.json"):
+    for name in ("binary_results.json", "trial_results.json", "escalation_results.json", "ni_results.json"):
         if (Path(results_lock) / name).exists():
             r = load_locked(results_lock, name)
+            if name == "ni_results.json":
+                return {"kind": "non-inferiority (binary, synthesis)", "power_at_protocol_assumption": r.get("power_at_protocol_assumption"),
+                        "p_success_curve": r.get("p_success_curve"), "predicted_response": r.get("predicted_response")}
             if name == "binary_results.json":
                 return {"kind": "binary rules", "rules": [
                     {"rule": x["decision_rule_id"], "arm": (x["arm"] or "")[:60],

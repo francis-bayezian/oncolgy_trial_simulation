@@ -7,7 +7,8 @@ set -euo pipefail
 ID=$1; PDF=$2; SPEC_DIR=$3; ENGINE=$4; V=$5; FACTS=$6; OUT_ROOT=$7; NCT=${8:-}; FETCHED=${9:-}
 export PYTHONPATH=. PYTHONIOENCODING=utf-8
 P=".venv/Scripts/python.exe -m clinical_asset.cli"; L=data/locked/$ID; T=$OUT_ROOT/$ID/v$V
-ASSET=data/planning_asset_v2_2/operational; ASSET_LOCK=data/locked/planning_asset/operational_v2.2.0/lock.json
+ASSET=${OPERATIONAL_ASSET:-data/planning_asset_v2_2/operational}; ASSET_LOCK=${OPERATIONAL_ASSET_LOCK:-data/locked/planning_asset/operational_v2.2.0/lock.json}
+V3_DIR=${V3_DIR:-data/simulation_parameters_v3}   # an as-of-T0 build under CLINICAL_EVIDENCE_CUTOFF
 SAFETY=${SAFETY_ASSET:-data/locked/safety_asset/v3.1.0}
 mkdir -p "$T"
 lock() { if [ -d "$2" ]; then echo "exists $2 (kept)"; return; fi
@@ -29,9 +30,12 @@ elif [ "$FACTS" = new ]; then
 else
   FACTS_LOCK=$L/protocol_facts_v$FACTS
 fi
-locked "$L/population_v$V" || $P build-population --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/population" --n 10000 --seed 20260927 > /dev/null
+if ! locked "$L/population_v$V"; then     # demographics (V3), then evidence-based baseline variables (ECOG, weight, height)
+  $P build-population --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/population_base" --n 10000 --seed 20260927 > /dev/null
+  $P augment-population --population "$T/population_base" --studyspec "$SPEC" --condition-family "$T/condition_family.json" --out "$T/population" > /dev/null
+fi
 lock "$T/population" "$L/population_v$V" population --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json \
-  --input simulation_parameters_v3=data/simulation_parameters_v3/manifest.json
+  --input simulation_parameters_v3=$V3_DIR/manifest.json
 locked "$L/eligibility_v$V" || $P build-eligibility --studyspec "$SPEC" --population "$L/population_v$V" --out "$T/eligibility" > /dev/null
 lock "$T/eligibility" "$L/eligibility_v$V" eligibility --input studyspec=$SPEC/lock.json --input population=$L/population_v$V/lock.json
 locked "$L/cohorts_v$V" || $P build-cohorts --studyspec "$SPEC" --population "$L/population_v$V" --eligibility "$L/eligibility_v$V" --out "$T/cohorts" --seed 20260927 > /dev/null
@@ -39,7 +43,7 @@ lock "$T/cohorts" "$L/cohorts_v$V" cohorts --input studyspec=$SPEC/lock.json --i
   --input eligibility=$L/eligibility_v$V/lock.json
 locked "$L/outcomes_v$V" || $P build-outcome-model --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/outcomes" > "$T/outcomes.log"
 lock "$T/outcomes" "$L/outcomes_v$V" outcomes --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json \
-  --input simulation_parameters_v3=data/simulation_parameters_v3/manifest.json --input simulation_parameters_v2=data/simulation_parameters_v2/manifest.json
+  --input simulation_parameters_v3=$V3_DIR/manifest.json --input simulation_parameters_v2=data/simulation_parameters_v2/manifest.json
 OUT=$L/outcomes_v$V
 
 if [ "$ENGINE" = auto ]; then
@@ -48,7 +52,8 @@ import json
 s = json.load(open('$SPEC/studyspec.json', encoding='utf-8'))
 esc = any(r['kind'] == 'dose_escalation' for r in s.get('decision_rules') or [])
 tte = any(e['role'] == 'primary' and e.get('type') == 'time_to_event' for e in s['endpoints']) and len(s['arms']) > 1
-print('escalation' if esc else 'tte' if tte else 'binary')")
+ni = len(s['arms']) > 1 and any(e['role'] == 'primary' and e.get('type') == 'binary' for e in s['endpoints']) and 'preserv' in json.dumps(s.get('analyses')).lower()
+print('escalation' if esc else 'tte' if tte else 'ni' if ni else 'binary')")
   echo "engine chosen from the StudySpec: $ENGINE"
 fi
 unresolved_results() {   # the engine could not run: an UNRESOLVED result with its reason, and the chain goes on
@@ -66,6 +71,9 @@ case "$ENGINE" in
     $P run-binary --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json \
       --input cohorts=$L/cohorts_v$V/lock.json ;;
+  ni)
+    $P run-ni-binary --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
+    lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json ;;
   escalation)
     $P run-escalation --studyspec "$SPEC" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json ;;
@@ -83,6 +91,9 @@ lock "$T/safety" "$L/safety_v$V" safety --input outcomes=$OUT/lock.json --input 
 
 $P build-trial-outputs --studyspec "$SPEC" --eligibility "$L/eligibility_v$V" --cohorts "$L/cohorts_v$V" --outcomes "$OUT"   --safety "$L/safety_v$V" --planning "$L/planning_v$V" --results "$L/results_v$V" --accrual-asset "$ASSET" --out "$T/outputs" > /dev/null
 lock "$T/outputs" "$L/outputs_v$V" outputs --input studyspec=$SPEC/lock.json --input eligibility=$L/eligibility_v$V/lock.json   --input cohorts=$L/cohorts_v$V/lock.json --input outcomes=$OUT/lock.json --input safety=$L/safety_v$V/lock.json   --input planning=$L/planning_v$V/lock.json --input results=$L/results_v$V/lock.json
+
+locked "$L/journey_v$V" || $P run-journey --studyspec "$SPEC" --protocol "$PDF" --cohorts "$L/cohorts_v$V" --eligibility "$L/eligibility_v$V"   --outputs "$L/outputs_v$V" --safety "$L/safety_v$V" --outcomes "$OUT" --facts "$FACTS_LOCK" --out "$T/journey" > "$T/journey.log" 2>&1
+lock "$T/journey" "$L/journey_v$V" journey --input studyspec=$SPEC/lock.json --input cohorts=$L/cohorts_v$V/lock.json   --input outputs=$L/outputs_v$V/lock.json --input safety=$L/safety_v$V/lock.json --input outcomes=$OUT/lock.json --input facts=$FACTS_LOCK/lock.json
 
 [ -z "$NCT" ] && { echo "predictions locked; no registry comparison (blind)"; exit 0; }
 REG=data/holdout_comparison/$NCT.json

@@ -27,7 +27,7 @@ from clinical_asset.planning.operational import (
 )
 
 API = "https://clinicaltrials.gov/api/v2/studies"
-SAFETY = __import__("re").compile(r"safety|toxicit|adverse|side[- ]effect|tolerab|death", __import__("re").IGNORECASE)
+SAFETY = __import__("re").compile(r"(?:^|[.!?;,])(?:(?!\b(?:no|not|without|never|neither)\b)[^.!?;,])*(?:safety|toxicit|adverse|side[- ]effect|tolerab|death)", __import__("re").IGNORECASE)
 QUERIES = {
     "terminated_accrual": " AND AREA[OverallStatus]TERMINATED",
     "terminated_safety": " AND AREA[OverallStatus]TERMINATED",

@@ -1,0 +1,552 @@
+{
+ "about": "General clinical vocabulary used by the pipeline (not trial-specific): kept as reference data so pipeline code holds no medical terms. Edit here, not in code.",
+ "baseline_measures": [
+  [
+   "ecog_performance_status",
+   "\\becog\\b|eastern cooperative|zubrod|who performance",
+   null,
+   "categorical_or_numeric"
+  ],
+  [
+   "karnofsky_performance_status",
+   "karnofsky|\\bkps\\b",
+   null,
+   "categorical_or_numeric"
+  ],
+  [
+   "lansky_performance_status",
+   "lansky",
+   null,
+   "categorical_or_numeric"
+  ],
+  [
+   "weight",
+   "^\\s*(body\\s*)?weight\\b|weight\\s*\\(kg\\)|^weight",
+   "kg|kilogram|lb|pound",
+   "continuous"
+  ],
+  [
+   "height",
+   "^\\s*height\\b",
+   "cm|centimet|m\\b|inch",
+   "continuous"
+  ],
+  [
+   "body_mass_index",
+   "body mass index|\\bbmi\\b",
+   "kg/m|kilogram",
+   "continuous"
+  ],
+  [
+   "body_surface_area",
+   "body surface area|\\bbsa\\b",
+   "m2|m\\^2|square",
+   "continuous"
+  ],
+  [
+   "hemoglobin",
+   "h(a)?emoglobin|\\bhgb\\b|\\bhb\\b",
+   "g/dl|g/l|mmol",
+   "continuous"
+  ],
+  [
+   "absolute_neutrophil_count",
+   "neutrophil|\\banc\\b",
+   "10\\^9|10\\^3|/mm|/ul|/µl|cells|g/l|x10",
+   "continuous"
+  ],
+  [
+   "platelet_count",
+   "platelet",
+   "10\\^9|10\\^3|/mm|/ul|/µl|cells|g/l|x10",
+   "continuous"
+  ],
+  [
+   "white_blood_cell_count",
+   "white blood cell|leukocyte|\\bwbc\\b",
+   "10\\^9|10\\^3|/mm|/ul|/µl|cells|g/l|x10",
+   "continuous"
+  ],
+  [
+   "serum_creatinine",
+   "^(serum\\s*)?creatinine(?!\\s*clearance)|creatinine,|creatinine \\(",
+   "mg/dl|µmol|umol|micromol",
+   "continuous"
+  ],
+  [
+   "creatinine_clearance",
+   "creatinine clearance|\\bcrcl\\b|\\begfr\\b|glomerular filtration",
+   "ml/min",
+   "continuous"
+  ],
+  [
+   "total_bilirubin",
+   "bilirubin(?!.*albi)",
+   "mg/dl|µmol|umol|micromol",
+   "continuous"
+  ],
+  [
+   "ast",
+   "\\bast\\b|aspartate aminotransferase|\\bsgot\\b",
+   "u/l|iu/l|units",
+   "continuous"
+  ],
+  [
+   "alt",
+   "\\balt\\b|alanine aminotransferase|\\bsgpt\\b",
+   "u/l|iu/l|units",
+   "continuous"
+  ],
+  [
+   "albumin",
+   "^(serum\\s*)?albumin(?!.*bilirubin)|albuminemia",
+   "g/dl|g/l",
+   "continuous"
+  ],
+  [
+   "lactate_dehydrogenase",
+   "\\bldh\\b|lactate dehydrogenase",
+   null,
+   "categorical_or_numeric"
+  ],
+  [
+   "systolic_blood_pressure",
+   "systolic",
+   "mm ?hg",
+   "continuous"
+  ],
+  [
+   "diastolic_blood_pressure",
+   "diastolic",
+   "mm ?hg",
+   "continuous"
+  ],
+  [
+   "heart_rate",
+   "heart rate|pulse",
+   "bpm|beats",
+   "continuous"
+  ],
+  [
+   "left_ventricular_ejection_fraction",
+   "ejection fraction|\\blvef\\b",
+   "%|percent",
+   "continuous"
+  ],
+  [
+   "qtc_interval",
+   "\\bqtc",
+   "ms|msec",
+   "continuous"
+  ],
+  [
+   "prior_lines_of_therapy",
+   "prior (lines|regimens|therapies|systemic|treatment)|number of prior|lines of (prior )?therapy",
+   null,
+   "categorical_or_numeric"
+  ],
+  [
+   "disease_stage",
+   "\\bstage\\b",
+   null,
+   "categorical"
+  ],
+  [
+   "histology",
+   "histolog|histotype|tumou?r type",
+   null,
+   "categorical"
+  ],
+  [
+   "metastatic_sites",
+   "metasta",
+   null,
+   "categorical_or_numeric"
+  ],
+  [
+   "smoking_status",
+   "smok|tobacco",
+   null,
+   "categorical"
+  ],
+  [
+   "comorbidity_index",
+   "charlson|comorbidity",
+   null,
+   "categorical_or_numeric"
+  ],
+  [
+   "diabetes",
+   "diabet",
+   null,
+   "categorical"
+  ],
+  [
+   "hypertension",
+   "hypertension",
+   null,
+   "categorical"
+  ]
+ ],
+ "ae_synonym_groups": [
+  [
+   "decreased neutrophil count",
+   "granulocytopenia",
+   "neutropenia",
+   "neutrophil count decreased",
+   "neutrophils decreased"
+  ],
+  [
+   "decreased platelet count",
+   "platelet count decreased",
+   "platelets decreased",
+   "thrombocytopenia"
+  ],
+  [
+   "anaemia",
+   "anemia",
+   "haemoglobin decreased",
+   "hemoglobin decreased"
+  ],
+  [
+   "leukopenia",
+   "wbc decreased",
+   "white blood cell count decreased",
+   "white blood cell decreased"
+  ],
+  [
+   "hand foot syndrome",
+   "hand-foot skin reaction",
+   "palmar plantar erythrodysaesthesia",
+   "palmar plantar erythrodysesthesia",
+   "palmar-plantar erythrodysaesthesia syndrome",
+   "palmar-plantar erythrodysesthesia syndrome",
+   "ppe"
+  ],
+  [
+   "alanine aminotransferase increased",
+   "alt increased",
+   "aspartate aminotransferase increased",
+   "ast alt elevation",
+   "ast increased",
+   "hepatotoxicity",
+   "transaminase elevation",
+   "transaminases increased"
+  ],
+  [
+   "blood pressure increased",
+   "high blood pressure",
+   "hypertension"
+  ],
+  [
+   "diarrhea",
+   "diarrhoea"
+  ],
+  [
+   "nausea"
+  ],
+  [
+   "vomiting"
+  ],
+  [
+   "asthenia",
+   "fatigue"
+  ],
+  [
+   "mucositis",
+   "mucositis oral",
+   "oral mucositis",
+   "stomatitis"
+  ],
+  [
+   "proteinuria",
+   "urine protein"
+  ],
+  [
+   "fistula",
+   "fistula perforation",
+   "gastrointestinal perforation",
+   "perforation"
+  ],
+  [
+   "neuropathy",
+   "neurotoxicity",
+   "paresthesia",
+   "peripheral neuropathy",
+   "peripheral sensory neuropathy"
+  ],
+  [
+   "hearing impaired",
+   "hearing loss",
+   "ototoxicity",
+   "tinnitus"
+  ],
+  [
+   "acute kidney injury",
+   "creatinine increased",
+   "nephrotoxicity",
+   "renal failure"
+  ]
+ ],
+ "hematologic_terms": [
+  "anaemia",
+  "anemia",
+  "febrile_neutropenia",
+  "hemoglobin_decreased",
+  "leukopenia",
+  "lymphopenia",
+  "neutropenia",
+  "neutrophil_count_decreased",
+  "platelet_count_decreased",
+  "thrombocytopenia",
+  "white_blood_cell_decreased"
+ ],
+ "hematologic_synonym_heads": [
+  "neutropenia",
+  "thrombocytopenia",
+  "anemia",
+  "leukopenia"
+ ],
+ "distinguishing_qualifiers": [
+  "febrile",
+  "hypertensive crisis",
+  "encephalopathy",
+  "perforation"
+ ],
+ "lab_reference_lln": {
+  "anc": 2.0,
+  "platelets": 150.0,
+  "hemoglobin": 12.0,
+  "wbc": 4.0
+ },
+ "ctcae_v5_lab_grades": {
+  "anc": {
+   "label": "Absolute neutrophil count",
+   "unit": "10^9/L",
+   "direction": "decrease",
+   "grades": {
+    "1": [
+     1.5,
+     2.0
+    ],
+    "2": [
+     1.0,
+     1.5
+    ],
+    "3": [
+     0.5,
+     1.0
+    ],
+    "4": [
+     0.05,
+     0.5
+    ]
+   },
+   "terms": "neutropeni|neutrophil count decreased|neutrophils? decreased|granulocytopeni"
+  },
+  "platelets": {
+   "label": "Platelet count",
+   "unit": "10^9/L",
+   "direction": "decrease",
+   "grades": {
+    "1": [
+     75.0,
+     150.0
+    ],
+    "2": [
+     50.0,
+     75.0
+    ],
+    "3": [
+     25.0,
+     50.0
+    ],
+    "4": [
+     5.0,
+     25.0
+    ]
+   },
+   "terms": "thrombocytopeni|platelet count decreased|platelets? decreased"
+  },
+  "hemoglobin": {
+   "label": "Hemoglobin",
+   "unit": "g/dL",
+   "direction": "decrease",
+   "grades": {
+    "1": [
+     10.0,
+     12.0
+    ],
+    "2": [
+     8.0,
+     10.0
+    ],
+    "3": [
+     6.5,
+     8.0
+    ],
+    "4": [
+     5.0,
+     6.5
+    ]
+   },
+   "terms": "an(a)?emia|h(a)?emoglobin decreased"
+  },
+  "wbc": {
+   "label": "White blood cell count",
+   "unit": "10^9/L",
+   "direction": "decrease",
+   "grades": {
+    "1": [
+     3.0,
+     4.0
+    ],
+    "2": [
+     2.0,
+     3.0
+    ],
+    "3": [
+     1.0,
+     2.0
+    ],
+    "4": [
+     0.2,
+     1.0
+    ]
+   },
+   "terms": "leukopeni|white blood cell (count )?decreased|wbc decreased"
+  },
+  "alt": {
+   "label": "ALT",
+   "unit": "x ULN",
+   "direction": "increase",
+   "grades": {
+    "1": [
+     1.0,
+     3.0
+    ],
+    "2": [
+     3.0,
+     5.0
+    ],
+    "3": [
+     5.0,
+     20.0
+    ],
+    "4": [
+     20.0,
+     40.0
+    ]
+   },
+   "terms": "alanine aminotransferase increased|\\balt increased|transaminase"
+  },
+  "ast": {
+   "label": "AST",
+   "unit": "x ULN",
+   "direction": "increase",
+   "grades": {
+    "1": [
+     1.0,
+     3.0
+    ],
+    "2": [
+     3.0,
+     5.0
+    ],
+    "3": [
+     5.0,
+     20.0
+    ],
+    "4": [
+     20.0,
+     40.0
+    ]
+   },
+   "terms": "aspartate aminotransferase increased|\\bast increased|transaminase"
+  },
+  "bilirubin": {
+   "label": "Total bilirubin",
+   "unit": "x ULN",
+   "direction": "increase",
+   "grades": {
+    "1": [
+     1.0,
+     1.5
+    ],
+    "2": [
+     1.5,
+     3.0
+    ],
+    "3": [
+     3.0,
+     10.0
+    ],
+    "4": [
+     10.0,
+     20.0
+    ]
+   },
+   "terms": "bilirubin increased|hyperbilirubin"
+  },
+  "creatinine": {
+   "label": "Creatinine",
+   "unit": "x ULN",
+   "direction": "increase",
+   "grades": {
+    "1": [
+     1.0,
+     1.5
+    ],
+    "2": [
+     1.5,
+     3.0
+    ],
+    "3": [
+     3.0,
+     6.0
+    ],
+    "4": [
+     6.0,
+     10.0
+    ]
+   },
+   "terms": "creatinine increased|acute kidney injury"
+  }
+ },
+ "regression_examples": {
+  "qualified_term": "febrile_neutropenia",
+  "base_term": "neutropenia",
+  "base_synonym": "neutrophil count decreased",
+  "state_rule_event": "anemia"
+ },
+ "sponsor_industry_forms": [
+  "Inc",
+  "Inc.",
+  "Incorporated",
+  "Corp",
+  "Corp.",
+  "Corporation",
+  "LLC",
+  "L.L.C.",
+  "Ltd",
+  "Ltd.",
+  "Limited",
+  "plc",
+  "PLC",
+  "GmbH",
+  "AG",
+  "S.A.",
+  "SA",
+  "S.p.A.",
+  "SpA",
+  "N.V.",
+  "B.V.",
+  "K.K.",
+  "Co., Ltd.",
+  "A/S",
+  "AB",
+  "Oy",
+  "SAS",
+  "S.A.S."
+ ]
+}

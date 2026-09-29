@@ -1541,7 +1541,19 @@ def _with_q(parsed: dict | None, quote: dict | None) -> dict | None:
     return {**(parsed or {}), "text": quote}
 
 
+_SIDEDNESS = re.compile(r"\b(?:one|two|1|2)[\s-]*(?:sided|tailed)\b", re.IGNORECASE)
+_STAT_NUMBER = re.compile(r"(?<![A-Za-z\d.])(\d+(?:\.\d+)?)\s*(%|percent)?", re.IGNORECASE)   # 'p0', 'H1' are names
+
+
 def _as_fraction(value: float | None, text: str | None) -> float | None:
+    """A statistical parameter (alpha, power) as a fraction, read from its quote. Sidedness ('one-sided', '2-sided')
+    is not the parameter: it is removed before the first remaining number is read; a number marked % (or above 1) is a
+    percentage. Without a quote the parsed value is used as before."""
+    if text:
+        m = _STAT_NUMBER.search(_SIDEDNESS.sub(" ", text))
+        if m:
+            v = float(m.group(1))
+            return v / 100 if m.group(2) or v > 1 else v
     if value is None:
         return None
     return value / 100 if "%" in (text or "") or value > 1 else value

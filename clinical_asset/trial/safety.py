@@ -20,6 +20,7 @@ import numpy as np
 from scipy import stats
 
 SAFETY_VERSION = "safety-1.0.0"
+COMPARE_SAFETY_VERSION = "safety-compare-1.1.0"
 Z975 = stats.norm.ppf(0.975)
 
 
@@ -164,9 +165,12 @@ def pooled_arms(arms: list[dict]) -> list[dict]:
 
 def compare_safety(results: dict, registry: dict) -> dict:
     """Registry adverse events (pooled over the registered groups) against the predicted count distribution at the
-    registry's own number at risk. Terms are matched exactly after normalisation, within seriousness."""
+    registry's own number at risk. Registry terms are keyed exactly as the safety asset keyed its training terms (the
+    UMLS concept linked by the same cached terminology, else the normalised text), within seriousness. A predicted term
+    the registry does not list is below the registry's frequency threshold (censored), zero only when the threshold is 0."""
     from .compare import _norm
 
+    key_of = _event_key()
     ae = registry.get("resultsSection", {}).get("adverseEventsModule", {})
     real = {}
     for kind in ("seriousEvents", "otherEvents"):
@@ -174,15 +178,22 @@ def compare_safety(results: dict, registry: dict) -> dict:
             k = sum(s.get("numAffected", 0) or 0 for s in e.get("stats", []))
             n = sum(s.get("numAtRisk", 0) or 0 for s in e.get("stats", []))
             if n:
-                real[(kind, _norm(e["term"]))] = {"term": e["term"], "kind": kind, "affected": k, "at_risk": n}
+                real[(kind, _norm(key_of(e["term"])))] = {"term": e["term"], "key": _norm(key_of(e["term"])), "kind": kind, "affected": k, "at_risk": n}
     at_risk = [g.get("seriousNumAtRisk") or g.get("otherNumAtRisk") or 0 for g in ae.get("eventGroups", [])]
     n_registry = int(sum(at_risk)) or None
+    try:
+        threshold = float(ae.get("frequencyThreshold")) if ae.get("frequencyThreshold") not in (None, "") else None
+    except ValueError:
+        threshold = None
+    complete = threshold == 0.0      # every event term was reported, so an unlisted term had no affected patient
     rows, used = [], set()
     for a in pooled_arms(results["arms"]):
         for e in a["events"]:
             kind = "seriousEvents" if e["seriousness"] == "serious" else "otherEvents"
-            key = (kind, _norm(e["term"]))
-            match = real.get(key) or next((v for (k2, t), v in real.items() if t == _norm(e["term"])), None)
+            # asset terms are already concept keys; protocol-quoted terms are free text and are linked the same way
+            names = [_norm(e["term"])] if e["source"].startswith("safety_v3") else [_norm(key_of(e["term"])), _norm(e["term"])]
+            match = next((real[(kind, t)] for t in names if (kind, t) in real), None) \
+                or next((v for (k2, t), v in real.items() if t in names), None)
             row = {"arm_id": a["arm_id"], "term": e["term"], "seriousness": e["seriousness"], "source": e["source"], "predicted_rate": e["rate_median"]}
             n = match["at_risk"] if match else n_registry
             if n:
@@ -192,16 +203,16 @@ def compare_safety(results: dict, registry: dict) -> dict:
                 row.update({"observed": observed, "observed_listed": bool(match),
                             "inside_90": d["q05"] <= observed <= d["q95"],
                             "predictive_p_two_sided": float(min(1.0, 2 * min(d["cdf"][observed], 1 - (d["cdf"][observed - 1] if observed else 0.0))))})
+                if not match and not complete and threshold:
+                    below = max(0, math.ceil(threshold / 100 * n) - 1)   # unlisted: at most this many affected
+                    row.update({"observed": None, "observed_at_most": below, "inside_90": d["q05"] <= below,
+                                "p_at_most_observed": float(d["cdf"][min(below, n)])})
+                    row.pop("predictive_p_two_sided")
                 if match:
-                    used.add((match["kind"], _norm(match["term"])))
+                    used.add((match["kind"], match["key"]))
             rows.append(row)
     listed = [r for r in rows if r.get("observed_listed")]
     unpredicted = sorted((v for k, v in real.items() if k not in used), key=lambda v: -v["affected"] / v["at_risk"])
-    try:
-        threshold = float(ae.get("frequencyThreshold")) if ae.get("frequencyThreshold") not in (None, "") else None
-    except ValueError:
-        threshold = None
-    complete = threshold == 0.0      # every event term was reported, so an unlisted term had no affected patient
     for r in rows:
         if "observed" in r and not r["observed_listed"]:
             r["unlisted_meaning"] = "reported absent (threshold 0)" if complete else "not reported (may be below the reporting threshold)"
@@ -224,8 +235,24 @@ def compare_safety(results: dict, registry: dict) -> dict:
             "unlisted_predicted_terms": sum(1 for r in rows if "observed" in r and not r["observed_listed"]),
             "unlisted_inside_90": sum(r["inside_90"] for r in rows if "observed" in r and not r["observed_listed"]),
             "unpredicted_registry_terms": unpredicted,
-            "note": ("a predicted term the registry does not list is scored as 0 affected at the registry's number at risk; unless the "
-                     "registry's frequency threshold is 0, it may only be below the threshold, so these rows are weaker evidence than matched terms")}
+            "term_matching": "UMLS concept key, as the safety asset",
+            "note": ("a predicted term the registry does not list is censored: fewer patients than the registry's frequency threshold "
+                     "(zero only when the threshold is 0); it is inside the 90% interval when the interval reaches below that bound")}
+
+
+def _event_key():
+    """The safety asset's event key for a registry term (spa2.toxicity.study_event_tables): the linked UMLS concept."""
+    from ..terminology import FINDING_TYPES, UmlsTerminology
+
+    t = UmlsTerminology(cache_path=Path("data/cache/umls_links.json"))
+    cache: dict = {}
+
+    def key(term: str) -> str:
+        if term not in cache:
+            c = t.link(term, FINDING_TYPES)
+            cache[term] = c.key if c else term.casefold().replace(" ", "_")
+        return cache[term]
+    return key
 
 
 def run_compare_safety(results_lock: Path, registry_file: Path, registry_fetched_at: str, out_dir: Path) -> dict:
@@ -234,19 +261,19 @@ def run_compare_safety(results_lock: Path, registry_file: Path, registry_fetched
     rec = verify(results_lock)
     results = load_locked(results_lock, "safety_results.json")
     registry = json.loads(Path(registry_file).read_text(encoding="utf-8"))
-    doc = {"compare_version": SAFETY_VERSION, "predictions_locked_at": rec["locked_at"], "registry_fetched_at": registry_fetched_at,
+    doc = {"compare_version": COMPARE_SAFETY_VERSION, "predictions_locked_at": rec["locked_at"], "registry_fetched_at": registry_fetched_at,
            "order_verified": rec["locked_at"] < registry_fetched_at,
            "registry": {"nct_id": registry["protocolSection"]["identificationModule"]["nctId"]}, **compare_safety(results, registry)}
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "safety_comparison.json").write_text(json.dumps(doc, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
-    lines = [f"# Safety comparison with the registry ({SAFETY_VERSION})", "",
+    lines = [f"# Safety comparison with the registry ({COMPARE_SAFETY_VERSION})", "",
              (f"Registry {doc['registry']['nct_id']}. Predictions locked at {doc['predictions_locked_at']}; registry fetched at "
               f"{registry_fetched_at}; order verified: {doc['order_verified']}."), "",
              (f"Registry participants at risk: {doc['registry_at_risk']}; reporting frequency threshold {doc['frequency_threshold_pct']}% "
               f"(unlisted terms are zero: {doc['unlisted_terms_are_zero']}). Matched terms: {doc['matched_terms']}, inside the 90% predictive "
-              f"interval: {doc['matched_inside_90']}. Predicted terms not listed: {doc['unlisted_predicted_terms']}, inside the 90% interval at a "
-              f"count of 0: {doc['unlisted_inside_90']}."), "", "## Patients with any event", ""]
+              f"interval: {doc['matched_inside_90']}. Predicted terms not listed (below the threshold): {doc['unlisted_predicted_terms']}, "
+              f"consistent with the 90% interval: {doc['unlisted_inside_90']}. Term matching: {doc['term_matching']}."), "", "## Patients with any event", ""]
     for kind, g in doc["aggregate"].items():
         if "bounding_event" in g:
             lines.append(f"- {kind}: registry {g['registry_affected']}/{g['at_risk']}; predicted P(at most {g['registry_affected']}) <= "
@@ -259,7 +286,8 @@ def run_compare_safety(results_lock: Path, registry_file: Path, registry_fetched
     for r in doc["rows"]:
         if "at_risk" in r:
             lines.append(f"| {r['arm_id']} | {r['term']} | {r['source']} | {100 * r['predicted_rate']:.1f}% | {r['at_risk']} | "
-                         f"{r['predicted_median']} ({r['predicted_90'][0]}-{r['predicted_90'][1]}) | {r['observed']} | {r['observed_listed']} | {r['inside_90']} |")
+                         f"{r['predicted_median']} ({r['predicted_90'][0]}-{r['predicted_90'][1]}) | "
+                         f"{r['observed'] if r['observed'] is not None else '<= ' + str(r['observed_at_most'])} | {r['observed_listed']} | {r['inside_90']} |")
         else:
             lines.append(f"| {r['arm_id']} | {r['term']} | {r['source']} | {100 * r['predicted_rate']:.1f}% | no number at risk | | | | |")
     lines += ["", doc["note"], "", "## Registry terms not predicted", ""]

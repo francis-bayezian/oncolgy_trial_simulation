@@ -153,6 +153,9 @@ def main(argv: list[str] | None = None) -> int:
     v3 = commands.add_parser("build-parameters-v3", help="Milestone 3: exact binomial calibration, survival fusion, baseline generator.")
     v3.add_argument("--workers", type=int, default=6)
     v3.add_argument("--resume", action="store_true", help="Reuse stored 3A fits and calibration.")
+    v3.add_argument("--out", type=Path, default=None, help="output directory (default data/simulation_parameters_v3)")
+    v3.add_argument("--exclude", type=Path, default=None, help="holdout-format file of trials to exclude (evidence cut-off)")
+    v3.add_argument("--raw-dir", type=Path, default=None, help="raw registry directory (default data/raw/ctgov)")
     cp = commands.add_parser("compile-protocol", help="Milestone 4: compile a protocol (+ SAP) PDF into an executable StudySpec.")
     cp.add_argument("--protocol", type=Path, required=True)
     cp.add_argument("--sap", type=Path, default=None)
@@ -213,6 +216,19 @@ def main(argv: list[str] | None = None) -> int:
     rb.add_argument("--facts", type=Path, required=True)
     rb.add_argument("--out", type=Path, required=True)
     rb.add_argument("--replicates", type=int, default=2000)
+    aug = commands.add_parser("augment-population", help="Add evidence-based baseline variables (ECOG, weight, height) to a population.")
+    aug.add_argument("--population", type=Path, required=True)
+    aug.add_argument("--studyspec", type=Path, required=True)
+    aug.add_argument("--condition-family", type=Path, required=True, help="output of map-protocol-conditions")
+    aug.add_argument("--out", type=Path, required=True)
+    rj = commands.add_parser("run-journey", help="Longitudinal patient journeys (visits, dosing, AEs, dose modifications, endpoints).")
+    for name in ("studyspec", "protocol", "cohorts", "eligibility", "outputs", "safety", "outcomes", "out"):
+        rj.add_argument(f"--{name}", type=Path, required=True)
+    rj.add_argument("--facts", type=Path, default=None, help="locked protocol facts (a cited progression figure of the same regimen)")
+    rni = commands.add_parser("run-ni-binary", help="Two-arm non-inferiority on a binary endpoint (synthesis method).")
+    rni.add_argument("--studyspec", type=Path, required=True)
+    rni.add_argument("--facts", type=Path, required=True)
+    rni.add_argument("--out", type=Path, required=True)
     re_ = commands.add_parser("run-escalation", help="Milestones 9-16 for rule-based dose escalation (grid of hypothetical DLT truths).")
     re_.add_argument("--studyspec", type=Path, required=True)
     re_.add_argument("--out", type=Path, required=True)
@@ -396,6 +412,38 @@ def main(argv: list[str] | None = None) -> int:
             doc = run_compare(args.results, args.population, args.cohorts, args.outcomes, args.registry, args.fetched_at, args.out)
             print(json.dumps({"order_verified": doc["order_verified"], "items": len(doc["items"])}, indent=1))
             return 0
+        if args.command == "augment-population":
+            from .trial.baseline_extra import augment
+            from .trial.studyspec import load_studyspec
+
+            spec, _ = load_studyspec(args.studyspec)
+            fam = next(iter(json.loads(args.condition_family.read_text(encoding="utf-8")).values()))["family"][0]
+            from .trial.journey_evidence import registry_phase
+            phase = registry_phase(spec)
+            print(json.dumps(augment(args.population, fam, phase, args.out), indent=1, default=str)[:2000])
+            return 0
+        if args.command == "run-journey":
+            from .llm import LunaClient
+            from .protocol.schemas import SYSTEM as PROTOCOL_SYSTEM
+            from .trial import schedule_facts
+            from .trial.journey import run as run_journey
+            from .trial.studyspec import load_studyspec
+
+            spec, _ = load_studyspec(args.studyspec)
+            model = LunaClient(cache_dir=Path("data/cache/llm_protocol"), max_calls=60, effort="high", max_output_tokens=16000,
+                               system=PROTOCOL_SYSTEM, timeout=900)
+            schedule_facts.run(model, args.protocol, spec, args.out)
+            doc = run_journey(args.studyspec, args.cohorts, args.eligibility, args.outputs, args.safety, args.outcomes,
+                              args.out / "schedule_facts.json", args.out, facts_lock=args.facts)
+            print(json.dumps(doc["summary"], indent=1, default=str))
+            return 0
+        if args.command == "run-ni-binary":
+            from .trial.noninferiority import run as run_ni
+
+            r = run_ni(args.studyspec, args.facts, None, args.out)
+            print(json.dumps({k: r.get(k) for k in ("design", "power_at_protocol_assumption", "p_success_curve", "predicted_response")},
+                             indent=1, default=str))
+            return 0
         if args.command == "run-binary":
             from .llm import LunaClient
             from .protocol.schemas import SYSTEM as PROTOCOL_SYSTEM
@@ -558,7 +606,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "build-parameters-v3":
             from .spa3.build import build as build_v3
 
-            print(json.dumps(build_v3(workers=args.workers, resume=args.resume), indent=1, default=str))
+            print(json.dumps(build_v3(workers=args.workers, resume=args.resume, out_dir=args.out, exclude_file=args.exclude,
+                                      raw_dir=args.raw_dir), indent=1, default=str))
             return 0
         if args.command == "build-parameters-v2":
             from .spa2.build import build

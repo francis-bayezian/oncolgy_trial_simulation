@@ -17,7 +17,10 @@ from pathlib import Path
 
 import numpy as np
 
-ASSET = Path("data/simulation_parameters_v3/proportions")
+def _asset() -> Path:
+    from ..cutoff import asset
+
+    return asset("v3") / "proportions"
 ENDPOINT_TARGETS = Path("data/spa_work/endpoint_targets.json")
 RESPONSE_TARGETS = ("objective_response_rate", "complete_response", "pathological_complete_response", "disease_control_rate",
                     "clinical_benefit_rate", "psa_response")
@@ -46,14 +49,14 @@ def endpoint_target(name: str, model=None, cache_file: Path = ENDPOINT_TARGETS) 
 def _contexts(target: str, family: str) -> list[dict]:
     import pyarrow.parquet as pq
 
-    rows = pq.read_table(ASSET / "parameter_index.parquet").to_pylist()
+    rows = pq.read_table(_asset() / "parameter_index.parquet").to_pylist()
     return [r for r in rows if r["status"] == "PUBLISHED" and r["target_variable"] == target and r["context_disease_family"] == family]
 
 
 def _draws(parameter_ids: list[str]) -> dict[str, np.ndarray]:
     import pyarrow.parquet as pq
 
-    t = pq.read_table(ASSET / "posterior_draws.parquet", filters=[("parameter_id", "in", parameter_ids)],
+    t = pq.read_table(_asset() / "posterior_draws.parquet", filters=[("parameter_id", "in", parameter_ids)],
                       columns=["parameter_id", "future_study"]).to_pylist()
     out: dict[str, list] = {}
     for r in t:
