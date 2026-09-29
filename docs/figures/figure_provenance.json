@@ -5,6 +5,10 @@
       "sha256": "f3a017dbcfd196fd85ab86c23966cfc64fe2aaef5a66dd57eee3a639dff66b50"
     },
     {
+      "path": "data/holdout_comparison/NCT03859427.json",
+      "sha256": "02b372df5ce6700ffd5836e986f7bcc160e3aeec9820a92bda5a72fb1fa0a10e"
+    },
+    {
       "path": "data/locked/ACNS0332/cohorts_v3.2.1/cohort_accrual_35_per_year.jsonl",
       "sha256": "2ebc4c65db882897dc45017b4b8db65d217f7a73c417f379806451800b7b85c8"
     },
@@ -229,8 +233,52 @@
       "sha256": "64299499002d887f5aa76985ec0067694f1cdc7f8eca6a24e84c3885c5bdfde7"
     },
     {
+      "path": "data/locked/NCT03859427/journey_v1.3.0/ae.csv",
+      "sha256": "a4aaff7c173956119d612509ab75cc025293d52528b8de87e8fec97937a1a703"
+    },
+    {
+      "path": "data/locked/NCT03859427/journey_v1.3.0/dm.csv",
+      "sha256": "a5a5977b154270c837325a773c6cd704f5e70cfa21b86981c45125b5fb9d68fe"
+    },
+    {
+      "path": "data/locked/NCT03859427/journey_v1.3.0/ds.csv",
+      "sha256": "d52c00e4711e83595138731eda2536f1fd8ef1a5ab5f05c94c134f457142ab39"
+    },
+    {
+      "path": "data/locked/NCT03859427/journey_v1.3.0/ex.csv",
+      "sha256": "6ed927eaba008caa2c52353c347f24912b5f209a7e2e3285723c1fddc2554475"
+    },
+    {
+      "path": "data/locked/NCT03859427/journey_v1.3.0/journey_summary.json",
+      "sha256": "12865a59da7d6539c3a0c990b0a3b7ee753487ecb14eea8233a4f546d27f18aa"
+    },
+    {
+      "path": "data/locked/NCT03859427/journey_v1.3.0/lb.csv",
+      "sha256": "9493f2a4368539795cc9d2c615781222ba65f8cae4b771a2fa9fb10c767b0df4"
+    },
+    {
+      "path": "data/locked/NCT03859427/journey_v1.3.0/rs.csv",
+      "sha256": "5bea87d5a1d645b7e6222befd968084065cd962cc43bdffffd2fd023d6ec5863"
+    },
+    {
+      "path": "data/locked/NCT03859427/planning_comparison_v1.3.0/planning_comparison.json",
+      "sha256": "0806d816ea1fd39d761cbec140d33793b7d940c44504b3b47afaf9e160a8fe4a"
+    },
+    {
+      "path": "data/locked/NCT03859427/results_v1.3.0/ni_results.json",
+      "sha256": "c100718f3cdbadb6b8cb7f1e55e847f320abd27b9af38d746c7558890216b6a6"
+    },
+    {
+      "path": "data/locked/NCT03859427/safety_comparison_v1.3.0.3/safety_comparison.json",
+      "sha256": "b3e776eef4018f7f11dd89f53cb57dbf725364d0955c04794621f2d278ad42c0"
+    },
+    {
       "path": "data/raw/ctgov/NCT00091572.json",
       "sha256": "634a0fb38d0d455c5d22bbdeabdda55b617a3d4dd7d895eeb1bed21be3d46dee"
+    },
+    {
+      "path": "data/safety_asset_t0/manifest.json",
+      "sha256": "b1d362ea0ec39327df57b7b688682e39cc9203061fb4504b5b09c127f0d694aa"
     },
     {
       "path": "data/safety_asset_v3_1/manifest.json",
@@ -253,6 +301,14 @@
       "sha256": "456e0041edb186b49123c1315b98d8f7032f75416ea817b20b130d890e24ddd3"
     },
     {
+      "path": "data/trial/temporal/NCT03859427/retrospective_journey_L018/journey_summary.json",
+      "sha256": "3dea843162ebfe2ec426b459d8193db8fe8e22b5eede7673539eb2ff157a4caa"
+    },
+    {
+      "path": "data/validation/NCT03859427_unblinding.json",
+      "sha256": "5f0b6015819fedcd1cb22c077b17a77c44bbfd80fc4e73cef064a2cabe5a2ee8"
+    },
+    {
       "path": "data/validation/scorecard.json",
       "sha256": "4ee66ccfe6ee7919969dce838222a2dfbd371dff9309c5c19ada595f0910898e"
     }
@@ -263,6 +319,6 @@
     "evidence_row": "d9b934b17937e424",
     "parameter_id": "3b1473de78a0a559"
   },
-  "generator_sha256": "28ab15c78cfe9f4a39a7a840516ae7c5adad7a8dd6fef018efca28e62ae129bf",
+  "generator_sha256": "97da4781d772bc6cc384b24eb7a25c0ae5a96c3dbb9a9db8608dce871328a25f",
   "note": "Technical identifiers and versions are retained here and in the source artifacts, not in figure labels."
 }

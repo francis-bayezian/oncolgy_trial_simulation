@@ -232,7 +232,7 @@ def fig4_blind_timeline():
   assert freeze<fetch<=first
   records.append((i+1,BLIND[b],freeze,fetch,first,len(locks)))
  f=figure(4.9,'Prediction freeze and blinded evaluation',
-  'Every prediction stage was frozen before registry results were retrieved.')
+  'Development studies: every prediction stage was frozen before registry results were retrieved.')
  # The sequence is conceptual; the table below carries the exact measured times.
  a=canvas(f,[.055,.685,.89,.17])
  steps=[('1','Freeze predictions','Record the final model outputs',FITTED),
@@ -271,7 +271,7 @@ def fig4_blind_timeline():
  save(f,'fig4_blind_timeline')
 
 def fig5_accrual():
- f=figure(6.0,'Recruitment forecasts and observed trial outcomes','Three outcome-blinded historical studies')
+ f=figure(6.0,'Recruitment forecasts and observed trial outcomes','Three development studies; forecasts were frozen before results were read')
  heading(f,.055,.87,'A','Recruitment rate');ax=f.add_axes([.27,.53,.67,.29]);failure=[]
  for i,b in enumerate(BLIND):
   d=load(latest(b,'planning_comparison')/'planning_comparison.json');y=2-i;q=d['historical_model']['predicted_patients_per_year'];a=d['actual'];score=a['enrolled']>=5
@@ -317,15 +317,16 @@ def fig6_calibration():
   for x,l in zip(xx,levels):
    r=next((r for r in rr if r['nominal'] is not None and abs(r['nominal']-l)<1e-5),None)
    a.text(x,y,f"{r['coverage']:.0%}" if r else '-',ha='center',va='center',fontsize=8,color=FITTED if r else UNKNOWN)
- heading(f,.055,.33,'B','Adverse-event predictive score')
+ heading(f,.055,.33,'B','Adverse-event predictive score on held-out trials')
  a=f.add_axes([.40,.10,.49,.19]);m=load(ROOT/'data/safety_asset_v3_1/manifest.json')['validation']['listed']['mean_log_predictive_probability']
- vals=[m['v2_published_in_sample'],m['v3_uncalibrated'],m['v3']]
- labels=['Reference model (in-sample)','Before calibration','After calibration']
+ t0=load(ROOT/'data/safety_asset_t0/manifest.json')['validation']['listed']['mean_log_predictive_probability']
+ vals=[m['v3_uncalibrated'],m['v3'],t0['v3']]
+ labels=['Before calibration','After calibration','Evidence frozen at 2024']
  for i,(label,v) in enumerate(zip(labels,vals)):
-  y=2-i;a.plot([-3,v],[y,y],color='#E7E2F0',lw=4);a.plot(v,y,'o',color=FITTED if i else UNKNOWN,ms=5);a.text(v+.06,y,f'{v:.2f}',va='center',fontsize=8)
+  y=2-i;a.plot([-3,v],[y,y],color='#E7E2F0',lw=4);a.plot(v,y,'o',color=FITTED,ms=5);a.text(v+.06,y,f'{v:.2f}',va='center',fontsize=8)
  a.set_yticks([2,1,0],labels,fontsize=8);a.tick_params(axis='y',length=0);a.spines['left'].set_visible(False);a.set(xlim=(-3,-1.5),ylim=(-.6,2.6),xlabel='Mean log predictive score (higher is better)')
  a.set_xticks([-3,-2.5,-2,-1.5]);a.grid(axis='x',color='#E5EAF0',lw=.5)
- f.text(.055,.025,'The reference model includes evaluation trials in its fitting data; its score is not held-out performance.',fontsize=7,color=SLATE)
+ f.text(.055,.025,'Held-out trials were never used for fitting. The 2024 model is fitted only on trials whose evidence predates 1 January 2024.',fontsize=7,color=SLATE)
  save(f,'fig6_calibration')
 
 def event_name(row):
@@ -333,7 +334,7 @@ def event_name(row):
  s={'alanine aminotransferase increased':'ALT increased','aspartate aminotransferase increased':'AST increased'}.get(s,s)
  if row['seriousness']=='serious':s+=' [serious]'
  elif row['seriousness']=='grade clinically significant or severe (ie, grade 3)':s+=' [grade 3]'
- elif row['seriousness'].startswith('grade '):s+=' ['+row['seriousness']+']'
+ elif row['seriousness'].startswith('grade ') and 'all grades' not in row['seriousness']:s+=' ['+row['seriousness']+']'
  return s[0].upper()+s[1:]
 
 def fig7_blind_events():
@@ -341,7 +342,7 @@ def fig7_blind_events():
  for b in ['BLIND_1','BLIND_2']:
   d=load(latest(b,'safety_comparison')/'safety_comparison.json');rows=[r for r in d['rows'] if r['observed_listed']];assert len(rows)==d['matched_terms']
   data.append((b,d,sorted(rows,key=lambda r:r['predicted_rate'],reverse=True)))
- f=figure(9.0,'Adverse-event predictions in the blinded studies','Matched reported events only; each interval uses the registry population at risk.')
+ f=figure(9.0,'Adverse-event predictions in the development studies','Matched reported events only; each interval uses the registry population at risk.')
  # Two columns retain every comparison. Equal row spacing; the shorter panel leaves room for notes.
  bounds=[(.27,.56,.23,.30),(.75,.14,.20,.72)]
  for k,((b,d,rows),(x,y,w,h)) in enumerate(zip(data,bounds)):
@@ -373,7 +374,7 @@ def subgroup_label(dim,name):
  return dim.replace('_',' ')+': '+name
 
 def fig8_informative():
- f=figure(7.8,'Aggregate safety and control-survival estimates','Historical subgroup estimates compared with outcomes in the blinded studies')
+ f=figure(7.8,'Aggregate safety and control-survival estimates','Historical subgroup estimates compared with outcomes in the development studies')
  for k,b in enumerate(['BLIND_1','BLIND_2']):
   est=load(latest(b,'outputs')/'trial_outputs.json')['feasibility']['subgroup_estimates'];sa=load(latest(b,'safety_comparison')/'safety_comparison.json')['aggregate']['serious']
   arm=next(iter(est['arms'].values()))['serious_adverse_event'];entries=[('Selected subgroup',arm['headline'],True)]
@@ -401,8 +402,107 @@ def fig8_informative():
  f.legend(handles=handles,loc='lower center',bbox_to_anchor=(.52,.017),ncol=2,fontsize=7)
  save(f,'fig8_blind_informative_estimates')
 
+SHOW='NCT03859427'
+def show_lock(kind,version='1.3.0'):
+ return LOCK/SHOW/f'{kind}_v{version}'
+
+def fig9_temporal():
+ ni=load(show_lock('results')/'ni_results.json');reg=load(ROOT/'data/holdout_comparison'/f'{SHOW}.json')
+ plan=load(show_lock('planning_comparison')/'planning_comparison.json');saf=load(show_lock('safety_comparison','1.3.0.3')/'safety_comparison.json')
+ order=load(ROOT/'data/validation'/f'{SHOW}_unblinding.json');assert order['order_ok']
+ om=next(o for o in reg['resultsSection']['outcomeMeasuresModule']['outcomeMeasures'] if o['type']=='PRIMARY')
+ den={c['groupId']:int(c['value']) for d in om['denoms'] for c in d['counts']}
+ val={m['groupId']:float(m['value']) for c in om['classes'] for cat in c['categories'] for m in cat['measurements']}
+ title={g['id']:g['title'] for g in om['groups']};an=om['analyses'][0]
+ f=figure(9.6,'Temporal test: a phase III trial predicted from its protocol alone',
+  f'{SHOW} | once- vs twice-weekly carfilzomib regimen in relapsed myeloma | evidence frozen at 1 January 2024')
+ heading(f,.055,.885,'A','Response rate by arm')
+ ax=f.add_axes([.25,.745,.24,.11]);lo,hi=ni['predicted_response']['observed_rate_90_at_n'];med=ni['predicted_response']['control_true_rate']['median']
+ rows=[(g,('Twice-weekly (control)' if 'twice' in title[g].lower() else 'Once-weekly')) for g in sorted(val)]
+ for i,(g,label) in enumerate(rows):
+  y=1-i;ax.plot([lo,hi],[y,y],color=FITTED,lw=5,alpha=.3,solid_capstyle='butt');ax.plot(med,y,'|',color=FITTED,ms=8,mew=1.3)
+  k=round(val[g]/100*den[g]);wl,wh=wilson(k,den[g]);ax.plot([wl,wh],[y,y],color=OBSERVED,lw=.9);ax.plot(val[g]/100,y,'o',color=OBSERVED,ms=4.5,mec='white',mew=.4)
+ ax.set_yticks([1,0],[r[1] for r in rows],fontsize=7.4);ax.set_xlim(.6,1);ax.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1,decimals=0))
+ ax.set_ylim(-.6,1.6);ax.tick_params(axis='y',length=0);ax.spines['left'].set_visible(False);ax.grid(axis='x',color='#E5EAF0',lw=.5);ax.set_xlabel('Overall response rate',fontsize=7.5)
+ f.text(.055,.69,'Band: 90% predictive range of the observed rate. Circle: reported rate with 95% CI.',fontsize=6.8,color=SLATE)
+ heading(f,.565,.885,'B','Chance of showing non-inferiority')
+ ax=f.add_axes([.64,.745,.30,.11]);c=ni['p_success_curve'];ax.plot([r['rr'] for r in c],[r['p_noninferior'] for r in c],'-o',color=FITTED,ms=3,lw=1.1)
+ rr=float(an['paramValue']);ax.axvline(rr,color=OBSERVED,ls=(0,(3,2)),lw=.9);ax.text(rr-.004,.93,f'Observed ratio {rr:.3f}',ha='right',va='top',fontsize=6.8)
+ ax.set(xlim=(.79,1.06),ylim=(0,1));ax.set_xlabel('True response-rate ratio (once / twice weekly)',fontsize=7.3);ax.yaxis.set_major_formatter(mpl.ticker.PercentFormatter(1,decimals=0))
+ ax.set_ylabel('Probability',fontsize=7.3);ax.grid(color='#E5EAF0',lw=.5)
+ f.text(.565,.69,f"Reported: not non-inferior (one-sided p = {float(an['pValue']):.3f}).",fontsize=6.8,color=SLATE)
+ f.text(.565,.672,'Model at the observed ratio: about 1 in 4.',fontsize=6.8,color=SLATE)
+ heading(f,.055,.625,'C','Recruitment rate')
+ ax=f.add_axes([.25,.545,.24,.05]);hm=plan['historical_model'];q=hm['predicted_patients_per_year']
+ ax.plot([q['q10'],q['q90']],[0,0],color=FITTED,lw=1.2);ax.plot([q['q25'],q['q75']],[0,0],color=FITTED,lw=4);ax.plot(q['median'],0,'o',color=FITTED,mfc='white',ms=5,mew=1.2)
+ ob=hm['observed_rate_per_year_lower_bound'];ax.plot(ob,0,'>',color=OBSERVED,ms=6)
+ ax.set_xscale('log');ax.set_xlim(20,600);ax.set_xticks([20,50,100,200,500]);ax.xaxis.set_major_formatter(mpl.ticker.ScalarFormatter());ax.xaxis.set_minor_formatter(mpl.ticker.NullFormatter());ax.set_yticks([]);ax.spines['left'].set_visible(False)
+ ax.set_ylim(-1,1);ax.set_xlabel('Participants per year (log scale)',fontsize=7.3)
+ fm=plan['failure_model']
+ f.text(.055,.47,f"Predicted {q['median']:.0f}/year (80% range {q['q10']:.0f}-{q['q90']:.0f}); observed at least {ob:.0f}/year.",fontsize=6.9,color=SLATE)
+ f.text(.055,.452,f"Trial completed; predicted completion {fm['predicted_probability']:.0%} (historical base rate {fm['base_rate']:.0%}).",fontsize=6.9,color=SLATE)
+ heading(f,.565,.625,'D','Adverse events (matched terms)')
+ rows=sorted([r for r in saf['rows'] if r.get('observed_listed') and r['seriousness']!='serious'],key=lambda r:r['predicted_rate'],reverse=True)[:12]
+ ax=f.add_axes([.74,.415,.20,.175]);n=saf['registry_at_risk']
+ for i,r in enumerate(rows):
+  y=len(rows)-1-i;lo2,hi2=r['predicted_90'];ax.plot([lo2/n,hi2/n],[y,y],color=FITTED,lw=2.4,alpha=.3);ax.plot(r['predicted_median']/n,y,'|',color=FITTED,ms=6,mew=1.1)
+  out=not r['inside_90'];ax.plot(r['observed']/n,y,'D' if out else 'o',ms=3.8,color=PROTOCOL if out else OBSERVED,mec='white',mew=.35)
+ ax.set_yticks(range(len(rows)),[event_name(r) for r in rows][::-1],fontsize=6.8);percent(ax);ax.set_xticks([0,.5,1]);ax.set_xlabel('Participants affected',fontsize=7.3)
+ f.text(.565,.598,f"{saf['matched_inside_90']} of {saf['matched_terms']} matched events inside the 90% interval",fontsize=6.8,color=SLATE)
+ heading(f,.055,.345,'E','Patient journey: locked prediction, correction and observation')
+ jl=load(show_lock('journey')/'journey_summary.json');jr=load(ROOT/'data/trial/temporal'/SHOW/'retrospective_journey_L018/journey_summary.json')
+ js,rj=jl['summary'],jr['summary']
+ pf=reg['resultsSection']['participantFlowModule']['periods'][0];ms={m['type']:sum(int(a['numSubjects']) for a in m['achievements']) for m in pf['milestones']}
+ left=sum(int(a['numSubjects']) for d in pf['dropWithdraws'] if d['type'] in ('Withdrawal by Subject','Lost to Follow-up','Decision by sponsor') for a in d['reasons'])
+ pfs=next(o for o in reg['resultsSection']['outcomeMeasuresModule']['outcomeMeasures'] if 'Progression-free Survival (PFS) Rate at 12' in o['title'])
+ pobs=np.mean([float(m['value']) for c in pfs['classes'] for cat in c['categories'] for m in cat['measurements']])/100
+ wd='withdrawal (subject, loss to follow-up or physician decision)';n0=js['subjects']
+ lockrate=jl['progression']['ARM1']['value']['rate_per_year'];retro=jr['progression']['ARM1']['value']['rate_per_year']
+ items=[('Left the study (non-medical reasons)',js['end_of_treatment_reasons'].get(wd,0)/n0,rj['end_of_treatment_reasons'].get(wd,0)/n0,left/ms['STARTED']),
+  ('Completed 12 treatment cycles',js['end_of_treatment_reasons'].get('completed planned treatment',0)/n0,rj['end_of_treatment_reasons'].get('completed planned treatment',0)/n0,ms['Completed 12 Cycles Carfilzomib']/ms['STARTED']),
+  ('Progression-free at 12 months',math.exp(-lockrate),math.exp(-retro),pobs)]
+ ax=f.add_axes([.40,.135,.54,.175])
+ for i,(label,a1,a2,o) in enumerate(items):
+  y=2-i;ax.plot([min(a1,a2,o),max(a1,a2,o)],[y,y],color='#DDE3E9',lw=1.2)
+  ax.plot(a1,y,'o',color=PROTOCOL,ms=5.5);ax.plot(a2,y,'o',color=FITTED,mfc='white',mew=1.3,ms=5.5);ax.plot(o,y,'s',color=OBSERVED,ms=5)
+ ax.set_yticks([2,1,0],[x[0] for x in items],fontsize=7.4);percent(ax);ax.set_ylim(-.6,2.6);ax.set_xlabel('Share of participants',fontsize=7.3)
+ f.legend(handles=[Line2D([],[],marker='o',ls='',color=PROTOCOL,label='Locked prediction'),Line2D([],[],marker='o',ls='',color=FITTED,mfc='white',label='After correction (retrospective)'),
+  Line2D([],[],marker='s',ls='',color=OBSERVED,label='Registry')],loc='lower center',bbox_to_anchor=(.55,.058),fontsize=7,ncol=3)
+ f.text(.055,.045,f"Predictions frozen {order['locked_at_latest'][11:19]} UTC; results retrieved {order['fetched_at'][11:19]} UTC on the same day.",fontsize=6.8,color=SLATE)
+ f.text(.055,.025,"Correction after unblinding: the protocol's own progression figure for the regimen replaced a cross-regimen average.",fontsize=6.8,color=SLATE)
+ save(f,'fig9_temporal_showcase')
+
+def fig10_trace(subject='S0198'):
+ import csv
+ D=show_lock('journey')
+ def rows(name):
+  p=D/f'{name}.csv';READS.add(p)
+  with open(p,encoding='utf-8') as fh:return [r for r in csv.DictReader(fh) if r['USUBJID']==subject]
+ dm=rows('dm')[0];ex=rows('ex');ae=rows('ae');lb=rows('lb');rs=rows('rs');ds=rows('ds')
+ end=max([int(float(r['RSDY'])) for r in rs]+[int(float(r['DSSTDY'])) for r in ds])
+ arm='Twice-weekly' if dm['ARMCD']=='ARM2' else 'Once-weekly'
+ f=figure(5.2,'One simulated participant, day by day',f"Arm: {arm} | age {float(dm['AGE']):.0f}, {dm['SEX']} | every element carries its source")
+ ax=f.add_axes([.25,.27,.70,.56]);lanes=['Screening labs','Dosing (by cycle)','Adverse events','Disease assessment','End of treatment']
+ for i in range(5):ax.axhline(4-i,color='#EEF1F4',lw=9,zorder=0)
+ for r in lb:
+  if r['VISIT']=='SCREENING':ax.plot(float(r['LBDY']),4,'s',ms=5,color=UNKNOWN)
+ for c in sorted({int(r['CYCLE']) for r in ex}):
+  ax.barh(3,26,left=(c-1)*28+1,height=.36,color=PALE[SLATE],ec=PROTOCOL,lw=.7)
+ for r in ae:
+  s0=float(r['AESTDY']);e0=float(r['AEENDY'] or r['AESTDY']);g=int(r['AETOXGR'] or 1)
+  ax.plot([s0,max(e0,s0+1.5)],[2,2],color=EVIDENCE,lw=1.5+g*1.2,solid_capstyle='butt')
+ for r in rs:
+  pd=r['RSORRES'].startswith('progressive');ax.plot(float(r['RSDY']),1,'D' if pd else 'o',ms=5.5 if pd else 4.5,color=OBSERVED if pd else UNKNOWN,mec='white',mew=.4)
+ for r in ds:ax.plot(float(r['DSSTDY']),0,'X',ms=7,color=OBSERVED);ax.text(float(r['DSSTDY'])+5,0,r['DSDECOD'],va='center',fontsize=7.2)
+ ax.set_yticks(range(5),lanes[::-1],fontsize=7.8);ax.tick_params(axis='y',length=0);ax.spines['left'].set_visible(False)
+ ax.set_xlim(-35,end+70);ax.set_xticks([t for t in range(0,end+71,28) if t<=end+70]);ax.set_ylim(-.6,4.6);ax.set_xlabel('Study day (day 1 = first dose)');ax.grid(axis='x',color='#E5EAF0',lw=.5)
+ handles=[Patch(fc=PALE[SLATE],ec=PROTOCOL,label='Protocol: cycle schedule and doses'),Line2D([],[],color=EVIDENCE,lw=3,label='Evidence: adverse events (thicker = higher grade)'),
+  Line2D([],[],marker='s',ls='',color=UNKNOWN,label='Assumption: labs normal (no evidence)'),Line2D([],[],marker='D',ls='',color=OBSERVED,label='Progression: evidence rate, exponential')]
+ f.legend(handles=handles,loc='lower left',bbox_to_anchor=(.05,.02),ncol=2,fontsize=6.9)
+ save(f,'fig10_patient_trace')
+
 if __name__=='__main__':
- for fn in [fig1_pipeline,fig2_evidence_lane,fig3_walkthrough,fig4_blind_timeline,fig5_accrual,fig6_calibration,fig7_blind_events,fig8_informative]:fn()
+ for fn in [fig1_pipeline,fig2_evidence_lane,fig3_walkthrough,fig4_blind_timeline,fig5_accrual,fig6_calibration,fig7_blind_events,fig8_informative,fig9_temporal,fig10_trace]:fn()
  sources=[{'path':p.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(READS)]
  (OUT/'figure_provenance.json').write_text(json.dumps({'sources':sources,'running_example':{'study':'NCT00091572','registry_group':'EG000','evidence_row':'d9b934b17937e424','parameter_id':'3b1473de78a0a559'},'generator_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'note':'Technical identifiers and versions are retained here and in the source artifacts, not in figure labels.'},indent=2),encoding='utf-8')
  audit_path=ROOT/'tmp/figure_revision/layout_audit.json'
