@@ -1,0 +1,704 @@
+PAGE 1
+www.chrestos.de
+Biomarkers Unleashed: 
+A Programming Pipeline from Chaos to
+Clarity in Genomic Data
+Chrestos – Die grüne CRO
+DH02
+Lea Zittlau, Saskia Ständler
+11.11.24 - PHUSE EU Connect 2024, Strasbourg
+
+PAGE 2
+Inter-individual Characteristics
+2
+Risk to get 
+certain 
+diseases
+Behavior
+Appearance
+Processing 
+of food
+Drug 
+response
+
+PAGE 3
+Precision Medicine
+3
+
+PAGE 4
+Crizotinib
+4
+Morris, T. A., Khoo, C. & Solomon, B. J. Targeting ROS1 Rearrangements in Non-small Cell Lung Cancer: 
+Crizotinib and Newer Generation Tyrosine Kinase Inhibitors. Drugs 79, 1277–1286 (2019). 
+
+PAGE 5
+Resistance Mutations
+5
+ Acquired resistance
+ Primary resistance
+ In case of resistance it is   
+unnecessary to take the drug
+
+PAGE 6
+6
+Are there any individuals in our study 
+population with a resistance mutation?
+
+PAGE 7
+Next Generation Sequencing (NGS)
+7
+c
+c
+c
+
+PAGE 8
+Central Dogma: DNA to RNA to Protein
+8
+ Translation into mRNA
+ Transcription into amino acid 
+chain  
+protein
+c
+
+PAGE 9
+Single Nucleotide Variants
+9
+Human reference
+ genome
+Sample
+
+PAGE 10
+Single Nucleotide Variants
+10
+Human reference
+ genome
+Sample
+
+PAGE 11
+Aim
+11
+High amount of data
+Identifying those mutations 
+that are relevant to the 
+respective research 
+question
+~5 Mio. SNVs in a 
+human genome
+https://www.genome.gov/about-genomics/educational-resources/fact-sheets/human-genomic-variation
+
+PAGE 12
+www.chrestos.de
+Programming Pipeline
+12
+
+PAGE 13
+Disclaimer
+13
+ The pipeline presented in this demonstration is based on our   
+experience.
+ The sample data presented here have been simplified to a certain 
+extent; in reality, the data are much more complex and chaotic.
+
+PAGE 14
+Programming Pipeline
+14
+
+PAGE 15
+Programming Pipeline – Vendor Processing
+15
+
+PAGE 16
+Programming Pipeline - Standardization
+16
+
+PAGE 17
+Programming Pipeline – Unique Variants
+17
+
+PAGE 18
+Programming Pipeline – Harmonization & Annotation
+18
+
+PAGE 19
+www.chrestos.de
+Crizotinib resistance
+Simulated Case Study for 
+Programming Pipeline
+19
+
+PAGE 20
+Data Standardization
+20
+
+PAGE 21
+Data Standardization
+21
+SUBJID –
+Subject 
+Identifier
+SPEC –
+Specimen of 
+Biomarker
+GENE – 
+Gene
+CHROM –
+Chromosome
+CHRPOS –
+Chromosome 
+position
+NUCLCH –
+Nucleotide 
+Change
+AMACCH – 
+Amino Acid 
+Change
+SOMSFI –
+Somatic 
+Status/Functional Impact
+1
+TUMOR BIOPSY
+ALK
+2
+29220765
+C>A
+Leu1196Met
+MISSENSE
+3
+TUMOR BIOPSY
+EGFR
+7
+55163737
+C>T
+Pro546Ser
+MISSENSE
+SUBJID –
+Subject 
+Identifier
+SPEC –
+Specimen of 
+Biomarker 
+GENE – 
+Gene
+GENPOS –
+Genome position
+NUCLCH –
+Nucleotide 
+Change
+AMACCH – 
+Amino Acid 
+Change
+SOMSFI –
+Somatic 
+Status/Functional Impact
+2
+PLASMA
+CD246
+Chr2: 299220765
+C>A
+L1196M
+MISSENSE_VARIANT
+Vendor A
+Vendor B
+
+PAGE 22
+Data Standardization
+22
+ Distinct specimens
+ Different standards   
+chromosome location
+ Nomenclature issues
+ Variation in status
+
+PAGE 23
+Data Standardization – SDTM Data (GF) 
+23
+23
+SUBJID –
+Subject 
+Identifier
+SPEC –
+Specimen of 
+Biomarker 
+GENE – 
+Gene
+CHROM –
+Chromosome
+CHRPOS –
+Chromosome 
+position
+NUCLCH –
+Nucleotide 
+Change
+AMACCH – 
+Amino Acid 
+Change
+SOMSFI –
+Somatic 
+Status/Functional Impact
+1
+TUMOR BIOPSY
+ALK
+2
+29220765
+C>A
+Leu1196Met
+MISSENSE
+ Transpose data into genomic findings (GF) domain 
+ SDTM Implementation Guide version 3.4 published in 2021
+SUBJID –
+Subject 
+Identifier
+GFSEQ –
+Sequence
+Number
+GFSYM –
+Genomic
+Symbol
+GFCHROM –
+Chromosome 
+Identifier
+GFGENLOC 
+–Genetic 
+Location
+GFSTDTL – Measurement, 
+Test or Examination Detail
+GFORRES – Result or 
+Finding in Original 
+Units
+1
+1
+ALK
+2
+29220765
+Predicted Amino Acid Change
+L1196M
+1
+2
+ALK
+2
+29220765
+Predicted Coding Sequence Change
+C>A
+1
+3
+ALK
+2
+29220765
+Variant Impact Classification
+Missense Variant
+Transpose
+One record per finding per observation (per biospecimen) per subject
+https://evs.nci.nih.gov/ftp1/CDISC/SDTM/SDTM%20Terminology.html#CL.C181180.GFTSDTL
+
+PAGE 24
+Data Standardization – SDTM Data (GF) 
+24
+SUBJID –
+Subject 
+Identifier
+GFSEQ –
+Sequence
+Number
+GFSYM –
+Genomic
+Symbol
+GFCHROM –
+Chromosome 
+Identifier
+GFGENLOC –
+Genetic 
+Location
+GFSTDTL – Measurement, 
+Test or Examination Detail
+GFORRES – Result or 
+Finding in Original 
+Units
+1
+1
+ALK
+2
+29220765
+Predicted Amino Acid Change
+L1196M
+1
+2
+ALK
+2
+29220765
+Predicted Coding Sequence Change
+C>A
+1
+3
+ALK
+2
+29220765
+Variant Impact Classification
+Missense Variant
+2
+1
+CD246
+2
+29220765
+Predicted Amino Acid Change
+L1196M
+2
+2
+CD246
+2
+29220765
+Predicted Coding Sequence Change
+C>A
+2
+3
+CD246
+2
+29220765
+Variant Impact Classification
+Missense Variant
+3
+1
+EGFR
+7
+55163737
+Predicted Amino Acid Change
+P546S
+3
+2
+EGFR
+7
+55163737
+Predicted Coding Sequence Change
+C>T
+3
+3
+EGFR
+7
+55163737
+Variant Impact Classification
+Missense Variant
+
+PAGE 25
+Unique Variants
+25
+
+PAGE 26
+Unique Variants – SDTM Data (GF) 
+26
+SUBJID –
+Subject 
+Identifier
+GFSEQ –
+Sequence
+Number
+GFSYM –
+Genomic
+Symbol
+GFCHROM –
+Chromosome 
+Identifier
+GFGENLOC –
+Genetic 
+Location
+GFSTDTL – Measurement, 
+Test or Examination Detail
+GFORRES – Result or 
+Finding in Original 
+Units
+1
+1
+ALK
+2
+29220765
+Predicted Amino Acid Change
+L1196M
+1
+2
+ALK
+2
+29220765
+Predicted Coding Sequence Change
+C>A
+1
+3
+ALK
+2
+29220765
+Variant Impact Classification
+Missense Variant
+2
+1
+CD246
+2
+29220765
+Predicted Amino Acid Change
+L1196M
+2
+2
+CD246
+2
+29220765
+Predicted Coding Sequence Change
+C>A
+2
+3
+CD246
+2
+29220765
+Variant Impact Classification
+Missense Variant
+3
+1
+EGFR
+7
+55163737
+Predicted Amino Acid Change
+P546S
+3
+2
+EGFR
+7
+55163737
+Predicted Coding Sequence Change
+C>T
+3
+3
+EGFR
+7
+55163737
+Variant Impact Classification
+Missense Variant
+
+PAGE 27
+Unique Variants
+27
+GENE –
+Genomic Symbol
+CHROM – 
+Chromosome Identifier
+GENLOC –    
+Genetic Location
+NUCCH – 
+Nucleotide Change
+AMINO – Amino 
+Acid Change
+ALK
+2
+29220765
+C>A
+L1196M
+CD246
+2
+29220765
+C>A
+L1196M
+EGFR
+7
+55163737
+C>T
+P546
+Getting unique variants means extracting all given combinations of 
+genetic variants (gene:genomic position:nt change:AA change)
+
+PAGE 28
+Data Harmonization & Annotation
+28
+Data annotation is mainly performed by a bioinformatician
+
+PAGE 29
+Data Annotation & Harmonization
+29
+ Creates meaning behind genetic 
+information
+ Role in pathogenesis (oncogene vs. 
+tumor supressor gene)
+ Data harmonization
+Tate, John G et al. “COSMIC: the Catalogue Of Somatic Mutations In Cancer.” Nucleic acids research vol. 47,D1 (2019): D941-D947. doi:10.1093/nar/gky1015
+https://cancer.sanger.ac.uk/cosmic
+
+PAGE 30
+COSMIC Database – Gene & Mutation Type
+30
+GENE –
+Genomic
+Symbol
+CHROM –
+Chromosome 
+Identifier
+GENLOC – 
+Genetic 
+Location
+NUCCH – 
+Nucleotide 
+Change
+AMINO – 
+Amino Acid 
+Change
+GENSYM – 
+Approved 
+gene symbol
+COGENTYP –
+Cosmic Gene 
+Type
+COMUTTYP –
+Cosmic Mutation 
+Type
+ALK
+2
+29220765
+C>A
+L1196M
+ALK
+Oncogene, 
+fusion
+pathogenic
+CD246
+2
+29220765
+C>A
+L1196M 
+ALK
+Oncogene, 
+fusion
+pathogenic
+EGFR
+7
+55163737
+C>T
+P546S
+EGFR
+Oncogene
+possibly pathogenic
+ Gene synonyms got aligned to one symbol per gene
+ Function of a gene
+ Pathogenicity level of particular mutation
+
+PAGE 31
+ADaM Data
+31
+SUBJID –
+Subject 
+Identifier
+GFSEQ –
+Sequence
+Number
+GFSYM –
+Genomic 
+Symbol
+GFORRES – Result 
+or Finding in 
+Original Units
+GENSYM – 
+Approved gene 
+symbol
+COGENTYP – 
+Cosmic Gene 
+Type
+COMUTTYP – 
+Cosmic Mutation 
+Type
+MUTFL
+1
+1
+ALK
+L1196M
+ALK
+Oncogene, fusion
+pathogenic
+YES
+1
+2
+ALK
+C>A
+ALK
+Oncogene, fusion
+pathogenic
+YES
+1
+3
+ALK
+Missense Variant
+ALK
+Oncogene, fusion
+pathogenic
+YES
+2
+1
+CD246
+L1196M
+ALK
+Oncogene, fusion
+pathogenic
+YES
+2
+2
+CD246
+C>A
+ALK
+Oncogene, fusion
+pathogenic
+YES
+2
+3
+CD246
+Missense Variant
+ALK
+Oncogene, fusion
+pathogenic
+YES
+3
+1
+EGFR
+P546S
+EGFR
+oncogene
+possibly pathogenic
+3
+2
+EGFR
+C>T
+EGFR
+oncogene
+possibly pathogenic
+3
+3
+EGFR
+Missense Variant
+EGFR
+oncogene
+possibly pathogenic
+
+PAGE 32
+Challenges
+32
+ Different internal standards                     Data harmonization
+ Hard to identify data issues                     Bioinformatician in team 
+ Relevance 
+ 
+ 
+ 
+ 
+ 
+ 
+   Implement decision rules
+ Standards for dataset but not for analysis
+
+PAGE 33
+Take-Home Messages
+33
+ Challenging for statistical programmers
+ Tight cooperation with bioinformatician needed 
+ Great way to prove yourselve and learn through all the challenges
+
+PAGE 34
+www.chrestos.de
+Thanks for your 
+attention!
+
+PAGE 35
+www.chrestos.de
+Author Name: Lea Zittlau, Dr. Saskia Ständler
+Company: Chrestos Concept GmbH & Co. KG
+Address: Girardetstraße 1-5, Essen, Germany, 45131
+Email: lea.zittlau@chrestos.de, 
+saskia.staendler@chrestos.de
+Website: https://chrestos.de/

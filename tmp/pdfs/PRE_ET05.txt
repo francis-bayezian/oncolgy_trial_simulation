@@ -1,0 +1,254 @@
+PAGE 1
+Friday, 20 February 2026
+PHUSE APAC Connect 2026
+ET05: Integrating R Programming and Generative 
+AI for Prompt-Driven Clinical Trial Data Analysis
+Presented by: Vyom Bhatt
+M.Sc. Statistics
+Statistical Programmer
+
+PAGE 2
+2
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+Session Flow
+Ways to integrate Generative AI and R in clinical data analysis
+01 |
+Workflows for Generating TLFs with Generative AI and R
+02 |
+Natural prompt → R code
+03 |
+Natural prompt → Prompt schema → R code
+04 |
+Natural prompt → Prompt schema + Mock shell → R code
+05 |
+Typical Failure Modes & How Each Approach Addresses Them
+06 |
+07 | Implementation Tips
+
+PAGE 3
+3
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+Ways to integrate 
+Generative AI and R in 
+clinical data analysis
+
+PAGE 4
+4
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+Quick Glossary (to keep us aligned)
+Natural prompt: Free-text request (e.g., “Create SOC/PT table 
+using ADAE dataset with counts and column % by TRT01P…”).
+Prompt schema: Structured spec (YAML/JSON) capturing task, 
+dataset, population, grouping, metrics, output, controls.
+Mock shell: The visual/table template (Word/Excel/PDF) used in 
+studies (headers, columns, footnotes, sorting).
+TLFs: Tables, Listings, Figures (clinical outputs aligned to mock 
+shells).
+
+PAGE 5
+5
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+Workflows for Generating TLFs with 
+Generative AI and R
+(A) Natural prompt → R code
+Fastest path: The AI directly converts your plain-language request 
+into R code without an intermediate specification.
+(B) Natural prompt → Prompt schema → R code
+The AI first structures your request into a clear, auditable schema 
+(dataset, population, metrics, formatting) usually in YAML/JSON, 
+the validated schema then drives deterministic R code generation. 
+(C) Natural prompt → Prompt schema + Mock shell → R code
+Most robust: The AI first structures intent into a schema, then 
+aligns layout to the uploaded mock shell. Validated specs drive 
+code generation, producing tables that match study format.
+
+PAGE 6
+6
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(A) Natural prompt →R code
+Flow
+~ Analyst writes a free-text request.
+~ LLM generates R code directly (e.g., dplyr + flextable).
+~ Analyst runs code, manually tweaks layout to match study shell.
+Strengths
+~ Very fast; minimal ceremony.
+~ Good for ideation and exploratory analyses.
+Limitations
+~ Ambiguity (percent denominator, sorting, population nuances).
+~ Harder to audit; no intermediate spec.
+~ Reproducibility can vary with small prompt changes.
+
+PAGE 7
+7
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(A) Natural prompt →R code
+Example prompt
+“Create SOC/PT table using ADAE dataset with counts and column 
+% by TRT01P; population SAFFL=='Y'; output RTF.”
+Typical R (illustrative)
+
+PAGE 8
+8
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(A) Natural prompt →R code
+Best-fit scenarios
+~ Brainstorming TLF designs. 
+~ Early feasibility checks.
+~ Hackathons / internal demos.
+
+PAGE 9
+9
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(B) Natural prompt → Prompt schema → R 
+code
+Flow
+~ Analyst prompt.
+~ Convert to schema (manual or LLM) capturing datasets, 
+variables, metrics, flags, output.
+~ Validate schema (CDISC names, SOP rules).
+~ Generate R code (preferably via templates).
+~ Execute; QC (unit tests, numeric checks); audit trail stores 
+prompt + schema + code + outputs.
+Strengths
+~ Low ambiguity: schema pins down intent.
+~ High reproducibility: schemas are versionable artifacts.
+~ Audit-ready: schema = mini-spec consistent with GxP mindset.
+~ Works well even without a mock, for standard layouts.
+
+PAGE 10
+10
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(B) Natural prompt → Prompt schema → R 
+code
+Limitations
+~ Slightly more steps (prompt → schema → code).
+~ Requires schema templates and validation rules.
+Example schema (YAML)
+
+PAGE 11
+11
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(B) Natural prompt → Prompt schema → R 
+code
+Best-fit scenarios
+~ Regulated study TLFs with standard shells.
+~ Cross-study reusability and automation.
+~ Teams that must maintain traceability and validation.
+
+PAGE 12
+12
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(C) Natural prompt → Prompt schema + Mock 
+shell → R code
+Flow
+~ Upload mock shell → extract layout (columns, header hierarchy, 
+footnotes, sorting).
+~ Analyst prompt → schema (datasets, population, metrics, flags, 
+output).
+~ Validation: schema vs. SOP; layout vs. shell rules.
+~ Code generation (template/LLM) guided by both layout and 
+schema.
+~ Execute; QC:
+• Numeric checks (denominators, totals).
+• Visual regression vs. mock shell (vdiffr for plots; RTF 
+compare).
+~ Audit trail: prompt, schema, mock shell reference, code, 
+environment, outputs, reviewer sign-off.
+
+PAGE 13
+13
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(C) Natural prompt → Prompt schema + Mock 
+shell → R code
+Strengths
+~ Highest reliability: both what (schema/spec) and how (mock 
+layout) are enforced.
+~ Best compliance posture: traceability and reproducibility.
+~ Minimizes interpretation errors (denominators, sorting, flags).
+Limitations
+~ Slightly heavier process (but worth it for study deliverables).
+~ Needs multimodal capability and schema validation rules.
+Typical R (illustrative formatting calls)
+
+PAGE 14
+14
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+(C) Natural prompt → Prompt schema + Mock 
+shell → R code
+Best-fit scenarios
+~ Final TLFs for CSRs/major milestones.
+~ Sponsor/CRO settings with strict SOPs and audits.
+
+PAGE 15
+15
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+Typical Failure Modes & How Each Approach Addresses Them
+Failure Mode
+(A) Natural prompt → R 
+code
+(B) Natural prompt → 
+Prompt schema → R 
+code
+(C) Natural prompt → Prompt 
+schema + Mock shell → R 
+code
+Percent denominator 
+wrong
+ Common
+ Rare
+ Unlikely
+Wrong population 
+filter
+ Common
+ Rare
+ Unlikely
+Layout mismatches to 
+shell
+ Common
+ Common
+ Unlikely
+Ambiguous 
+flags/terms
+ Common
+ Rare
+ Unlikely
+Audit/trace gaps
+ Major
+ Minimal
+ Minimal
+
+PAGE 16
+16
+SYNEOS HEALTH
+CONFIDENTIAL. AUTHORIZED USE ONLY.
+Implementation Tips (to make this robust)
+~ Prompt templates: Create standard prompt starters per TLF 
+type.
+~ Schema library: Versioned YAML templates (Safety, KM, Lab 
+Shift).
+~ Validation hooks: Check CDISC names, allowed metrics, 
+denominator rules.
+~ Reproducibility: set seeds, model version logging.
+~ Audit trail: Store prompt, schema, mock shell ref, code, 
+environment, output, review.
+
+PAGE 17
+Appreciate Your Engagement!
+Shaping the Future of Statistical Programming—Smarter, Faster, Compliant.
+Vyom Bhatt
+M.Sc. Statistics
+Statistical Programmer
+vyom.bhatt@syneoshealth.com

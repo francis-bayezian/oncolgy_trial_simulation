@@ -1,0 +1,259 @@
+PAGE 1
+SA02
+The art of timely deliverables: 
+How we learned to stop worrying and 
+love the deadline
+Søren Fjelstrup
+HTA Senior Clinical 
+Data Scientist
+Novo Nordisk A/S
+19/11/2025
+
+PAGE 2
+Novo Nordisk®
+Introduction and Context
+• The Challenge: Governmental agencies request 
+new Analysis with little warning and no room for 
+negotiation 
+• Impact: Bomb from a blue sky - major impact if 
+unprepared 
+• Traditional Problems: - Endless email chains - 
+Unclear request formats - Manual translation of 
+business needs - Scattered, unfindable 
+documentation
+2
+
+PAGE 3
+Novo Nordisk®
+The Cross-Departmental Challenge
+• Critical Issue: Maintaining data flow across 
+multiple departments 
+•  Without Systems: 
+• Enormous time consumption 
+• Project-derailing bottlenecks 
+• Coordination nightmares 
+• Need: Structured, scalable method that 
+works in practice
+3
+
+PAGE 4
+Novo Nordisk®
+Components
+• Single Excel Request Form
+• One standardized entry point
+• AI-Powered Specification Translation
+• Converts business language to technical specs
+• Kanban Board Management
+• Provides transparency and enables autonomous work
+• Modular Standard Programs
+• Reusable, tested templates for common requests
+• Automated Documentation System
+• Creates audit trails without manual effort
+4
+
+PAGE 5
+Novo Nordisk®
+Requests 
+• 1. Single Excel Request Form
+• One standardized submission point 
+ 
+- eliminates confusion  
+5
+
+PAGE 6
+Novo Nordisk®
+• Field  
+Description
+• A 
+ 
+Requester
+• B 
+ 
+Initials of contact
+• C 
+ 
+Study the Analysis is requested for
+• D 
+ 
+Priority of the request (high/medium/low)
+• E 
+ 
+Analysis requested if known
+• F 
+ 
+Analysis requested by this timeline
+• G 
+ 
+Is there flexibility around timelines (Yes/No)
+• H 
+ 
+Comments (additional context)
+6
+
+PAGE 7
+Novo Nordisk®
+Requests 
+• 1. Single Excel Request Form
+• One standardized submission point 
+ 
+- eliminates confusion  
+• Clear process: Form + email to single contact 
+to elaborate  
+• 2. AI-Powered Specification Translation
+• • LLM-based program translates plain text to 
+technical specs
+7
+
+PAGE 8
+Novo Nordisk®
+8
+“Analyze obese patients with HFpEF. 
+Compare smokers vs non-smokers 
+for time to CV death and heart 
+failure hospitalization at week104. 
+Include baseline characteristics: age
+groups, BMI categories.”
+• PARAMCD: HFpEFbmi30
+• PARAM: HFpEF subpopulation with BMI >= 30 
+• Initial.request: obese patients with HFpEF
+• request.type: Subpopulation 
+
+PAGE 9
+Novo Nordisk®
+Requests 
+• 1. Single Excel Request Form
+• One standardized submission point 
+ 
+- eliminates confusion  
+• Clear process: Form + email to single contact 
+to elaborate  
+• 2. AI-Powered Specification Translation
+• LLM-based program translates plain text to 
+technical specs
+• Bridges the gap: Business needs → System 
+requirements 
+9
+
+PAGE 10
+Novo Nordisk®
+Overview of tasks
+3. Kanban Board Management 
+• Backlog: Tasks ready for pickup 
+• Implementing: Currently being worked on 
+• In Review: Completed work under review  
+• Blocked: Tasks waiting for data/clarification 
+• Closed: Finished and delivered
+• Features colored By Priority
+• Each feature subdivided in User stories
+10
+
+PAGE 11
+Novo Nordisk®
+11
+
+PAGE 12
+Novo Nordisk®
+Overview of tasks
+3. Kanban Board Management 
+• Backlog: Tasks ready for pickup 
+• Implementing: Currently being worked on 
+• In Review: Completed work under review  
+• Blocked: Tasks waiting for data/clarification 
+• Closed: Finished and delivered
+• Features colored By Priority
+• Each feature subdivided in User stories
+• Information is extracted for resource planning 
+overview of progress (cut in interest of time)*
+12
+* Documented in the accompanying paper
+
+PAGE 13
+Novo Nordisk®
+Program Setup
+• 4. Modular Standard Programs
+• Reusable templates handle most 
+common requests 
+• Configuration over coding
+• update parameters, not code
+• Tested and reliable modules
+13
+
+PAGE 14
+Novo Nordisk®
+14
+
+PAGE 15
+Novo Nordisk®
+Program Setup
+• 4. Modular Standard Programs
+• Reusable templates handle most 
+common requests 
+• Configuration over coding
+• update parameters, not code
+• Tested and reliable modules
+• Less overhead 
+• Less review needed
+• Workload switches to complex one-
+off analysis
+15
+
+PAGE 16
+Novo Nordisk®
+Documentation system
+• 5. Automated Documentation System
+• Scraping all Kanban history 
+• Produces documentation linked to actual 
+activity
+• Links task history to original requests
+16
+
+PAGE 17
+Novo Nordisk®
+• Show a user story with discussion and a markdown with that discussion extracted.
+17
+
+PAGE 18
+Novo Nordisk®
+18
+
+PAGE 19
+Novo Nordisk®
+Documentation system
+• 5. Automated Documentation System
+• Scraping all Kanban history 
+• Produces documentation linked to actual 
+activity
+• Links task history to original requests
+• Does not eliminate manual inputs
+• Does save having to write things twice
+• Provides a searchable, machine readable 
+format (No .docx!)
+19
+
+PAGE 20
+Novo Nordisk®
+20
+
+PAGE 21
+Novo Nordisk®
+Take aways
+• Key improvements: 
+• Reduced response and admin time 
+• Improved quality through 
+standardization
+• Eliminated documentation gaps 
+• Scalable and transparent process
+• Key insight: 
+Thoughtful integration > Revolutionary 
+technology 
+• Ready for the next “bomb from the 
+blue”
+21
+
+PAGE 22
+Novo Nordisk®
+Thank you for your attention
+22
+Author Name: Søren Fjelstrup
+Company: Novo Nordisk A/S
+Email: syfj@novonordisk.com

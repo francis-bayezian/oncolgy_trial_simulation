@@ -1,0 +1,268 @@
+{
+  "sources": [
+    {
+      "path": "data/asset_v1/manifest.json",
+      "sha256": "f3a017dbcfd196fd85ab86c23966cfc64fe2aaef5a66dd57eee3a639dff66b50"
+    },
+    {
+      "path": "data/locked/ACNS0332/cohorts_v3.2.1/cohort_accrual_35_per_year.jsonl",
+      "sha256": "2ebc4c65db882897dc45017b4b8db65d217f7a73c417f379806451800b7b85c8"
+    },
+    {
+      "path": "data/locked/ACNS0332/cohorts_v3.2.1/cohort_accrual_60_per_year.jsonl",
+      "sha256": "6e0c6f6d0df7529c356dc056c61f90f6c6226c4c6c77136910653f4e54b55f4e"
+    },
+    {
+      "path": "data/locked/ACNS0332/cohorts_v3.2.1/recruitment_summary.json",
+      "sha256": "883df9da5639a2cc1368add6c4c2b038364f2dec97537a339e14ba73d815d079"
+    },
+    {
+      "path": "data/locked/ACNS0332/eligibility_v3.2.1/eligibility_summary.json",
+      "sha256": "9c3bb7ce7920ab3d6b01289ab5e844800a2c1e1fe89b01c290fe5d2118177d50"
+    },
+    {
+      "path": "data/locked/ACNS0332/outcomes_v3.2.1/outcome_model.json",
+      "sha256": "2d4997fe6a1dea97d136c066521ec7f8351e2ff93477a8ad23baf12a5358b1f5"
+    },
+    {
+      "path": "data/locked/ACNS0332/registry_comparison_v3.2.1/comparison.json",
+      "sha256": "0c8d0ef69bc6a7c66f87ab56e81b17c9f9d22a9ace867cd2c0893429aed123ad"
+    },
+    {
+      "path": "data/locked/BLIND_1/baseline_comparison_v1.2.0/lock.json",
+      "sha256": "97831d2c6efdabd2e97c8a5af299f7c43b800c3c02f028643abfb99d6f650248"
+    },
+    {
+      "path": "data/locked/BLIND_1/cohorts_v1.2.0/lock.json",
+      "sha256": "96b5bbf5aebda61a3771db68d1575c12f694660bcc95bc8bba1dde60832c1b56"
+    },
+    {
+      "path": "data/locked/BLIND_1/eligibility_v1.2.0/lock.json",
+      "sha256": "b04eabda766002a37e239a6512ee698979015806c11301d0d254d04ec9981ec6"
+    },
+    {
+      "path": "data/locked/BLIND_1/median_comparison_v1.2.1/lock.json",
+      "sha256": "ad44795cf40e6c8f222234129eeee194b6ef417e791cecbee80b531d3a3025fa"
+    },
+    {
+      "path": "data/locked/BLIND_1/median_comparison_v1.2.1/median_comparison.json",
+      "sha256": "5a7df71236535648e1ab357c1ef45111f6c9159d34938feceab935b7e92f2c28"
+    },
+    {
+      "path": "data/locked/BLIND_1/outcomes_v1.2.0/lock.json",
+      "sha256": "b54f195dd23c9ef01a89666808e889be4f2356338d9797000e6e98b597692dce"
+    },
+    {
+      "path": "data/locked/BLIND_1/outputs_v1.2.0/lock.json",
+      "sha256": "847b10102c0429296aa543f5773ea4fa225fbcae818cff80dd256a69485e8dd1"
+    },
+    {
+      "path": "data/locked/BLIND_1/outputs_v1.2.0/trial_outputs.json",
+      "sha256": "66094a7b8468f1e58556e9a27280b9f5e26b70a38e3775b90718c9e7c3394c6d"
+    },
+    {
+      "path": "data/locked/BLIND_1/planning_comparison_v1.2.0/lock.json",
+      "sha256": "bdb2b67e270b54a78554da976a259240ca02399047921209cf495f08ffb5c006"
+    },
+    {
+      "path": "data/locked/BLIND_1/planning_comparison_v1.2.0/planning_comparison.json",
+      "sha256": "ddaf20bd2eb2e782d2482883f80f8e35f78c730033e6b965fc99ae1898abb8e6"
+    },
+    {
+      "path": "data/locked/BLIND_1/planning_v1.2.0/lock.json",
+      "sha256": "4eb8815f05f7d42227aadd5bc535f17e2662b32a2545653b7dcb0de1013302c9"
+    },
+    {
+      "path": "data/locked/BLIND_1/population_v1.2.0/lock.json",
+      "sha256": "97bb257e7fe1a18bf5a3f11ca4e4495be3fa10b248e246add2a1e958e6e0a86a"
+    },
+    {
+      "path": "data/locked/BLIND_1/protocol_facts_v1.0.0/lock.json",
+      "sha256": "e1fb8bfb924ebed984b487b9157bfd24998c0746adb72088788a3200992e5e27"
+    },
+    {
+      "path": "data/locked/BLIND_1/results_v1.2.0/lock.json",
+      "sha256": "1c447ca9cc077ba796c53b038765d1e34c98e96db4ee5a4df907546b2b5047d7"
+    },
+    {
+      "path": "data/locked/BLIND_1/safety_comparison_v1.2.0/lock.json",
+      "sha256": "e0ef1acad34c46faf30faf299cc9680f67ad9ddc17471ffeb16e36aff5dc87b1"
+    },
+    {
+      "path": "data/locked/BLIND_1/safety_comparison_v1.2.0/safety_comparison.json",
+      "sha256": "d946455c6373f8b09163887c276af00c36b9d7fd4a3edb3d9c224312b9801563"
+    },
+    {
+      "path": "data/locked/BLIND_1/safety_v1.2.0/lock.json",
+      "sha256": "1dd48e42b56d18525fe0c571fb305327cfa54d567e99af2ad4e4ed597e6bff32"
+    },
+    {
+      "path": "data/locked/BLIND_1/studyspec_v1.2.0/lock.json",
+      "sha256": "f54e7ba1d867cf19fe033d25e96441520f2f04ad18d3d303c341f9ddf3dd6332"
+    },
+    {
+      "path": "data/locked/BLIND_2/baseline_comparison_v1.1.0/lock.json",
+      "sha256": "88aec14d4bc30eada7194febfba98753dbc0bf3dc27e5ff045c4fcb6b9d32f50"
+    },
+    {
+      "path": "data/locked/BLIND_2/cohorts_v1.1.0/lock.json",
+      "sha256": "21687c7fa9e887fafe1ec07e9878e74cb81b3f0e5be6cc8ecdecd6c0b7a7aebe"
+    },
+    {
+      "path": "data/locked/BLIND_2/eligibility_v1.1.0/lock.json",
+      "sha256": "4aeca2105ec58cb393284ea6ad487c673b476eaad9ce7f3b9f1842cebc1fd94f"
+    },
+    {
+      "path": "data/locked/BLIND_2/outcomes_v1.1.0/lock.json",
+      "sha256": "0a28c302ef118b90bf376afebb2e46896eb13fc26161a84e60a8bdc382da70b0"
+    },
+    {
+      "path": "data/locked/BLIND_2/outputs_v1.1.0/lock.json",
+      "sha256": "3f98db4e812cfa82fd0f75f0b4a866f5d92892657d3534aa507388fce2ec69f0"
+    },
+    {
+      "path": "data/locked/BLIND_2/outputs_v1.1.0/trial_outputs.json",
+      "sha256": "ed02f97d5cbe421a69cc4eed6180898bfa9f7fc9b8d9e6bbe9b4310cd2450a58"
+    },
+    {
+      "path": "data/locked/BLIND_2/planning_comparison_v1.1.0/lock.json",
+      "sha256": "e9989f122d9f0ab5c40f86baf0c9eb39d974ddbb0d01e5e19259273b6bc57efb"
+    },
+    {
+      "path": "data/locked/BLIND_2/planning_comparison_v1.1.0/planning_comparison.json",
+      "sha256": "7586f48e60d30d45afe62aa4d8490a08c6ac0c445598d7431c22f4c9a8df2752"
+    },
+    {
+      "path": "data/locked/BLIND_2/planning_v1.1.0/lock.json",
+      "sha256": "d37047a2dd0ecf69d9f855e71ba68b167d9d32a5516b0c5a1f2beb3cf661c968"
+    },
+    {
+      "path": "data/locked/BLIND_2/population_v1.1.0/lock.json",
+      "sha256": "61e4d1d5bee5552bdbbb15f7f25bec8217f08474967d9fe0d49f8d1aa110d1ea"
+    },
+    {
+      "path": "data/locked/BLIND_2/protocol_facts_v1.1.0/lock.json",
+      "sha256": "9da4447bf0943f2cf644083190619bd650c9dd38e7b40a82a142fd0dd79e8b39"
+    },
+    {
+      "path": "data/locked/BLIND_2/registry_comparison_v1.1.0/lock.json",
+      "sha256": "18f62acbfa25fb292fd746e247745d76130da70f02e2c67336d5f14feef40269"
+    },
+    {
+      "path": "data/locked/BLIND_2/results_v1.1.0/lock.json",
+      "sha256": "244f033a2f86bbf7e728ce65b4df62ba66a5a014b30a33f1008d28ed5b110843"
+    },
+    {
+      "path": "data/locked/BLIND_2/safety_comparison_v1.1.0/lock.json",
+      "sha256": "0f9e5a69c19fa8239eb58496671a949a847a2def4af945f79707774366681c7b"
+    },
+    {
+      "path": "data/locked/BLIND_2/safety_comparison_v1.1.0/safety_comparison.json",
+      "sha256": "db780a72d22e476b7c6a60fe33cbf4f1e05910005d292c1407532ba667ade6ae"
+    },
+    {
+      "path": "data/locked/BLIND_2/safety_v1.1.0/lock.json",
+      "sha256": "002646136462243d171d219fdfa26ce275ce654915908be650f987be47da7fc4"
+    },
+    {
+      "path": "data/locked/BLIND_2/studyspec_v1.1.0/lock.json",
+      "sha256": "c9dd8bca9122fc1ccccb24a0299bea958e0e6bce05523f98df497a7afb118e7d"
+    },
+    {
+      "path": "data/locked/BLIND_3/baseline_comparison_v1.0.0/lock.json",
+      "sha256": "23fab5fc1a14acd097febb92df1f026b997b32c6d7b9538fd7844a6f1d3bff1f"
+    },
+    {
+      "path": "data/locked/BLIND_3/cohorts_v1.0.0/lock.json",
+      "sha256": "29ed0ebf9e2b9b0469165d76891e945e1b9c2db2f76ca7015a0095f0d30c0099"
+    },
+    {
+      "path": "data/locked/BLIND_3/eligibility_v1.0.0/lock.json",
+      "sha256": "508264ae56a8b16e9f05f0eed008f544478b9667c2b5f904f2fad9d3755315f3"
+    },
+    {
+      "path": "data/locked/BLIND_3/outcomes_v1.0.0/lock.json",
+      "sha256": "d8faaa052809a6a3fc47a7207581c567affc1bf4d137e7568224ab5c3bce055e"
+    },
+    {
+      "path": "data/locked/BLIND_3/outputs_v1.0.0/lock.json",
+      "sha256": "355524d79abdd022ff3b4a124fe028d65329540710d97758543f4d3cd986250e"
+    },
+    {
+      "path": "data/locked/BLIND_3/planning_comparison_v1.0.0/lock.json",
+      "sha256": "c996438508d2a8d9d7e3dd1c8773ea8d09556271a00874815ff7c3c0473088c7"
+    },
+    {
+      "path": "data/locked/BLIND_3/planning_comparison_v1.0.0/planning_comparison.json",
+      "sha256": "91cca32a7763e25ad12f0c840275958bb29d1499d554b6c91204ed4e537f18db"
+    },
+    {
+      "path": "data/locked/BLIND_3/planning_v1.0.0/lock.json",
+      "sha256": "62dad02367a8771c1ef0355bf267091272ef73503f9e34dfa6c206e552cfe782"
+    },
+    {
+      "path": "data/locked/BLIND_3/population_v1.0.0/lock.json",
+      "sha256": "a5c1f8b309d1da938a348a2ed82f5a51a78e927617a00b2909d007dae45486e9"
+    },
+    {
+      "path": "data/locked/BLIND_3/protocol_facts_v1.0.0/lock.json",
+      "sha256": "86b1b891679037fe752f3f4749ac92dd7f8800d59ef1cf23ff40c7b72471714b"
+    },
+    {
+      "path": "data/locked/BLIND_3/registry_comparison_v1.0.0/lock.json",
+      "sha256": "7d658092b8a0e1878e943c685cdc27e1ae0f473c2f18bb7dd92f7cf48ea81af7"
+    },
+    {
+      "path": "data/locked/BLIND_3/results_v1.0.0/lock.json",
+      "sha256": "1e66e45a9a55bc4487ae45af30faaa086a370ec0ff2335ad4c8f41816a3b096c"
+    },
+    {
+      "path": "data/locked/BLIND_3/safety_comparison_v1.0.0/lock.json",
+      "sha256": "932c549a40699b8db93c782860c9a2e38e96b319d0a7cea11fc2409408500fc3"
+    },
+    {
+      "path": "data/locked/BLIND_3/safety_v1.0.0/lock.json",
+      "sha256": "ce95bacbc090e1642440b90e25f3bc288ff76752f12827121d5c75ce1098a2c7"
+    },
+    {
+      "path": "data/locked/BLIND_3/studyspec_v1.0.0/lock.json",
+      "sha256": "64299499002d887f5aa76985ec0067694f1cdc7f8eca6a24e84c3885c5bdfde7"
+    },
+    {
+      "path": "data/raw/ctgov/NCT00091572.json",
+      "sha256": "634a0fb38d0d455c5d22bbdeabdda55b617a3d4dd7d895eeb1bed21be3d46dee"
+    },
+    {
+      "path": "data/safety_asset_v3_1/manifest.json",
+      "sha256": "d8c07a4b7536fc3bf5e988af69b8be1272a29b4dc8174710ce938949abc2f2b7"
+    },
+    {
+      "path": "data/simulation_parameters_v1/evidence_table.parquet",
+      "sha256": "11162d3dafdb88e99de4c19311ff5bf714674a86770c71e176706b05e8a5158e"
+    },
+    {
+      "path": "data/simulation_parameters_v3/proportions/parameter_index.jsonl",
+      "sha256": "e9135c7165d5c687cbb6d3a9ade99411653ee9e13cf9710d65097abf99392a8d"
+    },
+    {
+      "path": "data/simulation_parameters_v3/proportions/parameter_index.parquet",
+      "sha256": "ffe35e2c10a2ade2fd40ab4522ec6d6758779321023212a02fe62b0a258941a6"
+    },
+    {
+      "path": "data/simulation_parameters_v3/proportions/posterior_draws.parquet",
+      "sha256": "456e0041edb186b49123c1315b98d8f7032f75416ea817b20b130d890e24ddd3"
+    },
+    {
+      "path": "data/validation/scorecard.json",
+      "sha256": "4ee66ccfe6ee7919969dce838222a2dfbd371dff9309c5c19ada595f0910898e"
+    }
+  ],
+  "running_example": {
+    "study": "NCT00091572",
+    "registry_group": "EG000",
+    "evidence_row": "d9b934b17937e424",
+    "parameter_id": "3b1473de78a0a559"
+  },
+  "generator_sha256": "28ab15c78cfe9f4a39a7a840516ae7c5adad7a8dd6fef018efca28e62ae129bf",
+  "note": "Technical identifiers and versions are retained here and in the source artifacts, not in figure labels."
+}

@@ -1,0 +1,290 @@
+[
+  {
+    "figure": "fig1_pipeline",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      475.20001220703125
+    ],
+    "png_pixels": [
+      4320,
+      3960
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "FZMRFY+ArialMT",
+        "F2",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "BWEFST+Arial-BoldMT",
+        "F1",
+        "Identity-H",
+        0
+      ]
+    ]
+  },
+  {
+    "figure": "fig2_evidence_lane",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      547.2000122070312
+    ],
+    "png_pixels": [
+      4320,
+      4560
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "FVTZVC+ArialMT",
+        "F2",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "HEUTWN+Arial-BoldMT",
+        "F1",
+        "Identity-H",
+        0
+      ]
+    ]
+  },
+  {
+    "figure": "fig3_walkthrough_ACNS0332",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      489.6000061035156
+    ],
+    "png_pixels": [
+      4320,
+      4080
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "ETCCLZ+ArialMT",
+        "F1",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "GYVIPQ+Arial-BoldMT",
+        "F2",
+        "Identity-H",
+        0
+      ]
+    ]
+  },
+  {
+    "figure": "fig4_blind_timeline",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      352.79998779296875
+    ],
+    "png_pixels": [
+      4320,
+      2940
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "HAYOPH+ArialMT",
+        "F2",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "DJFVPF+Arial-BoldMT",
+        "F1",
+        "Identity-H",
+        0
+      ]
+    ]
+  },
+  {
+    "figure": "fig5_accrual_blind",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      432.0
+    ],
+    "png_pixels": [
+      4320,
+      3600
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "HEMQNL+ArialMT",
+        "F1",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "HAWVJH+Arial-BoldMT",
+        "F2",
+        "Identity-H",
+        0
+      ]
+    ]
+  },
+  {
+    "figure": "fig6_calibration",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      439.20001220703125
+    ],
+    "png_pixels": [
+      4320,
+      3660
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "BNTTKS+ArialMT",
+        "F2",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "BRYNCE+Arial-BoldMT",
+        "F1",
+        "Identity-H",
+        0
+      ]
+    ]
+  },
+  {
+    "figure": "fig7_blind_adverse_events",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      648.0
+    ],
+    "png_pixels": [
+      4320,
+      5400
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "EEQYDN+ArialMT",
+        "F1",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "CQFMQE+Arial-BoldMT",
+        "F2",
+        "Identity-H",
+        0
+      ]
+    ]
+  },
+  {
+    "figure": "fig8_blind_informative_estimates",
+    "pdf_pages": 1,
+    "pdf_size_points": [
+      518.4000244140625,
+      561.5999755859375
+    ],
+    "png_pixels": [
+      4320,
+      4680
+    ],
+    "png_dpi": [
+      599.9988,
+      599.9988
+    ],
+    "pdf_fonts": [
+      [
+        15,
+        "ttf",
+        "Type0",
+        "EXQNQH+ArialMT",
+        "F1",
+        "Identity-H",
+        0
+      ],
+      [
+        22,
+        "ttf",
+        "Type0",
+        "CRIQHO+Arial-BoldMT",
+        "F2",
+        "Identity-H",
+        0
+      ]
+    ]
+  }
+]

@@ -1,0 +1,748 @@
+PAGE 1
+ML09
+Accelerating Data Integration:
+Utilizing Python Scripts and Semantic Search for Variable Mapping in 
+Multiple Studies
+Xiaopeng Li
+Merck & Co., Inc., Rahway, NJ, USA
+Merck & Co., Inc.
+(03/17/2025)
+
+PAGE 2
+Disclaimer:
+The goal of this paper is to present a proof of concept and to explore the 
+feasibility of applying semantic search for data integration. The authors do 
+not claim that the proposed approach is currently incorporated into any 
+standard processes.
+
+PAGE 3
+Agenda
+3
+Semantic search and Sentence Transformers
+Technical implementations
+Application in variable mapping
+Outputs and discussions
+1
+2
+3
+4
+
+PAGE 4
+Semantic search and Sentence 
+Transformers
+4
+
+PAGE 5
+Embeddings
+• Embeddings are vector representations of a 
+data object. The data object can be words 
+tokens, patches of images, or chucks of 
+audio files. 
+• Items are represented as vectors, which are 
+the “coordinates” in the embedding space. 
+For example,  vector [1, -3]  are the [x, y] 
+coordinates on a two-dimensional space.
+• An embedding space is a high-dimensional 
+space used to represent text, words, or 
+other types of data in a way that captures 
+the semantic relationships between them.
+5
+
+PAGE 6
+The Power of Embeddings + Transformers
+6
+Previously, generation of embedding spaces was limited to sequential, one-way processing 
+capturing linear textual relationships
+Transformers utilize the context of words in a sentence to generate dynamic embeddings 
+that represent nuanced meanings, differentiating between multiple uses of the same word. 
+1.  The crisp apple is my favorite fruit to enjoy as a healthy snack.
+2.  Apple has revolutionized the tech industry with its innovative products like the iPhone and MacBook.
+3.  I love munching on potato chips while watching my favorite movie.
+4. The new computer is equipped with high-performance chips that enhance its processing speed and efficiency.
+
+PAGE 7
+Sentence Transformers 
+7
+The Transformer model was introduced in a paper titled "Attention is All You Need" by Vaswani et al., published in 
+2017. 
+Sentence Transformers
+GPTs (Generative Pre-trained 
+Transformer)
+• BERT Model: BERT (Bidirectional 
+Encoder Representations from 
+Transformers) was introduced by 
+Google in October 2018. 
+• Sentence Transformers ( S-BERT) : The 
+Sentence Transformers library, which 
+allows for the generation of sentence 
+embeddings, was introduced in 2019. 
+• ChatGPT-2: OpenAI released GPT-2 in 
+February 2019. 
+• ChatGPT-3: OpenAI released GPT-3 in 
+June 2020. 
+• ChatGPT-4: OpenAI released GPT-4 in 
+March 2023. 
+
+PAGE 8
+Sentence Transformers ≠  GPTs
+8
+Sentence Transformers
+GPTs (Generative Pre-trained 
+Transformer)
+• Primarily designed to produce fixed-
+size sentence embeddings, which can 
+be utilized for tasks like semantic 
+textual similarity, information retrieval, 
+and clustering. 
+• Sentence Transformers excels at 
+understanding relationships between 
+sentences and measuring their 
+similarity.
+• Designed for generative tasks, such as 
+text generation, conversation, and 
+creative writing. GPT models can 
+produce coherent and contextually 
+relevant text outputs based on 
+prompts, making them suitable for 
+applications like chatbots, 
+summarization, and content creation.
+
+PAGE 9
+The most similar vector is the one with shortest distance
+Distance 3 
+Generate embedding 
+Vector
+Generate Embedding Vector
+Source Document 2
+Query
+How does search work?
+Generate embedding 
+Vector
+Source Document 3
+Source Document 1
+Generate embedding 
+Vector
+Distance 2 
+Distance 1 
+
+PAGE 10
+A toy example
+10
+Query
+"It is going be 
+rainy tonight."
+"I had chocolate chip pancakes and scrambled 
+eggs for breakfast this morning."
+"The weather forecast for tomorrow is cloudy 
+and overcast, with a high of 62 degrees."
+"Building an exciting new project with 
+LangChain - come check it out!"
+"Wow! That was an amazing movie. I can't wait 
+to see it again."
+
+PAGE 11
+Technical implementations
+11
+
+PAGE 12
+Vector DB
+12
+• Vector DB: 
+    Efficient data processing is crucial for applications involving large language models, generative AI, and semantic search.
+    Vector databases are specialized databases designed to store and manage vector embeddings. They can offer features 
+not limited to : Similarity Comparisons, Fast Approximate K-Nearest Neighbor, Metadata Storage & Retrieval.
+• Popular Vector DB: 
+     FAISS is an open-source library from Facebook. It is good for large-scale vector search tasks.
+FAISS
+Milvus
+Pinecone
+Azure Cosmos DB
+
+PAGE 13
+A toy example implementation
+13
+from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from langchain_core.documents import Document
+from langchain_community.vectorstores import FAISS 
+#source sentence
+document_1 = Document(
+  page_content="I had chocolate chip pancakes and scrambled eggs for breakfast this morning.",
+  metadata={"source": "1"},
+)
+document_2 = Document(
+  page_content="The weather forecast for tomorrow is cloudy and overcast, with a high of 62 degrees.",
+  metadata={"source": "2"},
+)
+document_3 = Document(
+  page_content="Building an exciting new project with LangChain - come check it out!",
+  metadata={"source": "3"},
+)
+document_4 = Document(
+  page_content="Robbers broke into the city bank and stole $1 million in cash.",
+  metadata={"source": "4"},
+)
+document_5 = Document(
+  page_content="Wow! That was an amazing movie. I can't wait to see it again.",
+  metadata={"source": "5"},
+)
+
+PAGE 14
+A toy example implementation
+14
+documents = [
+  document_1,
+  document_2,
+  document_3,
+  document_4,
+  document_5
+]
+db = FAISS.from_documents(
+  documents,
+  embedding_function
+)
+query = "It is going be rainy tonight"
+docs_with_scores = db.similarity_search_with_score(query, k = 1)
+# print results
+for doc, score in docs_with_scores:
+  print("-" * 80)
+  print("Score: ", score)
+  print(doc.metadata)
+  print("-" * 80)
+--------------------------------------------------------------------------------
+Score:  82.09938
+{'source': '2'}
+--------------------------------------------------------------------------------
+Query
+"It is going be 
+rainy tonight."
+"The weather forecast for tomorrow is cloudy 
+and overcast, with a high of 62 degrees."
+
+PAGE 15
+Application in variable 
+mapping
+15
+
+PAGE 16
+Case study: CSD data integration
+16
+• CSD (cumulative safety datasets)  are safety datasets integrated from 44 studies/protocols. 
+• The goal of this project is to integrate a list of additional ADSL variables, either from individual study’s ADSL or from its 
+SDTM dataset. 
+For one 
+target 
+variable
+Search variables in 
+ADSL 
+If not found, Search 
+in SDTM datasets
+Mapping 
+variable 
+values
+Repeat these for 44 studies/protocols
+Repeat  for each variables we need to map
+
+PAGE 17
+17
+Challenges
+• More studies are involved , more time-consuming it becomes.  [44 studies/ protocols]
+• Large number of ADSLs variables, and even larger number of SDTM datasets/variables to search through.
+On average, each ADSL across the 44 studies/protocols contains 115 variables, with a range spanning from 68 to 161.
+• Variations in ADSL variable names/labels.
+• Variations in the organization of information in SDTM domains across different studies/protocols, causing challenges to 
+determine which SDTM domain dataset contains the relevant information.
+• Variations in codelist/ variable values.
+
+PAGE 18
+18
+Variations in ADSL variable names/labels
+Variable Name 
+Variable Label
+Target variable
+DCTREAS
+Reason for Discontinuation of Treatment
+Variable Name 
+Variable Label
+Study #1 
+ ( 149  ADSL variables)
+STATUS
+Reason for Discon. From Study Treatment
+Study #2 
+( 92  ADSL variables)
+No variable found 
+in ADSL
+Need to derive from SDTM.DS
+Study #3 
+( 104  ADSL variables)
+DSTATUSM
+Reason for Discon. From Study Treatment
+Study #4
+( 112  ADSL variables) 
+TRDCREAS
+Reason for Treatment Discontinuation
+
+PAGE 19
+DSTATUSM is selected out of 104 ADSL variables for study #3 because 
+its label is most close to the target variable label.
+Distance 3 
+Generate embedding 
+Vector
+Generate Embedding Vector
+Date of Last Exposure to 
+Treatment 
+ (TRTEDT)
+Reason for Discontinuation of 
+Treatment
+(DCTREAS)
+How does search work for mapping DCTREAS from study#3 ADSL?
+Generate embedding 
+Vector
+Reason for Discon. From 
+Study Treatment(DSTATUSM)
+Description of Actual Arm 
+(ACTARM)
+Generate embedding 
+Vector
+Distance 2 
+Distance 1 
+Repeat for all ADSL 
+variables in study #3
+
+PAGE 20
+Challenges for mapping from SDTM
+•  Variations in the organization of information in SDTM domains
+DTHCAUS ( Cause of Death ) are collected in SDTM.DD for some studies and in SDTM.CE for other studies. 
+SDTM.DD (Death Details) 
+If DDTEST='primary cause of death' then DTHCAUS=DDSTRESC;                                             
+SDTM.CE (Clinical Events)
+if CEGRPID in ('DEATH','DAR') then DTHCAUS=CEDECOD;
+• SDTM datasets are structured data. 
+• Sentence Transformers and Large Language Models (LLMs) are particularly well-suited for handling unstructured data. 
+• How to search in structured data like SDTM datasets? 
+    Proposed solution: Create “sentences” to represent the key information collected in a SDTM dataset. 
+20
+
+PAGE 21
+SDTM Domains – Select observation and finding about domains
+21
+Image from https://www.quanticate.com/blog/bid/51830/cdisc-sdtm-v3-1-2-theory-and-
+application
+
+PAGE 22
+SDTM variables classification
+Identifies the 
+study, subject, 
+domain and 
+sequence number 
+of a record i.e. 
+STUDYID, USUBJID
+22
+Identifier
+Topic
+Timing
+Qualifier
+Rule
+Describes the 
+focus of an 
+observation i.e. –
+TESTCD, -TERM
+Describes the 
+date, time, and 
+duration of an 
+observation i.e. –
+STDTC,  -DTC, -DY
+Describes the 
+grouping, results, 
+or values of an 
+observation. i.e.-
+CAT
+Describes 
+algorithms or 
+methods for 
+calculations or 
+looping 
+conditions, mainly 
+in the Trial 
+Designs domain 
+i.e. -ENRL
+Identifier
+Identifier
+Qualifier
+Topic
+Timing
+USUBJID
+MHSEQ
+MHCAT
+MHTERM
+VISIT 
+202401
+1
+PRIMARY 
+DIAGNOSIS
+MELANOMA
+Visit 1
+202401
+2
+hyperlipidemia
+Visit 1
+202401
+3
+anxiety states
+Visit 2
+Which variables are 
+representing the key 
+information collected in a 
+SDTM dataset?
+
+PAGE 23
+“Sentences” to represent the key info collected in a SDTM dataset
+Dataset label
+Grouping qualifier:  -CAT and –GRPID
+Topic:  -  TEST and –TERM
+Value qualifier:  -ORRES
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+23
+Query
+Reason for Discontinuation 
+of Treatment
+(DCTREAS)
+dataset is Disposition, DSCAT is DISPOSITION 
+EVENT, DSTERM is LOST TO FOLLOW-UP
+dataset is Tumor Lesion, LSCAT is , LSTEST is 
+Longest Diameter,  unique values are 22, 48, 
+31, 27, 12, 23, 9, 30
+dataset is Procedures, PRCAT is , PRTRT is 
+radiotherapy
+
+PAGE 24
+Implementation Plan
+ 
+ 
+ 
+ 
+ 
+ 
+24
+Query
+Target 
+variable label
+#1
+r
+Top 3 ADSL variable labels 
+Top 5 SDTM dataset “Sentences”
+1.  Create FAISS documents using ADSL variable labels
+2. Generate vector embeddings and save into vector database 
+ db =FAISS.from_documents(documents, embedding_function)   
+3. Compare with Query embeddings using vector database function 
+  docs_with_scores = db.similarity_search_with_score(query, k = 3)
+v
+1. Create FAISS documents using SDTM datasets “Sentences”
+Follow same step 2 and 3 as in above.  Change K to 5.
+
+PAGE 25
+Outputs and discussions
+25
+
+PAGE 26
+Output tab 1
+26
+The outputs are saved in excel sheet with two tabs.  First tab: Top 3 results for ADSL variables
+Identifier
+Identifier
+Qualifier
+Topic
+Target var
+Target label
+Source dataset
+Source Var
+Source label
+Unique values *
+DCTREAS
+Reason for 
+Discontinuation of 
+Treatment
+lpt_001
+STATUS
+Reason for Discon. From 
+Study Treatment
+['ADVERSE EVENT' 
+'PROGRESSIVE DISEASE'
+DCTREAS
+Reason for 
+Discontinuation of 
+Treatment
+lpt_001
+DISCNDTC
+Date/Time of 
+Discontinuance
+['2013-07-23' '2014-02-13'
+DCTREAS
+Reason for 
+Discontinuation of 
+Treatment
+lpt_001
+DAYOFDC
+Relative Day of 
+Discontinuance
+[105. 238.  20.  nan 365. 
+DCTREAS
+Reason for 
+Discontinuation of 
+Treatment
+lpt_002
+DAYOFDC
+Relative Day of 
+Discontinuance
+[186. 275.  nan  21. 227.
+DCTREAS
+Reason for 
+Discontinuation of 
+Treatment
+lpt_002
+RFENDTC
+Subject Reference End 
+Date/Time
+['2013-07-29T13:00' '2013-
+11-26T14:28'
+DCTREAS
+Reason for 
+Discontinuation of 
+Treatment
+lpt_002
+RFENDT
+Subject Reference End Date
+[datetime.date(2013, 7, 29) 
+datetime.date(2013, 11, 26)
+
+PAGE 27
+Output tab 2
+27
+Second tab: Top 5 results for SDTM datasets.
+Identifier
+Identifier
+Qualifier
+Topic
+Target var
+Target label
+Source Study
+Sentences*
+DCTREAS
+Reason for Discontinuation 
+of Treatment
+src_002
+dataset is Disposition, DSCAT is DISPOSITION EVENT, DSTERM is 
+LOST TO FOLLOW-UP, PROGRESSIVE DISEASE,..
+DCTREAS
+Reason for Discontinuation 
+of Treatment
+src_002
+dataset is Clinical Findings, CFCAT is SURVIVAL FOLLOW-UP, CFTEST 
+is Survival Status,  unique values are ALIVE, DEAD, SUBJECT 
+WITHDREW CONSENT, …
+DCTREAS
+Reason for Discontinuation 
+of Treatment
+src_002
+dataset is Clinical Findings, CFGRPID is SFU,  CFTEST is Survival 
+Status,  unique values are  ALIVE, DEAD, SUBJECT WITHDREW 
+CONSENT, …
+DCTREAS
+Reason for Discontinuation 
+of Treatment
+src_002
+dataset is Intervention Findings, IFCAT is OTHER SUSPECT THERAPY, 
+IFTEST is Action Taken,  unique values are DRUG WITHDRAWN, 
+DOSE NOT CHANGED,…
+DCTREAS
+Reason for Discontinuation 
+of Treatment
+src_002
+dataset is Disposition, DSGRPID is DS02, DSTERM is PROGRESSIVE 
+DISEASE, WITHDRAWAL BY SUBJECT, ADVERSE EVENT, ….
+
+PAGE 28
+Measurement for accuracy for ADSL mapping
+28
+• MRR ( Mean Reciprocal Rank) shows how soon the first relevant item is found. An MRR score closer to 1 indicates 
+excellent search quality.
+• To calculate MRR, take the reciprocal of the rank of the first relevant item and take average across all the quires.
+                                                                                                   Rank                         
+Item
+Identifier
+Identifier
+Variable A
+Variable B
+Variable C
+1
+2
+3
+First relevant 
+item
+Reciprocal 
+Rank= ½=0.5
+When all Top 3 variables are not correct:
+1. If a correct ADSL variable is missed 
+from the list, then RR=0
+2. If there is no ADSL variable , RR=1
+
+PAGE 29
+Measurement for accuracy for ADSL mapping
+29
+target var
+target label
+Source dataset
+Source Var
+Source label
+RR=1
+RR=1
+Target var Target label
+Source dataset Source Var
+Source label
+Unique values *
+DCTREAS
+Reason for 
+Discontinuation 
+of Treatment
+lpt_001
+STATUS
+Reason for Discon. From 
+Study Treatment
+['ADVERSE EVENT' 
+'PROGRESSIVE DISEASE'
+DCTREAS
+Reason for 
+Discontinuation 
+of Treatment
+lpt_001
+DISCNDTC
+Date/Time of 
+Discontinuance
+['2013-07-23' '2014-02-
+13'
+DCTREAS
+Reason for 
+Discontinuation 
+of Treatment
+lpt_001
+DAYOFDC
+Relative Day of 
+Discontinuance
+[105. 238.  20.  nan 365. 
+DCTREAS
+Reason for 
+Discontinuation 
+of Treatment
+lpt_002
+DAYOFDC
+Relative Day of 
+Discontinuance
+[186. 275.  nan  21. 227.
+DCTREAS
+Reason for 
+Discontinuation 
+of Treatment
+lpt_002
+RFENDTC
+Subject Reference End 
+Date/Time
+['2013-07-29T13:00' 
+'2013-11-26T14:28'
+DCTREAS
+Reason for 
+Discontinuation 
+of Treatment
+lpt_002
+RFENDT
+Subject Reference End 
+Date
+[datetime.date(2013, 7, 
+29) datetime.date(2013, 
+11, 26)
+
+PAGE 30
+Failure case in ADSL mapping
+30
+   
+Identifier
+Identifier
+Qualifier
+Topic
+Target Var
+Target Label
+Source Var
+Source Label
+Correct Var
+Correct Label
+DCTREAS
+Reason for 
+Discontinuation 
+of Treatment
+DCSREAS
+Reason for Discontinuation from 
+Study
+DCTREAS1
+Reason for Discon of 
+Treatment P1
+DCTREAS2
+Reason for Discon of Treatment 
+P2
+EOTSTT1
+End of Treatment Status Part 1
+RR=0
+
+PAGE 31
+MRR score for ADSL mapping 
+31
+• The Mean Reciprocal Rank (MRR) for all queries is 0.97. This indicates that in nearly every instance, the correct matching 
+variable is consistently placed at the highest rank. Or, when there is no correct variable within the top 3 list, it is true 
+that the information is absent from the ADSL dataset.
+• For queries where variable name/label not the exact same, the MRR is impressively high at 0.82. This indicates that, in a 
+significant majority of these cases, the appropriate matching variable is ranked either first or second. 
+• Overall, these metrics demonstrate the robustness and efficiency of the semantic search algorithm in retrieving 
+pertinent information, even in circumstances where exact matching is lacking.
+Identifier
+Identifier
+Qualifier
+Topic
+
+PAGE 32
+Discussion
+32
+• Enhanced Efficiency and Accuracy
+Semantic search offers statistical programmers a systematic and reliable approach to accurately locate source variables 
+and datasets. 
+This is particularly beneficial when dealing with data integration requests that involve 1) large number of studies, or 2) 
+partners’ clinical data, where the complexity increases due to varying terminologies and data structures.
+By employing semantic search, the time required to identify the correct variables and datasets is significantly reduced. 
+As a result, data integration projects can achieve a “jump start”,  allowing project team to identify potential issues 
+sooner. This early identification encourages discussion and the development of solutions to challenges, ultimately 
+improving overall project efficiency.
+Identifier
+Identifier
+Qualifier
+Topic
+
+PAGE 33
+Discussion
+33
+• Empowering Statistical Programmers
+The semantic search only provides recommendations for variable and dataset selection. 
+It is statistical programmers’ responsibility to review the recommendations and make the final judgements based on 
+their domain expertise and adhere to their company’s SOPs. 
+This human-in-the-loop approach ensures that decisions are grounded in practical experience, thereby enhancing the 
+quality of data integration.
+• Leveraging Advanced Technologies
+The advancements in semantic search—from embedding models to vector databases and search algorithms—represent 
+a well-explored area with many available ready-to-use products. 
+However, the successful application of these technologies in variable mapping hinges on the statistical programmers’ 
+domain knowledge and experience in key areas such as SDTM, ADaM , and the overall data integration process. 
+
+PAGE 34
+Copyright © 2025 Merck & Co., Inc., Rahway, NJ, USA and its affiliates. All rights reserved.
+Thank you

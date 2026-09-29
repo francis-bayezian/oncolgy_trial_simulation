@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="475.2pt" viewBox="0 0 518.4 475.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-28T21:12:38.632702</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Clinical trial simulation</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 475.2 
+L 518.4 475.2 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 34.509888 163.56384 
+L 165.540672 163.56384 
+Q 171.077184 163.56384 171.077184 159.00192 
+L 171.077184 98.55648 
+Q 171.077184 93.99456 165.540672 93.99456 
+L 34.509888 93.99456 
+Q 28.973376 93.99456 28.973376 98.55648 
+L 28.973376 159.00192 
+Q 28.973376 163.56384 34.509888 163.56384 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #edf4fa; stroke: #23649a; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 193.684608 163.56384 
+L 324.715392 163.56384 
+Q 330.251904 163.56384 330.251904 159.00192 
+L 330.251904 98.55648 
+Q 330.251904 93.99456 324.715392 93.99456 
+L 193.684608 93.99456 
+Q 188.148096 93.99456 188.148096 98.55648 
+L 188.148096 159.00192 
+Q 188.148096 163.56384 193.684608 163.56384 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #edf4fa; stroke: #23649a; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 352.859328 163.56384 
+L 483.890112 163.56384 
+Q 489.426624 163.56384 489.426624 159.00192 
+L 489.426624 98.55648 
+Q 489.426624 93.99456 483.890112 93.99456 
+L 352.859328 93.99456 
+Q 347.322816 93.99456 347.322816 98.55648 
+L 347.322816 159.00192 
+Q 347.322816 163.56384 352.859328 163.56384 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #f2eef8; stroke: #7051a3; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 172.229892 128.58912 
+Q 179.613367 128.58912 186.046513 128.58912 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 182.446513 126.78912 
+L 186.046513 128.58912 
+L 182.446513 130.38912 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #40566c; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 331.404612 128.58912 
+Q 338.788087 128.58912 345.221233 128.58912 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 341.621233 126.78912 
+L 345.221233 128.58912 
+L 341.621233 130.38912 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #40566c; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 34.509888 275.71104 
+L 165.540672 275.71104 
+Q 171.077184 275.71104 171.077184 271.14912 
+L 171.077184 210.70368 
+Q 171.077184 206.14176 165.540672 206.14176 
+L 34.509888 206.14176 
+Q 28.973376 206.14176 28.973376 210.70368 
+L 28.973376 271.14912 
+Q 28.973376 275.71104 34.509888 275.71104 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #f0f3f6; stroke: #40566c; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 193.684608 275.71104 
+L 324.715392 275.71104 
+Q 330.251904 275.71104 330.251904 271.14912 
+L 330.251904 210.70368 
+Q 330.251904 206.14176 324.715392 206.14176 
+L 193.684608 206.14176 
+Q 188.148096 206.14176 188.148096 210.70368 
+L 188.148096 271.14912 
+Q 188.148096 275.71104 193.684608 275.71104 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #edf7f5; stroke: #187f80; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 352.859328 275.71104 
+L 483.890112 275.71104 
+Q 489.426624 275.71104 489.426624 271.14912 
+L 489.426624 210.70368 
+Q 489.426624 206.14176 483.890112 206.14176 
+L 352.859328 206.14176 
+Q 347.322816 206.14176 347.322816 210.70368 
+L 347.322816 271.14912 
+Q 347.322816 275.71104 352.859328 275.71104 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #edf7f5; stroke: #187f80; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 172.229892 240.73632 
+Q 179.613367 240.73632 186.046513 240.73632 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 182.446513 238.93632 
+L 186.046513 240.73632 
+L 182.446513 242.53632 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #40566c; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 331.404612 240.73632 
+Q 338.788087 240.73632 345.221233 240.73632 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 341.621233 238.93632 
+L 345.221233 240.73632 
+L 341.621233 242.53632 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #40566c; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 259.2 177.588226 
+Q 259.2 191.125643 259.2 203.71273 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #7051a3; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 261 200.11273 
+L 259.2 203.71273 
+L 257.4 200.11273 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #7051a3; stroke: #7051a3; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 418.37472 177.588226 
+Q 418.37472 191.125643 418.37472 203.71273 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #7051a3; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 420.17472 200.11273 
+L 418.37472 203.71273 
+L 416.57472 200.11273 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #7051a3; stroke: #7051a3; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 10.05696 381.39552 
+Q 18.938814 381.39552 26.870339 381.39552 
+" style="fill: none; stroke: #187f80; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 23.270339 379.59552 
+L 26.870339 381.39552 
+L 23.270339 383.19552 
+z
+" style="fill: #187f80; stroke: #187f80; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 34.509888 416.37024 
+L 165.540672 416.37024 
+Q 171.077184 416.37024 171.077184 411.80832 
+L 171.077184 351.36288 
+Q 171.077184 346.80096 165.540672 346.80096 
+L 34.509888 346.80096 
+Q 28.973376 346.80096 28.973376 351.36288 
+L 28.973376 411.80832 
+Q 28.973376 416.37024 34.509888 416.37024 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #edf7f5; stroke: #187f80; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 193.684608 416.37024 
+L 324.715392 416.37024 
+Q 330.251904 416.37024 330.251904 411.80832 
+L 330.251904 351.36288 
+Q 330.251904 346.80096 324.715392 346.80096 
+L 193.684608 346.80096 
+Q 188.148096 346.80096 188.148096 351.36288 
+L 188.148096 411.80832 
+Q 188.148096 416.37024 193.684608 416.37024 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #edf7f5; stroke: #187f80; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 352.859328 416.37024 
+L 483.890112 416.37024 
+Q 489.426624 416.37024 489.426624 411.80832 
+L 489.426624 351.36288 
+Q 489.426624 346.80096 483.890112 346.80096 
+L 352.859328 346.80096 
+Q 347.322816 346.80096 347.322816 351.36288 
+L 347.322816 411.80832 
+Q 347.322816 416.37024 352.859328 416.37024 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #f0f3f6; stroke: #40566c; stroke-width: 0.75; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 172.229892 381.39552 
+Q 179.613367 381.39552 186.046513 381.39552 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 182.446513 379.59552 
+L 186.046513 381.39552 
+L 182.446513 383.19552 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #40566c; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 331.404612 381.39552 
+Q 338.788087 381.39552 345.221233 381.39552 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+    <path d="M 341.621233 379.59552 
+L 345.221233 381.39552 
+L 341.621233 383.19552 
+z
+" clip-path="url(#pd1505b5c7e)" style="fill: #40566c; stroke: #40566c; stroke-width: 0.85; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 418.37472 162.0432 
+L 418.37472 174.58848 
+L 259.2 174.58848 
+" clip-path="url(#pd1505b5c7e)" style="fill: none; stroke: #7051a3; stroke-width: 0.85; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 480.66048 274.1904 
+L 480.66048 300.04128 
+L 10.05696 300.04128 
+L 10.05696 381.39552 
+" style="fill: none; stroke: #187f80; stroke-width: 0.85; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #23649a" x="28.512" y="62.44128" transform="rotate(-0 28.512 62.44128)">A  Evidence and statistical conversion</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 7.6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="28.512" y="78.78816" transform="rotate(-0 28.512 78.78816)">Quality controls: source provenance, denominators and clinical context</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #23649a" x="39.585024" y="113.681627" transform="rotate(-0 39.585024 113.681627)">Clinical sources</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="39.585024" y="134.409275" transform="rotate(-0 39.585024 134.409275)">1,000 trials</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="39.585024" y="149.235515" transform="rotate(-0 39.585024 149.235515)">2,771 clinical profiles</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #23649a" x="198.759744" y="113.681627" transform="rotate(-0 198.759744 113.681627)">Statistical tables</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="198.759744" y="134.409275" transform="rotate(-0 198.759744 134.409275)">106,185 observations</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="198.759744" y="149.235515" transform="rotate(-0 198.759744 149.235515)">Counts and denominators</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #7051a3" x="357.934464" y="113.681544" transform="rotate(-0 357.934464 113.681544)">Probability tables</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="357.934464" y="134.409275" transform="rotate(-0 357.934464 134.409275)">4,693 fitted parameters</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="357.934464" y="149.235439" transform="rotate(-0 357.934464 149.235439)">Distributions and uncertainty</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="28.512" y="190.5552" transform="rotate(-0 28.512 190.5552)">B  Protocol-informed simulation</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="39.585024" y="225.828827" transform="rotate(-0 39.585024 225.828827)">Protocol specification</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="39.585024" y="246.556399" transform="rotate(-0 39.585024 246.556399)">Eligibility and visit schedules</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="39.585024" y="261.382715" transform="rotate(-0 39.585024 261.382715)">Treatment and endpoint rules</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #187f80" x="198.759744" y="225.828744" transform="rotate(-0 198.759744 225.828744)">Population and screening</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="198.759744" y="246.556475" transform="rotate(-0 198.759744 246.556475)">Patient characteristics</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="198.759744" y="261.382639" transform="rotate(-0 198.759744 261.382639)">Eligibility status and unknowns</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #187f80" x="357.934464" y="225.828827" transform="rotate(-0 357.934464 225.828827)">Trial simulation</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="357.934464" y="246.556475" transform="rotate(-0 357.934464 246.556475)">Enrolment and treatment</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="357.934464" y="261.382715" transform="rotate(-0 357.934464 261.382715)">Adverse events and endpoints</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="28.512" y="324.75168" transform="rotate(-0 28.512 324.75168)">C  Outputs and blinded evaluation</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #187f80" x="39.585024" y="366.487944" transform="rotate(-0 39.585024 366.487944)">Synthetic records</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="39.585024" y="387.215675" transform="rotate(-0 39.585024 387.215675)">Participant characteristics</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="39.585024" y="402.041915" transform="rotate(-0 39.585024 402.041915)">Adverse events and endpoints</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #187f80" x="198.759744" y="366.487944" transform="rotate(-0 198.759744 366.487944)">Feasibility estimates</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="198.759744" y="387.215599" transform="rotate(-0 198.759744 387.215599)">Screening status</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="198.759744" y="402.041915" transform="rotate(-0 198.759744 402.041915)">Recruitment timelines</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="357.934464" y="366.488027" transform="rotate(-0 357.934464 366.488027)">Blinded comparisons</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="357.934464" y="387.215675" transform="rotate(-0 357.934464 387.215675)">Frozen predictions</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 7.8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="357.934464" y="402.041839" transform="rotate(-0 357.934464 402.041839)">Reported registry outcomes</text>
+   </g>
+  </g>
+  <g id="text_32">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #242d37" x="28.512" y="21.091528" transform="rotate(-0 28.512 21.091528)">From clinical evidence to synthetic trial data</text>
+  </g>
+  <g id="text_33">
+   <text style="font-size: 8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="28.512" y="38.339419" transform="rotate(-0 28.512 38.339419)">Data quality and statistical conversion establish the foundation for simulation.</text>
+  </g>
+  <g id="text_34">
+   <text style="font-size: 7.3px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="28.512" y="444.7872" transform="rotate(-0 28.512 444.7872)">Recruitment and event-specific safety models use additional registry evidence.</text>
+  </g>
+  <g id="text_35">
+   <text style="font-size: 7.3px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #40566c" x="28.512" y="459.5184" transform="rotate(-0 28.512 459.5184)">Source links, assumptions and unresolved quantities accompany the outputs.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd1505b5c7e">
+   <rect x="28.512" y="59.4" width="461.376" height="380.16"/>
+  </clipPath>
+ </defs>
+</svg>
