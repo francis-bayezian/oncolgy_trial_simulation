@@ -518,13 +518,14 @@ def fig11_population_sae():
   return next(int(x['value']) for c in m['classes'] for ct in c['categories'] if ct.get('title')==cat for x in ct['measurements'] if x['groupId']=='BG002')
  real={'Women':bval('Sex','Female')/6,'Asian':bval('Race','Asian')/6,'White':bval('Race','White')/6}
  ev={g['id']:(g['seriousNumAffected'],g['seriousNumAtRisk']) for g in reg['adverseEventsModule']['eventGroups']}
- f=figure(8.4,'Who was simulated, who enrolled, and arm-matched serious adverse events',
-  'NCT04003610 (development study) | 372 simulated participants against the 7 the trial enrolled')
- heading(f,.055,.885,'A','Age of simulated participants')
+ f=figure(8.4,'Simulated cohort, enrolled participants and arm-matched serious adverse events',
+  'NCT04003610 development study | 372 simulated participants compared with 7 participants enrolled in the trial')
+ heading(f,.055,.885,'A','Age distribution of the simulated cohort')
  ax=f.add_axes([.10,.64,.84,.2]);ax.hist(ages,bins=np.arange(0,90,3),color=SYNTH,alpha=.75,ec='white',lw=.4)
- ax.axvspan(57,84,color=PROTOCOL,alpha=.10,lw=0);ax.text(70.5,ax.get_ylim()[1]*.9,'Real trial: 7 of 7\naged 57-84',ha='center',va='top',fontsize=7.3,color=PROTOCOL)
+ ax.axvspan(57,84,color=PROTOCOL,alpha=.10,lw=0);ax.text(70.5,ax.get_ylim()[1]*.9,'Enrolled trial population:\n7/7 aged 57-84',ha='center',va='top',fontsize=7.3,color=PROTOCOL)
  ax.set(xlim=(0,88),xlabel='Age (years)',ylabel='Simulated participants');ax.grid(axis='y',color='#E5EAF0',lw=.5)
- f.text(.10,.555,f'Simulated: mean age {ages.mean():.1f} years; {inband} of {len(ages)} ({inband/len(ages):.0%}) aged 57-84.',fontsize=7.3,color=SLATE)
+ f.text(.10,.565,f'Simulated cohort: mean age {ages.mean():.1f} years; {inband} of {len(ages)} ({inband/len(ages):.0%}) aged 57-84; {int(np.sum(ages<18))} under 18.',fontsize=7.3,color=SLATE)
+ f.text(.10,.545,'Drawn from simulated patients not ruled out by the checkable criteria; 37 criteria per patient, including the age limit, could not be checked.',fontsize=7.0,color=SLATE)
  heading(f,.055,.51,'B','Standard-care participants')
  ax=f.add_axes([.10,.10,.34,.37]);keys=list(sim);x=np.arange(len(keys))
  ax.bar(x-.19,[sim[k] for k in keys],.36,color=SYNTH,label=f'Simulated (n = {n})')
@@ -542,7 +543,7 @@ def fig11_population_sae():
   h=est[arm]['serious_adverse_event']['headline'];y=1-i;lo,hi=h['single_trial_80']
   ax.plot([lo,hi],[y,y],color=FITTED,lw=4,alpha=.35,solid_capstyle='butt');ax.plot(h['estimate'],y,'|',color=FITTED,ms=9,mew=1.4)
   k,m=ev[g];wl,wh=wilson(k,m);ax.plot([wl,wh],[y-.18]*2,color=OBSERVED,lw=.9);ax.plot(k/m,y-.18,'o',color=OBSERVED,ms=4.5,mec='white',mew=.4)
-  ax.text(1.03,y-.05,f"{h['estimate']:.0%} vs {k}/{m}",fontsize=6.9,va='center',transform=ax.get_yaxis_transform())
+  ax.text(1.03,y-.05,f"Predicted {h['estimate']:.1%};\nobserved {k}/{m}",fontsize=6.9,va='center',transform=ax.get_yaxis_transform())
   a,b=math.log(lo/(1-lo)),math.log(hi/(1-hi));mu,sd=(a+b)/2,(b-a)/(2*1.2816)
   draws.append((m,1/(1+np.exp(-rng.normal(mu,sd,200000)))))
  ax.set_yticks([1,0],[a[0] for a in arms],fontsize=7);percent(ax);ax.set_ylim(-.6,1.5);ax.set_xticks([0,.5,1])
@@ -554,7 +555,8 @@ def fig11_population_sae():
  f.text(.53,.275,f'Realised arms: expected {x7.mean():.2f} of 7; observed {obs}; P(at most {obs}) = {np.mean(x7<=obs):.2f}',fontsize=7.2,color=SLATE)
  f.legend(handles=[Line2D([],[],color=FITTED,lw=4,alpha=.35,label='80% range for a single trial'),Line2D([],[],marker='|',ls='',color=FITTED,ms=8,label='Predicted'),
   Line2D([],[],marker='o',ls='',color=OBSERVED,label='Observed (95% CI)')],loc='center',bbox_to_anchor=(.74,.315),ncol=3,fontsize=6.6,handlelength=1.4,columnspacing=.9)
- f.text(.055,.025,'Standard care = the two simulated standard-care arms pooled; the real group received gemcitabine plus carboplatin or pembrolizumab.',fontsize=6.6,color=SLATE)
+ f.text(.055,.035,"Simulated standard care pools the simulation's two standard-care arms to match the registry group (gemcitabine-carboplatin or pembrolizumab).",fontsize=6.6,color=SLATE)
+ f.text(.055,.017,'Serious-event probabilities depend on the treatment arm only, not on age, sex or race. With realised arm sizes of 1 and 6, these comparisons are descriptive.',fontsize=6.6,color=SLATE)
  save(f,'fig11_population_and_arm_sae')
 
 if __name__=='__main__':
