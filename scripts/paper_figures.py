@@ -129,10 +129,10 @@ def fig1_pipeline():
  a.plot([.98,.98,-.04,-.04],[.435,.367,.367,.153],color=SYNTH,lw=.85,clip_on=False)
  connector=FancyArrowPatch((-.04,.153),(.005,.153),arrowstyle='-|>',mutation_scale=9,color=SYNTH,lw=.85,shrinkA=0,shrinkB=3,clip_on=False)
  a.add_patch(connector)
- a.text(0,.302,'C  Outputs and blinded evaluation',fontsize=9,fontweight='bold',color=SLATE)
+ a.text(0,.302,'C  Outputs and external evaluation',fontsize=9,fontweight='bold',color=SLATE)
  outputs=[('Synthetic records','Participant characteristics','Adverse events and endpoints',SYNTH),
   ('Feasibility estimates','Screening status','Recruitment timelines',SYNTH),
-  ('Blinded comparisons','Frozen predictions','Reported registry outcomes',SLATE)]
+  ('External evaluation','Predictions recorded beforehand','Compared with registry outcomes',SLATE)]
  for x,item in zip(xs,outputs):entry(x,.065,*item)
  for i in range(2):arrow(a,(xs[i]+w,.153),(xs[i+1],.153))
  f.text(.055,.064,'Recruitment and event-specific safety models use additional registry evidence.',fontsize=7.3,color=SLATE)
@@ -231,11 +231,11 @@ def fig4_blind_timeline():
   freeze=max(locks.values());first=min(comparisons)
   assert freeze<fetch<=first
   records.append((i+1,BLIND[b],freeze,fetch,first,len(locks)))
- f=figure(4.9,'Prediction freeze and blinded evaluation',
-  'Development studies: every prediction stage was frozen before registry results were retrieved.')
+ f=figure(4.9,'Prediction timing and external evaluation',
+  'Development studies: every prediction stage was recorded before registry results were retrieved.')
  # The sequence is conceptual; the table below carries the exact measured times.
  a=canvas(f,[.055,.685,.89,.17])
- steps=[('1','Freeze predictions','Record the final model outputs',FITTED),
+ steps=[('1','Record predictions','Save the final model outputs',FITTED),
         ('2','Retrieve results','Access reported trial outcomes',EVIDENCE),
         ('3','Evaluate predictions','Compare forecasts with outcomes',SYNTH)]
  for x,(number,title,body,col) in zip([.005,.35,.695],steps):
@@ -251,7 +251,7 @@ def fig4_blind_timeline():
  a=canvas(f,[.055,.155,.89,.415])
  columns=[.30,.50,.70,.91]
  a.text(.012,.94,'Study',fontsize=7.8,fontweight='bold',va='center')
- for x,txt in zip(columns,['Final prediction\nfreeze','Results\nretrieved','First comparison\nrecorded','Time before\nretrieval']):
+ for x,txt in zip(columns,['Final prediction\nrecorded','Results\nretrieved','First comparison\nrecorded','Time before\nretrieval']):
   a.text(x,.94,txt,fontsize=7.7,fontweight='bold',ha='center',va='center',linespacing=1.3,color=SLATE)
  a.plot([0,1],[.805,.805],color='#CCD6DF',lw=.8)
  for row,(number,registry,freeze,fetch,first,count) in enumerate(records):
@@ -267,11 +267,11 @@ def fig4_blind_timeline():
   a.plot([0,1],[y-.145,y-.145],color='#E5EAF0',lw=.6)
  assert all(r[5]==10 for r in records)
  f.text(.055,.088,'All 10 prediction stages preceded retrieval in each study.',fontsize=8,fontweight='bold',color=OBSERVED)
- f.text(.055,.043,'Time before retrieval = registry retrieval time minus the final prediction-freeze time.',fontsize=7.2,color=SLATE)
+ f.text(.055,.043,'Time before retrieval = registry retrieval time minus the time the final prediction was recorded.',fontsize=7.2,color=SLATE)
  save(f,'fig4_blind_timeline')
 
 def fig5_accrual():
- f=figure(6.0,'Recruitment forecasts and observed trial outcomes','Three development studies; forecasts were frozen before results were read')
+ f=figure(6.0,'Recruitment forecasts and observed trial outcomes','Three development studies; forecasts were recorded before results were retrieved')
  heading(f,.055,.87,'A','Recruitment rate');ax=f.add_axes([.27,.53,.67,.29]);failure=[]
  for i,b in enumerate(BLIND):
   d=load(latest(b,'planning_comparison')/'planning_comparison.json');y=2-i;q=d['historical_model']['predicted_patients_per_year'];a=d['actual'];score=a['enrolled']>=5
@@ -321,7 +321,7 @@ def fig6_calibration():
  a=f.add_axes([.40,.10,.49,.19]);m=load(ROOT/'data/safety_asset_v3_1/manifest.json')['validation']['listed']['mean_log_predictive_probability']
  t0=load(ROOT/'data/safety_asset_t0/manifest.json')['validation']['listed']['mean_log_predictive_probability']
  vals=[m['v3_uncalibrated'],m['v3'],t0['v3']]
- labels=['Before calibration','After calibration','Evidence frozen at 2024']
+ labels=['Before calibration','After calibration','Evidence before 2024']
  for i,(label,v) in enumerate(zip(labels,vals)):
   y=2-i;a.plot([-3,v],[y,y],color='#E7E2F0',lw=4);a.plot(v,y,'o',color=FITTED,ms=5);a.text(v+.06,y,f'{v:.2f}',va='center',fontsize=8)
  a.set_yticks([2,1,0],labels,fontsize=8);a.tick_params(axis='y',length=0);a.spines['left'].set_visible(False);a.set(xlim=(-3,-1.5),ylim=(-.6,2.6),xlabel='Mean log predictive score (higher is better)')
@@ -414,8 +414,8 @@ def fig9_temporal():
  den={c['groupId']:int(c['value']) for d in om['denoms'] for c in d['counts']}
  val={m['groupId']:float(m['value']) for c in om['classes'] for cat in c['categories'] for m in cat['measurements']}
  title={g['id']:g['title'] for g in om['groups']};an=om['analyses'][0]
- f=figure(9.6,'Temporal test: a phase III trial predicted from its protocol alone',
-  f'{SHOW} | once- vs twice-weekly carfilzomib regimen in relapsed myeloma | evidence frozen at 1 January 2024')
+ f=figure(9.6,'Temporal evaluation of a phase III trial using pre-2024 evidence',
+  f'{SHOW} | once- vs twice-weekly carfilzomib regimen in relapsed myeloma | evidence available before 1 January 2024')
  heading(f,.055,.885,'A','Response rate by arm')
  ax=f.add_axes([.25,.745,.24,.11]);lo,hi=ni['predicted_response']['observed_rate_90_at_n'];med=ni['predicted_response']['control_true_rate']['median']
  rows=[(g,('Twice-weekly (control)' if 'twice' in title[g].lower() else 'Once-weekly')) for g in sorted(val)]
@@ -449,7 +449,7 @@ def fig9_temporal():
   out=not r['inside_90'];ax.plot(r['observed']/n,y,'D' if out else 'o',ms=3.8,color=PROTOCOL if out else OBSERVED,mec='white',mew=.35)
  ax.set_yticks(range(len(rows)),[event_name(r) for r in rows][::-1],fontsize=6.8);percent(ax);ax.set_xticks([0,.5,1]);ax.set_xlabel('Participants affected',fontsize=7.3)
  f.text(.565,.598,f"{saf['matched_inside_90']} of {saf['matched_terms']} matched events inside the 90% interval",fontsize=6.8,color=SLATE)
- heading(f,.055,.345,'E','Patient journey: locked prediction, correction and observation')
+ heading(f,.055,.345,'E','Patient journey: prediction, correction and observation')
  jl=load(show_lock('journey')/'journey_summary.json');jr=load(ROOT/'data/trial/temporal'/SHOW/'retrospective_journey_L018/journey_summary.json')
  js,rj=jl['summary'],jr['summary']
  pf=reg['resultsSection']['participantFlowModule']['periods'][0];ms={m['type']:sum(int(a['numSubjects']) for a in m['achievements']) for m in pf['milestones']}
@@ -466,10 +466,10 @@ def fig9_temporal():
   y=2-i;ax.plot([min(a1,a2,o),max(a1,a2,o)],[y,y],color='#DDE3E9',lw=1.2)
   ax.plot(a1,y,'o',color=PROTOCOL,ms=5.5);ax.plot(a2,y,'o',color=FITTED,mfc='white',mew=1.3,ms=5.5);ax.plot(o,y,'s',color=OBSERVED,ms=5)
  ax.set_yticks([2,1,0],[x[0] for x in items],fontsize=7.4);percent(ax);ax.set_ylim(-.6,2.6);ax.set_xlabel('Share of participants',fontsize=7.3)
- f.legend(handles=[Line2D([],[],marker='o',ls='',color=PROTOCOL,label='Locked prediction'),Line2D([],[],marker='o',ls='',color=FITTED,mfc='white',label='After correction (retrospective)'),
+ f.legend(handles=[Line2D([],[],marker='o',ls='',color=PROTOCOL,label='Prediction'),Line2D([],[],marker='o',ls='',color=FITTED,mfc='white',label='After correction (retrospective)'),
   Line2D([],[],marker='s',ls='',color=OBSERVED,label='Registry')],loc='lower center',bbox_to_anchor=(.55,.058),fontsize=7,ncol=3)
- f.text(.055,.045,f"Predictions frozen {order['locked_at_latest'][11:19]} UTC; results retrieved {order['fetched_at'][11:19]} UTC on the same day.",fontsize=6.8,color=SLATE)
- f.text(.055,.025,"Correction after unblinding: the protocol's own progression figure for the regimen replaced a cross-regimen average.",fontsize=6.8,color=SLATE)
+ f.text(.055,.045,"Predictions recorded before registry retrieval.",fontsize=6.8,color=SLATE)
+ f.text(.055,.025,"Correction after results were retrieved: the protocol's own progression figure for the regimen replaced a cross-regimen average.",fontsize=6.8,color=SLATE)
  save(f,'fig9_temporal_showcase')
 
 def fig10_trace(subject='S0198'):
