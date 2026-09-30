@@ -501,8 +501,64 @@ def fig10_trace(subject='S0198'):
  f.legend(handles=handles,loc='lower left',bbox_to_anchor=(.05,.02),ncol=2,fontsize=6.9)
  save(f,'fig10_patient_trace')
 
+def fig11_population_sae():
+ import csv
+ D=LOCK/'BLIND_1'/'outputs_v1.2.0'
+ def rows(name):
+  p=D/name;READS.add(p)
+  with open(p,encoding='utf-8') as fh:return list(csv.DictReader(fh))
+ adsl=rows('adsl.csv');est=load(D/'trial_outputs.json')['feasibility']['subgroup_estimates']['arms']
+ reg=load(ROOT/'data/holdout_comparison/NCT04003610.json')['resultsSection']
+ ages=np.array([float(r['AGE']) for r in adsl]);inband=int(np.sum((ages>=57)&(ages<=84)))
+ soc=[r for r in adsl if r['ARM'] in ('ARM3','ARM4')];n=len(soc)
+ sim={'Women':sum(r['SEX']=='female' for r in soc)/n,'Asian':sum(r['RACE']=='asian' for r in soc)/n,'White':sum(r['RACE']=='white' for r in soc)/n}
+ bm={m['title']:m for m in reg['baselineCharacteristicsModule']['measures']}
+ def bval(title,cat):
+  m=next(v for k,v in bm.items() if k.startswith(title))
+  return next(int(x['value']) for c in m['classes'] for ct in c['categories'] if ct.get('title')==cat for x in ct['measurements'] if x['groupId']=='BG002')
+ real={'Women':bval('Sex','Female')/6,'Asian':bval('Race','Asian')/6,'White':bval('Race','White')/6}
+ ev={g['id']:(g['seriousNumAffected'],g['seriousNumAtRisk']) for g in reg['adverseEventsModule']['eventGroups']}
+ f=figure(8.4,'Who was simulated, who enrolled, and arm-matched serious adverse events',
+  'NCT04003610 (development study) | 372 simulated participants against the 7 the trial enrolled')
+ heading(f,.055,.885,'A','Age of simulated participants')
+ ax=f.add_axes([.10,.64,.84,.2]);ax.hist(ages,bins=np.arange(0,90,3),color=SYNTH,alpha=.75,ec='white',lw=.4)
+ ax.axvspan(57,84,color=PROTOCOL,alpha=.10,lw=0);ax.text(70.5,ax.get_ylim()[1]*.9,'Real trial: 7 of 7\naged 57-84',ha='center',va='top',fontsize=7.3,color=PROTOCOL)
+ ax.set(xlim=(0,88),xlabel='Age (years)',ylabel='Simulated participants');ax.grid(axis='y',color='#E5EAF0',lw=.5)
+ f.text(.10,.555,f'Simulated: mean age {ages.mean():.1f} years; {inband} of {len(ages)} ({inband/len(ages):.0%}) aged 57-84.',fontsize=7.3,color=SLATE)
+ heading(f,.055,.51,'B','Standard-care participants')
+ ax=f.add_axes([.10,.10,.34,.37]);keys=list(sim);x=np.arange(len(keys))
+ ax.bar(x-.19,[sim[k] for k in keys],.36,color=SYNTH,label=f'Simulated (n = {n})')
+ ax.bar(x+.19,[real[k] for k in keys],.36,color=OBSERVED,label='Real (n = 6)')
+ for i,k in enumerate(keys):
+  ax.text(i-.19,sim[k]+.02,f'{sim[k]:.0%}',ha='center',fontsize=7);ax.text(i+.19,real[k]+.02,f'{real[k]:.0%}',ha='center',fontsize=7)
+ ax.set_xticks(x,keys);ax.set_ylim(0,1.05);ax.yaxis.set_major_formatter(mpl.ticker.PercentFormatter(1,decimals=0));ax.grid(axis='y',color='#E5EAF0',lw=.5)
+ ax.legend(loc='upper left',fontsize=6.8)
+ heading(f,.53,.51,'C','Any serious adverse event, by arm')
+ ax=f.add_axes([.66,.36,.18,.11])
+ arms=[('Pemigatinib +\npembrolizumab','ARM1','EG001'),('Standard care','ARM3','EG002')]
+ draws=[]
+ rng=np.random.default_rng(20260930)
+ for i,(label,arm,g) in enumerate(arms):
+  h=est[arm]['serious_adverse_event']['headline'];y=1-i;lo,hi=h['single_trial_80']
+  ax.plot([lo,hi],[y,y],color=FITTED,lw=4,alpha=.35,solid_capstyle='butt');ax.plot(h['estimate'],y,'|',color=FITTED,ms=9,mew=1.4)
+  k,m=ev[g];wl,wh=wilson(k,m);ax.plot([wl,wh],[y-.18]*2,color=OBSERVED,lw=.9);ax.plot(k/m,y-.18,'o',color=OBSERVED,ms=4.5,mec='white',mew=.4)
+  ax.text(1.03,y-.05,f"{h['estimate']:.0%} vs {k}/{m}",fontsize=6.9,va='center',transform=ax.get_yaxis_transform())
+  a,b=math.log(lo/(1-lo)),math.log(hi/(1-hi));mu,sd=(a+b)/2,(b-a)/(2*1.2816)
+  draws.append((m,1/(1+np.exp(-rng.normal(mu,sd,200000)))))
+ ax.set_yticks([1,0],[a[0] for a in arms],fontsize=7);percent(ax);ax.set_ylim(-.6,1.5);ax.set_xticks([0,.5,1])
+ x7=sum(rng.binomial(m,p) for m,p in draws);obs=sum(ev[g][0] for _,_,g in arms)
+ ax=f.add_axes([.60,.10,.34,.14]);k=np.arange(8);pk=np.array([np.mean(x7==i) for i in k])
+ ax.bar(k,pk,color=[OBSERVED if i==obs else '#C9C1DA' for i in k],width=.7)
+ ax.set_xticks(k);ax.set_xlabel('Participants with a serious event, of 7 (1 + 6)',fontsize=7.3);ax.yaxis.set_major_formatter(mpl.ticker.PercentFormatter(1,decimals=0))
+ ax.grid(axis='y',color='#E5EAF0',lw=.5)
+ f.text(.53,.275,f'Realised arms: expected {x7.mean():.2f} of 7; observed {obs}; P(at most {obs}) = {np.mean(x7<=obs):.2f}',fontsize=7.2,color=SLATE)
+ f.legend(handles=[Line2D([],[],color=FITTED,lw=4,alpha=.35,label='80% range for a single trial'),Line2D([],[],marker='|',ls='',color=FITTED,ms=8,label='Predicted'),
+  Line2D([],[],marker='o',ls='',color=OBSERVED,label='Observed (95% CI)')],loc='center',bbox_to_anchor=(.74,.315),ncol=3,fontsize=6.6,handlelength=1.4,columnspacing=.9)
+ f.text(.055,.025,'Standard care = the two simulated standard-care arms pooled; the real group received gemcitabine plus carboplatin or pembrolizumab.',fontsize=6.6,color=SLATE)
+ save(f,'fig11_population_and_arm_sae')
+
 if __name__=='__main__':
- for fn in [fig1_pipeline,fig2_evidence_lane,fig3_walkthrough,fig4_blind_timeline,fig5_accrual,fig6_calibration,fig7_blind_events,fig8_informative,fig9_temporal,fig10_trace]:fn()
+ for fn in [fig1_pipeline,fig2_evidence_lane,fig3_walkthrough,fig4_blind_timeline,fig5_accrual,fig6_calibration,fig7_blind_events,fig8_informative,fig9_temporal,fig10_trace,fig11_population_sae]:fn()
  sources=[{'path':p.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(READS)]
  (OUT/'figure_provenance.json').write_text(json.dumps({'sources':sources,'running_example':{'study':'NCT00091572','registry_group':'EG000','evidence_row':'d9b934b17937e424','parameter_id':'3b1473de78a0a559'},'generator_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'note':'Technical identifiers and versions are retained here and in the source artifacts, not in figure labels.'},indent=2),encoding='utf-8')
  audit_path=ROOT/'tmp/figure_revision/layout_audit.json'

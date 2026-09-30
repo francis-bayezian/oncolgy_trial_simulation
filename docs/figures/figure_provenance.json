@@ -9,6 +9,10 @@
       "sha256": "02b372df5ce6700ffd5836e986f7bcc160e3aeec9820a92bda5a72fb1fa0a10e"
     },
     {
+      "path": "data/holdout_comparison/NCT04003610.json",
+      "sha256": "50ee7bab54179416aff71e10ca94fbc5adae48de40e73586a2fcad901ef13c11"
+    },
+    {
       "path": "data/locked/ACNS0332/cohorts_v3.2.1/cohort_accrual_35_per_year.jsonl",
       "sha256": "2ebc4c65db882897dc45017b4b8db65d217f7a73c417f379806451800b7b85c8"
     },
@@ -55,6 +59,10 @@
     {
       "path": "data/locked/BLIND_1/outcomes_v1.2.0/lock.json",
       "sha256": "b54f195dd23c9ef01a89666808e889be4f2356338d9797000e6e98b597692dce"
+    },
+    {
+      "path": "data/locked/BLIND_1/outputs_v1.2.0/adsl.csv",
+      "sha256": "067525c2b5f600f56f0d65bb96d9b171b7eb70b1d9dbd9ad9fdca0a4f9521b6a"
     },
     {
       "path": "data/locked/BLIND_1/outputs_v1.2.0/lock.json",
@@ -319,6 +327,6 @@
     "evidence_row": "d9b934b17937e424",
     "parameter_id": "3b1473de78a0a559"
   },
-  "generator_sha256": "97da4781d772bc6cc384b24eb7a25c0ae5a96c3dbb9a9db8608dce871328a25f",
+  "generator_sha256": "09cb2788c377e1651270a8b2961b02766fc67e69227027658702cd06a45fd367",
   "note": "Technical identifiers and versions are retained here and in the source artifacts, not in figure labels."
 }
