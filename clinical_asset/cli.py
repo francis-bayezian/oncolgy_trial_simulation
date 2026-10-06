@@ -226,6 +226,7 @@ def main(argv: list[str] | None = None) -> int:
     for name in ("studyspec", "protocol", "cohorts", "eligibility", "outputs", "safety", "outcomes", "out"):
         rj.add_argument(f"--{name}", type=Path, required=True)
     rj.add_argument("--facts", type=Path, default=None, help="locked protocol facts (a cited progression figure of the same regimen)")
+    rj.add_argument("--seed", type=int, default=20260929)
     rni = commands.add_parser("run-ni-binary", help="Two-arm non-inferiority on a binary endpoint (synthesis method).")
     rni.add_argument("--studyspec", type=Path, required=True)
     rni.add_argument("--facts", type=Path, required=True)
@@ -250,6 +251,7 @@ def main(argv: list[str] | None = None) -> int:
     rs.add_argument("--cohorts", type=Path, required=True, help="locked cohorts directory")
     rs.add_argument("--out", type=Path, required=True)
     rs.add_argument("--safety-asset", type=Path, help="safety asset V3 directory (default: the outcome model's V2 class-signature rates)")
+    rs.add_argument("--seed", type=int, default=20260927)
     xd = commands.add_parser("extend-drug-classes", help="Classify protocol agents missing from the drug-class map (same mapper; base map unchanged).")
     xd.add_argument("--studyspec", type=Path, action="append", required=True)
     xd.add_argument("--created", required=True)
@@ -260,6 +262,7 @@ def main(argv: list[str] | None = None) -> int:
         bt.add_argument(f"--{name}", type=Path, required=True, help=f"locked {name} directory")
     bt.add_argument("--results", type=Path)
     bt.add_argument("--accrual-asset", type=Path, default=None, help="default: the asset profile's operational asset")
+    bt.add_argument("--seed", type=int, default=20260927)
     bt.add_argument("--out", type=Path, required=True)
     cbl = commands.add_parser("compare-registry-baseline", help="Registry baseline table against the evidence model's 90% predictive intervals.")
     cbl.add_argument("--studyspec", type=Path, required=True)
@@ -333,6 +336,7 @@ def main(argv: list[str] | None = None) -> int:
     for name in ("studyspec", "journey", "safety", "eligibility", "outcomes", "out"):
         arl.add_argument(f"--{name}", type=Path, required=True)
     arl.add_argument("--facts", type=Path, default=None)
+    arl.add_argument("--seed", type=int, default=20261006)
     rco = commands.add_parser("run-continuous", help="Continuous primary comparison (paired or two-group) from the stated design.")
     rco.add_argument("--studyspec", type=Path, required=True)
     rco.add_argument("--out", type=Path, required=True)
@@ -345,6 +349,7 @@ def main(argv: list[str] | None = None) -> int:
     for name in ("studyspec", "journey", "safety", "out"):
         ren.add_argument(f"--{name}", type=Path, required=True)
     ren.add_argument("--facts", type=Path, default=None)
+    ren.add_argument("--seed", type=int, default=20261005)
     aud = commands.add_parser("audit-run", help="Completeness audit of one protocol run: anything undetermined, unresolved or missing.")
     aud.add_argument("--id", required=True)
     aud.add_argument("--version", required=True)
@@ -355,7 +360,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "build-analysis-results":
             from .trial.analysis_results import run as run_analysis
 
-            r = run_analysis(args.studyspec, args.journey, args.safety, args.eligibility, args.outcomes, args.out, args.facts)
+            r = run_analysis(args.studyspec, args.journey, args.safety, args.eligibility, args.outcomes, args.out, args.facts, seed=args.seed)
             eff = r["efficacy"] if r["efficacy"].get("status") else {k: v["objective_response"] for k, v in r["efficacy"].items()}
             print(json.dumps({"efficacy": eff, "tables": len(r["safety_tables"])}, indent=1, default=str))
             return 0
@@ -382,7 +387,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "run-endpoints":
             from .trial.endpoints import run as run_endpoints
 
-            doc = run_endpoints(args.studyspec, args.journey, args.safety, args.out, args.facts)
+            doc = run_endpoints(args.studyspec, args.journey, args.safety, args.out, args.facts, seed=args.seed)
             print(json.dumps(doc["counts"]))
             return 0
         if args.command == "audit-run":
@@ -499,7 +504,7 @@ def main(argv: list[str] | None = None) -> int:
                                system=PROTOCOL_SYSTEM, timeout=900)
             schedule_facts.run(model, args.protocol, spec, args.out)
             doc = run_journey(args.studyspec, args.cohorts, args.eligibility, args.outputs, args.safety, args.outcomes,
-                              args.out / "schedule_facts.json", args.out, facts_lock=args.facts)
+                              args.out / "schedule_facts.json", args.out, facts_lock=args.facts, seed=args.seed)
             print(json.dumps(doc["summary"], indent=1, default=str))
             return 0
         if args.command == "run-ni-binary":
@@ -536,7 +541,7 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "run-safety":
             from .trial.safety import run_safety
-            doc = run_safety(args.outcomes, args.cohorts, args.out, safety_asset=args.safety_asset)
+            doc = run_safety(args.outcomes, args.cohorts, args.out, safety_asset=args.safety_asset, seed=args.seed)
             print(json.dumps({"status": doc["status"], "arms": {a["arm_id"]: len(a["events"]) for a in doc["arms"]}}, indent=1))
             return 0
         if args.command == "extend-drug-classes":
@@ -563,7 +568,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "build-trial-outputs":
             from .trial.outputs import build as build_outputs
             doc = build_outputs(args.studyspec, args.eligibility, args.cohorts, args.outcomes, args.safety, args.planning, args.results,
-                                args.out, accrual_asset=args.accrual_asset or __import__('clinical_asset.assets', fromlist=['path']).path('operational'))
+                                args.out, accrual_asset=args.accrual_asset or __import__('clinical_asset.assets', fromlist=['path']).path('operational'),
+                                seed=args.seed)
             print(json.dumps({"datasets": doc["datasets"], "out": str(args.out)}, indent=1))
             return 0
         if args.command == "compare-registry-baseline":

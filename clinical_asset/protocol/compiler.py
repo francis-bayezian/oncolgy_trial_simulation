@@ -1003,6 +1003,10 @@ class ProtocolCompiler:
                 item["status"] = runtime
             elif semantic == "FAITHFUL" and item.get("static_status") == "PASS" and ir.executable(runtime):
                 item["status"] = "EXECUTABLE"
+            elif semantic == "FAITHFUL" and item.get("static_status") == "PASS":
+                # extracted correctly, but generated patients cannot carry the rule (e.g. a test result): not an
+                # extraction failure; eligibility calibrates such criteria to the registry screen-pass rate (A16, L042)
+                item["status"] = "FAITHFUL_NOT_EXECUTABLE"
             else:
                 item["status"] = "REVIEW_REQUIRED"
 

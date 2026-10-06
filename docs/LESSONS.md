@@ -87,7 +87,7 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **What went wrong:** new journey modules embedded clinical terms in code, breaking the vocabulary guard
 - **General rule:** clinical vocabulary lives in versioned reference data (clinical_asset/reference), never in pipeline code
 - **Where:** `clinical_asset/reference/clinical_vocabulary.json`
-- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 1.84s
+- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 2.15s
 - **Recorded:** 2026-09-29 (project history)
 
 ## L012 — code hygiene (PASS)
@@ -328,4 +328,20 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **General rule:** a shell loop that reads values printed by Python strips the trailing carriage return before using them
 - **Where:** `scripts/run_test_protocols.sh`
 - **Check:** `chk_shell_loops_strip_cr` — every shell loop reading Python output strips the carriage return
+- **Recorded:** 2026-10-06 (project history)
+
+## L042 — protocol compiler (PASS)
+
+- **What went wrong:** nine protocols were audited COMPLETE while 16-97 StudySpec items each were still flagged REVIEW_REQUIRED (verifier INCORRECT, INCOMPLETE or unverified): the audit only counted them, and those specs had been compiled before the targeted resolver existed
+- **General rule:** a flagged extraction item is an audit problem; every protocol goes through resolve-protocol (only its unresolved items) before it is run, and a run is COMPLETE only when no item is flagged
+- **Where:** `trial.audit protocol.resolver scripts/run_pipeline.sh`
+- **Check:** `chk_review_flags_fail_the_audit` — a StudySpec item still flagged REVIEW_REQUIRED is listed as an audit problem (the run is not COMPLETE)
+- **Recorded:** 2026-10-06 (project history)
+
+## L043 — protocol compiler (PASS)
+
+- **What went wrong:** renderings the verifiers rejected although the extraction held the facts: a dose range '12.5-50 mg' shown as a fixed 12.5 mg, 'up to 1 x 107 DC' read as 1 'x', 'Thirty minutes prior' rendered 'at least {text: Thirty}', and every endpoint labelled with the compiler's type as if the protocol stated it; the resolver also gave up after one attempt per item
+- **General rule:** restore from the verified quotes: a range dose is a range, 'up to' is a maximum, a flattened power of ten is restored, word-number offsets get value and unit (equal bounds are exact); an unstated endpoint type is shown as the compiler's classification; the resolver tries a quote-backed patch and then re-extraction before an item is left; a faithful rule generated patients cannot carry is FAITHFUL_NOT_EXECUTABLE, not REVIEW_REQUIRED
+- **Where:** `protocol.qualifiers protocol.render protocol.resolver protocol.compiler._finalise_status`
+- **Check:** `chk_doses_offsets_and_types_render_as_stated` — range, exact word-number offset, flattened power of ten and unstated endpoint type rendered as stated: True
 - **Recorded:** 2026-10-06 (project history)

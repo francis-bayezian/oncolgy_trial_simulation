@@ -1,8 +1,8 @@
 """Completeness audit of one protocol run (any protocol): the run is COMPLETE only when every stage is locked, every
 patient is decided, and no stage output carries an UNRESOLVED, UNDETERMINED, PENDING or ERROR status.
 
-StudySpec items still flagged by the verifiers (REVIEW_REQUIRED) are not failures by themselves: they are run as
-compiled and counted, so the report shows how much of the run rests on flagged extraction. Endpoints the generated
+StudySpec items still flagged by the verifiers (REVIEW_REQUIRED) are problems (L042): extraction must be resolved in
+full (the targeted resolver, resolve-protocol) before a run is complete; each flagged item is listed. Endpoints the generated
 patients cannot carry are NOT_SIMULATED by design and are counted separately.
 """
 
@@ -48,6 +48,11 @@ def audit(study: str, version: str, out_dir: Path) -> dict:
                 for sec, items in spec.items():
                     if isinstance(items, list):
                         flagged.update(f"{sec}:{x.get('status')}" for x in items if isinstance(x, dict) and x.get("status") not in (None, "EXECUTABLE"))
+                        for x in items:                       # a flagged extraction item is a problem (L042)
+                            if isinstance(x, dict) and x.get("status") == "REVIEW_REQUIRED":
+                                iid = next((x[k] for k in x if k.endswith("_id") and isinstance(x[k], str)), "?")
+                                problems.append({"path": f"studyspec/{sec}/{iid}", "status": "REVIEW_REQUIRED",
+                                                 "reason": f"verifier verdict {x.get('semantic_status') or 'UNVERIFIED'}: resolve with resolve-protocol"})
             continue
         for f in sorted(d.glob("*.json")):
             if f.name != "lock.json":

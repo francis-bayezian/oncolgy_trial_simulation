@@ -150,7 +150,19 @@
       "Bash(.venv/Scripts/python.exe -m pytest -q -p no:cacheprovider --basetemp=\"C:/Users/franc/AppData/Local/Temp/claude/c--Users-franc-OneDrive-Desktop-oncolgy-trial-simulation/c169a055-32df-4459-8fb9-61254f8cfba3/scratchpad/pytest\" tests/test_subgroup_report.py tests/test_subgroup_evidence.py tests/test_analysis_results.py)",
       "Bash(sort -k6)",
       "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -c ' *)",
-      "Bash(powershell -NoProfile -Command 'if \\(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match '\\\\''build_assets_v2'\\\\'' }\\) { exit 0 } else { exit 1 }')"
+      "Bash(powershell -NoProfile -Command 'if \\(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match '\\\\''build_assets_v2'\\\\'' }\\) { exit 0 } else { exit 1 }')",
+      "Bash(PYTHONPATH=. PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -m clinical_asset.cli resolve-protocol --spec data/protocol_specs/NCT02224599 --protocol protocols/NCT02224599.pdf)",
+      "Bash(sed -i 's/^MAX_ROUNDS = 3$/MAX_ROUNDS = 4/; s/^FAILING = {\"INCOMPLETE\", \"INCORRECT\", \"UNVERIFIED\"}$/FAILING = {\"INCOMPLETE\", \"INCORRECT\", \"UNVERIFIED\"}\\\\nFAITHFUL_NOT = FAILING/' clinical_asset/protocol/resolver.py)",
+      "Bash(.venv/Scripts/python.exe -c \"import ast;ast.parse\\(open\\('clinical_asset/protocol/resolver.py',encoding='utf-8'\\).read\\(\\)\\);print\\('ok'\\)\")",
+      "Bash(sed -i '/^FAITHFUL_NOT = FAILING$/d; s/it.get\\(\"semantic_status\"\\) in FAITHFUL_NOT and/it.get\\(\"semantic_status\"\\) in FAILING and/' clinical_asset/protocol/resolver.py)",
+      "Bash(PYTHONPATH=. PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -m clinical_asset.cli resolve-protocol --spec data/protocol_specs/NCT02224599 --protocol protocols/NCT02224599.pdf --reverify-all)",
+      "Bash(nohup bash \"C:/Users/franc/AppData/Local/Temp/claude/c--Users-franc-OneDrive-Desktop-oncolgy-trial-simulation/c169a055-32df-4459-8fb9-61254f8cfba3/scratchpad/resolve_all.sh\")",
+      "PowerShell($p = Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'resolve_all.sh|resolve-protocol' }; $p | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -Confirm:$false -ErrorAction SilentlyContinue }; \"stopped: $\\($p.Count\\)\"; Get-CimInstance Win32_Process -Filter \"Name like 'python%'\" | Where-Object { $_.CommandLine -match 'resolve-protocol' } | Measure-Object | Select-Object Count)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -)",
+      "Bash(.venv/Scripts/python.exe \"C:/Users/franc/AppData/Local/Temp/claude/c--Users-franc-OneDrive-Desktop-oncolgy-trial-simulation/c169a055-32df-4459-8fb9-61254f8cfba3/scratchpad/patch_seeds.py\")",
+      "Bash(time bash scripts/run_replicates.sh NCT06604442 4.1.0 1 1)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/summarise_replicates.py NCT06604442 4.1.0)",
+      "PowerShell($p = Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'resolve_all.sh|resolve-protocol' }; $p | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -Confirm:$false -ErrorAction SilentlyContinue }; \"stopped: $\\($p.Count\\)\"; Start-Sleep 2; \\(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'resolve-protocol' } | Measure-Object\\).Count; Get-Content data/trial/runs/resolve_all.log)"
     ],
     "additionalDirectories": [
       "C:\\Users\\franc\\OneDrive\\Desktop\\oncolgy_trial_simulation\\data\\trial\\runs"

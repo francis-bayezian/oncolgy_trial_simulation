@@ -1,5 +1,6 @@
 """Plain-language rendering of compiled StudySpec items, for independent verification and review."""
 
+import re
 from typing import Any
 
 OPS = {">=": "at least", ">": "greater than", "<=": "at most", "<": "less than", "==": "equal to", "!=": "not equal to"}
@@ -125,10 +126,16 @@ def _tol(t: dict) -> str:
 
 def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> str:
     d = it["dose"]
+    amount = _num(d["value"]) if d["value"] is not None else "?"
+    if d.get("basis") == "range" and d.get("tolerance"):          # a stated range is the dose, not a tolerance (L042)
+        dose_text = f"dose {_num(d['tolerance']['lower'])}-{_num(d['tolerance']['upper'])} {d['unit'] or ''} (range)"
+    elif d.get("basis") == "maximum":
+        dose_text = f"dose up to {amount} {d['unit'] or ''}"
+    else:
+        dose_text = (f"dose {amount} {d['unit'] or ''} ({d['basis']})"
+                     + (f" with tolerance {_tol(d['tolerance'])}" if d.get("tolerance") else ""))
     parts = [f"{MODAL.get(it.get('modality', 'REQUIRED'), '')}phase {phases.get(it.get('phase_id') or '', '?')!r}",
-             f"arms {[_q(a) for a in it['arms']] or 'all'}", f"agent {_q(it.get('agent'))!r} ({it.get('category')})",
-             f"dose {_num(d['value']) if d['value'] is not None else '?'} {d['unit'] or ''} ({d['basis']})"
-             + (f" with tolerance {_tol(d['tolerance'])}" if d.get("tolerance") else "")]
+             f"arms {[_q(a) for a in it['arms']] or 'all'}", f"agent {_q(it.get('agent'))!r} ({it.get('category')})", dose_text]
     if it.get("sequence"):
         sq = it["sequence"]
         parts.append(f"given {sq['relation']} the {sq['anchor_text']}")
@@ -154,7 +161,8 @@ def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> st
         parts.append(f"rounding {_q(it['rounding']['text'])!r}")
     for link in it.get("linked_events") or []:
         lo, hi = _qty(link.get("min_offset")), _qty(link.get("max_offset"))
-        span = f"{lo}-{hi} " if lo and hi else f"at least {lo} " if lo else f"at most {hi} " if hi else ""
+        span = (f"exactly {lo} " if link.get("exact_offset") else f"{lo}-{hi} " if lo and hi else f"at least {lo} " if lo
+                else f"at most {hi} " if hi else "")
         text = f"given {span}{link['relation'].lower().replace('_', ' ')} {link.get('canonical_prerequisite', '').replace('_', ' ')}"
         if link.get("applies_to_days"):
             text = f"on day(s) {link['applies_to_days']} only: {text}"
@@ -260,8 +268,18 @@ def phase(p: dict, labels: dict[str, str]) -> str:
     return "; ".join(parts)
 
 
+TYPE_WORDS = {"binary": r"proportion|rate|percent|binary|responders?|yes/no|incidence|number of (?:patients|participants)",
+              "time_to_event": r"time to|survival|duration|until|time from",
+              "continuous": r"mean|median|change|level|score|value|concentration|uptake|measure"}
+
+
 def endpoint(e: dict) -> str:
-    parts = [f"{e['role']} endpoint {_q(e.get('name'))!r} ({e['type']})"]
+    # the compiler classifies every endpoint's type (the simulation needs one); unless the protocol's own wording states
+    # it, the rendering says it is the compiler's classification, not the protocol's (L042)
+    words = " ".join(_q(e.get(k)) for k in ("name", "definition", "summary_measures", "evidence"))
+    stated = re.search(TYPE_WORDS.get(e.get("type") or "", r"$^"), words, re.I)
+    kind = e["type"] if stated else f"type classified by the compiler as {e['type']}; the protocol does not state it"
+    parts = [f"{e['role']} endpoint {_q(e.get('name'))!r} ({kind})"]
     if _q(e.get("population")):
         parts.append(f"population {_q(e.get('population'))!r}")
     if _q(e.get("per_group")):

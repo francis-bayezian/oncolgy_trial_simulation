@@ -452,6 +452,30 @@ def chk_shell_loops_strip_cr():
     return not bad, "; ".join(bad) or "every shell loop reading Python output strips the carriage return"
 
 
+def chk_review_flags_fail_the_audit():
+    src = Path("clinical_asset/trial/audit.py").read_text(encoding="utf-8")
+    ok = '"status": "REVIEW_REQUIRED"' in src and "problems.append" in src.split("REVIEW_REQUIRED", 2)[-1][:600]
+    return ok, "a StudySpec item still flagged REVIEW_REQUIRED is listed as an audit problem (the run is not COMPLETE)"
+
+
+def chk_doses_offsets_and_types_render_as_stated():
+    from clinical_asset.protocol import qualifiers as q
+    from clinical_asset.protocol import render as r
+
+    it = {"dose": {"value": 12.5, "unit": "mg", "basis": "fixed", "quote": {"text": "12.5-50"}}, "evidence": {"text": "Thirty minutes prior to X, give drug (12.5-50 mg)"},
+          "linked_events": [{"relation": "BEFORE", "min_offset": {"text": {"text": "Thirty"}}, "max_offset": {"text": {"text": "Thirty"}},
+                             "canonical_prerequisite": "x", "if_prerequisite_not_given": "NOT_STATED"}],
+          "arms": [], "schedule": {}, "administration_options": []}
+    it["dose"]["tolerance"] = q.dose_tolerance("12.5-50")
+    q.fix_dose(it)
+    q.fix_offsets(it)
+    text = r.intervention(it, {}, {})
+    ep = r.endpoint({"role": "secondary", "name": {"text": "immune efficacy"}, "type": "binary"})
+    ok = ("12.5-50 mg (range)" in text and "exactly 30 minutes before" in text and q.scientific("1 x 107 DC") == 1e7
+          and "classified by the compiler" in ep)
+    return ok, f"range, exact word-number offset, flattened power of ten and unstated endpoint type rendered as stated: {ok}"
+
+
 def chk_no_control_characters():
     bad = [str(p) for root in ("clinical_asset", "scripts") for p in Path(root).rglob("*.py")
            if any(c < 32 and c not in (9, 10, 13) for c in p.read_bytes())]
@@ -581,6 +605,12 @@ SEED = [
     ("L041", "operations", "the protocol batch stopped every protocol with 'protocol_facts_v1.0.0 is not a locked artefact' although the lock existed: the shell loop read the version from Windows Python output ending in CRLF, so the directory name carried a hidden carriage return",
      "a shell loop that reads values printed by Python strips the trailing carriage return before using them",
      "scripts/run_test_protocols.sh", "chk_shell_loops_strip_cr"),
+    ("L042", "protocol compiler", "nine protocols were audited COMPLETE while 16-97 StudySpec items each were still flagged REVIEW_REQUIRED (verifier INCORRECT, INCOMPLETE or unverified): the audit only counted them, and those specs had been compiled before the targeted resolver existed",
+     "a flagged extraction item is an audit problem; every protocol goes through resolve-protocol (only its unresolved items) before it is run, and a run is COMPLETE only when no item is flagged",
+     "trial.audit protocol.resolver scripts/run_pipeline.sh", "chk_review_flags_fail_the_audit"),
+    ("L043", "protocol compiler", "renderings the verifiers rejected although the extraction held the facts: a dose range '12.5-50 mg' shown as a fixed 12.5 mg, 'up to 1 x 107 DC' read as 1 'x', 'Thirty minutes prior' rendered 'at least {text: Thirty}', and every endpoint labelled with the compiler's type as if the protocol stated it; the resolver also gave up after one attempt per item",
+     "restore from the verified quotes: a range dose is a range, 'up to' is a maximum, a flattened power of ten is restored, word-number offsets get value and unit (equal bounds are exact); an unstated endpoint type is shown as the compiler's classification; the resolver tries a quote-backed patch and then re-extraction before an item is left; a faithful rule generated patients cannot carry is FAITHFUL_NOT_EXECUTABLE, not REVIEW_REQUIRED",
+     "protocol.qualifiers protocol.render protocol.resolver protocol.compiler._finalise_status", "chk_doses_offsets_and_types_render_as_stated"),
 ]
 
 

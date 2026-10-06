@@ -23,7 +23,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-MAX_ROUNDS = 3
+MAX_ROUNDS = 4
 MAX_HOPS = 2
 TOP_PASSAGES = 8
 FAILING = {"INCOMPLETE", "INCORRECT", "UNVERIFIED"}
@@ -243,21 +243,26 @@ def resolve(spec_dir: Path, protocol_pdf: Path, model, terminology=None, votes: 
         qualifiers.enrich(spec, docs)
         compiler.verify(spec, docs, flag)
         log["reverified_all"] = True
-    before = None
+    tried: dict[str, set] = {}                    # item -> strategies already tried ('patch', 're-extraction')
     for rnd in range(MAX_ROUNDS):
-        failing = [(c, it) for c, it, _ in compiler._items(spec) if it.get("semantic_status") in FAILING]
+        failing = [(c, it) for c, it, _ in compiler._items(spec) if it.get("semantic_status") in FAILING and
+                   tried.get(_item_id(it), set()) != {"patch", "re-extraction"}]
         ids = sorted(_item_id(it) for _, it in failing)
-        if not failing or ids == before:
-            break
-        before = ids
+        if not failing:
+            break                                 # every failing item has had both strategies (persistent, L042)
         entry = {"round": rnd + 1, "items": {}}
         patched, to_repair = set(), set()
         for _component, it in failing:
+            iid = _item_id(it)
             inv = investigate(model, it, it.get("rendering") or "", docs)
             it["sections"] = list(dict.fromkeys((it.get("sections") or []) + [s for s in inv["sections"] if doc.section(s)]))
             it["investigation"] = {"finding": inv["finding"], "settled": inv["settled"], "sections": inv["sections"]}
-            applied = apply_corrections(it, inv["corrections"], docs)
-            (patched if applied else to_repair).add(_item_id(it))
+            # a quote-backed patch first; an item whose patch did not make it faithful is re-extracted next round
+            applied = "patch" not in tried.get(iid, set()) and apply_corrections(it, inv["corrections"], docs)
+            tried.setdefault(iid, set()).add("patch" if applied else "re-extraction")
+            if not applied and "patch" not in tried[iid] and not inv["corrections"]:
+                tried[iid].add("patch")           # nothing to patch with: only re-extraction is left
+            (patched if applied else to_repair).add(iid)
             entry["items"][_item_id(it)] = {"before": it.get("semantic_status"), "investigation": inv, "patch_applied": applied,
                                             "path": "patch" if applied else "re-extraction"}
         # quote-backed patches first; only items without one are re-extracted, and only those items (L033)

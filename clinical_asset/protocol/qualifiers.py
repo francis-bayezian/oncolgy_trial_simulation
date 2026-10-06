@@ -63,6 +63,88 @@ def dose_tolerance(quote: str) -> dict | None:
     return None
 
 
+TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90}
+TEENS = {"eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17,
+         "eighteen": 18, "nineteen": 19}
+# a power of ten whose superscript the PDF flattened: '1 x 107 DC' is 1 x 10^7 (L042)
+SCIENTIFIC = re.compile(r"(\d+(?:\.\d+)?)\s*[x×]\s*10\s*(?:\^|\*\*)?\s*([1-9]\d?)" + WB)
+UP_TO = re.compile(WB + r"(up to|a maximum of|maximum of|not (?:to )?exceed(?:ing)?|no more than|at most)" + WB, re.I)
+
+
+def word_number(text: str) -> float | None:
+    """'Thirty' -> 30, 'twenty-four' -> 24, '(30)' or '30' -> 30."""
+    t = (text or "").strip().casefold()
+    m = re.search(r"\d+(?:\.\d+)?", t)
+    if m:
+        return float(m.group(0))
+    words = re.findall(r"[a-z]+", t)
+    total = None
+    for w in words:
+        if w in TENS:
+            total = (total or 0) + TENS[w]
+        elif w in TEENS:
+            total = (total or 0) + TEENS[w]
+        elif w in NUMBER_WORDS:
+            total = (total or 0) + NUMBER_WORDS[w]
+    return float(total) if total is not None else None
+
+
+def scientific(text: str) -> float | None:
+    m = SCIENTIFIC.search(text or "")
+    return float(m.group(1)) * 10 ** int(m.group(2)) if m else None
+
+
+def fix_dose(it: dict) -> list[str]:
+    """Dose basis and value restored from the dose's own verified quote and the item's evidence: a range quote
+    ('12.5-50 mg') is a range, 'up to X' is a maximum, and a flattened power of ten ('1 x 107') is 1 x 10^7. The dose
+    value is the lower bound of a range and the stated maximum of 'up to'."""
+    fixed, dose = [], it.get("dose") or {}
+    quote, evidence = _q(dose.get("quote")), _q(it.get("evidence"))
+    sci = scientific(quote) or scientific(evidence if quote and quote in evidence else "")
+    if sci is not None and (dose.get("value") is None or dose["value"] < sci / 10):
+        unit_q = _q(dose.get("unit_quote"))
+        dose.update({"value": sci, "unit": (unit_q.casefold() or dose.get("unit")), "scientific_from": quote})
+        fixed.append("scientific")
+    md = it.get("max_dose") or {}
+    msci = scientific(_q(md.get("text")))
+    if msci is not None and (md.get("value") is None or md["value"] < msci / 10):
+        tail = re.split(r"10\s*\^?\s*[1-9]\d?", _q(md.get("text")), maxsplit=1)[-1].strip().split(" ")[0]
+        md.update({"value": msci, "unit": tail.casefold() or md.get("unit")})
+        fixed.append("max_scientific")
+    if dose.get("basis") in ("fixed", "unspecified", None):
+        if dose.get("tolerance") and dose["tolerance"].get("tolerance") is None and dose.get("value") is not None \
+                and abs(dose["tolerance"]["lower"] - dose["value"]) < 1e-9:
+            dose["basis"] = "range"
+            fixed.append("range")
+        elif quote and UP_TO.search(evidence.split(quote)[0][-40:] if quote in evidence else ""):
+            dose["basis"] = "maximum"
+            fixed.append("maximum")
+    return fixed
+
+
+def fix_offsets(it: dict) -> int:
+    """A linked-event offset written in words ('Thirty minutes prior') gets its number and unit (the time unit
+    following it in the evidence); equal minimum and maximum offsets are an exact offset."""
+    n, evidence = 0, _q(it.get("evidence"))
+    for link in it.get("linked_events") or []:
+        ev = _q(link.get("evidence")) or evidence
+        for key in ("min_offset", "max_offset"):
+            off = link.get(key)
+            if not off or off.get("value") is not None:
+                continue
+            text = _q(off.get("text")) if isinstance(off.get("text"), dict) else _q(off)
+            v = word_number(text)
+            if v is None:
+                continue
+            m = re.search(re.escape(text) + r"\s*\(?\d*\)?\s*(minutes?|hours?|days?|weeks?|months?)", ev, re.I)
+            link[key] = {"value": v, "unit": (m.group(1).casefold().rstrip("s") + "s") if m else None, "text": text}
+            n += 1
+        lo, hi = link.get("min_offset") or {}, link.get("max_offset") or {}
+        if lo.get("value") is not None and lo.get("value") == hi.get("value") and lo.get("unit") == hi.get("unit"):
+            link["exact_offset"] = True
+    return n
+
+
 def sequence(evidence: str) -> dict | None:
     for rx, relation in SEQUENCE:
         m = rx.search(evidence or "")
@@ -179,6 +261,8 @@ def enrich(spec: dict, docs=None) -> dict:
         if tol and dose.get("value") is not None:
             dose["tolerance"] = tol
             n["dose_tolerance"] += 1
+        n["dose_basis"] = n.get("dose_basis", 0) + len(fix_dose(it))
+        n["offsets"] = n.get("offsets", 0) + fix_offsets(it)
         seq = sequence(_q(it.get("evidence")))
         if seq and seq["anchor_text"].casefold() != _q(it.get("agent")).casefold():   # not the item's own administration
             it["sequence"] = seq
