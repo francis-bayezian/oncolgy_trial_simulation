@@ -228,3 +228,9 @@ data/
 terminology-private/
 reports-local/
 .venv-figures/
+
+# figures are kept out of the repository (generated locally)
+docs/figures/
+tmp/figure_revision/
+tmp/pdfs/*.png
+**/subgroups/*.svg
