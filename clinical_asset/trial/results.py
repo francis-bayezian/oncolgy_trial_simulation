@@ -126,7 +126,8 @@ def registry_record(trial: dict, analysis_result: dict, model: dict, spec: dict,
         flow = {"started": int(sel.sum()), "evaluable_for_primary_objectives": int(ev.sum()),
                 "reasons_follow_up_ended": {k: int(np.sum(sel & (trial["reason"] == k))) for k in ("event", "lost_to_follow_up", "off_study_time_limit", "administrative")}}
         for pid, t in trial["treatment"].items():
-            flow[f"completed_{pid}"] = int(np.sum(sel & t["completed"])) if t["status"] == "RESOLVED" else {"status": "UNRESOLVED", "reason": t["reason"]}
+            flow[f"completed_{pid}"] = (int(np.sum(sel & t["completed"])) if t["status"] == "RESOLVED" else
+                                        {"status": "IN_JOURNEY_STAGE", "reason": f"{t['reason']}: treatment completion comes from the patient journey"})
         rows[a["arm_id"]] = {
             "arm": label[a["arm_id"]], "description": a.get("description"), "participant_flow": flow,
             "baseline": {"participants": len(base), "age_years": {"mean": float(ages.mean()), "sd": float(ages.std(ddof=1)) if len(ages) > 1 else None},
@@ -143,8 +144,8 @@ def registry_record(trial: dict, analysis_result: dict, model: dict, spec: dict,
                               "time_origin": model["efs_origin"],
                               "analysis": {k: analysis_result[k] for k in ("test", "stratified", "sidedness", "alpha", "p_value", "success", "events", "evaluable", "hr", "hr_ci95", "stratification_note")}})
         else:
-            endpoints.append({"endpoint": name, "type": e["role"], "status": "UNRESOLVED",
-                              "reason": "no source quantifies this endpoint for the simulation (see outcome model)"})
+            endpoints.append({"endpoint": name, "type": e["role"], "status": "IN_ENDPOINT_STAGE",
+                              "reason": "computed from the simulated patients by the endpoint stage (endpoints_v*)"})
     return {"arms": rows, "outcome_measures": endpoints,
             "analysis_years_from_first_enrollment": trial["analysis_day"] / DAY, "enrolled": trial["n_enrolled"],
             "notes": [model["assessment_timing"], model["efs_origin"],
@@ -246,6 +247,6 @@ def _report(doc: dict, model: dict) -> str:
               f"- {model['assessment_timing']}", f"- {model['efs_origin']}",
               "- Strata are unresolved for enrolled subjects, so the stratified log-rank test runs unstratified.",
               "- Only the randomized arms open in this protocol version are simulated.",
-              "- Secondary endpoints are UNRESOLVED: no source quantifies them.",
+              "- Secondary endpoints are computed from the simulated patients by the endpoint stage.",
               "- Adverse events come from adult class-level evidence and are identical in distribution for both arms."]
     return "\n".join(lines) + "\n"

@@ -179,6 +179,279 @@ def chk_journey_prefers_cited_progression():
     return ok, f"cited {got}; source: {src}"
 
 
+def chk_arm_designators_resolve():
+    """Bare designators resolve by the agents their arm's label names; never by substring; unmatched arms get nothing."""
+    from clinical_asset.trial.arms import ArmResolver
+
+    lab = lambda aid, t: {"arm_id": aid, "label": {"text": t}, "description": {"text": t}}  # noqa: E731
+    iv = lambda agent, ref: {"category": "anticancer_drug", "canonical_agent": agent, "arms": [{"text": ref}]}  # noqa: E731
+    spec = {"arms": [lab("ARM1", "Examplinib Plus Otherumab"), lab("ARM2", "Examplinib Alone"), lab("ARM3", "Standard of Care"),
+                     lab("ARM4", "Drugone and Drugtwo"), lab("ARM5", "Once-weekly")],
+            "interventions": [iv("examplinib", "A"), iv("otherumab", "A"), iv("examplinib", "B"), iv("drugone", "C"), iv("drugtwo", "C"),
+                              iv("drugthree", "Arm 5 (once-weekly XY 56 mg/m2)")]}
+    r = ArmResolver(spec)
+    got = {ref: r.resolve(ref) for ref in ("A", "B", "C", "Arm 5 (once-weekly XY 56 mg/m2)")}
+    want = {"A": ["ARM1"], "B": ["ARM2"], "C": ["ARM4"], "Arm 5 (once-weekly XY 56 mg/m2)": ["ARM5"]}
+    return got == want, f"{got}"
+
+
+def chk_unknown_age_class_not_mixed():
+    """With no age limit, ages mix the age classes of the disease family's studies; MIXED is not 'unknown'."""
+    from types import SimpleNamespace
+
+    from clinical_asset.spa3.protocol import ProtocolQuery
+    from clinical_asset.trial.population import age_class_mixture
+
+    nodes = {("ADULT", "fam"): {"studies": 3}, ("ADULT",): {"studies": 10}, ("MIXED",): {"studies": 5}}
+    gen = SimpleNamespace(models={"age_mean": SimpleNamespace(nodes=nodes)})
+    got = age_class_mixture(gen, ProtocolQuery(disease_family="fam", age_class="MIXED"))
+    return got == [("ADULT", 1.0)], f"{got}"
+
+
+def chk_journey_registry_exits():
+    import inspect
+
+    from clinical_asset.trial import journey
+
+    src = inspect.getsource(journey.run) + inspect.getsource(journey.simulate_patient)
+    ok = all(w in src for w in ("ae_discontinuation_probability", "death_probability", "ae_stop_day", "death_day"))
+    return ok, "journey draws registry adverse-event discontinuation and death" if ok else "journey lacks registry exits"
+
+
+def chk_family_prior_is_context_in_binary():
+    import inspect
+
+    from clinical_asset.trial import binary
+
+    ok = "CONTEXT_ONLY" in inspect.getsource(binary.evidence_prior)
+    return ok, "binary evidence prior marks a family-level mixture as context" if ok else "family mixture used as the arm's prediction"
+
+
+def chk_cited_count_uncertainty():
+    import numpy as np
+
+    from clinical_asset.trial.binary import cited_uncertainty
+
+    u = cited_uncertainty({"value": {"numerator": 4, "denominator": 7}}, {"success_if_at_least": None}, np.random.default_rng(0))
+    lo, hi = u["true_rate_90_from_cited_count"]
+    return u["small_sample"] and lo < 0.3 and hi > 0.8, f"4/7: 90% {lo:.2f}-{hi:.2f}, small sample {u['small_sample']}"
+
+
+def chk_risk_headline_historical():
+    from clinical_asset.planning.report import _risk
+
+    rep = {"accrual": {"historical_model": {"status": "RESOLVED", "p_enrollment_complete_by": {"3y": 0.2},
+                                            "patients_per_year": {"median": 10.0, "q10": 2.0, "q90": 50.0}},
+                       "protocol_scenarios": [{"scenario": "s", "patients_per_year": 124.0, "p_enrollment_complete_by": {"3y": 1.0}}]}}
+    r = _risk(rep)
+    ok = "p_enrollment_complete_by (historical model, headline)" in r and r.get("protocol_accrual_assumption_outside_history", [{}])[0].get("direction") == "optimistic"
+    return ok, f"{sorted(r)}"
+
+
+def chk_critic_checks_planning_and_arms():
+    import inspect
+
+    from clinical_asset.agent import critic
+
+    src = inspect.getsource(critic.review)
+    ok = "check_planning" in src and "check_arms" in src
+    return ok, "critic reviews planning units and arm resolution" if ok else "critic misses planning units / arms"
+
+
+def chk_no_undetermined_patients():
+    from clinical_asset.trial import eligibility as el
+
+    leaf = {"node": "LEAF", "kind": "compare", "status": "EXECUTABLE", "variable": "var:lab", "op": ">=", "value": 1}
+    spec = {"eligibility": [{"criterion_id": "E1", "kind": "inclusion", "logic": leaf, "status": "EXECUTABLE", "modality": "REQUIRED"}]}
+    _, s = el.assess(spec, [{"patient_id": f"P{i}"} for i in range(200)], {"value": 0.5}, seed=0)
+    return s["status_counts"]["UNDETERMINED"] == 0, f"{s['status_counts']}"
+
+
+def chk_every_endpoint_classified():
+    from clinical_asset.trial.quantify import classify
+
+    cases = {"Progression-free survival": "progression_free_survival", "Overall survival": "overall_survival",
+             "Objective response rate": "objective_response_rate", "Duration of response": "duration_of_response",
+             "Incidence of SAEs": None, "Quality of Life": "patient_reported_outcome"}
+    got = {k: classify(k, None)[1] for k in cases}
+    return got == cases, f"{got}"
+
+
+def chk_repair_incorrect_important_items():
+    import inspect
+
+    from clinical_asset.protocol.compiler import ProtocolCompiler
+
+    src = inspect.getsource(ProtocolCompiler.repair)
+    ok = 'item.get("criticality") != "CRITICAL"' not in src and "whatever its criticality" in src
+    return ok, "repair covers every failing item, whatever its criticality" if ok else "repair is limited to CRITICAL items"
+
+
+def chk_component_rate_is_not_regimen_rate():
+    from clinical_asset.trial.journey_evidence import same_regimen
+
+    iv = lambda a, ref: {"category": "anticancer_drug", "canonical_agent": a, "arms": [{"text": ref}]}  # noqa: E731
+    spec = {"arms": [{"arm_id": "ARM1", "label": {"text": "Examplinib Plus Otherumab"}, "description": {"text": ""}},
+                     {"arm_id": "ARM2", "label": {"text": "Arm 2 (XYz twice-weekly)"}, "description": {"text": ""}}],
+            "interventions": [iv("examplinib", "Examplinib Plus Otherumab"), iv("otherumab", "Examplinib Plus Otherumab"), iv("drugz", "Arm 2 (XYz twice-weekly)")]}
+    got = (same_regimen("otherumab", spec, "ARM1"), same_regimen("examplinib plus otherumab", spec, "ARM1"), same_regimen("XYz", spec, "ARM2"))
+    return got == (False, True, True), f"component {got[0]}, full regimen {got[1]}, abbreviation {got[2]}"
+
+
+def chk_qualifiers_restored_and_all_verified():
+    import inspect
+
+    from clinical_asset.protocol import qualifiers as q
+    from clinical_asset.protocol.compiler import ProtocolCompiler
+
+    tol = q.dose_tolerance("296±20% MBq") or {}
+    leaf = {"kind": "unresolved", "text": "other conditions, as judged by the investigator.", "status": "REVIEW_REQUIRED"}
+    src = inspect.getsource(ProtocolCompiler.verify)
+    ok = (tol.get("tolerance") == 20 and q.modality("should occur") == "RECOMMENDED" and q.design_qualifiers("paired Wilcoxon") == ["paired"]
+          and q.investigator_judgement(leaf) and "votes = self.critical_votes                # every rule item" in src and "sample_size" in src)
+    return ok, f"tolerance {tol.get('tolerance')}, modality, paired, judgement flag, three votes for every item and sample-size verification: {ok}"
+
+
+def chk_windows_screening_and_not_a_rule():
+    import inspect
+
+    from clinical_asset.protocol import qualifiers as q
+    from clinical_asset.protocol.compiler import ProtocolCompiler
+
+    two = {"kind": "window", "text": "within 14 days of Visit 2", "relation": "WITHIN_AFTER", "offset": {"value": 14.0, "unit": "day"}}
+    q.fix_window(two)
+    ss = {"quantity": "target_accrual", "value": 60, "evidence": {"text": "60 patients will be screened"}}
+    q.screening_count(ss)
+    ok = two["relation"] == "WITHIN_EITHER" and ss["quantity"] == "planned_screened" and '"NOT_A_RULE": "NOT_A_RULE"' in inspect.getsource(ProtocolCompiler.verify)
+    return ok, f"two-sided window {two['relation']}, screened count {ss['quantity']}, NOT_A_RULE handled: {ok}"
+
+
+def chk_window_after_study_entry_one_sided():
+    from clinical_asset.protocol import qualifiers as q
+
+    a = {"kind": "window", "text": "Schedule Visit 2 within 14 days of consent.", "relation": "WITHIN_AFTER", "anchor": "consent",
+         "offset": {"value": 14.0, "unit": "day"}}
+    b = {"kind": "window", "text": "within 14 days of Visit 2", "relation": "WITHIN_AFTER", "anchor": "Visit 2", "offset": {"value": 14.0, "unit": "day"}}
+    q.fix_window(a)
+    q.fix_window(b)
+    return (a["relation"], b["relation"]) == ("WITHIN_AFTER", "WITHIN_EITHER"), f"of consent: {a['relation']}; of a visit: {b['relation']}"
+
+
+def chk_targeted_resolution():
+    """The resolver applies only quote-backed corrections, repairs only its target items, and renders the protocol's own
+    anchor wording."""
+    import inspect
+
+    from clinical_asset.protocol import render, resolver
+    from clinical_asset.protocol.compiler import ProtocolCompiler
+
+    class Doc:
+        sections = []
+    applied = resolver.apply_corrections({"logic": {"node": "LEAF", "kind": "unresolved", "text": "x"}},
+                                         [{"target": "L0", "field": "relation", "value": "WITHIN_BEFORE", "evidence_quote": "not in any document"}], [Doc()])
+    only = "only: set[str] | None = None" in inspect.getsource(ProtocolCompiler.repair)
+    anchor = render.window({"relation": "WITHIN_BEFORE", "offset": {"value": 14, "unit": "day"}, "anchor": "Visit 2", "anchor_event": "scan_visit"}, "PSA")
+    ok = applied == [] and only and "scan visit" not in anchor and "'Visit 2'" in anchor
+    return ok, f"unsupported patch applied: {bool(applied)}; repair limited to targets: {only}; anchor rendered: {anchor!r}"
+
+
+def chk_continuous_engine_and_unclassified_safety():
+    import inspect
+
+    from clinical_asset.trial import continuous, safety
+
+    spec = {"analyses": [{"analysis_id": "A", "primary": True, "test_family": "wilcoxon", "design_qualifiers": ["paired"], "sidedness": "two_sided",
+                          "alpha": {"value": 0.05}, "power": {"value": 0.8}, "effects": [{"text": "a mean of paired differences of 10"}]}],
+            "sample_size": [{"quantity": "evaluable_target", "value": 52}]}
+    d = continuous.design(spec)
+    ok = d.get("status") == "RESOLVED" and abs(d["sd"] - 25.15) < 0.1 and "NO_EVIDENCE" in inspect.getsource(safety.v3_arm_events)
+    return ok, f"continuous design {d.get('status')}, derived SD {d.get('sd')}; unclassified agents use protocol-cited incidences: {ok}"
+
+
+def chk_within_patient_design():
+    from clinical_asset.trial.recruitment import within_patient
+
+    lab = lambda aid, t: {"arm_id": aid, "label": {"text": t}, "description": {"text": ""}}  # noqa: E731
+    iv = lambda a, ph: {"category": "other", "canonical_agent": a, "agent": {"text": a}, "arms": [], "phase_id": ph, "dose": {"value": 1}}  # noqa: E731
+    spec = {"metadata": {"design_summary": {"text": "a prospective intra-patient comparator study"}},
+            "arms": [lab("ARM1", "Tracerone injection"), lab("ARM2", "Tracertwo injection")],
+            "treatment_phases": [{"phase_id": "PH1", "sequence_number": 1}, {"phase_id": "PH2", "sequence_number": 2}],
+            "interventions": [iv("tracertwo", "PH2"), iv("tracerone", "PH1")]}
+    parallel = {**spec, "metadata": {"design_summary": {"text": "a randomized two-arm study"}}}
+    w, p_ = within_patient(spec), within_patient(parallel)
+    ok = bool(w) and w["arm_order"] == ["ARM1", "ARM2"] and p_ is None
+    return ok, f"intra-patient order {w and w['arm_order']}; parallel design detected as within-patient: {bool(p_)}"
+
+
+def chk_no_verbatim_echo():
+    """Renderings carry structured content only, and the resolver rejects a free-text value that copies its evidence."""
+    from clinical_asset.protocol import render
+    from clinical_asset.protocol.resolver import copies
+
+    e = {"role": "secondary", "name": {"text": "Detection rate"}, "type": "binary", "evidence": {"text": "The secondary endpoints will be estimated for each tracer."},
+         "lead_in": "The secondary endpoints will be an estimate of the following", "population": {"text": "each tracer"}}
+    r = render.endpoint(e)
+    sentence = "TEAEs will be summarized overall and by severity and will include the number and percentage of patients"
+    ok = "as stated" not in r and "listed under" not in r and copies(sentence, sentence) and not copies("central read", sentence)
+    return ok, f"endpoint rendering {r!r}; a copied sentence is rejected: {copies(sentence, sentence)}"
+
+
+def chk_response_derived_from_measurements():
+    import numpy as np
+
+    from clinical_asset.trial import analysis_results as ar
+
+    c = ar.criteria({"response_criteria": {"categories": [
+        {"category": {"text": "Partial response (PR)"}, "threshold": {"value": 50.0, "direction": "decrease"}},
+        {"category": {"text": "Progressive Disease (PD)"}, "threshold": {"value": 25.0, "direction": "increase"}}]}})
+    out = ar.simulate_tumour("S", "A", 400, 56, 0.0, 0.0, 120.0, None, None, ar.criteria({}), np.random.default_rng(1))
+    ok = (c["pr"], c["pd"]) == (50.0, 25.0) and out["pd_day"] == 168 and ar.best_overall_response([(56, "PR"), (70, "PD")], True)[0] == "SD"
+    return ok, f"protocol thresholds {c['pr']}/{c['pd']}; progression detected at the next assessment (day {out['pd_day']}); unconfirmed PR is not a response: {ok}"
+
+
+def chk_results_by_subgroup():
+    from clinical_asset.trial import subgroup_report as sr
+
+    spec = {"arms": [], "eligibility": [], "stratification": {"factors": [], "strata": []},
+            "subgroups": [{"subgroup": {"text": "age (< 70, >= 70)"}}, {"subgroup": {"text": "prior transplant (yes vs no)"}}]}
+    bases = [{"demographic:age": {"value": 50 + i}, "demographic:sex": "male" if i % 2 else "female",
+              "var:ecog_performance_status": {"value": i % 2}} for i in range(40)]
+    fs = {f["factor"]: f for f in sr.factors(spec, bases, {})}
+    age = {fs["Age (protocol cut points)"]["level"](b, {}) for b in bases}
+    ok = age == {"< 70 years", ">= 70 years"} and fs["prior transplant (yes vs no)"]["level"] is None and "Sex" in fs and "Region" in fs
+    return ok, (f"protocol age cut points {sorted(age)}; a protocol subgroup with no patient variable is listed as not generated: "
+                f"{fs['prior transplant (yes vs no)']['level'] is None}; FDA demographics present: {'Sex' in fs}")
+
+
+def chk_subgroup_evidence():
+    from clinical_asset.trial import subgroup_evidence as sge
+
+    v = sge.complement({"A": (0.5, 40), sge.ALL: (0.35, 100)}, ["A", "B"], orr=True)
+    ev = {"factors": [{"key": "var:m", "kind": "existing", "levels": ["p", "n"], "mix": {"p": 0.3, "n": 0.7},
+                       "effects": {"status": "RESOLVED", "reference_level": "p", "log_hazard_ratio": {"n": {"log_effect": 0.5}}}}]}
+    mean = 0.3 * sge.patient_log_effects({"var:m": "p"}, ev)[0] + 0.7 * sge.patient_log_effects({"var:m": "n"}, ev)[0]
+    ok = v is not None and abs(v[1] - 0.25) < 1e-9 and abs(mean) < 1e-12 and sge.parse_levels("x (yes vs no)") == ["yes", "no"]
+    return ok, (f"complement from a whole-population row: {v}; patient effects centred on the mix (mean {mean:.1e}); "
+                f"levels from the protocol's wording")
+
+
+def chk_lock_paths_follow_renames():
+    from clinical_asset.trial.lock import resolve
+
+    p = resolve("protocols/Prot_SAP_000.pdf")
+    ok = p.as_posix() == "protocols/NCT00392327.pdf" and p.exists()
+    return ok, f"a protocol path recorded before the rename resolves to {p.as_posix()} (exists: {p.exists()})"
+
+
+def chk_shell_loops_strip_cr():
+    bad = []
+    for p in Path("scripts").glob("*.sh"):
+        s = p.read_text(encoding="utf-8")
+        if "| while" in s and "read -r" in s and "python" in s.casefold() and "$'\\r'" not in s:
+            bad.append(p.name)
+    return not bad, "; ".join(bad) or "every shell loop reading Python output strips the carriage return"
+
+
 def chk_no_control_characters():
     bad = [str(p) for root in ("clinical_asset", "scripts") for p in Path(root).rglob("*.py")
            if any(c < 32 and c not in (9, 10, 13) for c in p.read_bytes())]
@@ -239,6 +512,75 @@ SEED = [
     ("L018", "patient journey", "the showcase journey used a cross-regimen evidence median PFS of 8.7 months though the protocol cites 26.3 months for KRd: 12-month PFS 39% predicted vs 80% observed; 12 cycles completed 45% vs 67%",
      "the protocol-cited figure for the arm's own regimen comes before any cross-regimen evidence mixture (as L016, for every model input)",
      "trial.journey_evidence.cited_progression progression_model", "chk_journey_prefers_cited_progression"),
+    ("L019", "arm resolution", "arm references were matched by substring: bare 'A','B','C' gave pemigatinib to standard-care arms, and 'Once-weekly' never matched 'Arm 1 (once-weekly KRd)', so the showcase journey gave no carfilzomib (0 dose holds)",
+     "resolve arm references once, on whole words (label, designator, named agents); an unmatched reference applies to no arm and is reported",
+     "trial.arms.ArmResolver (safety, journey, visits, journey_evidence)", "chk_arm_designators_resolve"),
+    ("L020", "patient generation", "with no age limit the generator used the MIXED age class, which dropped the disease family: urothelial patients had mean age 38 (real 57-84)",
+     "an unknown value is not a category: mix the age classes of the family's studies",
+     "trial.population.age_class_mixture", "chk_unknown_age_class_not_mixed"),
+    ("L021", "patient journey", "the journey had no adverse-event discontinuation or death (0 deaths vs 47 reported)",
+     "use the registry participant flow for every exit reason it reports: withdrawal, adverse event, death",
+     "trial.journey_evidence.disposition_probability trial.journey.simulate_patient", "chk_journey_registry_exits"),
+    ("L022", "efficacy prediction", "a neoadjuvant chemotherapy arm got a response prior pooled from metastatic regimens of other classes (family level)",
+     "L016 applies to every engine: a family-level mixture is context, never the arm's prediction",
+     "trial.binary.evidence_prior", "chk_family_prior_is_context_in_binary"),
+    ("L023", "efficacy prediction", "a cited 4/7 response (57%) was used as a point rate; the trial observed 7%",
+     "a cited rate carries its own count: report its interval and flag small samples",
+     "trial.binary.cited_uncertainty", "chk_cited_count_uncertainty"),
+    ("L024", "planning", "the operational-risk headline was P(enrolment complete) 1.0 under the protocol's 124/year, 12x the historical median; the trial enrolled 7",
+     "the historical model is the headline; a protocol assumption outside the historical range is flagged",
+     "planning.report._risk", "chk_risk_headline_historical"),
+    ("L025", "critic", "planning unit errors (36-month accrual read as 36 years) and arm-resolution failures were found by hand",
+     "every defect class found by hand becomes an automatic critic check",
+     "agent.critic.check_planning check_arms", "chk_critic_checks_planning_and_arms"),
+    ("L026", "eligibility", "0 of 10,000 patients were ever proven eligible in nine protocols: generated patients carry no labs or history",
+     "every patient is decided: criteria the patients cannot answer are calibrated to the registry screen pass rate",
+     "trial.eligibility.resolve_unknowns", "chk_no_undetermined_patients"),
+    ("L027", "results", "secondary endpoints, unmodelled binary endpoints and families without evidence were left UNRESOLVED",
+     "one source ladder for every endpoint (protocol-cited > regimen > class > family > all oncology > design hypothesis), results from the simulated patients",
+     "trial.quantify trial.endpoints", "chk_every_endpoint_classified"),
+    ("L028", "protocol compiler", "IMPORTANT items the verifiers judged INCORRECT (dose rules, arm-specific interventions) were never repaired, so their rules were lost",
+     "repair every item judged incorrect, not only CRITICAL ones; an incorrect item is never run as compiled",
+     "protocol.compiler.ProtocolCompiler.repair trial.run_forward", "chk_repair_incorrect_important_items"),
+    ("L029", "efficacy prediction", "a pembrolizumab-only cited response rate was taken as the rate of a pemigatinib plus pembrolizumab arm",
+     "a cited figure that names agents is the arm's only when it names exactly the arm's agents",
+     "trial.journey_evidence.same_regimen", "chk_component_rate_is_not_regimen_rate"),
+    ("L030", "protocol compiler", "a new protocol extracted at 59% faithful: '296±20%' kept as a fixed 296, 'should occur' made mandatory, 'paired' Wilcoxon lost, the endpoint list's lead-in and the flush order dropped, an investigator-judged exclusion left unresolved, and analyses, sample size and discontinuation never verified",
+     "restore every qualifier the verified quotes hold (deterministically), render it, verify every rule item with three votes, and loop repair until all are faithful or no progress; residual failures go to the agent backlog with a root cause",
+     "protocol.qualifiers protocol.render protocol.compiler.verify repair", "chk_qualifiers_restored_and_all_verified"),
+    ("L031", "protocol compiler", "after round 2 of a new protocol: 'within five biological half-lives' had no unit, 'within 14 days of Visit 2' became 'after', a window anchored on its own wording, 'Approximately 60 patients will be screened' became target accrual, a safety endpoint's reporting statement was not rendered, and an item the verifiers unanimously found not to be a rule stayed 'unverified'",
+     "drug-relative units and two-sided windows are kept as stated; a screened count is not enrolment; the reporting statement is rendered; NOT_A_RULE makes an item informational",
+     "protocol.qualifiers.fix_window screening_count protocol.render.endpoint protocol.compiler.verify", "chk_windows_screening_and_not_a_rule"),
+    ("L032", "protocol compiler", "the L031 two-sided rule turned 'Schedule Visit 2 within 14 days of consent' into 'before or after consent'",
+     "a window measured from a study-entry event (consent, enrolment, registration, randomisation, screening) can only follow it",
+     "protocol.qualifiers.fix_window STUDY_ENTRY", "chk_window_after_study_entry_one_sided"),
+    ("L033", "protocol compiler", "fixing one item by recompiling the whole protocol re-extracted everything, cost hundreds of calls, re-broke items that were right, and a deterministic default overrode a direction the protocol's own schedule settled; the renderer added an internal event label ('scan visit') to the protocol's 'Visit 2'",
+     "resolve only the failing items as an agentic RAG loop: retrieve passages, investigate (with more searches when needed), apply quote-backed field corrections, re-extract only when no correction is supported, re-verify only that item; never override a settled direction; render the protocol's own anchor wording",
+     "protocol.resolver protocol.compiler.repair(only) protocol.render.window", "chk_targeted_resolution"),
+    ("L034", "engines", "a diagnostic imaging protocol (paired Wilcoxon on a continuous measure; PET tracers with no drug class) ran with no primary engine and safety UNRESOLVED",
+     "a continuous primary with a stated design gets its own engine (SD derived from the power statement and checked by simulation); an agent with no drug class uses the protocol's cited incidences, else NO_EVIDENCE",
+     "trial.continuous trial.engine_choice trial.safety.v3_arm_events", "chk_continuous_engine_and_unclassified_safety"),
+    ("L035", "trial design", "an intra-patient study (each patient receives both tracers) was simulated as two parallel arms, each tracer was given to every arm, and a 10-day imaging study was followed for 2 years with a progression model",
+     "detect within-patient designs and give every patient one record per arm in the protocol's order; an unreferenced item belongs to the arm naming its product only when every arm names its own; with no cycles, participation ends after the last procedure plus the reporting window",
+     "trial.recruitment.within_patient trial.arms.arms_of_item trial.journey (A22)", "chk_within_patient_design"),
+    ("L036", "protocol compiler", "renderings passed verification by echoing protocol sentences ('as stated: ...', 'listed under ...', '(protocol wording: ...)') instead of the extraction being right",
+     "no verbatim: renderings show structured content only; the resolver agent writes structured values backed by a quote, and a value that copies its quote is rejected",
+     "protocol.render protocol.qualifiers protocol.resolver.copies", "chk_no_verbatim_echo"),
+    ("L037", "reporting", "results were drawn as rates and reported in an ad hoc layout: response was 'not simulated' in the journey, PFS was detected only while on treatment, and safety was not in the FDA standard tables",
+     "derive response from simulated tumour measurements under the protocol's own thresholds (PharmaSUG: SDTM TU/TR/RS, ADaM ADRS/ADTTE with standard censoring), and report safety in the FDA standard tables",
+     "trial.analysis_results scripts/build_ae_soc_map.py", "chk_response_derived_from_measurements"),
+    ("L038", "reporting", "results were reported only by arm (one ORR or median for the whole trial), which says little for feasibility and control-arm questions: who is enrolled, who is excluded, and how each group does",
+     "report every result by arm AND by subgroup (the protocol's stratification factors and analysis subgroups by meaning, FDA demographics, baseline disease factors): efficacy, arm-vs-control within each level with forest plots, safety, disposition and screening; every factor states whether the model gives it an effect (evidence-driven) or its levels differ only by chance (mix only), and a protocol subgroup with no patient variable is listed as not generated",
+     "trial.subgroup_report trial.analysis_results", "chk_results_by_subgroup"),
+    ("L039", "patient generation", "subgroup results were empty or meaningless: most factors a protocol stratifies by or names as subgroups were never generated for patients, and no patient characteristic changed outcomes within an arm, so every subgroup differed only by chance",
+     "generate each protocol subgroup factor from registry baseline tables (retrieved by meaning, categories mapped to the protocol's levels by three model votes, pooled by disease family and phase; else equal shares, A27), reuse a variable that already carries it, and take prognostic effects from registry results reported by subgroup (class tables, separate measures, and the complement of a whole-population row), applied per patient and centred on the mix (A28); a factor with fewer than 3 trials of effect evidence stays 'mix only'",
+     "trial.subgroup_evidence trial.baseline_extra trial.journey trial.analysis_results", "chk_subgroup_evidence"),
+    ("L040", "operations", "after protocols were renamed by NCT, every new run stopped at the population stage: the facts lock records the PDF's old path, and locks are never edited",
+     "a path a lock records is resolved through the alias manifest (data/manifest/protocol_aliases.json) when it no longer exists; the checksum still decides it is the same file",
+     "trial.lock.resolve trial.population planning.report trial.safety trial.compare", "chk_lock_paths_follow_renames"),
+    ("L041", "operations", "the protocol batch stopped every protocol with 'protocol_facts_v1.0.0 is not a locked artefact' although the lock existed: the shell loop read the version from Windows Python output ending in CRLF, so the directory name carried a hidden carriage return",
+     "a shell loop that reads values printed by Python strips the trailing carriage return before using them",
+     "scripts/run_test_protocols.sh", "chk_shell_loops_strip_cr"),
 ]
 
 

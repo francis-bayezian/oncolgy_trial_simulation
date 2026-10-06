@@ -28,7 +28,10 @@ def evaluated_trials() -> frozenset:
     """Trials the pipeline is evaluated on (development protocols, holdouts, the temporal showcase): never evidence."""
     ids = set()
     for f, key in (("data/manifest/development_protocols.json", "protocols"), ("data/manifest/holdout_test_trials.json", "nct_ids"),
-                   ("data/manifest/temporal_showcase_v2.json", "chosen")):
+                   ("data/manifest/temporal_showcase_v2.json", "chosen"),
+                   ("data/manifest/excluded_start2023.json", "nct_ids"),       # every trial started in 2023 or later (hold-out)
+                   ("data/manifest/protocols.json", "protocols"),              # every test protocol (named by NCT)
+                   ("data/manifest/holdout_start2023.json", "nct_ids")):
         p = Path(f)
         if not p.exists():
             continue
@@ -45,8 +48,10 @@ def excluded() -> frozenset:
 
 def asset(name: str) -> Path:
     m = manifest()
-    if not m:
-        return Path(DEFAULT_ASSETS[name])
+    if not m:                                   # the asset profile in force (clinical_asset.assets): v1 unless chosen
+        from .assets import path
+
+        return path({"v3": "params_v3", "safety": "safety", "operational": "operational"}[name])
     return Path((m.get("assets") or {}).get(name) or T0_ASSETS[name])
 
 

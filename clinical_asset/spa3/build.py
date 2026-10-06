@@ -34,6 +34,7 @@ from ..spa2 import borrow as borrow2
 from ..spa2.build import age_factors
 from ..spa2.hierarchy import fit_hierarchy
 from . import baseline, proportions, survival_fusion
+from .. import assets as _assets
 from .protocol import (
     BaselineGenerator,
     eligibility_support,
@@ -42,11 +43,11 @@ from .protocol import (
     target_from_gaussian,
 )
 
-V1 = Path("data/simulation_parameters_v1")
-V2 = Path("data/simulation_parameters_v2")
-OUT = Path("data/simulation_parameters_v3")
+V1 = _assets.path("params_v1")
+V2 = _assets.path("params_v2")
+OUT = _assets.path("params_v3")
 WORK = Path("data/spa_work")
-RAW = Path("data/raw/ctgov")
+RAW = _assets.path("raw_ctgov")
 SEED = 20260927
 MODEL_VERSION = "spa-milestone-3.0.0"
 MIN_ESS_SHARE = 0.1  # first attempt; after the retry an absolute effective sample size is required

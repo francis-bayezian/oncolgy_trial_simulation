@@ -12,6 +12,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+from .. import assets as _assets
 from .canonical import (
     canonical_outcome,
     disposition_category,
@@ -22,7 +23,7 @@ from .canonical import (
     statistic_family,
 )
 
-ASSET = Path("data/asset_v1")
+ASSET = _assets.path("asset")
 MORTALITY = re.compile(r"mortality|\bdeaths?\b|\bdied\b|deceased", re.IGNORECASE)
 
 

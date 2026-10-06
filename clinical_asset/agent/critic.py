@@ -32,7 +32,11 @@ def check_spec(study: str) -> list[dict]:
     for a in s.get("analyses") or []:
         alpha = (a.get("alpha") or {}).get("value") if isinstance(a.get("alpha"), dict) else a.get("alpha")
         if isinstance(alpha, (int, float)) and not 0 < alpha <= 0.5:
-            out.append(_f("alpha_plausible", "error", f"analysis {a.get('analysis_id')} has alpha {alpha}", lk))
+            from ..trial.run_forward import analysis_alpha
+
+            fixed = analysis_alpha(a)                   # engines use the re-parsed quote, so this is a warning, not a stop
+            sev = "warning" if fixed["source"].startswith("re-parsed") else "error"
+            out.append(_f("alpha_plausible", sev, f"analysis {a.get('analysis_id')} has alpha {alpha}; engines use {fixed['value']} ({fixed['source']})", lk))
         power = (a.get("power") or {}).get("value") if isinstance(a.get("power"), dict) else a.get("power")
         if isinstance(power, (int, float)) and not 0.5 <= power < 1:
             out.append(_f("power_plausible", "warning", f"analysis {a.get('analysis_id')} has power {power}", lk))
@@ -93,5 +97,54 @@ def check_journey(study: str, journey_dir: Path | None = None) -> list[dict]:
     return out
 
 
+MAX_PLAUSIBLE_ACCRUAL_YEARS = 15
+
+
+def check_arms(study: str) -> list[dict]:
+    """Every arm reference resolves, and every arm receives an anticancer agent (L019: bare designators 'A', 'B', 'C'
+    matched by substring had given pemigatinib to the standard-care arms and no carfilzomib to the showcase journey)."""
+    from ..trial.arms import ArmResolver
+
+    lk = latest(study, "studyspec")
+    if not lk:
+        return []
+    s = json.loads((lk / "studyspec.json").read_text(encoding="utf-8"))
+    r = ArmResolver(s)
+    out = [_f("arm_reference_unresolved", "warning", f"arm reference {ref!r} names no arm: its items apply to no arm", lk) for ref in r.unresolved()]
+    for a in s.get("arms") or []:
+        if a.get("status") != "closed" and not any(r.item_applies_to(it, a["arm_id"]) for it in r.anticancer):
+            out.append(_f("arm_without_agent", "warning", f"arm {a['arm_id']} ({(a.get('label') or {}).get('text') if isinstance(a.get('label'), dict) else a.get('label')}) "
+                          "receives no anticancer agent: its safety and journey are unresolved", lk))
+    return out
+
+
+def check_planning(study: str) -> list[dict]:
+    """Planning units and protocol assumptions (L017, L024): an accrual duration or a deadline beyond
+    MAX_PLAUSIBLE_ACCRUAL_YEARS is a unit error (a 36-month period read as 36 years); a protocol accrual rate outside
+    the historical 80% range is reported."""
+    lk = latest(study, "planning")
+    if not lk:
+        return []
+    r = json.loads((lk / "planning_report.json").read_text(encoding="utf-8"))
+    acc = r.get("accrual") or {}
+    out = []
+    for y in acc.get("stated_accrual_durations_years") or []:
+        if y and y > MAX_PLAUSIBLE_ACCRUAL_YEARS:
+            out.append(_f("planning_duration_units", "error", f"stated accrual duration {y:g} years: probably months or days read as years", lk))
+    for s in acc.get("protocol_scenarios") or []:
+        for deadline in s.get("p_enrollment_complete_by") or {}:
+            m = re.fullmatch(r"([\d.]+)y", deadline)
+            if m and float(m.group(1)) > MAX_PLAUSIBLE_ACCRUAL_YEARS:
+                out.append(_f("planning_deadline_units", "error", f"deadline {deadline} in scenario {s['scenario']}: a unit error", lk))
+    h = acc.get("historical_model") or {}
+    py = h.get("patients_per_year") or {}
+    for s in acc.get("protocol_scenarios") or []:
+        if s.get("patients_per_year") and py.get("median") and not py["q10"] <= s["patients_per_year"] <= py["q90"]:
+            out.append(_f("protocol_accrual_outside_history", "warning",
+                          f"protocol accrual {s['patients_per_year']:g}/year is {s['patients_per_year'] / py['median']:.1f}x the historical median "
+                          f"{py['median']:.1f}/year (p10 {py['q10']:.1f}, p90 {py['q90']:.1f}): report the historical model as the headline", lk))
+    return out
+
+
 def review(study: str) -> list[dict]:
-    return check_spec(study) + check_eligibility(study) + check_journey(study)
+    return check_spec(study) + check_arms(study) + check_eligibility(study) + check_planning(study) + check_journey(study)

@@ -6,7 +6,7 @@ set -euo pipefail
 ID=$1; NCT=$2; FETCHED=$3; SV=$4; EV=$5; CV=$6; BLIND=$7; PV=${8:-1.0.0}
 ASSET=${9:-data/planning_asset_v1/accrual}; ASSET_LOCK=${10:-data/locked/planning_asset/accrual_v1.0.0/lock.json}
 export PYTHONPATH=. PYTHONIOENCODING=utf-8
-P=".venv/Scripts/python.exe -m clinical_asset.cli"; L=data/locked/$ID; T=${TRIAL_ROOT:-data/trial/unblinded}/$ID; REG=data/holdout_comparison/$NCT.json
+P=".venv/Scripts/python.exe -m clinical_asset.cli"; L=data/locked/$ID; T=${TRIAL_ROOT:-data/trial/runs}/$ID; REG=data/holdout_comparison/$NCT.json
 SPEC=$L/studyspec_v$SV; ELIG=$L/eligibility_v$EV; COH=$L/cohorts_v$CV; RES=$L/results_v1.0.0
 lock() { $P lock-stage --stage "$1" --out "$2" --kind "$3" --version "$4" "${@:5}" --code clinical_asset > /dev/null; echo "locked $2"; }
 

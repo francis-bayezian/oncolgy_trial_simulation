@@ -27,8 +27,11 @@ from pathlib import Path
 import numpy as np
 from scipy import stats
 
-V1_TABLE = Path("data/simulation_parameters_v1/evidence_table.parquet")
-RAW = Path("data/raw/ctgov")
+from .predictive import from_normal
+from .. import assets as _assets
+
+V1_TABLE = _assets.path("params_v1") / "evidence_table.parquet"
+RAW = _assets.path("raw_ctgov")
 MIN_STUDIES = 3
 
 
@@ -113,6 +116,7 @@ def pooled(recs: list[dict]) -> dict | None:
     tau = math.sqrt(tau2)
     return {"estimate": ex(mu), "ci50": [ex(mu - z50 * se), ex(mu + z50 * se)], "ci95": [ex(mu - z95 * se), ex(mu + z95 * se)],
             "between_study_tau_logit": tau, "single_trial_80": [ex(mu - 1.2816 * math.hypot(se, tau)), ex(mu + 1.2816 * math.hypot(se, tau))],
+            "single_trial_percentiles": from_normal(mu, math.hypot(se, tau), ex),
             "studies": len({r["study"] for r in recs}), "arms": len(recs), "patients": int(n.sum())}
 
 
@@ -122,9 +126,11 @@ def _classes(sig: str) -> set[str]:
 
 def estimate(target_variable: str, family: str, classes: list[str], agents: list[str], age_group: str, phase: str | None = None,
              exclude_studies: set[str] | None = None, min_studies: int = MIN_STUDIES, order: list[str] | None = None) -> dict:
-    recs = [r for r in records(target_variable) if r["disease_family"] == family and r["study"] not in (exclude_studies or set())]
+    recs = [r for r in records(target_variable) if (family is None or r["disease_family"] == family) and r["study"] not in (exclude_studies or set())]
+    if not recs and family is not None:          # no study in the family: the same ladder over all oncology (L027)
+        return {**estimate(target_variable, None, classes, agents, age_group, phase, exclude_studies, min_studies, order), "family_fallback": family}
     if not recs:
-        return {"status": "UNRESOLVED", "reason": f"no study of {target_variable} in the {family} family"}
+        return {"status": "UNRESOLVED", "reason": f"no study of {target_variable} in the evidence"}
     mine = set(classes) - {"other", "unclassified"}
     agent_set = {a.casefold() for a in agents if a}
 
@@ -132,7 +138,7 @@ def estimate(target_variable: str, family: str, classes: list[str], agents: list
         return {x.strip().casefold() for x in (r.get("regimen") or "").split("+") if x.strip()}
     rungs = _rungs(recs, mine, agent_set, age_group, phase, regimen_of)
     order = ladder_order(target_variable) if order is None else order
-    ladder = [(rungs[k][0], rungs[k][1]) for k in order if k in rungs] + [("whole disease family", recs)]
+    ladder = [(rungs[k][0], rungs[k][1]) for k in order if k in rungs] + [("whole disease family" if family is not None else "all oncology", recs)]
     level, chosen = next(((lv, rs) for lv, rs in ladder if len({r["study"] for r in rs}) >= min_studies), ladder[-1])
     breakdown = {}
     for key, f in (("age group", lambda r: r["age_group"]), ("phase", lambda r: r["phase"]),
@@ -284,13 +290,15 @@ def estimate_median(variable: str, family: str, classes: list[str], agents: list
                     min_studies: int = MIN_STUDIES) -> dict:
     """The most specific subgroup (the data-chosen rung order) holding at least `min_studies` studies, for a control
     arm's median; the whole disease family last."""
-    recs = [r for r in median_records(variable) if r["disease_family"] == family]
+    recs = [r for r in median_records(variable) if family is None or r["disease_family"] == family]
+    if not recs and family is not None:          # no reported median in the family: the same ladder over all oncology (L027)
+        return {**estimate_median(variable, None, classes, agents, age_group, phase, min_studies), "family_fallback": family}
     if not recs:
-        return {"status": "UNRESOLVED", "reason": f"no reported {variable} median in the {family} family"}
+        return {"status": "UNRESOLVED", "reason": f"no reported {variable} median in the evidence"}
     mine = set(classes) - {"other", "unclassified"}
     agent_set = {a.casefold() for a in agents if a}
     rungs = _rungs(recs, mine, agent_set, age_group, phase,
                    lambda r: {x.strip().casefold() for x in (r.get("regimen") or "").split("+") if x.strip()})
-    ladder = [(rungs[k][0], rungs[k][1]) for k in ladder_order("serious_adverse_event") if k in rungs] + [("whole disease family", recs)]
+    ladder = [(rungs[k][0], rungs[k][1]) for k in ladder_order("serious_adverse_event") if k in rungs] + [("whole disease family" if family is not None else "all oncology", recs)]
     level, chosen = next(((lv, rs) for lv, rs in ladder if len({r["study"] for r in rs}) >= min_studies), ladder[-1])
     return {"status": "RESOLVED", "variable": variable, "family": family, "subgroup": level, **pooled_median(chosen)}

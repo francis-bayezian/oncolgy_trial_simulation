@@ -24,12 +24,12 @@ def _spec():
 
 def test_criteria_are_classified_by_how_they_can_be_checked():
     groups = {k: [c["criterion_id"] for c in v] for k, v in el.classify_criteria(_spec()).items()}
-    assert groups == {"evaluated": ["EL1", "EL2", "EL3"], "procedural": ["EL4"], "permissive": ["EL5"],
-                      "not_executable": ["EL6"], "informational": ["EL7"]}
+    assert groups == {"evaluated": ["EL1", "EL2", "EL3", "EL6"], "procedural": ["EL4"], "permissive": ["EL5"],
+                      "run_with_review_flag": ["EL6"], "informational": ["EL7"]}
 
 
-def test_patients_are_eligible_ineligible_or_undetermined_never_guessed():
-    criteria = el.classify_criteria(_spec())["evaluated"]
+def test_patients_are_evaluated_three_valued_before_resolution():
+    criteria = [c for c in el.classify_criteria(_spec())["evaluated"] if c["criterion_id"] != "EL6"]
     eligible = {"demographic:age": {"value": 10, "unit": "year"}, "var:stage": "M0", "var:lab": 900}
     too_old = {**eligible, "demographic:age": {"value": 22, "unit": "year"}}
     excluded = {**eligible, "var:stage": "M4"}
@@ -40,15 +40,18 @@ def test_patients_are_eligible_ineligible_or_undetermined_never_guessed():
     assert el.evaluate_patient(criteria, lab_unknown) == {"status": "UNDETERMINED", "failed": [], "unknown": ["EL3"]}
 
 
-def test_feasibility_is_reported_as_bounds():
-    patients = [{"patient_id": "P1", "demographic:age": {"value": 10, "unit": "year"}, "var:stage": "M0", "var:lab": 900},
-                {"patient_id": "P2", "demographic:age": {"value": 10, "unit": "year"}, "var:stage": "M0"},
-                {"patient_id": "P3", "demographic:age": {"value": 10, "unit": "year"}, "var:stage": "M4"},
-                {"patient_id": "P4", "demographic:age": {"value": 30, "unit": "year"}}]
-    results, summary = el.assess(_spec(), patients)
-    assert [r["status"] for r in results] == ["ELIGIBLE", "UNDETERMINED", "INELIGIBLE", "INELIGIBLE"]
-    assert summary["proven_eligible_share"] == 0.25 and summary["not_proven_ineligible_share"] == 0.5
-    assert summary["decisive_exclusions"] == {"EL2": 1, "EL1": 1} and summary["per_criterion"]["EL3"]["unknown"] == 3
+def test_every_patient_is_decided_and_unknowns_follow_the_screen_pass_rate():
+    """No patient stays UNDETERMINED: unanswerable criteria are calibrated so the eligible share matches the evidence
+    screen pass rate (A16)."""
+    spec = {"eligibility": [_crit("EL1", "inclusion", _leaf("demographic:age", "range", lower=18, upper=None, unit="year")),
+                            _crit("EL2", "inclusion", _leaf("var:lab", "compare", op=">=", value=750)),
+                            _crit("EL3", "exclusion", _leaf("var:history", "flag", expected=True))]}
+    patients = [{"patient_id": f"P{i}", "demographic:age": {"value": 10 if i < 1000 else 50, "unit": "year"}} for i in range(5000)]
+    results, summary = el.assess(spec, patients, {"value": 0.6, "source": "test"}, seed=1)
+    assert {r["status"] for r in results} == {"ELIGIBLE", "INELIGIBLE"} and summary["status_counts"]["UNDETERMINED"] == 0
+    assert abs(summary["eligible_share"] - 0.6) < 0.03                      # 20% fail on age; the unknowns supply the rest
+    assert sorted(summary["unknown_resolution"]["criteria"]) == ["EL2", "EL3"]
+    assert summary["decisive_exclusions"]["EL1"] == 1000
 
 
 def test_a_criterion_excluding_a_whole_demographic_group_is_flagged():

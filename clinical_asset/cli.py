@@ -6,6 +6,7 @@ the clinical asset, its extraction audit, and the raw registry record.
 
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -258,7 +259,7 @@ def main(argv: list[str] | None = None) -> int:
     for name in ("studyspec", "eligibility", "cohorts", "outcomes", "safety", "planning"):
         bt.add_argument(f"--{name}", type=Path, required=True, help=f"locked {name} directory")
     bt.add_argument("--results", type=Path)
-    bt.add_argument("--accrual-asset", type=Path, default=Path("data/planning_asset_v2_2/operational"))
+    bt.add_argument("--accrual-asset", type=Path, default=None, help="default: the asset profile's operational asset")
     bt.add_argument("--out", type=Path, required=True)
     cbl = commands.add_parser("compare-registry-baseline", help="Registry baseline table against the evidence model's 90% predictive intervals.")
     cbl.add_argument("--studyspec", type=Path, required=True)
@@ -304,7 +305,7 @@ def main(argv: list[str] | None = None) -> int:
     bo2.add_argument("--out", type=Path, default=Path("data/planning_asset_v2/operational"))
     bo2.add_argument("--created", required=True)
     bs3 = commands.add_parser("build-safety-asset-v3", help="Safety asset V3: regimen, dose, phase, age and disease specific adverse-event models.")
-    bs3.add_argument("--out", type=Path, default=Path("data/safety_asset_v3"))
+    bs3.add_argument("--out", type=Path, default=None, help="default: the asset profile's safety build directory")
     bs3.add_argument("--created", required=True)
     bs3.add_argument("--workers", type=int, default=6)
     bpr = commands.add_parser("build-planning-report", help="Unified trial planning report from locked artefacts.")
@@ -328,9 +329,68 @@ def main(argv: list[str] | None = None) -> int:
     discover = commands.add_parser("discover", help="List candidate studies for one condition.")
     discover.add_argument("--condition", required=True)
     discover.add_argument("--limit", type=int, default=20)
+    arl = commands.add_parser("build-analysis-results", help="SDTM TU/TR/RS, ADaM ADRS/ADTTE, efficacy and FDA standard safety tables.")
+    for name in ("studyspec", "journey", "safety", "eligibility", "outcomes", "out"):
+        arl.add_argument(f"--{name}", type=Path, required=True)
+    arl.add_argument("--facts", type=Path, default=None)
+    rco = commands.add_parser("run-continuous", help="Continuous primary comparison (paired or two-group) from the stated design.")
+    rco.add_argument("--studyspec", type=Path, required=True)
+    rco.add_argument("--out", type=Path, required=True)
+    rsv = commands.add_parser("resolve-protocol", help="Agentic, targeted resolution of a compiled StudySpec's failing items only.")
+    rsv.add_argument("--spec", type=Path, required=True, help="compiled StudySpec directory (updated in place)")
+    rsv.add_argument("--protocol", type=Path, required=True)
+    rsv.add_argument("--votes", type=int, default=3)
+    rsv.add_argument("--reverify-all", action="store_true", help="judge every item again before resolving the failures")
+    ren = commands.add_parser("run-endpoints", help="Every endpoint of the protocol, computed from the simulated patients (journey).")
+    for name in ("studyspec", "journey", "safety", "out"):
+        ren.add_argument(f"--{name}", type=Path, required=True)
+    ren.add_argument("--facts", type=Path, default=None)
+    aud = commands.add_parser("audit-run", help="Completeness audit of one protocol run: anything undetermined, unresolved or missing.")
+    aud.add_argument("--id", required=True)
+    aud.add_argument("--version", required=True)
+    aud.add_argument("--out", type=Path, required=True)
     args = parser.parse_args(argv)
 
     try:
+        if args.command == "build-analysis-results":
+            from .trial.analysis_results import run as run_analysis
+
+            r = run_analysis(args.studyspec, args.journey, args.safety, args.eligibility, args.outcomes, args.out, args.facts)
+            eff = r["efficacy"] if r["efficacy"].get("status") else {k: v["objective_response"] for k, v in r["efficacy"].items()}
+            print(json.dumps({"efficacy": eff, "tables": len(r["safety_tables"])}, indent=1, default=str))
+            return 0
+        if args.command == "run-continuous":
+            from .trial.continuous import run as run_continuous
+
+            r = run_continuous(args.studyspec, args.out)
+            print(json.dumps({k: r.get(k) for k in ("status", "reason", "simulated_power_at_design_effect", "design_check")}, indent=1, default=str))
+            return 0 if r["status"] == "RESOLVED" else 3
+        if args.command == "resolve-protocol":
+            from .llm import LunaClient
+            from .protocol.resolver import resolve
+            from .protocol.schemas import SYSTEM as PROTOCOL_SYSTEM
+            from .terminology import UmlsTerminology
+
+            model = LunaClient(cache_dir=Path("data/cache/llm_protocol"), max_calls=600, effort="high", max_output_tokens=32000,
+                               system=PROTOCOL_SYSTEM, timeout=900)
+            terminology = UmlsTerminology()
+            r = resolve(args.spec, args.protocol, model, terminology, votes=args.votes, reverify_all=args.reverify_all)
+            terminology.save()
+            print(json.dumps({"rounds": r["rounds"], "model_calls": r["model_calls"], "remaining": [(x["item"], x["verdict"], x["note"]) for x in r["remaining"]]},
+                             indent=1, ensure_ascii=False))
+            return 0
+        if args.command == "run-endpoints":
+            from .trial.endpoints import run as run_endpoints
+
+            doc = run_endpoints(args.studyspec, args.journey, args.safety, args.out, args.facts)
+            print(json.dumps(doc["counts"]))
+            return 0
+        if args.command == "audit-run":
+            from .trial.audit import audit
+
+            doc = audit(args.id, args.version, args.out)
+            print(json.dumps(doc["summary"], indent=1))
+            return 0 if doc["summary"]["complete"] else 3
         if args.command == "discover":
             if args.limit < 1:
                 parser.error("--limit must be positive.")
@@ -420,7 +480,12 @@ def main(argv: list[str] | None = None) -> int:
             fam = next(iter(json.loads(args.condition_family.read_text(encoding="utf-8")).values()))["family"][0]
             from .trial.journey_evidence import registry_phase
             phase = registry_phase(spec)
-            print(json.dumps(augment(args.population, fam, phase, args.out), indent=1, default=str)[:2000])
+            from .llm import LunaClient
+
+            model = LunaClient(cache_dir=Path("data/cache/llm_subgroups"), max_calls=600, effort="medium", max_output_tokens=16000, timeout=600)
+            own = re.search(r"NCT\d{8}", str(args.studyspec))
+            print(json.dumps(augment(args.population, fam, phase, args.out, spec=spec, model=model, own_nct=own.group(0) if own else None),
+                             indent=1, default=str)[:2000])
             return 0
         if args.command == "run-journey":
             from .llm import LunaClient
@@ -498,7 +563,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "build-trial-outputs":
             from .trial.outputs import build as build_outputs
             doc = build_outputs(args.studyspec, args.eligibility, args.cohorts, args.outcomes, args.safety, args.planning, args.results,
-                                args.out, accrual_asset=args.accrual_asset)
+                                args.out, accrual_asset=args.accrual_asset or __import__('clinical_asset.assets', fromlist=['path']).path('operational'))
             print(json.dumps({"datasets": doc["datasets"], "out": str(args.out)}, indent=1))
             return 0
         if args.command == "compare-registry-baseline":
@@ -559,9 +624,12 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "build-safety-asset-v3":
             from .safety3 import build as build_safety3
-            manifest = build_safety3(Path("data/raw/ctgov"), Path("data/manifest/holdout_test_trials.json"),
-                                     Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"), Path("data/spa_work/drug_classes.json"),
-                                     Path("data/simulation_parameters_v2/toxicity/censored_toxicity_parameters.parquet"), args.out, args.created, args.workers)
+            from . import assets
+
+            manifest = build_safety3(assets.path("raw_ctgov"), Path("data/manifest/holdout_test_trials.json"), assets.family_map(),
+                                     Path("data/spa_work/drug_classes.json"),
+                                     assets.path("params_v2") / "toxicity" / "censored_toxicity_parameters.parquet",
+                                     args.out or assets.path("safety_build"), args.created, args.workers)
             print(json.dumps(manifest, indent=1))
             return 0
         if args.command == "build-planning-report":

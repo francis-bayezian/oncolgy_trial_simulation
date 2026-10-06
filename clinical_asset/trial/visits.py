@@ -61,8 +61,14 @@ def dosing_days(iv: dict, cycle_days: float | None) -> dict:
     if s.get("days"):
         return sourced(sorted({int(d) for d in s["days"]}), "protocol", "listed dosing days", _t(s.get("day_text")))
     f = (_t(s.get("frequency")) or "").lower()
-    if cycle_days and re.search(r"\bdaily|once a day|every day|\bqd\b|\bbid\b|twice (a )?day", f):
-        return sourced(list(range(1, int(cycle_days) + 1)), "protocol", "daily dosing", _t(s.get("frequency")))
+    count = s.get("dose_count")
+    if re.search(r"single dose|one dose|\bonce\b(?! a| per| every| daily| weekly)", f):
+        return sourced([1], "protocol", "a single dose", _t(s.get("frequency")))
+    if cycle_days and re.search(r"\bdaily|once a day|every day|\bqd\b|\bbid\b|twice (a )?day|/\s*day\b|per day|a day\b", f):
+        course = "day" in (_t(s.get("dose_count_text")) or "").lower()
+        last = int(min(count, cycle_days)) if count and course else int(cycle_days)
+        return sourced(list(range(1, last + 1)), "protocol", "daily dosing" + (f" for a {last}-day course" if last < cycle_days else ""),
+                       _t(s.get("frequency")))
     if cycle_days and re.search(r"\bweekly|once a week|every week", f):
         return sourced(list(range(1, int(cycle_days) + 1, 7)), "protocol", "weekly dosing", _t(s.get("frequency")))
     m = EVERY.search(f)
@@ -72,10 +78,9 @@ def dosing_days(iv: dict, cycle_days: float | None) -> dict:
             return sourced(list(range(1, int(cycle_days) + 1, max(1, int(step)))), "protocol", "dosing interval", _t(s.get("frequency")))
     if s.get("weeks") and cycle_days is None:
         return sourced([7 * (int(w) - 1) + 1 for w in s["weeks"]], "protocol", "dosing weeks", _t(s.get("week_text")))
-    if cycle_days:
-        return sourced([1], "assumption", "no dosing days stated: day 1 of each cycle", assumption="A8_resume_same_dose") \
-            if False else sourced(None, "unsupported", f"no dosing days for {iv.get('canonical_agent')}")
-    return sourced(None, "unsupported", f"no dosing days for {iv.get('canonical_agent')}")
+    # nothing stated or derivable: day 1 of each cycle (assumption A21), so the agent is given and its rules can act
+    return sourced([1], "assumption", f"no dosing days stated for {iv.get('canonical_agent')}: day 1 of each cycle",
+                   assumption="A21_day1_dosing")
 
 
 def _schedule_rows(spec: dict):
@@ -185,8 +190,10 @@ def cycles_of(iv: dict) -> list[int] | None:
 def planned_doses(agent_rec: dict, arm_label: str, cycle: int) -> list[tuple[int, dict, str]]:
     """(day in cycle, dose, intervention) planned for one arm in one cycle: a cycle-restricted entry (a starting dose)
     replaces the general entry on its own days of its cycles."""
-    def for_arm(e):
-        return not e["arms"] or any(x.lower() in arm_label.lower() or arm_label.lower() in x.lower() for x in e["arms"] if x)
+    from .arms import words
+
+    def for_arm(e):                                    # arms resolved once by schedule() (clinical_asset.trial.arms, L019)
+        return not e["arms"] or words(arm_label) in [words(x) for x in e.get("arm_labels") or []]
     entries = [e for e in agent_rec["entries"] if for_arm(e) and e["dosing_days"]["value"] and e["dose"]["value"]]
     special = [e for e in entries if e["cycles"] and cycle in e["cycles"]]
     general = [e for e in entries if e["cycles"] is None]
@@ -203,16 +210,21 @@ def planned_doses(agent_rec: dict, arm_label: str, cycle: int) -> list[tuple[int
 def schedule(spec: dict, facts: dict | None = None) -> dict:
     """The schedule from the StudySpec; elements it leaves unresolved are taken from the protocol's schedule facts
     (clinical_asset.trial.schedule_facts) when given."""
+    from .arms import ArmResolver
     from .schedule_facts import best
 
     cyc = cycle_length(spec)
     cd = cyc["value"]
+    resolver = ArmResolver(spec)
+    label_of = {a["arm_id"]: _t(a.get("label")) or "" for a in spec.get("arms") or []}
     agents: dict = {}
     for iv in spec.get("interventions") or []:
-        if iv.get("category") != "anticancer_drug" or not iv.get("canonical_agent"):
+        if not iv.get("canonical_agent") or not (iv.get("category") == "anticancer_drug" or (iv.get("category") == "other" and (iv.get("dose") or {}).get("value"))):
             continue
         d = iv.get("dose") or {}
+        arm_ids = resolver.arms_of_item(iv)
         entry = {"intervention_id": iv["intervention_id"], "arms": [_t(a) for a in iv.get("arms") or []],
+                 "arm_ids": arm_ids, "arm_labels": [label_of[k] for k in arm_ids or []],
                  "dose": sourced({"value": d.get("value"), "unit": d.get("unit"), "basis": d.get("basis")}, "protocol",
                                  f"intervention {iv['intervention_id']}", _t(iv.get("evidence")) or _t(d.get("quote"))) if d.get("value") else
                  sourced(None, "unsupported", "no dose compiled"),
@@ -224,6 +236,7 @@ def schedule(spec: dict, facts: dict | None = None) -> dict:
         general = next((e for e in a["entries"] if e["cycles"] is None and e["dosing_days"]["value"]), a["entries"][0])
         a.update({k: general[k] for k in ("intervention_id", "dose", "route", "dosing_days")})
         a["arms"] = [] if any(not e["arms"] for e in a["entries"]) else sorted({x for e in a["entries"] for x in e["arms"]})
+        a["arm_ids"] = sorted({k for e in a["entries"] for k in e["arm_ids"] or []})
     fu = sourced(None, "unsupported", "no follow-up visit interval stated")
     return {"cycle_length_days": cyc,
             "screening_window_days": _from_fact(best(facts, "screening_window"), screening_window(spec), "screening window"),

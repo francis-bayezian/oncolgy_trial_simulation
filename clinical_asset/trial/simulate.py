@@ -171,7 +171,10 @@ def primary_analysis(trial: dict, analysis: dict) -> dict:
     strata = trial["strata"][m]
     usable_strata = not np.any(strata == "UNRESOLVED")
     lr = logrank(t, e, g, _codes(strata) if usable_strata else None)
-    alpha = (analysis.get("alpha") or {}).get("value") or 0.05
+    from .run_forward import analysis_alpha
+
+    alpha_rec = analysis_alpha(analysis)
+    alpha = alpha_rec["value"]
     one_sided = analysis.get("sidedness") == "one_sided"
     p = lr["p_one_sided_group1_better"] if one_sided else lr["p_two_sided"]
     success = p < alpha and (lr["z"] < 0)

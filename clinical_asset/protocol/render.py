@@ -5,7 +5,8 @@ from typing import Any
 OPS = {">=": "at least", ">": "greater than", "<=": "at most", "<": "less than", "==": "equal to", "!=": "not equal to"}
 MODAL = {"REQUIRED": "", "PROHIBITED": "PROHIBITED: ", "OPTIONAL": "OPTIONAL (may): ", "RECOMMENDED": "RECOMMENDED (should): ",
          "STRONGLY_RECOMMENDED": "STRONGLY RECOMMENDED: "}
-RELATIONS = {"WITHIN_BEFORE": "within {v} before", "WITHIN_AFTER": "within {v} after", "BEFORE": "before",
+RELATIONS = {"WITHIN_BEFORE": "within {v} before", "WITHIN_AFTER": "within {v} after", "WITHIN_EITHER": "within {v} (before or after) of",
+             "BEFORE": "before",
              "AFTER": "after", "AT_LEAST_BEFORE": "at least {v} before", "AT_LEAST_AFTER": "at least {v} after",
              "MORE_THAN_BEFORE": "more than {v} before", "MORE_THAN_AFTER": "more than {v} after",
              "ON_OR_BEFORE": "on or before day {v} of", "ON_CYCLE_DAY": "on day {v} of", "SAME_DAY": "on the same day as"}
@@ -29,7 +30,9 @@ def _unit(u: str | None) -> str:
     return f" {u}" if u and u != "x_reference" else ""
 
 
-def _q(x: dict | None) -> str:
+def _q(x: dict | str | None) -> str:
+    if isinstance(x, str):                       # a field the resolver agent wrote as plain text (L036)
+        return x
     return (x or {}).get("text") or ""
 
 
@@ -98,7 +101,8 @@ def window(node: dict, name: str) -> str:
     phrase = RELATIONS.get(node.get("relation") or "", "relative to").format(v=amount)
     event = (node.get("anchor_event") or "").replace("_", " ")
     quote = node.get("anchor") or ""
-    anchor = f"{event} (protocol wording: {quote!r})" if event and quote and event.casefold() != quote.casefold() else (event or quote or "?")
+    # the protocol's own wording is the anchor; the canonical event label is internal and never added to it (L033)
+    anchor = repr(quote) if quote else (event or ("(no anchor stated in the protocol)" if node.get("anchor_note") else "?"))
     return f"{name} occurs {phrase} {anchor}{CALENDAR.get(node.get('calendar_adjustment') or '', '')}"
 
 
@@ -112,11 +116,22 @@ def criterion(c: dict, labels: dict[str, str]) -> str:
     return f"{MODAL.get(c.get('modality', 'REQUIRED'), '')}{KIND_PREFIX.get(c['kind'], c['kind'].upper())}: {rule(c.get('logic'), labels)}"
 
 
+def _tol(t: dict) -> str:
+    if t.get("tolerance") is not None:
+        unit = "%" if t.get("tolerance_unit") == "percent" else ""
+        return f"±{_num(t['tolerance'])}{unit} (range {_num(t['lower'])}-{_num(t['upper'])})"
+    return f"range {_num(t['lower'])}-{_num(t['upper'])}"
+
+
 def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> str:
     d = it["dose"]
     parts = [f"{MODAL.get(it.get('modality', 'REQUIRED'), '')}phase {phases.get(it.get('phase_id') or '', '?')!r}",
              f"arms {[_q(a) for a in it['arms']] or 'all'}", f"agent {_q(it.get('agent'))!r} ({it.get('category')})",
-             f"dose {_num(d['value']) if d['value'] is not None else '?'} {d['unit'] or ''} ({d['basis']})"]
+             f"dose {_num(d['value']) if d['value'] is not None else '?'} {d['unit'] or ''} ({d['basis']})"
+             + (f" with tolerance {_tol(d['tolerance'])}" if d.get("tolerance") else "")]
+    if it.get("sequence"):
+        sq = it["sequence"]
+        parts.append(f"given {sq['relation']} the {sq['anchor_text']}")
     for opt in it.get("administration_options") or []:
         text = f"route option {_q(opt.get('route'))!r}"
         if (opt.get("duration") or {}).get("value") is not None:
@@ -134,7 +149,7 @@ def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> st
     if s.get("dose_count") is not None:
         parts.append(f"{_num(s['dose_count'])} doses in total")
     if (it.get("max_dose") or {}).get("value") is not None:
-        parts.append(f"maximum {_qty(it['max_dose'])} (protocol wording: {_q(it['max_dose'].get('text'))!r})")
+        parts.append(f"maximum {_qty(it['max_dose'])}")
     if (it.get("rounding") or {}).get("text"):
         parts.append(f"rounding {_q(it['rounding']['text'])!r}")
     for link in it.get("linked_events") or []:
@@ -227,6 +242,8 @@ def dose_modification(m: dict, labels: dict[str, str]) -> str:
 
 def phase(p: dict, labels: dict[str, str]) -> str:
     parts = [f"phase {_q(p.get('name'))!r} (order {p['sequence_number']})", f"arms {[_q(a) for a in p['arms']] or 'all'}"]
+    if p.get("day_window"):
+        parts.append(f"on days {_num(p['day_window'][0])} to {_num(p['day_window'][1])}")
     for f in ("duration", "cycle_length"):
         if (p.get(f) or {}).get("value") is not None:
             parts.append(f"{f.replace('_', ' ')} {_qty(p[f])}")
@@ -237,14 +254,28 @@ def phase(p: dict, labels: dict[str, str]) -> str:
     if (p.get("max_delay") or {}).get("value") is not None:
         parts.append(f"may be delayed up to {_qty(p['max_delay'])}")
     if p.get("start_condition") and p["start_condition"].get("logic"):
-        parts.append(f"starts only when {rule(p['start_condition']['logic'], labels)}")
+        m = p["start_condition"].get("modality")
+        lead = {"RECOMMENDED": "is recommended to start when", "OPTIONAL": "may start when"}.get(m, "starts only when")
+        parts.append(f"{lead} {rule(p['start_condition']['logic'], labels)}")
     return "; ".join(parts)
 
 
 def endpoint(e: dict) -> str:
     parts = [f"{e['role']} endpoint {_q(e.get('name'))!r} ({e['type']})"]
+    if _q(e.get("population")):
+        parts.append(f"population {_q(e.get('population'))!r}")
+    if _q(e.get("per_group")):
+        parts.append(f"estimated separately {_q(e.get('per_group'))}")
+    if _q(e.get("summary_measures")):
+        parts.append(f"summarised as {_q(e.get('summary_measures'))}")
+    if _q(e.get("assessment")):
+        parts.append(f"assessed by {_q(e.get('assessment'))!r}")
+    if _q(e.get("definition")):
+        parts.append(f"defined as {_q(e.get('definition'))!r}")
     if e.get("events"):
         parts.append("events: " + "; ".join(_q(x) for x in e["events"] if x))
+    if e.get("type") != "time_to_event":                 # time origin and censoring belong to time-to-event endpoints only
+        return "; ".join(parts)
     origin = _q(e.get("time_origin"))
     if origin:
         parts.append(f"time origin: {origin!r}" + (f" ({e['time_origin_derivation']})" if e.get("time_origin_derivation") else ""))
@@ -259,12 +290,15 @@ def endpoint(e: dict) -> str:
 
 
 def analysis(a: dict) -> str:
-    parts = [f"{'primary ' if a.get('primary') else ''}analysis of {_q(a.get('endpoint'))!r}: {a['test_family']} ({a['sidedness']})"]
+    test = " ".join(a.get("design_qualifiers") or []) + (" " if a.get("design_qualifiers") else "") + str(a["test_family"])
+    parts = [f"{'primary ' if a.get('primary') else ''}analysis of {_q(a.get('endpoint'))!r}: {test} ({a['sidedness']})"]
+    if _q(a.get("summary_measures")):
+        parts.append(f"summarised as {_q(a.get('summary_measures'))}")
     if a["alpha"].get("value") is not None:
         parts.append(f"alpha {a['alpha']['value']}")
     if a["power"].get("value") is not None:
         wording = _q(a["power"].get("text"))
-        parts.append(f"power {a['power']['value']}" + (f" (protocol wording: {wording!r})" if wording else ""))
+        parts.append(f"power {a['power']['value']}")
     if a.get("stratification"):
         parts.append("stratified by " + "; ".join(_q(x) for x in a["stratification"] if x))
     if a.get("effects"):

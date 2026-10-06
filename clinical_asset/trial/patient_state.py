@@ -41,6 +41,33 @@ ASSUMPTIONS = {
     "A12_reference_limits": "laboratory reference limits (LLN: neutrophils 2.0, platelets 150, white cells 4.0 x10^9/L; "
                             "hemoglobin 12.0 g/dL) are typical adult values; laboratories set their own",
     "A13_screening_day": "the screening visit takes place at the start of the protocol's screening window",
+    "A14_ae_discontinuation": "beyond the protocol's own dose-modification rules, a patient stops treatment for an adverse event "
+                              "with the registry participant-flow probability, at a uniform time over planned treatment; a stop "
+                              "triggered by a protocol rule first takes precedence",
+    "A15_death_timing": "death in the study period has the registry participant-flow probability and occurs at a uniform time "
+                        "over the simulated horizon (registry flow periods span treatment and follow-up)",
+    "A16_unknown_criteria_calibrated": "eligibility criteria the generated patients cannot answer pass independently, with one "
+                                       "probability chosen so that the eligible share matches the registry screen pass rate",
+    "A17_standard_3_plus_3": "when the protocol's escalation table cannot be compiled, the standard 3+3 table is simulated",
+    "A18_participation_years": "with no stated censoring rate, the registry study-period withdrawal share is spread over 2 years",
+    "A22_short_participation": "with no treatment cycles, participation ends after the last planned administration plus a 30-day "
+                                "reporting window, and the registry's whole-trial exit shares are scaled by that duration over a year",
+    "A23_cr_share": "when no complete-response input exists, complete responses are 15% of responses",
+    "A24_tumour_dynamics": "response depth is uniform within its category band, nadir is reached by the second assessment, progression "
+                           "is independent of response depth, and 35% of progressions are by a new lesion",
+    "A25_recist_defaults": "when the protocol compiles no response thresholds, RECIST 1.1 is used (PR 30% decrease, PD 20% and 5 mm increase)",
+    "A26_post_progression_survival": "death follows progression: post-progression survival is exponential with median equal to the "
+                                     "arm's overall-survival input minus its progression median (at least 1 month; 12 months without "
+                                     "an OS input); a patient who never progresses does not die of the disease within follow-up",
+    "A27_subgroup_prevalence_equal": "a protocol subgroup factor whose levels no registry baseline table (nor the protocol) "
+                                     "reports is split equally across its stated levels",
+    "A28_prognostic_effects": "a subgroup effect from registry results by subgroup is prognostic: the same in every arm, "
+                              "multiplicative on the progression hazard and the response odds, independent across factors, and "
+                              "centred on the arm's patient mix so each arm's overall rate is unchanged",
+    "A21_day1_dosing": "an agent whose dosing days the protocol does not state is given on day 1 of each cycle",
+    "A20_assessment_lag": "with no stated time point or treatment length, the primary assessment is 6 months after entry",
+    "A19_unnamed_arm_is_comparator": "an arm that names no anticancer agent is the comparator: it receives the regimen of the "
+                                     "arms without the investigational agent (the agent given in the most arms)",
 }
 
 
@@ -74,6 +101,7 @@ class PatientState:
     progression_day: int | None = None                  # true (latent) progression day
     progression_detected_day: int | None = None
     off_treatment: tuple | None = None                  # (day, reason)
+    death_day: int | None = None
     off_study: tuple | None = None
     events: list = field(default_factory=list)          # the trace: one dict per clinical event, in time order
 

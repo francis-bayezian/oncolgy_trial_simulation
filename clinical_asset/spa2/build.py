@@ -24,9 +24,10 @@ from ..terminology import UmlsTerminology
 from . import borrow, survival, toxicity
 from .hierarchy import fit_hierarchy, predictive
 from .taxonomy import regimen_signature
+from .. import assets as _assets
 
-V1 = Path("data/simulation_parameters_v1")
-OUT = Path("data/simulation_parameters_v2")
+V1 = _assets.path("params_v1")
+OUT = _assets.path("params_v2")
 WORK = Path("data/spa_work")
 SEED = 20260926
 MODEL_VERSION = "spa-milestone-2.0.0"
@@ -261,7 +262,7 @@ def build(workers: int = 6, loo_per_level: int = 40, stages: tuple[str, ...] = (
     report: dict[str, Any] = {}
 
     # ---------------------------------------------------------------- 2A borrowing
-    factors = age_factors(Path("data/raw/ctgov"))
+    factors = age_factors(_assets.path("raw_ctgov"))
     report["age_unit_conversions"] = {str(k): v for k, v in factors.items() if v != 1.0}
     targets = borrow.build_records(rows, families, classes, factors)
     if "borrowing" not in stages:
@@ -358,7 +359,7 @@ def build(workers: int = 6, loo_per_level: int = 40, stages: tuple[str, ...] = (
             arm_context[(profile["source"]["nct"], profile["source"]["registry_group"])] = {
                 "class_signature": cls, "modality": mod, "regimen": t.get("regimen") or "unspecified"}
     terminology = UmlsTerminology(cache_path=Path("data/cache/umls_links.json"))
-    observations, thresholds = toxicity.study_event_tables(Path("data/raw/ctgov"), arm_context, terminology)
+    observations, thresholds = toxicity.study_event_tables(_assets.path("raw_ctgov"), arm_context, terminology)
     terminology.save()
     contexts = toxicity.build_contexts(observations, arm_context)
     validation_keys = random.Random(SEED + 1).sample(

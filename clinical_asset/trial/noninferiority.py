@@ -26,6 +26,9 @@ from pathlib import Path
 import numpy as np
 from scipy import stats
 
+from .predictive import from_draws
+from .. import assets as _assets
+
 NI_VERSION = "ni-binary-1.1.0"
 PRESERVE = re.compile(r"preserv\w*\s+at\s+least\s+(\d+(?:\.\d+)?)\s*%\s+of\s+(.+?)\s+effect\s*(?:in terms of \w+\s*)?(?:vs\.?|versus|over|relative to)\s+([A-Za-z0-9\-+/ ]+?)(?:[.\n]|$)", re.I | re.S)
 
@@ -137,7 +140,8 @@ def cited_control_prior(hist: dict, rng, size: int = 20000) -> dict:
     q = np.quantile(draws, [0.05, 0.1, 0.5, 0.9, 0.95])
     return {"status": "RESOLVED", "level": "protocol-cited historical, same regimen", "source": f"protocol fact {hist['control_rate'][1]} "
             f"({hist['control_rate'][2]}); heterogeneity {tau[1]}", "studies": 1,
-            "rate": {"median": float(q[2]), "q05": float(q[0]), "q10": float(q[1]), "q90": float(q[3]), "q95": float(q[4])}, "draws": draws}
+            "rate": {"median": float(q[2]), "q05": float(q[0]), "q10": float(q[1]), "q90": float(q[3]), "q95": float(q[4]),
+                     "percentiles": from_draws(draws)}, "draws": draws}
 
 
 def ni_test(x_e, n_e, x_c, n_c, fraction, hist, alpha):
@@ -161,7 +165,7 @@ def arm_features(spec: dict) -> dict:
     from .safety import class_map, dose_reference, v3_features
 
     cmap, refs = class_map(), dose_reference(asset("safety"))
-    fam = Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet")
+    fam = _assets.family_map()
     return {a["arm_id"]: v3_features(spec, _t(a["label"]), cmap, refs, fam) for a in spec["arms"]}
 
 

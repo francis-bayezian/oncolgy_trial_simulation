@@ -22,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
+from . import qualifiers
 from . import design_rules as drules
 from . import expressions as ex
 from . import ir, render, report, typecheck
@@ -64,7 +65,7 @@ REPAIRABLE = {"eligibility": "eligibility", "dose_modification": "dose_modificat
 # ----------------------------------------------------------------------------- helpers
 
 
-REPAIR_ROUNDS = 3  # automatic repair rounds for failing CRITICAL items
+REPAIR_ROUNDS = 5  # automatic repair rounds for every failing item (L030)
 
 def _raw_treatment_gaps(treatment: list[dict], dose_rules: list[dict]) -> list[str]:
     """Treatment gaps in raw extraction outputs (see typecheck.treatment_gaps); phases are identified by name."""
@@ -249,6 +250,7 @@ class ProtocolCompiler:
         spec["grade_definitions"], spec["definitions"] = self._definitions(of("definitions"), source_of, prov, variables, flag)
         self._link_grades(spec)
         spec["resolutions"] = self._resolve(spec, docs, prov, flag)
+        qualifiers.enrich(spec, docs)                    # qualifiers the structure lost, from the verified quotes (L030)
         spec["variables"] = sorted(variables.registry.values(), key=lambda v: v["key"])
         self._runtime_and_criticality(spec)
         static, global_static = typecheck.check(spec)
@@ -258,11 +260,18 @@ class ProtocolCompiler:
             flag("static_check", "spec", g)
         self.verify(spec, docs, flag)
         repaired: list[str] = []
-        for _round in range(REPAIR_ROUNDS):
+        failing_before = None
+        for _round in range(REPAIR_ROUNDS):              # resolve loop (L030): stop when all faithful or no progress
+            failing = sorted(_item_id(i) for _, i, _ in self._items(spec) if i.get("semantic_status") in {"INCOMPLETE", "INCORRECT", "UNVERIFIED"})
+            if not failing or failing == failing_before:
+                break
+            failing_before = failing
             fixed = self.repair(spec, docs, prov, variables, review, flag)
-            if not fixed:
+            unverified = {_item_id(i) for _, i, _ in self._items(spec) if i.get("semantic_status") == "UNVERIFIED"}
+            if not fixed and not unverified:
                 break
             repaired += [i for i in fixed if i not in repaired]
+            qualifiers.enrich(spec, docs)
             spec["variables"] = sorted(variables.registry.values(), key=lambda v: v["key"])
             self._runtime_and_criticality(spec)
             static, global_static = typecheck.check(spec)
@@ -272,8 +281,9 @@ class ProtocolCompiler:
                     for issue in item["static_issues"]:
                         flag("static_check", _item_id(item), issue)
             spec["static_issues"] = global_static
-            self.verify(spec, docs, flag, only=set(fixed))
+            self.verify(spec, docs, flag, only=set(fixed) | unverified)     # repaired items and items never judged
         spec["repaired_items"] = repaired
+        spec["unresolved_extraction"] = _classify_residual(spec, self._items(spec))
         spec["treatment_completion"] = {"gaps_before": completion["gaps_before"],
                                         "passes": len([r for r in completion["results"] if "output" in r]),
                                         "gaps_after": [g for g in spec["static_issues"] if g.startswith("treatment incomplete")]}
@@ -300,6 +310,8 @@ class ProtocolCompiler:
         (target / "validation_report.json").write_text(json.dumps(validation, indent=1, ensure_ascii=False), encoding="utf-8")
         (target / "extraction_raw.json").write_text(json.dumps(raw_results, indent=1, ensure_ascii=False), encoding="utf-8")
         (target / "studyspec_review.md").write_text(report.build(spec, audit, review, validation), encoding="utf-8")
+        (target / "unresolved_extraction.json").write_text(json.dumps(spec["unresolved_extraction"], indent=1, ensure_ascii=False), encoding="utf-8")
+        _to_agent_backlog(protocol_id, spec["unresolved_extraction"])
         return {"output": str(target), "status": spec["status"], "review_items": len(review), **validation["summary"]}
 
     # ---------------------------------------------------------------- components
@@ -985,6 +997,8 @@ class ProtocolCompiler:
             runtime = item.get("runtime_status")
             if semantic in {"INCOMPLETE", "INCORRECT"}:  # a rendering the verifier rejected is never reported as settled
                 item["status"] = "REVIEW_REQUIRED"
+            elif semantic == "NOT_A_RULE":               # the verifiers found no rule in the text (L031)
+                item["status"] = "NON_EXECUTABLE_INFORMATIONAL"
             elif runtime in {"NON_EXECUTABLE_INFORMATIONAL", "OPTIONAL_POLICY", "UNRESOLVED_IN_SOURCE"}:
                 item["status"] = runtime
             elif semantic == "FAITHFUL" and item.get("static_status") == "PASS" and ir.executable(runtime):
@@ -993,7 +1007,8 @@ class ProtocolCompiler:
                 item["status"] = "REVIEW_REQUIRED"
 
     # ---------------------------------------------------------------- automatic repair
-    def repair(self, spec: dict, docs: list[Document], prov: Provenance, variables: Variables, review: list[dict], flag) -> list[str]:
+    def repair(self, spec: dict, docs: list[Document], prov: Provenance, variables: Variables, review: list[dict], flag,
+               only: set[str] | None = None) -> list[str]:
         """One automatic repair round. Every CRITICAL item that the verifier judged INCOMPLETE or
         INCORRECT, that failed a static check, or that could not be expressed, is re-extracted from its
         own source sections with the reason attached, rebuilt by the normal builders (so every quote is
@@ -1001,7 +1016,10 @@ class ProtocolCompiler:
         by_doc = {d.doc_id: d for d in docs}
         jobs = []
         for component, item, _ in self._items(spec):
-            if component not in REPAIRABLE or item.get("criticality") != "CRITICAL" or not item.get("sections"):
+            # every item with a failure, whatever its criticality (lessons L028, L030: the target is every rule faithful)
+            if component not in REPAIRABLE or item.get("status") in {"NON_EXECUTABLE_INFORMATIONAL"} or not item.get("sections"):
+                continue
+            if only is not None and _item_id(item) not in only:      # a targeted resolution touches its own items only (L033)
                 continue
             failed = item.get("semantic_status") in {"INCOMPLETE", "INCORRECT"} or item.get("static_status") == "FAIL" \
                 or item.get("runtime_status") == "UNSUPPORTED_RULE_TYPE"
@@ -1019,6 +1037,7 @@ class ProtocolCompiler:
                        "all_reviewer_notes": v.get("vote_notes") or [v.get("reviewer_note")],
                        "protocol_wording_misrepresented": v.get("problem_quote"),
                        "static_issues": item.get("static_issues") or [],
+                       "investigation": item.get("investigation"),        # the targeted resolver's finding (L033)
                        "unresolved_parts": [leaf.get("text") for t in self._trees_of(item) for leaf in ex.leaves(t)
                                             if leaf.get("status") != "EXECUTABLE"]}
             jobs.append((component, item, task, schema, sc.REPAIR_PREFIX + instructions, sections, problem))
@@ -1171,9 +1190,13 @@ class ProtocolCompiler:
             groups.setdefault("dose_modification", []).append((m, render.dose_modification(m, labels), _evidence(m, m.get("trigger"))))
         for e in spec["endpoints"]:
             groups.setdefault("statistics", []).append((e, render.endpoint(e), _evidence(e, None)))
-        for a in spec["analyses"]:
-            if a.get("primary"):
-                groups.setdefault("statistics", []).append((a, render.analysis(a), _evidence(a, None)))
+        for a in spec["analyses"]:                 # every analysis, not only the primary one (L030)
+            groups.setdefault("statistics", []).append((a, render.analysis(a), _evidence(a, None)))
+        for k, q in enumerate(spec.get("sample_size") or [], 1):
+            q.setdefault("sample_size_id", f"SS{k:02d}")
+            groups.setdefault("statistics", []).append((q, _render_quantity(q), _evidence(q, None)))
+        for d in spec.get("discontinuation_rules") or []:
+            groups.setdefault("discontinuation", []).append((d, _render_discontinuation(d), _evidence(d, None, "criterion")))
         for r in spec.get("decision_rules") or []:
             groups.setdefault("design_rules", []).append((r, drules.render_rule(r), " | ".join(
                 dict.fromkeys(x for x in [render._q(r.get("evidence"))] + _verified_quotes(r) if x))))  # a rule is built from several passages
@@ -1191,7 +1214,9 @@ class ProtocolCompiler:
                 ids = [x["target_id"] for c in spec["radiotherapy"] if c["course_id"] == it["course_id"] for x in c["targets"]]
                 extra = [f"{it['course_id']}: {rt_renderings[it['course_id']]}"]
             elif "intervention_id" in it:
-                ids = [x["intervention_id"] for x in spec["interventions"] if x["phase_id"] == it["phase_id"]] + \
+                same_agent = it.get("canonical_agent") or _key(render._q(it.get("agent")))   # same agent in other phases (L030)
+                ids = [x["intervention_id"] for x in spec["interventions"] if x["phase_id"] == it["phase_id"]
+                       or (x.get("canonical_agent") or _key(render._q(x.get("agent")))) == same_agent] + \
                       [p["phase_id"] for p in spec["treatment_phases"] if p["phase_id"] == it["phase_id"]]
                 extra = [f"{c['course_id']}: {rt_renderings[c['course_id']]}" for c in spec["radiotherapy"] if c["phase_id"] == it["phase_id"]]
             elif "phase_id" in it and "rule_id" not in it:
@@ -1210,12 +1235,17 @@ class ProtocolCompiler:
             selected = [x for x in items if only is None or _item_id(x[0]) in only]
             for start in range(0, len(selected), batch):
                 chunk = selected[start:start + batch]
-                votes = self.critical_votes if any(it.get("criticality") == "CRITICAL" for it, _, _ in chunk) else 1
+                votes = self.critical_votes                # every rule item, whatever its criticality (L030)
                 for vote in range(votes):
                     jobs.append((component, [(it, r, e, related(component, it)) for it, r, e in chunk], text, vote, votes))
 
         def run(job):
             _component, items, text, vote, votes = job
+            extra = [doc.section(n) for it, _, _, _ in items for n in (it.get("investigation") or {}).get("sections") or []
+                     for doc in docs if doc.section(n)]            # sections the targeted resolver found decisive (L033)
+            if extra:
+                unique = list({x.number: x for x in extra}.values())
+                text = text + "\n" + "\n".join(f"{x.number} {x.title}\n{x.text()}" for x in unique)
             payload = {"instructions": sc.VERIFY_INSTRUCTIONS + (drules.DESIGN_RULES_VERIFY_NOTE if _component == "design_rules" else ""), "text": text,
                        "items": [{"item_id": _item_id(it), "rendering": rendering, "evidence": evidence, "related": rel}
                                  for it, rendering, evidence, rel in items]}
@@ -1255,8 +1285,10 @@ class ProtocolCompiler:
                 it["verification"]["vote_notes"] = [x["reviewer_note"] for x in box["cast"]
                                                     if x["verdict"] != "FAITHFUL" and x.get("reviewer_note")]
             # every judged item gets its semantic status, whether one vote (IMPORTANT) or a majority (CRITICAL) decided it
-            it["semantic_status"] = {"FAITHFUL": "FAITHFUL", "INCOMPLETE": "INCOMPLETE", "INCORRECT": "INCORRECT"}.get(
-                v["verdict"], "UNVERIFIED")
+            it["semantic_status"] = {"FAITHFUL": "FAITHFUL", "INCOMPLETE": "INCOMPLETE", "INCORRECT": "INCORRECT",
+                                     "NOT_A_RULE": "NOT_A_RULE"}.get(v["verdict"], "UNVERIFIED")
+            if v["verdict"] == "NOT_A_RULE":                    # the verifiers say the text states no rule (L031)
+                it["status"], it["not_a_rule"] = "NON_EXECUTABLE_INFORMATIONAL", v.get("reviewer_note")
             if v["verdict"] not in {"FAITHFUL", "NOT_A_RULE"}:
                 flag(component, iid, f"independent verification: {v['verdict']} ({v['problem']}) - {v['reviewer_note']}",
                      None, v["problem_quote"] or None)
@@ -1526,10 +1558,59 @@ def _mentions(text: str | None, word: str) -> bool:
     return bool(text) and bool(re.search(r"\b" + word + r"s?\b", text.casefold()))
 
 
+RESIDUAL_CLASSES = {
+    "renderer_or_ir_gap": "the verified quotes hold the missing detail but the structure or its rendering cannot carry it",
+    "extraction_error": "the extracted value or logic contradicts the protocol wording",
+    "unverified": "no majority verdict was returned",
+}
+
+
+def _classify_residual(spec: dict, items) -> list[dict]:
+    """Every item still not faithful after the resolve loop, with a root-cause class for the improvement agent."""
+    out = []
+    for component, it, _ in items:
+        v = it.get("semantic_status")
+        if v not in {"INCOMPLETE", "INCORRECT", "UNVERIFIED"}:
+            continue
+        ver = it.get("verification") or {}
+        quote = " ".join((ver.get("problem_quote") or "").split()).casefold()
+        held = bool(quote) and quote[:40] in " ".join(json.dumps(it, ensure_ascii=False).split()).casefold()
+        cls = "unverified" if v == "UNVERIFIED" else "renderer_or_ir_gap" if v == "INCOMPLETE" and held else "extraction_error"
+        out.append({"component": component, "item": _item_id(it), "verdict": v, "class": cls, "why": RESIDUAL_CLASSES[cls],
+                    "note": ver.get("reviewer_note"), "protocol_wording": ver.get("problem_quote"), "rendering": it.get("rendering")})
+    return out
+
+
+def _to_agent_backlog(protocol_id: str, residual: list[dict]) -> None:
+    """Append residual extraction failures to the improvement agent's backlog (data/agent/extraction_backlog.jsonl)."""
+    if not residual:
+        return
+    path = Path("data/agent/extraction_backlog.jsonl")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.datetime.now(datetime.UTC).isoformat()
+    with open(path, "a", encoding="utf-8") as fh:
+        for r in residual:
+            fh.write(json.dumps({"recorded": stamp, "protocol": protocol_id, **r}, ensure_ascii=False) + "\n")
+
+
+def _render_quantity(q: dict) -> str:
+    """A sample-size statement in plain words (quantity, value, unit, and the stated text)."""
+    t = render._q(q.get("text")) or ""
+    return f"{(q.get('quantity') or '').replace('_', ' ')}: {q.get('value')} {q.get('unit') or ''}".strip() + (f" (stated as '{t}')" if t else "")
+
+
+def _render_discontinuation(d: dict) -> str:
+    """A discontinuation rule in plain words: scope, trigger, criterion and any time limit."""
+    tl = d.get("time_limit") or {}
+    limit = f"; time limit {tl.get('days')} days from {tl.get('canonical_anchor')}" if tl.get("days") else ""
+    return (f"{(d.get('scope') or '').replace('_', ' ')} when {(d.get('trigger') or '').replace('_', ' ')}: "
+            f"'{render._q(d.get('criterion')) or ''}'{limit}")
+
+
 def _item_id(item: dict) -> str:
     # most specific first: an intervention also carries the phase_id of its phase
     for k in ("intervention_id", "target_id", "criterion_id", "stratum_id", "rule_id", "decision_rule_id", "endpoint_id", "analysis_id",
-              "interim_id", "scale_id", "phase_id"):
+              "interim_id", "scale_id", "sample_size_id", "phase_id"):
         if k in item:
             return item[k]
     return "?"

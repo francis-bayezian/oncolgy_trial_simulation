@@ -21,7 +21,21 @@ from scipy import stats
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs/figures'
-LOCK = ROOT / 'data/locked'
+LOCK_ROOT = ROOT / 'data/locked'
+LABEL_TO_NCT = {'ACNS0332': 'NCT00392327', 'BLIND_1': 'NCT04003610', 'BLIND_2': 'NCT04205799', 'BLIND_3': 'NCT04083170'}
+
+
+class _Locked:
+    """data/locked, with the former labels (ACNS0332, BLIND_k) resolving to their NCT folders (protocols.json)."""
+    def __truediv__(self, name):
+        return LOCK_ROOT / LABEL_TO_NCT.get(str(name), str(name))
+    def __fspath__(self):
+        return str(LOCK_ROOT)
+    def __getattr__(self, attr):
+        return getattr(LOCK_ROOT, attr)
+
+
+LOCK = _Locked()
 V3P = ROOT / 'data/simulation_parameters_v3/proportions'
 EVIDENCE, FITTED, SYNTH = '#23649A', '#7051A3', '#187F80'
 OBSERVED, UNKNOWN, PROTOCOL = '#242D37', '#89949D', '#C45E20'
@@ -450,7 +464,7 @@ def fig9_temporal():
  ax.set_yticks(range(len(rows)),[event_name(r) for r in rows][::-1],fontsize=6.8);percent(ax);ax.set_xticks([0,.5,1]);ax.set_xlabel('Participants affected',fontsize=7.3)
  f.text(.565,.598,f"{saf['matched_inside_90']} of {saf['matched_terms']} matched events inside the 90% interval",fontsize=6.8,color=SLATE)
  heading(f,.055,.345,'E','Patient journey: prediction, correction and observation')
- jl=load(show_lock('journey')/'journey_summary.json');jr=load(ROOT/'data/trial/temporal'/SHOW/'retrospective_journey_L018/journey_summary.json')
+ jl=load(show_lock('journey')/'journey_summary.json');jr=load(ROOT/'data/trial/runs'/SHOW/'history/temporal/retrospective_journey_L018/journey_summary.json')
  js,rj=jl['summary'],jr['summary']
  pf=reg['resultsSection']['participantFlowModule']['periods'][0];ms={m['type']:sum(int(a['numSubjects']) for a in m['achievements']) for m in pf['milestones']}
  left=sum(int(a['numSubjects']) for d in pf['dropWithdraws'] if d['type'] in ('Withdrawal by Subject','Lost to Follow-up','Decision by sponsor') for a in d['reasons'])

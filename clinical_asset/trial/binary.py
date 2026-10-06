@@ -23,6 +23,7 @@ from scipy import stats
 from ..protocol import design_rules as dr
 from ..protocol import schemas as psc
 from ..protocol.compiler import _majority
+from .. import assets as _assets
 
 BINARY_VERSION = "binary-1.0.0"
 RATE_GRID = [round(0.05 * k, 2) for k in range(1, 15)]           # 5% ... 70%
@@ -123,6 +124,25 @@ def bind_cited_rates(model: Any, spec: dict, facts: list[dict], section_text: An
         it["verification"] = {"votes": [x["verdict"] for x in cast.get(id(it), [])], "reviewer_note": v["reviewer_note"] if v else None}
         it["status"] = "USABLE" if v and v["verdict"] == "FAITHFUL" and not it["issues"] else "REVIEW_REQUIRED"
     return items
+
+
+SMALL_CITED_N = 20
+
+
+def cited_uncertainty(fact: dict | None, b: dict, rng: np.random.Generator) -> dict:
+    """A cited rate is an estimate from its own (often small, early) study, not the truth (lesson L023: a cited 4/7 was
+    57% in the protocol and 7% in the trial). From the cited count x/n: the Jeffreys 90% interval of the true rate,
+    a small-sample flag, and the probability that the rule declares interest averaged over that interval."""
+    v = (fact or {}).get("value") or {}
+    x, n = v.get("numerator"), v.get("denominator")
+    if x is None or not n:
+        return {"cited_count": None, "cited_n": None, "small_sample": None}
+    lo, hi = stats.beta.ppf([0.05, 0.95], x + 0.5, n - x + 0.5)
+    out = {"cited_count": x, "cited_n": n, "true_rate_90_from_cited_count": [float(lo), float(hi)], "small_sample": n < SMALL_CITED_N}
+    if b.get("success_if_at_least") is not None:
+        draws = rng.beta(x + 0.5, n - x + 0.5, size=400)
+        out["prob_of_interest_over_cited_uncertainty"] = float(np.mean([dr.prob_success(b, float(p)) for p in draws]))
+    return out
 
 
 def _engine_rate(rule: dict, p: float) -> float:
@@ -227,7 +247,8 @@ def run_binary(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Pa
                               "exact": b.get("operating_characteristics"), "consistent": not rule.get("compile_issues")},
             "exact_curve": curve, "simulated": [sims[p] for p in grid],
             "cited_evidence": [{"fact_id": c["fact_id"], "rate": c["rate"],
-                                "prob_of_interest": None if b["success_if_at_least"] is None else dr.prob_success(b, c["rate"])} for c in usable],
+                                "prob_of_interest": None if b["success_if_at_least"] is None else dr.prob_success(b, c["rate"]),
+                                **cited_uncertainty(next((f for f in facts if f["fact_id"] == c["fact_id"]), None), b, rng)} for c in usable],
             "descriptive": bool(rule.get("descriptive")),
             "run_despite_review": bool(rule.get("run_despite_review")),
             "verifier_note": (rule.get("verification") or {}).get("reviewer_note") if rule.get("run_despite_review") else None,
@@ -297,14 +318,28 @@ def evidence_prior(spec: dict, rule: dict, b: dict, endpoint_name: str | None, m
     if b.get("outcome") == "toxicity":
         return {"status": "NOT_APPLICABLE", "reason": "a toxicity rule"}
     name = _q(rule.get("endpoint")) or endpoint_name or ""
+    from .quantify import classify
+
     target = ep.endpoint_target(name, model_client)
     if target is None:
-        return {"status": "UNRESOLVED", "reason": f"the endpoint '{name[:80]}' is not a response proportion the evidence build models"}
+        kind, var = classify(name, "binary")
+        target = var if kind == "proportion" and var in ep.RESPONSE_TARGETS else None
+    if target is None:                          # no evidence variable: the protocol's own design rates are the input (L027)
+        rate = b.get("p1") if b.get("p1") is not None else b.get("p0")
+        return {"status": "DESIGN_HYPOTHESIS", "rate": None if rate is None else {"median": float(rate)},
+                "reason": f"the endpoint '{name[:80]}' has no evidence variable: the protocol's design rate is used"}
     label = next((_q(a["label"]) for a in spec["arms"] if a["arm_id"] in (rule.get("arms") or [])), "") or ""
-    feats = v3_features(spec, label, class_map(), {}, _P("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
+    feats = v3_features(spec, label, class_map(), {}, _assets.family_map())
     prior = ep.arm_prior(target, feats["disease_family"], [x["agent"] for x in feats["agents"]], feats["classes"])
     if prior["status"] != "RESOLVED":
         return prior
+    if prior["level"] == "family":
+        # a mixture over the family's unrelated regimens (other drug classes, other settings) is context, not a
+        # prediction for this arm (lessons L016, L022): reported, never scored as the arm's predicted rate
+        context = {k: v for k, v in prior.items() if k != "draws"}
+        return {"status": "CONTEXT_ONLY", "level": "family", "target": target, "context": context,
+                "reason": f"only a {feats['disease_family']} family-level mixture over other regimens ({', '.join(context['regimens'][:4])}); "
+                          "no same-regimen or same-class evidence for this arm"}
     draws = prior.pop("draws")
     sample = rng.choice(draws, size=min(400, draws.size), replace=False)
     n_final = b["stages"][-1]["n"] if b.get("stages") and b["stages"][-1].get("n") else None

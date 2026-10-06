@@ -1,21 +1,15 @@
-"""Milestone 6: eligibility and feasibility of the source population.
+"""Milestone 6: eligibility of the screened population (eligibility-2.0.0, general for any protocol).
 
-Every EXECUTABLE eligibility criterion of the locked StudySpec is evaluated three-valued (met, not met,
-unknown) for every patient of the locked source population:
+Every inclusion and exclusion requirement of the StudySpec is applied to every generated patient; none is skipped:
 
-* An inclusion criterion must be met and an exclusion criterion must not be met. A patient is INELIGIBLE
-  when any of them is decided against the patient, ELIGIBLE when all are decided in the patient's favour,
-  and UNDETERMINED otherwise.
-* Criteria whose status is not EXECUTABLE (incorrect, unresolved, informational) are never evaluated;
-  OPTIONAL / RECOMMENDED criteria are permissions, not requirements, and are not enforced.
-* Criteria that constrain only the timing of trial procedures (their variables belong to the simulator:
-  timing:, event:, count:, calendar:) are PROCEDURAL: they are met by the simulated schedule, which
-  carries out screening and procedures inside the protocol windows (milestone 9), and are not patient
-  characteristics.
-
-Feasibility is reported as bounds: the share proven eligible and the share not proven ineligible. The
-enrollable pool for recruitment is every patient not proven ineligible, each with the list of criteria
-that could not be checked; nothing unknown about a patient is filled in.
+* criteria with compiled logic are evaluated three-valued (met, not met, unknown); logic still under review is run as
+  compiled and listed under `run_with_review_flag`;
+* criteria that only time trial procedures (timing:, event:, count:, calendar:) are met by the simulated schedule;
+* optional policies are permissions and are not enforced; informational items are not requirements;
+* a criterion a generated patient cannot answer (laboratory values, history, disease details no evidence source gives
+  per patient) is resolved by calibration to the registry screen pass rate of the protocol's disease family and phase
+  (resolve_unknowns, assumption A16), so every patient ends ELIGIBLE or INELIGIBLE (lesson L026: before, 0 of 10,000
+  patients were ever proven eligible in any of nine protocols).
 """
 
 import json
@@ -23,24 +17,31 @@ from pathlib import Path
 
 from ..protocol import expressions as ex
 from ..protocol.ir import DETERMINISTIC_MODALITIES, SIMULATOR_VARIABLE_PREFIXES
+from .run_forward import use_compiled_logic
 
-ELIGIBILITY_VERSION = "eligibility-1.0.0"
+ELIGIBILITY_VERSION = "eligibility-2.0.0"
+
+
+INFORMATIONAL_STATUSES = {"NON_EXECUTABLE_INFORMATIONAL"}
 
 
 def classify_criteria(spec: dict) -> dict[str, list[dict]]:
-    """Criteria by how they are treated: evaluated, procedural, permissive, not executable, informational."""
-    out: dict[str, list[dict]] = {"evaluated": [], "procedural": [], "permissive": [], "not_executable": [], "informational": []}
+    """Criteria by how they are treated (eligibility-2.0.0, run forward: a requirement is never skipped):
+    evaluated (compiled logic, EXECUTABLE or run as compiled with its review flag), procedural (met by the simulated
+    schedule), permissive (optional policies), informational (not a requirement). A requirement with no usable logic is
+    evaluated as wholly unknown and resolved with the other unknowns (resolve_unknowns)."""
+    out: dict[str, list[dict]] = {"evaluated": [], "procedural": [], "permissive": [], "informational": [], "run_with_review_flag": []}
     for c in spec["eligibility"]:
-        if c["kind"] not in {"inclusion", "exclusion", "timing"}:
+        if c["kind"] not in {"inclusion", "exclusion", "timing"} or c.get("status") in INFORMATIONAL_STATUSES:
             out["informational"].append(c)
-        elif c.get("status") != "EXECUTABLE":
-            (out["permissive"] if c.get("status") == "OPTIONAL_POLICY" else out["not_executable"]).append(c)
-        elif c.get("modality", "REQUIRED") not in DETERMINISTIC_MODALITIES:
+        elif c.get("status") == "OPTIONAL_POLICY" or c.get("modality", "REQUIRED") not in DETERMINISTIC_MODALITIES:
             out["permissive"].append(c)
         elif c["kind"] == "timing" or _procedural(c.get("logic")):
             out["procedural"].append(c)
         else:
             out["evaluated"].append(c)
+            if c.get("status") != "EXECUTABLE":
+                out["run_with_review_flag"].append(c)
     return out
 
 
@@ -53,7 +54,10 @@ def evaluate_patient(criteria: list[dict], patient: dict) -> dict:
     """{'status', 'failed': [...], 'unknown': [...]} for one patient."""
     failed, unknown = [], []
     for c in criteria:
-        r = ex.evaluate(c.get("logic"), patient)
+        try:                                           # an item the verifiers judged incorrect is unknown (run_forward)
+            r = ex.evaluate(c.get("logic"), patient) if c.get("logic") and use_compiled_logic(c) else None
+        except Exception:  # noqa: BLE001 - logic a review flagged may be malformed: it is then unknown, and resolved
+            r = None
         ok = r if c["kind"] == "inclusion" else (None if r is None else not r)
         if ok is False:
             failed.append(c["criterion_id"])
@@ -63,7 +67,57 @@ def evaluate_patient(criteria: list[dict], patient: dict) -> dict:
     return {"status": status, "failed": failed, "unknown": unknown}
 
 
-def assess(spec: dict, patients: list[dict]) -> tuple[list[dict], dict]:
+MIN_RESIDUAL_PASS = 0.02
+
+
+def resolve_unknowns(results: list[dict], screen_pass: dict, seed: int) -> dict:
+    """Decide every criterion a generated patient cannot answer (assumption A16, general for any protocol).
+
+    The registry screen pass rate P of trials of the protocol's disease family and phase (evidence) is the target share
+    of screened patients who are eligible. The criteria decided from generated variables already exclude a share F;
+    the unknown criteria must jointly pass r = P / (1 - F) (capped to [MIN_RESIDUAL_PASS, 1]); each of the k criteria
+    that are unknown for some patient passes independently with q = r^(1/k). A patient's unknown criterion is then met
+    with probability q (seeded per patient and criterion), so every patient ends ELIGIBLE or INELIGIBLE."""
+    import numpy as np
+
+    n = len(results) or 1
+    unknown_ids = sorted({c for r in results for c in r["unknown"]})
+    target = screen_pass.get("value")
+    decided_fail = sum(bool(r["failed"]) for r in results) / n
+    if not unknown_ids:
+        return {"status": "NOT_NEEDED", "criteria": []}
+    if target is None:
+        target = 1.0 - decided_fail                       # no screening evidence at all: unknowns do not exclude further
+    r_needed = min(1.0, max(MIN_RESIDUAL_PASS, target / max(1e-9, 1.0 - decided_fail)))
+    q = r_needed ** (1.0 / len(unknown_ids))
+    rng = np.random.default_rng(seed)
+    for r in results:
+        r["resolved"] = {}
+        for cid in r["unknown"]:
+            met = bool(rng.random() < q)
+            r["resolved"][cid] = "met" if met else "not_met"
+            if not met:
+                r["failed"].append(cid)
+        r["unknown"] = []
+        r["status"] = "INELIGIBLE" if r["failed"] else "ELIGIBLE"
+    return {"status": "RESOLVED", "assumption": "A16_unknown_criteria_calibrated", "screen_pass_rate": screen_pass,
+            "target_eligible_share": target, "share_excluded_by_decided_criteria": decided_fail,
+            "residual_pass_needed": r_needed, "per_criterion_pass_probability": q, "criteria": unknown_ids}
+
+
+def screening_evidence(spec: dict) -> dict:
+    """The registry screen pass rate for the protocol's disease family and phase (journey evidence)."""
+    from .journey_evidence import registry_phase, screen_pass_rate
+    from .population import protocol_query
+
+    try:
+        family = protocol_query(spec).disease_family
+    except Exception:  # noqa: BLE001 - no condition mapping: the all-oncology pool is used
+        family = None
+    return screen_pass_rate(family, registry_phase(spec))
+
+
+def assess(spec: dict, patients: list[dict], screen_pass: dict | None = None, seed: int = 20261005) -> tuple[list[dict], dict]:
     groups = classify_criteria(spec)
     criteria = groups["evaluated"]
     results = []
@@ -74,17 +128,21 @@ def assess(spec: dict, patients: list[dict]) -> tuple[list[dict], dict]:
         for cid, tally in per.items():
             tally["not_met" if cid in r["failed"] else "unknown" if cid in r["unknown"] else "met"] += 1
     n = len(patients)
+    blocking = _decisive(results, "unknown")
+    resolution = resolve_unknowns(results, screen_pass if screen_pass is not None else {"value": None}, seed)
     counts = {s: sum(r["status"] == s for r in results) for s in ("ELIGIBLE", "UNDETERMINED", "INELIGIBLE")}
     labels = {c["criterion_id"]: c.get("rendering") or "" for c in spec["eligibility"]}
     summary = {
         "patients": n, "status_counts": counts,
+        "eligible_share": counts["ELIGIBLE"] / n if n else None,
         "proven_eligible_share": counts["ELIGIBLE"] / n if n else None,
         "not_proven_ineligible_share": (counts["ELIGIBLE"] + counts["UNDETERMINED"]) / n if n else None,
         "criteria": {name: [c["criterion_id"] for c in group] for name, group in groups.items()},
-        "per_criterion": {cid: {**v, "share_not_met": v["not_met"] / n if n else None, "rule": labels[cid][:300]} for cid, v in per.items()},
+        "per_criterion": {cid: {**v, "share_not_met_decided": v["not_met"] / n if n else None, "rule": labels[cid][:300]} for cid, v in per.items()},
         "decisive_exclusions": _decisive(results, "failed"),
         "plausibility_warnings": _whole_group_exclusions(patients, results),
-        "blocking_unknowns": _decisive(results, "unknown"),
+        "criteria_resolved_by_calibration": blocking,
+        "unknown_resolution": resolution,
     }
     return results, summary
 
@@ -126,7 +184,7 @@ def build_eligibility(spec_lock: Path, population_lock: Path, out_dir: Path) -> 
     pop_record = verify(population_lock)
     with open(Path(population_lock) / "population.jsonl", encoding="utf-8") as fh:
         patients = [json.loads(line) for line in fh]
-    results, summary = assess(spec, patients)
+    results, summary = assess(spec, patients, screening_evidence(spec))
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     doc = {"eligibility_version": ELIGIBILITY_VERSION,
@@ -144,11 +202,8 @@ def _report(doc: dict, spec: dict) -> str:
     rules = {c["criterion_id"]: c for c in spec["eligibility"]}
     c = s["status_counts"]
     lines = [f"# Eligibility and feasibility ({doc['eligibility_version']})", "",
-             (f"{s['patients']} source-population patients: {c['ELIGIBLE']} proven eligible, {c['UNDETERMINED']} undetermined, "
-              f"{c['INELIGIBLE']} proven ineligible."), "",
-             (f"Feasibility bounds: between {s['proven_eligible_share']:.1%} (proven eligible) and "
-              f"{s['not_proven_ineligible_share']:.1%} (not proven ineligible) of the source population can enroll. The gap is "
-              "made of criteria whose patient variables no source states."), "",
+             (f"{s['patients']} screened patients: {c['ELIGIBLE']} eligible, {c['INELIGIBLE']} ineligible."), "",
+             f"Eligible share of the screened population: {s['eligible_share']:.1%}.", "",
              "## How each criterion is treated", ""]
     for name, ids in s["criteria"].items():
         lines.append(f"- {name} ({len(ids)}): {', '.join(ids)}")
@@ -157,7 +212,12 @@ def _report(doc: dict, spec: dict) -> str:
     lines += ["", "## Criteria that exclude patients", ""]
     for cid, k in s["decisive_exclusions"].items():
         lines.append(f"- {cid}: {k} patients ({k / s['patients']:.1%}) - {(rules[cid].get('rendering') or '')[:220]}")
-    lines += ["", "## Criteria that cannot be checked (unknown patient data)", ""]
-    for cid, k in s["blocking_unknowns"].items():
-        lines.append(f"- {cid}: unknown for {k} patients - {(rules[cid].get('rendering') or '')[:220]}")
+    res = s["unknown_resolution"]
+    lines += ["", "## Criteria resolved by calibration to the registry screen pass rate (A16)", ""]
+    if res.get("status") == "RESOLVED":
+        lines.append(f"Target eligible share {res['target_eligible_share']:.1%} ({res['screen_pass_rate'].get('source', 'no evidence')}); "
+                     f"decided criteria exclude {res['share_excluded_by_decided_criteria']:.1%}; each of {len(res['criteria'])} "
+                     f"unanswerable criteria passes with probability {res['per_criterion_pass_probability']:.3f}.")
+    for cid, k in s["criteria_resolved_by_calibration"].items():
+        lines.append(f"- {cid}: unanswerable for {k} patients - {(rules[cid].get('rendering') or '')[:220]}")
     return "\n".join(lines) + "\n"

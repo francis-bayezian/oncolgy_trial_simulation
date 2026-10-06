@@ -28,6 +28,7 @@ import numpy as np
 
 from ..protocol import schemas as psc
 from ..protocol.compiler import _majority
+from .. import assets as _assets
 
 OUTCOMES_VERSION = "outcomes-1.0.0"
 EFS_LIKE = {"event_free_survival", "progression_free_survival", "disease_free_survival", "time_to_progression"}
@@ -365,7 +366,29 @@ def loss_to_follow_up(spec: dict) -> dict:
             if "%" in text and re.search(r"\b(annual|per year|yearly|each year)\b", text, re.IGNORECASE):
                 p = s["value"] / 100.0
                 return {"status": "RESOLVED", "annual_probability": p, "rate_per_year": -math.log(1 - p), "wording": text}
-    return {"status": "UNRESOLVED", "reason": "no annual censoring rate stated"}
+    return registry_loss_to_follow_up(spec)
+
+
+PARTICIPATION_YEARS = 2.0
+
+
+def registry_loss_to_follow_up(spec: dict) -> dict:
+    """No stated censoring rate: the registry participant-flow share leaving by subject decision, loss to follow-up or
+    physician decision (family and phase), spread over PARTICIPATION_YEARS of participation (assumption A18)."""
+    from .journey_evidence import registry_phase, withdrawal_probability
+    from .population import protocol_query
+
+    try:
+        family = protocol_query(spec).disease_family
+    except Exception:  # noqa: BLE001
+        family = None
+    w = withdrawal_probability(family, registry_phase(spec))
+    if w.get("value") is None:
+        return {"status": "ASSUMED_NONE", "annual_probability": 0.0, "rate_per_year": 0.0,
+                "wording": "no stated rate and no registry disposition evidence: no loss to follow-up simulated"}
+    p = 1 - (1 - w["value"]) ** (1 / PARTICIPATION_YEARS)
+    return {"status": "RESOLVED", "annual_probability": p, "rate_per_year": -math.log(1 - p), "source": "evidence",
+            "wording": f"{w['source']}: {w['value']:.1%} over the study, spread over {PARTICIPATION_YEARS:g} years (assumption A18)"}
 
 
 def off_study_limit(spec: dict) -> dict | None:
@@ -397,9 +420,11 @@ def regimen_classes(spec: dict, arm_label: str, drug_classes: dict[str, str]) ->
 
 def build_outcome_model(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Path, votes: int = 3,
                         v3_survival: Path | None = None,
-                        v2_toxicity: Path = Path("data/simulation_parameters_v2/toxicity/censored_toxicity_parameters.parquet"),
-                        v2_classes: Path = Path("data/simulation_parameters_v2/hierarchy/drug_class_map.parquet")) -> dict:
+                        v2_toxicity: Path | None = None, v2_classes: Path | None = None) -> dict:
     import pyarrow.parquet as pq
+
+    v2_toxicity = v2_toxicity or _assets.path("params_v2") / "toxicity" / "censored_toxicity_parameters.parquet"   # asset profile
+    v2_classes = v2_classes or _assets.path("params_v2") / "hierarchy" / "drug_class_map.parquet"
 
     from ..cutoff import asset
 
@@ -491,15 +516,18 @@ def evidence_fill(spec: dict, model: dict) -> None:
     variable = next((v for v, words in ENDPOINT_WORDS if any(w in name for w in words)), None)
     if model["control_efs"].get("status") != "RESOLVED" and primary and primary.get("type") == "time_to_event" and variable and model.get("control_arm_id"):
         label = next((a["label"] for a in model["arms"] if a["arm_id"] == model["control_arm_id"]), "")
-        feats = v3_features(spec, label, class_map(), {}, Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
+        feats = v3_features(spec, label, class_map(), {}, _assets.family_map())
         phase = protocol_features(spec, None, Path("x"))["phase"]
         est = estimate_median(variable, feats["disease_family"], feats["classes"], [x["agent"] for x in feats["agents"]], arm_age_group(spec), phase)
         if est.get("status") == "RESOLVED":
             lam = math.log(2) / (est["median_months"] / 12)
-            model["control_efs_protocol"] = model["control_efs"]
+            model["control_efs_protocol"] = {**model["control_efs"], "status": "NOT_STATED_REPLACED_BY_EVIDENCE"}
             model["control_efs"] = {"status": "RESOLVED", "family": "exponential (evidence)", "cure_fraction": 0.0, "failure_rate_per_year": lam,
                                     "source": "evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol)",
                                     "evidence": est, "endpoint_variable": variable}
+    if model["control_efs"].get("status") != "RESOLVED" and not (primary and primary.get("type") == "time_to_event"):
+        model["control_efs"] = {"status": "NOT_APPLICABLE", "reason": "the primary endpoint is not time-to-event: the journey takes progression "
+                                "from its own ladder (protocol-cited figure, then evidence)", "protocol": model["control_efs"].get("reason")}
     rule = model["analysis_rule"]
     if not rule.get("evaluable_target"):
         sizes = spec.get("sample_size") or []

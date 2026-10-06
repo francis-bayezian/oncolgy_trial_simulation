@@ -101,9 +101,12 @@ BLIND_HOLDOUT = Path("data/manifest/blind_holdout.json")
 def holdout_ids(holdout_file: Path, compared_dir: Path = Path("data/holdout_comparison"), blind_file: Path = BLIND_HOLDOUT) -> set[str]:
     """Trials never read by an asset: the holdout manifest, every trial the pipeline compares against, and the sealed
     blind-test trials."""
+    from ..cutoff import excluded
+
     ids = set(json.loads(Path(holdout_file).read_text(encoding="utf-8"))["nct_ids"])
     blind = set(json.loads(Path(blind_file).read_text(encoding="utf-8"))["nct_ids"]) if Path(blind_file).exists() else set()
-    return ids | blind | {p.stem for p in Path(compared_dir).glob("NCT*.json")}
+    # every evaluated trial and every trial started in 2023 or later (clinical_asset.cutoff), as for every other reader
+    return ids | blind | {p.stem for p in Path(compared_dir).glob("NCT*.json")} | set(excluded())
 
 
 FUNCTION_WORDS = frozenset(["with", "without", "from", "that", "this", "than", "into", "onto", "over", "under", "upon", "other", "others", "such", "their", "there", "these", "those", "were", "been", "being", "have", "having", "what", "when", "where", "which", "while", "whom", "whose", "will", "would", "also", "only", "both", "each", "more", "most", "very"])

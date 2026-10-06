@@ -118,8 +118,10 @@ def continuous_distribution(variable: str, family: str | None, unit_pattern: str
     return {"status": "UNSUPPORTED", "reason": f"fewer than {MIN_TRIALS} trials report {variable} as mean and SD"}
 
 
-def augment(population_lock: Path, family: str | None, phase: str | None, out_dir: Path, seed: int = 20260929) -> dict:
-    """`population_lock` may be a locked population or a population stage directory not yet locked."""
+def augment(population_lock: Path, family: str | None, phase: str | None, out_dir: Path, seed: int = 20260929,
+            spec: dict | None = None, model=None, own_nct: str | None = None) -> dict:
+    """`population_lock` may be a locked population or a population stage directory not yet locked. With the StudySpec
+    and a model, the protocol's subgroup factors are generated and every factor's outcome effect is found (L039)."""
     from .lock import LOCK_FILE, verify
 
     if (Path(population_lock) / LOCK_FILE).exists():
@@ -143,6 +145,12 @@ def augment(population_lock: Path, family: str | None, phase: str | None, out_di
             added[var] = dist
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
+    subgroups = None
+    if spec is not None and model is not None:
+        from . import subgroup_evidence as sge
+
+        subgroups = sge.build(model, spec, pats, family, phase, own_nct, np.random.default_rng(seed + 7))
+        (out / sge.EVIDENCE_FILE).write_text(json.dumps(subgroups, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
     with open(out / "population.jsonl", "w", encoding="utf-8") as fh:
         fh.writelines(json.dumps(p, ensure_ascii=False) + "\n" for p in pats)
     for f in ("population_model.json", "population_report.md"):
@@ -150,5 +158,9 @@ def augment(population_lock: Path, family: str | None, phase: str | None, out_di
             (out / f).write_text((Path(population_lock) / f).read_text(encoding="utf-8"), encoding="utf-8")
     summary = {"base_population": str(population_lock), "family": family, "phase": phase, "added_variables": added,
                "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)"}
+    if subgroups:
+        summary["subgroup_factors"] = [{"factor": f["text"], "variable": f["key"], "kind": f["kind"],
+                                        "prevalence": (f.get("prevalence") or {}).get("source"),
+                                        "effect": (f.get("effects") or {}).get("source")} for f in subgroups["factors"]]
     (out / "baseline_extra_summary.json").write_text(json.dumps({"summary": summary}, indent=1), encoding="utf-8")
     return summary

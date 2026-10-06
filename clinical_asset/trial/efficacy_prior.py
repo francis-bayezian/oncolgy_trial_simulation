@@ -17,6 +17,8 @@ from pathlib import Path
 
 import numpy as np
 
+from .predictive import from_draws
+
 def _asset() -> Path:
     from ..cutoff import asset
 
@@ -83,7 +85,8 @@ def arm_prior(target: str, family: str, agents: list[str], classes: list[str]) -
                 q = np.quantile(pooled, [0.05, 0.1, 0.5, 0.9, 0.95])
                 return {"status": "RESOLVED", "level": level, "target": target, "family": family, "contexts": len(chosen),
                         "regimens": sorted({r["context_regimen"] for r in chosen})[:12], "studies": int(sum(int(r["studies"]) for r in chosen)),
-                        "rate": {"median": float(q[2]), "q05": float(q[0]), "q10": float(q[1]), "q90": float(q[3]), "q95": float(q[4])},
+                        "rate": {"median": float(q[2]), "q05": float(q[0]), "q10": float(q[1]), "q90": float(q[3]), "q95": float(q[4]),
+                                 "percentiles": from_draws(pooled)},
                         "draws": pooled}
     return {"status": "UNRESOLVED", "reason": f"no published {target} context in the {family} family", "target": target, "family": family}
 

@@ -21,6 +21,24 @@ class LockError(RuntimeError):
     pass
 
 
+ALIASES = Path("data/manifest/protocol_aliases.json")
+
+
+def resolve(path) -> Path:
+    """A path a lock recorded, where it is now: unchanged when it exists, else renamed through the alias manifest
+    (old -> new path prefixes, longest first; locks are never edited). Checksums still decide whether it is the same
+    file."""
+    p = Path(path)
+    if p.exists() or not ALIASES.exists():
+        return p
+    s = str(p).replace("\\", "/")
+    aliases = json.loads(ALIASES.read_text(encoding="utf-8"))
+    for old in sorted(aliases, key=len, reverse=True):
+        if s == old or s.startswith(old.rstrip("/") + "/"):
+            return Path(aliases[old] + s[len(old):])
+    return p
+
+
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
     with open(path, "rb") as f:

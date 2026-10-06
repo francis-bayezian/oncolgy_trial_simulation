@@ -36,7 +36,7 @@ def test_randomization_uses_open_randomized_arms_and_reports_missing_balancing()
     assert r["balancing"].startswith("not stated")
 
 
-def test_enrollment_follows_rate_ratio_and_leaves_unknown_strata_unresolved():
+def test_enrollment_follows_rate_ratio_and_assigns_every_stratum():
     spec = _spec()
     plan, rand = rc.accrual_plan(spec), rc.randomization_plan(spec)
     plan["target"]["patients"] = 3000
@@ -47,7 +47,8 @@ def test_enrollment_follows_rate_ratio_and_leaves_unknown_strata_unresolved():
     assert abs(years - 50.0) < 3.0                                       # 3000 patients at 60 per year
     assert abs(np.mean([c["arm_id"] == "ARM1" for c in cohort]) - 2 / 3) < 0.03
     strata = {c["stratum"] for c in cohort}
-    assert strata == {"ST1", "UNRESOLVED"} and cohort[0]["unchecked_criteria"] == ["EL9"]
+    assert "UNRESOLVED" not in strata and strata <= {s["stratum_id"] for s in rand["strata"]} and cohort[0]["unchecked_criteria"] == ["EL9"]
+    assert any(c.get("stratum_assigned") for c in cohort)              # undecidable strata are drawn, and flagged
     assert len({c["patient_id"] for c in cohort}) == 3000                # each patient enrolled at most once
 
 

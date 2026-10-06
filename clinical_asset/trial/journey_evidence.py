@@ -15,6 +15,7 @@ from pathlib import Path
 import numpy as np
 
 from .patient_state import sourced
+from .predictive import from_normal
 
 EVIDENCE = Path("data/evidence_journey_v1")
 MIN_TRIALS = 5
@@ -44,9 +45,9 @@ def _disposition() -> list[dict]:
         if r["period_index"] != 0 or not r["started"] or r["nct_id"] in drop:
             continue                                  # the first period: participants who started the trial
         g = per.setdefault((r["nct_id"], r["group_title"]), {"nct_id": r["nct_id"], "phase": r["phase"], "mesh": r["condition_mesh"],
-                                                             "started": r["started"], "other": 0.0})
-        if r["reason"] in OTHER_WITHDRAWAL and r["count"]:
-            g["other"] += r["count"]
+                                                             "started": r["started"], "by_reason": {}})
+        if r["reason"] and r["count"]:
+            g["by_reason"][r["reason"]] = g["by_reason"].get(r["reason"], 0.0) + r["count"]
     fam: dict = {}
     out = []
     for g in per.values():
@@ -74,23 +75,42 @@ def pool_logit(groups: list[dict]) -> dict:
     inv = lambda x: 1 / (1 + math.exp(-x))  # noqa: E731
     half = 1.2816 * math.sqrt(se ** 2 + tau2)
     return {"estimate": inv(mu), "ci95": [inv(mu - 1.96 * se), inv(mu + 1.96 * se)], "single_trial_80": [inv(mu - half), inv(mu + half)],
+            "single_trial_percentiles": from_normal(mu, math.sqrt(se ** 2 + tau2), inv),
             "tau_logit": math.sqrt(tau2), "groups": len(y), "trials": len({g["nct_id"] for g in groups}),
             "participants": int(sum(g["started"] for g in groups))}
 
 
-def withdrawal_probability(family: str | None, phase: str | None) -> dict:
-    rows = _disposition()
+def disposition_probability(reasons: tuple[str, ...], what: str, family: str | None, phase: str | None) -> dict:
+    """The pooled share of starters who left the first period for one of `reasons` (family and phase, then family,
+    then phase, then all oncology: the first pool with MIN_TRIALS trials)."""
+    rows = [{**g, "other": sum(g["by_reason"].get(k, 0.0) for k in reasons)} for g in _disposition()]
     for label, sel in ((f"{family}, {phase}", [g for g in rows if g["family"] == family and g["phase"] == phase]),
                        (f"{family}", [g for g in rows if g["family"] == family]),
                        (f"all oncology, {phase}", [g for g in rows if g["phase"] == phase]),
                        ("all oncology", rows)):
         if len({g["nct_id"] for g in sel}) >= MIN_TRIALS:
             p = pool_logit(sel)
-            out = sourced(p["estimate"], "evidence", f"registry participant flow ({label}): left by subject decision, loss to "
-                          f"follow-up or physician decision; {p['trials']} trials, {p['participants']} participants")
+            out = sourced(p["estimate"], "evidence", f"registry participant flow ({label}): {what}; {p['trials']} trials, "
+                          f"{p['participants']} participants")
             out["detail"] = p
             return out
     return sourced(None, "unsupported", "no registry disposition evidence")
+
+
+def withdrawal_probability(family: str | None, phase: str | None) -> dict:
+    return disposition_probability(OTHER_WITHDRAWAL, "left by subject decision, loss to follow-up or physician decision", family, phase)
+
+
+def ae_discontinuation_probability(family: str | None, phase: str | None) -> dict:
+    """Leaving treatment for an adverse event (lesson L021: the journey had no toxicity discontinuation beyond the
+    protocol's own rules, which the generated grades rarely trigger)."""
+    return disposition_probability(("adverse_event",), "left for an adverse event", family, phase)
+
+
+def death_probability(family: str | None, phase: str | None) -> dict:
+    """Death recorded as the reason for leaving the first period. Registry flow periods usually span treatment AND
+    follow-up, so this is death at any time in the study period, drawn over the simulated horizon (L021)."""
+    return disposition_probability(("death",), "died during the study period", family, phase)
 
 
 def registry_phase(spec: dict) -> str | None:
@@ -148,18 +168,36 @@ def _arm_text(spec: dict, arm_id: str | None) -> str:
     """The arm's label and description plus every intervention arm reference naming it ('Arm 1 (once-weekly KRd 56 mg/m2)')."""
     def t(x):
         return x.get("text") if isinstance(x, dict) else x
+    from .arms import ArmResolver
+
     arm = next((a for a in spec.get("arms") or [] if a["arm_id"] == arm_id), None)
     if not arm:
         return ""
-    label = (t(arm.get("label")) or "").casefold()
-    refs = [t(r) or "" for i in spec.get("interventions") or [] for r in i.get("arms") or []]
-    return " ".join([label, t(arm.get("description")) or ""] + [r for r in refs if label and label in r.casefold()])
+    resolver = ArmResolver(spec)
+    refs = {t(r) or "" for i in spec.get("interventions") or [] for r in i.get("arms") or []}
+    return " ".join([t(arm.get("label")) or "", t(arm.get("description")) or ""] + sorted(r for r in refs if arm_id in (resolver.resolve(r) or [])))
+
+
+def same_regimen(label: str | None, spec: dict, arm_id: str | None) -> bool:
+    """A cited figure is for THIS arm's regimen (lessons L018, L029): when its wording names agents of the protocol,
+    they must be exactly the arm's anticancer agents (a component's figure, e.g. one drug of a combination, is not the
+    regimen's); wording that names no agent (an abbreviation such as 'XYz') must consist of words of the arm's own text."""
+    from .arms import ArmResolver, _agent, words
+
+    if not label or not _tokens(label):
+        return False
+    r = ArmResolver(spec)
+    text = words(label)
+    named = {a for a in r.agents if any(text[i:i + len(words(a))] == words(a) for i in range(len(text)))}
+    if named:
+        mine = {_agent(it) for it in r.anticancer if arm_id and r.applies_to(it.get("arms"), arm_id)}
+        return named == mine
+    return _tokens(label) <= _tokens(_arm_text(spec, arm_id))
 
 
 def cited_progression(facts: list[dict] | None, spec: dict, arm_id: str | None) -> dict | None:
     """A median progression-free survival the protocol cites for THIS arm's regimen (a USABLE historical-study fact whose
     category names only words of the arm's own text, e.g. 'KRd' for 'Arm 2 (twice-weekly KRd 27 mg/m2)')."""
-    arm_tokens = _tokens(_arm_text(spec, arm_id))
     best = None
     for f in facts or []:
         val = f.get("value") or {}
@@ -167,7 +205,7 @@ def cited_progression(facts: list[dict] | None, spec: dict, arm_id: str | None) 
         cat = cat.get("text") if isinstance(cat, dict) else cat
         unit = (val.get("unit") or "").casefold()
         if (f.get("source") == "historical_study" and f.get("canonical_variable") == "progression_free_survival" and unit.startswith("month")
-                and val.get("value") and cat and _tokens(cat) and _tokens(cat) <= arm_tokens):
+                and val.get("value") and same_regimen(cat, spec, arm_id)):
             best = best or (float(val["value"]), f["fact_id"], cat)
     return best
 

@@ -28,6 +28,9 @@ from pathlib import Path
 
 import numpy as np
 
+from .predictive import text
+from .. import assets as _assets
+
 OUTPUTS_VERSION = "outputs-1.0.0"
 DAY = 365.25
 
@@ -231,7 +234,7 @@ def subgroup_efs(adsl: list[dict], adtte: list[dict], at_years: float = 3.0) -> 
 def screening(spec: dict, eligibility: dict, target: int | None) -> dict:
     lo, hi = eligibility["proven_eligible_share"], eligibility["not_proven_ineligible_share"]
     rendering = {c["criterion_id"]: (c.get("rendering") or _q(c.get("text")) or "")[:160] for c in spec["eligibility"]}
-    blocking = list(eligibility.get("blocking_unknowns") or [])
+    blocking = list(eligibility.get("criteria_resolved_by_calibration") or eligibility.get("blocking_unknowns") or [])
     return {"eligible_share_bounds": [lo, hi],
             "patients_to_screen_for_target": ({"at_least": math.ceil(target / hi) if hi else None, "at_most": math.ceil(target / lo) if lo else None}
                                               if target else None),
@@ -250,7 +253,7 @@ def sites_needed(spec: dict, target: int | None, asset: Path, durations: list[fl
     if not target or not (Path(asset) / "accrual_model.json").exists():
         return {"status": "UNRESOLVED", "reason": "no enrollment target or no accrual model"}
     model = json.loads((Path(asset) / "accrual_model.json").read_text(encoding="utf-8"))
-    feats = protocol_features(spec, target, Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
+    feats = protocol_features(spec, target, _assets.family_map())
     rng = np.random.default_rng(0)
     out = {}
     for years in durations:
@@ -312,7 +315,7 @@ def build(spec_lock: Path, eligibility_lock: Path, cohorts_lock: Path, outcomes_
                "trial_failure_risk": planning["accrual"].get("failure_model"),
                "retention": {"loss_to_follow_up": model.get("loss_to_follow_up"), "off_study_limit": model.get("off_study_limit")},
                "decision_probabilities": _decisions(results_lock),
-               "subgroups": subgroup_efs(adsl, adtte) if adtte else {"status": "UNRESOLVED", "reason": "no time-to-event outcome model"},
+               "subgroups": subgroup_efs(adsl, adtte) if adtte else {"status": "NOT_APPLICABLE", "reason": "the primary endpoint is not time-to-event: subgroup results are in the endpoint stage"},
                "subgroup_estimates": subgroup_estimates(safety, context, _primary_target(spec, results_lock))}}
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -329,9 +332,13 @@ def _decisions(results_lock: Path | None) -> dict:
 
     if results_lock is None:
         return {"status": "UNRESOLVED", "reason": "no science results"}
-    for name in ("binary_results.json", "trial_results.json", "escalation_results.json", "ni_results.json"):
+    for name in ("binary_results.json", "trial_results.json", "escalation_results.json", "ni_results.json", "continuous_results.json"):
         if (Path(results_lock) / name).exists():
             r = load_locked(results_lock, name)
+            if name == "continuous_results.json":
+                return {"kind": "continuous", "design": {k: (r.get("design") or {}).get(k) for k in ("effect", "sd", "sd_source", "n", "paired", "rank_test")},
+                        "success_curve": [{"true_effect": c["true_effect"], "p_success": c["p_success"]} for c in r.get("success_curve") or []],
+                        "design_check": r.get("design_check")}
             if name == "ni_results.json":
                 return {"kind": "non-inferiority (binary, synthesis)", "power_at_protocol_assumption": r.get("power_at_protocol_assumption"),
                         "p_success_curve": r.get("p_success_curve"), "predicted_response": r.get("predicted_response")}
@@ -371,9 +378,9 @@ def render(doc: dict) -> str:
         L.append("- Criteria the simulated population cannot check: " + "; ".join(c["criterion_id"] for c in s["unchecked_criteria"]))
     h = f["accrual"]["historical_model"]
     if h.get("status") == "RESOLVED":
-        L.append(f"- Accrual (historical model): {h['patients_per_year']['median']:.1f} patients/year (80% {h['patients_per_year']['q10']:.1f}-"
-                 f"{h['patients_per_year']['q90']:.1f}); target reached in {h['enrollment_duration_years']['median']:.1f} years (80% "
-                 f"{h['enrollment_duration_years']['q10']:.1f}-{h['enrollment_duration_years']['q90']:.1f}).")
+        from ..planning.report import _pct
+
+        L.append(f"- Accrual (historical model): patients/year {_pct(h['patients_per_year'])}; years to target {_pct(h['enrollment_duration_years'])}.")
     sn = f["sites_needed"]
     if sn.get("status") == "RESOLVED":
         L.append("- Sites needed for an 80% chance of reaching the target of " + str(sn["target"]) + ": "
@@ -393,8 +400,10 @@ def render(doc: dict) -> str:
                     continue
                 h = e["headline"]
                 flag = " **ATTENTION: " + e["protocol_subgroup"]["note"] + "**" if e["protocol_subgroup"]["attention"] else ""
-                L.append(f"- {arm} {target}: {h['estimate']:.1%} (95% CI {h['ci95'][0]:.1%}-{h['ci95'][1]:.1%}; single trial {h['single_trial_80'][0]:.0%}-"
-                         f"{h['single_trial_80'][1]:.0%}) from {h['studies']} studies, subgroup '{e['headline_subgroup']}'.{flag}")
+                st = h.get("single_trial_percentiles")
+                single = text(st, "{:.0%}") if st else f"{h['single_trial_80'][0]:.0%}-{h['single_trial_80'][1]:.0%}"
+                L.append(f"- {arm} {target}: {h['estimate']:.1%} (95% CI {h['ci95'][0]:.1%}-{h['ci95'][1]:.1%}; single trial {single}) "
+                         f"from {h['studies']} studies, subgroup '{e['headline_subgroup']}'.{flag}")
                 for key, groups in e["breakdown"].items():
                     L.append(f"    - by {key}: " + "; ".join(f"{g} {p['estimate']:.0%} ({p['studies']} studies)" for g, p in groups.items() if p))
     d = f["decision_probabilities"]

@@ -1,4 +1,6 @@
-"""Select the sealed blind-test trials: one terminated for poor accrual, one terminated for safety, one completed.
+"""HISTORICAL (2026-09-28 blind test, retired 2026-10-06: all protocols are test data, named by NCT in protocols/ and listed in data/manifest/protocols.json).
+
+Select the sealed blind-test trials: one terminated for poor accrual, one terminated for safety, one completed.
 
 Blinding: the script prints nothing about any candidate. It writes
 * data/manifest/blind_holdout.json: the three NCT IDs in shuffled order, the selection rule, and a salted SHA-256

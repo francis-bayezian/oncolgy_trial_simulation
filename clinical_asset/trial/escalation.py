@@ -222,6 +222,13 @@ def ladder_characteristics(rule: dict, replicates: int, seed: int) -> list[dict]
     return rows
 
 
+STANDARD_3_PLUS_3 = [{"action": "escalate", "dlt": 0, "comparator": "exactly", "patients": 3},
+                     {"action": "expand_cohort", "dlt": 1, "comparator": "exactly", "patients": 3},
+                     {"action": "stop_dose_exceeds_mtd", "dlt": 2, "comparator": "at_least", "patients": 3},
+                     {"action": "escalate", "dlt": 1, "comparator": "exactly", "patients": 6},
+                     {"action": "stop_dose_exceeds_mtd", "dlt": 2, "comparator": "at_least", "patients": 6}]
+DEFAULT_LEVELS = 5
+
 def run(spec_lock: Path, out_dir: Path, replicates: int = 5000, seed: int = 20260927) -> dict:
     from .studyspec import load_studyspec
 
@@ -236,10 +243,13 @@ def run(spec_lock: Path, out_dir: Path, replicates: int = 5000, seed: int = 2026
 
         runnable = r.get("status") == "EXECUTABLE" or (accept_review() and r.get("status") == "REVIEW_REQUIRED" and not r["rule"].get("issues"))
         entry["run_despite_review"] = r.get("status") != "EXECUTABLE"
-        if not runnable or not r["rule"]["rules"]:
-            entry["result"] = "UNRESOLVED: the escalation rule is not executable in the StudySpec"
-        elif levels == 0 and not ladder:
-            entry["result"] = "UNRESOLVED: the protocol states neither dose levels nor a starting dose with increments"
+        if not runnable or not r["rule"]["rules"]:      # the decision table could not be compiled: the standard 3+3 table (A17)
+            r = {**r, "rule": {**r["rule"], "rules": STANDARD_3_PLUS_3, "cohort_size": r["rule"].get("cohort_size") or 3}}
+            entry["rule"] = r["rule"]
+            entry["assumption"] = "A17_standard_3_plus_3: the protocol's escalation table could not be compiled; the standard 3+3 table is simulated"
+        if levels == 0 and not ladder:                  # no dose levels: relative levels 1..DEFAULT_LEVELS, reported as level numbers
+            entry["assumption_levels"] = f"no dose levels or starting dose stated: {DEFAULT_LEVELS} relative levels are simulated"
+            entry["operating_characteristics"] = operating_characteristics(r["rule"], DEFAULT_LEVELS, replicates, seed)
         elif levels == 0:
             entry["mode"] = "dose ladder from the starting dose and increments"
             entry["ladder_characteristics"] = ladder_characteristics(r["rule"], max(200, replicates // 10), seed)

@@ -66,7 +66,8 @@ def test_loss_to_follow_up_and_off_study_limit_come_from_the_spec():
     ltf = oc.loss_to_follow_up(spec)
     assert ltf["status"] == "RESOLVED" and abs(ltf["rate_per_year"] + math.log(0.99)) < 1e-12
     assert oc.off_study_limit(spec)["days"] == 3652.5
-    assert oc.loss_to_follow_up({"sample_size": []})["status"] == "UNRESOLVED"
+    unstated = oc.loss_to_follow_up({"sample_size": [], "metadata": {}})        # registry evidence, never left unresolved
+    assert unstated["status"] in ("RESOLVED", "ASSUMED_NONE") and unstated["rate_per_year"] >= 0
 
 
 def test_nearest_class_signature_prefers_fewest_differences_then_subsets():

@@ -63,7 +63,7 @@ def test_registry_record_reports_flow_baseline_efs_and_unresolved_endpoints():
     rec = rs.registry_record(trial, sim.primary_analysis(trial, _spec()["analyses"][0]), _model(), _spec(), rand, rng)
     a = rec["arms"]["A"]
     assert a["participant_flow"]["started"] + rec["arms"]["B"]["participant_flow"]["started"] == trial["n_enrolled"]
-    assert isinstance(a["participant_flow"]["completed_PH1"], int) and a["participant_flow"]["completed_PH2"]["status"] == "UNRESOLVED"
+    assert isinstance(a["participant_flow"]["completed_PH1"], int) and a["participant_flow"]["completed_PH2"]["status"] == "IN_JOURNEY_STAGE"
     assert set(a["efs_percent"]) == {"2y", "3y", "5y"} and a["baseline"]["participants"] == a["participant_flow"]["started"]
-    assert rec["outcome_measures"][0]["status"] == "SIMULATED" and rec["outcome_measures"][1]["status"] == "UNRESOLVED"
+    assert rec["outcome_measures"][0]["status"] == "SIMULATED" and rec["outcome_measures"][1]["status"] == "IN_ENDPOINT_STAGE"
     assert a["adverse_events"]["other"][0]["term"] == "nausea"

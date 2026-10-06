@@ -19,7 +19,8 @@ import numpy as np
 
 from . import dose_modification as dm
 from . import labs
-from .journey_evidence import progression_model, registry_phase, withdrawal_probability
+from .journey_evidence import (ae_discontinuation_probability, death_probability, progression_model, registry_phase,
+                               withdrawal_probability)
 from .patient_state import ASSUMPTIONS, PatientState, sourced
 from .visits import calendar, planned_doses, schedule
 
@@ -31,15 +32,13 @@ def _t(x):
     return (x or {}).get("text") if isinstance(x, dict) else x
 
 
+REPORTING_WINDOW_DAYS = 30
+REFERENCE_PARTICIPATION_DAYS = 365
+
+
 def arm_agents(spec: dict, sched: dict, arm_id: str) -> list[str]:
-    label = next((_t(a["label"]) for a in spec["arms"] if a["arm_id"] == arm_id), "") or ""
-    out = []
-    for agent, a in sched["agents"].items():
-        arms = [x for x in a["arms"] if x]
-        if not arms or any(label.lower().startswith(x.lower()) or x.lower().startswith(label.lower()) or x.lower() in label.lower()
-                           for x in arms):
-            out.append(agent)
-    return out
+    """The agents given in one arm: arm references are resolved once by visits.schedule (clinical_asset.trial.arms, L019)."""
+    return [agent for agent, a in sched["agents"].items() if arm_id in a.get("arm_ids", [])]
 
 
 def _dose_text(d: dict | None) -> str:
@@ -74,7 +73,8 @@ def dose_on(st, agent: str, day: int, initial: dict | None) -> dict | None:
 
 
 def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | None, spec: dict, sched: dict, rules: list[dict],
-                     levels: dict, prog: dict, withdraw: dict, rng: np.random.Generator, horizon_days: int) -> PatientState:
+                     levels: dict, prog: dict, withdraw: dict, rng: np.random.Generator, horizon_days: int,
+                     ae_stop: dict | None = None, death: dict | None = None) -> PatientState:
     st = PatientState(subject_id=subject["subject_id"], arm_id=subject["arm_id"], enrollment_day=subject["enrollment_day"],
                       baseline=subject["baseline"])
     agents = arm_agents(spec, sched, subject["arm_id"])
@@ -121,7 +121,21 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
     cycle = sched["cycle_length_days"]["value"] or 28
     max_c = sched["max_cycles"]["value"]
     plan_end = int(min(horizon_days, max_c * cycle if max_c else horizon_days))
-    withdraw_day = int(rng.integers(1, plan_end + 1)) if withdraw["value"] and rng.random() < withdraw["value"] else None
+    scale, end_label = 1.0, "completed planned treatment" if max_c else "end of simulated follow-up"
+    if sched["cycle_length_days"]["value"] is None and not max_c:
+        # no treatment cycles (e.g. single administrations at scan visits): participation ends after the last planned
+        # administration plus the reporting window, and the registry's whole-trial exit shares are scaled to it (A22, L035)
+        days = [d for a in agents for d in (sched["agents"][a]["dosing_days"]["value"] or [])]
+        plan_end = int(max(days)) if days else 1
+        horizon_days = plan_end + REPORTING_WINDOW_DAYS
+        scale, end_label = min(1.0, horizon_days / REFERENCE_PARTICIPATION_DAYS), "completed planned procedures"
+    withdraw_day = int(rng.integers(1, plan_end + 1)) if withdraw["value"] and rng.random() < withdraw["value"] * scale else None
+    # registry competing exits (L021): treatment stopped for an adverse event (A14), death in the study period (A15)
+    ae_stop_day = int(rng.integers(1, plan_end + 1)) if ae_stop and ae_stop["value"] and rng.random() < ae_stop["value"] * scale else None
+    death_day = int(rng.integers(1, horizon_days + 1)) if death and death["value"] and rng.random() < death["value"] * scale else None
+    st.death_day = death_day
+    if death_day is not None and prog_day is not None and prog_day >= death_day:
+        prog_day = st.progression_day = None                 # no progression after death
 
     visits = calendar(sched, horizon_days)
     ta_days = [v["day"] for v in visits if "tumour assessment" in v["planned"]]
@@ -137,11 +151,17 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
             detect = next((d for d in ta_days if d >= prog_day), None)
         else:
             detect = prog_day
-    end_candidates = [(plan_end, "completed planned treatment" if max_c else "end of simulated follow-up")]
+    end_candidates = [(plan_end, end_label)]
+    if detect is not None and end_label == "completed planned procedures" and detect > plan_end:
+        detect = None                                   # progression after the last procedure is outside participation
     if detect is not None:
         end_candidates.append((detect, "disease progression"))
     if withdraw_day is not None:
         end_candidates.append((withdraw_day, "withdrawal (subject, loss to follow-up or physician decision)"))
+    if ae_stop_day is not None:
+        end_candidates.append((ae_stop_day, "adverse event (registry discontinuation rate)"))
+    if death_day is not None:
+        end_candidates.append((death_day, "death"))
     off_day, off_reason = min(end_candidates)
 
     # ---------------------------------------------------------------- adverse events: onset, grade, resolution
@@ -158,7 +178,7 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
     dropped = 0
     ae_out = []
     for e in aes:
-        if e["onset"] > (st.off_treatment[0] if st.off_treatment else off_day) + 30:
+        if e["onset"] > (st.off_treatment[0] if st.off_treatment else off_day) + 30 or (death_day is not None and e["onset"] > death_day):
             dropped += 1
             continue
         e["end"] = next_visit(e["onset"], 1 if e["grade"] <= 2 else 2)
@@ -247,11 +267,17 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
         st.progression_detected_day = prog_day
         st.log(prog_day, "unscheduled", "tumour assessment", "progression", "progressive disease",
                "no tumour assessment schedule resolved: recorded at its true time", evidence_level=prog["evidence_level"], source=prog["source"])
-    st.log(off_day, "EOT", "disposition", "end of treatment", off_reason, evidence_level="evidence" if "withdrawal" in off_reason else "protocol",
-           source=withdraw["source"] if "withdrawal" in off_reason else "protocol discontinuation rules")
+    registry_exit = {"withdrawal": (withdraw, None), "registry discontinuation": (ae_stop, "A14_ae_discontinuation"),
+                     "death": (death, "A15_death_timing")}
+    hit = next((v for k, v in registry_exit.items() if k in off_reason and v[0]), None)
+    st.log(off_day, "EOT", "disposition", "end of treatment", off_reason, evidence_level="evidence" if hit else "protocol",
+           source=hit[0]["source"] if hit else "protocol discontinuation rules", **({"assumption": hit[1]} if hit and hit[1] else {}))
     fu = sched["follow_up_interval_days"]
-    if fu["value"]:
+    if fu["value"] and (death_day is None or off_day + int(fu["value"]) < death_day):
         st.log(off_day + int(fu["value"]), "FU1", "follow-up", "follow-up visit", "attended", evidence_level="protocol", source=fu["source"])
+    if death_day is not None and death_day > off_day:
+        st.log(death_day, "follow-up", "disposition", "death", "died during follow-up", evidence_level="evidence",
+               source=death["source"], assumption="A15_death_timing")
     st.events.sort(key=lambda e: (e["day"], e["category"] != "screening"))
     st.ae = ae_out
     st.exposure = exposure
@@ -274,6 +300,9 @@ def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_loc
     sched = schedule(spec, facts)
     rules = dm.compile_rules(spec)
     levels = dm.dose_levels(rules)
+    if scenario is None:                        # the recruitment stage's headline scenario (the historical model, L024)
+        rs = Path(cohorts_lock) / "recruitment_summary.json"
+        scenario = json.loads(rs.read_text(encoding="utf-8"))["summary"].get("headline_scenario") if rs.exists() else None
     cohort_file = sorted(Path(cohorts_lock).glob(f"cohort_{scenario or '*'}.jsonl"))[0]
     cohort = [json.loads(line) for line in open(cohort_file, encoding="utf-8")]
     elig = {}
@@ -290,15 +319,24 @@ def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_loc
     model = json.loads((Path(outcomes_lock) / "outcome_model.json").read_text(encoding="utf-8"))
     phase = registry_phase(spec)
     rng = np.random.default_rng(seed)
-    states, prog_by_arm, wd_by_arm = [], {}, {}
+    states, prog_by_arm, wd_by_arm, ae_by_arm, death_by_arm = [], {}, {}, {}, {}
+    from . import subgroup_evidence as sge
+
+    sg_evidence = sge.load(cohorts_lock)              # the protocol's subgroup factors and their prognostic effects (A28)
     for s in cohort:
         arm = s["arm_id"]
         if arm not in prog_by_arm:
             f = feats.get(arm) or next(iter(feats.values()), {})
             prog_by_arm[arm] = progression_model(model, f, spec, protocol_facts, arm)
             wd_by_arm[arm] = withdrawal_probability(f.get("disease_family"), phase)
+            ae_by_arm[arm] = ae_discontinuation_probability(f.get("disease_family"), phase)
+            death_by_arm[arm] = death_probability(f.get("disease_family"), phase)
+        prog = prog_by_arm[arm]
+        log_hr = sge.patient_log_effects(s["baseline"], sg_evidence)[0]
+        if log_hr and (prog.get("value") or {}).get("rate_per_year"):
+            prog = {**prog, "value": {**prog["value"], "rate_per_year": prog["value"]["rate_per_year"] * math.exp(log_hr)}}
         states.append(simulate_patient(s, ae_by.get(s["subject_id"], []), elig.get(s["patient_id"]), spec, sched, rules, levels,
-                                       prog_by_arm[arm], wd_by_arm[arm], rng, horizon_days))
+                                       prog, wd_by_arm[arm], rng, horizon_days, ae_by_arm[arm], death_by_arm[arm]))
     from .export_clinical import write
     from .journey_evidence import screen_pass_rate
     summary = write(states, spec, sched, out_dir, traces)
@@ -319,6 +357,7 @@ def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_loc
     doc = {"journey_version": JOURNEY_VERSION, "seed": seed, "horizon_days": horizon_days, "cohort_file": cohort_file.name,
            "inputs": {"studyspec": spec_rec["files"]["studyspec.json"], "schedule_facts": facts.get("version") if facts else None},
            "schedule": sched, "dose_levels": levels, "progression": prog_by_arm, "withdrawal": wd_by_arm,
+           "ae_discontinuation": ae_by_arm, "death": death_by_arm,
            "assumptions": ASSUMPTIONS, "summary": summary}
     (Path(out_dir) / "journey_summary.json").write_text(json.dumps(doc, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
     return doc

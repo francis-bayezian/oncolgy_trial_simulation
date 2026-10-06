@@ -73,8 +73,11 @@ def arm_events(model: dict, arm_id: str) -> list[dict]:
 
 def run_safety(outcomes_lock: Path, cohorts_lock: Path, out_dir: Path, replicates: int = 2000, seed: int = 20260927,
                safety_asset: Path | None = None, class_map_file: Path = Path("data/spa_work/drug_classes.json"),
-               family_map_file: Path = Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet")) -> dict:
+               family_map_file: Path | None = None) -> dict:
+    from .. import assets
     from .lock import load_locked, verify
+
+    family_map_file = family_map_file or assets.family_map()                                              # asset profile
 
     model = load_locked(outcomes_lock, "outcome_model.json")
     verify(cohorts_lock)
@@ -83,7 +86,9 @@ def run_safety(outcomes_lock: Path, cohorts_lock: Path, out_dir: Path, replicate
         from ..safety3 import load as load_v3
         from .studyspec import load_studyspec
 
-        spec_path = Path(json.loads((Path(outcomes_lock) / "lock.json").read_text(encoding="utf-8"))["inputs"]["studyspec"]["path"]).parent
+        from .lock import resolve
+
+        spec_path = resolve(json.loads((Path(outcomes_lock) / "lock.json").read_text(encoding="utf-8"))["inputs"]["studyspec"]["path"]).parent
         spec, _ = load_studyspec(spec_path)
         v3 = {"asset": load_v3(safety_asset), "spec": spec, "class_map": class_map(class_map_file),
               "refs": dose_reference(safety_asset)}
@@ -312,11 +317,13 @@ def v3_features(spec: dict, arm_label: str, class_map: dict, dose_reference: dic
     from ..safety3 import UNINFORMATIVE, _unit
     from ..spa2.taxonomy import drug_class, modality
 
-    label = arm_label.casefold()
+    from .arms import ArmResolver
 
-    def on_arm(item) -> bool:
-        arms = [_text(a).casefold() for a in item.get("arms") or []]
-        return not arms or any(label in a or a in label for a in arms)
+    resolver = ArmResolver(spec)
+    arm_id = resolver.arm_id_of_label(arm_label)
+
+    def on_arm(item) -> bool:                          # whole-word arm resolution (clinical_asset.trial.arms, L019)
+        return resolver.item_applies_to(item, arm_id) if arm_id else not item.get("arms")
 
     classes, agents, rel = set(), [], []
     for it in spec["interventions"]:
@@ -362,8 +369,14 @@ def v3_arm_events(spec: dict, arm: dict, model: dict, asset: dict, class_map: di
     pred = predict_arm(asset, feats)
     out = [{"term": e["event"], "seriousness": e["seriousness"], "source": f"safety_v3:{pred['status']}", "logit_mu": e["logit_mu"],
             "logit_sigma": e["logit_sigma"], "rate_median": e["rate"]} for e in pred["events"]]
-    out += [e for e in arm_events({**model, "adverse_events_asset": {}}, arm["arm_id"])]           # protocol-stated incidences
-    return out, {"status": pred["status"], "reason": pred.get("reason"), "features": feats, "classes_without_data": pred.get("classes_without_data")}
+    cited = [e for e in arm_events({**model, "adverse_events_asset": {}}, arm["arm_id"])]          # protocol-stated incidences
+    out += cited
+    status, reason = pred["status"], pred.get("reason")
+    if status == "UNRESOLVED":                  # no drug class in the asset (L034): the protocol's own figures, else none
+        status = "PROTOCOL_CITED" if cited else "NO_EVIDENCE"
+        reason = (f"{reason}; the protocol's cited incidences are used ({len(cited)} events)" if cited else
+                  f"{reason}; the protocol cites no incidence for this arm: no source quantifies its adverse events, so none are simulated")
+    return out, {"status": status, "reason": reason, "features": feats, "classes_without_data": pred.get("classes_without_data")}
 
 
 # ----------------------------------------------------------------------------- drug classes of agents new to the class map

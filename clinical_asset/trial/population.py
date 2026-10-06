@@ -434,6 +434,39 @@ def protocol_query(spec: dict):
                          disease_family=None if family == "other" else family)
 
 
+def age_class_mixture(generator: Any, query: Any) -> list[tuple[str, float]]:
+    """The age classes to draw ages from (lesson L020). With a stated age limit the class follows from it. With none,
+    the class is UNKNOWN, not 'mixed children and adults': ages are a mixture over the classes in proportion to the
+    V3 studies of the protocol's disease family in each class (all studies when the family has none). Querying the
+    MIXED class instead had dropped the disease family and drawn generic ages (mean 38 for a urothelial trial)."""
+    model = (getattr(generator, "models", None) or {}).get("age_mean")
+    if query.min_age is not None or query.max_age is not None or model is None:
+        return [(query.age_class, 1.0)]
+    nodes = model.nodes
+    counts = {p[0]: n["studies"] for p, n in nodes.items() if query.disease_family and len(p) == 2 and p[1] == query.disease_family}
+    if not counts:
+        counts = {p[0]: n["studies"] for p, n in nodes.items() if len(p) == 1}
+    total = sum(counts.values())
+    return sorted(((c, k / total) for c, k in counts.items() if k), key=lambda x: -x[1])
+
+
+def mixed_ages(generator: Any, query: Any, mixture: list[tuple[str, float]], n: int, seed: int) -> list[float]:
+    """n ages drawn from the age-class mixture (largest-remainder allocation), in a seeded random order."""
+    from dataclasses import replace
+
+    raw = [w * n for _, w in mixture]
+    alloc = [int(x) for x in raw]
+    for i in sorted(range(len(raw)), key=lambda i: alloc[i] - raw[i])[: n - sum(alloc)]:
+        alloc[i] += 1
+    ages: list[float] = []
+    for (cls, _), k in zip(mixture, alloc, strict=True):
+        if k:
+            q = replace(query, age_class=cls)
+            ages += generator.sample(generator.parameters(q, None, True, seed), k, seed)["age"]
+    order = np.random.default_rng(seed + 31).permutation(len(ages))
+    return [float(ages[i]) for i in order]
+
+
 def build_population(model_client: Any, spec_lock: Path, facts_lock: Path, out_dir: Path, n: int = 10000, seed: int = 20260927,
                      votes: int = 3, generator: Any = None) -> dict:
     from ..spa3.protocol import BaselineGenerator
@@ -445,8 +478,12 @@ def build_population(model_client: Any, spec_lock: Path, facts_lock: Path, out_d
     query = protocol_query(spec)
     params = generator.parameters(query, None, True, seed)
     v3 = generator.sample(params, n, seed)
+    mixture = age_class_mixture(generator, query)
+    if mixture != [(query.age_class, 1.0)]:
+        v3["age"] = mixed_ages(generator, query, mixture, n, seed)
     bindings = bind_facts(model_client, spec, facts, votes=votes, section_text=_section_text_of(facts_record))
     model = population_model(spec, facts, bindings, params)
+    model["demographic:age"]["age_class_mixture"] = [{"age_class": c, "weight": round(w, 4)} for c, w in mixture]
     patients = sample_population(model, v3, n, seed)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -507,12 +544,13 @@ def _section_text_of(facts_record: dict):
     """The protocol text (with tables) a fact was extracted from, read from the PDF the facts lock names; the PDF's
     checksum must match the lock."""
     from ..protocol.ingest import extract
-    from .lock import LockError, sha256_file
+    from .lock import LockError, resolve, sha256_file
 
     pdf = facts_record["inputs"]["protocol_pdf"]
-    if sha256_file(Path(pdf["path"])) != pdf["sha256"]:
-        raise LockError(f"{pdf['path']} differs from the PDF the facts were locked from")
-    doc = extract(Path(pdf["path"]))
+    path = resolve(pdf["path"])                        # a protocol renamed since the facts were locked (alias manifest)
+    if sha256_file(path) != pdf["sha256"]:
+        raise LockError(f"{path} differs from the PDF the facts were locked from")
+    doc = extract(path)
 
     def text(fact: dict) -> str:
         parts = []

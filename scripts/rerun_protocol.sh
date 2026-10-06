@@ -7,9 +7,12 @@ set -euo pipefail
 ID=$1; PDF=$2; SPEC_DIR=$3; ENGINE=$4; V=$5; FACTS=$6; OUT_ROOT=$7; NCT=${8:-}; FETCHED=${9:-}
 export PYTHONPATH=. PYTHONIOENCODING=utf-8
 P=".venv/Scripts/python.exe -m clinical_asset.cli"; L=data/locked/$ID; T=$OUT_ROOT/$ID/v$V
-ASSET=${OPERATIONAL_ASSET:-data/planning_asset_v2_2/operational}; ASSET_LOCK=${OPERATIONAL_ASSET_LOCK:-data/locked/planning_asset/operational_v2.2.0/lock.json}
-V3_DIR=${V3_DIR:-data/simulation_parameters_v3}   # an as-of-T0 build under CLINICAL_EVIDENCE_CUTOFF
-SAFETY=${SAFETY_ASSET:-data/locked/safety_asset/v3.1.0}
+# asset paths come from the asset profile (CLINICAL_ASSET_PROFILE: v1 default, v2 = the 5,000-trial corpus), unless set
+profile_path() { .venv/Scripts/python.exe -c "from clinical_asset import assets; print(assets.path('$1').as_posix())"; }
+ASSET=${OPERATIONAL_ASSET:-$(profile_path operational)}
+ASSET_LOCK=${OPERATIONAL_ASSET_LOCK:-$( [ -f "$ASSET/../lock.json" ] && echo "$ASSET/../lock.json" || ( [ -f "$ASSET/lock.json" ] && echo "$ASSET/lock.json" ) || echo data/locked/planning_asset/operational_v2.2.0/lock.json)}
+V3_DIR=${V3_DIR:-$(profile_path params_v3)}   # an as-of-T0 build under CLINICAL_EVIDENCE_CUTOFF
+SAFETY=${SAFETY_ASSET:-$(profile_path safety)}
 mkdir -p "$T"
 lock() { if [ -d "$2" ]; then echo "exists $2 (kept)"; return; fi
   $P lock-stage --stage "$1" --out "$2" --kind "$3" --version "$V" "${@:4}" --code clinical_asset > /dev/null; echo "locked $2"; }
@@ -47,13 +50,7 @@ lock "$T/outcomes" "$L/outcomes_v$V" outcomes --input studyspec=$SPEC/lock.json 
 OUT=$L/outcomes_v$V
 
 if [ "$ENGINE" = auto ]; then
-  ENGINE=$(.venv/Scripts/python.exe -c "
-import json
-s = json.load(open('$SPEC/studyspec.json', encoding='utf-8'))
-esc = any(r['kind'] == 'dose_escalation' for r in s.get('decision_rules') or [])
-tte = any(e['role'] == 'primary' and e.get('type') == 'time_to_event' for e in s['endpoints']) and len(s['arms']) > 1
-ni = len(s['arms']) > 1 and any(e['role'] == 'primary' and e.get('type') == 'binary' for e in s['endpoints']) and 'preserv' in json.dumps(s.get('analyses')).lower()
-print('escalation' if esc else 'tte' if tte else 'ni' if ni else 'binary')")
+  ENGINE=$(.venv/Scripts/python.exe -m clinical_asset.trial.engine_choice "$SPEC/studyspec.json")
   echo "engine chosen from the StudySpec: $ENGINE"
 fi
 unresolved_results() {   # the engine could not run: an UNRESOLVED result with its reason, and the chain goes on
@@ -74,6 +71,9 @@ case "$ENGINE" in
   ni)
     $P run-ni-binary --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json ;;
+  continuous)
+    $P run-continuous --studyspec "$SPEC" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
+    lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json ;;
   escalation)
     $P run-escalation --studyspec "$SPEC" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json ;;
@@ -95,7 +95,15 @@ lock "$T/outputs" "$L/outputs_v$V" outputs --input studyspec=$SPEC/lock.json --i
 locked "$L/journey_v$V" || $P run-journey --studyspec "$SPEC" --protocol "$PDF" --cohorts "$L/cohorts_v$V" --eligibility "$L/eligibility_v$V"   --outputs "$L/outputs_v$V" --safety "$L/safety_v$V" --outcomes "$OUT" --facts "$FACTS_LOCK" --out "$T/journey" > "$T/journey.log" 2>&1
 lock "$T/journey" "$L/journey_v$V" journey --input studyspec=$SPEC/lock.json --input cohorts=$L/cohorts_v$V/lock.json   --input outputs=$L/outputs_v$V/lock.json --input safety=$L/safety_v$V/lock.json --input outcomes=$OUT/lock.json --input facts=$FACTS_LOCK/lock.json
 
-[ -z "$NCT" ] && { echo "predictions locked; no registry comparison (blind)"; exit 0; }
+locked "$L/endpoints_v$V" || $P run-endpoints --studyspec "$SPEC" --journey "$L/journey_v$V" --safety "$L/safety_v$V" --facts "$FACTS_LOCK" \
+  --out "$T/endpoints" > "$T/endpoints.log" 2>&1
+lock "$T/endpoints" "$L/endpoints_v$V" endpoints --input studyspec=$SPEC/lock.json --input journey=$L/journey_v$V/lock.json \
+  --input safety=$L/safety_v$V/lock.json --input facts=$FACTS_LOCK/lock.json
+
+locked "$L/analysis_v$V" || $P build-analysis-results --studyspec "$SPEC" --journey "$L/journey_v$V" --safety "$L/safety_v$V"   --eligibility "$L/eligibility_v$V" --outcomes "$OUT" --facts "$FACTS_LOCK" --out "$T/analysis" > "$T/analysis.log" 2>&1
+lock "$T/analysis" "$L/analysis_v$V" analysis --input studyspec=$SPEC/lock.json --input journey=$L/journey_v$V/lock.json   --input safety=$L/safety_v$V/lock.json --input eligibility=$L/eligibility_v$V/lock.json --input outcomes=$OUT/lock.json
+
+[ -z "$NCT" ] && { echo "predictions locked; no registry comparison"; exit 0; }
 REG=data/holdout_comparison/$NCT.json
 case "$ENGINE" in
   tte) $P compare-registry --results "$L/results_v$V" --population "$L/population_v$V" --cohorts "$L/cohorts_v$V" --outcomes "$OUT" \

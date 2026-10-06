@@ -185,7 +185,9 @@ def run_compare(results_lock: Path, population_lock: Path, cohorts_lock: Path, o
     results = load_locked(results_lock, "trial_results.json")
     model = load_locked(outcomes_lock, "outcome_model.json")
     pop = load_locked(population_lock, "population_model.json")["model"]
-    spec_path = Path(json.loads((Path(results_lock) / "lock.json").read_text(encoding="utf-8"))["inputs"]["studyspec"]["path"]).parent
+    from .lock import resolve
+
+    spec_path = resolve(json.loads((Path(results_lock) / "lock.json").read_text(encoding="utf-8"))["inputs"]["studyspec"]["path"]).parent
     spec, _ = load_studyspec(spec_path)
     first = next(p for p in sorted(Path(cohorts_lock).glob("cohort_*.jsonl")))
     with open(first, encoding="utf-8") as fh:

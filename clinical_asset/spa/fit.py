@@ -24,8 +24,9 @@ from scipy import stats
 from .contexts import build_contexts, parameter_id
 from .evidence import ASSET, atomize, load_frozen_profiles
 from .models import BetaBinomial, DirichletMultinomial, Fit, NormalRandomEffects
+from .. import assets as _assets
 
-OUT = Path("data/simulation_parameters_v1")
+OUT = _assets.path("params_v1")
 MODEL_VERSION = "spa-milestone-1.0.0"
 RATIO_MEASURES = (
     (re.compile(r"hazard.*\blog\b|\blog\b.*hazard", re.IGNORECASE), "hazard_ratio", True),

@@ -65,7 +65,8 @@ def write(states: list, spec: dict, sched: dict, out_dir: Path, traces: int = 3)
         adsl.append({**dm_[-1], "TRTSDY": 1, "TRTEDY": st.off_treatment[0], "EOTREAS": st.off_treatment[1],
                      "N_CYCLES": max((x["cycle"] for x in st.exposure), default=0), "N_REDUCTIONS": sum(st.reductions.values()),
                      "N_HOLDS": len(st.holds), "RDI": round(given / planned, 3) if planned else None,
-                     "ANY_SAE": "Y" if any(e["serious"] for e in st.ae) else "N", "ANY_GR3": "Y" if any(e["grade"] >= 3 for e in st.ae) else "N"})
+                     "ANY_SAE": "Y" if any(e["serious"] for e in st.ae) else "N", "ANY_GR3": "Y" if any(e["grade"] >= 3 for e in st.ae) else "N",
+                     "DTHFL": "Y" if st.death_day is not None else "N", "DTHDY": st.death_day})
         for e in ae:
             if e["USUBJID"] == usub:
                 adae.append({**e, "ARMCD": st.arm_id, "TRTEMFL": "Y" if e["AESTDY"] <= st.off_treatment[0] + 30 else "N"})
@@ -74,6 +75,10 @@ def write(states: list, spec: dict, sched: dict, out_dir: Path, traces: int = 3)
         adtte.append({"USUBJID": usub, "ARMCD": st.arm_id, "PARAMCD": "PFS", "PARAM": "Progression-free survival (detected at assessment)",
                       "AVAL_DAYS": pfs_day if pfs_day else last, "CNSR": 0 if pfs_day else 1,
                       "EVNTDESC": "progression detected at scheduled tumour assessment" if pfs_day else "censored at last tumour assessment"})
+        last_seen = max([ev["day"] for ev in st.events] + [st.off_treatment[0]])
+        adtte.append({"USUBJID": usub, "ARMCD": st.arm_id, "PARAMCD": "OS", "PARAM": "Overall survival (death in the simulated horizon)",
+                      "AVAL_DAYS": st.death_day if st.death_day is not None else last_seen, "CNSR": 0 if st.death_day is not None else 1,
+                      "EVNTDESC": "death" if st.death_day is not None else "censored at last simulated contact"})
     for name, rows in (("dm", dm_), ("ex", ex), ("ae", ae), ("lb", lb), ("rs", rs), ("ds", ds), ("sv", sv),
                        ("adsl", adsl), ("adae", adae), ("adtte", adtte)):
         _csv(out / f"{name}.csv", rows)
@@ -96,7 +101,9 @@ def write(states: list, spec: dict, sched: dict, out_dir: Path, traces: int = 3)
     return {"subjects": n, "traces": [s.subject_id for s in chosen],
             "any_dose_hold": sum(bool(s.holds) for s in states), "any_dose_reduction": sum(bool(sum(s.reductions.values())) for s in states),
             "discontinued_for_ae": sum(s.off_treatment[1].startswith("adverse") for s in states),
-            "end_of_treatment_reasons": reasons, "median_rdi": sorted(r["RDI"] for r in adsl if r["RDI"] is not None)[n // 2] if n else None,
+            "deaths": sum(s.death_day is not None for s in states),
+            "deaths_on_treatment": sum(s.off_treatment[1] == "death" for s in states),
+            "end_of_treatment_reasons": reasons, "median_rdi": (lambda v: v[len(v) // 2] if v else None)(sorted(r["RDI"] for r in adsl if r["RDI"] is not None)),
             "progression_detected": sum(s.progression_detected_day is not None for s in states),
             "adverse_events_after_reporting_window_dropped": sum(s.dropped_after_off_treatment for s in states),
             "rules_undecidable": sorted({u for s in states for e in s.ae for d in (e.get("decisions") or {}).values() for u in d["undecidable"]})}

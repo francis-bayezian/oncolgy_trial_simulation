@@ -22,6 +22,7 @@ from pathlib import Path
 import numpy as np
 
 from ..protocol import expressions as ex
+from .. import assets as _assets
 
 RECRUITMENT_VERSION = "recruitment-1.0.0"
 THRESHOLD_WORDING = re.compile(r"\b(concern|slower than|faster than|or less|or more|below|above|if the|unless)\b", re.IGNORECASE)
@@ -102,6 +103,35 @@ def stratum_of(strata: list[dict], patient: dict) -> str:
     return met[0] if len(met) == 1 else "UNRESOLVED"
 
 
+def _stratum(strata: list[dict], patient: dict, rng: np.random.Generator) -> dict:
+    """The patient's stratum; when the generated data cannot decide it, a stratum drawn at random among the protocol's
+    strata (flagged): randomisation is balanced within strata, so the choice does not change the arm allocation."""
+    if not strata:
+        return {"stratum": None}
+    s = stratum_of(strata, patient)
+    if s != "UNRESOLVED":
+        return {"stratum": s}
+    return {"stratum": strata[int(rng.integers(len(strata)))]["stratum_id"], "stratum_assigned": "at random (patient data cannot decide it)"}
+
+
+def historical_scenario(spec: dict, target: int) -> dict | None:
+    """The historical accrual model's median rate for this protocol (the planning headline, L024), as a scenario."""
+    import os
+
+    from ..planning.report import _historical
+
+    asset = Path(os.environ.get("OPERATIONAL_ASSET") or _assets.path("operational"))
+    try:
+        h = _historical(asset, spec, target)
+    except Exception:  # noqa: BLE001 - no historical model: the protocol's own rates only
+        return None
+    if h.get("status") != "RESOLVED":
+        return None
+    rate = h["patients_per_year"]["median"]
+    return {"scenario": f"accrual_historical_{rate:.1f}_per_year", "rate_per_year": float(rate), "headline": True,
+            "evidence": f"historical accrual model median for this protocol ({h.get('source')})", "percentiles": h["patients_per_year"].get("percentiles")}
+
+
 def enrollment_draws(pool_size: int, n: int, rate: float, ratio: list[float], rng: np.random.Generator) -> tuple:
     """Which pool patients arrive (in order), their arrival days (Poisson process) and their allocated arm index."""
     order = rng.permutation(pool_size)[:n]
@@ -111,16 +141,54 @@ def enrollment_draws(pool_size: int, n: int, rate: float, ratio: list[float], rn
     return order, days, allocation
 
 
-def enroll(pool: list[dict], eligibility: dict[str, dict], plan: dict, randomization: dict, rate: float, seed: int) -> list[dict]:
+WITHIN_PATIENT = re.compile(r"intra-?patient|within-?patient|(?:serve|act)s? as (?:their|his|her) own control|cross-?over|"
+                            r"each (?:patient|participant|subject) (?:will )?receives? (?:both|all|each)", re.I)
+
+
+def within_patient(spec: dict) -> dict | None:
+    """A design in which every patient receives every arm in sequence (L035): stated in the design summary, the
+    randomisation method or a paired / within-patient primary analysis. Returns the arm order (by the treatment phase
+    in which each arm's product is first given) or None for a parallel design."""
+    from .arms import ArmResolver
+
+    texts = [_q((spec.get("metadata") or {}).get("design_summary")), _q((spec.get("randomization") or {}).get("method"))]
+    quals = [q for a in spec.get("analyses") or [] for q in a.get("design_qualifiers") or []]
+    stated = any(WITHIN_PATIENT.search(t or "") for t in texts) or any(q in ("intra-patient", "within-patient") for q in quals)
+    if not stated or len(spec.get("arms") or []) < 2:
+        return None
+    r = ArmResolver(spec)
+    seq = {p["phase_id"]: p.get("sequence_number") or i for i, p in enumerate(spec.get("treatment_phases") or [], 1)}
+    first = {}
+    for it in spec.get("interventions") or []:
+        for aid in r.arms_of_item(it) or []:
+            if len(r.arms_of_item(it) or []) == 1:
+                first[aid] = min(first.get(aid, 10 ** 6), seq.get(it.get("phase_id"), 10 ** 6))
+    order = sorted((a["arm_id"] for a in spec["arms"]), key=lambda k: first.get(k, 10 ** 6))
+    return {"arm_order": order, "evidence": next((t for t in texts if t and WITHIN_PATIENT.search(t)), None) or "paired within-patient analysis"}
+
+
+def enroll(pool: list[dict], eligibility: dict[str, dict], plan: dict, randomization: dict, rate: float, seed: int,
+           within: dict | None = None) -> list[dict]:
     rng = np.random.default_rng(seed)
     arms = randomization["arms"]
+    if within:                                  # every patient receives every arm, in the protocol's order (L035)
+        order, days, _ = enrollment_draws(len(pool), plan["target"]["patients"], rate, [1.0], rng)
+        cohort = []
+        for k, (i, day) in enumerate(zip(order, days, strict=True)):
+            p = pool[int(i)]
+            strat = _stratum(randomization["strata"], p, rng)
+            for period, aid in enumerate(within["arm_order"], 1):
+                cohort.append({"subject_id": f"S{k + 1:04d}-P{period}", "patient_id": p["patient_id"], "patient_subject": f"S{k + 1:04d}",
+                               "period": period, "enrollment_day": float(day), "arm_id": aid, **strat,
+                               "unchecked_criteria": eligibility[p["patient_id"]]["unknown"], "baseline": p})
+        return cohort
     order, days, allocation = enrollment_draws(len(pool), plan["target"]["patients"], rate,
                                                randomization["ratio"] or [1.0] * len(arms), rng)
     cohort = []
     for k, (i, day, a) in enumerate(zip(order, days, allocation, strict=True)):
         p = pool[int(i)]
         cohort.append({"subject_id": f"S{k + 1:04d}", "patient_id": p["patient_id"], "enrollment_day": float(day),
-                       "arm_id": arms[int(a)]["arm_id"], "stratum": stratum_of(randomization["strata"], p),
+                       "arm_id": arms[int(a)]["arm_id"], **_stratum(randomization["strata"], p, rng),
                        "unchecked_criteria": eligibility[p["patient_id"]]["unknown"], "baseline": p})
     return cohort
 
@@ -137,20 +205,33 @@ def build_cohorts(spec_lock: Path, population_lock: Path, eligibility_lock: Path
         eligibility = {r["patient_id"]: r for r in map(json.loads, fh)}
     pool = [p for p in patients if eligibility[p["patient_id"]]["status"] != "INELIGIBLE"]
     plan, randomization = accrual_plan(spec), randomization_plan(spec)
-    if plan["target"] is None:
-        raise ValueError("the protocol states no enrollment target: recruitment is unresolved")
-    if not plan["scenarios"]:  # who enrolls can still be simulated; when they enroll cannot
+    if plan["target"] is None:                  # no stated accrual target: the evaluable target (L031)
+        ev = [x for x in spec.get("sample_size") or [] if x.get("quantity") == "evaluable_target" and x.get("value")]
+        if ev:
+            plan["target"] = {"patients": int(max(x["value"] for x in ev)), "source": "evaluable target (no stated accrual target)"}
+    if plan["target"] is None:                  # no stated target: the largest final stage of a decision rule
+        stages = [st.get("n") for r in spec.get("decision_rules") or [] for st in ((r.get("rule") or {}).get("stages") or []) if st.get("n")]
+        if not stages:
+            raise ValueError("the protocol states no enrollment target and no decision-rule sample size")
+        plan["target"] = {"patients": int(max(stages)), "source": "largest decision-rule stage size (no stated target accrual)"}
+    hist = historical_scenario(spec, plan["target"]["patients"])
+    if hist:                                    # the evidence scenario first: the headline for every later stage (L024)
+        plan["scenarios"] = [hist] + plan["scenarios"]
+    if not plan["scenarios"]:
         plan["scenarios"] = [{"scenario": "accrual_rate_unresolved", "rate_per_year": None,
-                              "evidence": "no accrual rate estimate is stated: enrollment days are placeholders in arrival order"}]
+                              "evidence": "no accrual rate stated and no historical model: enrollment days are placeholders in arrival order"}]
+    plan["headline_scenario"] = plan["scenarios"][0]["scenario"]
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     per = {}
+    within = within_patient(spec)
+    plan["design"] = {"within_patient": within} if within else {"within_patient": None}
     for k, sc in enumerate(plan["scenarios"]):
-        cohort = enroll(pool, eligibility, plan, randomization, sc["rate_per_year"], seed + k)
+        cohort = enroll(pool, eligibility, plan, randomization, sc["rate_per_year"], seed + k, within)
         with open(out_dir / f"cohort_{sc['scenario']}.jsonl", "w", encoding="utf-8") as fh:
             fh.writelines(json.dumps(c, ensure_ascii=False) + "\n" for c in cohort)
         per[sc["scenario"]] = _cohort_summary(cohort, randomization)
-    summary = {"pool": len(pool), "target": plan["target"], "scenarios": per}
+    summary = {"pool": len(pool), "target": plan["target"], "scenarios": per, "headline_scenario": plan["headline_scenario"]}
     doc = {"recruitment_version": RECRUITMENT_VERSION, "seed": seed,
            "inputs": {"studyspec": spec_record["files"]["studyspec.json"], "population": pop_record["files"]["population.jsonl"],
                       "eligibility": el_record["files"]["eligibility.jsonl"]},

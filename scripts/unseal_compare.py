@@ -1,4 +1,6 @@
-"""Unseal one blind trial: fetch its registry record AFTER its predictions are locked, verify the sealed category
+"""HISTORICAL (the retired blind-test unsealing; outputs now live in data/trial/runs/<NCT>/history/blind).
+
+Unseal one blind trial: fetch its registry record AFTER its predictions are locked, verify the sealed category
 commitment, and score the locked predictions (nothing is re-run).
 
 usage: python scripts/unseal_compare.py LABEL NCT ENGINE(tte|binary|escalation) VERSION

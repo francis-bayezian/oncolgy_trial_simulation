@@ -548,5 +548,249 @@
   "Oy",
   "SAS",
   "S.A.S."
+ ],
+ "endpoint_classes": {
+  "_note": "endpoint wording -> evidence variable (clinical_asset.trial.quantify); first match wins, so narrower definitions come first",
+  "time_to_event": [
+   [
+    "duration_of_response",
+    [
+     "duration of response",
+     "response duration",
+     "dor",
+     "duration of remission",
+     "duration of overall response",
+     "duration of overall cr",
+     "duration of complete response"
+    ]
+   ],
+   [
+    "time_to_response",
+    [
+     "time to response",
+     "time-to-response"
+    ]
+   ],
+   [
+    "time_to_treatment_failure",
+    [
+     "time to treatment failure",
+     "treatment failure"
+    ]
+   ],
+   [
+    "time_to_progression",
+    [
+     "time to progression",
+     "time-to-progression",
+     "ttp"
+    ]
+   ],
+   [
+    "progression_free_survival",
+    [
+     "progression-free",
+     "progression free",
+     "pfs"
+    ]
+   ],
+   [
+    "event_free_survival",
+    [
+     "event-free",
+     "event free",
+     "efs"
+    ]
+   ],
+   [
+    "relapse_free_survival",
+    [
+     "relapse-free",
+     "relapse free",
+     "recurrence-free",
+     "rfs"
+    ]
+   ],
+   [
+    "disease_free_survival",
+    [
+     "disease-free",
+     "disease free",
+     "dfs"
+    ]
+   ],
+   [
+    "overall_survival",
+    [
+     "overall survival",
+     "survival",
+     " os "
+    ]
+   ]
+  ],
+  "proportion": [
+   [
+    "pathological_complete_response",
+    [
+     "pathologic complete",
+     "pathological complete",
+     "pcr"
+    ]
+   ],
+   [
+    "complete_response",
+    [
+     "complete response",
+     "complete remission",
+     " cr "
+    ]
+   ],
+   [
+    "disease_control_rate",
+    [
+     "disease control",
+     "dcr",
+     "controlled"
+    ]
+   ],
+   [
+    "clinical_benefit_rate",
+    [
+     "clinical benefit",
+     "cbr"
+    ]
+   ],
+   [
+    "objective_response_rate",
+    [
+     "objective response",
+     "overall response",
+     "response rate",
+     "orr",
+     "responding",
+     "responder",
+     "clinical response",
+     "pathological response",
+     "pathologic response",
+     "tumour response",
+     "tumor response"
+    ]
+   ]
+  ],
+  "safety": [
+   "toxicit",
+   "adverse",
+   "safety",
+   "dose-limiting",
+   "dose limiting",
+   "dlt",
+   "tolerab",
+   "maximum tolerated",
+   "mtd",
+   "side effect",
+   " aes",
+   " ae ",
+   "saes",
+   " sae",
+   "grade 3",
+   "grade≥3",
+   "grade ≥3",
+   "events of special interest",
+   "laboratory",
+   "dose reduction",
+   "interruption"
+  ],
+  "not_simulated": [
+   [
+    "physiological_measurement",
+    [
+     "vital sign",
+     "ecg",
+     "electrocardiogra",
+     "ejection fraction",
+     "lvef",
+     "blood pressure"
+    ]
+   ],
+   [
+    "patient_reported_outcome",
+    [
+     "quality of life",
+     "qol",
+     "eq-5d",
+     "patient-reported",
+     "patient reported",
+     "qlq",
+     "fact-"
+    ]
+   ],
+   [
+    "pharmacokinetics",
+    [
+     "pharmacokinetic",
+     "auc",
+     "cmax",
+     "half-life",
+     "plasma concentration",
+     " pk"
+    ]
+   ],
+   [
+    "biomarker_or_immunology",
+    [
+     "biomarker",
+     "immune response",
+     "immunolog",
+     "t cell",
+     "t-cell",
+     "antibod",
+     "expression",
+     "ctdna"
+    ]
+   ],
+   [
+    "health_economics",
+    [
+     "quality adjusted",
+     "qaly",
+     "cost"
+    ]
+   ],
+   [
+    "qualitative_or_feasibility",
+    [
+     "qualitative",
+     "feasib",
+     "compliance",
+     "acceptab"
+    ]
+   ]
+  ]
+ },
+ "sponsor_nonindustry_words": [
+  "group",
+  "university",
+  "universit",
+  "institute",
+  "institut",
+  "hospital",
+  "hôpital",
+  "center",
+  "centre",
+  "foundation",
+  "national",
+  "cooperative",
+  "consortium",
+  "society",
+  "network",
+  "council",
+  "college",
+  "clinic",
+  "ministry",
+  "agency",
+  "academic",
+  "unicancer",
+  "medical school",
+  "health service"
  ]
 }
