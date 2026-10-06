@@ -1,0 +1,85 @@
+{
+ "subjects": 10,
+ "traces": [
+  "S0003",
+  "S0006",
+  "S0007"
+ ],
+ "any_dose_hold": 0,
+ "any_dose_reduction": 0,
+ "discontinued_for_ae": 0,
+ "deaths": 0,
+ "deaths_on_treatment": 0,
+ "end_of_treatment_reasons": {
+  "completed planned procedures": 10
+ },
+ "median_rdi": null,
+ "progression_detected": 0,
+ "adverse_events_after_reporting_window_dropped": 0,
+ "rules_undecidable": [],
+ "screening_funnel": {
+  "generated_patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7709,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2291
+  },
+  "not_ruled_out_share": 0.7709,
+  "undecidable_criteria": [
+   "EL001",
+   "EL003",
+   "EL004",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL009",
+   "EL010",
+   "EL011",
+   "EL012",
+   "EL013",
+   "EL014",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL020",
+   "EL021"
+  ],
+  "screen_pass_rate": {
+   "value": 0.7675797157385383,
+   "evidence_level": "evidence",
+   "source": "registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened)",
+   "detail": {
+    "estimate": 0.7675797157385383,
+    "ci95": [
+     0.7516604195776948,
+     0.7827734506602645
+    ],
+    "single_trial_80": [
+     0.5176177549895294,
+     0.9104294529747281
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.5176283632374208,
+     "p30": 0.6758360275891045,
+     "p50": 0.7675797157385383,
+     "p70": 0.8395237839652355,
+     "p90": 0.9104259882989161
+    },
+    "tau_logit": 0.8760515738951,
+    "groups": 468,
+    "trials": 468,
+    "participants": 162721
+   }
+  },
+  "target": 10.0,
+  "patients_to_screen": {
+   "estimate": 14,
+   "range_80": [
+    11,
+    20
+   ],
+   "basis": "target / registry pass rate (the range is for a single new trial)"
+  }
+ }
+}

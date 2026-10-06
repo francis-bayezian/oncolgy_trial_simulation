@@ -1,0 +1,291 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 34,
+ "facts": [
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening laboratory assessments",
+   "time_origin": "randomization",
+   "quote": "During screening, assessments must be done within 28 days prior to randomization.",
+   "reason": "The protocol places screening assessments within 28 days before randomization.",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "tory assessments X randomization See Table 12-1 for more details. Coagulation tests X 2 microglobulin X (X) At screening and as clinically indicated. NT-proBNP X At screening. During screening, assessments must be done within 28 days prior to randomization. Quantitative immunoglobulins X (X) To be repeated only in case of clinical need, such as recurrent infections For subjects with unknown",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The evidence states that screening assessments must occur within 28 days before randomization."
+   },
+   "status": "VERIFIED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening disease-specific assessments",
+   "time_origin": "unclear",
+   "quote": "Screening disease-specific assessments must be done within 28 day screening window and repeated on C1D1 if not SPEP/UPEP/SFLC/SIFEd performed within 14 days (of C1D1).",
+   "reason": "Disease-specific screening assessments use a 28-day screening window.",
+   "fact_id": "SF02",
+   "issues": [
+    "quote not found verbatim in the protocol text"
+   ],
+   "evidence": ""
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "measurable disease assessment",
+   "time_origin": "randomization",
+   "quote": "Measurable disease with at least 1 of the following assessed within 28 days prior to randomization:",
+   "reason": "Measurable disease must be assessed within 28 days before randomization.",
+   "fact_id": "SF03",
+   "issues": [],
+   "evidence": "de 4 or grade 2 with pain and if not resolved within the 14 days before enrollment, is less than or equal to grade 2 without pain. Patients are permitted to have received single agent lenalidomide as maintenance therapy within 60 days of enrollment. 108 Measurable disease with at least 1 of the following assessed within 28 days prior to randomization:  IgG multiple myeloma: serum monoclonal",
+   "verification": {
+    "votes": [
+     "INCOMPLETE",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering matches the stated measurable-disease assessment window."
+   },
+   "status": "VERIFIED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 45,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "bone lesion radiographic assessment",
+   "time_origin": "cycle_day",
+   "quote": "A standard of care bone lesion radiographic assessment performed within 45 days of Cycle 1 Day 1 may be used as the Screening assessment, and does not need to be repeated, unless standard of care method of assessment is different",
+   "reason": "A qualifying bone lesion assessment may serve as screening if performed within 45 days of Cycle 1 Day 1.",
+   "fact_id": "SF04",
+   "issues": [],
+   "evidence": "th confirmed PD or have Serum calcium started new antimyeloma therapy or if assessments were performed within 14 days prior to the safety follow-up visit. A standard of care bone lesion radiographic assessment performed within 45 days of Cycle 1 Day 1 may be used as the Screening assessment, and does not need to be repeated, unless standard of care method of assessment is different Bone lesi",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "It replaces the Cycle 1 Day 1 anchor with an unspecified cycle day and omits the standard-of-care exception."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 30,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening echocardiogram",
+   "time_origin": "randomization",
+   "quote": "Screening ECHO may be done within 30 days prior to randomization, if performed as a part of standard of care.",
+   "reason": "A standard-of-care screening echocardiogram may be used within 30 days before randomization.",
+   "fact_id": "SF05",
+   "issues": [],
+   "evidence": "All subjects will have a baseline ECHO, including assessments of systolic and diastolic left ventricular function and right ventricular function. Screening ECHO may be done within 30 days prior to randomization, if performed as a part of standard of care. Echocardiogram is to be repeated approximately every 6 months (± 2 weeks) from cycle 1 day",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol makes screening ECHO optional and conditional on standard-of-care performance, not mandatory for all patients."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "myeloma disease assessment",
+   "time_origin": "cycle_day",
+   "quote": "every 28 days as part of every myeloma disease assessment",
+   "reason": "The protocol associates myeloma disease assessments with measurements collected every 28 days.",
+   "fact_id": "SF06",
+   "issues": [],
+   "evidence": "ral lab for analysis. Results for SPEP, UPEP, or SFLC must be available at screening and before randomization. Serum protein electrophoresis, UPEP, and SFLC will be repeated on cycle 1 day 1 (unless screening values are within 14 days of cycle 1 day 1). Post cycle 1 day 1, UPEP and UIFE will be collected every 28 days as part of every myeloma disease assessment, along with SPEP, SIFE, and SF",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCOMPLETE",
+     "INCOMPLETE"
+    ],
+    "reviewer_note": "The rendering omits that the recurring schedule begins post cycle 1 day 1."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "myeloma disease laboratory markers",
+   "time_origin": "cycle_day",
+   "quote": "Post cycle 1 day 1, UPEP and UIFE will be collected every 28 days as part of every myeloma disease assessment, along with SPEP, SIFE, and SFLC, and submitted to the central laboratory for processing.",
+   "reason": "These disease-related laboratory markers are collected every 28 days after Cycle 1 Day 1.",
+   "fact_id": "SF07",
+   "issues": [],
+   "evidence": "nd before randomization. Serum protein electrophoresis, UPEP, and SFLC will be repeated on cycle 1 day 1 (unless screening values are within 14 days of cycle 1 day 1). Post cycle 1 day 1, UPEP and UIFE will be collected every 28 days as part of every myeloma disease assessment, along with SPEP, SIFE, and SFLC, and submitted to the central laboratory for processing. Subjects will be evaluate",
+   "verification": {
+    "votes": [
+     "INCOMPLETE",
+     "INCOMPLETE",
+     "INCOMPLETE"
+    ],
+    "reviewer_note": "It omits that the every-28-day collection begins post cycle 1 day 1."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 84,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "radiologic extramedullary plasmacytoma evaluation",
+   "time_origin": "unclear",
+   "quote": "If assessment can only be performed radiologically, then evaluation of extramedullary plasmacytomas may be done every 12 weeks.",
+   "reason": "The 12-week schedule applies only when radiologic assessment is required.",
+   "fact_id": "SF08",
+   "issues": [],
+   "evidence": "for subjects with a history of plasmacytoma or as clinically indicated during treatment for other subjects. If assessment can only be performed radiologically, then evaluation of extramedullary plasmacytomas may be done every 12 weeks. The same technique, which may include clinical evaluation by palpation, ultrasound, CT scan, magnetic resonance imaging (MRI), or PET/CT should be employed fo",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering changes 12 weeks to 84 days and omits the radiologic-only condition and permissive modality."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 84,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 14,
+   "more_often_if_indicated": true,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "HBV DNA monitoring",
+   "time_origin": "unclear",
+   "quote": "Subjects with positive testing or who have a prior history of HBV infection should have consultation with a specialist in HBV and have HBV DNA testing and monitoring of HBV DNA every 12 weeks ( 2 weeks) or more frequently, if clinically indicated, through safety follow-up.",
+   "reason": "HBV DNA monitoring is every 12 weeks with a 2-week tolerance for subjects with positive or prior HBV infection.",
+   "fact_id": "SF09",
+   "issues": [],
+   "evidence": "hould be followed as clinically indicated. Subjects with positive testing or who have a prior history of HBV infection should have consultation with a specialist in HBV and have HBV DNA testing and monitoring of HBV DNA every 12 weeks ( 2 weeks) or more frequently, if clinically indicated, through safety follow-up. Subjects that have received hepatitis B vaccination with only anti-HBs posit",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "It converts the stated interval and window to days and omits the through-safety-follow-up endpoint."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": null,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": true,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "quantitative immunoglobulins",
+   "time_origin": "unclear",
+   "quote": "Quantitative immunoglobulins X (X) To be repeated only in case of clinical need, such as recurrent infections",
+   "reason": "The protocol permits repeat quantitative immunoglobulins only when clinically needed.",
+   "fact_id": "SF10",
+   "issues": [
+    "no number"
+   ],
+   "evidence": "tory assessments X randomization See Table 12-1 for more details. Coagulation tests X 2 microglobulin X (X) At screening and as clinically indicated. NT-proBNP X At screening. During screening, assessments must be done within 28 days prior to randomization. Quantitative immunoglobulins X (X) To be repeated only in case of clinical need, such as recurrent infections For subjects with unknown"
+  },
+  {
+   "kind": "other",
+   "recurring": true,
+   "first_day": 1,
+   "interval_days": 182.4,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 14,
+   "more_often_if_indicated": true,
+   "approximate": true,
+   "applies_to_all_patients": true,
+   "assessment": "echocardiogram",
+   "time_origin": "cycle_day",
+   "quote": "Echocardiogram is to be repeated approximately every 6 months (± 2 weeks) from cycle 1 day 1 until safety follow-up visit, and additionally, if clinically indicated.",
+   "reason": "Echocardiograms recur approximately every 6 months from Cycle 1 Day 1 with a 2-week tolerance and additional testing if indicated.",
+   "fact_id": "SF11",
+   "issues": [],
+   "evidence": "olic left ventricular function and right ventricular function. Screening ECHO may be done within 30 days prior to randomization, if performed as a part of standard of care. Echocardiogram is to be repeated approximately every 6 months (± 2 weeks) from cycle 1 day 1 until safety follow-up visit, and additionally, if clinically indicated. An ECHO must be performed within 72 hours of the onset"
+  }
+ ]
+}

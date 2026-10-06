@@ -1,0 +1,175 @@
+{
+ "population_version": "population-1.0.0",
+ "seed": 20260927,
+ "n": 10000,
+ "inputs": {
+  "studyspec": "a1b01e69016caaaea6f2842aada05174c861b2c6deacd18f0665988256f7b174",
+  "facts": "c28a4939bfaa06b9b5e71ae203cc8d8bce16604c5aadb9b3d00c799a8ae57868",
+  "simulation_parameters": "simulation_parameters_v3"
+ },
+ "model": {
+  "demographic:age": {
+   "source": "simulation_parameters_v3",
+   "type": "age",
+   "eligibility_years": [
+    18.0,
+    null
+   ],
+   "retrieval": {
+    "matched_path": [
+     "ADULT",
+     "urothelial"
+    ],
+    "matched_level": "disease_family",
+    "missing_levels": [
+     "disease",
+     "setting"
+    ],
+    "extrapolation_level": 2,
+    "support": {
+     "direct_studies": 0,
+     "direct_N": 0,
+     "borrowed_parent_studies": 2,
+     "effective_information": 0.749127684942106,
+     "effective_information_unit": "patient-equivalent N (outcome variance / posterior variance of the context parameter)"
+    }
+   },
+   "age_class_mixture": [
+    {
+     "age_class": "ADULT",
+     "weight": 1.0
+    }
+   ]
+  },
+  "demographic:sex": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "female": 0.22926554873272195,
+    "male": 0.770734451267278
+   }
+  },
+  "demographic:race": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "white": 0.8143167594384816,
+    "asian": 0.060165732338294545,
+    "unknown_or_not_reported": 0.035371990732514645,
+    "black_or_african_american": 0.07697541395407108,
+    "american_indian_or_alaska_native": 0.005739632159130082,
+    "more_than_one_race": 0.005415406074321763,
+    "native_hawaiian_or_other_pacific_islander": 0.002015065303186293
+   }
+  },
+  "demographic:ethnicity": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "not_hispanic_or_latino": 0.905029651586102,
+    "hispanic_or_latino": 0.063719540240192,
+    "unknown_or_not_reported": 0.03125080817370596
+   }
+  },
+  "umls:C0699749": {
+   "source": "protocol_facts",
+   "type": "categorical",
+   "probabilities": {
+    "T2 to T4": 0.3,
+    "__not_stated__": 0.7
+   },
+   "facts": [
+    "F001"
+   ]
+  },
+  "_unresolved": [
+   "umls:C0004002",
+   "umls:C0005437",
+   "umls:C0005558",
+   "umls:C0005821",
+   "umls:C0013798",
+   "umls:C0019046",
+   "umls:C0027950",
+   "umls:C0031117",
+   "umls:C0301508",
+   "umls:C0445034",
+   "umls:C0806692",
+   "umls:C1513183",
+   "umls:C1518965",
+   "umls:C1519630",
+   "umls:C5441537",
+   "var:accepted_effective_contraception",
+   "var:active_infection_requiring_systemic_antimicrobial_medication",
+   "var:active_secondary_cancers",
+   "var:active_uncontrolled_gord",
+   "var:alanine_aminotransferase",
+   "var:baseline_egfr",
+   "var:cisplatin_contraindications",
+   "var:ct_imaging",
+   "var:current_strong_cyp3a4_5_inhibitor_treatment",
+   "var:ecog_performance_status",
+   "var:edta_clearance_result",
+   "var:edta_result",
+   "var:formal_edta_clearance_testing",
+   "var:gfr",
+   "var:histologically_confirmed_primary_tcc_of_urinary_bladder",
+   "var:history_of_congestive_heart_failure",
+   "var:other_concurrent_serious_illness_or_medical_conditions",
+   "var:peripheral_neuropathy_grade",
+   "var:reproductive_potential",
+   "var:severe_hypersensitivity_reaction",
+   "var:strong_cyp3a4_5_inducer_treatment",
+   "var:strong_cyp3a4_5_inhibitor_treatment",
+   "var:uncontrolled_diabetes_mellitus"
+  ]
+ },
+ "bindings": [
+  {
+   "fact_id": "F001",
+   "kind": "share_of_category",
+   "variable": "umls:C0699749",
+   "category": "T2 to T4",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "The fact states that 30% of cases have tumour stage T2 or greater, corresponding to the listed T2 to T4 disease-stage category.",
+   "issues": [],
+   "rendering": "fact F001 is the share of patients whose disease stage (umls:C0699749) is 'T2 to T4' (characteristic_distribution: 'disease invading into the\\nmuscle wall of the bladder'; level 'tumour stage T2 or greater'; value 30% [read as proportion 0.3]; population 'cases'; source not_stated)",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the disease-stage category corresponding to T2 or greater muscle-invasive bladder disease."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  }
+ ],
+ "summary": {
+  "patients": 10000,
+  "age_mean": 64.26343,
+  "age_range": [
+   18.38,
+   105.11
+  ],
+  "share_known": {
+   "demographic:age": 1.0,
+   "demographic:sex": 1.0,
+   "demographic:race": 1.0,
+   "demographic:ethnicity": 1.0,
+   "umls:C0699749": 0.297
+  },
+  "unresolved_variables": 38,
+  "bindings": 1,
+  "usable_bindings": 1,
+  "sources": {
+   "demographic:age": "simulation_parameters_v3",
+   "demographic:sex": "simulation_parameters_v3",
+   "demographic:race": "simulation_parameters_v3",
+   "demographic:ethnicity": "simulation_parameters_v3",
+   "umls:C0699749": "protocol_facts"
+  }
+ }
+}

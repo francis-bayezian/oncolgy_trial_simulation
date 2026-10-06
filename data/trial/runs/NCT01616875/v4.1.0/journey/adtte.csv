@@ -1,0 +1,61 @@
+USUBJID,ARMCD,PARAMCD,PARAM,AVAL_DAYS,CNSR,EVNTDESC
+S0001,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0001,ARM1,OS,Overall survival (death in the simulated horizon),113,1,censored at last simulated contact
+S0002,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0002,ARM1,OS,Overall survival (death in the simulated horizon),112,1,censored at last simulated contact
+S0003,ARM1,PFS,Progression-free survival (detected at assessment),59,1,censored at last tumour assessment
+S0003,ARM1,OS,Overall survival (death in the simulated horizon),89,1,censored at last simulated contact
+S0004,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0004,ARM1,OS,Overall survival (death in the simulated horizon),99,1,censored at last simulated contact
+S0005,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0005,ARM1,OS,Overall survival (death in the simulated horizon),110,1,censored at last simulated contact
+S0006,ARM1,PFS,Progression-free survival (detected at assessment),24,0,progression detected at scheduled tumour assessment
+S0006,ARM1,OS,Overall survival (death in the simulated horizon),48,1,censored at last simulated contact
+S0007,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0007,ARM1,OS,Overall survival (death in the simulated horizon),114,1,censored at last simulated contact
+S0008,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0008,ARM1,OS,Overall survival (death in the simulated horizon),101,1,censored at last simulated contact
+S0009,ARM1,PFS,Progression-free survival (detected at assessment),18,0,progression detected at scheduled tumour assessment
+S0009,ARM1,OS,Overall survival (death in the simulated horizon),26,1,censored at last simulated contact
+S0010,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0010,ARM1,OS,Overall survival (death in the simulated horizon),112,1,censored at last simulated contact
+S0011,ARM1,PFS,Progression-free survival (detected at assessment),38,0,progression detected at scheduled tumour assessment
+S0011,ARM1,OS,Overall survival (death in the simulated horizon),66,1,censored at last simulated contact
+S0012,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0012,ARM1,OS,Overall survival (death in the simulated horizon),106,1,censored at last simulated contact
+S0013,ARM1,PFS,Progression-free survival (detected at assessment),53,0,progression detected at scheduled tumour assessment
+S0013,ARM1,OS,Overall survival (death in the simulated horizon),67,1,censored at last simulated contact
+S0014,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0014,ARM1,OS,Overall survival (death in the simulated horizon),112,1,censored at last simulated contact
+S0015,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0015,ARM1,OS,Overall survival (death in the simulated horizon),114,1,censored at last simulated contact
+S0016,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0016,ARM1,OS,Overall survival (death in the simulated horizon),111,1,censored at last simulated contact
+S0017,ARM1,PFS,Progression-free survival (detected at assessment),73,0,progression detected at scheduled tumour assessment
+S0017,ARM1,OS,Overall survival (death in the simulated horizon),100,1,censored at last simulated contact
+S0018,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0018,ARM1,OS,Overall survival (death in the simulated horizon),84,1,censored at last simulated contact
+S0019,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0019,ARM1,OS,Overall survival (death in the simulated horizon),112,1,censored at last simulated contact
+S0020,ARM1,PFS,Progression-free survival (detected at assessment),13,0,progression detected at scheduled tumour assessment
+S0020,ARM1,OS,Overall survival (death in the simulated horizon),42,1,censored at last simulated contact
+S0021,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0021,ARM1,OS,Overall survival (death in the simulated horizon),110,1,censored at last simulated contact
+S0022,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0022,ARM1,OS,Overall survival (death in the simulated horizon),113,1,censored at last simulated contact
+S0023,ARM1,PFS,Progression-free survival (detected at assessment),69,0,progression detected at scheduled tumour assessment
+S0023,ARM1,OS,Overall survival (death in the simulated horizon),238,0,death
+S0024,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0024,ARM1,OS,Overall survival (death in the simulated horizon),90,1,censored at last simulated contact
+S0025,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0025,ARM1,OS,Overall survival (death in the simulated horizon),106,1,censored at last simulated contact
+S0026,ARM1,PFS,Progression-free survival (detected at assessment),56,0,progression detected at scheduled tumour assessment
+S0026,ARM1,OS,Overall survival (death in the simulated horizon),104,0,death
+S0027,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0027,ARM1,OS,Overall survival (death in the simulated horizon),114,1,censored at last simulated contact
+S0028,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0028,ARM1,OS,Overall survival (death in the simulated horizon),651,0,death
+S0029,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0029,ARM1,OS,Overall survival (death in the simulated horizon),92,1,censored at last simulated contact
+S0030,ARM1,PFS,Progression-free survival (detected at assessment),84,1,censored at last tumour assessment
+S0030,ARM1,OS,Overall survival (death in the simulated horizon),84,1,censored at last simulated contact

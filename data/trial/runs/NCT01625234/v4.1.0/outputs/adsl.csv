@@ -1,0 +1,191 @@
+USUBJID,PATIENT_ID,ARM,ARM_LABEL,STRATUM,AGE,SEX,RACE,ETHNIC,ENROLLMENT_DAY,UNCHECKED_CRITERIA
+S0001,P003065,ARM5,one  or  more  2nd  generation  ALK  TKIs,,57.17,female,unknown_or_not_reported,not_hispanic_or_latino,8.792272908503906,0
+S0002,P003084,ARM8,known  ALK  1198  mutation,,64.38,male,black_or_african_american,not_hispanic_or_latino,100.32514671503426,0
+S0003,P006648,ARM3,ALK  TKI-na  ve,,79.5,female,black_or_african_american,not_hispanic_or_latino,210.89737284192924,0
+S0004,P006659,ARM5,one  or  more  2nd  generation  ALK  TKIs,,60.55,male,white,not_hispanic_or_latino,257.3475831287996,0
+S0005,P005750,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,61.38,male,white,not_hispanic_or_latino,336.9398339399666,0
+S0006,P006297,ARM5,one  or  more  2nd  generation  ALK  TKIs,,50.99,male,white,not_hispanic_or_latino,354.1970914911703,0
+S0007,P009641,ARM3,ALK  TKI-na  ve,,58.61,female,white,not_hispanic_or_latino,473.50428241650457,0
+S0008,P009853,ARM5,one  or  more  2nd  generation  ALK  TKIs,,61.18,male,asian,not_hispanic_or_latino,498.3975263066182,0
+S0009,P003345,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,68.48,female,black_or_african_american,unknown_or_not_reported,512.5291711182383,0
+S0010,P002714,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,46.7,female,asian,not_hispanic_or_latino,520.4649221542385,0
+S0011,P003781,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,78.91,male,white,not_hispanic_or_latino,584.7715621337451,0
+S0012,P003576,ARM3,ALK  TKI-na  ve,,58.52,male,white,not_hispanic_or_latino,635.4456050559655,0
+S0013,P007436,ARM3,ALK  TKI-na  ve,,79.75,female,black_or_african_american,not_hispanic_or_latino,658.1680561481619,0
+S0014,P009530,ARM5,one  or  more  2nd  generation  ALK  TKIs,,71.85,female,white,not_hispanic_or_latino,762.6799147443202,0
+S0015,P005276,ARM5,one  or  more  2nd  generation  ALK  TKIs,,49.06,female,white,not_hispanic_or_latino,790.7058377289336,0
+S0016,P009236,ARM3,ALK  TKI-na  ve,,54.95,male,white,not_hispanic_or_latino,803.7429966073652,0
+S0017,P000853,ARM3,ALK  TKI-na  ve,,58.67,female,unknown_or_not_reported,not_hispanic_or_latino,806.3105185315263,0
+S0018,P000298,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,50.52,female,white,hispanic_or_latino,808.6405387726284,0
+S0019,P002737,ARM8,known  ALK  1198  mutation,,73.93,female,white,not_hispanic_or_latino,860.7263356238107,0
+S0020,P005492,ARM3,ALK  TKI-na  ve,,62.76,male,white,not_hispanic_or_latino,933.9160788098324,0
+S0021,P005923,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,62.22,male,asian,not_hispanic_or_latino,962.5398575956206,0
+S0022,P004100,ARM8,known  ALK  1198  mutation,,48.19,male,white,not_hispanic_or_latino,974.8921887168751,0
+S0023,P006335,ARM5,one  or  more  2nd  generation  ALK  TKIs,,77.08,male,white,not_hispanic_or_latino,980.1029229829592,0
+S0024,P005341,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,56.82,female,white,not_hispanic_or_latino,1027.929954891799,0
+S0025,P006880,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,67.29,male,white,not_hispanic_or_latino,1053.6629698806585,0
+S0026,P006611,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,63.3,female,white,not_hispanic_or_latino,1167.341142426804,0
+S0027,P000205,ARM8,known  ALK  1198  mutation,,62.19,male,black_or_african_american,hispanic_or_latino,1175.0602346730643,0
+S0028,P004434,ARM8,known  ALK  1198  mutation,,61.73,male,white,not_hispanic_or_latino,1179.5610807625833,0
+S0029,P005563,ARM5,one  or  more  2nd  generation  ALK  TKIs,,70.14,female,unknown_or_not_reported,hispanic_or_latino,1191.446539214186,0
+S0030,P004823,ARM5,one  or  more  2nd  generation  ALK  TKIs,,70.24,male,white,not_hispanic_or_latino,1220.9412274306958,0
+S0031,P008775,ARM3,ALK  TKI-na  ve,,54.16,male,white,not_hispanic_or_latino,1224.3798092488576,0
+S0032,P000161,ARM5,one  or  more  2nd  generation  ALK  TKIs,,75.52,male,white,not_hispanic_or_latino,1225.8187083372845,0
+S0033,P005912,ARM8,known  ALK  1198  mutation,,66.75,female,asian,not_hispanic_or_latino,1294.115075113108,0
+S0034,P005794,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,70.88,male,white,not_hispanic_or_latino,1343.6254426006014,0
+S0035,P005074,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,84.51,female,white,not_hispanic_or_latino,1384.8623712590945,0
+S0036,P006113,ARM8,known  ALK  1198  mutation,,60.64,female,white,not_hispanic_or_latino,1481.943892232272,0
+S0037,P007427,ARM8,known  ALK  1198  mutation,,62.55,male,white,not_hispanic_or_latino,1486.9514567274255,0
+S0038,P009816,ARM5,one  or  more  2nd  generation  ALK  TKIs,,52.29,female,white,not_hispanic_or_latino,1526.3497933611973,0
+S0039,P003568,ARM8,known  ALK  1198  mutation,,58.27,male,white,not_hispanic_or_latino,1534.1267565416783,0
+S0040,P007130,ARM3,ALK  TKI-na  ve,,68.03,female,unknown_or_not_reported,not_hispanic_or_latino,1547.1203640798933,0
+S0041,P007681,ARM8,known  ALK  1198  mutation,,52.16,male,white,not_hispanic_or_latino,1598.1186645772173,0
+S0042,P003715,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,47.26,male,white,not_hispanic_or_latino,1615.0255403944166,0
+S0043,P000719,ARM3,ALK  TKI-na  ve,,58.1,female,asian,not_hispanic_or_latino,1695.8341523149059,0
+S0044,P009368,ARM3,ALK  TKI-na  ve,,76.33,female,white,hispanic_or_latino,1766.7329352393076,0
+S0045,P009213,ARM8,known  ALK  1198  mutation,,60.7,male,white,not_hispanic_or_latino,1817.830549209598,0
+S0046,P006617,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,60.91,male,white,not_hispanic_or_latino,1852.7805480506277,0
+S0047,P000939,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,56.58,female,white,not_hispanic_or_latino,1913.6612129509494,0
+S0048,P000102,ARM5,one  or  more  2nd  generation  ALK  TKIs,,51.41,male,white,not_hispanic_or_latino,1927.378181716817,0
+S0049,P007454,ARM8,known  ALK  1198  mutation,,51.93,male,asian,not_hispanic_or_latino,1958.2961558348845,0
+S0050,P004615,ARM8,known  ALK  1198  mutation,,81.4,female,white,not_hispanic_or_latino,1969.6334402496811,0
+S0051,P007194,ARM3,ALK  TKI-na  ve,,72.03,female,white,not_hispanic_or_latino,2037.8056397449022,0
+S0052,P000434,ARM5,one  or  more  2nd  generation  ALK  TKIs,,60.33,female,white,not_hispanic_or_latino,2043.443836922469,0
+S0053,P002907,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,55.98,male,white,not_hispanic_or_latino,2099.6675851853206,0
+S0054,P007946,ARM3,ALK  TKI-na  ve,,56.7,female,white,not_hispanic_or_latino,2129.7591962699453,0
+S0055,P006927,ARM5,one  or  more  2nd  generation  ALK  TKIs,,50.39,male,white,not_hispanic_or_latino,2144.8456271739697,0
+S0056,P009097,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,71.68,male,white,not_hispanic_or_latino,2159.8645129269053,0
+S0057,P009195,ARM8,known  ALK  1198  mutation,,56.32,female,white,not_hispanic_or_latino,2171.2757422630607,0
+S0058,P007414,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,54.81,male,black_or_african_american,not_hispanic_or_latino,2237.419515645396,0
+S0059,P002302,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,66.09,female,black_or_african_american,not_hispanic_or_latino,2460.367845082676,0
+S0060,P002974,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,50.51,female,white,not_hispanic_or_latino,2592.5629522210247,0
+S0061,P005552,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,62.09,female,asian,not_hispanic_or_latino,2607.498807505239,0
+S0062,P002670,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,53.7,female,white,not_hispanic_or_latino,2619.9045590423857,0
+S0063,P000613,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,61.83,female,white,not_hispanic_or_latino,2757.342119149433,0
+S0064,P005138,ARM5,one  or  more  2nd  generation  ALK  TKIs,,54.05,male,white,hispanic_or_latino,2788.1745762896226,0
+S0065,P008782,ARM3,ALK  TKI-na  ve,,47.29,male,white,not_hispanic_or_latino,2789.58759823032,0
+S0066,P000641,ARM5,one  or  more  2nd  generation  ALK  TKIs,,51.8,female,white,not_hispanic_or_latino,2817.651312897642,0
+S0067,P004641,ARM3,ALK  TKI-na  ve,,56.42,male,white,not_hispanic_or_latino,2826.8875378696594,0
+S0068,P004558,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,74.68,female,white,not_hispanic_or_latino,2837.6254187823606,0
+S0069,P009040,ARM5,one  or  more  2nd  generation  ALK  TKIs,,67.38,male,white,not_hispanic_or_latino,2854.599096122371,0
+S0070,P003809,ARM5,one  or  more  2nd  generation  ALK  TKIs,,73.91,male,unknown_or_not_reported,not_hispanic_or_latino,2864.719650956926,0
+S0071,P009962,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,73.73,male,white,hispanic_or_latino,2911.2318975758462,0
+S0072,P008473,ARM5,one  or  more  2nd  generation  ALK  TKIs,,71.16,female,white,not_hispanic_or_latino,2911.593773108186,0
+S0073,P009003,ARM3,ALK  TKI-na  ve,,66.26,male,white,not_hispanic_or_latino,2958.7416634965216,0
+S0074,P001294,ARM3,ALK  TKI-na  ve,,56.57,female,white,not_hispanic_or_latino,2999.3183580514897,0
+S0075,P006950,ARM5,one  or  more  2nd  generation  ALK  TKIs,,53.51,male,white,not_hispanic_or_latino,3009.0150461354037,0
+S0076,P000466,ARM3,ALK  TKI-na  ve,,67.29,male,white,not_hispanic_or_latino,3056.8684881112513,0
+S0077,P001534,ARM5,one  or  more  2nd  generation  ALK  TKIs,,37.93,male,black_or_african_american,not_hispanic_or_latino,3152.547273055575,0
+S0078,P004765,ARM3,ALK  TKI-na  ve,,53.77,female,asian,not_hispanic_or_latino,3168.611618479312,0
+S0079,P003334,ARM8,known  ALK  1198  mutation,,47.87,female,white,not_hispanic_or_latino,3252.058519220202,0
+S0080,P004489,ARM5,one  or  more  2nd  generation  ALK  TKIs,,62.33,male,white,not_hispanic_or_latino,3263.4850674141153,0
+S0081,P007180,ARM8,known  ALK  1198  mutation,,50.33,male,white,not_hispanic_or_latino,3290.2543249857677,0
+S0082,P001415,ARM3,ALK  TKI-na  ve,,53.51,male,white,not_hispanic_or_latino,3314.2109873901345,0
+S0083,P009479,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,62.59,male,white,not_hispanic_or_latino,3343.977865878288,0
+S0084,P000685,ARM5,one  or  more  2nd  generation  ALK  TKIs,,55.42,female,white,not_hispanic_or_latino,3347.2558535353533,0
+S0085,P004980,ARM5,one  or  more  2nd  generation  ALK  TKIs,,44.89,male,black_or_african_american,not_hispanic_or_latino,3360.122898797014,0
+S0086,P008222,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,58.38,male,white,not_hispanic_or_latino,3403.3068880586115,0
+S0087,P000827,ARM3,ALK  TKI-na  ve,,43.97,male,white,unknown_or_not_reported,3447.135588977784,0
+S0088,P009146,ARM8,known  ALK  1198  mutation,,53.65,male,black_or_african_american,not_hispanic_or_latino,3465.8529439874465,0
+S0089,P001655,ARM5,one  or  more  2nd  generation  ALK  TKIs,,60.36,female,white,not_hispanic_or_latino,3683.1160751834605,0
+S0090,P003930,ARM5,one  or  more  2nd  generation  ALK  TKIs,,75.17,male,asian,unknown_or_not_reported,3758.5958347613346,0
+S0091,P003766,ARM3,ALK  TKI-na  ve,,71.8,female,white,not_hispanic_or_latino,3864.549338449818,0
+S0092,P005417,ARM5,one  or  more  2nd  generation  ALK  TKIs,,50.3,female,more_than_one_race,not_hispanic_or_latino,3889.2933340302448,0
+S0093,P001913,ARM8,known  ALK  1198  mutation,,50.02,female,white,not_hispanic_or_latino,3934.616929403455,0
+S0094,P001806,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,54.8,male,asian,not_hispanic_or_latino,3972.42183290528,0
+S0095,P003133,ARM8,known  ALK  1198  mutation,,56.62,male,unknown_or_not_reported,not_hispanic_or_latino,3988.1150973862414,0
+S0096,P002987,ARM3,ALK  TKI-na  ve,,74.23,female,white,unknown_or_not_reported,3989.683592443636,0
+S0097,P001015,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,56.33,female,white,not_hispanic_or_latino,4004.626133129692,0
+S0098,P007220,ARM8,known  ALK  1198  mutation,,68.66,female,white,unknown_or_not_reported,4072.2684243824597,0
+S0099,P001867,ARM3,ALK  TKI-na  ve,,71.69,male,white,not_hispanic_or_latino,4086.0545696171193,0
+S0100,P002188,ARM8,known  ALK  1198  mutation,,57.8,female,white,unknown_or_not_reported,4244.292474467861,0
+S0101,P003004,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,75.84,male,white,not_hispanic_or_latino,4260.051035607186,0
+S0102,P003125,ARM8,known  ALK  1198  mutation,,66.64,male,white,not_hispanic_or_latino,4359.699903546074,0
+S0103,P004083,ARM3,ALK  TKI-na  ve,,60.34,male,white,unknown_or_not_reported,4388.801563959737,0
+S0104,P001261,ARM3,ALK  TKI-na  ve,,47.45,male,white,not_hispanic_or_latino,4456.012723505722,0
+S0105,P008298,ARM5,one  or  more  2nd  generation  ALK  TKIs,,36.91,female,black_or_african_american,not_hispanic_or_latino,4512.448727860062,0
+S0106,P009078,ARM5,one  or  more  2nd  generation  ALK  TKIs,,50.09,female,white,not_hispanic_or_latino,4552.664906860757,0
+S0107,P000898,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,57.87,male,white,not_hispanic_or_latino,4632.7389843710625,0
+S0108,P007228,ARM8,known  ALK  1198  mutation,,52.89,male,white,not_hispanic_or_latino,4654.131715130943,0
+S0109,P001948,ARM5,one  or  more  2nd  generation  ALK  TKIs,,72.07,female,white,not_hispanic_or_latino,4683.8610046102685,0
+S0110,P004706,ARM5,one  or  more  2nd  generation  ALK  TKIs,,71.42,male,white,not_hispanic_or_latino,4743.156454240921,0
+S0111,P006643,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,63.71,female,white,not_hispanic_or_latino,4817.756489715856,0
+S0112,P008954,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,59.71,male,black_or_african_american,not_hispanic_or_latino,4872.575152186641,0
+S0113,P001083,ARM3,ALK  TKI-na  ve,,74.03,male,white,hispanic_or_latino,4993.018832347141,0
+S0114,P000792,ARM8,known  ALK  1198  mutation,,59.71,female,white,unknown_or_not_reported,5052.798306032732,0
+S0115,P006932,ARM3,ALK  TKI-na  ve,,68.57,female,white,not_hispanic_or_latino,5060.357347254444,0
+S0116,P008677,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,52.43,female,white,not_hispanic_or_latino,5071.651507987755,0
+S0117,P005630,ARM8,known  ALK  1198  mutation,,51.99,female,white,hispanic_or_latino,5092.824548235281,0
+S0118,P008325,ARM3,ALK  TKI-na  ve,,72.29,male,white,not_hispanic_or_latino,5122.884917328419,0
+S0119,P002731,ARM5,one  or  more  2nd  generation  ALK  TKIs,,46.4,male,white,not_hispanic_or_latino,5130.407281751047,0
+S0120,P008108,ARM5,one  or  more  2nd  generation  ALK  TKIs,,61.28,male,white,not_hispanic_or_latino,5138.761973958996,0
+S0121,P004644,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,53.17,female,white,not_hispanic_or_latino,5198.566405253213,0
+S0122,P008696,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,70.89,female,asian,not_hispanic_or_latino,5233.30791687382,0
+S0123,P005760,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,63.75,male,white,not_hispanic_or_latino,5272.21807493742,0
+S0124,P005269,ARM8,known  ALK  1198  mutation,,38.73,female,native_hawaiian_or_other_pacific_islander,not_hispanic_or_latino,5275.788847867397,0
+S0125,P009928,ARM5,one  or  more  2nd  generation  ALK  TKIs,,56.87,female,white,not_hispanic_or_latino,5351.476009712688,0
+S0126,P008847,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,55.78,female,white,hispanic_or_latino,5352.789168694656,0
+S0127,P002254,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,60.94,male,white,not_hispanic_or_latino,5404.817325206365,0
+S0128,P000904,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,59.68,female,black_or_african_american,not_hispanic_or_latino,5429.946338462951,0
+S0129,P004097,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,65.02,female,asian,not_hispanic_or_latino,5432.512995666319,0
+S0130,P007051,ARM5,one  or  more  2nd  generation  ALK  TKIs,,53.98,female,white,hispanic_or_latino,5442.1944176708375,0
+S0131,P009664,ARM3,ALK  TKI-na  ve,,70.11,male,white,not_hispanic_or_latino,5475.750594925321,0
+S0132,P004315,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,63.93,male,black_or_african_american,not_hispanic_or_latino,5626.600139881874,0
+S0133,P003542,ARM3,ALK  TKI-na  ve,,36.71,male,white,not_hispanic_or_latino,5676.541682954847,0
+S0134,P003611,ARM3,ALK  TKI-na  ve,,56.43,female,asian,not_hispanic_or_latino,5687.429447332257,0
+S0135,P004374,ARM8,known  ALK  1198  mutation,,70.78,female,white,not_hispanic_or_latino,5794.5128728435775,0
+S0136,P008909,ARM8,known  ALK  1198  mutation,,46.33,male,asian,not_hispanic_or_latino,5856.606248351448,0
+S0137,P000960,ARM3,ALK  TKI-na  ve,,59.78,male,white,not_hispanic_or_latino,5879.496996145299,0
+S0138,P001088,ARM5,one  or  more  2nd  generation  ALK  TKIs,,42.02,male,asian,not_hispanic_or_latino,5938.113758278845,0
+S0139,P002667,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,63.93,male,white,not_hispanic_or_latino,6031.985054243958,0
+S0140,P005556,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,45.41,female,unknown_or_not_reported,not_hispanic_or_latino,6123.978651828433,0
+S0141,P000845,ARM3,ALK  TKI-na  ve,,51.85,female,white,not_hispanic_or_latino,6138.214867501381,0
+S0142,P000837,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,58.16,female,white,not_hispanic_or_latino,6303.371878802911,0
+S0143,P005117,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,64.56,female,white,not_hispanic_or_latino,6396.271364458805,0
+S0144,P006630,ARM3,ALK  TKI-na  ve,,68.36,female,asian,hispanic_or_latino,6400.690061683739,0
+S0145,P000606,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,75.48,male,asian,not_hispanic_or_latino,6411.235464980857,0
+S0146,P005827,ARM8,known  ALK  1198  mutation,,58.98,male,unknown_or_not_reported,not_hispanic_or_latino,6495.553850448676,0
+S0147,P009529,ARM3,ALK  TKI-na  ve,,72.11,female,white,not_hispanic_or_latino,6498.95080780129,0
+S0148,P005495,ARM5,one  or  more  2nd  generation  ALK  TKIs,,59.72,male,white,not_hispanic_or_latino,6550.99340702811,0
+S0149,P000795,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,77.78,female,white,not_hispanic_or_latino,6616.353879284463,0
+S0150,P007532,ARM5,one  or  more  2nd  generation  ALK  TKIs,,64.88,male,asian,not_hispanic_or_latino,6704.501094914915,0
+S0151,P000865,ARM8,known  ALK  1198  mutation,,68.8,male,white,not_hispanic_or_latino,6810.749029291525,0
+S0152,P002972,ARM8,known  ALK  1198  mutation,,59.58,female,asian,not_hispanic_or_latino,6820.569243750446,0
+S0153,P000731,ARM3,ALK  TKI-na  ve,,61.39,male,white,not_hispanic_or_latino,6829.800453136949,0
+S0154,P006627,ARM3,ALK  TKI-na  ve,,56.26,male,asian,not_hispanic_or_latino,6862.389558725626,0
+S0155,P001506,ARM5,one  or  more  2nd  generation  ALK  TKIs,,45.59,male,white,not_hispanic_or_latino,6900.4992669917065,0
+S0156,P005277,ARM5,one  or  more  2nd  generation  ALK  TKIs,,39.28,male,white,not_hispanic_or_latino,6906.807765300068,0
+S0157,P001306,ARM5,one  or  more  2nd  generation  ALK  TKIs,,50.9,female,asian,not_hispanic_or_latino,6912.904983913795,0
+S0158,P005380,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,64.04,male,white,not_hispanic_or_latino,6914.8015135373535,0
+S0159,P008829,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,53.87,male,white,not_hispanic_or_latino,6975.787544970937,0
+S0160,P005754,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,57.2,male,white,hispanic_or_latino,7059.568289182651,0
+S0161,P009726,ARM3,ALK  TKI-na  ve,,65.07,female,white,not_hispanic_or_latino,7104.883882675748,0
+S0162,P003815,ARM5,one  or  more  2nd  generation  ALK  TKIs,,60.46,female,asian,not_hispanic_or_latino,7279.833165238286,0
+S0163,P001081,ARM3,ALK  TKI-na  ve,,52.28,male,white,not_hispanic_or_latino,7316.924003809063,0
+S0164,P007354,ARM5,one  or  more  2nd  generation  ALK  TKIs,,68.8,female,white,not_hispanic_or_latino,7375.633033378242,0
+S0165,P005248,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,73.45,female,white,not_hispanic_or_latino,7489.441915321208,0
+S0166,P007595,ARM3,ALK  TKI-na  ve,,64.06,female,white,not_hispanic_or_latino,7561.551305914704,0
+S0167,P008246,ARM5,one  or  more  2nd  generation  ALK  TKIs,,77.52,female,white,not_hispanic_or_latino,7588.743309536354,0
+S0168,P009038,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,56.53,female,white,not_hispanic_or_latino,7649.856004984209,0
+S0169,P008039,ARM5,one  or  more  2nd  generation  ALK  TKIs,,73.95,female,white,not_hispanic_or_latino,7718.944465045857,0
+S0170,P002567,ARM5,one  or  more  2nd  generation  ALK  TKIs,,73.32,female,white,not_hispanic_or_latino,7727.016055395062,0
+S0171,P000074,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,77.46,male,black_or_african_american,not_hispanic_or_latino,7747.584898040798,0
+S0172,P008267,ARM8,known  ALK  1198  mutation,,63.38,female,asian,not_hispanic_or_latino,7789.365754343936,0
+S0173,P006919,ARM3,ALK  TKI-na  ve,,50.46,male,white,not_hispanic_or_latino,7819.888803087842,0
+S0174,P007368,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,40.16,male,white,not_hispanic_or_latino,7832.866812669538,0
+S0175,P001093,ARM3,ALK  TKI-na  ve,,70.31,female,white,not_hispanic_or_latino,7839.709596540021,0
+S0176,P009153,ARM3,ALK  TKI-na  ve,,62.13,male,white,not_hispanic_or_latino,7918.427960182818,0
+S0177,P000342,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,41.3,male,white,not_hispanic_or_latino,7934.5904429196835,0
+S0178,P003713,ARM3,ALK  TKI-na  ve,,48.98,male,white,not_hispanic_or_latino,8105.924261012872,0
+S0179,P006788,ARM5,one  or  more  2nd  generation  ALK  TKIs,,57.64,female,white,not_hispanic_or_latino,8132.12282159349,0
+S0180,P009321,ARM4,prior  crizotinib  and  have  not  received  other  ALK  TKIs,,54.47,female,white,not_hispanic_or_latino,8134.582983143678,0
+S0181,P006460,ARM8,known  ALK  1198  mutation,,63.19,male,white,not_hispanic_or_latino,8148.585932764816,0
+S0182,P009156,ARM8,known  ALK  1198  mutation,,40.75,female,white,not_hispanic_or_latino,8157.153226606098,0
+S0183,P008012,ARM5,one  or  more  2nd  generation  ALK  TKIs,,48.01,female,white,not_hispanic_or_latino,8192.90517915108,0
+S0184,P009542,ARM3,ALK  TKI-na  ve,,53.06,female,asian,not_hispanic_or_latino,8288.293165287372,0
+S0185,P008901,ARM5,one  or  more  2nd  generation  ALK  TKIs,,55.2,female,black_or_african_american,not_hispanic_or_latino,8301.680789606717,0
+S0186,P005726,ARM5,one  or  more  2nd  generation  ALK  TKIs,,81.09,female,white,not_hispanic_or_latino,8324.44568393704,0
+S0187,P008704,ARM5,one  or  more  2nd  generation  ALK  TKIs,,63.62,male,unknown_or_not_reported,not_hispanic_or_latino,8388.560022927257,0
+S0188,P001615,ARM3,ALK  TKI-na  ve,,46.29,male,white,not_hispanic_or_latino,8403.308429055449,0
+S0189,P009458,ARM3,ALK  TKI-na  ve,,64.75,male,black_or_african_american,not_hispanic_or_latino,8423.367718246414,0
+S0190,P007854,ARM3,ALK  TKI-na  ve,,74.69,male,white,not_hispanic_or_latino,8507.223216721923,0

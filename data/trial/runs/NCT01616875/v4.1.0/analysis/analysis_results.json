@@ -1,0 +1,385 @@
+{
+ "analysis_version": "analysis-results-1.1.0",
+ "seed": 20261006,
+ "inputs": {
+  "studyspec": "a1b01e69016caaaea6f2842aada05174c861b2c6deacd18f0665988256f7b174"
+ },
+ "efficacy_scope": {
+  "response": true,
+  "PFS": true,
+  "TTP": true,
+  "OS": true,
+  "any": true
+ },
+ "data_cutoff": {
+  "day": 3518.75,
+  "rule": "last enrolment + 5 years (stated follow-up, else default)",
+  "enrolled_by_cutoff": 30,
+  "planned": 30
+ },
+ "response_criteria": {
+  "pr": 30.0,
+  "pd": 20.0,
+  "pd_abs_mm": 5.0,
+  "deeper": [],
+  "confirm": false,
+  "source": "protocol response criteria (compiled thresholds)"
+ },
+ "assessment_interval_days": 56,
+ "follow_up_days": 1826,
+ "control_arm": "ARM1",
+ "latent_inputs": {
+  "ARM1": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.28443603810108503,
+    "unit": "proportion",
+    "level": "adult trials",
+    "source": "evidence arms reporting objective_response_rate (3 studies)",
+    "ci95": [
+     0.22093990078199768,
+     0.35779952050044556
+    ]
+   },
+   "complete_response_share": {
+    "value": 1.0,
+    "source": "evidence arms reporting complete_response (5 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 11.91866825006305,
+    "unit": "months",
+    "level": "adult trials",
+    "source": "evidence medians of overall_survival (6 studies)",
+    "detail": {
+     "variable": "overall_survival",
+     "family": "urothelial",
+     "subgroup": "adult trials",
+     "median_months": 11.91866825006305,
+     "ci95": [
+      8.997773367859052,
+      15.787756264510332
+     ],
+     "single_trial_80": [
+      7.422945867710325,
+      19.13723410984257
+     ],
+     "studies": 6,
+     "arms": 9,
+     "patients": 671
+    }
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.0,
+     "rate_per_year": 2.174567281622856
+    },
+    "evidence_level": "assumption",
+    "source": "evidence median progression-free survival 3.8 months (adult trials, 6 studies), exponential",
+    "assumption": "A7_progression_exponential",
+    "detail": {
+     "variable": "progression_free_survival",
+     "family": "urothelial",
+     "subgroup": "adult trials",
+     "median_months": 3.82502129826578,
+     "ci95": [
+      3.0772615815446436,
+      4.754483018256398
+     ],
+     "single_trial_80": [
+      2.719157651768366,
+      5.380632462656921
+     ],
+     "studies": 6,
+     "arms": 10,
+     "patients": 684
+    }
+   },
+   "post_progression_survival_months": 8.09364695179727
+  }
+ },
+ "efficacy": {
+  "ARM1": {
+   "n": 30,
+   "best_overall_response": {
+    "PD": 7,
+    "NE": 1,
+    "SD": 15,
+    "PR": 2,
+    "CR": 5
+   },
+   "objective_response": {
+    "responders": 7,
+    "rate": 0.2333,
+    "ci95_exact": [
+     0.09933786495801972,
+     0.4228365229782194
+    ]
+   },
+   "disease_control": {
+    "n": 22,
+    "rate": 0.7333,
+    "ci95_exact": [
+     0.5411063486052488,
+     0.8772051901276452
+    ]
+   },
+   "PFS": {
+    "n": 30,
+    "events": 30,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.42,
+     7.36
+    ],
+    "landmark_percent": {
+     "6m": 33.3,
+     "12m": 16.7,
+     "24m": 3.3
+    }
+   },
+   "OS": {
+    "n": 30,
+    "events": 30,
+    "median_months": 13.13,
+    "median_ci95_months": [
+     9.33,
+     23.0
+    ],
+    "landmark_percent": {
+     "6m": 76.7,
+     "12m": 53.3,
+     "24m": 26.7
+    }
+   },
+   "TTP": {
+    "n": 30,
+    "events": 24,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.68,
+     9.2
+    ],
+    "landmark_percent": {
+     "6m": 40.8,
+     "12m": 20.4,
+     "24m": 5.1
+    }
+   },
+   "DOR": {
+    "n": 7,
+    "events": 7,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.56,
+     9.09
+    ],
+    "landmark_percent": {
+     "6m": 42.9,
+     "12m": 14.3,
+     "24m": 14.3
+    }
+   },
+   "TTR": {
+    "n": 7,
+    "events": 7,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     3.68
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  }
+ },
+ "comparisons": {},
+ "censoring": {
+  "PFS": {
+   "ARM1": {
+    "n": 30,
+    "events": 30,
+    "censored": 0,
+    "by_reason": {
+     "progressive disease": 24,
+     "death": 6
+    }
+   }
+  },
+  "OS": {
+   "ARM1": {
+    "n": 30,
+    "events": 30,
+    "censored": 0,
+    "by_reason": {
+     "death": 30
+    }
+   }
+  },
+  "TTP": {
+   "ARM1": {
+    "n": 30,
+    "events": 24,
+    "censored": 6,
+    "by_reason": {
+     "progressive disease": 24,
+     "censored at last adequate tumour assessment": 6
+    }
+   }
+  },
+  "DOR": {
+   "ARM1": {
+    "n": 7,
+    "events": 7,
+    "censored": 0,
+    "by_reason": {
+     "progressive disease": 4,
+     "death": 3
+    }
+   }
+  },
+  "TTR": {
+   "ARM1": {
+    "n": 7,
+    "events": 7,
+    "censored": 0,
+    "by_reason": {
+     "first response": 7
+    }
+   }
+  }
+ },
+ "safety_tables": [
+  "Table 2. Baseline demographic characteristics, safety population",
+  "Table 3. Patient screening and enrollment",
+  "Table 4. Patient disposition",
+  "Table 5. Duration of treatment exposure, safety population",
+  "Table 6. Overview of adverse events, safety population",
+  "Table 7. Deaths, safety population",
+  "Table 9. Patients with serious adverse events by system organ class and preferred term",
+  "Table 12. Patients with adverse events leading to treatment discontinuation by SOC and PT",
+  "Table 36. Patients with adverse events by system organ class and preferred term",
+  "Table 13. Patients with common adverse events occurring at >= 5% frequency",
+  "Table 54. Exposure-adjusted incidence rates",
+  "Patients with adverse events leading to dose interruption or reduction by SOC and PT",
+  "Patients with adverse events by maximum toxicity grade",
+  "Screen failures by eligibility criterion"
+ ],
+ "terms_without_soc": [
+  "rash_erythematous_macules_or_papules"
+ ],
+ "subgroups": {
+  "factors": [
+   {
+    "factor": "Age (FDA standard age bands)",
+    "source": "FDA demographic",
+    "variable": "demographic:age",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "65-74 years": 10,
+     "< 65 years": 17,
+     ">= 75 years": 3
+    }
+   },
+   {
+    "factor": "Sex",
+    "source": "FDA demographic",
+    "variable": "demographic:sex",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 3 trials; prognostic, A28))",
+    "levels": {
+     "male": 24,
+     "female": 6
+    }
+   },
+   {
+    "factor": "Race",
+    "source": "FDA demographic",
+    "variable": "demographic:race",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "white": 23,
+     "asian": 5,
+     "black_or_african_american": 1,
+     "unknown_or_not_reported": 1
+    }
+   },
+   {
+    "factor": "Ethnicity",
+    "source": "FDA demographic",
+    "variable": "demographic:ethnicity",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "hispanic_or_latino": 3,
+     "not_hispanic_or_latino": 27
+    }
+   },
+   {
+    "factor": "Region",
+    "source": "FDA demographic",
+    "variable": null,
+    "note": "not simulated: the recruitment model has no site country",
+    "feasibility_driver": null,
+    "prevalence_source": null,
+    "outcome_driver": null
+   },
+   {
+    "factor": "T2 to T4 disease",
+    "source": "baseline disease factor",
+    "variable": "umls:C0699749",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "T2 to T4": 11,
+     "not recorded": 19
+    }
+   },
+   {
+    "factor": "ECOG Performance Status",
+    "source": "baseline disease factor",
+    "variable": "var:ecog_performance_status",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "0": 21,
+     "1": 9
+    }
+   }
+  ],
+  "files": {
+   "subgroup_efficacy": "subgroups/subgroup_efficacy.csv",
+   "subgroup_safety": "subgroups/subgroup_safety.csv",
+   "subgroup_comparisons": "subgroups/subgroup_comparisons.csv",
+   "subgroup_feasibility": "subgroups/subgroup_feasibility.csv"
+  }
+ },
+ "standards": [
+  "PharmaSUG 2018 DS06 (RECIST/Cheson/IMWG-type response derivation; SDTM TU/TR/RS; ADaM ADRS/ADTTE)",
+  "FDA CDER Standard Safety Tables and Figures Integrated Guide (Aug 2022): Tables 2-7, 9, 12, 13, 36, 54",
+  "results by subgroup: protocol stratification factors and analysis subgroups, FDA demographics, baseline disease factors"
+ ],
+ "not_produced": [
+  "FDA Medical Query tables (no machine-readable FMQ definitions)",
+  "laboratory and vital-sign tables (not simulated)",
+  "MedDRA coding (registry terms with their reported organ system are used)",
+  "results by region (the recruitment model has no site country)"
+ ]
+}

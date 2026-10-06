@@ -1,0 +1,373 @@
+USUBJID,PATIENT_ID,ARM,ARM_LABEL,STRATUM,AGE,SEX,RACE,ETHNIC,ENROLLMENT_DAY,UNCHECKED_CRITERIA
+S0001,P000009,ARM1,Pemigatinib Plus Pembrolizumab,ST6,77.85,male,white,not_hispanic_or_latino,18.00160227301892,0
+S0002,P002346,ARM3,Standard of Care,ST1,76.37,female,white,not_hispanic_or_latino,19.876158098414002,0
+S0003,P008900,ARM2,Pemigatinib Alone,ST4,66.84,male,white,not_hispanic_or_latino,30.910748963633708,0
+S0004,P003997,ARM3,Standard of Care,ST8,77.46,male,native_hawaiian_or_other_pacific_islander,not_hispanic_or_latino,35.24511716443572,0
+S0005,P009326,ARM4,Gemcitabine and Carboplatin,ST5,62.5,male,white,not_hispanic_or_latino,35.44449068265641,0
+S0006,P009591,ARM1,Pemigatinib Plus Pembrolizumab,ST1,65.62,male,white,not_hispanic_or_latino,40.95541996310537,0
+S0007,P009013,ARM3,Standard of Care,ST4,67.3,female,white,not_hispanic_or_latino,42.93172108878429,0
+S0008,P009402,ARM3,Standard of Care,ST4,59.48,male,asian,not_hispanic_or_latino,42.95472670692694,0
+S0009,P003601,ARM4,Gemcitabine and Carboplatin,ST8,70.92,male,white,not_hispanic_or_latino,45.16735326148958,0
+S0010,P004818,ARM1,Pemigatinib Plus Pembrolizumab,ST2,77.19,male,white,unknown_or_not_reported,45.573219081025556,0
+S0011,P003539,ARM4,Gemcitabine and Carboplatin,ST2,63.38,female,white,not_hispanic_or_latino,57.17035521576507,0
+S0012,P008678,ARM4,Gemcitabine and Carboplatin,ST5,53.28,female,white,not_hispanic_or_latino,60.44175600101488,0
+S0013,P009765,ARM4,Gemcitabine and Carboplatin,ST4,69.0,male,white,not_hispanic_or_latino,65.56647513054578,0
+S0014,P005655,ARM4,Gemcitabine and Carboplatin,ST8,66.17,male,white,hispanic_or_latino,71.86740936587853,0
+S0015,P008620,ARM4,Gemcitabine and Carboplatin,ST8,75.27,male,white,not_hispanic_or_latino,74.81663799275479,0
+S0016,P000468,ARM2,Pemigatinib Alone,ST8,75.94,male,white,not_hispanic_or_latino,75.77361007379224,0
+S0017,P000877,ARM1,Pemigatinib Plus Pembrolizumab,ST8,64.7,male,black_or_african_american,not_hispanic_or_latino,79.92067018118615,0
+S0018,P004658,ARM2,Pemigatinib Alone,ST1,68.69,male,black_or_african_american,not_hispanic_or_latino,83.22393953671813,0
+S0019,P006344,ARM2,Pemigatinib Alone,ST7,50.85,male,white,not_hispanic_or_latino,83.90029375777831,0
+S0020,P001621,ARM1,Pemigatinib Plus Pembrolizumab,ST2,66.42,female,white,not_hispanic_or_latino,84.84862463415595,0
+S0021,P003970,ARM3,Standard of Care,ST4,76.06,female,white,not_hispanic_or_latino,85.31737563345378,0
+S0022,P008152,ARM1,Pemigatinib Plus Pembrolizumab,ST1,49.63,male,white,not_hispanic_or_latino,87.02196253617933,0
+S0023,P009034,ARM4,Gemcitabine and Carboplatin,ST4,67.48,female,white,not_hispanic_or_latino,87.67416680759162,0
+S0024,P008753,ARM1,Pemigatinib Plus Pembrolizumab,ST8,75.89,male,black_or_african_american,not_hispanic_or_latino,88.80900576712902,0
+S0025,P000541,ARM1,Pemigatinib Plus Pembrolizumab,ST1,55.12,male,black_or_african_american,hispanic_or_latino,91.94684308032932,0
+S0026,P006997,ARM1,Pemigatinib Plus Pembrolizumab,ST3,75.65,male,white,not_hispanic_or_latino,91.96992589658039,0
+S0027,P009262,ARM2,Pemigatinib Alone,ST4,77.39,male,asian,not_hispanic_or_latino,92.75817839916675,0
+S0028,P008333,ARM4,Gemcitabine and Carboplatin,ST7,81.3,male,unknown_or_not_reported,not_hispanic_or_latino,98.78076662460384,0
+S0029,P004935,ARM2,Pemigatinib Alone,ST3,53.88,male,white,not_hispanic_or_latino,100.54024011719797,0
+S0030,P003026,ARM2,Pemigatinib Alone,ST7,43.18,male,black_or_african_american,not_hispanic_or_latino,104.40297436800253,0
+S0031,P006188,ARM4,Gemcitabine and Carboplatin,ST5,45.65,male,unknown_or_not_reported,not_hispanic_or_latino,113.93152980273933,0
+S0032,P007543,ARM4,Gemcitabine and Carboplatin,ST4,56.81,female,white,not_hispanic_or_latino,125.19489330853955,0
+S0033,P003024,ARM4,Gemcitabine and Carboplatin,ST6,69.08,female,american_indian_or_alaska_native,not_hispanic_or_latino,133.25075233924684,0
+S0034,P005528,ARM3,Standard of Care,ST6,86.28,male,asian,not_hispanic_or_latino,133.89988979176078,0
+S0035,P007654,ARM3,Standard of Care,ST1,66.86,male,white,not_hispanic_or_latino,137.10079232845368,0
+S0036,P006570,ARM2,Pemigatinib Alone,ST2,62.15,male,white,not_hispanic_or_latino,137.43318694025834,0
+S0037,P004719,ARM4,Gemcitabine and Carboplatin,ST3,68.78,male,white,not_hispanic_or_latino,139.20942024312,0
+S0038,P000089,ARM1,Pemigatinib Plus Pembrolizumab,ST8,55.09,male,unknown_or_not_reported,not_hispanic_or_latino,143.73527845676622,0
+S0039,P006993,ARM1,Pemigatinib Plus Pembrolizumab,ST8,70.13,male,white,not_hispanic_or_latino,147.2784755500709,0
+S0040,P001638,ARM4,Gemcitabine and Carboplatin,ST7,51.73,male,white,not_hispanic_or_latino,147.8060287350244,0
+S0041,P009966,ARM4,Gemcitabine and Carboplatin,ST1,59.02,male,asian,not_hispanic_or_latino,150.4640291683035,0
+S0042,P009957,ARM4,Gemcitabine and Carboplatin,ST1,71.28,female,white,not_hispanic_or_latino,158.562238057515,0
+S0043,P008736,ARM4,Gemcitabine and Carboplatin,ST2,49.86,male,white,not_hispanic_or_latino,162.67521039159624,0
+S0044,P006488,ARM4,Gemcitabine and Carboplatin,ST1,68.42,male,white,not_hispanic_or_latino,166.489764888769,0
+S0045,P004007,ARM1,Pemigatinib Plus Pembrolizumab,ST4,51.06,male,white,hispanic_or_latino,166.7357930689733,0
+S0046,P009395,ARM1,Pemigatinib Plus Pembrolizumab,ST7,64.54,male,white,not_hispanic_or_latino,166.8906536698413,0
+S0047,P005437,ARM3,Standard of Care,ST4,56.32,male,white,not_hispanic_or_latino,168.6669943902956,0
+S0048,P002361,ARM3,Standard of Care,ST6,65.73,female,asian,not_hispanic_or_latino,174.26660117087184,0
+S0049,P005356,ARM4,Gemcitabine and Carboplatin,ST8,56.87,male,white,not_hispanic_or_latino,179.22289063629847,0
+S0050,P004620,ARM1,Pemigatinib Plus Pembrolizumab,ST4,58.28,male,white,not_hispanic_or_latino,189.5820743188272,0
+S0051,P006931,ARM4,Gemcitabine and Carboplatin,ST2,55.39,female,white,not_hispanic_or_latino,193.11640978306622,0
+S0052,P008831,ARM1,Pemigatinib Plus Pembrolizumab,ST2,55.73,male,black_or_african_american,not_hispanic_or_latino,193.50279751160312,0
+S0053,P003374,ARM1,Pemigatinib Plus Pembrolizumab,ST8,68.21,male,white,not_hispanic_or_latino,194.03892269377204,0
+S0054,P006053,ARM4,Gemcitabine and Carboplatin,ST2,62.76,male,white,not_hispanic_or_latino,196.86441961330243,0
+S0055,P001788,ARM2,Pemigatinib Alone,ST7,74.28,female,white,not_hispanic_or_latino,200.6665363100439,0
+S0056,P002991,ARM3,Standard of Care,ST4,55.47,male,white,not_hispanic_or_latino,212.94241271641707,0
+S0057,P005989,ARM4,Gemcitabine and Carboplatin,ST2,62.43,male,black_or_african_american,not_hispanic_or_latino,219.07219318149717,0
+S0058,P008976,ARM3,Standard of Care,ST6,53.3,male,white,not_hispanic_or_latino,223.33691867315358,0
+S0059,P006846,ARM2,Pemigatinib Alone,ST6,49.98,male,white,not_hispanic_or_latino,224.83106702349042,0
+S0060,P000553,ARM1,Pemigatinib Plus Pembrolizumab,ST7,55.08,female,white,not_hispanic_or_latino,228.53308719478684,0
+S0061,P000557,ARM3,Standard of Care,ST7,55.35,male,white,not_hispanic_or_latino,234.7271481538968,0
+S0062,P003862,ARM2,Pemigatinib Alone,ST4,64.28,male,white,not_hispanic_or_latino,238.3143719494114,0
+S0063,P005597,ARM4,Gemcitabine and Carboplatin,ST7,71.86,male,white,hispanic_or_latino,239.23117511659404,0
+S0064,P009550,ARM4,Gemcitabine and Carboplatin,ST5,74.75,male,white,not_hispanic_or_latino,240.34848775284217,0
+S0065,P000962,ARM2,Pemigatinib Alone,ST3,75.03,male,white,not_hispanic_or_latino,240.5682965035658,0
+S0066,P006727,ARM3,Standard of Care,ST6,69.79,female,american_indian_or_alaska_native,not_hispanic_or_latino,244.94254810723777,0
+S0067,P006510,ARM3,Standard of Care,ST6,42.78,male,black_or_african_american,not_hispanic_or_latino,245.11126499970422,0
+S0068,P007711,ARM2,Pemigatinib Alone,ST1,64.49,female,white,not_hispanic_or_latino,245.92727780235762,0
+S0069,P001920,ARM3,Standard of Care,ST5,61.46,female,white,not_hispanic_or_latino,246.5192041080752,0
+S0070,P000033,ARM2,Pemigatinib Alone,ST8,64.12,male,white,not_hispanic_or_latino,247.87611599510979,0
+S0071,P003481,ARM2,Pemigatinib Alone,ST7,67.59,male,white,not_hispanic_or_latino,250.34241059264497,0
+S0072,P004524,ARM1,Pemigatinib Plus Pembrolizumab,ST1,70.47,male,white,not_hispanic_or_latino,253.49577751016818,0
+S0073,P009311,ARM1,Pemigatinib Plus Pembrolizumab,ST8,64.25,female,white,not_hispanic_or_latino,258.04772496709523,0
+S0074,P001010,ARM1,Pemigatinib Plus Pembrolizumab,ST4,62.74,male,white,not_hispanic_or_latino,259.0279713013703,0
+S0075,P009884,ARM3,Standard of Care,ST7,75.7,female,white,not_hispanic_or_latino,260.36749713787987,0
+S0076,P006352,ARM4,Gemcitabine and Carboplatin,ST1,49.62,male,white,unknown_or_not_reported,260.55616654450796,0
+S0077,P001037,ARM2,Pemigatinib Alone,ST3,55.44,male,white,not_hispanic_or_latino,260.83049267973104,0
+S0078,P007138,ARM2,Pemigatinib Alone,ST3,63.25,male,white,not_hispanic_or_latino,260.84352301383524,0
+S0079,P001503,ARM4,Gemcitabine and Carboplatin,ST2,40.22,male,white,not_hispanic_or_latino,263.49425444455585,0
+S0080,P001939,ARM3,Standard of Care,ST6,66.77,male,white,not_hispanic_or_latino,265.919111150495,0
+S0081,P002331,ARM1,Pemigatinib Plus Pembrolizumab,ST6,56.05,female,white,not_hispanic_or_latino,266.1638426643621,0
+S0082,P007349,ARM2,Pemigatinib Alone,ST8,67.43,male,white,not_hispanic_or_latino,268.4622396912192,0
+S0083,P005378,ARM4,Gemcitabine and Carboplatin,ST7,65.78,male,white,unknown_or_not_reported,269.10009536110493,0
+S0084,P000037,ARM2,Pemigatinib Alone,ST1,61.46,male,asian,not_hispanic_or_latino,271.33330195729957,0
+S0085,P001082,ARM2,Pemigatinib Alone,ST1,58.81,female,white,not_hispanic_or_latino,273.0591046729436,0
+S0086,P004364,ARM4,Gemcitabine and Carboplatin,ST5,61.85,male,black_or_african_american,not_hispanic_or_latino,274.0628027848501,0
+S0087,P009853,ARM3,Standard of Care,ST6,35.78,male,white,hispanic_or_latino,278.46149145598383,0
+S0088,P006442,ARM1,Pemigatinib Plus Pembrolizumab,ST4,80.06,male,white,not_hispanic_or_latino,279.8223892233794,0
+S0089,P004222,ARM2,Pemigatinib Alone,ST7,54.04,male,white,hispanic_or_latino,282.3671925633209,0
+S0090,P001599,ARM4,Gemcitabine and Carboplatin,ST4,65.6,female,white,not_hispanic_or_latino,286.56067148624805,0
+S0091,P009990,ARM1,Pemigatinib Plus Pembrolizumab,ST2,54.41,male,white,not_hispanic_or_latino,287.97923976828974,0
+S0092,P005734,ARM4,Gemcitabine and Carboplatin,ST3,76.12,male,black_or_african_american,hispanic_or_latino,290.9050465292686,0
+S0093,P001591,ARM1,Pemigatinib Plus Pembrolizumab,ST4,61.59,male,white,not_hispanic_or_latino,295.5809611590305,0
+S0094,P007405,ARM2,Pemigatinib Alone,ST6,73.76,male,white,not_hispanic_or_latino,295.9006780044343,0
+S0095,P003358,ARM1,Pemigatinib Plus Pembrolizumab,ST4,71.93,male,white,hispanic_or_latino,300.0690621545384,0
+S0096,P000241,ARM3,Standard of Care,ST3,66.37,male,asian,not_hispanic_or_latino,301.7508746294189,0
+S0097,P009456,ARM4,Gemcitabine and Carboplatin,ST8,43.82,male,white,hispanic_or_latino,303.0910216283332,0
+S0098,P002301,ARM2,Pemigatinib Alone,ST7,88.89,male,white,not_hispanic_or_latino,306.16567925011225,0
+S0099,P006573,ARM2,Pemigatinib Alone,ST7,64.8,female,american_indian_or_alaska_native,not_hispanic_or_latino,308.62862637472426,0
+S0100,P003333,ARM2,Pemigatinib Alone,ST2,73.18,male,white,not_hispanic_or_latino,311.3448377163166,0
+S0101,P004981,ARM4,Gemcitabine and Carboplatin,ST7,53.38,male,white,not_hispanic_or_latino,311.9195469066672,0
+S0102,P000554,ARM1,Pemigatinib Plus Pembrolizumab,ST8,76.79,male,asian,not_hispanic_or_latino,312.6915414144077,0
+S0103,P009741,ARM4,Gemcitabine and Carboplatin,ST3,79.56,male,white,not_hispanic_or_latino,313.4280494038459,0
+S0104,P006449,ARM2,Pemigatinib Alone,ST6,60.95,male,white,hispanic_or_latino,313.6976596363257,0
+S0105,P002898,ARM3,Standard of Care,ST2,55.92,male,white,not_hispanic_or_latino,314.8176453350857,0
+S0106,P003404,ARM1,Pemigatinib Plus Pembrolizumab,ST4,40.94,male,white,not_hispanic_or_latino,316.36222554494736,0
+S0107,P006058,ARM4,Gemcitabine and Carboplatin,ST5,62.67,male,unknown_or_not_reported,unknown_or_not_reported,323.11440253396853,0
+S0108,P006325,ARM3,Standard of Care,ST7,65.39,male,white,not_hispanic_or_latino,324.03809022956375,0
+S0109,P000230,ARM3,Standard of Care,ST4,61.93,female,black_or_african_american,not_hispanic_or_latino,324.13200580628296,0
+S0110,P003104,ARM1,Pemigatinib Plus Pembrolizumab,ST3,76.01,female,white,not_hispanic_or_latino,324.66450063039474,0
+S0111,P001942,ARM4,Gemcitabine and Carboplatin,ST8,78.35,female,white,not_hispanic_or_latino,325.47821074260685,0
+S0112,P006579,ARM3,Standard of Care,ST7,47.55,male,white,not_hispanic_or_latino,332.00161230356105,0
+S0113,P008365,ARM4,Gemcitabine and Carboplatin,ST5,54.6,male,black_or_african_american,not_hispanic_or_latino,336.5894694280155,0
+S0114,P009947,ARM2,Pemigatinib Alone,ST7,67.61,female,white,not_hispanic_or_latino,337.61134571398924,0
+S0115,P000470,ARM2,Pemigatinib Alone,ST3,70.61,male,white,not_hispanic_or_latino,340.57557289739816,0
+S0116,P001873,ARM4,Gemcitabine and Carboplatin,ST8,64.43,female,white,not_hispanic_or_latino,340.6035077890539,0
+S0117,P007398,ARM2,Pemigatinib Alone,ST8,62.94,female,white,not_hispanic_or_latino,343.06766240480414,0
+S0118,P007041,ARM1,Pemigatinib Plus Pembrolizumab,ST5,57.2,male,white,not_hispanic_or_latino,348.46871253809155,0
+S0119,P000191,ARM3,Standard of Care,ST2,67.98,male,white,not_hispanic_or_latino,351.8369959798448,0
+S0120,P007361,ARM2,Pemigatinib Alone,ST2,72.33,male,black_or_african_american,not_hispanic_or_latino,353.4714290501895,0
+S0121,P003452,ARM3,Standard of Care,ST2,65.24,female,white,not_hispanic_or_latino,354.47050797685654,0
+S0122,P001448,ARM4,Gemcitabine and Carboplatin,ST8,46.19,male,white,not_hispanic_or_latino,358.9195254007477,0
+S0123,P007628,ARM1,Pemigatinib Plus Pembrolizumab,ST3,47.23,male,white,unknown_or_not_reported,364.34732552594295,0
+S0124,P005107,ARM2,Pemigatinib Alone,ST6,80.49,male,white,not_hispanic_or_latino,368.2544343513721,0
+S0125,P006796,ARM2,Pemigatinib Alone,ST8,53.03,male,white,hispanic_or_latino,373.7474241709678,0
+S0126,P000065,ARM4,Gemcitabine and Carboplatin,ST6,64.85,male,white,not_hispanic_or_latino,376.69261210944535,0
+S0127,P003480,ARM4,Gemcitabine and Carboplatin,ST5,68.24,male,white,not_hispanic_or_latino,380.4503322253759,0
+S0128,P003258,ARM3,Standard of Care,ST8,69.67,male,white,not_hispanic_or_latino,383.0673574320581,0
+S0129,P007805,ARM1,Pemigatinib Plus Pembrolizumab,ST1,42.89,male,white,not_hispanic_or_latino,383.1989620155487,0
+S0130,P007936,ARM4,Gemcitabine and Carboplatin,ST2,66.6,female,white,not_hispanic_or_latino,385.31059307925005,0
+S0131,P008750,ARM4,Gemcitabine and Carboplatin,ST8,74.34,male,asian,not_hispanic_or_latino,389.67791072227965,0
+S0132,P003515,ARM4,Gemcitabine and Carboplatin,ST1,54.91,male,white,not_hispanic_or_latino,392.7301813621972,0
+S0133,P005959,ARM2,Pemigatinib Alone,ST3,48.11,female,white,not_hispanic_or_latino,393.87886207307434,0
+S0134,P004077,ARM1,Pemigatinib Plus Pembrolizumab,ST4,84.57,male,white,not_hispanic_or_latino,395.4814651446421,0
+S0135,P004924,ARM4,Gemcitabine and Carboplatin,ST7,64.64,male,white,not_hispanic_or_latino,398.6577189641092,0
+S0136,P008612,ARM3,Standard of Care,ST1,61.45,male,white,not_hispanic_or_latino,408.2641219084583,0
+S0137,P006813,ARM1,Pemigatinib Plus Pembrolizumab,ST1,58.93,male,white,not_hispanic_or_latino,410.8100659926483,0
+S0138,P005331,ARM4,Gemcitabine and Carboplatin,ST3,58.69,female,white,not_hispanic_or_latino,412.54346438569513,0
+S0139,P007700,ARM3,Standard of Care,ST4,55.34,male,white,not_hispanic_or_latino,419.4216951168503,0
+S0140,P008477,ARM1,Pemigatinib Plus Pembrolizumab,ST8,52.17,male,white,not_hispanic_or_latino,419.5848538332536,0
+S0141,P003977,ARM2,Pemigatinib Alone,ST4,67.2,male,unknown_or_not_reported,not_hispanic_or_latino,420.2338165628122,0
+S0142,P003466,ARM1,Pemigatinib Plus Pembrolizumab,ST3,63.98,male,white,not_hispanic_or_latino,422.72055494196434,0
+S0143,P003939,ARM4,Gemcitabine and Carboplatin,ST2,61.22,male,white,not_hispanic_or_latino,439.0451370906276,0
+S0144,P005728,ARM1,Pemigatinib Plus Pembrolizumab,ST8,57.64,female,white,hispanic_or_latino,440.2244113359028,0
+S0145,P003807,ARM1,Pemigatinib Plus Pembrolizumab,ST2,64.71,male,white,not_hispanic_or_latino,446.86613836507405,0
+S0146,P002304,ARM4,Gemcitabine and Carboplatin,ST2,54.04,female,white,not_hispanic_or_latino,450.59147400214493,0
+S0147,P002734,ARM4,Gemcitabine and Carboplatin,ST1,54.96,male,white,not_hispanic_or_latino,451.57326434568796,0
+S0148,P003408,ARM3,Standard of Care,ST2,74.15,male,white,not_hispanic_or_latino,452.1878634697133,0
+S0149,P005400,ARM4,Gemcitabine and Carboplatin,ST6,60.58,female,white,not_hispanic_or_latino,452.296340406824,0
+S0150,P007871,ARM4,Gemcitabine and Carboplatin,ST8,50.09,male,white,not_hispanic_or_latino,458.0825954593225,0
+S0151,P001654,ARM2,Pemigatinib Alone,ST6,64.32,male,black_or_african_american,hispanic_or_latino,459.3197567515276,0
+S0152,P003287,ARM3,Standard of Care,ST6,62.64,male,black_or_african_american,not_hispanic_or_latino,459.72558710972777,0
+S0153,P009025,ARM1,Pemigatinib Plus Pembrolizumab,ST1,74.94,male,white,not_hispanic_or_latino,460.5803434989984,0
+S0154,P007534,ARM4,Gemcitabine and Carboplatin,ST5,43.95,male,white,unknown_or_not_reported,466.03608755829265,0
+S0155,P007853,ARM2,Pemigatinib Alone,ST2,54.6,male,white,not_hispanic_or_latino,469.1651369471177,0
+S0156,P007029,ARM1,Pemigatinib Plus Pembrolizumab,ST7,68.54,male,white,not_hispanic_or_latino,469.5624381572588,0
+S0157,P006394,ARM3,Standard of Care,ST3,69.8,male,white,not_hispanic_or_latino,470.0703879888782,0
+S0158,P008249,ARM4,Gemcitabine and Carboplatin,ST2,40.44,male,white,not_hispanic_or_latino,471.45671673833317,0
+S0159,P005011,ARM1,Pemigatinib Plus Pembrolizumab,ST4,79.17,male,white,not_hispanic_or_latino,471.7366474044123,0
+S0160,P001733,ARM2,Pemigatinib Alone,ST7,82.23,male,unknown_or_not_reported,unknown_or_not_reported,473.4215632621471,0
+S0161,P003627,ARM4,Gemcitabine and Carboplatin,ST2,53.74,female,white,not_hispanic_or_latino,473.51603628745744,0
+S0162,P007178,ARM1,Pemigatinib Plus Pembrolizumab,ST5,51.3,male,white,not_hispanic_or_latino,474.66773809612926,0
+S0163,P005366,ARM3,Standard of Care,ST6,75.18,male,white,not_hispanic_or_latino,474.81725007620963,0
+S0164,P000670,ARM2,Pemigatinib Alone,ST2,56.21,male,white,not_hispanic_or_latino,476.09643790444767,0
+S0165,P001313,ARM4,Gemcitabine and Carboplatin,ST7,61.13,male,white,not_hispanic_or_latino,476.3450450616353,0
+S0166,P005865,ARM4,Gemcitabine and Carboplatin,ST5,76.47,male,asian,not_hispanic_or_latino,493.3017183706671,0
+S0167,P007948,ARM4,Gemcitabine and Carboplatin,ST6,41.14,female,white,not_hispanic_or_latino,494.3588225063206,0
+S0168,P007287,ARM3,Standard of Care,ST7,80.05,male,black_or_african_american,not_hispanic_or_latino,499.55119926008996,0
+S0169,P003113,ARM4,Gemcitabine and Carboplatin,ST5,57.4,male,white,not_hispanic_or_latino,501.8397353349486,0
+S0170,P008349,ARM1,Pemigatinib Plus Pembrolizumab,ST1,74.45,female,white,not_hispanic_or_latino,501.95832362744346,0
+S0171,P005853,ARM3,Standard of Care,ST2,54.44,male,white,not_hispanic_or_latino,508.1474112913941,0
+S0172,P003985,ARM1,Pemigatinib Plus Pembrolizumab,ST1,80.59,female,white,not_hispanic_or_latino,513.5570441168244,0
+S0173,P006356,ARM2,Pemigatinib Alone,ST2,43.12,female,white,not_hispanic_or_latino,514.5317590266203,0
+S0174,P005474,ARM4,Gemcitabine and Carboplatin,ST7,79.41,male,white,unknown_or_not_reported,516.8409548240719,0
+S0175,P008160,ARM1,Pemigatinib Plus Pembrolizumab,ST8,69.12,male,white,not_hispanic_or_latino,522.9569434204996,0
+S0176,P007666,ARM2,Pemigatinib Alone,ST7,78.56,male,white,not_hispanic_or_latino,526.0567136957221,0
+S0177,P008780,ARM2,Pemigatinib Alone,ST8,63.03,male,white,not_hispanic_or_latino,528.6175024931692,0
+S0178,P009235,ARM1,Pemigatinib Plus Pembrolizumab,ST7,47.47,male,white,not_hispanic_or_latino,533.8869474806593,0
+S0179,P002962,ARM1,Pemigatinib Plus Pembrolizumab,ST7,70.42,male,white,hispanic_or_latino,537.2685021970854,0
+S0180,P006533,ARM4,Gemcitabine and Carboplatin,ST4,63.89,male,asian,not_hispanic_or_latino,538.5199511153211,0
+S0181,P005674,ARM3,Standard of Care,ST5,82.15,male,white,not_hispanic_or_latino,548.9936268685547,0
+S0182,P008643,ARM3,Standard of Care,ST3,59.31,male,white,not_hispanic_or_latino,556.1862999144511,0
+S0183,P009455,ARM2,Pemigatinib Alone,ST5,57.24,male,white,not_hispanic_or_latino,558.6098084534233,0
+S0184,P004582,ARM2,Pemigatinib Alone,ST6,86.74,male,white,not_hispanic_or_latino,559.2538741369397,0
+S0185,P003346,ARM1,Pemigatinib Plus Pembrolizumab,ST5,78.14,male,white,not_hispanic_or_latino,561.3033191503155,0
+S0186,P007324,ARM2,Pemigatinib Alone,ST3,72.76,male,black_or_african_american,not_hispanic_or_latino,563.3800236793869,0
+S0187,P003088,ARM4,Gemcitabine and Carboplatin,ST2,75.37,male,white,not_hispanic_or_latino,567.6058910412657,0
+S0188,P008586,ARM4,Gemcitabine and Carboplatin,ST3,70.98,male,white,not_hispanic_or_latino,569.5655607856536,0
+S0189,P004646,ARM4,Gemcitabine and Carboplatin,ST3,68.56,female,white,not_hispanic_or_latino,571.0196018538381,0
+S0190,P005862,ARM1,Pemigatinib Plus Pembrolizumab,ST7,66.23,male,white,not_hispanic_or_latino,582.78419994711,0
+S0191,P007775,ARM2,Pemigatinib Alone,ST7,74.62,male,white,not_hispanic_or_latino,583.4891625504456,0
+S0192,P005097,ARM1,Pemigatinib Plus Pembrolizumab,ST2,73.51,male,white,hispanic_or_latino,583.7961146749499,0
+S0193,P007350,ARM2,Pemigatinib Alone,ST8,62.65,male,white,not_hispanic_or_latino,587.1707880138016,0
+S0194,P006705,ARM3,Standard of Care,ST3,46.82,male,white,not_hispanic_or_latino,594.4054277033467,0
+S0195,P001002,ARM3,Standard of Care,ST6,54.56,male,white,hispanic_or_latino,597.8497267135222,0
+S0196,P007604,ARM1,Pemigatinib Plus Pembrolizumab,ST7,80.65,male,white,not_hispanic_or_latino,598.0641647929417,0
+S0197,P008198,ARM2,Pemigatinib Alone,ST8,63.81,female,white,hispanic_or_latino,599.1619655755527,0
+S0198,P008432,ARM1,Pemigatinib Plus Pembrolizumab,ST7,61.32,male,native_hawaiian_or_other_pacific_islander,not_hispanic_or_latino,600.8210749112518,0
+S0199,P003658,ARM1,Pemigatinib Plus Pembrolizumab,ST5,52.9,male,white,not_hispanic_or_latino,601.2722752140286,0
+S0200,P005042,ARM3,Standard of Care,ST8,66.31,male,black_or_african_american,not_hispanic_or_latino,602.1377879379597,0
+S0201,P009883,ARM1,Pemigatinib Plus Pembrolizumab,ST8,81.25,male,white,not_hispanic_or_latino,608.6020888826187,0
+S0202,P009477,ARM3,Standard of Care,ST8,61.01,male,white,not_hispanic_or_latino,610.3884458119862,0
+S0203,P000638,ARM4,Gemcitabine and Carboplatin,ST5,79.7,male,white,not_hispanic_or_latino,612.7890456196448,0
+S0204,P005556,ARM2,Pemigatinib Alone,ST2,60.26,male,unknown_or_not_reported,not_hispanic_or_latino,619.4137860539129,0
+S0205,P007550,ARM1,Pemigatinib Plus Pembrolizumab,ST6,56.24,female,white,not_hispanic_or_latino,620.5778468267986,0
+S0206,P008059,ARM1,Pemigatinib Plus Pembrolizumab,ST7,64.22,female,white,not_hispanic_or_latino,621.779994314834,0
+S0207,P003331,ARM4,Gemcitabine and Carboplatin,ST8,68.89,male,white,not_hispanic_or_latino,623.337066551122,0
+S0208,P003851,ARM2,Pemigatinib Alone,ST1,78.02,male,white,not_hispanic_or_latino,623.6535756608642,0
+S0209,P004001,ARM1,Pemigatinib Plus Pembrolizumab,ST3,65.69,male,white,not_hispanic_or_latino,626.9545562613617,0
+S0210,P008326,ARM2,Pemigatinib Alone,ST4,72.34,male,unknown_or_not_reported,not_hispanic_or_latino,630.95682574529,0
+S0211,P001688,ARM3,Standard of Care,ST7,68.29,female,black_or_african_american,not_hispanic_or_latino,633.4983702205052,0
+S0212,P004398,ARM2,Pemigatinib Alone,ST1,67.27,male,white,hispanic_or_latino,640.258607363571,0
+S0213,P000006,ARM1,Pemigatinib Plus Pembrolizumab,ST8,46.63,male,unknown_or_not_reported,not_hispanic_or_latino,641.9468961486912,0
+S0214,P000901,ARM3,Standard of Care,ST6,67.22,male,white,not_hispanic_or_latino,648.6728142212646,0
+S0215,P004636,ARM2,Pemigatinib Alone,ST8,55.02,female,white,not_hispanic_or_latino,652.6519807049774,0
+S0216,P004612,ARM1,Pemigatinib Plus Pembrolizumab,ST4,75.15,male,white,not_hispanic_or_latino,653.092645343818,0
+S0217,P006617,ARM1,Pemigatinib Plus Pembrolizumab,ST5,56.47,male,white,not_hispanic_or_latino,662.3245719412078,0
+S0218,P006536,ARM2,Pemigatinib Alone,ST2,63.7,male,asian,hispanic_or_latino,666.7059503947291,0
+S0219,P008954,ARM2,Pemigatinib Alone,ST4,55.54,male,black_or_african_american,not_hispanic_or_latino,669.5993551018463,0
+S0220,P008227,ARM1,Pemigatinib Plus Pembrolizumab,ST8,67.68,female,white,not_hispanic_or_latino,670.489018523382,0
+S0221,P002732,ARM2,Pemigatinib Alone,ST3,59.74,male,white,not_hispanic_or_latino,672.4588180278824,0
+S0222,P001549,ARM1,Pemigatinib Plus Pembrolizumab,ST5,62.89,female,white,not_hispanic_or_latino,676.7714190903823,0
+S0223,P006963,ARM4,Gemcitabine and Carboplatin,ST7,62.73,male,white,not_hispanic_or_latino,679.6253325719829,0
+S0224,P002453,ARM1,Pemigatinib Plus Pembrolizumab,ST7,86.41,male,white,not_hispanic_or_latino,685.1930130368096,0
+S0225,P007649,ARM3,Standard of Care,ST6,66.11,male,white,not_hispanic_or_latino,685.8942977232084,0
+S0226,P000899,ARM4,Gemcitabine and Carboplatin,ST3,55.88,female,white,hispanic_or_latino,689.5804434751741,0
+S0227,P006456,ARM2,Pemigatinib Alone,ST4,69.0,male,white,not_hispanic_or_latino,692.1683852654235,0
+S0228,P006087,ARM2,Pemigatinib Alone,ST6,78.87,male,white,not_hispanic_or_latino,695.0544968333438,0
+S0229,P002378,ARM4,Gemcitabine and Carboplatin,ST4,57.98,male,white,not_hispanic_or_latino,697.6227013557791,0
+S0230,P003468,ARM1,Pemigatinib Plus Pembrolizumab,ST6,79.88,male,white,not_hispanic_or_latino,698.2471174800942,0
+S0231,P002533,ARM2,Pemigatinib Alone,ST3,88.5,male,white,not_hispanic_or_latino,699.4178009978112,0
+S0232,P002027,ARM4,Gemcitabine and Carboplatin,ST1,67.03,male,white,not_hispanic_or_latino,704.8292406048694,0
+S0233,P004491,ARM3,Standard of Care,ST7,75.46,female,white,not_hispanic_or_latino,708.3681270955582,0
+S0234,P000176,ARM2,Pemigatinib Alone,ST6,85.78,male,white,not_hispanic_or_latino,710.7116426368494,0
+S0235,P005235,ARM2,Pemigatinib Alone,ST3,71.37,female,asian,not_hispanic_or_latino,717.5866312201633,0
+S0236,P001570,ARM3,Standard of Care,ST4,69.67,male,white,not_hispanic_or_latino,722.1215971925155,0
+S0237,P001075,ARM1,Pemigatinib Plus Pembrolizumab,ST5,58.36,male,white,not_hispanic_or_latino,723.057556631181,0
+S0238,P006680,ARM4,Gemcitabine and Carboplatin,ST4,70.18,male,white,not_hispanic_or_latino,724.2267554821497,0
+S0239,P009831,ARM3,Standard of Care,ST6,74.53,male,white,hispanic_or_latino,724.6005550531885,0
+S0240,P002929,ARM4,Gemcitabine and Carboplatin,ST1,60.31,male,white,not_hispanic_or_latino,726.2515182303614,0
+S0241,P008863,ARM2,Pemigatinib Alone,ST1,61.26,female,black_or_african_american,not_hispanic_or_latino,726.8924394168613,0
+S0242,P000583,ARM2,Pemigatinib Alone,ST7,75.0,male,white,not_hispanic_or_latino,726.953573909625,0
+S0243,P005306,ARM1,Pemigatinib Plus Pembrolizumab,ST7,57.86,female,white,not_hispanic_or_latino,728.0471050890873,0
+S0244,P001854,ARM1,Pemigatinib Plus Pembrolizumab,ST4,70.75,male,white,not_hispanic_or_latino,732.1290843142497,0
+S0245,P009520,ARM2,Pemigatinib Alone,ST2,64.83,male,white,not_hispanic_or_latino,733.1629372002166,0
+S0246,P004897,ARM3,Standard of Care,ST5,60.65,female,white,not_hispanic_or_latino,736.816793693357,0
+S0247,P007012,ARM4,Gemcitabine and Carboplatin,ST2,51.46,female,white,not_hispanic_or_latino,739.9045940771139,0
+S0248,P007081,ARM2,Pemigatinib Alone,ST5,59.18,male,white,not_hispanic_or_latino,742.3006865853129,0
+S0249,P004290,ARM3,Standard of Care,ST1,66.72,male,white,not_hispanic_or_latino,745.2660093157054,0
+S0250,P002420,ARM4,Gemcitabine and Carboplatin,ST2,92.08,male,white,not_hispanic_or_latino,755.5204648579053,0
+S0251,P005681,ARM1,Pemigatinib Plus Pembrolizumab,ST8,64.03,male,white,not_hispanic_or_latino,757.5625050532868,0
+S0252,P001737,ARM4,Gemcitabine and Carboplatin,ST1,52.01,male,white,not_hispanic_or_latino,758.9236674825236,0
+S0253,P006532,ARM4,Gemcitabine and Carboplatin,ST5,51.33,male,american_indian_or_alaska_native,not_hispanic_or_latino,759.4544146342311,0
+S0254,P004175,ARM3,Standard of Care,ST8,63.3,male,white,hispanic_or_latino,759.5620130078846,0
+S0255,P007172,ARM4,Gemcitabine and Carboplatin,ST5,53.32,male,white,not_hispanic_or_latino,761.6537062106671,0
+S0256,P006494,ARM1,Pemigatinib Plus Pembrolizumab,ST6,65.51,male,white,not_hispanic_or_latino,765.8967158430559,0
+S0257,P001589,ARM3,Standard of Care,ST3,59.46,male,white,not_hispanic_or_latino,772.744286583174,0
+S0258,P008557,ARM3,Standard of Care,ST4,62.33,male,white,not_hispanic_or_latino,774.8373064301834,0
+S0259,P006283,ARM1,Pemigatinib Plus Pembrolizumab,ST3,56.94,female,white,not_hispanic_or_latino,775.2972578883328,0
+S0260,P002243,ARM3,Standard of Care,ST1,54.59,male,white,not_hispanic_or_latino,785.5625496058904,0
+S0261,P006751,ARM1,Pemigatinib Plus Pembrolizumab,ST3,68.0,male,unknown_or_not_reported,not_hispanic_or_latino,787.660614680492,0
+S0262,P005895,ARM3,Standard of Care,ST7,69.52,male,white,unknown_or_not_reported,788.9972258127033,0
+S0263,P000597,ARM1,Pemigatinib Plus Pembrolizumab,ST7,67.66,male,white,not_hispanic_or_latino,789.8693382925917,0
+S0264,P009244,ARM4,Gemcitabine and Carboplatin,ST7,65.5,female,black_or_african_american,not_hispanic_or_latino,791.90140350373,0
+S0265,P009065,ARM1,Pemigatinib Plus Pembrolizumab,ST5,69.45,male,white,not_hispanic_or_latino,792.9467975965665,0
+S0266,P009509,ARM2,Pemigatinib Alone,ST5,58.01,male,white,not_hispanic_or_latino,794.8100336285612,0
+S0267,P001339,ARM4,Gemcitabine and Carboplatin,ST6,52.48,male,white,hispanic_or_latino,799.5460277650337,0
+S0268,P003226,ARM3,Standard of Care,ST6,66.48,female,asian,not_hispanic_or_latino,800.235681888134,0
+S0269,P004444,ARM3,Standard of Care,ST4,65.26,male,white,hispanic_or_latino,804.2884921301383,0
+S0270,P006302,ARM3,Standard of Care,ST2,82.2,male,white,not_hispanic_or_latino,808.6132416182564,0
+S0271,P007394,ARM4,Gemcitabine and Carboplatin,ST4,50.49,female,white,hispanic_or_latino,811.4408549544845,0
+S0272,P000107,ARM3,Standard of Care,ST7,85.16,male,white,unknown_or_not_reported,816.954645748769,0
+S0273,P002954,ARM1,Pemigatinib Plus Pembrolizumab,ST1,81.83,male,unknown_or_not_reported,not_hispanic_or_latino,823.4768876093552,0
+S0274,P008259,ARM1,Pemigatinib Plus Pembrolizumab,ST3,49.57,male,white,not_hispanic_or_latino,824.5721879060139,0
+S0275,P008809,ARM1,Pemigatinib Plus Pembrolizumab,ST4,66.19,male,white,hispanic_or_latino,829.1098778120014,0
+S0276,P003021,ARM3,Standard of Care,ST4,56.78,male,white,not_hispanic_or_latino,829.9062323107555,0
+S0277,P007726,ARM2,Pemigatinib Alone,ST8,61.03,male,white,not_hispanic_or_latino,831.3309985475933,0
+S0278,P000496,ARM4,Gemcitabine and Carboplatin,ST7,59.37,male,white,not_hispanic_or_latino,832.0424268531241,0
+S0279,P001825,ARM1,Pemigatinib Plus Pembrolizumab,ST4,75.08,male,white,not_hispanic_or_latino,835.1483494992573,0
+S0280,P005288,ARM1,Pemigatinib Plus Pembrolizumab,ST3,78.57,female,white,not_hispanic_or_latino,835.9672021458442,0
+S0281,P007745,ARM3,Standard of Care,ST2,64.63,male,white,not_hispanic_or_latino,837.7786591223032,0
+S0282,P008399,ARM1,Pemigatinib Plus Pembrolizumab,ST6,63.12,male,white,not_hispanic_or_latino,840.0845251756394,0
+S0283,P004958,ARM3,Standard of Care,ST7,75.24,male,white,not_hispanic_or_latino,851.6233927374683,0
+S0284,P003673,ARM4,Gemcitabine and Carboplatin,ST1,75.85,male,white,hispanic_or_latino,853.7290450824763,0
+S0285,P008132,ARM2,Pemigatinib Alone,ST5,58.49,male,white,not_hispanic_or_latino,857.7609174438142,0
+S0286,P006204,ARM3,Standard of Care,ST6,60.9,male,white,not_hispanic_or_latino,860.5478326261543,0
+S0287,P006880,ARM2,Pemigatinib Alone,ST3,69.34,male,white,not_hispanic_or_latino,861.1915650940114,0
+S0288,P009825,ARM1,Pemigatinib Plus Pembrolizumab,ST6,59.53,male,white,not_hispanic_or_latino,862.966243775602,0
+S0289,P003965,ARM1,Pemigatinib Plus Pembrolizumab,ST7,66.67,male,white,hispanic_or_latino,865.1394065895707,0
+S0290,P000266,ARM1,Pemigatinib Plus Pembrolizumab,ST4,62.58,male,white,not_hispanic_or_latino,865.3320239882394,0
+S0291,P004135,ARM4,Gemcitabine and Carboplatin,ST8,68.94,male,white,not_hispanic_or_latino,867.5101916486768,0
+S0292,P001301,ARM1,Pemigatinib Plus Pembrolizumab,ST6,67.19,male,unknown_or_not_reported,not_hispanic_or_latino,870.3193146797729,0
+S0293,P006610,ARM3,Standard of Care,ST3,55.77,male,white,not_hispanic_or_latino,873.5231066182943,0
+S0294,P003038,ARM1,Pemigatinib Plus Pembrolizumab,ST2,60.46,male,white,not_hispanic_or_latino,874.2817779576394,0
+S0295,P006982,ARM2,Pemigatinib Alone,ST2,50.83,female,black_or_african_american,hispanic_or_latino,877.2922339195592,0
+S0296,P003372,ARM3,Standard of Care,ST5,54.4,male,white,not_hispanic_or_latino,879.9067841739835,0
+S0297,P004782,ARM3,Standard of Care,ST1,70.12,male,white,not_hispanic_or_latino,883.0697568839937,0
+S0298,P007736,ARM3,Standard of Care,ST8,49.02,female,white,not_hispanic_or_latino,893.4249806178192,0
+S0299,P005368,ARM1,Pemigatinib Plus Pembrolizumab,ST4,68.29,female,white,not_hispanic_or_latino,896.662405400345,0
+S0300,P005745,ARM3,Standard of Care,ST3,75.61,female,white,not_hispanic_or_latino,899.725896692678,0
+S0301,P004976,ARM1,Pemigatinib Plus Pembrolizumab,ST5,73.95,male,white,hispanic_or_latino,900.9685669969965,0
+S0302,P009985,ARM3,Standard of Care,ST3,68.89,male,white,not_hispanic_or_latino,904.0744466027965,0
+S0303,P007546,ARM3,Standard of Care,ST6,70.82,male,white,not_hispanic_or_latino,904.8808935557364,0
+S0304,P007363,ARM1,Pemigatinib Plus Pembrolizumab,ST6,69.3,female,white,not_hispanic_or_latino,910.4915953018822,0
+S0305,P008578,ARM1,Pemigatinib Plus Pembrolizumab,ST2,52.25,male,white,not_hispanic_or_latino,910.7864695483057,0
+S0306,P002436,ARM3,Standard of Care,ST6,54.78,male,black_or_african_american,unknown_or_not_reported,914.4118200808024,0
+S0307,P001841,ARM3,Standard of Care,ST1,47.62,male,white,not_hispanic_or_latino,918.5786619489152,0
+S0308,P009002,ARM3,Standard of Care,ST1,55.69,male,white,not_hispanic_or_latino,919.8307729674918,0
+S0309,P005983,ARM3,Standard of Care,ST4,69.76,male,white,not_hispanic_or_latino,923.4897559690858,0
+S0310,P008267,ARM3,Standard of Care,ST6,81.75,female,asian,not_hispanic_or_latino,925.5287647845677,0
+S0311,P006301,ARM2,Pemigatinib Alone,ST5,56.38,male,unknown_or_not_reported,not_hispanic_or_latino,928.2430834864034,0
+S0312,P001413,ARM1,Pemigatinib Plus Pembrolizumab,ST7,52.86,male,white,not_hispanic_or_latino,934.3523572719835,0
+S0313,P009656,ARM2,Pemigatinib Alone,ST5,65.34,male,white,not_hispanic_or_latino,938.2886955819516,0
+S0314,P009408,ARM3,Standard of Care,ST6,55.63,male,white,not_hispanic_or_latino,941.6218856524494,0
+S0315,P004666,ARM3,Standard of Care,ST2,70.84,male,black_or_african_american,not_hispanic_or_latino,943.5752658640718,0
+S0316,P001932,ARM4,Gemcitabine and Carboplatin,ST1,66.23,female,black_or_african_american,not_hispanic_or_latino,945.9990618920431,0
+S0317,P001276,ARM4,Gemcitabine and Carboplatin,ST7,62.08,female,white,hispanic_or_latino,946.3922277011437,0
+S0318,P002291,ARM3,Standard of Care,ST2,45.66,male,white,not_hispanic_or_latino,952.5015037851044,0
+S0319,P001195,ARM3,Standard of Care,ST4,50.69,male,white,not_hispanic_or_latino,953.8992980636954,0
+S0320,P002408,ARM1,Pemigatinib Plus Pembrolizumab,ST7,76.88,male,white,not_hispanic_or_latino,954.719831792565,0
+S0321,P006507,ARM2,Pemigatinib Alone,ST4,78.91,female,white,not_hispanic_or_latino,954.8818363724114,0
+S0322,P008304,ARM1,Pemigatinib Plus Pembrolizumab,ST2,61.07,male,white,not_hispanic_or_latino,956.0783831475363,0
+S0323,P005144,ARM3,Standard of Care,ST4,62.73,female,white,not_hispanic_or_latino,958.50942229315,0
+S0324,P006656,ARM2,Pemigatinib Alone,ST5,64.08,male,white,not_hispanic_or_latino,962.9048635264037,0
+S0325,P001247,ARM1,Pemigatinib Plus Pembrolizumab,ST4,58.35,male,white,not_hispanic_or_latino,969.0792848181495,0
+S0326,P008263,ARM2,Pemigatinib Alone,ST1,87.1,male,white,not_hispanic_or_latino,971.2743020166031,0
+S0327,P004764,ARM2,Pemigatinib Alone,ST6,69.72,male,white,not_hispanic_or_latino,975.9658275696282,0
+S0328,P000765,ARM2,Pemigatinib Alone,ST3,57.67,male,white,not_hispanic_or_latino,981.2775645109443,0
+S0329,P004010,ARM2,Pemigatinib Alone,ST1,48.41,male,unknown_or_not_reported,not_hispanic_or_latino,982.9354577742947,0
+S0330,P000498,ARM4,Gemcitabine and Carboplatin,ST7,61.23,male,black_or_african_american,not_hispanic_or_latino,984.7581347637299,0
+S0331,P002552,ARM3,Standard of Care,ST1,57.23,female,more_than_one_race,not_hispanic_or_latino,986.8668715725973,0
+S0332,P003641,ARM4,Gemcitabine and Carboplatin,ST5,79.53,male,asian,not_hispanic_or_latino,989.1858033456514,0
+S0333,P009936,ARM2,Pemigatinib Alone,ST2,57.56,female,white,not_hispanic_or_latino,989.4579090330762,0
+S0334,P005800,ARM2,Pemigatinib Alone,ST4,49.49,male,white,not_hispanic_or_latino,990.8491898303848,0
+S0335,P005046,ARM3,Standard of Care,ST4,59.81,male,unknown_or_not_reported,hispanic_or_latino,993.285308425522,0
+S0336,P005476,ARM1,Pemigatinib Plus Pembrolizumab,ST3,50.44,male,white,not_hispanic_or_latino,993.72684083254,0
+S0337,P001015,ARM2,Pemigatinib Alone,ST6,62.61,female,white,not_hispanic_or_latino,996.9564399147803,0
+S0338,P003138,ARM1,Pemigatinib Plus Pembrolizumab,ST4,58.13,male,unknown_or_not_reported,not_hispanic_or_latino,1000.2690927953356,0
+S0339,P008474,ARM4,Gemcitabine and Carboplatin,ST3,39.23,male,white,not_hispanic_or_latino,1002.5250109090717,0
+S0340,P000019,ARM2,Pemigatinib Alone,ST8,57.17,male,black_or_african_american,hispanic_or_latino,1011.2805826743788,0
+S0341,P004227,ARM3,Standard of Care,ST3,49.3,female,white,not_hispanic_or_latino,1013.0118136787441,0
+S0342,P001837,ARM1,Pemigatinib Plus Pembrolizumab,ST4,63.78,male,white,not_hispanic_or_latino,1016.3963763002566,0
+S0343,P003335,ARM3,Standard of Care,ST2,68.65,male,white,not_hispanic_or_latino,1018.0556843086289,0
+S0344,P005858,ARM3,Standard of Care,ST2,78.67,male,white,not_hispanic_or_latino,1020.995158288896,0
+S0345,P004720,ARM3,Standard of Care,ST6,55.75,male,white,not_hispanic_or_latino,1025.0173431734845,0
+S0346,P005719,ARM1,Pemigatinib Plus Pembrolizumab,ST5,69.78,male,white,not_hispanic_or_latino,1027.4952974833864,0
+S0347,P006265,ARM4,Gemcitabine and Carboplatin,ST4,68.75,male,unknown_or_not_reported,not_hispanic_or_latino,1035.8262708317457,0
+S0348,P008704,ARM1,Pemigatinib Plus Pembrolizumab,ST1,51.78,male,asian,not_hispanic_or_latino,1041.7522114439398,0
+S0349,P004998,ARM4,Gemcitabine and Carboplatin,ST1,62.36,male,white,not_hispanic_or_latino,1044.2402285531055,0
+S0350,P001117,ARM1,Pemigatinib Plus Pembrolizumab,ST3,83.24,male,white,not_hispanic_or_latino,1053.2258258468028,0
+S0351,P004574,ARM4,Gemcitabine and Carboplatin,ST5,68.49,male,white,not_hispanic_or_latino,1054.1883044192598,0
+S0352,P008807,ARM1,Pemigatinib Plus Pembrolizumab,ST4,66.39,male,black_or_african_american,not_hispanic_or_latino,1056.6651255536074,0
+S0353,P002354,ARM1,Pemigatinib Plus Pembrolizumab,ST1,56.67,male,white,not_hispanic_or_latino,1060.9109729656407,0
+S0354,P002446,ARM2,Pemigatinib Alone,ST1,70.22,male,white,not_hispanic_or_latino,1061.3900112673468,0
+S0355,P004721,ARM2,Pemigatinib Alone,ST5,67.09,male,white,not_hispanic_or_latino,1063.0524216628999,0
+S0356,P005202,ARM2,Pemigatinib Alone,ST4,73.36,male,black_or_african_american,not_hispanic_or_latino,1064.5372585826838,0
+S0357,P009197,ARM2,Pemigatinib Alone,ST5,52.98,male,white,not_hispanic_or_latino,1070.3427315345734,0
+S0358,P009126,ARM4,Gemcitabine and Carboplatin,ST1,62.02,male,white,not_hispanic_or_latino,1072.434525241181,0
+S0359,P006728,ARM2,Pemigatinib Alone,ST8,76.13,male,white,not_hispanic_or_latino,1076.2360211873697,0
+S0360,P005403,ARM3,Standard of Care,ST5,81.85,male,white,not_hispanic_or_latino,1086.0445738209066,0
+S0361,P004247,ARM1,Pemigatinib Plus Pembrolizumab,ST4,73.31,male,white,not_hispanic_or_latino,1086.5278908109847,0
+S0362,P006492,ARM4,Gemcitabine and Carboplatin,ST4,67.4,female,white,not_hispanic_or_latino,1089.7964562798418,0
+S0363,P006439,ARM1,Pemigatinib Plus Pembrolizumab,ST2,82.1,male,white,not_hispanic_or_latino,1091.3876042806082,0
+S0364,P007497,ARM4,Gemcitabine and Carboplatin,ST5,64.95,male,white,not_hispanic_or_latino,1092.9493415246636,0
+S0365,P009529,ARM2,Pemigatinib Alone,ST7,62.93,male,white,not_hispanic_or_latino,1099.2276335967547,0
+S0366,P006499,ARM4,Gemcitabine and Carboplatin,ST8,56.51,male,white,not_hispanic_or_latino,1102.595508821049,0
+S0367,P005987,ARM1,Pemigatinib Plus Pembrolizumab,ST6,79.48,female,white,not_hispanic_or_latino,1102.7144718863563,0
+S0368,P007755,ARM3,Standard of Care,ST8,56.4,male,white,not_hispanic_or_latino,1103.9657063240006,0
+S0369,P006729,ARM4,Gemcitabine and Carboplatin,ST2,65.88,male,white,not_hispanic_or_latino,1105.4769227857812,0
+S0370,P002546,ARM1,Pemigatinib Plus Pembrolizumab,ST7,67.1,male,white,unknown_or_not_reported,1106.7162379518134,0
+S0371,P009430,ARM3,Standard of Care,ST5,72.99,male,white,not_hispanic_or_latino,1109.5554400729827,0
+S0372,P008331,ARM1,Pemigatinib Plus Pembrolizumab,ST5,55.61,male,white,not_hispanic_or_latino,1113.7793648358313,0

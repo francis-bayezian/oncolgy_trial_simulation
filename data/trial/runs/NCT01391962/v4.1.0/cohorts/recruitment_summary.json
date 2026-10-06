@@ -1,0 +1,97 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "e210f25280f43b9023f3df75394eaef47b6e179921b73f6cf3f6001146969a9e",
+  "population": "f2010cc0d0efddef6907f21eb34a54917c0205087c9c3e872157ebe62c85047a",
+  "eligibility": "18e7a37c4b6be78d9ee155de946f4e2db6dcc6e391330a97eecba982fa075ad5"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 70,
+   "source": "maximum_accrual",
+   "evidence": "the accrual ceiling will be set at 70."
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_11.8_per_year",
+    "rate_per_year": 11.826691524095411,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 2.5137828864739515,
+     "p30": 6.2182239630695495,
+     "p50": 11.826691524095411,
+     "p70": 23.320043628233197,
+     "p90": 61.913591534383926
+    }
+   },
+   {
+    "rate_per_year": 14.0,
+    "evidence": "With an anticipated accrual of 14-16 patients per year",
+    "scenario": "accrual_14_per_year"
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_11.8_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM2",
+    "label": "sunitinib malate (37.5 mg)",
+    "description": "sunitinib malate (37.5 mg)"
+   }
+  ],
+  "arm_status_note": "arms stated as open",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "will be randomized by the Coordinating Center using a predetermined, balanced list During randomization",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": []
+ },
+ "summary": {
+  "pool": 8575,
+  "target": {
+   "patients": 70,
+   "source": "maximum_accrual",
+   "evidence": "the accrual ceiling will be set at 70."
+  },
+  "scenarios": {
+   "accrual_historical_11.8_per_year": {
+    "enrolled": 70,
+    "accrual_years": 5.384894980696803,
+    "arms": {
+     "ARM2": 70
+    },
+    "strata": {
+     "null": 70
+    },
+    "sex": {
+     "male": 43,
+     "female": 27
+    },
+    "age_mean": 28.169714285714292
+   },
+   "accrual_14_per_year": {
+    "enrolled": 70,
+    "accrual_years": 4.30149223549713,
+    "arms": {
+     "ARM2": 70
+    },
+    "strata": {
+     "null": 70
+    },
+    "sex": {
+     "male": 37,
+     "female": 33
+    },
+    "age_mean": 26.236
+   }
+  },
+  "headline_scenario": "accrual_historical_11.8_per_year"
+ }
+}

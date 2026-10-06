@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" font-family="sans-serif" font-size="12">
+<rect width="900" height="400" fill="white"/>
+<text x="10" y="20" font-size="14" font-weight="bold">PFS hazard ratio: ARM1 vs ARM2</text>
+<text x="10" y="44" fill="#555">Subgroup (n)</text>
+<text x="810" y="44" fill="#555">Estimate (95% CI)</text>
+<line x1="618.2" y1="50" x2="618.2" y2="370" stroke="#999" stroke-dasharray="4,3"/>
+<text x="10" y="66">patients previously treated or not: Previously treated (25</text>
+<line x1="600.1" y1="62" x2="673.5" y2="62" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="632.8" y="58" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="66">1.70 (0.60, 4.81)</text>
+<text x="10" y="86">    Previously untreated (32)</text>
+<line x1="600.2" y1="82" x2="658.8" y2="82" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="625.5" y="78" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="86">1.38 (0.60, 3.17)</text>
+<text x="10" y="106">bevacizumab pre-treated cohort: Prior bevacizumab treated </text>
+<line x1="605.6" y1="102" x2="676.4" y2="102" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="637.0" y="98" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="106">1.91 (0.70, 5.22)</text>
+<text x="10" y="126">    Prior bevacizumab untreated (35)</text>
+<line x1="605.0" y1="122" x2="670.4" y2="122" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="633.7" y="118" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="126">1.74 (0.69, 4.40)</text>
+<text x="10" y="146">Age (FDA standard age bands): 65-74 years (9)</text>
+<line x1="584.4" y1="142" x2="751.0" y2="142" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="663.7" y="138" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="146">4.08 (0.38, 43.33)</text>
+<text x="10" y="166">    &lt; 65 years (46)</text>
+<line x1="603.5" y1="162" x2="653.9" y2="162" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="624.7" y="158" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="166">1.35 (0.66, 2.75)</text>
+<text x="10" y="186">Sex: female (57)</text>
+<line x1="610.7" y1="182" x2="656.9" y2="182" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="629.8" y="178" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="186">1.56 (0.81, 3.00)</text>
+<text x="10" y="206">Race: american_indian_or_alaska_native (3)</text>
+<line x1="579.8" y1="202" x2="780.9" y2="202" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="676.4" y="198" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="206">5.84 (0.34, 101.18)</text>
+<text x="10" y="226">    asian (4)</text>
+<line x1="399.1" y1="222" x2="632.1" y2="222" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="508.6" y="218" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="226">0.05 (0.00, 1.48)</text>
+<text x="10" y="246">    black_or_african_american (6)</text>
+<line x1="545.1" y1="242" x2="684.0" y2="242" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="610.6" y="238" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="246">0.90 (0.13, 6.48)</text>
+<text x="10" y="266">    white (41)</text>
+<line x1="604.8" y1="262" x2="661.2" y2="262" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="629.0" y="258" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="266">1.52 (0.69, 3.40)</text>
+<text x="10" y="286">Ethnicity: not_hispanic_or_latino (56)</text>
+<line x1="610.7" y1="282" x2="657.6" y2="282" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="630.2" y="278" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="286">1.57 (0.81, 3.06)</text>
+<text x="10" y="306">ECOG performance status: 0 (26)</text>
+<line x1="568.4" y1="302" x2="636.6" y2="302" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="598.5" y="298" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="306">0.64 (0.24, 1.69)</text>
+<text x="10" y="326">    1 (29)</text>
+<line x1="628.2" y1="322" x2="707.6" y2="322" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="663.9" y="318" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="326">4.09 (1.33, 12.63)</text>
+<text x="10" y="346">    2 or more (2)</text>
+<line x1="413.4" y1="342" x2="685.8" y2="342" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="543.6" y="338" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="346">0.14 (0.00, 6.82)</text>
+<text x="618.2" y="388" text-anchor="middle" fill="#555">favours arm <- 1 -> favours control</text></svg>

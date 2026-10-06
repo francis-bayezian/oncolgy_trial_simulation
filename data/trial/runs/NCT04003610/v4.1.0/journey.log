@@ -1,0 +1,118 @@
+{
+ "subjects": 372,
+ "traces": [
+  "S0184",
+  "S0370",
+  "S0208"
+ ],
+ "any_dose_hold": 64,
+ "any_dose_reduction": 0,
+ "discontinued_for_ae": 7,
+ "deaths": 28,
+ "deaths_on_treatment": 3,
+ "end_of_treatment_reasons": {
+  "completed planned treatment": 215,
+  "disease progression": 114,
+  "withdrawal (subject, loss to follow-up or physician decision)": 33,
+  "adverse event (registry discontinuation rate)": 7,
+  "death": 3
+ },
+ "median_rdi": 1.0,
+ "progression_detected": 114,
+ "adverse_events_after_reporting_window_dropped": 17,
+ "rules_undecidable": [
+  "DM003",
+  "DM030"
+ ],
+ "screening_funnel": {
+  "generated_patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7786,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2214
+  },
+  "not_ruled_out_share": 0.7786,
+  "undecidable_criteria": [
+   "EL003",
+   "EL005",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL009",
+   "EL010",
+   "EL011",
+   "EL012",
+   "EL013",
+   "EL016",
+   "EL019",
+   "EL021",
+   "EL022",
+   "EL023",
+   "EL024",
+   "EL025",
+   "EL026",
+   "EL027",
+   "EL028",
+   "EL029",
+   "EL030",
+   "EL031",
+   "EL032",
+   "EL033",
+   "EL035",
+   "EL036",
+   "EL038",
+   "EL039",
+   "EL040",
+   "EL041",
+   "EL042",
+   "EL043",
+   "EL044",
+   "EL045",
+   "EL048",
+   "EL049",
+   "EL050",
+   "EL051",
+   "EL052",
+   "EL053",
+   "EL054",
+   "EL055",
+   "EL056"
+  ],
+  "screen_pass_rate": {
+   "value": 0.7727210680983106,
+   "evidence_level": "evidence",
+   "source": "registry recruitment details stating screened and enrolled counts (all oncology, PHASE2; 185 trials, 26902 screened)",
+   "detail": {
+    "estimate": 0.7727210680983106,
+    "ci95": [
+     0.7458066356322376,
+     0.7975592852162824
+    ],
+    "single_trial_80": [
+     0.5096749498755703,
+     0.9174940417220255
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.509686141946514,
+     "p30": 0.6767446638999839,
+     "p50": 0.7727210680983106,
+     "p70": 0.8466583338706396,
+     "p90": 0.9174906514858165
+    },
+    "tau_logit": 0.9215911052325251,
+    "groups": 185,
+    "trials": 185,
+    "participants": 26902
+   }
+  },
+  "target": 372.0,
+  "patients_to_screen": {
+   "estimate": 482,
+   "range_80": [
+    406,
+    730
+   ],
+   "basis": "target / registry pass rate (the range is for a single new trial)"
+  }
+ }
+}

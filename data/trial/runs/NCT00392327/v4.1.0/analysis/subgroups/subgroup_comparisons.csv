@@ -1,0 +1,28 @@
+Factor,Level,Arm vs control,N / N control,ORR difference % (95% CI),PFS HR (95% CI),OS HR (95% CI)
+location,Medulloblastoma,ARM2 vs ARM1,135 / 140,"-2.9 (-12.4, 6.7)",0.892 (0.62-1.283),-
+location,not recorded,ARM2 vs ARM1,63 / 62,"-14.8 (-30.4, 0.7)",1.296 (0.733-2.292),-
+dissemination,M+,ARM2 vs ARM1,85 / 99,"-12.2 (-24.9, 0.6)",0.883 (0.56-1.392),-
+dissemination,M0,ARM2 vs ARM1,113 / 103,"-0.8 (-11.3, 9.7)",1.076 (0.71-1.631),-
+Randomisation stratum,(1) M0 Medulloblastoma with >1.5 cm2 residual,ARM2 vs ARM1,43 / 48,"-11.3 (-26.6, 4.0)",1.176 (0.6-2.301),-
+Randomisation stratum,(2) M+ Medulloblastoma,ARM2 vs ARM1,107 / 114,"-12.1 (-23.2, -1.0)",0.974 (0.648-1.466),-
+Randomisation stratum,(3) M0 Diffusely Anaplastic Medulloblastoma,ARM2 vs ARM1,48 / 40,"11.2 (-6.8, 29.3)",0.87 (0.454-1.669),-
+Age (ICH E11 paediatric bands),12-17 years,ARM2 vs ARM1,53 / 66,"-12.6 (-28.3, 3.2)",1.123 (0.618-2.041),-
+Age (ICH E11 paediatric bands),2-11 years,ARM2 vs ARM1,145 / 133,"-3.2 (-12.8, 6.3)",0.925 (0.645-1.326),-
+Age (ICH E11 paediatric bands),>= 18 years,ARM2 vs ARM1,0 / 3,-,-,-
+Sex,female,ARM2 vs ARM1,71 / 87,"0.6 (-13.5, 14.6)",1.08 (0.644-1.81),-
+Sex,male,ARM2 vs ARM1,127 / 115,"-10.3 (-20.3, -0.2)",0.916 (0.624-1.344),-
+Race,american_indian_or_alaska_native,ARM2 vs ARM1,2 / 0,-,-,-
+Race,asian,ARM2 vs ARM1,5 / 7,"20.0 (-15.1, 55.1)",0.642 (0.102-4.061),-
+Race,black_or_african_american,ARM2 vs ARM1,10 / 13,"-10.8 (-46.0, 24.5)",1.154 (0.273-4.882),-
+Race,native_hawaiian_or_other_pacific_islander,ARM2 vs ARM1,1 / 0,-,-,-
+Race,other,ARM2 vs ARM1,3 / 5,"-20.0 (-55.1, 15.1)",-,-
+Race,unknown_or_not_reported,ARM2 vs ARM1,0 / 3,-,-,-
+Race,white,ARM2 vs ARM1,177 / 174,"-7.8 (-16.7, 1.1)",1.044 (0.756-1.441),-
+Ethnicity,hispanic_or_latino,ARM2 vs ARM1,23 / 21,"-16.8 (-44.5, 11.0)",0.886 (0.35-2.246),-
+Ethnicity,not_hispanic_or_latino,ARM2 vs ARM1,174 / 180,"-4.9 (-13.5, 3.6)",1.033 (0.746-1.43),-
+Ethnicity,unknown_or_not_reported,ARM2 vs ARM1,1 / 1,"-100.0 (-100.0, -100.0)",0.135 (0.003-6.821),-
+Residual,< 1.5 cm2,ARM2 vs ARM1,125 / 133,"-5.6 (-15.7, 4.5)",0.916 (0.623-1.347),-
+Residual,>= 1.5 cm2,ARM2 vs ARM1,73 / 69,"-8.4 (-22.6, 5.7)",1.141 (0.687-1.895),-
+Ecog performance status,0,ARM2 vs ARM1,79 / 78,"-5.4 (-18.5, 7.7)",1.267 (0.776-2.068),-
+Ecog performance status,1,ARM2 vs ARM1,98 / 88,"-8.0 (-20.3, 4.3)",0.819 (0.521-1.287),-
+Ecog performance status,2 or more,ARM2 vs ARM1,21 / 36,"-7.9 (-28.1, 12.3)",0.955 (0.416-2.193),-

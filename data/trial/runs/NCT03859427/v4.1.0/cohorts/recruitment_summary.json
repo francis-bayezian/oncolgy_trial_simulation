@@ -1,0 +1,110 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "3c396a3eadb6a232eae3d1a03067dc1064f5d6d8c048e2096d32d7909fb40db9",
+  "population": "184ae65f48aec7d2c80bc5bcdfebeaaeb47bfa43c4dda30e5a929f1a724dada0",
+  "eligibility": "2a792b632f5de88a32c2e8f0041c1f77475937268bcf6ad70a1290945f2b9eee"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 460,
+   "source": "target_accrual",
+   "evidence": "Approximately 460 subjects will be enrolled in the study"
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_68.6_per_year",
+    "rate_per_year": 68.61422767895607,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 11.41987732568605,
+     "p30": 32.9197804548803,
+     "p50": 68.61422767895607,
+     "p70": 142.24101361935814,
+     "p90": 365.8036401553721
+    }
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_68.6_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "Once-weekly",
+    "description": "Once-weekly"
+   },
+   {
+    "arm_id": "ARM2",
+    "label": "Twice-weekly",
+    "description": "Twice-weekly"
+   }
+  ],
+  "arm_status_note": "no arm is stated to be open in the compiled version: every arm not stated to be closed is assumed to enroll",
+  "ratio": [
+   1.0,
+   1.0
+  ],
+  "ratio_derivation": null,
+  "method_text": "The randomization will be performed using an IxRS. The screening window is up to 28 days from date of consent until randomization.",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": [
+   {
+    "stratum_id": "ST1",
+    "status": "EXECUTABLE",
+    "rendering": "(original ISS stage at study entry is one of ['stage 1 or 2'] OR original ISS stage at study entry is one of ['stage 3'])"
+   },
+   {
+    "stratum_id": "ST2",
+    "status": "EXECUTABLE",
+    "rendering": "(prior lenalidomide treatment is one of ['yes'] OR prior lenalidomide treatment is one of ['no'])"
+   },
+   {
+    "stratum_id": "ST3",
+    "status": "EXECUTABLE",
+    "rendering": "(prior PI treatment is one of ['yes'] OR prior PI treatment is one of ['no'])"
+   },
+   {
+    "stratum_id": "ST4",
+    "status": "EXECUTABLE",
+    "rendering": "(prior anti-CD38 exposure is one of ['yes'] OR prior anti-CD38 exposure is one of ['no'])"
+   }
+  ]
+ },
+ "summary": {
+  "pool": 8128,
+  "target": {
+   "patients": 460,
+   "source": "target_accrual",
+   "evidence": "Approximately 460 subjects will be enrolled in the study"
+  },
+  "scenarios": {
+   "accrual_historical_68.6_per_year": {
+    "enrolled": 460,
+    "accrual_years": 6.713648979240542,
+    "arms": {
+     "ARM1": 222,
+     "ARM2": 238
+    },
+    "strata": {
+     "ST1": 114,
+     "ST3": 102,
+     "ST2": 117,
+     "ST4": 127
+    },
+    "sex": {
+     "male": 250,
+     "female": 210
+    },
+    "age_mean": 61.88289130434783
+   }
+  },
+  "headline_scenario": "accrual_historical_68.6_per_year"
+ }
+}

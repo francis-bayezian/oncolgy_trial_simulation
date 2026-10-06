@@ -1,0 +1,65 @@
+{
+ "version": "subgroup-evidence-1.0.0",
+ "family": "mixed_hematologic",
+ "phase": null,
+ "factors": [
+  {
+   "key": "var:ecog_performance_status",
+   "text": "ECOG performance status (0, 1, 2 or more)",
+   "levels": [
+    "0",
+    "1",
+    "2 or more"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "0": 0.439,
+    "1": 0.4798,
+    "2 or more": 0.0812
+   },
+   "effects": {
+    "reference_level": "0",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "demographic:sex",
+   "text": "sex (female, male)",
+   "levels": [
+    "female",
+    "male"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "female": 0.456,
+    "male": 0.544
+   },
+   "effects": {
+    "reference_level": "female",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "male": {
+      "log_effect": 0.0485,
+      "trials": 3,
+      "range_10_90": [
+       0.039,
+       0.24
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  }
+ ],
+ "assumptions": [
+  "A27_subgroup_prevalence_equal",
+  "A28_prognostic_effects"
+ ]
+}

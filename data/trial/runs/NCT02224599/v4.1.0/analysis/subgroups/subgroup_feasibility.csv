@@ -1,0 +1,19 @@
+Factor,Level,Screened,Eligible (%),Enrolled,Most frequent failing criteria (% of screened),Driver
+Age (FDA standard age bands),65-74 years,2681,2068 (77%),4,EL015 Adequate renal and hepatic function (1%); EL021 without confirmed progressive and/or ref (1%); EL019 Either a female or male of reproductive  (1%),patient mix
+Age (FDA standard age bands),< 65 years,6288,4832 (77%),11,EL034 Subjects must be adult patients with con (1%); EL006 Patients with histologically proven prog (1%); EL014 Patients must be willing to provide at l (1%),patient mix
+Age (FDA standard age bands),>= 75 years,1031,804 (78%),2,EL033 psychological or geographic conditions t (2%); EL017 Karnofsky performance status ≥ 70%. (2%); EL006 Patients with histologically proven prog (1%),patient mix
+Sex,female,4282,3313 (77%),7,EL019 Either a female or male of reproductive  (1%); EL027 Active autoimmune disease (1%); EL034 Subjects must be adult patients with con (1%),patient mix
+Sex,male,5718,4391 (77%),10,EL006 Patients with histologically proven prog (1%); EL030 Life expectancy of less than 6 months. (1%); EL034 Subjects must be adult patients with con (1%),patient mix
+Race,american_indian_or_alaska_native,57,43 (75%),0,"EL024 Active immunosuppressive therapy, includ (4%); EL018 Expected survival ≥ 6 months. (4%); EL031 contraindications to known allergies to  (4%)",patient mix
+Race,asian,1042,817 (78%),1,EL033 psychological or geographic conditions t (1%); EL009 Patients must not have any active infect (1%); EL028 Pregnancy or breast feeding. (1%),patient mix
+Race,black_or_african_american,1025,766 (75%),3,EL032 Patients who have received organ transpl (1%); EL015 Adequate renal and hepatic function (1%); EL026 Active ischemic heart disease or history (1%),patient mix
+Race,more_than_one_race,120,101 (84%),0,"EL015 Adequate renal and hepatic function (2%); EL029 Active second invasive malignancy, other (2%); EL033 psychological or geographic conditions t (2%)",patient mix
+Race,native_hawaiian_or_other_pacific_islander,29,19 (66%),0,"EL027 Active autoimmune disease (7%); EL010 Patients must not have a history of HIV, (3%); EL015 Adequate renal and hepatic function (3%)",patient mix
+Race,unknown_or_not_reported,455,336 (74%),0,EL030 Life expectancy of less than 6 months. (3%); EL019 Either a female or male of reproductive  (2%); EL027 Active autoimmune disease (2%),patient mix
+Race,white,7272,5622 (77%),13,"EL026 Active ischemic heart disease or history (1%); EL024 Active immunosuppressive therapy, includ (1%); EL019 Either a female or male of reproductive  (1%)",patient mix
+Ethnicity,hispanic_or_latino,706,538 (76%),2,"EL021 without confirmed progressive and/or ref (2%); EL013 Patients may not have any known allergy  (2%); EL010 Patients must not have a history of HIV, (2%)",patient mix
+Ethnicity,not_hispanic_or_latino,9035,6966 (77%),14,EL019 Either a female or male of reproductive  (1%); EL006 Patients with histologically proven prog (1%); EL015 Adequate renal and hepatic function (1%),patient mix
+Ethnicity,unknown_or_not_reported,259,200 (77%),1,EL026 Active ischemic heart disease or history (2%); EL034 Subjects must be adult patients with con (2%); EL017 Karnofsky performance status ≥ 70%. (2%),patient mix
+Ecog performance status,0,4390,3397 (77%),6,"EL034 Subjects must be adult patients with con (1%); EL024 Active immunosuppressive therapy, includ (1%); EL030 Life expectancy of less than 6 months. (1%)",patient mix
+Ecog performance status,1,4798,3688 (77%),9,EL015 Adequate renal and hepatic function (1%); EL014 Patients must be willing to provide at l (1%); EL032 Patients who have received organ transpl (1%),patient mix
+Ecog performance status,2 or more,812,619 (76%),2,EL013 Patients may not have any known allergy  (2%); EL021 without confirmed progressive and/or ref (2%); EL019 Either a female or male of reproductive  (1%),patient mix

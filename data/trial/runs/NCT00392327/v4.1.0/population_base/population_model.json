@@ -1,0 +1,729 @@
+{
+ "population_version": "population-1.0.0",
+ "seed": 20260927,
+ "n": 10000,
+ "inputs": {
+  "studyspec": "d488a0ad74e5a7b72d5af105f6da1669ac7c512420e371d7e51985e83a240340",
+  "facts": "f19a4a6e654d528b6d0d9989ceefb97ee81d3101f9adb2b7e689047e31748c71",
+  "simulation_parameters": "simulation_parameters_v3"
+ },
+ "model": {
+  "demographic:age": {
+   "source": "simulation_parameters_v3",
+   "type": "age",
+   "eligibility_years": [
+    3.0,
+    22.0
+   ],
+   "retrieval": {
+    "matched_path": [
+     "PEDIATRIC",
+     "central_nervous_system"
+    ],
+    "matched_level": "disease_family",
+    "missing_levels": [
+     "disease",
+     "setting"
+    ],
+    "extrapolation_level": 2,
+    "support": {
+     "direct_studies": 0,
+     "direct_N": 0,
+     "borrowed_parent_studies": 1,
+     "effective_information": 0.578111166259789,
+     "effective_information_unit": "patient-equivalent N (outcome variance / posterior variance of the context parameter)"
+    }
+   },
+   "age_class_mixture": [
+    {
+     "age_class": "PEDIATRIC",
+     "weight": 1.0
+    }
+   ]
+  },
+  "demographic:ethnicity": {
+   "source": "protocol_projection",
+   "type": "categorical_given_sex",
+   "given_sex": {
+    "female": {
+     "hispanic_or_latino": 0.11464968152866242,
+     "not_hispanic_or_latino": 0.8789808917197452,
+     "unknown_or_not_reported": 0.006369426751592357
+    },
+    "male": {
+     "hispanic_or_latino": 0.102880658436214,
+     "not_hispanic_or_latino": 0.8930041152263375,
+     "unknown_or_not_reported": 0.00411522633744856
+    }
+   },
+   "facts": [
+    "F076",
+    "F077",
+    "F079",
+    "F080",
+    "F082",
+    "F083"
+   ]
+  },
+  "demographic:race": {
+   "source": "protocol_projection",
+   "type": "categorical_given_sex",
+   "given_sex": {
+    "female": {
+     "american_indian_or_alaska_native": 0.012738853503184714,
+     "asian": 0.03184713375796178,
+     "black_or_african_american": 0.05732484076433121,
+     "native_hawaiian_or_other_pacific_islander": 0.006369426751592357,
+     "white": 0.8726114649681529,
+     "other": 0.012738853503184714,
+     "unknown_or_not_reported": 0.006369426751592357
+    },
+    "male": {
+     "american_indian_or_alaska_native": 0.00823045267489712,
+     "asian": 0.02880658436213992,
+     "black_or_african_american": 0.06995884773662552,
+     "native_hawaiian_or_other_pacific_islander": 0.00823045267489712,
+     "white": 0.8600823045267489,
+     "other": 0.01646090534979424,
+     "unknown_or_not_reported": 0.00823045267489712
+    }
+   },
+   "facts": [
+    "F088",
+    "F089",
+    "F091",
+    "F092",
+    "F094",
+    "F095",
+    "F097",
+    "F098",
+    "F100",
+    "F101",
+    "F103",
+    "F104",
+    "F106",
+    "F107"
+   ]
+  },
+  "demographic:sex": {
+   "source": "protocol_projection",
+   "type": "categorical",
+   "probabilities": {
+    "female": 0.3925,
+    "male": 0.6075
+   },
+   "counts": {
+    "female": 157.0,
+    "male": 243.0
+   }
+  },
+  "var:tumor_location": {
+   "source": "protocol_facts",
+   "type": "categorical",
+   "probabilities": {
+    "Medulloblastoma": 0.7128378378378378,
+    "__not_stated__": 0.28716216216216217
+   },
+   "facts": [
+    "F019"
+   ]
+  },
+  "umls:C0543478": {
+   "source": "protocol_facts",
+   "type": "threshold_share",
+   "threshold": {
+    "op": ">=",
+    "value": 1.5,
+    "unit": "cm2"
+   },
+   "p_meets": 0.3424657534246575,
+   "facts": [
+    "F068"
+   ],
+   "population": "patients in CCG-99701",
+   "source_study": "CCG-99701"
+  },
+  "_unresolved": [
+   "umls:C0001899",
+   "umls:C0005437",
+   "umls:C0005821",
+   "umls:C0007591",
+   "umls:C0011900",
+   "umls:C0019046",
+   "umls:C0019638",
+   "umls:C0023671",
+   "umls:C0032976",
+   "umls:C0037943",
+   "umls:C0038874",
+   "umls:C0242192",
+   "umls:C0600061",
+   "umls:C0699749",
+   "umls:C0812399",
+   "umls:C0948762",
+   "umls:C1336538",
+   "umls:C1550320",
+   "umls:C1711202",
+   "umls:C2828358",
+   "umls:C3665472",
+   "umls:C4697811",
+   "umls:C5444850",
+   "var:agreement_not_to_breast_feed",
+   "var:anti_seizure_medications",
+   "var:dissemination_status",
+   "var:effective_contraceptive_method_agreement",
+   "var:karnofsky_performance_level",
+   "var:laboratory_values",
+   "var:lansky_performance_scale",
+   "var:menarchal_status",
+   "var:positive_csf_cytology",
+   "var:postoperative_head_mri",
+   "var:postoperative_spinal_tap",
+   "var:prior_therapy_status",
+   "var:radioisotope_gfr",
+   "var:reproductive_potential",
+   "var:spinal_subarachnoid_metastases_documentation"
+  ]
+ },
+ "bindings": [
+  {
+   "fact_id": "F019",
+   "kind": "share_of_category",
+   "variable": "var:tumor_location",
+   "category": "Medulloblastoma",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "It gives the share of eligible patients with medulloblastoma.",
+   "issues": [],
+   "rendering": "fact F019 is the share of patients whose tumor location (var:tumor_location) is 'Medulloblastoma' (characteristic_distribution: 'patients'; level 'medulloblastoma'; value 211 of 296 (211) patients [read as proportion 0.7128]; at 'As of Amendment #2'; population 'eligible patients'; source not_stated)",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the tumor location category Medulloblastoma."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F021",
+   "kind": "share_of_category",
+   "variable": "umls:C1336538",
+   "category": "supratentorial PNET",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "It gives the share of enrolled patients with supratentorial PNET.",
+   "issues": [
+    "the fact states a bound (less than), not a value to sample from"
+   ],
+   "rendering": "fact F021 is the share of patients whose Supratentorial Embryonal Tumor, Not Otherwise Specified (umls:C1336538) is 'supratentorial PNET' (characteristic_distribution: 'enrolled patients'; level 'supratentorial PNET'; value less than 30% [read as proportion 0.3]; population 'enrolled patients'; source historical_study (the ACNS0332 protocol))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the enrolled-patient share with the supratentorial PNET category of the specified tumor variable."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "fact_id": "F068",
+   "kind": "share_meeting_condition",
+   "variable": "umls:C0543478",
+   "category": "residual tumor measuring at least 1.5 cm2",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "ST1",
+   "reason": "It gives the share of patients meeting a residual-tumor size condition.",
+   "issues": [],
+   "threshold": {
+    "op": ">=",
+    "value": 1.5,
+    "unit": "cm2"
+   },
+   "rendering": "fact F068 is the share of patients whose Residual Tumor meets 'residual tumor measuring at least 1.5 cm2', the variable used in the rule condition 'residual greater than 1.5 cm2' of ST1 (characteristic_distribution: 'residual tumor'; level 'residual tumor measuring at least 1.5 cm2'; value 50 of 146 (34%) [read as proportion 0.3425]; population 'patients in CCG-99701'; source historical_study (CCG-99701))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the Residual Tumor variable used by the rule, and its threshold difference is permitted for a condition binding."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F076",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:ethnicity",
+   "category_2": "hispanic_or_latino",
+   "condition_item": "",
+   "reason": "It is a count for a female Hispanic or Latino demographic cell.",
+   "issues": [],
+   "rendering": "fact F076 is the number of patients with sex = 'female' AND ethnicity = 'hispanic_or_latino' (enrollment_projection: 'Females'; level 'Hispanic or Latino'; value 18 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly binds 18 patients in the female and Hispanic or Latino table cell."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F077",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:ethnicity",
+   "category_2": "hispanic_or_latino",
+   "condition_item": "",
+   "reason": "It is a count for a male Hispanic or Latino demographic cell.",
+   "issues": [],
+   "rendering": "fact F077 is the number of patients with sex = 'male' AND ethnicity = 'hispanic_or_latino' (enrollment_projection: 'Males'; level 'Hispanic or Latino'; value 25 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly binds the Hispanic or Latino ethnicity and male sex categories to the table value of 25 patients."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F079",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:ethnicity",
+   "category_2": "not_hispanic_or_latino",
+   "condition_item": "",
+   "reason": "It is a count for a female not Hispanic or Latino demographic cell.",
+   "issues": [],
+   "rendering": "fact F079 is the number of patients with sex = 'female' AND ethnicity = 'not_hispanic_or_latino' (enrollment_projection: 'Females'; level 'Not Hispanic or Latino'; value 138 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the female category of sex and the Not Hispanic or Latino category of ethnicity."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F080",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:ethnicity",
+   "category_2": "not_hispanic_or_latino",
+   "condition_item": "",
+   "reason": "It is a count for a male not Hispanic or Latino demographic cell.",
+   "issues": [],
+   "rendering": "fact F080 is the number of patients with sex = 'male' AND ethnicity = 'not_hispanic_or_latino' (enrollment_projection: 'Males'; level 'Not Hispanic or Latino'; value 217 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the male category of sex and the Not Hispanic or Latino category of ethnicity."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F082",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:ethnicity",
+   "category_2": "unknown_or_not_reported",
+   "condition_item": "",
+   "reason": "It is a count for a female demographic cell with unknown ethnicity.",
+   "issues": [],
+   "rendering": "fact F082 is the number of patients with sex = 'female' AND ethnicity = 'unknown_or_not_reported' (enrollment_projection: 'Females'; level 'Unknown'; value 1 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the female category of sex and the Unknown category of ethnicity, matching the linked patient variables."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F083",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:ethnicity",
+   "category_2": "unknown_or_not_reported",
+   "condition_item": "",
+   "reason": "It is a count for a male demographic cell with unknown ethnicity.",
+   "issues": [],
+   "rendering": "fact F083 is the number of patients with sex = 'male' AND ethnicity = 'unknown_or_not_reported' (enrollment_projection: 'Males'; level 'Unknown'; value 1 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The table cell describes 1 patient who is male and has unknown ethnicity, matching the linked variables and categories."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F088",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:race",
+   "category_2": "american_indian_or_alaska_native",
+   "condition_item": "",
+   "reason": "It is a count for a female American Indian or Alaska Native demographic cell.",
+   "issues": [],
+   "rendering": "fact F088 is the number of patients with sex = 'female' AND race = 'american_indian_or_alaska_native' (enrollment_projection: 'Females'; level 'American Indian or Alaskan Native'; value 2 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the female category of sex and the American Indian or Alaskan Native category of race."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F089",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:race",
+   "category_2": "american_indian_or_alaska_native",
+   "condition_item": "",
+   "reason": "It is a count for a male American Indian or Alaska Native demographic cell.",
+   "issues": [],
+   "rendering": "fact F089 is the number of patients with sex = 'male' AND race = 'american_indian_or_alaska_native' (enrollment_projection: 'Males'; level 'American Indian or Alaskan Native'; value 2 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the male category of the sex variable and the American Indian or Alaskan Native category of the race variable, with the table value of 2."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F091",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:race",
+   "category_2": "asian",
+   "condition_item": "",
+   "reason": "It is a count for a female Asian demographic cell.",
+   "issues": [],
+   "rendering": "fact F091 is the number of patients with sex = 'female' AND race = 'asian' (enrollment_projection: 'Females'; level 'Asian'; value 5 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly binds sex = female and race = Asian to the table cell value of 5 patients."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F092",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:race",
+   "category_2": "asian",
+   "condition_item": "",
+   "reason": "It is a count for a male Asian demographic cell.",
+   "issues": [],
+   "rendering": "fact F092 is the number of patients with sex = 'male' AND race = 'asian' (enrollment_projection: 'Males'; level 'Asian'; value 7 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the Asian race category among male patients, matching the bound sex and race variables."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F094",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:race",
+   "category_2": "black_or_african_american",
+   "condition_item": "",
+   "reason": "It is a count for a female Black or African American demographic cell.",
+   "issues": [],
+   "rendering": "fact F094 is the number of patients with sex = 'female' AND race = 'black_or_african_american' (enrollment_projection: 'Females'; level 'Black or African American'; value 9 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly binds the female category of sex and the Black or African American category of race to the table value 9."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F095",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:race",
+   "category_2": "black_or_african_american",
+   "condition_item": "",
+   "reason": "It is a count for a male Black or African American demographic cell.",
+   "issues": [],
+   "rendering": "fact F095 is the number of patients with sex = 'male' AND race = 'black_or_african_american' (enrollment_projection: 'Males'; level 'Black or African American'; value 17 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly links the male category and Black or African American race category to the table value of 17 patients."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F097",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:race",
+   "category_2": "native_hawaiian_or_other_pacific_islander",
+   "condition_item": "",
+   "reason": "It is a count for a female Native Hawaiian or other Pacific Islander demographic cell.",
+   "issues": [],
+   "rendering": "fact F097 is the number of patients with sex = 'female' AND race = 'native_hawaiian_or_other_pacific_islander' (enrollment_projection: 'Females'; level 'Native Hawaiian or other Pacific Islander'; value 1 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly links the female category and Native Hawaiian or other Pacific Islander race category to the table value of 1."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F098",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:race",
+   "category_2": "native_hawaiian_or_other_pacific_islander",
+   "condition_item": "",
+   "reason": "It is a count for a male Native Hawaiian or other Pacific Islander demographic cell.",
+   "issues": [],
+   "rendering": "fact F098 is the number of patients with sex = 'male' AND race = 'native_hawaiian_or_other_pacific_islander' (enrollment_projection: 'Males'; level 'Native Hawaiian or other Pacific Islander'; value 2 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly binds male sex and Native Hawaiian or other Pacific Islander race to the table value of 2."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F100",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:race",
+   "category_2": "white",
+   "condition_item": "",
+   "reason": "It is a count for a female White demographic cell.",
+   "issues": [],
+   "rendering": "fact F100 is the number of patients with sex = 'female' AND race = 'white' (enrollment_projection: 'Females'; level 'White'; value 137 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the female category of sex and the white category of race using the corresponding table cell."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F101",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:race",
+   "category_2": "white",
+   "condition_item": "",
+   "reason": "It is a count for a male White demographic cell.",
+   "issues": [],
+   "rendering": "fact F101 is the number of patients with sex = 'male' AND race = 'white' (enrollment_projection: 'Males'; level 'White'; value 209 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The binding correctly links the White row and Males column to the joint sex-and-race category."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F103",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:race",
+   "category_2": "other",
+   "condition_item": "",
+   "reason": "It is a count for a female Other race demographic cell.",
+   "issues": [],
+   "rendering": "fact F103 is the number of patients with sex = 'female' AND race = 'other' (enrollment_projection: 'Females'; level 'Other'; value 2 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes the female category of sex and the other category of race using the corresponding table cell."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F104",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:race",
+   "category_2": "other",
+   "condition_item": "",
+   "reason": "It is a count for a male Other race demographic cell.",
+   "issues": [],
+   "rendering": "fact F104 is the number of patients with sex = 'male' AND race = 'other' (enrollment_projection: 'Males'; level 'Other'; value 4 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly binds the male/other table cell to sex = male and race = other."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F106",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "female",
+   "variable_2": "demographic:race",
+   "category_2": "unknown_or_not_reported",
+   "condition_item": "",
+   "reason": "It is a count for a female race demographic cell that is not reported.",
+   "issues": [],
+   "rendering": "fact F106 is the number of patients with sex = 'female' AND race = 'unknown_or_not_reported' (enrollment_projection: 'Females'; level 'Not Reported'; value 1 patients; population 'Females'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The table cell describes female patients in the race category Not Reported, matching the bound sex and race variables."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F107",
+   "kind": "joint_count",
+   "variable": "demographic:sex",
+   "category": "male",
+   "variable_2": "demographic:race",
+   "category_2": "unknown_or_not_reported",
+   "condition_item": "",
+   "reason": "It is a count for a male race demographic cell that is not reported.",
+   "issues": [],
+   "rendering": "fact F107 is the number of patients with sex = 'male' AND race = 'unknown_or_not_reported' (enrollment_projection: 'Males'; level 'Not Reported'; value 2 patients; population 'Males'; source this_protocol_projection (Expected Accrual by Sex and Race/Ethnicity for the Additional 100))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact correctly binds male patients with race recorded as Not Reported to a value of 2."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  }
+ ],
+ "summary": {
+  "patients": 10000,
+  "age_mean": 10.575441,
+  "age_range": [
+   3.0,
+   21.69
+  ],
+  "share_known": {
+   "demographic:age": 1.0,
+   "demographic:ethnicity": 1.0,
+   "demographic:race": 1.0,
+   "demographic:sex": 1.0,
+   "var:tumor_location": 0.7018,
+   "umls:C0543478": 1.0
+  },
+  "unresolved_variables": 38,
+  "bindings": 23,
+  "usable_bindings": 22,
+  "sources": {
+   "demographic:age": "simulation_parameters_v3",
+   "demographic:ethnicity": "protocol_projection",
+   "demographic:race": "protocol_projection",
+   "demographic:sex": "protocol_projection",
+   "var:tumor_location": "protocol_facts",
+   "umls:C0543478": "protocol_facts"
+  }
+ }
+}

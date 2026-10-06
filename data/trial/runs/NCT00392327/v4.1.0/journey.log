@@ -1,0 +1,86 @@
+{
+ "subjects": 400,
+ "traces": [
+  "S0209",
+  "S0165",
+  "S0333"
+ ],
+ "any_dose_hold": 0,
+ "any_dose_reduction": 255,
+ "discontinued_for_ae": 19,
+ "deaths": 26,
+ "deaths_on_treatment": 6,
+ "end_of_treatment_reasons": {
+  "completed planned treatment": 284,
+  "withdrawal (subject, loss to follow-up or physician decision)": 29,
+  "disease progression": 62,
+  "adverse event (registry discontinuation rate)": 19,
+  "death": 6
+ },
+ "median_rdi": 1.0,
+ "progression_detected": 62,
+ "adverse_events_after_reporting_window_dropped": 33,
+ "rules_undecidable": [
+  "DM007"
+ ],
+ "screening_funnel": {
+  "generated_patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 8734,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 1266
+  },
+  "not_ruled_out_share": 0.8734,
+  "undecidable_criteria": [
+   "EL009",
+   "EL010",
+   "EL011",
+   "EL015",
+   "EL023",
+   "EL024",
+   "EL025",
+   "EL035",
+   "EL036",
+   "EL037",
+   "EL039",
+   "EL040",
+   "EL041"
+  ],
+  "screen_pass_rate": {
+   "value": 0.857672935164218,
+   "evidence_level": "evidence",
+   "source": "registry recruitment details stating screened and enrolled counts (central_nervous_system; 14 trials, 5511 screened)",
+   "detail": {
+    "estimate": 0.857672935164218,
+    "ci95": [
+     0.6530649879747794,
+     0.9507176506788496
+    ],
+    "single_trial_80": [
+     0.25814418583266135,
+     0.9905085482124806
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.2581648255510682,
+     "p30": 0.6523156917824497,
+     "p50": 0.857672935164218,
+     "p70": 0.9508722920277818,
+     "p90": 0.9905075349442463
+    },
+    "tau_logit": 2.1444812663127144,
+    "groups": 14,
+    "trials": 14,
+    "participants": 5511
+   }
+  },
+  "target": 400.0,
+  "patients_to_screen": {
+   "estimate": 467,
+   "range_80": [
+    404,
+    1550
+   ],
+   "basis": "target / registry pass rate (the range is for a single new trial)"
+  }
+ }
+}

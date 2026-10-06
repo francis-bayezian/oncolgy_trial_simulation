@@ -1,0 +1,413 @@
+{
+ "journey_version": "journey-1.1.0",
+ "seed": 20260929,
+ "horizon_days": 730,
+ "cohort_file": "cohort_accrual_historical_7.8_per_year.jsonl",
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc",
+  "schedule_facts": "schedule-facts-1.3.0"
+ },
+ "schedule": {
+  "cycle_length_days": {
+   "value": 7.0,
+   "evidence_level": "protocol",
+   "source": "treatment phase PH1",
+   "quote": "7-day intervals"
+  },
+  "screening_window_days": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no screening window stated in the assessment schedule"
+  },
+  "tumour_assessment_interval_days": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no tumour assessment interval stated: progression is recorded at its true time"
+  },
+  "lab_days_in_cycle": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no in-cycle laboratory days in the assessment schedule"
+  },
+  "follow_up_interval_days": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no follow-up visit interval stated"
+  },
+  "max_cycles": {
+   "value": 3,
+   "evidence_level": "protocol",
+   "source": "cycle count of PH1",
+   "quote": "Three (3) DC vaccines"
+  },
+  "agents": {
+   "cyclophosphamide": {
+    "entries": [
+     {
+      "intervention_id": "TX001",
+      "arms": [],
+      "arm_ids": [
+       "ARM1"
+      ],
+      "arm_labels": [
+       "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod"
+      ],
+      "dose": {
+       "value": {
+        "value": 1.6,
+        "unit": "mg/kg/day",
+        "basis": "per_body_weight"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX001",
+       "quote": "The patient will receive a 5-day course of CYP (1.6 mg/kg/day with maximum dose of 100\nmg/day), which may be taken at home, beginning 5-7 days prior to each DC vaccination."
+      },
+      "route": "",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "evidence_level": "protocol",
+       "source": "daily dosing for a 5-day course",
+       "quote": "/day"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX001",
+    "dose": {
+     "value": {
+      "value": 1.6,
+      "unit": "mg/kg/day",
+      "basis": "per_body_weight"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX001",
+     "quote": "The patient will receive a 5-day course of CYP (1.6 mg/kg/day with maximum dose of 100\nmg/day), which may be taken at home, beginning 5-7 days prior to each DC vaccination."
+    },
+    "route": "",
+    "dosing_days": {
+     "value": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "evidence_level": "protocol",
+     "source": "daily dosing for a 5-day course",
+     "quote": "/day"
+    },
+    "arms": [],
+    "arm_ids": [
+     "ARM1"
+    ]
+   },
+   "tapa_pulsed_dendritic_cells": {
+    "entries": [
+     {
+      "intervention_id": "TX002",
+      "arms": [],
+      "arm_ids": [
+       "ARM1"
+      ],
+      "arm_labels": [
+       "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod"
+      ],
+      "dose": {
+       "value": {
+        "value": 1.0,
+        "unit": "dc",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX002",
+       "quote": "TAPA-pulsed DC will be administered at a vaccine dose of up to 1 x 107 DC, in\ninjection-grade saline solution to bring total volume to 1 mL, if necessary."
+      },
+      "route": "intradermal",
+      "dosing_days": {
+       "value": [
+        1
+       ],
+       "evidence_level": "assumption",
+       "source": "no dosing days stated for tapa_pulsed_dendritic_cells: day 1 of each cycle",
+       "assumption": "A21_day1_dosing"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX002",
+    "dose": {
+     "value": {
+      "value": 1.0,
+      "unit": "dc",
+      "basis": "fixed"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX002",
+     "quote": "TAPA-pulsed DC will be administered at a vaccine dose of up to 1 x 107 DC, in\ninjection-grade saline solution to bring total volume to 1 mL, if necessary."
+    },
+    "route": "intradermal",
+    "dosing_days": {
+     "value": [
+      1
+     ],
+     "evidence_level": "assumption",
+     "source": "no dosing days stated for tapa_pulsed_dendritic_cells: day 1 of each cycle",
+     "assumption": "A21_day1_dosing"
+    },
+    "arms": [],
+    "arm_ids": [
+     "ARM1"
+    ]
+   }
+  }
+ },
+ "dose_levels": {},
+ "progression": {
+  "ARM1": {
+   "value": {
+    "cure_fraction": 0.0,
+    "rate_per_year": 2.2636356831801914
+   },
+   "evidence_level": "assumption",
+   "source": "evidence median progression-free survival 3.7 months (whole disease family, 8 studies), exponential",
+   "assumption": "A7_progression_exponential",
+   "detail": {
+    "variable": "progression_free_survival",
+    "family": "mixed_solid_tumors",
+    "subgroup": "whole disease family",
+    "median_months": 3.674516278623811,
+    "ci95": [
+     3.196015194021638,
+     4.224657600854937
+    ],
+    "single_trial_80": [
+     2.1870221383939494,
+     6.173723459327526
+    ],
+    "studies": 8,
+    "arms": 41,
+    "patients": 2273
+   }
+  }
+ },
+ "withdrawal": {
+  "ARM1": {
+   "value": 0.05415558869336486,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (mixed_solid_tumors): left by subject decision, loss to follow-up or physician decision; 27 trials, 3813 participants",
+   "detail": {
+    "estimate": 0.05415558869336486,
+    "ci95": [
+     0.041833192886898955,
+     0.06984309576776479
+    ],
+    "single_trial_80": [
+     0.02235025193323057,
+     0.12541514395014813
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.02235101009763468,
+     "p30": 0.03783757753653552,
+     "p50": 0.05415558869336486,
+     "p70": 0.07694817285895783,
+     "p90": 0.12541133823072512
+    },
+    "tau_logit": 0.7028864210609915,
+    "groups": 85,
+    "trials": 27,
+    "participants": 3813
+   }
+  }
+ },
+ "ae_discontinuation": {
+  "ARM1": {
+   "value": 0.11869002886270993,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (mixed_solid_tumors): left for an adverse event; 27 trials, 3813 participants",
+   "detail": {
+    "estimate": 0.11869002886270993,
+    "ci95": [
+     0.09747808163823855,
+     0.14378248779943428
+    ],
+    "single_trial_80": [
+     0.05632256423020694,
+     0.23306242918967265
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.05632419889566853,
+     "p30": 0.08803397906752868,
+     "p50": 0.11869002886270993,
+     "p70": 0.15816991181566392,
+     "p90": 0.23305693193714475
+    },
+    "tau_logit": 0.6249226548147601,
+    "groups": 85,
+    "trials": 27,
+    "participants": 3813
+   }
+  }
+ },
+ "death": {
+  "ARM1": {
+   "value": 0.04160641074441262,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (mixed_solid_tumors): died during the study period; 27 trials, 3813 participants",
+   "detail": {
+    "estimate": 0.04160641074441262,
+    "ci95": [
+     0.022766416487745158,
+     0.07484310570172187
+    ],
+    "single_trial_80": [
+     0.001487635308852764,
+     0.5584984126146908
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.0014878246201759577,
+     "p30": 0.010806120525725462,
+     "p50": 0.04160641074441262,
+     "p70": 0.14713748962185172,
+     "p90": 0.5584669889722197
+    },
+    "tau_logit": 2.6119092562683885,
+    "groups": 85,
+    "trials": 27,
+    "participants": 3813
+   }
+  }
+ },
+ "assumptions": {
+  "A1_ae_onset": "an adverse event's onset day is uniform over the patient's reporting window (first dose to 30 days after the last dose): registries report cumulative incidence, not onset times",
+  "A2_ae_grade": "a serious adverse event is recorded at grade 3 (the lowest grade consistent with seriousness for most CTCAE terms); a non-serious event at grade 1 or 2 with equal probability; registries report seriousness, not grade",
+  "A3_ae_resolution": "a grade 1-2 event resolves by the next scheduled visit after onset; a grade 3 or higher event by the second: resolution is detected at visits",
+  "A4_relatedness": "adverse events generated by the safety model are treated as related to study treatment when a dose modification rule requires relatedness",
+  "A5_lab_value_in_grade": "during a laboratory-type adverse event, the laboratory value is drawn uniformly within that grade's CTCAE v5 range; outside events the baseline is carried forward",
+  "A6_withdrawal_timing": "a withdrawal (subject decision, loss to follow-up, physician decision) occurs at a uniformly distributed time over the patient's on-study period; its probability is from registry disposition",
+  "A7_progression_exponential": "when progression-free survival comes from a reported median only, progression times are exponential with that median",
+  "A8_resume_same_dose": "after a hold whose resume instruction the compiler could not type, treatment resumes at the current dose level",
+  "A9_supportive_care_given": "supportive care and prophylaxis are given as the protocol requires, so an adverse event that occurs is one that occurred despite them",
+  "A10_normal_baseline_labs": "laboratory values are within normal limits at baseline (patients met the protocol's organ function criteria); rules for patients abnormal at baseline are not applied",
+  "A11_grade3_clinically_significant": "an adverse event of grade 3 or higher is clinically significant where a rule requires it",
+  "A12_reference_limits": "laboratory reference limits (LLN: neutrophils 2.0, platelets 150, white cells 4.0 x10^9/L; hemoglobin 12.0 g/dL) are typical adult values; laboratories set their own",
+  "A13_screening_day": "the screening visit takes place at the start of the protocol's screening window",
+  "A14_ae_discontinuation": "beyond the protocol's own dose-modification rules, a patient stops treatment for an adverse event with the registry participant-flow probability, at a uniform time over planned treatment; a stop triggered by a protocol rule first takes precedence",
+  "A15_death_timing": "death in the study period has the registry participant-flow probability and occurs at a uniform time over the simulated horizon (registry flow periods span treatment and follow-up)",
+  "A16_unknown_criteria_calibrated": "eligibility criteria the generated patients cannot answer pass independently, with one probability chosen so that the eligible share matches the registry screen pass rate",
+  "A17_standard_3_plus_3": "when the protocol's escalation table cannot be compiled, the standard 3+3 table is simulated",
+  "A18_participation_years": "with no stated censoring rate, the registry study-period withdrawal share is spread over 2 years",
+  "A22_short_participation": "with no treatment cycles, participation ends after the last planned administration plus a 30-day reporting window, and the registry's whole-trial exit shares are scaled by that duration over a year",
+  "A23_cr_share": "when no complete-response input exists, complete responses are 15% of responses",
+  "A24_tumour_dynamics": "response depth is uniform within its category band, nadir is reached by the second assessment, progression is independent of response depth, and 35% of progressions are by a new lesion",
+  "A25_recist_defaults": "when the protocol compiles no response thresholds, RECIST 1.1 is used (PR 30% decrease, PD 20% and 5 mm increase)",
+  "A26_post_progression_survival": "death follows progression: post-progression survival is exponential with median equal to the arm's overall-survival input minus its progression median (at least 1 month; 12 months without an OS input); a patient who never progresses does not die of the disease within follow-up",
+  "A27_subgroup_prevalence_equal": "a protocol subgroup factor whose levels no registry baseline table (nor the protocol) reports is split equally across its stated levels",
+  "A28_prognostic_effects": "a subgroup effect from registry results by subgroup is prognostic: the same in every arm, multiplicative on the progression hazard and the response odds, independent across factors, and centred on the arm's patient mix so each arm's overall rate is unchanged",
+  "A21_day1_dosing": "an agent whose dosing days the protocol does not state is given on day 1 of each cycle",
+  "A20_assessment_lag": "with no stated time point or treatment length, the primary assessment is 6 months after entry",
+  "A19_unnamed_arm_is_comparator": "an arm that names no anticancer agent is the comparator: it receives the regimen of the arms without the investigational agent (the agent given in the most arms)"
+ },
+ "summary": {
+  "subjects": 17,
+  "traces": [
+   "S0015",
+   "S0006",
+   "S0014"
+  ],
+  "any_dose_hold": 0,
+  "any_dose_reduction": 0,
+  "discontinued_for_ae": 3,
+  "deaths": 0,
+  "deaths_on_treatment": 0,
+  "end_of_treatment_reasons": {
+   "completed planned treatment": 11,
+   "adverse event (registry discontinuation rate)": 3,
+   "disease progression": 3
+  },
+  "median_rdi": 1.0,
+  "progression_detected": 3,
+  "adverse_events_after_reporting_window_dropped": 0,
+  "rules_undecidable": [],
+  "screening_funnel": {
+   "generated_patients": 10000,
+   "status_counts": {
+    "ELIGIBLE": 7704,
+    "UNDETERMINED": 0,
+    "INELIGIBLE": 2296
+   },
+   "not_ruled_out_share": 0.7704,
+   "undecidable_criteria": [
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL021",
+    "EL022",
+    "EL024",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034"
+   ],
+   "screen_pass_rate": {
+    "value": 0.7675797157385383,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened)",
+    "detail": {
+     "estimate": 0.7675797157385383,
+     "ci95": [
+      0.7516604195776948,
+      0.7827734506602645
+     ],
+     "single_trial_80": [
+      0.5176177549895294,
+      0.9104294529747281
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.5176283632374208,
+      "p30": 0.6758360275891045,
+      "p50": 0.7675797157385383,
+      "p70": 0.8395237839652355,
+      "p90": 0.9104259882989161
+     },
+     "tau_logit": 0.8760515738951,
+     "groups": 468,
+     "trials": 468,
+     "participants": 162721
+    }
+   },
+   "target": 17.0,
+   "patients_to_screen": {
+    "estimate": 23,
+    "range_80": [
+     19,
+     33
+    ],
+    "basis": "target / registry pass rate (the range is for a single new trial)"
+   }
+  }
+ }
+}

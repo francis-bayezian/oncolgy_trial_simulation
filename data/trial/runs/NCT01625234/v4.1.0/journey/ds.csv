@@ -1,0 +1,191 @@
+USUBJID,DSDECOD,DSSTDY,DSCAT
+S0001,disease progression,225,END OF TREATMENT
+S0002,disease progression,57,END OF TREATMENT
+S0003,disease progression,337,END OF TREATMENT
+S0004,disease progression,281,END OF TREATMENT
+S0005,disease progression,113,END OF TREATMENT
+S0006,disease progression,281,END OF TREATMENT
+S0007,disease progression,281,END OF TREATMENT
+S0008,disease progression,393,END OF TREATMENT
+S0009,disease progression,169,END OF TREATMENT
+S0010,disease progression,281,END OF TREATMENT
+S0011,disease progression,113,END OF TREATMENT
+S0012,disease progression,225,END OF TREATMENT
+S0013,disease progression,729,END OF TREATMENT
+S0014,disease progression,729,END OF TREATMENT
+S0015,disease progression,169,END OF TREATMENT
+S0016,disease progression,113,END OF TREATMENT
+S0017,disease progression,337,END OF TREATMENT
+S0018,disease progression,225,END OF TREATMENT
+S0019,disease progression,169,END OF TREATMENT
+S0020,disease progression,57,END OF TREATMENT
+S0021,disease progression,113,END OF TREATMENT
+S0022,disease progression,57,END OF TREATMENT
+S0023,disease progression,561,END OF TREATMENT
+S0024,disease progression,169,END OF TREATMENT
+S0025,"withdrawal (subject, loss to follow-up or physician decision)",156,END OF TREATMENT
+S0026,"withdrawal (subject, loss to follow-up or physician decision)",60,END OF TREATMENT
+S0027,disease progression,57,END OF TREATMENT
+S0028,disease progression,617,END OF TREATMENT
+S0029,disease progression,113,END OF TREATMENT
+S0030,disease progression,169,END OF TREATMENT
+S0031,disease progression,113,END OF TREATMENT
+S0032,disease progression,113,END OF TREATMENT
+S0033,disease progression,393,END OF TREATMENT
+S0034,adverse event (registry discontinuation rate),104,END OF TREATMENT
+S0035,disease progression,169,END OF TREATMENT
+S0036,disease progression,225,END OF TREATMENT
+S0037,disease progression,281,END OF TREATMENT
+S0038,disease progression,57,END OF TREATMENT
+S0039,disease progression,561,END OF TREATMENT
+S0040,disease progression,729,END OF TREATMENT
+S0041,disease progression,57,END OF TREATMENT
+S0042,disease progression,113,END OF TREATMENT
+S0043,disease progression,225,END OF TREATMENT
+S0044,disease progression,393,END OF TREATMENT
+S0045,disease progression,169,END OF TREATMENT
+S0046,disease progression,337,END OF TREATMENT
+S0047,disease progression,57,END OF TREATMENT
+S0048,disease progression,281,END OF TREATMENT
+S0049,adverse event (registry discontinuation rate),409,END OF TREATMENT
+S0050,disease progression,169,END OF TREATMENT
+S0051,disease progression,57,END OF TREATMENT
+S0052,death,285,END OF TREATMENT
+S0053,disease progression,57,END OF TREATMENT
+S0054,death,52,END OF TREATMENT
+S0055,disease progression,561,END OF TREATMENT
+S0056,end of simulated follow-up,730,END OF TREATMENT
+S0057,disease progression,169,END OF TREATMENT
+S0058,disease progression,57,END OF TREATMENT
+S0059,disease progression,281,END OF TREATMENT
+S0060,disease progression,337,END OF TREATMENT
+S0061,disease progression,113,END OF TREATMENT
+S0062,disease progression,281,END OF TREATMENT
+S0063,end of simulated follow-up,730,END OF TREATMENT
+S0064,disease progression,57,END OF TREATMENT
+S0065,disease progression,169,END OF TREATMENT
+S0066,disease progression,57,END OF TREATMENT
+S0067,disease progression,505,END OF TREATMENT
+S0068,disease progression,57,END OF TREATMENT
+S0069,disease progression,561,END OF TREATMENT
+S0070,death,111,END OF TREATMENT
+S0071,disease progression,57,END OF TREATMENT
+S0072,disease progression,729,END OF TREATMENT
+S0073,disease progression,225,END OF TREATMENT
+S0074,disease progression,393,END OF TREATMENT
+S0075,disease progression,113,END OF TREATMENT
+S0076,disease progression,393,END OF TREATMENT
+S0077,disease progression,57,END OF TREATMENT
+S0078,disease progression,505,END OF TREATMENT
+S0079,disease progression,169,END OF TREATMENT
+S0080,disease progression,225,END OF TREATMENT
+S0081,disease progression,57,END OF TREATMENT
+S0082,disease progression,169,END OF TREATMENT
+S0083,disease progression,449,END OF TREATMENT
+S0084,disease progression,449,END OF TREATMENT
+S0085,disease progression,225,END OF TREATMENT
+S0086,disease progression,57,END OF TREATMENT
+S0087,disease progression,57,END OF TREATMENT
+S0088,disease progression,449,END OF TREATMENT
+S0089,disease progression,113,END OF TREATMENT
+S0090,disease progression,337,END OF TREATMENT
+S0091,disease progression,449,END OF TREATMENT
+S0092,disease progression,113,END OF TREATMENT
+S0093,disease progression,169,END OF TREATMENT
+S0094,disease progression,57,END OF TREATMENT
+S0095,disease progression,57,END OF TREATMENT
+S0096,adverse event (registry discontinuation rate),79,END OF TREATMENT
+S0097,disease progression,281,END OF TREATMENT
+S0098,disease progression,57,END OF TREATMENT
+S0099,disease progression,393,END OF TREATMENT
+S0100,disease progression,57,END OF TREATMENT
+S0101,disease progression,57,END OF TREATMENT
+S0102,disease progression,169,END OF TREATMENT
+S0103,disease progression,113,END OF TREATMENT
+S0104,disease progression,169,END OF TREATMENT
+S0105,disease progression,113,END OF TREATMENT
+S0106,disease progression,113,END OF TREATMENT
+S0107,disease progression,281,END OF TREATMENT
+S0108,disease progression,281,END OF TREATMENT
+S0109,disease progression,449,END OF TREATMENT
+S0110,death,8,END OF TREATMENT
+S0111,disease progression,281,END OF TREATMENT
+S0112,disease progression,561,END OF TREATMENT
+S0113,disease progression,281,END OF TREATMENT
+S0114,disease progression,57,END OF TREATMENT
+S0115,disease progression,57,END OF TREATMENT
+S0116,disease progression,281,END OF TREATMENT
+S0117,disease progression,57,END OF TREATMENT
+S0118,disease progression,57,END OF TREATMENT
+S0119,disease progression,169,END OF TREATMENT
+S0120,disease progression,225,END OF TREATMENT
+S0121,disease progression,225,END OF TREATMENT
+S0122,disease progression,393,END OF TREATMENT
+S0123,disease progression,57,END OF TREATMENT
+S0124,disease progression,169,END OF TREATMENT
+S0125,disease progression,57,END OF TREATMENT
+S0126,disease progression,57,END OF TREATMENT
+S0127,disease progression,57,END OF TREATMENT
+S0128,disease progression,113,END OF TREATMENT
+S0129,adverse event (registry discontinuation rate),31,END OF TREATMENT
+S0130,disease progression,169,END OF TREATMENT
+S0131,death,723,END OF TREATMENT
+S0132,disease progression,113,END OF TREATMENT
+S0133,disease progression,449,END OF TREATMENT
+S0134,disease progression,225,END OF TREATMENT
+S0135,disease progression,225,END OF TREATMENT
+S0136,death,281,END OF TREATMENT
+S0137,disease progression,113,END OF TREATMENT
+S0138,disease progression,113,END OF TREATMENT
+S0139,end of simulated follow-up,730,END OF TREATMENT
+S0140,disease progression,225,END OF TREATMENT
+S0141,end of simulated follow-up,730,END OF TREATMENT
+S0142,disease progression,113,END OF TREATMENT
+S0143,disease progression,393,END OF TREATMENT
+S0144,"withdrawal (subject, loss to follow-up or physician decision)",42,END OF TREATMENT
+S0145,disease progression,169,END OF TREATMENT
+S0146,disease progression,57,END OF TREATMENT
+S0147,disease progression,113,END OF TREATMENT
+S0148,disease progression,57,END OF TREATMENT
+S0149,disease progression,225,END OF TREATMENT
+S0150,disease progression,393,END OF TREATMENT
+S0151,disease progression,113,END OF TREATMENT
+S0152,disease progression,225,END OF TREATMENT
+S0153,disease progression,57,END OF TREATMENT
+S0154,disease progression,57,END OF TREATMENT
+S0155,disease progression,393,END OF TREATMENT
+S0156,end of simulated follow-up,730,END OF TREATMENT
+S0157,disease progression,57,END OF TREATMENT
+S0158,disease progression,169,END OF TREATMENT
+S0159,disease progression,169,END OF TREATMENT
+S0160,disease progression,281,END OF TREATMENT
+S0161,disease progression,337,END OF TREATMENT
+S0162,disease progression,57,END OF TREATMENT
+S0163,disease progression,57,END OF TREATMENT
+S0164,disease progression,57,END OF TREATMENT
+S0165,disease progression,281,END OF TREATMENT
+S0166,disease progression,169,END OF TREATMENT
+S0167,disease progression,169,END OF TREATMENT
+S0168,disease progression,561,END OF TREATMENT
+S0169,disease progression,113,END OF TREATMENT
+S0170,disease progression,57,END OF TREATMENT
+S0171,disease progression,57,END OF TREATMENT
+S0172,disease progression,617,END OF TREATMENT
+S0173,disease progression,281,END OF TREATMENT
+S0174,disease progression,337,END OF TREATMENT
+S0175,disease progression,57,END OF TREATMENT
+S0176,disease progression,673,END OF TREATMENT
+S0177,disease progression,393,END OF TREATMENT
+S0178,disease progression,57,END OF TREATMENT
+S0179,disease progression,169,END OF TREATMENT
+S0180,death,214,END OF TREATMENT
+S0181,disease progression,393,END OF TREATMENT
+S0182,disease progression,57,END OF TREATMENT
+S0183,disease progression,57,END OF TREATMENT
+S0184,disease progression,113,END OF TREATMENT
+S0185,disease progression,393,END OF TREATMENT
+S0186,disease progression,225,END OF TREATMENT
+S0187,disease progression,281,END OF TREATMENT
+S0188,disease progression,113,END OF TREATMENT
+S0189,disease progression,169,END OF TREATMENT
+S0190,disease progression,393,END OF TREATMENT

@@ -1,0 +1,745 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "985c415b362efbcdf39b97cd01b49731dfdb4097bb5ee60bb3bb24cec4eeea7f"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "Pemigatinib Plus Pembrolizumab",
+   "started": 99,
+   "end_of_treatment": {
+    "disease progression": 32,
+    "completed planned treatment": 58,
+    "withdrawal (subject, loss to follow-up or physician decision)": 6,
+    "adverse event (registry discontinuation rate)": 3
+   },
+   "deaths": 6
+  },
+  "ARM2": {
+   "arm": "Pemigatinib Alone",
+   "started": 90,
+   "end_of_treatment": {
+    "disease progression": 26,
+    "completed planned treatment": 54,
+    "adverse event (registry discontinuation rate)": 4,
+    "withdrawal (subject, loss to follow-up or physician decision)": 6
+   },
+   "deaths": 7
+  },
+  "ARM3": {
+   "arm": "Standard of Care",
+   "started": 95,
+   "end_of_treatment": {
+    "completed planned treatment": 53,
+    "withdrawal (subject, loss to follow-up or physician decision)": 10,
+    "disease progression": 30,
+    "death": 2
+   },
+   "deaths": 8
+  },
+  "ARM4": {
+   "arm": "Gemcitabine and Carboplatin",
+   "started": 88,
+   "end_of_treatment": {
+    "completed planned treatment": 50,
+    "disease progression": 26,
+    "withdrawal (subject, loss to follow-up or physician decision)": 11,
+    "death": 1
+   },
+   "deaths": 7
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "Progression-free survival",
+   "role": "primary",
+   "class": "time_to_event",
+   "variable": "progression_free_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 99,
+     "events": 74,
+     "km_median_months": 4.25,
+     "median_ci95_months": [
+      3.14,
+      4.95
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "locked outcome model control curve: exponential (evidence) (evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol))",
+      "value": 3.4695277153061017,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 3.6583354753428408,
+      "p30": 3.9394435988694214,
+      "p50": 4.253755249472498,
+      "p70": 4.369857746048474,
+      "p90": 4.765590318995308
+     }
+    },
+    "ARM2": {
+     "patients": 90,
+     "events": 63,
+     "km_median_months": 4.16,
+     "median_ci95_months": [
+      3.17,
+      5.2
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "locked outcome model control curve: exponential (evidence) (evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol))",
+      "value": 3.4695277153061017,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 3.3982535037516373,
+      "p30": 3.689836748779237,
+      "p50": 4.130620365080485,
+      "p70": 4.240540876478149,
+      "p90": 4.938403061722137
+     }
+    },
+    "ARM3": {
+     "patients": 95,
+     "events": 81,
+     "km_median_months": 3.0,
+     "median_ci95_months": [
+      2.17,
+      3.35
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "locked outcome model control curve: exponential (evidence) (evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol))",
+      "value": 3.4695277153061017,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 2.326676655485741,
+      "p30": 2.7521041422755044,
+      "p50": 2.9956474041570575,
+      "p70": 3.1877123578145103,
+      "p90": 3.3493470436388866
+     }
+    },
+    "ARM4": {
+     "patients": 88,
+     "events": 65,
+     "km_median_months": 3.73,
+     "median_ci95_months": [
+      2.87,
+      4.66
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "locked outcome model control curve: exponential (evidence) (evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol))",
+      "value": 3.4695277153061017,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 3.1277653324270838,
+      "p30": 3.6692142677047936,
+      "p50": 3.787757368773545,
+      "p70": 3.9091778394572936,
+      "p90": 4.228696213086696
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Overall survival",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "overall_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 99,
+     "events": 33,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 12.522387910965103,
+      "unit": "months",
+      "level": "trials with overlapping drug classes",
+      "source": "evidence medians of overall_survival (3 studies)",
+      "detail": {
+       "variable": "overall_survival",
+       "family": "urothelial",
+       "subgroup": "trials with overlapping drug classes",
+       "median_months": 12.522387910965103,
+       "ci95": [
+        8.949890266427584,
+        17.52090744407271
+       ],
+       "single_trial_80": [
+        7.77555667111757,
+        20.167070426630534
+       ],
+       "studies": 3,
+       "arms": 6,
+       "patients": 570
+      }
+     },
+     "predictive_median_months": {
+      "p10": 10.462840003235671,
+      "p30": 12.050304353341915,
+      "p50": 13.188282602213771,
+      "p70": 14.465302297615079,
+      "p90": 16.489518379543558
+     }
+    },
+    "ARM2": {
+     "patients": 90,
+     "events": 39,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 11.387202412813373,
+      "unit": "months",
+      "level": "PHASE2 trials",
+      "source": "evidence medians of overall_survival (5 studies)",
+      "detail": {
+       "variable": "overall_survival",
+       "family": "urothelial",
+       "subgroup": "PHASE2 trials",
+       "median_months": 11.387202412813373,
+       "ci95": [
+        6.6910007602600166,
+        19.379519362861902
+       ],
+       "single_trial_80": [
+        4.721131069309081,
+        27.465532493542735
+       ],
+       "studies": 5,
+       "arms": 7,
+       "patients": 184
+      }
+     },
+     "predictive_median_months": {
+      "p10": 7.759482686776096,
+      "p30": 8.791026278814277,
+      "p50": 9.475118048407063,
+      "p70": 10.464633612626967,
+      "p90": 11.517746252759789
+     }
+    },
+    "ARM3": {
+     "patients": 95,
+     "events": 22,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 16.748185932925363,
+      "unit": "months",
+      "level": "trials with overlapping drug classes",
+      "source": "evidence medians of overall_survival (3 studies)",
+      "detail": {
+       "variable": "overall_survival",
+       "family": "urothelial",
+       "subgroup": "trials with overlapping drug classes",
+       "median_months": 16.748185932925363,
+       "ci95": [
+        11.797628617774125,
+        23.77611138065827
+       ],
+       "single_trial_80": [
+        10.538678206688456,
+        26.616405448817712
+       ],
+       "studies": 3,
+       "arms": 4,
+       "patients": 556
+      }
+     },
+     "predictive_median_months": {
+      "p10": 15.47299577548243,
+      "p30": 17.77905962877205,
+      "p50": 19.943505129349163,
+      "p70": 21.96665838803131,
+      "p90": 27.405293553492218
+     }
+    },
+    "ARM4": {
+     "patients": 88,
+     "events": 29,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 16.748185932925363,
+      "unit": "months",
+      "level": "trials with overlapping drug classes",
+      "source": "evidence medians of overall_survival (3 studies)",
+      "detail": {
+       "variable": "overall_survival",
+       "family": "urothelial",
+       "subgroup": "trials with overlapping drug classes",
+       "median_months": 16.748185932925363,
+       "ci95": [
+        11.797628617774125,
+        23.77611138065827
+       ],
+       "single_trial_80": [
+        10.538678206688456,
+        26.616405448817712
+       ],
+       "studies": 3,
+       "arms": 4,
+       "patients": 556
+      }
+     },
+     "predictive_median_months": {
+      "p10": 9.671293462938083,
+      "p30": 10.982483431372925,
+      "p50": 11.896595120859867,
+      "p70": 13.285199755114128,
+      "p90": 15.981699813255954
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Objective response rate",
+   "role": "secondary",
+   "class": "proportion",
+   "variable": "objective_response_rate",
+   "by_arm": {
+    "ARM1": {
+     "patients": 99,
+     "responders": 34,
+     "rate": 0.3434,
+     "ci95": [
+      0.25088190061536164,
+      0.4456306976440314
+     ],
+     "predictive_rate": {
+      "p10": 0.21212121212121213,
+      "p30": 0.25252525252525254,
+      "p50": 0.2828282828282828,
+      "p70": 0.31313131313131315,
+      "p90": 0.37373737373737376
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.28443603810108503,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting objective_response_rate (3 studies)",
+      "ci95": [
+       0.22093990078199768,
+       0.35779952050044556
+      ]
+     }
+    },
+    "ARM2": {
+     "patients": 90,
+     "responders": 23,
+     "rate": 0.2556,
+     "ci95": [
+      0.16940626930248026,
+      0.35838597067464667
+     ],
+     "predictive_rate": {
+      "p10": 0.2111111111111111,
+      "p30": 0.2522222222222222,
+      "p50": 0.28888888888888886,
+      "p70": 0.3111111111111111,
+      "p90": 0.34444444444444444
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.28443603810108503,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting objective_response_rate (3 studies)",
+      "ci95": [
+       0.22093990078199768,
+       0.35779952050044556
+      ]
+     }
+    },
+    "ARM3": {
+     "patients": 95,
+     "responders": 32,
+     "rate": 0.3368,
+     "ci95": [
+      0.24306335920634548,
+      0.4411039660269358
+     ],
+     "predictive_rate": {
+      "p10": 0.21052631578947367,
+      "p30": 0.25263157894736843,
+      "p50": 0.28421052631578947,
+      "p70": 0.3157894736842105,
+      "p90": 0.37894736842105264
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.28443603810108503,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting objective_response_rate (3 studies)",
+      "ci95": [
+       0.22093990078199768,
+       0.35779952050044556
+      ]
+     }
+    },
+    "ARM4": {
+     "patients": 88,
+     "responders": 33,
+     "rate": 0.375,
+     "ci95": [
+      0.27401678299170945,
+      0.4846507532457284
+     ],
+     "predictive_rate": {
+      "p10": 0.20454545454545456,
+      "p30": 0.25,
+      "p50": 0.2840909090909091,
+      "p70": 0.3068181818181818,
+      "p90": 0.36363636363636365
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.28443603810108503,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting objective_response_rate (3 studies)",
+      "ci95": [
+       0.22093990078199768,
+       0.35779952050044556
+      ]
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Duration of response",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "duration_of_response",
+   "by_arm": {
+    "ARM1": {
+     "patients": 99,
+     "events": 34,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 13.945124278210143,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of duration_of_response (2 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "urothelial",
+       "subgroup": "whole disease family",
+       "median_months": 13.945124278210143,
+       "ci95": [
+        5.750842664380006,
+        33.81530368396738
+       ],
+       "single_trial_80": [
+        3.125125355668349,
+        62.22678100960102
+       ],
+       "studies": 2,
+       "arms": 6,
+       "patients": 279
+      }
+     },
+     "predictive_median_months": {
+      "p10": 9.223433011476004,
+      "p30": 10.482896417286742,
+      "p50": 11.969382586362215,
+      "p70": 12.912762616422894,
+      "p90": 15.150573525818842
+     }
+    },
+    "ARM2": {
+     "patients": 90,
+     "events": 21,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 13.945124278210143,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of duration_of_response (2 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "urothelial",
+       "subgroup": "whole disease family",
+       "median_months": 13.945124278210143,
+       "ci95": [
+        5.750842664380006,
+        33.81530368396738
+       ],
+       "single_trial_80": [
+        3.125125355668349,
+        62.22678100960102
+       ],
+       "studies": 2,
+       "arms": 6,
+       "patients": 279
+      }
+     },
+     "predictive_median_months": {
+      "p10": 15.860606063979173,
+      "p30": 18.757904139767657,
+      "p50": 21.12784019050107,
+      "p70": 24.155070719547144,
+      "p90": 27.79888119871708
+     }
+    },
+    "ARM3": {
+     "patients": 95,
+     "events": 28,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 13.945124278210143,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of duration_of_response (2 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "urothelial",
+       "subgroup": "whole disease family",
+       "median_months": 13.945124278210143,
+       "ci95": [
+        5.750842664380006,
+        33.81530368396738
+       ],
+       "single_trial_80": [
+        3.125125355668349,
+        62.22678100960102
+       ],
+       "studies": 2,
+       "arms": 6,
+       "patients": 279
+      }
+     },
+     "predictive_median_months": {
+      "p10": 11.823204299208392,
+      "p30": 13.846790707254188,
+      "p50": 15.313749961664406,
+      "p70": 16.930075974410332,
+      "p90": 20.04990410560563
+     }
+    },
+    "ARM4": {
+     "patients": 88,
+     "events": 29,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.67,
+     "input": {
+      "status": "RESOLVED",
+      "value": 13.945124278210143,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of duration_of_response (2 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "urothelial",
+       "subgroup": "whole disease family",
+       "median_months": 13.945124278210143,
+       "ci95": [
+        5.750842664380006,
+        33.81530368396738
+       ],
+       "single_trial_80": [
+        3.125125355668349,
+        62.22678100960102
+       ],
+       "studies": 2,
+       "arms": 6,
+       "patients": 279
+      }
+     },
+     "predictive_median_months": {
+      "p10": 10.01642390059283,
+      "p30": 11.462263296950315,
+      "p50": 12.854774827414797,
+      "p70": 14.072411924458002,
+      "p90": 16.42154021760862
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Safety and tolerability of pemigatinib with or without pembrolizumab and SOC",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 99,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 39,
+     "any_grade3_ae": 39,
+     "stopped_for_ae": 3
+    },
+    "ARM2": {
+     "patients": 90,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 40,
+     "any_grade3_ae": 40,
+     "stopped_for_ae": 4
+    },
+    "ARM3": {
+     "patients": 95,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 43,
+     "any_grade3_ae": 43,
+     "stopped_for_ae": 0
+    },
+    "ARM4": {
+     "patients": 88,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 40,
+     "any_grade3_ae": 40,
+     "stopped_for_ae": 0
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Patient-reported outcome scales",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "patient_reported_outcome",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "patient_reported_outcome",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 3,
+  "proportion": 1,
+  "continuous": 0,
+  "safety": 1,
+  "not_simulated": 1
+ }
+}

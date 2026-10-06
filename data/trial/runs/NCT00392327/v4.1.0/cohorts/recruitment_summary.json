@@ -1,0 +1,156 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "d488a0ad74e5a7b72d5af105f6da1669ac7c512420e371d7e51985e83a240340",
+  "population": "17bc4b608e95604f9139a5e866c3fc2cdf42106975dd9fec548103579449390d",
+  "eligibility": "0f676e69ac771698c0da9509e3e1680f093d50e279673242b72852dce31018a5"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 400,
+   "source": "maximum_accrual",
+   "evidence": "With these changes the maximum accrual becomes 400 (300+100) targeting 280 eligible and evaluable medulloblastoma patients for the primary objectives of the study."
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_92.2_per_year",
+    "rate_per_year": 92.18969713451841,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 15.066951842645345,
+     "p30": 43.64929165074998,
+     "p50": 92.18969713451841,
+     "p70": 187.01245249138563,
+     "p90": 497.9325323588815
+    }
+   },
+   {
+    "rate_per_year": 35.0,
+    "evidence": "As of Amendment #2, it is estimated that about 35 medulloblastoma patients could be enrolled\nevery year according to the accrual history of the study.",
+    "scenario": "accrual_35_per_year"
+   },
+   {
+    "rate_per_year": 60.0,
+    "evidence": "Hence, it is reasonable to expect that accrual rate of at least 60 per year will be observed, with higher rates possible.",
+    "scenario": "accrual_60_per_year"
+   }
+  ],
+  "excluded_rates": [
+   {
+    "rate_per_year": 50.0,
+    "evidence": "Accrual rates of 50/year or less at this time will be of concern.",
+    "reason": "stated as a monitoring threshold, not an estimate"
+   }
+  ],
+  "headline_scenario": "accrual_historical_92.2_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "REGIMEN A",
+    "description": "RT WITH VINCRISTINE"
+   },
+   {
+    "arm_id": "ARM2",
+    "label": "REGIMEN B",
+    "description": "RT WITH VINCRISTINE AND CARBOPLATIN"
+   }
+  ],
+  "arm_status_note": "arms stated as open",
+  "ratio": [
+   1.0,
+   1.0
+  ],
+  "ratio_derivation": "IMPLIED_BY_TEXT",
+  "method_text": "via RDE at the time a patient is entered On Study",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": [
+   {
+    "stratum_id": "ST1",
+    "status": "EXECUTABLE",
+    "rendering": "(dissemination is one of ['M0'] AND location is one of ['Medulloblastoma'] AND residual greater than 1.5 cm2)"
+   },
+   {
+    "stratum_id": "ST2",
+    "status": "EXECUTABLE",
+    "rendering": "(dissemination is one of ['M+'] AND location is one of ['Medulloblastoma'])"
+   },
+   {
+    "stratum_id": "ST3",
+    "status": "EXECUTABLE",
+    "rendering": "(dissemination is one of ['M0'] AND location is one of ['Diffusely Anaplastic Medulloblastoma'])"
+   }
+  ]
+ },
+ "summary": {
+  "pool": 8734,
+  "target": {
+   "patients": 400,
+   "source": "maximum_accrual",
+   "evidence": "With these changes the maximum accrual becomes 400 (300+100) targeting 280 eligible and evaluable medulloblastoma patients for the primary objectives of the study."
+  },
+  "scenarios": {
+   "accrual_historical_92.2_per_year": {
+    "enrolled": 400,
+    "accrual_years": 4.3365384889993726,
+    "arms": {
+     "ARM1": 202,
+     "ARM2": 198
+    },
+    "strata": {
+     "ST3": 88,
+     "ST2": 221,
+     "ST1": 91
+    },
+    "sex": {
+     "male": 242,
+     "female": 158
+    },
+    "age_mean": 10.4977
+   },
+   "accrual_35_per_year": {
+    "enrolled": 400,
+    "accrual_years": 11.801508951587657,
+    "arms": {
+     "ARM1": 200,
+     "ARM2": 200
+    },
+    "strata": {
+     "ST2": 209,
+     "ST3": 91,
+     "ST1": 100
+    },
+    "sex": {
+     "female": 161,
+     "male": 239
+    },
+    "age_mean": 10.455724999999997
+   },
+   "accrual_60_per_year": {
+    "enrolled": 400,
+    "accrual_years": 6.550987187456867,
+    "arms": {
+     "ARM1": 201,
+     "ARM2": 199
+    },
+    "strata": {
+     "ST1": 99,
+     "ST2": 215,
+     "ST3": 86
+    },
+    "sex": {
+     "male": 246,
+     "female": 154
+    },
+    "age_mean": 10.68845
+   }
+  },
+  "headline_scenario": "accrual_historical_92.2_per_year"
+ }
+}

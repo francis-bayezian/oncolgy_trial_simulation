@@ -1,0 +1,37 @@
+{
+ "mode": "decision rules",
+ "unresolved_decision_rules": [
+  "DR1",
+  "DR2",
+  "DR3",
+  "DR4",
+  "DR5"
+ ],
+ "rules": [
+  {
+   "rule": "DR1",
+   "arm": "Cabozantinib (Cabozantinib)",
+   "cohort": "A phase II single-arm two-stage multicen",
+   "cited": [],
+   "p_interest_at_p0": 0.050834477926282824,
+   "p_interest_at_p1": 0.8818267681045971
+  },
+  {
+   "rule": "DR2",
+   "arm": "Cabozantinib (Cabozantinib)",
+   "cohort": "The total sample size to be enrolled is ",
+   "cited": [],
+   "p_interest_at_p0": 0.050834477926282824,
+   "p_interest_at_p1": 0.8818267681045971
+  },
+  {
+   "rule": "DR5",
+   "arm": "BEVACIZUMAB (PATIENTS UNDER BEVACIZUMAB)",
+   "cohort": "19 evaluable bevacizumab pre-treated pat",
+   "cited": [],
+   "p_interest_at_p0": 0.02327831237681484,
+   "p_interest_at_p1": 0.8203582763671877
+  }
+ ],
+ "model_calls": 0
+}

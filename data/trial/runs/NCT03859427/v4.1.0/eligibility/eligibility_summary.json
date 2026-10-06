@@ -1,0 +1,421 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "3c396a3eadb6a232eae3d1a03067dc1064f5d6d8c048e2096d32d7909fb40db9",
+  "population": "184ae65f48aec7d2c80bc5bcdfebeaaeb47bfa43c4dda30e5a929f1a724dada0"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 8128,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 1872
+  },
+  "eligible_share": 0.8128,
+  "proven_eligible_share": 0.8128,
+  "not_proven_ineligible_share": 0.8128,
+  "criteria": {
+   "evaluated": [
+    "EL004",
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034",
+    "EL035",
+    "EL039",
+    "EL040"
+   ],
+   "procedural": [
+    "EL002",
+    "EL011",
+    "EL026"
+   ],
+   "permissive": [
+    "EL009",
+    "EL010",
+    "EL036"
+   ],
+   "informational": [
+    "EL001",
+    "EL003",
+    "EL037",
+    "EL038",
+    "EL041",
+    "EL042",
+    "EL043",
+    "EL044",
+    "EL045"
+   ],
+   "run_with_review_flag": [
+    "EL016",
+    "EL019",
+    "EL023",
+    "EL031",
+    "EL033",
+    "EL035",
+    "EL039"
+   ]
+  },
+  "per_criterion": {
+   "EL004": {
+    "met": 10000,
+    "not_met": 0,
+    "unknown": 0,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: age at least 18 year"
+   },
+   "EL005": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (multiple myeloma is present AND (documented relapse or progression after most recent myeloma treatment is one of ['documented relapse', 'progression'] [assessed: after most recent myeloma treatment] OR (refractory to the most recent line of therapy is one of ['refractory'] AND NOT"
+   },
+   "EL006": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF Refractory is one of ['refractory'] THEN (disease that is nonresponsive is one of ['nonresponsive'] OR progresses occurs within 60 day after last therapy [assessed: within 60 days of last therapy])]"
+   },
+   "EL007": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: PR to at least 1 line of prior therapy is one of ['at least PR']"
+   },
+   "EL008": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: prior lines of therapy for multiple myeloma at least 1 and at most 3 priorlines [qualifier: induction therapy followed by stem cell transplant and consolidation maintenance therapy will be considered as 1 line of therapy]"
+   },
+   "EL012": {
+    "met": 9988,
+    "not_met": 12,
+    "unknown": 0,
+    "share_not_met_decided": 0.0012,
+    "rule": "ELIGIBLE ONLY IF: Eastern Cooperative Oncology Group Performance Status (ECOG PS) at most 2"
+   },
+   "EL013": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Waldenström macroglobulinemia is present"
+   },
+   "EL014": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Multiple myeloma is one of ['IgM subtype']"
+   },
+   "EL015": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: POEMS syndrome is present"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Plasma cell leukemia is one of ['Plasma cell leukemia'] AND circulating plasma cells greater than 2 [qualifier: by standard differential] {NOT EXECUTABLE})"
+   },
+   "EL017": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Primary amyloidosis is present AND NOT asymptomatic deposition of amyloid plaques found on biopsy is one of ['asymptomatic'])"
+   },
+   "EL018": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Myelodysplastic syndrome is present"
+   },
+   "EL019": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (History of other malignancy is present [qualifier: within the past 5 years] AND NOT ((Malignancy is one of ['treated with curative intent'] AND known active disease is absent [qualifier: for ≥ 3 years before enrollment] AND risk for recurrence is one of ['low risk for recur"
+   },
+   "EL020": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Known HIV infection is present OR (hepatitis C infection is present AND NOT hepatitis C that achieve a sustained virologic response after antiviral therapy is one of ['sustained virologic response'] [assessed: after antiviral therapy]) OR (hepatitis B infection is present A"
+   },
+   "EL021": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Acute active infection is present AND ((systemic antibiotics is present [qualifier: requiring] AND systemic antibiotics occurs within 14 day before randomization [assessed: within 14 days prior to\nrandomization]) OR (antifungal is present [qualifier: requiring] AND antifung"
+   },
+   "EL022": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "EXCLUDED IF: (Acute active infection is present AND (systemic antibiotics occurs within 14 day before randomization [assessed: within 14 days prior to randomization] [qualifier: requiring systemic] OR antifungal occurs within 14 day before randomization [assessed: within 14 days prior to randomizati"
+   },
+   "EL023": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (blood pressure at least 160 mmhg [qualifier: when taken in accordance with the European Society of\nHypertension/European Society of Cardiology 2018 guidelines (Section 12.10;\nWilliams et al, 2018)] OR blood pressure at least 100 mmhg [qualifier: when taken in accordance wit"
+   },
+   "EL024": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: ((Active congestive heart failure is present AND New York Heart Association Class is one of ['III', 'IV']) OR symptomatic ischemia is present OR uncontrolled arrhythmias is present OR corrected QT interval (QTc) greater than 470 msec [qualifier: screening ECG] OR pericardial"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Intolerance to hydration due to pre-existing pulmonary or cardiac impairment is present"
+   },
+   "EL027": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Contraindication or intolerance to lenalidomide, dexamethasone, or carfilzomib is one of ['lenalidomide', 'dexamethasone', 'carfilzomib'] OR Known history of allergy to Captisol is present [qualifier: a cyclodextrin derivative used to solubilize carfilzomib] OR known hypers"
+   },
+   "EL028": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Currently receiving treatment in another investigational device or drug study is present OR ending treatment on another investigational device or drug study(ies) occurs within 28 day after other investigational study treatment end (protocol wording: 'ending treatment on ano"
+   },
+   "EL029": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (direct bilirubin at least 1.5 times the upper limit of normal (ULN) [assessed: within 28 days prior to randomization] OR aspartate aminotransferase (AST) at least 2.5 times ULN [assessed: within 28 days prior to randomization] OR alanine aminotransferase (ALT) at least 2.5 "
+   },
+   "EL030": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Left ventricular ejection fraction less than 40 % [qualifier: assessed by transthoracic echocardiogram (ECHO)]"
+   },
+   "EL031": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Absolute neutrophil count (ANC) less than 1 [qualifier: Screening ANC should be independent of growth factor support for ≥ 1 week.] {NOT EXECUTABLE} AND Absolute neutrophil count (ANC) occurs within 28 day before randomization [assessed: within 28 days prior to\nrandomizatio"
+   },
+   "EL032": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Hemoglobin less than 80 g/l [assessed: within 28 days prior to randomization] [qualifier: Use of erythropoietic stimulating factors and red blood cell (RBC) transfusions per institutional guidelines is allowed; however, most recent RBC transfusion must not have been performe"
+   },
+   "EL033": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: ([IF myeloma involvement in the bone marrow greater than 50 % THEN Platelet count at most 30 [qualifier: Subjects should not have received platelet transfusions for at least 1 week prior to obtaining the screening platelet count.] {NOT EXECUTABLE} ELSE Platelet count less th"
+   },
+   "EL034": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Calculated or measured creatinine clearance less than 30 ml/min [assessed: within 28 days prior to randomization] [qualifier: calculation must be based on the Cockcroft and Gault formula]"
+   },
+   "EL035": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Female subjects is one of ['female'] AND childbearing potential is one of ['childbearing potential'] AND pregnancy test is one of ['positive'] [assessed: assessed at screening] AND pregnancy test is one of ['highly sensitive serum'] AND pregnancy test occurs within 10 day b"
+   },
+   "EL039": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: UNRESOLVED requirement: 'Subject likely to not be available to complete all protocol-required study visits or procedures, and/or to comply with all required study assessments (including COA) to the best of the subject and investigator’s knowledge.' {NOT EXECUTABLE}"
+   },
+   "EL040": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (History or evidence of any other clinically significant disorder, condition or disease is present [qualifier: with the exception of those outlined above] AND (would pose a risk to subject safety is present [qualifier: in the opinion of the investigator or Amgen physician, i"
+   }
+  },
+  "decisive_exclusions": {
+   "EL040": 92,
+   "EL023": 83,
+   "EL014": 81,
+   "EL039": 81,
+   "EL024": 80,
+   "EL019": 79,
+   "EL021": 79,
+   "EL032": 78,
+   "EL035": 78,
+   "EL029": 77,
+   "EL027": 77,
+   "EL017": 75,
+   "EL015": 74,
+   "EL025": 74,
+   "EL018": 74,
+   "EL028": 73,
+   "EL006": 72,
+   "EL013": 71,
+   "EL005": 71,
+   "EL033": 70,
+   "EL030": 70,
+   "EL007": 69,
+   "EL008": 69,
+   "EL034": 66,
+   "EL022": 64,
+   "EL016": 63,
+   "EL020": 59,
+   "EL031": 57,
+   "EL012": 12
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL005": 10000,
+   "EL006": 10000,
+   "EL007": 10000,
+   "EL008": 10000,
+   "EL013": 10000,
+   "EL014": 10000,
+   "EL015": 10000,
+   "EL016": 10000,
+   "EL017": 10000,
+   "EL018": 10000,
+   "EL019": 10000,
+   "EL020": 10000,
+   "EL021": 10000,
+   "EL022": 10000,
+   "EL023": 10000,
+   "EL024": 10000,
+   "EL025": 10000,
+   "EL027": 10000,
+   "EL028": 10000,
+   "EL029": 10000,
+   "EL030": 10000,
+   "EL031": 10000,
+   "EL032": 10000,
+   "EL033": 10000,
+   "EL034": 10000,
+   "EL035": 10000,
+   "EL039": 10000,
+   "EL040": 10000
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.8104026431768779,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (myeloma_and_plasma_cell; 12 trials, 2371 screened)",
+    "detail": {
+     "estimate": 0.8104026431768779,
+     "ci95": [
+      0.7686345767787867,
+      0.8461397544851209
+     ],
+     "single_trial_80": [
+      0.732286885733318,
+      0.8697783841035241
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.7322901928400358,
+      "p30": 0.7807399412471648,
+      "p50": 0.8104026431768779,
+      "p70": 0.8368907789591518,
+      "p90": 0.869776473399545
+     },
+     "tau_logit": 0.32369095300648587,
+     "groups": 12,
+     "trials": 12,
+     "participants": 2371
+    }
+   },
+   "target_eligible_share": 0.8104026431768779,
+   "share_excluded_by_decided_criteria": 0.0012,
+   "residual_pass_needed": 0.8113762947305546,
+   "per_criterion_pass_probability": 0.992562675371978,
+   "criteria": [
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034",
+    "EL035",
+    "EL039",
+    "EL040"
+   ]
+  }
+ }
+}

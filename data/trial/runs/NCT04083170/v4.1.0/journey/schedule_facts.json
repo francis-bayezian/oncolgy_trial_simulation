@@ -1,0 +1,34 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 2,
+ "facts": [
+  {
+   "kind": "follow_up_visit",
+   "recurring": true,
+   "first_day": 28,
+   "interval_days": null,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": true,
+   "applies_to_all_patients": true,
+   "assessment": "patient outcomes",
+   "time_origin": "unclear",
+   "quote": "approximately day + 28, +80, and +180 post-transplant and at 1-year and 2-year follow up",
+   "reason": "The protocol specifies outcome follow-up time points after transplant, but does not provide a regular interval or identify treatment end as the time origin.",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "nter for the following time points: approximately day + 28, +80, and +180 post-transplant and at 1-year and 2-year follow up. CRFs are expected to be submitted as expeditiously as possible after the relevant time points(within 28 days).Whenpossible,primary source documents regarding patient outcomes are collectedfrom thecollaboratingcenterswith theCRFsto allowverificationofprotocol complianc",
+   "verification": {
+    "votes": [
+     "INCOMPLETE",
+     "INCOMPLETE",
+     "INCOMPLETE"
+    ],
+    "reviewer_note": "The rendering omits the later scheduled time points and does not specify that the schedule is post-transplant or approximate."
+   },
+   "status": "REVIEW_REQUIRED"
+  }
+ ]
+}

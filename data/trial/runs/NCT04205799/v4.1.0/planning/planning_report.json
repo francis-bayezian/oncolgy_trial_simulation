@@ -1,0 +1,550 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "CABOCOL-01",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "0cc9e71cce40a2f7c144150475af7adc2485d80a8fbb3ce3efaa4dc7fa10bbab",
+  "cohorts": {
+   "cohort_accrual_3_per_year.jsonl": "7f7962eec098fab41f8936f348193f1c1918e3150c8df26e53e4dcbeefba8ff3",
+   "cohort_accrual_historical_7.9_per_year.jsonl": "e131bb9a0ecb04cb532deef713931316c6bffd40b1a80f6aabbee01791a233a6",
+   "recruitment_report.md": "8473cfffb696754be4474557ddb746d0bb2ac426e1bcc417412b9d03f1b1e91b",
+   "recruitment_summary.json": "bb93d92a63bff99bfe6714fa032389748ce0a141bbc8fed0502cbd9bc3acff7d"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "a52d14868324b215fcc6a0f8f0baceef5d893fd89f0e6b0e704cf187acbcbd69",
+   "eligibility_summary.json": "50008e911ce177fad5dc17191e0ec128669f5d9fa2ddfac0f1ae2f11fc3a6032",
+   "feasibility_report.md": "06f2a1f711683cfcecd7da9e43287ecc775e236e2bdebe393060ad7a0b3f6fbd"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.7713,
+   0.7713
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL001",
+   "EL002",
+   "EL008",
+   "EL009",
+   "EL011",
+   "EL012",
+   "EL013",
+   "EL014",
+   "EL016",
+   "EL018",
+   "EL019",
+   "EL020",
+   "EL021",
+   "EL022",
+   "EL023",
+   "EL025",
+   "EL026",
+   "EL027",
+   "EL028",
+   "EL029"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.2287,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (gynecologic; 32 trials, 10296 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 74,
+   "target": 57.0
+  }
+ },
+ "accrual": {
+  "target_patients": 57,
+  "target_source": "target_accrual",
+  "stated_accrual_durations_years": [
+   1.5
+  ],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_7.9_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 7.859343909384353,
+    "patients_per_month": 0.6549453257820294,
+    "enrolled": {
+     "median": 57.0,
+     "q10": 57.0,
+     "q25": 57.0,
+     "q75": 57.0,
+     "q90": 57.0
+    },
+    "enrollment_duration_years": {
+     "median": 7.083713418702363,
+     "q10": 5.924291159575611,
+     "q25": 6.467815507584658,
+     "q75": 7.7253301216205585,
+     "q90": 8.345180401712554
+    },
+    "p_enrollment_complete_by": {
+     "1.5y": 0.0
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   },
+   {
+    "scenario": "accrual_3_per_year",
+    "source": "protocol (quoted)",
+    "wording": "The estimated accrual for this study is 3 patients a month.",
+    "patients_per_year": 3.0,
+    "patients_per_month": 0.25,
+    "enrolled": {
+     "median": 57.0,
+     "q10": 57.0,
+     "q25": 57.0,
+     "q75": 57.0,
+     "q90": 57.0
+    },
+    "enrollment_duration_years": {
+     "median": 18.55147528816914,
+     "q10": 15.520762076869865,
+     "q25": 16.908532521953315,
+     "q75": 20.363973516328386,
+     "q90": 22.020326764281506
+    },
+    "p_enrollment_complete_by": {
+     "1.5y": 0.0
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "NOT_STATED_AVERAGED",
+    "reason": "the protocol states no number of sites: the historical model averages over same-phase trials' site counts"
+   },
+   "sponsor_class": {
+    "status": "RESOLVED",
+    "value": "INDUSTRY",
+    "quote": "IPSEN Pharma SAS Laboratory",
+    "source": "protocol (quoted): company legal form"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2021,
+    "enrolled": 57,
+    "disease_family": "gynecologic",
+    "matched_disease": "advanced or metastatic cervical carcinoma",
+    "condition": "advanced or metastatic cervical carcinoma",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 2,
+    "sponsor_class": null
+   },
+   "site_count": "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase",
+   "patients_per_month": {
+    "median": 0.5846144998796219,
+    "q10": 0.12116203124304992,
+    "q25": 0.25159396651754873,
+    "q75": 1.4095511338842712,
+    "q90": 3.2412270086823787,
+    "percentiles": {
+     "p10": 0.12116203124304992,
+     "p30": 0.3017312608954607,
+     "p50": 0.5846144998796219,
+     "p70": 1.144039118354428,
+     "p90": 3.2412270086823787
+    }
+   },
+   "patients_per_year": {
+    "median": 7.015373998555463,
+    "q10": 1.453944374916599,
+    "q25": 3.0191275982105843,
+    "q75": 16.914613606611255,
+    "q90": 38.89472410418854,
+    "percentiles": {
+     "p10": 1.453944374916599,
+     "p30": 3.6207751307455287,
+     "p50": 7.015373998555463,
+     "p70": 13.728469420253138,
+     "p90": 38.89472410418854
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 8.08104286658447,
+    "q10": 1.4218003668047408,
+    "q25": 3.331933251827011,
+    "q75": 18.81263107498753,
+    "q90": 39.562929099613534,
+    "percentiles": {
+     "p10": 1.4218003668047408,
+     "p30": 4.083598648312607,
+     "p50": 8.08104286658447,
+     "p70": 15.665406648671874,
+     "p90": 39.562929099613534
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1.5y": 0.107125
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2021,
+    "arms": 2,
+    "disease_family": "gynecologic"
+   },
+   "sponsor_class": "INDUSTRY (protocol (quoted): company legal form: 'IPSEN Pharma SAS Laboratory')",
+   "probabilities": {
+    "completed": 0.5774999222230482,
+    "terminated_accrual": 0.048896736607841614,
+    "terminated_other": 0.2656636092989457,
+    "withdrawn": 0.10793973187016448
+   },
+   "p_accrual_failure": 0.15683646847800609,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 57,
+  "evaluable_targets": [
+   22.0,
+   29.0,
+   51.0,
+   19.0
+  ],
+  "decision_rules": [
+   {
+    "rule": "DR1",
+    "arm": "Cabozantinib (Cabozantinib)",
+    "cohort": "A phase II single-arm two-stage multicentre study",
+    "maximum_n": 51,
+    "stage_1_n": 22,
+    "at": {
+     "p0": {
+      "true_rate": 0.3,
+      "expected_n": 31.53373038122275,
+      "p_early_stop": 0.6712506765095604
+     },
+     "p1": {
+      "true_rate": 0.5,
+      "expected_n": 49.059892654418945,
+      "p_early_stop": 0.06690025329589844
+     }
+    }
+   },
+   {
+    "rule": "DR2",
+    "arm": "Cabozantinib (Cabozantinib)",
+    "cohort": "The total sample size to be enrolled is 57 patients.",
+    "maximum_n": 51,
+    "stage_1_n": 22,
+    "at": {
+     "p0": {
+      "true_rate": 0.3,
+      "expected_n": 31.53373038122275,
+      "p_early_stop": 0.6712506765095604
+     },
+     "p1": {
+      "true_rate": 0.5,
+      "expected_n": 49.059892654418945,
+      "p_early_stop": 0.06690025329589844
+     }
+    }
+   },
+   {
+    "rule": "DR5",
+    "arm": "BEVACIZUMAB (PATIENTS UNDER BEVACIZUMAB)",
+    "cohort": "19 evaluable bevacizumab pre-treated patients",
+    "maximum_n": 19,
+    "stage_1_n": null,
+    "at": {
+     "p0": {
+      "true_rate": 0.2,
+      "expected_n": 19.0,
+      "p_early_stop": 0.0
+     },
+     "p1": {
+      "true_rate": 0.5,
+      "expected_n": 19.0,
+      "p_early_stop": 0.0
+     }
+    }
+   }
+  ]
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 8.08104286658447,
+    "q10": 1.4218003668047408,
+    "q25": 3.331933251827011,
+    "q75": 18.81263107498753,
+    "q90": 39.562929099613534,
+    "percentiles": {
+     "p10": 1.4218003668047408,
+     "p30": 4.083598648312607,
+     "p50": 8.08104286658447,
+     "p70": 15.665406648671874,
+     "p90": 39.562929099613534
+    }
+   },
+   "accrual_historical_7.9_per_year": {
+    "median": 7.083713418702363,
+    "q10": 5.924291159575611,
+    "q25": 6.467815507584658,
+    "q75": 7.7253301216205585,
+    "q90": 8.345180401712554
+   },
+   "accrual_3_per_year": {
+    "median": 18.55147528816914,
+    "q10": 15.520762076869865,
+    "q25": 16.908532521953315,
+    "q75": 20.363973516328386,
+    "q90": 22.020326764281506
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 8.33104286658447,
+     "q10": 1.6718003668047408,
+     "q25": 3.581933251827011,
+     "q75": 19.06263107498753,
+     "q90": 39.812929099613534
+    },
+    "accrual_historical_7.9_per_year": {
+     "median": 7.333713418702363,
+     "q10": 6.174291159575611,
+     "q25": 6.717815507584658,
+     "q75": 7.9753301216205585,
+     "q90": 8.595180401712554
+    },
+    "accrual_3_per_year": {
+     "median": 18.80147528816914,
+     "q10": 15.770762076869865,
+     "q25": 17.158532521953315,
+     "q75": 20.613973516328386,
+     "q90": 22.270326764281506
+    }
+   },
+   "assessment_lag_months": 3.0,
+   "source": "primary endpoint time point (protocol)"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 8.33104286658447,
+     "q10": 1.6718003668047408,
+     "q25": 3.581933251827011,
+     "q75": 19.06263107498753,
+     "q90": 39.812929099613534
+    },
+    "accrual_historical_7.9_per_year": {
+     "median": 7.333713418702363,
+     "q10": 6.174291159575611,
+     "q25": 6.717815507584658,
+     "q75": 7.9753301216205585,
+     "q90": 8.595180401712554
+    },
+    "accrual_3_per_year": {
+     "median": 18.80147528816914,
+     "q10": 15.770762076869865,
+     "q25": 17.158532521953315,
+     "q75": 20.613973516328386,
+     "q90": 22.270326764281506
+    }
+   },
+   "follow_up_years": 0.25,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.07271292526603469,
+    "source": "registry participant flow (gynecologic): left by subject decision, loss to follow-up or physician decision; 630 trials, 85355 participants"
+   },
+   "adverse_event": {
+    "value": 0.04272168521985129,
+    "source": "registry participant flow (gynecologic): left for an adverse event; 630 trials, 85355 participants"
+   },
+   "death": {
+    "value": 0.071776058401318,
+    "source": "registry participant flow (gynecologic): died during the study period; 630 trials, 85355 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1.5y": 0.107125
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 8.08,
+   "q10": 1.42,
+   "q25": 3.33,
+   "q75": 18.81,
+   "q90": 39.56,
+   "percentiles": {
+    "p10": 1.4218003668047408,
+    "p30": 4.083598648312607,
+    "p50": 8.08104286658447,
+    "p70": 15.665406648671874,
+    "p90": 39.562929099613534
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_7.9_per_year, conditional on the protocol's assumption)": {
+   "1.5y": 0.0
+  },
+  "p_enrollment_complete_by (accrual_3_per_year, conditional on the protocol's assumption)": {
+   "1.5y": 0.0
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 7.85934 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 1.5 | p30 3.6 | p50 7.0 | p70 13.7 | p90 38.9"
+   },
+   "status": "plausible (protocol/historical median 1.12x)"
+  },
+  {
+   "assumption": "accrual 3 patients/year",
+   "protocol": "The estimated accrual for this study is 3 patients a month.",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 1.5 | p30 3.6 | p50 7.0 | p70 13.7 | p90 38.9"
+   },
+   "status": "plausible (protocol/historical median 0.43x)"
+  }
+ ]
+}

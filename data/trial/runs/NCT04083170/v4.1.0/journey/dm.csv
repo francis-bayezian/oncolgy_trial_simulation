@@ -1,0 +1,11 @@
+STUDYID,USUBJID,ARMCD,AGE,SEX,RACE,ETHNIC,RFSTDTC_DAY,ENROLLMENT_DAY
+1004070,S0001,ARM1,43.39,female,white,not_hispanic_or_latino,1,13.3
+1004070,S0002,ARM1,59.49,male,white,not_hispanic_or_latino,1,58.1
+1004070,S0003,ARM1,40.05,female,white,not_hispanic_or_latino,1,103.4
+1004070,S0004,ARM2,60.99,male,white,not_hispanic_or_latino,1,122.8
+1004070,S0005,ARM1,63.24,male,white,not_hispanic_or_latino,1,347.9
+1004070,S0006,ARM2,60.69,female,white,not_hispanic_or_latino,1,426.0
+1004070,S0007,ARM1,43.65,female,white,unknown_or_not_reported,1,535.8
+1004070,S0008,ARM2,50.35,male,white,not_hispanic_or_latino,1,561.4
+1004070,S0009,ARM1,49.21,female,white,not_hispanic_or_latino,1,608.3
+1004070,S0010,ARM2,46.04,male,white,hispanic_or_latino,1,647.5

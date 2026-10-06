@@ -1,0 +1,175 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "9f61263a2faad6d1d336cb0cd9a60c04b28f9239bfc4d7eba9c57d14230db8f5",
+  "population": "09e7223aa65b2fd752554bf00700922898ac6f472684fdf9ff4a71df8a360d97"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7871,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2129
+  },
+  "eligible_share": 0.7871,
+  "proven_eligible_share": 0.7871,
+  "not_proven_ineligible_share": 0.7871,
+  "criteria": {
+   "evaluated": [
+    "EL001",
+    "EL002",
+    "EL003",
+    "EL005",
+    "EL006",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012"
+   ],
+   "procedural": [
+    "EL004",
+    "EL007",
+    "EL008",
+    "EL014",
+    "EL015"
+   ],
+   "permissive": [],
+   "informational": [
+    "EL013"
+   ],
+   "run_with_review_flag": []
+  },
+  "per_criterion": {
+   "EL001": {
+    "met": 9999,
+    "not_met": 1,
+    "unknown": 0,
+    "share_not_met_decided": 0.0001,
+    "rule": "ELIGIBLE ONLY IF: (Male is one of ['male'] AND age at least 18 year [assessed: at Visit 1 (Screening)])"
+   },
+   "EL002": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Documented history of localized adenocarcinoma of the prostate is present AND prior curative intent treatment with RP is present AND BCR of prostate cancer is present AND eligibility assessment occurs at least 6 month after 'RP' [assessed: At least 6 months])"
+   },
+   "EL003": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: PSA at most 0.5 ng/ml"
+   },
+   "EL005": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Written informed consent is present [qualifier: obtained from the patient] AND ability for the patient to comply\nwith the requirements of the study is present)"
+   },
+   "EL006": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: any medical condition or circumstance (including receiving an IP) that the investigator believes may compromise the data collected or lead to a failure to fulfill the\nstudy requirements. is present"
+   },
+   "EL009": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (participating in an interventional clinical trial is present [assessed: within 30 days] AND having received\nan IP occurs within 5 biological half-lives before 'either of the PSMA PET scans in this study')"
+   },
+   "EL010": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (hypersensitivity is one of ['the active substance'] [qualifier: known] OR hypersensitivity is one of ['any of the excipients of\\npiflufolastat (18F) or flotufolastat (18F)'] [qualifier: known])"
+   },
+   "EL011": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (cystectomy is present [qualifier: previously undergone] OR renal failure is present OR other conditions that may significantly affect urinary output is present [qualifier: as judged by the investigator])"
+   },
+   "EL012": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: salvage therapy for the current episode of BCR is present [qualifier: received]"
+   }
+  },
+  "decisive_exclusions": {
+   "EL011": 324,
+   "EL003": 324,
+   "EL006": 294,
+   "EL005": 292,
+   "EL010": 289,
+   "EL009": 285,
+   "EL012": 280,
+   "EL002": 277,
+   "EL001": 1
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL002": 10000,
+   "EL003": 10000,
+   "EL005": 10000,
+   "EL006": 10000,
+   "EL009": 10000,
+   "EL010": 10000,
+   "EL011": 10000,
+   "EL012": 10000
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.7867370240202337,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (prostate; 23 trials, 7838 screened)",
+    "detail": {
+     "estimate": 0.7867370240202337,
+     "ci95": [
+      0.7461619154739233,
+      0.8223703386735023
+     ],
+     "single_trial_80": [
+      0.6662621183052605,
+      0.8720724876026538
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.6662672782857874,
+      "p30": 0.741564694012456,
+      "p50": 0.7867370240202337,
+      "p70": 0.825867667392703,
+      "p90": 0.872069898678054
+     },
+     "tau_logit": 0.464896274158428,
+     "groups": 23,
+     "trials": 23,
+     "participants": 7838
+    }
+   },
+   "target_eligible_share": 0.7867370240202337,
+   "share_excluded_by_decided_criteria": 0.0001,
+   "residual_pass_needed": 0.7868157055907928,
+   "per_criterion_pass_probability": 0.9704744979811498,
+   "criteria": [
+    "EL002",
+    "EL003",
+    "EL005",
+    "EL006",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012"
+   ]
+  }
+ }
+}

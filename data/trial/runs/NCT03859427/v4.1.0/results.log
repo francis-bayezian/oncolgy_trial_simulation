@@ -1,0 +1,75 @@
+{
+ "design": {
+  "status": "RESOLVED",
+  "fraction": 0.6,
+  "control_phrase": "twice-weekly KRd 27 mg/m2",
+  "comparator": "Rd",
+  "quote": "preserves at least 60% of twice-weekly KRd 27 mg/m2 effect vs Rd.",
+  "alpha": 0.025,
+  "analysis_id": "AN1",
+  "design_assumption": {
+   "rate": 0.866,
+   "quote": "true RR of 1 with ORR = 86.6% for both arms (once-weekly KRd 56 mg/m2 vs twice-weekly KRd 27 mg/m2)"
+  },
+  "total_n": 460.0,
+  "n_per_arm": [
+   230,
+   230
+  ]
+ },
+ "power_at_protocol_assumption": {
+  "rate": 0.866,
+  "rr": 1.0,
+  "power": 0.77165
+ },
+ "p_success_curve": [
+  {
+   "rr": 0.8,
+   "p_noninferior": 0.0
+  },
+  {
+   "rr": 0.85,
+   "p_noninferior": 0.0004
+  },
+  {
+   "rr": 0.9,
+   "p_noninferior": 0.022
+  },
+  {
+   "rr": 0.95,
+   "p_noninferior": 0.24715
+  },
+  {
+   "rr": 1.0,
+   "p_noninferior": 0.77595
+  },
+  {
+   "rr": 1.05,
+   "p_noninferior": 0.9792
+  }
+ ],
+ "predicted_response": {
+  "control_true_rate": {
+   "median": 0.8712374891059005,
+   "q05": 0.7831638874649615,
+   "q10": 0.8147237542552946,
+   "q90": 0.9123728227765018,
+   "q95": 0.9266604360634136,
+   "percentiles": {
+    "p10": 0.8147237542552946,
+    "p30": 0.8531119575630243,
+    "p50": 0.8712374891059005,
+    "p70": 0.8874831178886223,
+    "p90": 0.9123728227765018
+   }
+  },
+  "observed_rate_90_at_n": [
+   0.7782608695652173,
+   0.9347826086956522
+  ],
+  "n_per_arm": 230,
+  "level": "protocol-cited historical, same regimen",
+  "studies": 1,
+  "note": "the evidence has no information on dosing schedule: both arms share this prediction under RR = 1"
+ }
+}

@@ -1,0 +1,35 @@
+USUBJID,PATIENT_ID,ARM,ARM_LABEL,STRATUM,AGE,SEX,RACE,ETHNIC,ENROLLMENT_DAY,UNCHECKED_CRITERIA
+S0001,P006797,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,59.1,female,white,not_hispanic_or_latino,3.6318514184786013,0
+S0002,P000645,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,63.98,male,black_or_african_american,unknown_or_not_reported,17.88791381836822,0
+S0003,P000486,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,30.52,female,black_or_african_american,not_hispanic_or_latino,65.73368050917735,0
+S0004,P006114,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,68.71,female,white,not_hispanic_or_latino,114.29375646317907,0
+S0005,P005678,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,59.82,female,asian,not_hispanic_or_latino,135.03167846099075,0
+S0006,P008104,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,76.31,male,white,hispanic_or_latino,375.74869565799173,0
+S0007,P009943,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,50.29,male,white,not_hispanic_or_latino,459.37661027154115,0
+S0008,P004220,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,66.88,male,white,not_hispanic_or_latino,576.7679560975057,0
+S0009,P005833,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,103.41,female,white,not_hispanic_or_latino,604.1831036969495,0
+S0010,P000647,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,57.56,male,white,not_hispanic_or_latino,654.3994502386914,0
+S0011,P006549,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,58.99,female,black_or_african_american,not_hispanic_or_latino,696.2854506672205,0
+S0012,P007148,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,51.71,male,white,hispanic_or_latino,713.6728269567228,0
+S0013,P002816,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,50.86,female,white,not_hispanic_or_latino,715.4106434450787,0
+S0014,P005411,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,65.84,male,white,not_hispanic_or_latino,731.9662541623297,0
+S0015,P006134,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,55.5,male,white,not_hispanic_or_latino,806.9106338051276,0
+S0016,P008692,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,73.08,male,white,not_hispanic_or_latino,822.1850144202992,0
+S0017,P003897,ARM1,"Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide
+Antigen-",,55.75,male,white,not_hispanic_or_latino,997.5049421663846,0

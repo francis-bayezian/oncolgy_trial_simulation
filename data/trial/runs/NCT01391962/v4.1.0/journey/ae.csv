@@ -1,0 +1,1287 @@
+USUBJID,AESEQ,AETERM,AESER,AETOXGR,AESTDY,AEENDY,AEACN,AERULE
+S0001,1,treatment-emergent LVEF values below the lower limit of normal (LLN),N,1,18,19,NOT APPLICABLE,
+S0001,2,skin discoloration,N,1,56,57,NOT APPLICABLE,
+S0001,3,hoarseness,N,2,68,69,NOT APPLICABLE,
+S0001,4,vomiting,N,1,119,120,NOT APPLICABLE,
+S0001,5,hypocalcemia,N,2,143,144,NOT APPLICABLE,
+S0001,6,fever,N,2,147,148,no_modification,DM026
+S0001,7,palmar_plantar_erythrodysesthesia_syndrome,N,2,151,152,no_modification,DM034
+S0001,8,diarrhea,N,1,152,153,NOT APPLICABLE,
+S0001,9,Bleeding events,N,2,204,205,NOT APPLICABLE,
+S0001,10,Hypothyroidism,N,2,233,234,NOT APPLICABLE,
+S0001,11,aspartate_aminotransferase_increased,N,2,277,278,delay_cycle,DM037
+S0001,12,flatulence,N,1,298,299,NOT APPLICABLE,
+S0001,13,pain,N,1,309,310,NOT APPLICABLE,
+S0001,14,decreased_platelet_count,N,1,323,324,no_modification,DM023
+S0001,15,lipase,N,1,345,346,NOT APPLICABLE,
+S0001,16,voice_disturbance,N,2,348,349,NOT APPLICABLE,
+S0001,17,alanine_aminotransferase_increased,N,1,372,373,delay_cycle,DM037
+S0001,18,upper_respiratory_infections,N,1,415,416,NOT APPLICABLE,
+S0001,19,skin_and_subcutaneous_tissue_disorders_-_other,N,2,419,420,NOT APPLICABLE,
+S0001,20,dry_skin,N,2,479,480,NOT APPLICABLE,
+S0001,21,hand-foot skin reactions,N,1,505,506,no_modification,DM034
+S0001,22,diarrhea,N,1,530,531,NOT APPLICABLE,
+S0002,1,hoarseness,N,1,3,4,NOT APPLICABLE,
+S0002,2,lipase,N,1,16,17,NOT APPLICABLE,
+S0002,3,sensory_neuropathy,N,1,29,30,NOT APPLICABLE,
+S0002,4,weight_loss,N,2,37,38,NOT APPLICABLE,
+S0002,5,decreased_platelet_count,N,1,40,41,no_modification,DM023
+S0002,6,maculopapular_lesion,N,2,111,112,NOT APPLICABLE,
+S0002,7,treatment-emergent LVEF values below the lower limit of normal (LLN),N,1,114,115,NOT APPLICABLE,
+S0002,8,white_blood_cell_decreased,N,1,125,126,NOT APPLICABLE,
+S0002,9,palmar_plantar_erythrodysesthesia_syndrome,N,1,137,138,no_modification,DM034
+S0002,10,fatigue,N,1,139,140,no_modification,DM027
+S0002,11,Severe hypertension,N,1,168,169,NOT APPLICABLE,
+S0002,12,headache,N,1,179,180,NOT APPLICABLE,
+S0002,13,hypoalbuminemia,N,2,184,185,NOT APPLICABLE,
+S0002,14,hypertension,N,2,190,191,NOT APPLICABLE,
+S0002,15,aspartate_aminotransferase_increased,N,1,213,214,delay_cycle,DM037
+S0002,16,Hypothyroidism,N,1,218,219,NOT APPLICABLE,
+S0002,17,coughing,N,1,231,232,NOT APPLICABLE,
+S0002,18,hypokalemia,N,2,276,277,NOT APPLICABLE,
+S0002,19,fever,N,2,289,290,no_modification,DM026
+S0002,20,flatulence,N,2,294,295,NOT APPLICABLE,
+S0002,21,upper_respiratory_infections,N,1,329,330,NOT APPLICABLE,
+S0002,22,voice_disturbance,N,2,332,333,NOT APPLICABLE,
+S0002,23,proteinuria,N,1,378,379,NOT APPLICABLE,
+S0002,24,hypocalcemia,N,1,380,381,NOT APPLICABLE,
+S0002,25,skin_and_subcutaneous_tissue_disorders_-_other,N,1,400,401,NOT APPLICABLE,
+S0003,1,hoarseness,N,1,1,2,NOT APPLICABLE,
+S0003,2,voice_disturbance,N,2,23,24,NOT APPLICABLE,
+S0003,3,decreased_platelet_count,N,1,39,40,no_modification,DM023
+S0003,4,lipase,N,1,61,62,NOT APPLICABLE,
+S0003,5,palmar_plantar_erythrodysesthesia_syndrome,N,1,65,66,no_modification,DM034
+S0003,6,weight_loss,N,2,70,71,NOT APPLICABLE,
+S0003,7,aspartate_aminotransferase_increased,N,2,80,81,delay_cycle,DM037
+S0003,8,fever,N,2,82,83,no_modification,DM026
+S0003,9,hypocalcemia,N,1,90,91,NOT APPLICABLE,
+S0003,10,dry_skin,N,1,100,101,NOT APPLICABLE,
+S0003,11,Hypothyroidism,N,2,116,117,NOT APPLICABLE,
+S0003,12,hypertension,N,1,133,134,NOT APPLICABLE,
+S0003,13,vomiting,N,1,143,144,NOT APPLICABLE,
+S0003,14,maculopapular_lesion,N,2,161,162,NOT APPLICABLE,
+S0003,15,Hypothyroidism,N,1,184,185,NOT APPLICABLE,
+S0004,1,headache,N,1,28,29,NOT APPLICABLE,
+S0004,2,hoarseness,N,1,58,59,NOT APPLICABLE,
+S0004,3,back_pain,N,2,59,60,NOT APPLICABLE,
+S0004,4,hypertension,N,2,62,63,NOT APPLICABLE,
+S0004,5,voice_disturbance,N,2,126,127,NOT APPLICABLE,
+S0004,6,fatigue,N,1,133,134,no_modification,DM027
+S0004,7,fever,N,1,165,166,no_modification,DM026
+S0004,8,liposarcoma_well_differentiated,N,1,194,195,NOT APPLICABLE,
+S0004,9,alanine_aminotransferase_increased,N,2,195,196,delay_cycle,DM037
+S0004,10,dry_skin,N,1,244,245,NOT APPLICABLE,
+S0004,11,decreased_platelet_count,N,1,278,279,no_modification,DM023
+S0004,12,flatulence,N,1,308,309,NOT APPLICABLE,
+S0004,13,hypocalcemia,N,1,334,335,NOT APPLICABLE,
+S0004,14,diarrhea,N,1,347,348,NOT APPLICABLE,
+S0004,15,palmar_plantar_erythrodysesthesia_syndrome,N,1,349,350,no_modification,DM034
+S0004,16,lipase,N,2,416,417,NOT APPLICABLE,
+S0004,17,creatinine_increased,N,1,436,437,NOT APPLICABLE,
+S0004,18,vomiting,N,2,447,448,NOT APPLICABLE,
+S0005,1,voice_disturbance,N,1,4,5,NOT APPLICABLE,
+S0005,2,hoarseness,N,1,14,15,NOT APPLICABLE,
+S0005,3,upper_respiratory_infections,N,1,22,23,NOT APPLICABLE,
+S0005,4,hypertension,N,2,36,37,NOT APPLICABLE,
+S0005,5,aspartate_aminotransferase_increased,N,1,52,53,delay_cycle,DM037
+S0005,6,dermatitis,N,1,63,64,NOT APPLICABLE,
+S0005,7,flatulence,N,2,64,65,NOT APPLICABLE,
+S0005,8,weight_loss,N,2,70,71,NOT APPLICABLE,
+S0005,9,hand-foot skin reactions,N,1,70,71,no_modification,DM034
+S0005,10,other serious adverse events (not individually predicted),Y,3,83,85,NOT APPLICABLE,
+S0005,11,stomatitis,N,2,92,93,NOT APPLICABLE,
+S0005,12,proteinuria,N,1,102,103,NOT APPLICABLE,
+S0005,13,fever,N,2,121,122,no_modification,DM026
+S0005,14,coughing,N,1,128,129,NOT APPLICABLE,
+S0005,15,nausea,N,2,131,132,NOT APPLICABLE,
+S0005,16,lipase,N,1,151,152,NOT APPLICABLE,
+S0005,17,maculopapular_lesion,N,1,154,155,NOT APPLICABLE,
+S0005,18,left ventricular systolic dysfunction,N,1,180,181,NOT APPLICABLE,
+S0005,19,sensory_neuropathy,N,2,185,186,NOT APPLICABLE,
+S0005,20,pain,N,2,192,193,NOT APPLICABLE,
+S0005,21,Hypothyroidism,N,1,195,196,NOT APPLICABLE,
+S0005,22,dry_skin,N,1,214,215,NOT APPLICABLE,
+S0005,23,alanine_aminotransferase_increased,N,2,242,243,NOT APPLICABLE,
+S0005,24,decreased_platelet_count,N,2,243,244,NOT APPLICABLE,
+S0005,25,hypocalcemia,N,1,246,247,NOT APPLICABLE,
+S0006,1,hoarseness,N,2,12,13,NOT APPLICABLE,
+S0006,2,an LVEF value below the LLN,N,1,12,13,NOT APPLICABLE,
+S0006,3,acneiform_eruptions,N,1,14,15,NOT APPLICABLE,
+S0006,4,pain,N,1,15,16,NOT APPLICABLE,
+S0006,5,lipase,N,1,29,30,NOT APPLICABLE,
+S0006,6,hypertension,N,2,29,30,NOT APPLICABLE,
+S0006,7,hypoalbuminemia,N,2,33,34,NOT APPLICABLE,
+S0006,8,nausea,N,2,34,35,NOT APPLICABLE,
+S0006,9,decreased_platelet_count,N,1,34,35,no_modification,DM023
+S0006,10,pain_in_limb,N,1,35,36,NOT APPLICABLE,
+S0006,11,maculopapular_lesion,N,2,35,36,NOT APPLICABLE,
+S0006,12,flatulence,N,2,41,42,NOT APPLICABLE,
+S0006,13,anemia,N,2,46,47,discontinue_all,DM043
+S0006,14,fever,Y,3,48,50,NOT APPLICABLE,
+S0006,15,aspartate_aminotransferase_increased,N,1,51,52,NOT APPLICABLE,
+S0006,16,hypertension,N,1,60,61,NOT APPLICABLE,
+S0006,17,hypocalcemia,N,1,63,64,NOT APPLICABLE,
+S0006,18,voice_disturbance,N,1,64,65,NOT APPLICABLE,
+S0007,1,Hypothyroidism,N,2,6,7,NOT APPLICABLE,
+S0007,2,hypokalemia,N,2,44,45,NOT APPLICABLE,
+S0007,3,diarrhea,N,2,74,75,NOT APPLICABLE,
+S0007,4,dry_skin,N,2,185,186,NOT APPLICABLE,
+S0007,5,upper_respiratory_infections,N,2,214,215,NOT APPLICABLE,
+S0007,6,hoarseness,N,1,229,230,NOT APPLICABLE,
+S0007,7,aspartate_aminotransferase_increased,N,1,238,239,delay_cycle,DM037
+S0007,8,proteinuria,N,2,278,279,NOT APPLICABLE,
+S0007,9,hand-foot skin reactions,N,2,297,298,no_modification,DM034
+S0007,10,other serious adverse events (not individually predicted),Y,3,300,302,NOT APPLICABLE,
+S0007,11,voice_disturbance,N,1,315,316,NOT APPLICABLE,
+S0007,12,abdominal_pain,N,2,330,331,NOT APPLICABLE,
+S0007,13,lipase,N,1,347,348,NOT APPLICABLE,
+S0007,14,hypertension,N,1,360,361,NOT APPLICABLE,
+S0007,15,decreased_platelet_count,N,2,380,381,no_modification,DM023
+S0007,16,fever,N,2,420,421,no_modification,DM026
+S0007,17,hypocalcemia,N,1,424,425,NOT APPLICABLE,
+S0007,18,Hypothyroidism,N,1,466,467,NOT APPLICABLE,
+S0007,19,hypoalbuminemia,N,1,521,522,NOT APPLICABLE,
+S0008,1,palmar_plantar_erythrodysesthesia_syndrome,N,2,9,10,no_modification,DM034
+S0008,2,voice_disturbance,N,2,15,16,NOT APPLICABLE,
+S0008,3,hypokalemia,N,2,23,24,NOT APPLICABLE,
+S0008,4,Hypothyroidism,N,1,28,29,NOT APPLICABLE,
+S0008,5,aspartate_aminotransferase_increased,N,1,33,34,delay_cycle,DM037
+S0008,6,fever,N,1,46,47,no_modification,DM026
+S0008,7,back_pain,N,2,52,53,NOT APPLICABLE,
+S0008,8,an LVEF value below the LLN,N,2,52,53,NOT APPLICABLE,
+S0008,9,hypocalcemia,N,1,63,64,NOT APPLICABLE,
+S0008,10,sensory_neuropathy,N,2,66,67,NOT APPLICABLE,
+S0008,11,vomiting,N,1,71,72,NOT APPLICABLE,
+S0008,12,upper_respiratory_infections,N,2,72,73,NOT APPLICABLE,
+S0008,13,blood_bilirubin_increased,N,1,74,75,delay_cycle,DM037
+S0008,14,nausea,N,1,75,76,NOT APPLICABLE,
+S0008,15,sleeplessness,N,1,79,80,NOT APPLICABLE,
+S0008,16,flatulence,N,2,85,86,NOT APPLICABLE,
+S0008,17,headache,N,2,86,87,NOT APPLICABLE,
+S0008,18,Bleeding events,N,2,86,87,NOT APPLICABLE,
+S0009,1,proteinuria,N,2,44,45,NOT APPLICABLE,
+S0009,2,hypoalbuminemia,N,1,109,110,NOT APPLICABLE,
+S0009,3,hoarseness,N,1,126,127,NOT APPLICABLE,
+S0009,4,aspartate_aminotransferase_increased,N,2,131,132,delay_cycle,DM037
+S0009,5,hyperglycemia,N,1,228,229,NOT APPLICABLE,
+S0009,6,palmar_plantar_erythrodysesthesia_syndrome,N,2,239,240,no_modification,DM034
+S0009,7,hypocalcemia,N,2,259,260,NOT APPLICABLE,
+S0009,8,lipase,N,1,299,300,NOT APPLICABLE,
+S0009,9,voice_disturbance,N,1,329,330,NOT APPLICABLE,
+S0009,10,hair color changes,N,1,331,332,NOT APPLICABLE,
+S0009,11,decreased_platelet_count,N,2,352,353,no_modification,DM023
+S0009,12,flatulence,N,2,358,359,NOT APPLICABLE,
+S0009,13,upper_respiratory_infections,N,1,385,386,NOT APPLICABLE,
+S0009,14,fever,N,1,405,406,no_modification,DM026
+S0009,15,pain_in_limb,N,2,406,407,NOT APPLICABLE,
+S0009,16,white_blood_cell_decreased,N,2,418,419,NOT APPLICABLE,
+S0009,17,back_pain,N,1,427,428,NOT APPLICABLE,
+S0009,18,headache,N,2,442,443,NOT APPLICABLE,
+S0010,1,creatinine_increased,N,1,34,35,NOT APPLICABLE,
+S0010,2,hoarseness,N,2,55,56,NOT APPLICABLE,
+S0010,3,lipase,N,2,79,80,NOT APPLICABLE,
+S0010,4,back_pain,N,2,90,91,NOT APPLICABLE,
+S0010,5,vomiting,N,1,122,123,NOT APPLICABLE,
+S0010,6,palmar_plantar_erythrodysesthesia_syndrome,N,2,144,145,no_modification,DM034
+S0010,7,voice_disturbance,N,1,163,164,NOT APPLICABLE,
+S0010,8,upper_respiratory_infections,N,2,229,230,NOT APPLICABLE,
+S0010,9,diarrhea,N,1,279,280,NOT APPLICABLE,
+S0010,10,fever,N,2,304,305,no_modification,DM026
+S0010,11,flatulence,N,2,386,387,NOT APPLICABLE,
+S0010,12,pain,N,1,392,393,NOT APPLICABLE,
+S0010,13,dry_skin,N,2,393,394,NOT APPLICABLE,
+S0010,14,decreased_platelet_count,N,1,422,423,no_modification,DM023
+S0010,15,hypocalcemia,N,2,468,469,NOT APPLICABLE,
+S0010,16,headache,N,1,488,489,NOT APPLICABLE,
+S0010,17,hyperglycemia,N,1,495,496,NOT APPLICABLE,
+S0011,1,voice_disturbance,N,2,31,32,NOT APPLICABLE,
+S0011,2,fever,N,1,41,42,no_modification,DM026
+S0011,3,decreased_platelet_count,N,2,42,43,no_modification,DM023
+S0011,4,palmar_plantar_erythrodysesthesia_syndrome,N,2,69,70,no_modification,DM034
+S0011,5,Hypothyroidism,N,1,70,71,NOT APPLICABLE,
+S0011,6,proteinuria,N,2,117,118,NOT APPLICABLE,
+S0011,7,alopecia,N,1,129,130,NOT APPLICABLE,
+S0011,8,Hypothyroidism,N,2,132,133,NOT APPLICABLE,
+S0011,9,vomiting,N,2,135,136,NOT APPLICABLE,
+S0011,10,aspartate_aminotransferase_increased,N,2,157,158,delay_cycle,DM037
+S0011,11,hoarseness,N,1,159,160,NOT APPLICABLE,
+S0011,12,hypocalcemia,N,2,186,187,NOT APPLICABLE,
+S0011,13,fatigue,N,1,186,187,no_modification,DM027
+S0011,14,treatment-emergent LVEF values below the lower limit of normal (LLN),N,1,211,212,NOT APPLICABLE,
+S0011,15,pain_in_limb,N,1,216,217,NOT APPLICABLE,
+S0011,16,weight_loss,N,1,230,231,NOT APPLICABLE,
+S0011,17,lipase,N,1,237,238,NOT APPLICABLE,
+S0011,18,diarrhea,Y,3,253,255,NOT APPLICABLE,
+S0012,1,Hypothyroidism,N,2,6,7,NOT APPLICABLE,
+S0012,2,voice_disturbance,N,1,10,11,NOT APPLICABLE,
+S0012,3,stomatitis,N,2,28,29,NOT APPLICABLE,
+S0012,4,dry_skin,N,2,37,38,NOT APPLICABLE,
+S0012,5,flatulence,N,2,55,56,NOT APPLICABLE,
+S0012,6,dermatitis,N,2,58,59,NOT APPLICABLE,
+S0012,7,fever,N,2,123,124,no_modification,DM026
+S0012,8,other serious adverse events (not individually predicted),Y,3,129,131,NOT APPLICABLE,
+S0012,9,hypertension,N,1,134,135,NOT APPLICABLE,
+S0012,10,hypocalcemia,N,2,179,180,NOT APPLICABLE,
+S0012,11,hand-foot syndrome,N,2,200,201,no_modification,DM034
+S0012,12,pruritus,N,1,227,228,NOT APPLICABLE,
+S0012,13,coughing,N,2,232,233,NOT APPLICABLE,
+S0012,14,palmar_plantar_erythrodysesthesia_syndrome,N,1,239,240,no_modification,DM034
+S0012,15,hoarseness,N,1,251,252,NOT APPLICABLE,
+S0012,16,weight_loss,N,1,253,254,NOT APPLICABLE,
+S0012,17,lipase,N,1,267,268,NOT APPLICABLE,
+S0012,18,sensory_neuropathy,N,1,269,270,NOT APPLICABLE,
+S0012,19,vomiting,N,1,270,271,NOT APPLICABLE,
+S0012,20,decreased_platelet_count,N,1,289,290,NOT APPLICABLE,
+S0012,21,aspartate_aminotransferase_increased,N,2,303,304,NOT APPLICABLE,
+S0013,1,white_blood_cell_decreased,N,1,104,105,NOT APPLICABLE,
+S0013,2,fever,N,1,118,119,no_modification,DM026
+S0013,3,upper_respiratory_infections,N,1,151,152,NOT APPLICABLE,
+S0013,4,hypothyroidism,N,1,158,159,NOT APPLICABLE,
+S0013,5,maculopapular_lesion,N,1,298,299,NOT APPLICABLE,
+S0013,6,aspartate_aminotransferase_increased,N,2,343,344,delay_cycle,DM037
+S0013,7,voice_disturbance,N,2,377,378,NOT APPLICABLE,
+S0013,8,lipase,N,1,388,389,NOT APPLICABLE,
+S0013,9,pain,N,2,399,400,NOT APPLICABLE,
+S0013,10,Hypothyroidism,N,2,454,455,NOT APPLICABLE,
+S0013,11,decreased_platelet_count,N,1,463,464,no_modification,DM023
+S0013,12,hoarseness,N,1,587,588,NOT APPLICABLE,
+S0013,13,hypertension,N,1,683,684,NOT APPLICABLE,
+S0013,14,hypocalcemia,N,1,725,726,NOT APPLICABLE,
+S0014,1,creatinine_increased,N,1,9,10,NOT APPLICABLE,
+S0014,2,diarrhea,N,2,61,62,NOT APPLICABLE,
+S0014,3,myalgia,N,2,90,91,NOT APPLICABLE,
+S0014,4,Hypothyroidism,N,1,94,95,NOT APPLICABLE,
+S0014,5,coughing,N,2,144,145,NOT APPLICABLE,
+S0014,6,hoarseness,N,1,150,151,NOT APPLICABLE,
+S0014,7,voice_disturbance,N,1,266,267,NOT APPLICABLE,
+S0014,8,decreased_platelet_count,N,2,360,361,no_modification,DM023
+S0014,9,upper_respiratory_infections,N,2,442,443,NOT APPLICABLE,
+S0014,10,lipase,N,1,583,584,NOT APPLICABLE,
+S0014,11,skin rash,N,2,583,584,NOT APPLICABLE,
+S0014,12,gastrointestinal_disorders_-_other,N,2,668,669,NOT APPLICABLE,
+S0015,1,nausea,N,1,2,3,NOT APPLICABLE,
+S0015,2,nausea,Y,3,73,75,NOT APPLICABLE,
+S0015,3,voice_disturbance,N,2,90,91,NOT APPLICABLE,
+S0015,4,hypertension,N,1,119,120,NOT APPLICABLE,
+S0015,5,upper_respiratory_infections,N,1,182,183,NOT APPLICABLE,
+S0015,6,palmar_plantar_erythrodysesthesia_syndrome,N,2,183,184,no_modification,DM034
+S0015,7,hoarseness,N,1,246,247,NOT APPLICABLE,
+S0015,8,hypocalcemia,N,2,259,260,NOT APPLICABLE,
+S0015,9,flatulence,N,1,259,260,NOT APPLICABLE,
+S0015,10,aspartate_aminotransferase_increased,N,2,300,301,delay_cycle,DM037
+S0015,11,neutrophil_count_decreased,N,2,456,457,no_modification,DM020
+S0015,12,decreased_platelet_count,N,1,487,488,no_modification,DM023
+S0015,13,fever,N,2,665,666,no_modification,DM026
+S0015,14,white_blood_cell_decreased,N,1,674,675,NOT APPLICABLE,
+S0015,15,weight_loss,N,1,689,690,NOT APPLICABLE,
+S0015,16,pain,N,1,709,710,NOT APPLICABLE,
+S0015,17,lipase,N,2,731,738,NOT APPLICABLE,
+S0015,18,proteinuria,N,2,744,751,NOT APPLICABLE,
+S0016,1,acneiform_eruptions,N,2,7,8,NOT APPLICABLE,
+S0016,2,hypocalcemia,N,1,15,16,NOT APPLICABLE,
+S0016,3,voice_disturbance,N,1,16,17,NOT APPLICABLE,
+S0016,4,hypertension,N,1,24,25,NOT APPLICABLE,
+S0016,5,upper_respiratory_infections,N,1,26,27,NOT APPLICABLE,
+S0016,6,decreased_platelet_count,N,2,29,30,no_modification,DM023
+S0016,7,lipase,N,1,33,34,NOT APPLICABLE,
+S0016,8,Hypothyroidism,N,2,35,36,NOT APPLICABLE,
+S0016,9,left ventricular dysfunction,N,1,40,41,NOT APPLICABLE,
+S0016,10,hypokalemia,N,1,45,46,NOT APPLICABLE,
+S0016,11,abdominal_pain,Y,3,66,68,NOT APPLICABLE,
+S0016,12,vomiting,N,2,81,82,NOT APPLICABLE,
+S0016,13,fever,N,2,111,112,no_modification,DM026
+S0016,14,hoarseness,N,1,114,115,NOT APPLICABLE,
+S0016,15,hypoalbuminemia,N,1,120,121,NOT APPLICABLE,
+S0016,16,abdominal_pain,N,1,126,127,NOT APPLICABLE,
+S0016,17,skin discoloration,N,1,127,128,NOT APPLICABLE,
+S0016,18,proteinuria,N,2,137,138,NOT APPLICABLE,
+S0016,19,headache,N,2,138,139,NOT APPLICABLE,
+S0016,20,nausea,Y,3,140,142,NOT APPLICABLE,
+S0017,1,back_pain,N,1,33,34,NOT APPLICABLE,
+S0017,2,an LVEF value below the LLN,N,2,111,112,NOT APPLICABLE,
+S0017,3,dry_skin,N,1,162,163,NOT APPLICABLE,
+S0017,4,skin_and_subcutaneous_tissue_disorders_-_other,N,1,247,248,NOT APPLICABLE,
+S0017,5,hypocalcemia,N,1,308,309,NOT APPLICABLE,
+S0017,6,Hypothyroidism,N,1,320,321,NOT APPLICABLE,
+S0017,7,weight_loss,N,2,381,382,NOT APPLICABLE,
+S0017,8,voice_disturbance,N,1,386,387,NOT APPLICABLE,
+S0017,9,decreased_platelet_count,N,2,406,407,no_modification,DM023
+S0017,10,hoarseness,N,1,545,546,NOT APPLICABLE,
+S0017,11,fever,N,2,588,589,no_modification,DM026
+S0017,12,creatinine_increased,N,2,602,603,NOT APPLICABLE,
+S0017,13,aspartate_aminotransferase_increased,N,1,614,615,delay_cycle,DM037
+S0017,14,palmar_plantar_erythrodysesthesia_syndrome,N,2,665,666,no_modification,DM034
+S0017,15,lipase,N,1,680,681,NOT APPLICABLE,
+S0017,16,Hypothyroidism,N,1,693,694,NOT APPLICABLE,
+S0018,1,upper_respiratory_infections,N,1,5,6,NOT APPLICABLE,
+S0018,2,hoarseness,N,2,47,48,NOT APPLICABLE,
+S0018,3,pain,N,2,99,100,NOT APPLICABLE,
+S0018,4,aspartate_aminotransferase_increased,N,1,137,138,delay_cycle,DM037
+S0018,5,hypocalcemia,N,2,179,180,NOT APPLICABLE,
+S0018,6,hypoalbuminemia,N,2,210,211,NOT APPLICABLE,
+S0018,7,blood_bilirubin_increased,N,1,333,334,delay_cycle,DM037
+S0018,8,Hypothyroidism,N,1,363,364,NOT APPLICABLE,
+S0018,9,palmar_plantar_erythrodysesthesia_syndrome,N,1,375,376,no_modification,DM034
+S0018,10,fever,N,2,408,409,no_modification,DM026
+S0018,11,lipase,N,1,434,435,NOT APPLICABLE,
+S0018,12,rash/desquamation,N,1,469,470,NOT APPLICABLE,
+S0018,13,voice_disturbance,N,1,508,509,NOT APPLICABLE,
+S0018,14,sensory_neuropathy,N,2,545,546,NOT APPLICABLE,
+S0018,15,decreased_platelet_count,N,2,568,569,no_modification,DM023
+S0018,16,creatinine_increased,N,2,627,628,NOT APPLICABLE,
+S0018,17,diarrhea,N,2,645,646,NOT APPLICABLE,
+S0019,1,hypocalcemia,N,1,10,11,NOT APPLICABLE,
+S0019,2,vomiting,N,1,48,49,NOT APPLICABLE,
+S0019,3,alanine_aminotransferase_increased,N,2,66,67,delay_cycle,DM037
+S0019,4,voice_disturbance,N,1,68,69,NOT APPLICABLE,
+S0019,5,nausea,N,2,76,77,NOT APPLICABLE,
+S0019,6,Bleeding events,N,2,89,90,NOT APPLICABLE,
+S0019,7,palmar_plantar_erythrodysesthesia_syndrome,N,1,103,104,no_modification,DM034
+S0019,8,alopecia,N,2,103,104,NOT APPLICABLE,
+S0019,9,weight_loss,N,2,122,123,NOT APPLICABLE,
+S0019,10,upper_respiratory_infections,N,1,123,124,NOT APPLICABLE,
+S0019,11,pain,N,1,136,137,NOT APPLICABLE,
+S0019,12,aspartate_aminotransferase_increased,N,2,140,141,delay_cycle,DM037
+S0019,13,maculopapular_lesion,N,1,142,143,NOT APPLICABLE,
+S0019,14,acneiform_eruptions,N,2,142,143,NOT APPLICABLE,
+S0019,15,hypokalemia,N,1,148,149,NOT APPLICABLE,
+S0019,16,hoarseness,N,1,152,153,NOT APPLICABLE,
+S0019,17,fever,N,1,156,157,no_modification,DM026
+S0019,18,fatigue,N,1,158,159,no_modification,DM027
+S0019,19,decreased_platelet_count,N,2,162,163,no_modification,DM023
+S0019,20,pruritus,N,2,166,167,NOT APPLICABLE,
+S0019,21,treatment-emergent LVEF values below the lower limit of normal (LLN),N,1,168,169,NOT APPLICABLE,
+S0019,22,lipase,N,1,185,186,NOT APPLICABLE,
+S0020,1,alanine_aminotransferase_increased,N,1,12,13,delay_cycle,DM037
+S0020,2,proteinuria,N,1,28,29,NOT APPLICABLE,
+S0020,3,hypocalcemia,N,1,32,33,NOT APPLICABLE,
+S0020,4,aspartate_aminotransferase_increased,N,1,34,35,delay_cycle,DM037
+S0020,5,decreased_platelet_count,N,1,34,35,no_modification,DM023
+S0020,6,weight_loss,N,1,37,38,NOT APPLICABLE,
+S0020,7,stomatitis,N,1,40,41,NOT APPLICABLE,
+S0020,8,upper_respiratory_infections,N,1,60,61,NOT APPLICABLE,
+S0020,9,lipase,N,1,73,74,NOT APPLICABLE,
+S0020,10,pain,N,1,96,97,NOT APPLICABLE,
+S0021,1,hyponatremia,N,2,6,7,NOT APPLICABLE,
+S0021,2,lipase,N,1,36,37,NOT APPLICABLE,
+S0021,3,white_blood_cell_decreased,N,2,51,52,NOT APPLICABLE,
+S0021,4,hypokalemia,N,1,68,69,NOT APPLICABLE,
+S0021,5,liposarcoma_well_differentiated,N,1,71,72,NOT APPLICABLE,
+S0021,6,flatulence,N,1,77,78,NOT APPLICABLE,
+S0021,7,aspartate_aminotransferase_increased,N,1,111,112,delay_cycle,DM037
+S0021,8,upper_respiratory_infections,N,1,121,122,NOT APPLICABLE,
+S0021,9,skin discoloration,N,1,146,147,NOT APPLICABLE,
+S0021,10,left ventricular dysfunction,N,2,174,175,NOT APPLICABLE,
+S0021,11,hoarseness,N,1,180,181,NOT APPLICABLE,
+S0021,12,hypothyroidism,N,1,190,191,NOT APPLICABLE,
+S0021,13,voice_disturbance,N,2,204,205,NOT APPLICABLE,
+S0021,14,hypocalcemia,N,1,219,220,NOT APPLICABLE,
+S0021,15,weight_loss,N,1,248,249,NOT APPLICABLE,
+S0021,16,fatigue,N,1,262,263,no_modification,DM027
+S0021,17,pain_in_limb,N,2,281,282,NOT APPLICABLE,
+S0021,18,hypertension,N,1,312,313,NOT APPLICABLE,
+S0021,19,hand-foot syndrome,N,2,335,336,no_modification,DM034
+S0021,20,vomiting,N,1,340,341,NOT APPLICABLE,
+S0021,21,alopecia,N,1,347,348,NOT APPLICABLE,
+S0021,22,decreased_platelet_count,N,1,349,350,NOT APPLICABLE,
+S0022,1,left ventricular dysfunction,N,1,16,17,NOT APPLICABLE,
+S0022,2,diarrhea,N,1,18,19,NOT APPLICABLE,
+S0022,3,lipase,N,1,23,24,NOT APPLICABLE,
+S0022,4,Bleeding events,N,2,24,25,NOT APPLICABLE,
+S0022,5,vomiting,N,2,25,26,NOT APPLICABLE,
+S0022,6,palmar_plantar_erythrodysesthesia_syndrome,N,2,36,37,no_modification,DM034
+S0022,7,pain,N,1,44,45,NOT APPLICABLE,
+S0022,8,voice_disturbance,N,1,44,45,NOT APPLICABLE,
+S0022,9,headache,N,1,49,50,NOT APPLICABLE,
+S0022,10,sensory_neuropathy,N,2,60,61,NOT APPLICABLE,
+S0022,11,hoarseness,N,2,62,63,NOT APPLICABLE,
+S0022,12,back_pain,N,2,66,67,NOT APPLICABLE,
+S0022,13,maculopapular_lesion,N,1,80,81,NOT APPLICABLE,
+S0022,14,decreased_platelet_count,N,1,81,82,no_modification,DM023
+S0022,15,coughing,N,2,89,90,NOT APPLICABLE,
+S0022,16,hypocalcemia,N,1,92,93,NOT APPLICABLE,
+S0022,17,fever,N,2,104,105,NOT APPLICABLE,
+S0022,18,Hypothyroidism,N,2,108,109,NOT APPLICABLE,
+S0023,1,hoarseness,N,2,7,8,NOT APPLICABLE,
+S0023,2,pain,N,1,9,10,NOT APPLICABLE,
+S0023,3,hypertension,N,1,60,61,NOT APPLICABLE,
+S0023,4,aspartate_aminotransferase_increased,N,2,129,130,delay_cycle,DM037
+S0023,5,Hypothyroidism,N,1,130,131,NOT APPLICABLE,
+S0023,6,Severe hypertension,N,2,131,132,NOT APPLICABLE,
+S0023,7,decreased_platelet_count,N,1,188,189,no_modification,DM023
+S0023,8,creatinine_increased,N,1,399,400,NOT APPLICABLE,
+S0023,9,skin_and_subcutaneous_tissue_disorders_-_other,N,2,413,414,NOT APPLICABLE,
+S0023,10,hand-foot skin reactions,N,1,448,449,no_modification,DM034
+S0023,11,sensory_neuropathy,N,2,472,473,NOT APPLICABLE,
+S0023,12,palmar_plantar_erythrodysesthesia_syndrome,N,1,504,505,no_modification,DM034
+S0023,13,upper_respiratory_infections,N,1,513,514,NOT APPLICABLE,
+S0023,14,hypocalcemia,N,2,591,592,NOT APPLICABLE,
+S0023,15,fever,N,1,597,598,no_modification,DM026
+S0023,16,weight_loss,N,2,636,637,NOT APPLICABLE,
+S0023,17,lipase,N,2,639,640,NOT APPLICABLE,
+S0023,18,alanine_aminotransferase_increased,N,1,690,691,delay_cycle,DM037
+S0024,1,palmar_plantar_erythrodysesthesia_syndrome,N,1,5,6,no_modification,DM034
+S0024,2,headache,N,2,7,8,NOT APPLICABLE,
+S0024,3,lymphocyte_count_decreased,N,1,11,12,NOT APPLICABLE,
+S0024,4,hypocalcemia,N,2,13,14,NOT APPLICABLE,
+S0024,5,an LVEF value below the LLN,N,1,17,18,NOT APPLICABLE,
+S0024,6,aspartate_aminotransferase_increased,N,2,19,20,delay_cycle,DM037
+S0024,7,decreased_platelet_count,N,2,22,23,no_modification,DM023
+S0024,8,abdominal_pain,Y,3,50,52,NOT APPLICABLE,
+S0024,9,nausea,N,1,71,72,NOT APPLICABLE,
+S0024,10,Bleeding events,N,1,79,80,NOT APPLICABLE,
+S0024,11,pain,N,2,83,84,NOT APPLICABLE,
+S0024,12,hoarseness,N,1,104,105,NOT APPLICABLE,
+S0024,13,rash:_hand-foot_skin_reaction,N,1,105,106,no_modification,DM034
+S0024,14,upper_respiratory_infections,N,2,108,109,NOT APPLICABLE,
+S0024,15,voice_disturbance,N,2,119,120,NOT APPLICABLE,
+S0024,16,lipase,N,2,119,120,NOT APPLICABLE,
+S0024,17,weight_loss,N,1,127,128,NOT APPLICABLE,
+S0024,18,Hypothyroidism,N,2,127,128,NOT APPLICABLE,
+S0024,19,diarrhea,N,2,140,141,NOT APPLICABLE,
+S0025,1,Bleeding events,N,1,15,16,NOT APPLICABLE,
+S0025,2,back_pain,N,2,33,34,NOT APPLICABLE,
+S0025,3,decreased_platelet_count,N,2,36,37,no_modification,DM023
+S0025,4,lipase,N,1,41,42,NOT APPLICABLE,
+S0025,5,dry_skin,N,2,45,46,NOT APPLICABLE,
+S0025,6,white_blood_cell_decreased,N,2,58,59,NOT APPLICABLE,
+S0025,7,hypocalcemia,N,1,59,60,NOT APPLICABLE,
+S0025,8,diarrhea,N,1,67,68,NOT APPLICABLE,
+S0025,9,coughing,N,2,73,74,NOT APPLICABLE,
+S0025,10,aspartate_aminotransferase_increased,N,1,82,83,delay_cycle,DM037
+S0025,11,hypoalbuminemia,N,2,86,87,NOT APPLICABLE,
+S0025,12,Hypothyroidism,N,1,108,109,NOT APPLICABLE,
+S0025,13,voice_disturbance,N,2,117,118,NOT APPLICABLE,
+S0025,14,proteinuria,N,1,147,148,NOT APPLICABLE,
+S0025,15,upper_respiratory_infections,N,2,156,157,NOT APPLICABLE,
+S0025,16,fever,N,2,166,167,no_modification,DM026
+S0025,17,Hypothyroidism,N,1,168,169,NOT APPLICABLE,
+S0025,18,hoarseness,N,2,181,182,NOT APPLICABLE,
+S0025,19,sensory_neuropathy,N,2,187,188,NOT APPLICABLE,
+S0025,20,headache,N,2,199,200,NOT APPLICABLE,
+S0026,1,fever,N,2,7,8,no_modification,DM026
+S0026,2,white_blood_cell_decreased,N,2,7,8,NOT APPLICABLE,
+S0026,3,flatulence,N,2,9,10,NOT APPLICABLE,
+S0026,4,palmar_plantar_erythrodysesthesia_syndrome,N,1,49,50,no_modification,DM034
+S0026,5,voice_disturbance,N,1,138,139,NOT APPLICABLE,
+S0026,6,treatment-emergent LVEF values below the lower limit of normal (LLN),N,2,173,174,NOT APPLICABLE,
+S0026,7,hoarseness,N,1,174,175,NOT APPLICABLE,
+S0026,8,vomiting,N,1,194,195,NOT APPLICABLE,
+S0026,9,creatinine_increased,N,2,197,198,NOT APPLICABLE,
+S0026,10,hypocalcemia,N,2,243,244,NOT APPLICABLE,
+S0026,11,other serious adverse events (not individually predicted),Y,3,259,261,NOT APPLICABLE,
+S0026,12,Bleeding events,N,1,266,267,NOT APPLICABLE,
+S0026,13,back_pain,N,2,313,314,NOT APPLICABLE,
+S0026,14,dry_skin,N,2,350,351,NOT APPLICABLE,
+S0026,15,fatigue,N,2,378,379,no_modification,DM027
+S0026,16,pain,N,1,382,383,NOT APPLICABLE,
+S0026,17,lymphocyte_count_decreased,N,2,417,418,NOT APPLICABLE,
+S0026,18,diarrhea,N,2,523,524,NOT APPLICABLE,
+S0026,19,Hypothyroidism,N,1,536,537,NOT APPLICABLE,
+S0026,20,hypertension,N,2,568,569,NOT APPLICABLE,
+S0026,21,headache,N,1,599,600,NOT APPLICABLE,
+S0026,22,alanine_aminotransferase_increased,N,2,612,613,delay_cycle,DM037
+S0026,23,decreased_platelet_count,N,2,650,651,no_modification,DM023
+S0026,24,lipase,N,1,703,704,NOT APPLICABLE,
+S0027,1,hoarseness,N,1,4,5,NOT APPLICABLE,
+S0027,2,weight_loss,N,2,19,20,NOT APPLICABLE,
+S0027,3,maculopapular_lesion,N,1,67,68,NOT APPLICABLE,
+S0027,4,blood_bilirubin_increased,N,2,183,184,delay_cycle,DM037
+S0027,5,alanine_aminotransferase_increased,N,2,289,290,delay_cycle,DM037
+S0027,6,headache,N,1,302,303,NOT APPLICABLE,
+S0027,7,white_blood_cell_decreased,N,2,416,417,NOT APPLICABLE,
+S0027,8,liposarcoma_well_differentiated,N,1,469,470,NOT APPLICABLE,
+S0027,9,vomiting,N,1,475,476,NOT APPLICABLE,
+S0027,10,decreased_platelet_count,N,1,489,490,no_modification,DM023
+S0027,11,pain,N,2,556,557,NOT APPLICABLE,
+S0027,12,lipase,N,1,588,589,NOT APPLICABLE,
+S0027,13,hypocalcemia,N,1,588,589,NOT APPLICABLE,
+S0027,14,hypokalemia,N,1,660,661,NOT APPLICABLE,
+S0027,15,creatinine_increased,N,2,706,707,NOT APPLICABLE,
+S0027,16,upper_respiratory_infections,N,1,721,722,NOT APPLICABLE,
+S0027,17,aspartate_aminotransferase_increased,N,2,727,728,delay_cycle,DM037
+S0027,18,Bleeding events,N,2,730,737,NOT APPLICABLE,
+S0027,19,stomatitis,N,1,731,738,NOT APPLICABLE,
+S0027,20,other serious adverse events (not individually predicted),Y,3,744,758,NOT APPLICABLE,
+S0027,21,hyperglycemia,N,2,751,758,NOT APPLICABLE,
+S0028,1,vomiting,N,1,6,7,NOT APPLICABLE,
+S0028,2,Bleeding events,N,2,60,61,NOT APPLICABLE,
+S0028,3,palmar_plantar_erythrodysesthesia_syndrome,N,2,67,68,no_modification,DM034
+S0028,4,fever,N,1,84,85,no_modification,DM026
+S0028,5,voice_disturbance,N,2,112,113,NOT APPLICABLE,
+S0028,6,hand-foot syndrome,N,2,116,117,no_modification,DM034
+S0028,7,lipase,N,1,144,145,NOT APPLICABLE,
+S0028,8,decreased_platelet_count,N,1,146,147,no_modification,DM023
+S0028,9,hoarseness,N,2,150,151,NOT APPLICABLE,
+S0028,10,skin discoloration,N,1,189,190,NOT APPLICABLE,
+S0028,11,maculopapular_lesion,N,1,202,203,NOT APPLICABLE,
+S0028,12,back_pain,N,2,217,218,NOT APPLICABLE,
+S0028,13,sensory_neuropathy,N,2,239,240,NOT APPLICABLE,
+S0028,14,dry_skin,N,2,241,242,NOT APPLICABLE,
+S0028,15,weight_loss,N,1,254,255,NOT APPLICABLE,
+S0028,16,hypocalcemia,N,1,262,263,NOT APPLICABLE,
+S0028,17,hair color changes,N,1,269,270,NOT APPLICABLE,
+S0028,18,aspartate_aminotransferase_increased,N,2,306,307,NOT APPLICABLE,
+S0029,1,fever,N,1,21,22,no_modification,DM026
+S0029,2,other serious adverse events (not individually predicted),Y,3,34,36,NOT APPLICABLE,
+S0029,3,lipase,N,1,86,87,NOT APPLICABLE,
+S0029,4,aspartate_aminotransferase_increased,N,1,129,130,delay_cycle,DM037
+S0029,5,upper_respiratory_infections,N,1,129,130,NOT APPLICABLE,
+S0029,6,pain,N,2,131,132,NOT APPLICABLE,
+S0029,7,rash/desquamation,N,1,133,134,NOT APPLICABLE,
+S0029,8,hypertension,N,1,160,161,NOT APPLICABLE,
+S0029,9,dry_skin,N,1,173,174,NOT APPLICABLE,
+S0029,10,hand-foot skin reactions,N,1,188,189,no_modification,DM034
+S0029,11,leukocytes,N,2,196,197,NOT APPLICABLE,
+S0029,12,white_blood_cell_decreased,N,1,265,266,NOT APPLICABLE,
+S0029,13,vomiting,N,2,289,290,NOT APPLICABLE,
+S0029,14,palmar_plantar_erythrodysesthesia_syndrome,N,1,356,357,no_modification,DM034
+S0029,15,dermatitis,N,1,373,374,NOT APPLICABLE,
+S0029,16,hoarseness,N,2,408,409,NOT APPLICABLE,
+S0029,17,hypocalcemia,N,2,412,413,NOT APPLICABLE,
+S0030,1,dry_skin,N,1,14,15,NOT APPLICABLE,
+S0030,2,white_blood_cell_decreased,N,2,57,58,NOT APPLICABLE,
+S0030,3,hypocalcemia,N,2,95,96,NOT APPLICABLE,
+S0030,4,Hypothyroidism,N,2,114,115,NOT APPLICABLE,
+S0030,5,flatulence,N,2,147,148,NOT APPLICABLE,
+S0030,6,maculopapular_lesion,N,1,168,169,NOT APPLICABLE,
+S0030,7,lipase,N,2,182,183,NOT APPLICABLE,
+S0030,8,palmar_plantar_erythrodysesthesia_syndrome,N,1,294,295,no_modification,DM034
+S0030,9,hoarseness,N,2,340,341,NOT APPLICABLE,
+S0030,10,aspartate_aminotransferase_increased,N,1,356,357,delay_cycle,DM037
+S0030,11,pain,N,1,368,369,NOT APPLICABLE,
+S0030,12,proteinuria,N,1,373,374,NOT APPLICABLE,
+S0030,13,pruritus,N,1,386,387,NOT APPLICABLE,
+S0030,14,decreased_platelet_count,N,1,395,396,no_modification,DM023
+S0030,15,voice_disturbance,N,2,405,406,NOT APPLICABLE,
+S0030,16,creatinine_increased,N,2,455,456,NOT APPLICABLE,
+S0031,1,pain,N,2,21,22,NOT APPLICABLE,
+S0031,2,proteinuria,N,1,47,48,NOT APPLICABLE,
+S0031,3,lipase,N,2,47,48,NOT APPLICABLE,
+S0031,4,palmar_plantar_erythrodysesthesia_syndrome,N,1,61,62,no_modification,DM034
+S0031,5,decreased_platelet_count,N,1,68,69,no_modification,DM023
+S0031,6,hoarseness,N,2,71,72,NOT APPLICABLE,
+S0031,7,creatinine_increased,N,1,123,124,NOT APPLICABLE,
+S0031,8,voice_disturbance,N,1,160,161,NOT APPLICABLE,
+S0031,9,flatulence,N,1,179,180,NOT APPLICABLE,
+S0031,10,vomiting,N,1,203,204,NOT APPLICABLE,
+S0031,11,fever,N,2,219,220,no_modification,DM026
+S0031,12,hypocalcemia,N,1,219,220,NOT APPLICABLE,
+S0031,13,weight_loss,N,1,222,223,NOT APPLICABLE,
+S0031,14,aspartate_aminotransferase_increased,N,1,232,233,delay_cycle,DM037
+S0031,15,white_blood_cell_decreased,N,1,244,245,NOT APPLICABLE,
+S0031,16,fatigue,N,1,253,254,NOT APPLICABLE,
+S0032,1,hoarseness,N,2,14,15,NOT APPLICABLE,
+S0032,2,aspartate_aminotransferase_increased,N,1,78,79,delay_cycle,DM037
+S0032,3,lipase,N,1,111,112,NOT APPLICABLE,
+S0032,4,proteinuria,N,2,122,123,NOT APPLICABLE,
+S0032,5,weight_loss,N,2,173,174,NOT APPLICABLE,
+S0032,6,diarrhea,N,2,180,181,NOT APPLICABLE,
+S0032,7,headache,N,1,185,186,NOT APPLICABLE,
+S0032,8,fatigue,N,1,194,195,no_modification,DM027
+S0032,9,hypocalcemia,N,1,217,218,NOT APPLICABLE,
+S0032,10,dry_skin,N,2,353,354,NOT APPLICABLE,
+S0032,11,white_blood_cell_decreased,N,1,363,364,NOT APPLICABLE,
+S0032,12,fatigue,N,1,373,374,no_modification,DM027
+S0032,13,skin_and_subcutaneous_tissue_disorders_-_other,N,1,445,446,NOT APPLICABLE,
+S0032,14,acneiform_eruptions,N,1,535,536,NOT APPLICABLE,
+S0032,15,upper_respiratory_infections,N,2,541,542,NOT APPLICABLE,
+S0032,16,decreased_platelet_count,N,2,562,563,no_modification,DM023
+S0032,17,fever,N,2,679,680,no_modification,DM026
+S0033,1,back_pain,N,2,2,3,NOT APPLICABLE,
+S0033,2,other serious adverse events (not individually predicted),Y,3,35,37,NOT APPLICABLE,
+S0033,3,neutrophil_count_decreased,N,1,36,37,no_modification,DM020
+S0033,4,left ventricular dysfunction,N,1,37,38,NOT APPLICABLE,
+S0033,5,alanine_aminotransferase_increased,N,1,88,89,delay_cycle,DM037
+S0033,6,hypocalcemia,N,2,90,91,NOT APPLICABLE,
+S0033,7,treatment-emergent LVEF values below the lower limit of normal (LLN),N,1,102,103,NOT APPLICABLE,
+S0033,8,white_blood_cell_decreased,N,2,114,115,NOT APPLICABLE,
+S0033,9,hoarseness,N,1,133,134,NOT APPLICABLE,
+S0033,10,hypoalbuminemia,N,2,136,137,NOT APPLICABLE,
+S0033,11,abdominal_pain,N,2,139,140,NOT APPLICABLE,
+S0033,12,aspartate_aminotransferase_increased,N,1,190,191,delay_cycle,DM037
+S0033,13,anorexia,Y,3,203,205,NOT APPLICABLE,
+S0033,14,vomiting,N,2,204,205,NOT APPLICABLE,
+S0033,15,decreased_platelet_count,N,1,232,233,no_modification,DM023
+S0033,16,Hypothyroidism,N,2,237,238,NOT APPLICABLE,
+S0033,17,diarrhea,N,2,247,248,NOT APPLICABLE,
+S0033,18,voice_disturbance,N,2,252,253,NOT APPLICABLE,
+S0033,19,upper_respiratory_infections,N,1,252,253,NOT APPLICABLE,
+S0033,20,lipase,N,2,258,259,NOT APPLICABLE,
+S0033,21,weight_loss,N,2,287,288,NOT APPLICABLE,
+S0034,1,hoarseness,N,1,7,8,NOT APPLICABLE,
+S0034,2,hyperglycemia,N,2,24,25,NOT APPLICABLE,
+S0034,3,fever,N,2,27,28,no_modification,DM026
+S0034,4,Hypothyroidism,N,2,87,88,NOT APPLICABLE,
+S0034,5,vomiting,N,1,96,97,NOT APPLICABLE,
+S0034,6,acneiform_eruptions,N,2,97,98,NOT APPLICABLE,
+S0034,7,aspartate_aminotransferase_increased,N,2,108,109,delay_cycle,DM037
+S0034,8,pain_in_limb,N,1,176,177,NOT APPLICABLE,
+S0034,9,decreased_platelet_count,N,2,198,199,no_modification,DM023
+S0034,10,an LVEF value below the LLN,N,2,261,262,NOT APPLICABLE,
+S0034,11,hypokalemia,N,1,320,321,NOT APPLICABLE,
+S0034,12,hypocalcemia,N,2,365,366,NOT APPLICABLE,
+S0034,13,nausea,N,1,368,369,NOT APPLICABLE,
+S0034,14,alanine_aminotransferase_increased,N,1,370,371,delay_cycle,DM037
+S0034,15,lipase,N,2,375,376,NOT APPLICABLE,
+S0034,16,voice_disturbance,N,2,393,394,NOT APPLICABLE,
+S0034,17,upper_respiratory_infections,N,1,438,439,NOT APPLICABLE,
+S0034,18,anorexia,N,2,528,529,NOT APPLICABLE,
+S0035,1,hoarseness,N,1,6,7,NOT APPLICABLE,
+S0035,2,left ventricular dysfunction,N,2,46,47,NOT APPLICABLE,
+S0035,3,hypocalcemia,N,1,62,63,NOT APPLICABLE,
+S0035,4,upper_respiratory_infections,N,2,74,75,NOT APPLICABLE,
+S0035,5,palmar_plantar_erythrodysesthesia_syndrome,N,2,89,90,no_modification,DM034
+S0035,6,voice_disturbance,N,1,101,102,NOT APPLICABLE,
+S0035,7,diarrhea,N,2,110,111,NOT APPLICABLE,
+S0035,8,neutrophil_count_decreased,N,1,116,117,no_modification,DM020
+S0035,9,creatinine_increased,N,1,127,128,NOT APPLICABLE,
+S0035,10,Hypothyroidism,N,1,174,175,NOT APPLICABLE,
+S0035,11,liposarcoma_well_differentiated,N,1,175,176,NOT APPLICABLE,
+S0035,12,hypoalbuminemia,N,1,182,183,NOT APPLICABLE,
+S0035,13,headache,N,1,189,190,NOT APPLICABLE,
+S0035,14,lipase,N,2,201,202,NOT APPLICABLE,
+S0035,15,hypokalemia,N,1,234,235,NOT APPLICABLE,
+S0035,16,fever,N,2,240,241,NOT APPLICABLE,
+S0035,17,an LVEF value below the LLN,N,1,247,248,NOT APPLICABLE,
+S0035,18,leukocytes,N,2,249,250,NOT APPLICABLE,
+S0036,1,sensory_neuropathy,N,1,36,37,NOT APPLICABLE,
+S0036,2,maculopapular_lesion,N,2,90,91,NOT APPLICABLE,
+S0036,3,lipase,N,2,182,183,NOT APPLICABLE,
+S0036,4,hypocalcemia,N,2,209,210,NOT APPLICABLE,
+S0036,5,aspartate_aminotransferase_increased,N,1,229,230,delay_cycle,DM037
+S0036,6,voice_disturbance,N,2,288,289,NOT APPLICABLE,
+S0036,7,hoarseness,N,1,295,296,NOT APPLICABLE,
+S0036,8,pain,N,1,351,352,NOT APPLICABLE,
+S0036,9,decreased_platelet_count,N,2,466,467,no_modification,DM023
+S0036,10,treatment-emergent LVEF values below the lower limit of normal (LLN),N,2,529,530,NOT APPLICABLE,
+S0036,11,dry_skin,N,2,538,539,NOT APPLICABLE,
+S0036,12,liposarcoma_well_differentiated,N,1,551,552,NOT APPLICABLE,
+S0036,13,Hypothyroidism,N,2,621,622,NOT APPLICABLE,
+S0036,14,nausea,N,1,673,674,NOT APPLICABLE,
+S0036,15,flatulence,N,1,687,688,NOT APPLICABLE,
+S0036,16,palmar_plantar_erythrodysesthesia_syndrome,N,1,721,722,no_modification,DM034
+S0037,1,lipase,N,1,3,4,NOT APPLICABLE,
+S0037,2,sensory_neuropathy,N,1,14,15,NOT APPLICABLE,
+S0037,3,decreased_platelet_count,N,2,21,22,no_modification,DM023
+S0037,4,maculopapular_lesion,N,2,21,22,NOT APPLICABLE,
+S0037,5,creatinine_increased,N,2,29,30,NOT APPLICABLE,
+S0037,6,hoarseness,N,1,30,31,NOT APPLICABLE,
+S0037,7,fever,N,1,41,42,no_modification,DM026
+S0037,8,pain,N,2,54,55,NOT APPLICABLE,
+S0037,9,voice_disturbance,N,1,73,74,NOT APPLICABLE,
+S0037,10,flatulence,N,1,78,79,NOT APPLICABLE,
+S0037,11,aspartate_aminotransferase_increased,N,1,79,80,delay_cycle,DM037
+S0037,12,alanine_aminotransferase_increased,N,2,86,87,delay_cycle,DM037
+S0037,13,peripheral_edema,N,2,89,90,NOT APPLICABLE,
+S0037,14,liposarcoma_well_differentiated,N,1,100,101,NOT APPLICABLE,
+S0037,15,other serious adverse events (not individually predicted),Y,3,112,114,NOT APPLICABLE,
+S0037,16,hypocalcemia,N,2,125,126,NOT APPLICABLE,
+S0037,17,abdominal_pain,N,2,127,128,NOT APPLICABLE,
+S0037,18,skin discoloration,N,1,142,143,NOT APPLICABLE,
+S0037,19,Hypothyroidism,N,1,147,148,NOT APPLICABLE,
+S0037,20,nausea,N,2,170,171,NOT APPLICABLE,
+S0037,21,hypertension,N,2,170,171,NOT APPLICABLE,
+S0037,22,upper_respiratory_infections,N,2,172,173,NOT APPLICABLE,
+S0038,1,vomiting,N,2,4,5,NOT APPLICABLE,
+S0038,2,neutrophil_count_decreased,N,1,10,11,no_modification,DM020
+S0038,3,Hypothyroidism,N,1,12,13,NOT APPLICABLE,
+S0038,4,upper_respiratory_infections,N,1,18,19,NOT APPLICABLE,
+S0038,5,alanine_aminotransferase_increased,N,2,27,28,delay_cycle,DM037
+S0038,6,fatigue,N,2,30,31,no_modification,DM027
+S0038,7,flatulence,N,2,30,31,NOT APPLICABLE,
+S0038,8,decreased_platelet_count,N,1,32,33,no_modification,DM023
+S0038,9,rash/desquamation,N,2,34,35,NOT APPLICABLE,
+S0038,10,lipase,N,1,35,36,NOT APPLICABLE,
+S0038,11,fever,N,2,38,39,no_modification,DM026
+S0038,12,Bleeding events,N,2,44,45,NOT APPLICABLE,
+S0038,13,dyspnea,Y,3,49,51,NOT APPLICABLE,
+S0038,14,proteinuria,N,2,50,51,NOT APPLICABLE,
+S0038,15,skin discoloration,N,2,52,53,NOT APPLICABLE,
+S0038,16,left ventricular dysfunction,N,2,60,61,NOT APPLICABLE,
+S0038,17,palmar_plantar_erythrodysesthesia_syndrome,N,2,61,62,NOT APPLICABLE,
+S0038,18,treatment-emergent LVEF values below the lower limit of normal (LLN),N,1,66,67,NOT APPLICABLE,
+S0038,19,sensory_neuropathy,N,1,67,68,NOT APPLICABLE,
+S0038,20,hypocalcemia,N,2,70,71,NOT APPLICABLE,
+S0038,21,voice_disturbance,N,2,76,77,NOT APPLICABLE,
+S0038,22,hoarseness,N,1,83,84,NOT APPLICABLE,
+S0038,23,aspartate_aminotransferase_increased,N,1,86,87,NOT APPLICABLE,
+S0038,24,pain_in_limb,N,1,87,88,NOT APPLICABLE,
+S0039,1,hypoalbuminemia,N,1,38,39,NOT APPLICABLE,
+S0039,2,diarrhea,N,2,42,43,NOT APPLICABLE,
+S0039,3,other serious adverse events (not individually predicted),Y,3,89,91,NOT APPLICABLE,
+S0039,4,fatigue,N,2,135,136,no_modification,DM027
+S0039,5,alanine_aminotransferase_increased,N,1,141,142,delay_cycle,DM037
+S0039,6,upper_respiratory_infections,N,2,159,160,NOT APPLICABLE,
+S0039,7,Hypothyroidism,N,2,184,185,NOT APPLICABLE,
+S0039,8,headache,N,1,196,197,NOT APPLICABLE,
+S0039,9,pain,N,2,328,329,NOT APPLICABLE,
+S0039,10,hoarseness,N,1,344,345,NOT APPLICABLE,
+S0039,11,hypertension,N,1,345,346,NOT APPLICABLE,
+S0039,12,sensory_neuropathy,N,1,353,354,NOT APPLICABLE,
+S0039,13,aspartate_aminotransferase_increased,N,1,385,386,delay_cycle,DM037
+S0039,14,hypocalcemia,N,1,388,389,NOT APPLICABLE,
+S0039,15,palmar_plantar_erythrodysesthesia_syndrome,N,1,444,445,no_modification,DM034
+S0039,16,decreased_platelet_count,N,1,567,568,no_modification,DM023
+S0039,17,vomiting,N,1,660,661,NOT APPLICABLE,
+S0039,18,lipase,N,1,691,692,NOT APPLICABLE,
+S0039,19,voice_disturbance,N,1,733,740,NOT APPLICABLE,
+S0040,1,abdominal_pain,N,2,14,15,NOT APPLICABLE,
+S0040,2,flatulence,N,1,30,31,NOT APPLICABLE,
+S0040,3,palmar_plantar_erythrodysesthesia_syndrome,N,2,32,33,no_modification,DM034
+S0040,4,headache,N,1,37,38,NOT APPLICABLE,
+S0040,5,liposarcoma_well_differentiated,N,2,47,48,NOT APPLICABLE,
+S0040,6,an LVEF value below the LLN,N,1,50,51,NOT APPLICABLE,
+S0040,7,skin discoloration,N,2,57,58,NOT APPLICABLE,
+S0040,8,diarrhea,N,1,67,68,NOT APPLICABLE,
+S0040,9,decreased_platelet_count,N,2,74,75,no_modification,DM023
+S0040,10,Hypothyroidism,N,1,84,85,NOT APPLICABLE,
+S0040,11,lipase,N,1,85,86,NOT APPLICABLE,
+S0040,12,voice_disturbance,N,2,87,88,NOT APPLICABLE,
+S0040,13,back_pain,N,2,88,89,NOT APPLICABLE,
+S0040,14,creatinine_increased,N,1,95,96,NOT APPLICABLE,
+S0040,15,alopecia,N,1,95,96,NOT APPLICABLE,
+S0040,16,hoarseness,N,1,107,108,NOT APPLICABLE,
+S0040,17,white_blood_cell_decreased,N,1,115,116,NOT APPLICABLE,
+S0040,18,rash/desquamation,N,2,149,150,NOT APPLICABLE,
+S0040,19,fever,N,2,152,153,no_modification,DM026
+S0040,20,Hypothyroidism,N,1,171,172,NOT APPLICABLE,
+S0040,21,aspartate_aminotransferase_increased,N,2,187,188,NOT APPLICABLE,
+S0040,22,hypertension,N,1,198,199,NOT APPLICABLE,
+S0041,1,back_pain,N,1,14,15,NOT APPLICABLE,
+S0041,2,lipase,N,2,18,19,NOT APPLICABLE,
+S0041,3,pain,N,1,20,21,NOT APPLICABLE,
+S0041,4,aspartate_aminotransferase_increased,N,2,23,24,delay_cycle,DM037
+S0041,5,dermatitis,N,1,31,32,NOT APPLICABLE,
+S0041,6,voice_disturbance,N,2,53,54,NOT APPLICABLE,
+S0041,7,upper_respiratory_infections,N,1,66,67,NOT APPLICABLE,
+S0041,8,hoarseness,N,2,95,96,NOT APPLICABLE,
+S0041,9,hypoalbuminemia,N,1,96,97,NOT APPLICABLE,
+S0041,10,flatulence,N,2,115,116,NOT APPLICABLE,
+S0041,11,coughing,N,2,118,119,NOT APPLICABLE,
+S0041,12,liposarcoma_well_differentiated,N,1,133,134,NOT APPLICABLE,
+S0041,13,left ventricular dysfunction,N,1,134,135,NOT APPLICABLE,
+S0041,14,decreased_platelet_count,N,1,135,136,no_modification,DM023
+S0041,15,palmar_plantar_erythrodysesthesia_syndrome,N,2,146,147,no_modification,DM034
+S0041,16,vomiting,N,1,153,154,NOT APPLICABLE,
+S0041,17,fever,N,2,157,158,no_modification,DM026
+S0041,18,fatigue,N,2,160,161,no_modification,DM027
+S0041,19,weight_loss,N,2,182,183,NOT APPLICABLE,
+S0041,20,ast,N,1,186,187,NOT APPLICABLE,
+S0041,21,Hypothyroidism,N,2,194,195,NOT APPLICABLE,
+S0041,22,hypocalcemia,N,1,195,196,NOT APPLICABLE,
+S0041,23,an LVEF value below the LLN,N,1,197,198,NOT APPLICABLE,
+S0041,24,hand-foot skin reactions,N,1,199,200,NOT APPLICABLE,
+S0042,1,weight_loss,N,1,40,41,NOT APPLICABLE,
+S0042,2,lipase,N,2,55,56,NOT APPLICABLE,
+S0042,3,hypocalcemia,N,2,56,57,NOT APPLICABLE,
+S0042,4,hypokalemia,N,1,63,64,NOT APPLICABLE,
+S0042,5,voice_disturbance,N,2,98,99,NOT APPLICABLE,
+S0042,6,creatinine_increased,N,2,98,99,NOT APPLICABLE,
+S0042,7,hoarseness,N,2,110,111,NOT APPLICABLE,
+S0042,8,other serious adverse events (not individually predicted),Y,3,111,113,NOT APPLICABLE,
+S0042,9,hyperglycemia,N,2,113,114,NOT APPLICABLE,
+S0042,10,pain,N,2,118,119,NOT APPLICABLE,
+S0042,11,decreased_platelet_count,N,1,119,120,no_modification,DM023
+S0042,12,fatigue,N,1,119,120,no_modification,DM027
+S0042,13,hand-foot skin reactions,N,1,120,121,no_modification,DM034
+S0042,14,white_blood_cell_decreased,N,2,135,136,NOT APPLICABLE,
+S0042,15,hypertension,N,1,142,143,NOT APPLICABLE,
+S0042,16,Hypothyroidism,N,1,158,159,NOT APPLICABLE,
+S0042,17,palmar_plantar_erythrodysesthesia_syndrome,N,1,168,169,no_modification,DM034
+S0042,18,aspartate_aminotransferase_increased,N,2,168,169,delay_cycle,DM037
+S0042,19,hair color changes,N,1,170,171,NOT APPLICABLE,
+S0042,20,coughing,N,1,190,191,NOT APPLICABLE,
+S0042,21,dry_skin,N,2,190,191,NOT APPLICABLE,
+S0042,22,hand-foot skin reactions,N,1,191,192,NOT APPLICABLE,
+S0042,23,dyspepsia,N,2,197,198,NOT APPLICABLE,
+S0043,1,hoarseness,N,1,61,62,NOT APPLICABLE,
+S0043,2,Hypothyroidism,N,2,74,75,NOT APPLICABLE,
+S0043,3,creatinine_increased,N,2,110,111,NOT APPLICABLE,
+S0043,4,lymphocyte_count_decreased,N,1,119,120,NOT APPLICABLE,
+S0043,5,skin discoloration,N,1,128,129,NOT APPLICABLE,
+S0043,6,dry_skin,N,1,149,150,NOT APPLICABLE,
+S0043,7,weight_loss,N,1,161,162,NOT APPLICABLE,
+S0043,8,lipase,N,1,170,171,NOT APPLICABLE,
+S0043,9,blood_bilirubin_increased,Y,3,171,173,delay_cycle,DM037
+S0043,10,palmar_plantar_erythrodysesthesia_syndrome,N,1,174,175,no_modification,DM034
+S0043,11,vomiting,N,1,215,216,NOT APPLICABLE,
+S0043,12,decreased_platelet_count,N,1,221,222,no_modification,DM023
+S0043,13,pain,N,1,257,258,NOT APPLICABLE,
+S0043,14,hypertension,N,2,262,263,NOT APPLICABLE,
+S0043,15,hypocalcemia,N,2,342,343,NOT APPLICABLE,
+S0043,16,aspartate_aminotransferase_increased,N,2,356,357,delay_cycle,DM037
+S0043,17,voice_disturbance,N,1,368,369,NOT APPLICABLE,
+S0043,18,fever,N,1,413,414,NOT APPLICABLE,
+S0044,1,alkaline_phosphatase_raised,N,2,53,54,NOT APPLICABLE,
+S0044,2,hand-foot syndrome,N,2,80,81,no_modification,DM034
+S0044,3,palmar_plantar_erythrodysesthesia_syndrome,N,1,84,85,no_modification,DM034
+S0044,4,nausea,N,2,121,122,NOT APPLICABLE,
+S0044,5,pain,N,1,227,228,NOT APPLICABLE,
+S0044,6,proteinuria,N,2,300,301,NOT APPLICABLE,
+S0044,7,flatulence,N,2,335,336,NOT APPLICABLE,
+S0044,8,lipase,N,1,366,367,NOT APPLICABLE,
+S0044,9,weight_loss,N,1,471,472,NOT APPLICABLE,
+S0044,10,fever,N,2,477,478,no_modification,DM026
+S0044,11,hypocalcemia,N,2,524,525,NOT APPLICABLE,
+S0044,12,hoarseness,N,1,527,528,NOT APPLICABLE,
+S0044,13,hyperglycemia,N,2,529,530,NOT APPLICABLE,
+S0044,14,decreased_platelet_count,N,1,625,626,no_modification,DM023
+S0044,15,voice_disturbance,N,2,631,632,NOT APPLICABLE,
+S0044,16,aspartate_aminotransferase_increased,N,2,705,706,delay_cycle,DM037
+S0044,17,vomiting,N,2,723,724,NOT APPLICABLE,
+S0045,1,acneiform_eruptions,N,2,5,6,NOT APPLICABLE,
+S0045,2,hair color changes,N,2,5,6,NOT APPLICABLE,
+S0045,3,lymphocyte_count_decreased,N,2,9,10,NOT APPLICABLE,
+S0045,4,upper_respiratory_infections,N,2,10,11,NOT APPLICABLE,
+S0045,5,anorexia,N,2,13,14,NOT APPLICABLE,
+S0045,6,skin discoloration,N,2,13,14,NOT APPLICABLE,
+S0045,7,proteinuria,N,2,14,15,NOT APPLICABLE,
+S0045,8,decreased_platelet_count,N,1,15,16,no_modification,DM023
+S0045,9,weight_loss,N,1,17,18,NOT APPLICABLE,
+S0045,10,hypocalcemia,N,2,34,35,NOT APPLICABLE,
+S0045,11,fatigue,N,2,37,38,no_modification,DM027
+S0045,12,palmar_plantar_erythrodysesthesia_syndrome,N,1,47,48,no_modification,DM034
+S0045,13,hand-foot skin reactions,N,1,52,53,no_modification,DM034
+S0045,14,voice_disturbance,N,1,53,54,NOT APPLICABLE,
+S0045,15,hoarseness,N,1,57,58,NOT APPLICABLE,
+S0045,16,dermatitis,N,1,57,58,NOT APPLICABLE,
+S0045,17,headache,N,1,59,60,NOT APPLICABLE,
+S0045,18,lipase,N,1,68,69,NOT APPLICABLE,
+S0045,19,abdominal_pain,N,1,71,72,NOT APPLICABLE,
+S0045,20,left ventricular dysfunction,N,2,71,72,NOT APPLICABLE,
+S0045,21,aspartate_aminotransferase_increased,N,2,77,78,NOT APPLICABLE,
+S0045,22,stomatitis,N,1,84,85,NOT APPLICABLE,
+S0045,23,vomiting,Y,3,84,86,NOT APPLICABLE,
+S0046,1,weight_loss,N,1,32,33,NOT APPLICABLE,
+S0046,2,constipation,N,2,44,45,NOT APPLICABLE,
+S0046,3,sensory_neuropathy,N,2,51,52,NOT APPLICABLE,
+S0046,4,Hypothyroidism,N,1,51,52,NOT APPLICABLE,
+S0046,5,voice_disturbance,N,1,78,79,NOT APPLICABLE,
+S0046,6,decreased_platelet_count,N,2,92,93,no_modification,DM023
+S0046,7,Hypothyroidism,N,1,95,96,NOT APPLICABLE,
+S0046,8,hypocalcemia,N,1,99,100,NOT APPLICABLE,
+S0046,9,diarrhea,N,2,100,101,NOT APPLICABLE,
+S0046,10,influenza_like_symptoms,N,1,131,132,NOT APPLICABLE,
+S0046,11,aspartate_aminotransferase_increased,N,1,137,138,delay_cycle,DM037
+S0046,12,hypophosphatemia,N,1,160,161,NOT APPLICABLE,
+S0046,13,flatulence,N,1,173,174,NOT APPLICABLE,
+S0046,14,Bleeding events,N,2,178,179,NOT APPLICABLE,
+S0046,15,upper_respiratory_infections,N,1,185,186,NOT APPLICABLE,
+S0046,16,blood_bilirubin_increased,N,1,203,204,delay_cycle,DM037
+S0046,17,fever,N,2,212,213,no_modification,DM026
+S0046,18,pain,N,2,220,221,NOT APPLICABLE,
+S0046,19,hoarseness,N,2,230,231,NOT APPLICABLE,
+S0046,20,lipase,N,2,235,236,NOT APPLICABLE,
+S0046,21,vomiting,N,2,298,299,NOT APPLICABLE,
+S0047,1,flatulence,N,1,5,6,NOT APPLICABLE,
+S0047,2,aspartate_aminotransferase_increased,N,2,11,12,delay_cycle,DM037
+S0047,3,back_pain,N,2,18,19,NOT APPLICABLE,
+S0047,4,decreased_platelet_count,N,2,19,20,no_modification,DM023
+S0047,5,skin_and_subcutaneous_tissue_disorders_-_other,N,1,25,26,NOT APPLICABLE,
+S0047,6,hoarseness,N,1,27,28,NOT APPLICABLE,
+S0047,7,weight_loss,N,2,30,31,NOT APPLICABLE,
+S0047,8,neutrophil_count_decreased,N,2,30,31,no_modification,DM020
+S0047,9,dry_skin,N,2,32,33,NOT APPLICABLE,
+S0047,10,pain,N,1,33,34,NOT APPLICABLE,
+S0047,11,fever,N,2,34,35,no_modification,DM026
+S0047,12,Hypothyroidism,N,1,35,36,NOT APPLICABLE,
+S0047,13,hypertension,N,1,43,44,NOT APPLICABLE,
+S0047,14,hypocalcemia,N,1,56,57,NOT APPLICABLE,
+S0047,15,lipase,N,1,61,62,NOT APPLICABLE,
+S0047,16,hypokalemia,N,1,63,64,NOT APPLICABLE,
+S0047,17,voice_disturbance,N,1,65,66,NOT APPLICABLE,
+S0047,18,an LVEF value below the LLN,N,1,77,78,NOT APPLICABLE,
+S0048,1,decreased_platelet_count,N,1,19,20,no_modification,DM023
+S0048,2,hoarseness,N,1,113,114,NOT APPLICABLE,
+S0048,3,hyponatremia,N,2,114,115,NOT APPLICABLE,
+S0048,4,Hypothyroidism,N,2,151,152,NOT APPLICABLE,
+S0048,5,flatulence,N,2,226,227,NOT APPLICABLE,
+S0048,6,upper_respiratory_infections,N,1,232,233,NOT APPLICABLE,
+S0048,7,fever,N,2,237,238,no_modification,DM026
+S0048,8,an LVEF value below the LLN,N,2,272,273,NOT APPLICABLE,
+S0048,9,lipase,N,2,290,291,NOT APPLICABLE,
+S0048,10,hypocalcemia,N,2,336,337,NOT APPLICABLE,
+S0048,11,Hypothyroidism,N,1,437,438,NOT APPLICABLE,
+S0048,12,hypertension_variable,N,1,443,444,NOT APPLICABLE,
+S0048,13,pain,N,2,455,456,NOT APPLICABLE,
+S0048,14,diarrhea,N,1,485,486,NOT APPLICABLE,
+S0048,15,abdominal_pain,N,1,513,514,NOT APPLICABLE,
+S0048,16,aspartate_aminotransferase_increased,N,1,526,527,delay_cycle,DM037
+S0048,17,voice_disturbance,N,2,568,569,NOT APPLICABLE,
+S0048,18,lymphocyte_count_decreased,N,1,665,666,NOT APPLICABLE,
+S0048,19,left ventricular dysfunction,N,1,680,681,NOT APPLICABLE,
+S0048,20,proteinuria,N,1,690,691,NOT APPLICABLE,
+S0049,1,hypocalcemia,N,1,3,4,NOT APPLICABLE,
+S0049,2,Hypothyroidism,N,2,13,14,NOT APPLICABLE,
+S0049,3,skin discoloration,N,2,20,21,NOT APPLICABLE,
+S0049,4,aspartate_aminotransferase_increased,N,2,22,23,delay_cycle,DM037
+S0049,5,decreased_platelet_count,N,1,23,24,no_modification,DM023
+S0049,6,other serious adverse events (not individually predicted),Y,3,27,29,NOT APPLICABLE,
+S0049,7,palmar_plantar_erythrodysesthesia_syndrome,N,1,34,35,no_modification,DM034
+S0049,8,Hypothyroidism,N,2,34,35,NOT APPLICABLE,
+S0049,9,voice_disturbance,N,2,41,42,NOT APPLICABLE,
+S0049,10,pain,N,2,55,56,NOT APPLICABLE,
+S0049,11,dermatitis,N,1,96,97,NOT APPLICABLE,
+S0049,12,hair color changes,N,1,103,104,NOT APPLICABLE,
+S0049,13,lipase,N,2,111,112,NOT APPLICABLE,
+S0049,14,skin_and_subcutaneous_tissue_disorders_-_other,N,2,117,118,NOT APPLICABLE,
+S0049,15,dry_skin,N,1,136,137,NOT APPLICABLE,
+S0049,16,nausea,N,1,142,143,NOT APPLICABLE,
+S0049,17,hoarseness,N,1,143,144,NOT APPLICABLE,
+S0049,18,flatulence,N,1,150,151,NOT APPLICABLE,
+S0049,19,vomiting,N,2,162,163,NOT APPLICABLE,
+S0049,20,fever,N,2,171,172,NOT APPLICABLE,
+S0049,21,hand-foot skin reactions,N,1,171,172,NOT APPLICABLE,
+S0049,22,liposarcoma_well_differentiated,N,1,178,179,NOT APPLICABLE,
+S0049,23,hypokalemia,N,2,189,190,NOT APPLICABLE,
+S0050,1,fever,N,1,1,2,no_modification,DM026
+S0050,2,aspartate_aminotransferase_increased,N,2,9,10,delay_cycle,DM037
+S0050,3,proteinuria,N,1,31,32,NOT APPLICABLE,
+S0050,4,alkaline_phosphatase_raised,N,1,44,45,NOT APPLICABLE,
+S0050,5,hypocalcemia,N,1,80,81,NOT APPLICABLE,
+S0050,6,creatinine_increased,N,1,82,83,NOT APPLICABLE,
+S0050,7,upper_respiratory_infections,N,2,142,143,NOT APPLICABLE,
+S0050,8,decreased_platelet_count,N,2,179,180,no_modification,DM023
+S0050,9,lipase,N,1,210,211,NOT APPLICABLE,
+S0050,10,palmar_plantar_erythrodysesthesia_syndrome,N,1,257,258,no_modification,DM034
+S0050,11,vomiting,N,2,297,298,NOT APPLICABLE,
+S0050,12,voice_disturbance,N,2,327,328,NOT APPLICABLE,
+S0050,13,back_pain,N,2,343,344,NOT APPLICABLE,
+S0050,14,diarrhea,N,1,348,349,NOT APPLICABLE,
+S0050,15,dry_skin,N,1,353,354,NOT APPLICABLE,
+S0050,16,hoarseness,N,1,383,384,NOT APPLICABLE,
+S0050,17,Hypothyroidism,N,2,389,390,NOT APPLICABLE,
+S0051,1,hypertension,N,1,3,4,NOT APPLICABLE,
+S0051,2,weight_loss,N,2,38,39,NOT APPLICABLE,
+S0051,3,white_blood_cell_decreased,N,2,95,96,NOT APPLICABLE,
+S0051,4,alanine_aminotransferase_increased,N,2,106,107,delay_cycle,DM037
+S0051,5,palmar_plantar_erythrodysesthesia_syndrome,N,1,110,111,no_modification,DM034
+S0051,6,skin discoloration,N,1,116,117,NOT APPLICABLE,
+S0051,7,lymphocyte_count_decreased,N,1,175,176,NOT APPLICABLE,
+S0051,8,hoarseness,N,2,183,184,NOT APPLICABLE,
+S0051,9,fever,N,2,200,201,no_modification,DM026
+S0051,10,left ventricular systolic dysfunction,N,2,216,217,NOT APPLICABLE,
+S0051,11,abdominal_pain,N,2,220,221,NOT APPLICABLE,
+S0051,12,maculopapular_lesion,N,2,261,262,NOT APPLICABLE,
+S0051,13,aspartate_aminotransferase_increased,N,1,351,352,delay_cycle,DM037
+S0051,14,proteinuria,N,1,367,368,NOT APPLICABLE,
+S0051,15,lipase,N,2,416,417,NOT APPLICABLE,
+S0051,16,hypocalcemia,N,1,457,458,NOT APPLICABLE,
+S0051,17,hypokalemia,N,1,535,536,NOT APPLICABLE,
+S0051,18,flatulence,N,1,592,593,NOT APPLICABLE,
+S0051,19,pain,N,1,604,605,NOT APPLICABLE,
+S0051,20,decreased_platelet_count,N,1,655,656,no_modification,DM023
+S0051,21,rash/desquamation,N,2,655,656,NOT APPLICABLE,
+S0051,22,voice_disturbance,N,1,656,657,NOT APPLICABLE,
+S0051,23,upper_respiratory_infections,N,2,675,676,NOT APPLICABLE,
+S0051,24,hand-foot syndrome,N,1,717,718,no_modification,DM034
+S0052,1,lipase,N,2,28,29,NOT APPLICABLE,
+S0052,2,Hypothyroidism,N,2,75,76,NOT APPLICABLE,
+S0052,3,voice_disturbance,N,1,82,83,NOT APPLICABLE,
+S0052,4,palmar_plantar_erythrodysesthesia_syndrome,N,1,130,131,no_modification,DM034
+S0052,5,aspartate_aminotransferase_increased,N,2,133,134,delay_cycle,DM037
+S0052,6,Hypothyroidism,N,2,219,220,NOT APPLICABLE,
+S0052,7,hoarseness,N,1,274,275,NOT APPLICABLE,
+S0052,8,fever,N,2,296,297,no_modification,DM026
+S0052,9,decreased_platelet_count,N,1,308,309,no_modification,DM023
+S0052,10,hypocalcemia,N,1,330,331,NOT APPLICABLE,
+S0052,11,skin_and_subcutaneous_tissue_disorders_-_other,N,1,339,340,NOT APPLICABLE,
+S0052,12,dry_skin,N,1,343,344,NOT APPLICABLE,
+S0052,13,hand-foot skin reactions,N,1,554,555,no_modification,DM034
+S0052,14,headache,N,1,563,564,NOT APPLICABLE,
+S0052,15,flatulence,N,1,564,565,NOT APPLICABLE,
+S0052,16,liposarcoma_well_differentiated,N,2,581,582,NOT APPLICABLE,
+S0052,17,gastrointestinal_disorders_-_other,N,1,661,662,NOT APPLICABLE,
+S0052,18,an LVEF value below the LLN,N,2,746,753,NOT APPLICABLE,
+S0052,19,pain,N,2,747,754,NOT APPLICABLE,
+S0053,1,flatulence,N,2,2,3,NOT APPLICABLE,
+S0053,2,hand-foot skin reactions,N,1,2,3,no_modification,DM034
+S0053,3,hypertension_variable,N,2,3,4,NOT APPLICABLE,
+S0053,4,upper_respiratory_infections,N,2,7,8,NOT APPLICABLE,
+S0053,5,fever,N,2,15,16,no_modification,DM026
+S0053,6,dermatitis,N,1,23,24,NOT APPLICABLE,
+S0053,7,decreased_platelet_count,N,2,45,46,no_modification,DM023
+S0053,8,left ventricular dysfunction,N,1,61,62,NOT APPLICABLE,
+S0053,9,other serious adverse events (not individually predicted),Y,3,66,68,NOT APPLICABLE,
+S0053,10,proteinuria,N,2,70,71,NOT APPLICABLE,
+S0053,11,skin discoloration,N,1,70,71,NOT APPLICABLE,
+S0053,12,an LVEF value below the LLN,N,1,74,75,NOT APPLICABLE,
+S0053,13,Hypothyroidism,N,2,75,76,NOT APPLICABLE,
+S0053,14,hypothyroidism,N,1,76,77,NOT APPLICABLE,
+S0053,15,lipase,N,2,77,78,NOT APPLICABLE,
+S0053,16,aspartate_aminotransferase_increased,N,1,80,81,NOT APPLICABLE,
+S0053,17,hoarseness,N,2,80,81,NOT APPLICABLE,
+S0053,18,palmar_plantar_erythrodysesthesia_syndrome,N,2,85,86,NOT APPLICABLE,
+S0053,19,voice_disturbance,N,1,86,87,NOT APPLICABLE,
+S0054,1,Hypothyroidism,N,2,2,3,NOT APPLICABLE,
+S0054,2,voice_disturbance,N,2,9,10,NOT APPLICABLE,
+S0054,3,pruritus,N,2,26,27,NOT APPLICABLE,
+S0054,4,hoarseness,N,1,27,28,NOT APPLICABLE,
+S0054,5,decreased_platelet_count,N,2,29,30,no_modification,DM023
+S0054,6,stomatitis,N,2,47,48,NOT APPLICABLE,
+S0054,7,aspartate_aminotransferase_increased,N,1,71,72,delay_cycle,DM037
+S0054,8,sensory_neuropathy,N,1,73,74,NOT APPLICABLE,
+S0054,9,alanine_aminotransferase_increased,N,1,77,78,delay_cycle,DM037
+S0054,10,vomiting,N,2,86,87,NOT APPLICABLE,
+S0054,11,headache,N,2,89,90,NOT APPLICABLE,
+S0054,12,left ventricular dysfunction,N,1,93,94,NOT APPLICABLE,
+S0054,13,lipase,N,1,94,95,NOT APPLICABLE,
+S0054,14,dry_skin,N,1,98,99,NOT APPLICABLE,
+S0054,15,abdominal_pain,N,1,99,100,NOT APPLICABLE,
+S0054,16,fever,N,1,108,109,no_modification,DM026
+S0055,1,an LVEF value below the LLN,N,2,9,10,NOT APPLICABLE,
+S0055,2,acneiform_eruptions,N,1,27,28,NOT APPLICABLE,
+S0055,3,hypocalcemia,N,2,36,37,NOT APPLICABLE,
+S0055,4,hoarseness,N,2,53,54,NOT APPLICABLE,
+S0055,5,flatulence,N,2,68,69,NOT APPLICABLE,
+S0055,6,proteinuria,N,2,76,77,NOT APPLICABLE,
+S0055,7,hand-foot skin reactions,N,2,99,100,no_modification,DM034
+S0055,8,voice_disturbance,N,2,137,138,NOT APPLICABLE,
+S0055,9,dry_skin,N,2,156,157,NOT APPLICABLE,
+S0055,10,decreased_platelet_count,N,1,187,188,no_modification,DM023
+S0055,11,diarrhea,N,2,193,194,NOT APPLICABLE,
+S0055,12,vomiting,N,1,194,195,NOT APPLICABLE,
+S0055,13,lipase,N,1,201,202,NOT APPLICABLE,
+S0055,14,aspartate_aminotransferase_increased,N,1,215,216,delay_cycle,DM037
+S0055,15,Hypothyroidism,N,2,221,222,NOT APPLICABLE,
+S0055,16,fever,N,2,238,239,NOT APPLICABLE,
+S0056,1,anorexia,Y,3,15,17,NOT APPLICABLE,
+S0056,2,skin discoloration,N,1,30,31,NOT APPLICABLE,
+S0056,3,aspartate_aminotransferase_increased,N,1,74,75,delay_cycle,DM037
+S0056,4,pruritus,N,1,76,77,NOT APPLICABLE,
+S0056,5,flatulence,N,2,119,120,NOT APPLICABLE,
+S0056,6,proteinuria,N,1,169,170,NOT APPLICABLE,
+S0056,7,lipase,N,2,263,264,NOT APPLICABLE,
+S0056,8,decreased_platelet_count,N,1,298,299,no_modification,DM023
+S0056,9,hoarseness,N,2,390,391,NOT APPLICABLE,
+S0056,10,voice_disturbance,N,1,450,451,NOT APPLICABLE,
+S0056,11,hypocalcemia,N,1,468,469,NOT APPLICABLE,
+S0056,12,hypertension,N,1,511,512,NOT APPLICABLE,
+S0056,13,upper_respiratory_infections,N,1,541,542,NOT APPLICABLE,
+S0056,14,Hypothyroidism,N,2,562,563,NOT APPLICABLE,
+S0056,15,an LVEF value below the LLN,N,2,609,610,NOT APPLICABLE,
+S0056,16,weight_loss,N,1,629,630,NOT APPLICABLE,
+S0056,17,anorexia,N,1,674,675,NOT APPLICABLE,
+S0057,1,dry_skin,N,1,1,2,NOT APPLICABLE,
+S0057,2,hypocalcemia,N,2,2,3,NOT APPLICABLE,
+S0057,3,maculopapular_lesion,N,2,7,8,NOT APPLICABLE,
+S0057,4,lipase,N,2,8,9,NOT APPLICABLE,
+S0057,5,voice_disturbance,N,2,12,13,NOT APPLICABLE,
+S0057,6,skin discoloration,N,2,13,14,NOT APPLICABLE,
+S0057,7,alanine_aminotransferase_increased,N,2,16,17,delay_cycle,DM037
+S0057,8,vomiting,N,2,26,27,NOT APPLICABLE,
+S0057,9,flatulence,N,2,30,31,NOT APPLICABLE,
+S0057,10,diarrhea,N,1,42,43,NOT APPLICABLE,
+S0057,11,decreased_platelet_count,N,2,52,53,no_modification,DM023
+S0057,12,neutrophil_count_decreased,N,2,58,59,NOT APPLICABLE,
+S0057,13,headache,N,1,63,64,NOT APPLICABLE,
+S0057,14,fever,N,1,74,75,NOT APPLICABLE,
+S0057,15,treatment-emergent LVEF values below the lower limit of normal (LLN),N,2,76,77,NOT APPLICABLE,
+S0057,16,hyperglycemia,N,2,79,80,NOT APPLICABLE,
+S0057,17,hypertension,N,1,80,81,NOT APPLICABLE,
+S0057,18,aspartate_aminotransferase_increased,N,1,83,84,NOT APPLICABLE,
+S0057,19,hoarseness,N,2,84,85,NOT APPLICABLE,
+S0057,20,upper_respiratory_infections,N,2,86,87,NOT APPLICABLE,
+S0058,1,lipase,N,2,53,54,NOT APPLICABLE,
+S0058,2,dyspepsia,N,1,64,65,NOT APPLICABLE,
+S0058,3,flatulence,N,2,78,79,NOT APPLICABLE,
+S0058,4,hypocalcemia,N,2,83,84,NOT APPLICABLE,
+S0058,5,skin_and_subcutaneous_tissue_disorders_-_other,N,1,91,92,NOT APPLICABLE,
+S0058,6,fever,N,2,103,104,no_modification,DM026
+S0058,7,pain_in_limb,N,1,134,135,NOT APPLICABLE,
+S0058,8,Hypothyroidism,N,1,152,153,NOT APPLICABLE,
+S0058,9,palmar_plantar_erythrodysesthesia_syndrome,N,2,172,173,no_modification,DM034
+S0058,10,decreased_platelet_count,N,2,205,206,no_modification,DM023
+S0058,11,hypokalemia,N,2,282,283,NOT APPLICABLE,
+S0058,12,abdominal_pain,N,2,298,299,NOT APPLICABLE,
+S0058,13,sensory_neuropathy,N,1,310,311,NOT APPLICABLE,
+S0058,14,aspartate_aminotransferase_increased,N,2,325,326,delay_cycle,DM037
+S0058,15,hoarseness,N,2,340,341,NOT APPLICABLE,
+S0058,16,voice_disturbance,N,2,463,464,NOT APPLICABLE,
+S0058,17,headache,N,2,543,544,NOT APPLICABLE,
+S0058,18,other serious adverse events (not individually predicted),Y,3,557,559,NOT APPLICABLE,
+S0058,19,skin discoloration,N,2,637,638,NOT APPLICABLE,
+S0058,20,an LVEF value below the LLN,N,2,699,700,NOT APPLICABLE,
+S0059,1,coughing,N,2,5,6,NOT APPLICABLE,
+S0059,2,hoarseness,N,1,10,11,NOT APPLICABLE,
+S0059,3,decreased_platelet_count,N,1,17,18,no_modification,DM023
+S0059,4,aspartate_aminotransferase_increased,N,2,28,29,delay_cycle,DM037
+S0059,5,other serious adverse events (not individually predicted),Y,3,34,36,NOT APPLICABLE,
+S0059,6,diarrhea,N,2,47,48,NOT APPLICABLE,
+S0059,7,hypokalemia,N,2,47,48,NOT APPLICABLE,
+S0059,8,hypoalbuminemia,N,1,61,62,NOT APPLICABLE,
+S0059,9,hypocalcemia,N,2,70,71,NOT APPLICABLE,
+S0059,10,weight_loss,N,1,72,73,NOT APPLICABLE,
+S0059,11,flatulence,N,1,74,75,NOT APPLICABLE,
+S0059,12,treatment-emergent LVEF values below the lower limit of normal (LLN),N,1,81,82,NOT APPLICABLE,
+S0059,13,an LVEF value below the LLN,N,2,84,85,NOT APPLICABLE,
+S0059,14,Hypothyroidism,N,1,84,85,NOT APPLICABLE,
+S0059,15,proteinuria,N,2,99,100,NOT APPLICABLE,
+S0059,16,Hypothyroidism,N,1,100,101,NOT APPLICABLE,
+S0059,17,lipase,N,1,104,105,NOT APPLICABLE,
+S0059,18,skin discoloration,N,1,105,106,NOT APPLICABLE,
+S0059,19,voice_disturbance,N,2,114,115,NOT APPLICABLE,
+S0059,20,alanine_aminotransferase_increased,N,2,121,122,NOT APPLICABLE,
+S0059,21,palmar_plantar_erythrodysesthesia_syndrome,N,1,127,128,NOT APPLICABLE,
+S0060,1,proteinuria,N,1,18,19,NOT APPLICABLE,
+S0060,2,anemia,N,2,41,42,discontinue_all,DM043
+S0060,3,back_pain,N,1,67,68,NOT APPLICABLE,
+S0061,1,weight_loss,N,1,1,2,NOT APPLICABLE,
+S0061,2,hypocalcemia,N,2,32,33,NOT APPLICABLE,
+S0061,3,palmar_plantar_erythrodysesthesia_syndrome,N,2,57,58,no_modification,DM034
+S0061,4,lipase,N,2,70,71,NOT APPLICABLE,
+S0061,5,hypokalemia,N,2,82,83,NOT APPLICABLE,
+S0061,6,Hypothyroidism,N,2,136,137,NOT APPLICABLE,
+S0061,7,proteinuria,N,1,150,151,NOT APPLICABLE,
+S0061,8,dry_skin,N,1,152,153,NOT APPLICABLE,
+S0061,9,an LVEF value below the LLN,N,2,174,175,NOT APPLICABLE,
+S0061,10,hoarseness,N,2,191,192,NOT APPLICABLE,
+S0061,11,aspartate_aminotransferase_increased,N,1,198,199,delay_cycle,DM037
+S0061,12,alopecia,N,1,203,204,NOT APPLICABLE,
+S0061,13,voice_disturbance,N,1,220,221,NOT APPLICABLE,
+S0061,14,decreased_platelet_count,N,2,256,257,NOT APPLICABLE,
+S0061,15,creatinine_increased,N,1,259,260,NOT APPLICABLE,
+S0062,1,skin discoloration,N,1,15,16,NOT APPLICABLE,
+S0062,2,voice_disturbance,N,1,17,18,NOT APPLICABLE,
+S0062,3,proteinuria,N,2,34,35,NOT APPLICABLE,
+S0062,4,Hypothyroidism,N,1,34,35,NOT APPLICABLE,
+S0062,5,coughing,N,2,36,37,NOT APPLICABLE,
+S0062,6,upper_respiratory_infections,N,2,36,37,NOT APPLICABLE,
+S0062,7,rash/desquamation,N,2,54,55,NOT APPLICABLE,
+S0062,8,dermatitis,N,1,55,56,NOT APPLICABLE,
+S0062,9,diarrhea,N,2,97,98,NOT APPLICABLE,
+S0062,10,sensory_neuropathy,N,2,97,98,NOT APPLICABLE,
+S0062,11,hoarseness,N,2,114,115,NOT APPLICABLE,
+S0062,12,liposarcoma_well_differentiated,N,1,117,118,NOT APPLICABLE,
+S0062,13,decreased_platelet_count,N,2,143,144,no_modification,DM023
+S0062,14,weight_loss,N,1,155,156,NOT APPLICABLE,
+S0062,15,lipase,N,2,170,171,NOT APPLICABLE,
+S0062,16,acneiform_eruptions,N,2,182,183,NOT APPLICABLE,
+S0062,17,Hypothyroidism,N,1,194,195,NOT APPLICABLE,
+S0062,18,hypocalcemia,N,2,228,229,NOT APPLICABLE,
+S0062,19,fever,N,1,238,239,NOT APPLICABLE,
+S0062,20,hypoalbuminemia,N,1,242,243,NOT APPLICABLE,
+S0062,21,hand-foot skin reactions,N,1,255,256,NOT APPLICABLE,
+S0063,1,acneiform_eruptions,N,2,4,5,NOT APPLICABLE,
+S0063,2,palmar_plantar_erythrodysesthesia_syndrome,N,1,73,74,no_modification,DM034
+S0063,3,Hypothyroidism,N,2,81,82,NOT APPLICABLE,
+S0063,4,vomiting,N,2,93,94,NOT APPLICABLE,
+S0063,5,upper_respiratory_infections,N,2,290,291,NOT APPLICABLE,
+S0063,6,dyspnea,Y,3,365,367,NOT APPLICABLE,
+S0063,7,fatigue,N,1,378,379,no_modification,DM027
+S0063,8,voice_disturbance,N,1,393,394,NOT APPLICABLE,
+S0063,9,hypocalcemia,N,2,398,399,NOT APPLICABLE,
+S0063,10,aspartate_aminotransferase_increased,N,1,416,417,delay_cycle,DM037
+S0063,11,hoarseness,N,2,418,419,NOT APPLICABLE,
+S0063,12,neutrophil_count_decreased,N,1,421,422,no_modification,DM020
+S0063,13,skin_and_subcutaneous_tissue_disorders_-_other,N,2,489,490,NOT APPLICABLE,
+S0063,14,Hypothyroidism,N,1,608,609,NOT APPLICABLE,
+S0063,15,fever,N,2,619,620,no_modification,DM026
+S0064,1,upper_respiratory_infections,N,1,162,163,NOT APPLICABLE,
+S0064,2,weight_loss,N,2,187,188,NOT APPLICABLE,
+S0064,3,anemia,N,2,234,235,discontinue_all,DM043
+S0065,1,Bleeding events,N,1,12,13,NOT APPLICABLE,
+S0065,2,aspartate_aminotransferase_increased,N,1,13,14,delay_cycle,DM037
+S0065,3,back_pain,N,1,13,14,NOT APPLICABLE,
+S0065,4,palmar_plantar_erythrodysesthesia_syndrome,N,2,29,30,no_modification,DM034
+S0065,5,nausea,Y,3,38,40,NOT APPLICABLE,
+S0065,6,dry_skin,N,2,150,151,NOT APPLICABLE,
+S0065,7,hoarseness,N,1,184,185,NOT APPLICABLE,
+S0065,8,upper_respiratory_infections,N,1,200,201,NOT APPLICABLE,
+S0065,9,fever,N,2,208,209,no_modification,DM026
+S0065,10,nausea,N,2,230,231,NOT APPLICABLE,
+S0065,11,Severe hypertension,N,1,257,258,NOT APPLICABLE,
+S0065,12,sensory_neuropathy,N,1,273,274,NOT APPLICABLE,
+S0065,13,hypoalbuminemia,N,1,324,325,NOT APPLICABLE,
+S0065,14,lipase,N,1,342,343,NOT APPLICABLE,
+S0065,15,decreased_platelet_count,N,1,356,357,no_modification,DM023
+S0065,16,hypocalcemia,N,2,409,410,NOT APPLICABLE,
+S0065,17,Hypothyroidism,N,1,429,430,NOT APPLICABLE,
+S0065,18,dyspepsia,N,1,469,470,NOT APPLICABLE,
+S0065,19,flatulence,N,1,493,494,NOT APPLICABLE,
+S0065,20,an LVEF value below the LLN,N,2,493,494,NOT APPLICABLE,
+S0066,1,hand-foot syndrome,N,1,1,2,no_modification,DM034
+S0066,2,hypocalcemia,N,2,26,27,NOT APPLICABLE,
+S0066,3,hypoalbuminemia,N,2,36,37,NOT APPLICABLE,
+S0066,4,alanine_aminotransferase_increased,N,2,47,48,delay_cycle,DM037
+S0066,5,decreased_platelet_count,N,1,73,74,no_modification,DM023
+S0066,6,left ventricular dysfunction,N,2,93,94,NOT APPLICABLE,
+S0066,7,Hypothyroidism,N,1,130,131,NOT APPLICABLE,
+S0066,8,hypertension,N,1,135,136,NOT APPLICABLE,
+S0066,9,liposarcoma_well_differentiated,N,2,146,147,NOT APPLICABLE,
+S0066,10,hand-foot skin reactions,N,1,182,183,no_modification,DM034
+S0066,11,flatulence,N,2,190,191,NOT APPLICABLE,
+S0066,12,weight_loss,N,2,226,227,NOT APPLICABLE,
+S0066,13,aspartate_aminotransferase_increased,N,1,231,232,delay_cycle,DM037
+S0066,14,skin discoloration,N,1,231,232,NOT APPLICABLE,
+S0066,15,hoarseness,N,2,285,286,NOT APPLICABLE,
+S0067,1,Bleeding events,N,1,3,4,NOT APPLICABLE,
+S0067,2,voice_disturbance,N,1,6,7,NOT APPLICABLE,
+S0067,3,hypocalcemia,N,2,13,14,NOT APPLICABLE,
+S0067,4,fever,N,1,21,22,no_modification,DM026
+S0067,5,headache,N,2,25,26,NOT APPLICABLE,
+S0067,6,pain,N,1,36,37,NOT APPLICABLE,
+S0067,7,weight_loss,N,1,37,38,NOT APPLICABLE,
+S0067,8,aspartate_aminotransferase_increased,N,2,41,42,delay_cycle,DM037
+S0067,9,hyperglycemia,N,2,55,56,NOT APPLICABLE,
+S0067,10,upper_respiratory_infections,N,2,55,56,NOT APPLICABLE,
+S0067,11,rash/desquamation,N,2,58,59,NOT APPLICABLE,
+S0067,12,dry_skin,N,2,65,66,NOT APPLICABLE,
+S0067,13,hand-foot syndrome,N,2,88,89,no_modification,DM034
+S0067,14,hoarseness,N,2,91,92,NOT APPLICABLE,
+S0067,15,vomiting,N,2,96,97,NOT APPLICABLE,
+S0067,16,Hypothyroidism,N,1,99,100,NOT APPLICABLE,
+S0067,17,alanine_aminotransferase_increased,N,1,104,105,delay_cycle,DM037
+S0067,18,skin discoloration,N,1,113,114,NOT APPLICABLE,
+S0067,19,lipase,N,1,117,118,NOT APPLICABLE,
+S0067,20,palmar_plantar_erythrodysesthesia_syndrome,N,2,142,143,NOT APPLICABLE,
+S0067,21,hand-foot skin reactions,N,2,142,143,NOT APPLICABLE,
+S0068,1,fever,N,2,31,32,no_modification,DM026
+S0068,2,hoarseness,N,1,58,59,NOT APPLICABLE,
+S0068,3,vomiting,N,2,66,67,NOT APPLICABLE,
+S0068,4,sensory_neuropathy,N,2,142,143,NOT APPLICABLE,
+S0068,5,coughing,N,1,161,162,NOT APPLICABLE,
+S0068,6,an LVEF value below the LLN,N,1,195,196,NOT APPLICABLE,
+S0068,7,creatinine_increased,N,2,251,252,NOT APPLICABLE,
+S0068,8,palmar_plantar_erythrodysesthesia_syndrome,N,1,252,253,no_modification,DM034
+S0068,9,hypocalcemia,N,1,456,457,NOT APPLICABLE,
+S0068,10,voice_disturbance,N,1,457,458,NOT APPLICABLE,
+S0068,11,Hypothyroidism,N,2,462,463,NOT APPLICABLE,
+S0068,12,pain,N,2,508,509,NOT APPLICABLE,
+S0068,13,lipase,N,2,547,548,NOT APPLICABLE,
+S0068,14,decreased_platelet_count,N,1,564,565,no_modification,DM023
+S0068,15,dry_skin,N,2,587,588,NOT APPLICABLE,
+S0068,16,flatulence,N,1,600,601,NOT APPLICABLE,
+S0069,1,hair color changes,N,2,52,53,NOT APPLICABLE,
+S0069,2,voice_disturbance,N,1,60,61,NOT APPLICABLE,
+S0069,3,fever,N,1,88,89,no_modification,DM026
+S0069,4,decreased_platelet_count,N,2,162,163,no_modification,DM023
+S0069,5,an LVEF value below the LLN,N,2,197,198,NOT APPLICABLE,
+S0069,6,lipase,N,1,206,207,NOT APPLICABLE,
+S0069,7,hand-foot skin reactions,N,1,240,241,no_modification,DM034
+S0069,8,hypocalcemia,N,2,241,242,NOT APPLICABLE,
+S0069,9,aspartate_aminotransferase_increased,N,1,251,252,delay_cycle,DM037
+S0069,10,Hypothyroidism,N,1,287,288,NOT APPLICABLE,
+S0069,11,nausea,N,2,296,297,NOT APPLICABLE,
+S0069,12,hoarseness,N,2,297,298,NOT APPLICABLE,
+S0070,1,skin discoloration,N,1,1,2,NOT APPLICABLE,
+S0070,2,decreased_platelet_count,N,1,2,3,no_modification,DM023
+S0070,3,aspartate_aminotransferase_increased,N,2,3,4,delay_cycle,DM037
+S0070,4,Hypothyroidism,N,2,5,6,NOT APPLICABLE,
+S0070,5,lipase,N,2,7,8,NOT APPLICABLE,
+S0070,6,hypertension_variable,N,1,14,15,NOT APPLICABLE,
+S0070,7,hypertension,N,2,19,20,NOT APPLICABLE,
+S0070,8,Hypothyroidism,N,1,24,25,NOT APPLICABLE,
+S0070,9,palmar_plantar_erythrodysesthesia_syndrome,N,1,31,32,no_modification,DM034
+S0070,10,voice_disturbance,N,1,37,38,NOT APPLICABLE,
+S0070,11,pain,N,2,41,42,NOT APPLICABLE,
+S0070,12,hoarseness,N,2,52,53,NOT APPLICABLE,
+S0070,13,an LVEF value below the LLN,N,2,60,61,NOT APPLICABLE,
+S0070,14,hair color changes,N,1,62,63,NOT APPLICABLE,
+S0070,15,fever,N,2,67,68,NOT APPLICABLE,
+S0070,16,hypocalcemia,N,2,76,77,NOT APPLICABLE,
+S0070,17,nausea,N,1,80,81,NOT APPLICABLE,
+S0070,18,upper_respiratory_infections,N,2,83,84,NOT APPLICABLE,
+S0070,19,alopecia,N,2,83,84,NOT APPLICABLE,
+S0070,20,rash/desquamation,N,2,85,86,NOT APPLICABLE,

@@ -1,0 +1,37 @@
+Factor,Level,Arm,N,Any TEAE,Grade >= 3,SAE,AE -> discontinuation,AE -> dose modification,Deaths,Disposition
+baseline PSA categories,Higher than or equal to 100 ng/mL,ARM1,24,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 24
+baseline PSA categories,Higher than or equal to 100 ng/mL,ARM2,24,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 22; withdrawal (subject, loss to follow-up or physician decision): 1; disease progression: 1"
+baseline PSA categories,Higher than or equal to 2 ng/mL but less than 20 ng/mL,ARM1,11,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 11
+baseline PSA categories,Higher than or equal to 2 ng/mL but less than 20 ng/mL,ARM2,11,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 10; withdrawal (subject, loss to follow-up or physician decision): 1"
+baseline PSA categories,Higher than or equal to 20 ng/mL but less than 100 ng/mL,ARM1,17,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 17
+baseline PSA categories,Higher than or equal to 20 ng/mL but less than 100 ng/mL,ARM2,17,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 17
+Age (FDA standard age bands),65-74 years,ARM1,15,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 15
+Age (FDA standard age bands),65-74 years,ARM2,15,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 14; withdrawal (subject, loss to follow-up or physician decision): 1"
+Age (FDA standard age bands),< 65 years,ARM1,31,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 31
+Age (FDA standard age bands),< 65 years,ARM2,31,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 29; disease progression: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Age (FDA standard age bands),>= 75 years,ARM1,6,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 6
+Age (FDA standard age bands),>= 75 years,ARM2,6,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 6
+Sex,male,ARM1,52,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 52
+Sex,male,ARM2,52,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 49; withdrawal (subject, loss to follow-up or physician decision): 2; disease progression: 1"
+Race,asian,ARM1,6,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 6
+Race,asian,ARM2,6,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 6
+Race,black_or_african_american,ARM1,2,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 2
+Race,black_or_african_american,ARM2,2,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 2
+Race,more_than_one_race,ARM1,1,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 1
+Race,more_than_one_race,ARM2,1,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 1
+Race,unknown_or_not_reported,ARM1,1,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 1
+Race,unknown_or_not_reported,ARM2,1,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 1
+Race,white,ARM1,42,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 42
+Race,white,ARM2,42,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 39; withdrawal (subject, loss to follow-up or physician decision): 2; disease progression: 1"
+Ethnicity,hispanic_or_latino,ARM1,1,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 1
+Ethnicity,hispanic_or_latino,ARM2,1,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 1
+Ethnicity,not_hispanic_or_latino,ARM1,49,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 49
+Ethnicity,not_hispanic_or_latino,ARM2,49,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 46; withdrawal (subject, loss to follow-up or physician decision): 2; disease progression: 1"
+Ethnicity,unknown_or_not_reported,ARM1,2,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 2
+Ethnicity,unknown_or_not_reported,ARM2,2,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 2
+Ecog performance status,0,ARM1,22,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 22
+Ecog performance status,0,ARM2,22,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 20; withdrawal (subject, loss to follow-up or physician decision): 1; disease progression: 1"
+Ecog performance status,1,ARM1,28,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 28
+Ecog performance status,1,ARM2,28,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),"completed planned procedures: 27; withdrawal (subject, loss to follow-up or physician decision): 1"
+Ecog performance status,2 or more,ARM1,2,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 2
+Ecog performance status,2 or more,ARM2,2,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned procedures: 2

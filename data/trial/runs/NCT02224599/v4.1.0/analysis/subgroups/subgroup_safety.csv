@@ -1,0 +1,15 @@
+Factor,Level,Arm,N,Any TEAE,Grade >= 3,SAE,AE -> discontinuation,AE -> dose modification,Deaths,Disposition
+Age (FDA standard age bands),65-74 years,ARM1,4,4 (100%),3 (75%),3 (75%),2 (50%),0 (0%),0 (0%),adverse event (registry discontinuation rate): 2; disease progression: 1; completed planned treatment: 1
+Age (FDA standard age bands),< 65 years,ARM1,11,10 (91%),1 (9%),1 (9%),1 (9%),0 (0%),0 (0%),completed planned treatment: 9; adverse event (registry discontinuation rate): 1; disease progression: 1
+Age (FDA standard age bands),>= 75 years,ARM1,2,2 (100%),1 (50%),1 (50%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1; disease progression: 1
+Sex,female,ARM1,7,6 (86%),1 (14%),1 (14%),2 (29%),0 (0%),0 (0%),completed planned treatment: 4; adverse event (registry discontinuation rate): 2; disease progression: 1
+Sex,male,ARM1,10,10 (100%),4 (40%),4 (40%),1 (10%),0 (0%),0 (0%),completed planned treatment: 7; disease progression: 2; adverse event (registry discontinuation rate): 1
+Race,asian,ARM1,1,0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1
+Race,black_or_african_american,ARM1,3,3 (100%),0 (0%),0 (0%),1 (33%),0 (0%),0 (0%),completed planned treatment: 2; adverse event (registry discontinuation rate): 1
+Race,white,ARM1,13,13 (100%),5 (38%),5 (38%),2 (15%),0 (0%),0 (0%),completed planned treatment: 8; disease progression: 3; adverse event (registry discontinuation rate): 2
+Ethnicity,hispanic_or_latino,ARM1,2,2 (100%),2 (100%),2 (100%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1; disease progression: 1
+Ethnicity,not_hispanic_or_latino,ARM1,14,13 (93%),3 (21%),3 (21%),3 (21%),0 (0%),0 (0%),completed planned treatment: 9; adverse event (registry discontinuation rate): 3; disease progression: 2
+Ethnicity,unknown_or_not_reported,ARM1,1,1 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1
+Ecog performance status,0,ARM1,6,6 (100%),3 (50%),3 (50%),2 (33%),0 (0%),0 (0%),completed planned treatment: 3; adverse event (registry discontinuation rate): 2; disease progression: 1
+Ecog performance status,1,ARM1,9,8 (89%),2 (22%),2 (22%),1 (11%),0 (0%),0 (0%),completed planned treatment: 6; disease progression: 2; adverse event (registry discontinuation rate): 1
+Ecog performance status,2 or more,ARM1,2,2 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned treatment: 2

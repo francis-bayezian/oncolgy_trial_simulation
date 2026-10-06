@@ -1,0 +1,2031 @@
+{
+ "factors": [
+  {
+   "factor": "Age (FDA standard age bands)",
+   "source": "FDA demographic",
+   "variable": "demographic:age",
+   "note": "",
+   "feasibility_driver": "protocol criteria",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "65-74 years": 10,
+    "< 65 years": 17,
+    ">= 75 years": 3
+   }
+  },
+  {
+   "factor": "Sex",
+   "source": "FDA demographic",
+   "variable": "demographic:sex",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 3 trials; prognostic, A28))",
+   "levels": {
+    "male": 24,
+    "female": 6
+   }
+  },
+  {
+   "factor": "Race",
+   "source": "FDA demographic",
+   "variable": "demographic:race",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "white": 23,
+    "asian": 5,
+    "black_or_african_american": 1,
+    "unknown_or_not_reported": 1
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "source": "FDA demographic",
+   "variable": "demographic:ethnicity",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "hispanic_or_latino": 3,
+    "not_hispanic_or_latino": 27
+   }
+  },
+  {
+   "factor": "Region",
+   "source": "FDA demographic",
+   "variable": null,
+   "note": "not simulated: the recruitment model has no site country",
+   "feasibility_driver": null,
+   "prevalence_source": null,
+   "outcome_driver": null
+  },
+  {
+   "factor": "T2 to T4 disease",
+   "source": "baseline disease factor",
+   "variable": "umls:C0699749",
+   "note": "",
+   "feasibility_driver": "protocol criteria",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "T2 to T4": 11,
+    "not recorded": 19
+   }
+  },
+  {
+   "factor": "ECOG Performance Status",
+   "source": "baseline disease factor",
+   "variable": "var:ecog_performance_status",
+   "note": "",
+   "feasibility_driver": "protocol criteria",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "0": 21,
+    "1": 9
+   }
+  }
+ ],
+ "rows": [
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "65-74 years",
+   "arm": "ARM1",
+   "n": 10,
+   "small_n": false,
+   "efficacy_evaluable": 10,
+   "best_overall_response": {
+    "PD": 3,
+    "CR": 1,
+    "SD": 6
+   },
+   "objective_response": {
+    "n": 1,
+    "rate": 0.1,
+    "ci95_exact": [
+     0.0025,
+     0.445
+    ]
+   },
+   "disease_control": {
+    "n": 7,
+    "rate": 0.7,
+    "ci95_exact": [
+     0.3475,
+     0.9333
+    ]
+   },
+   "PFS": {
+    "n": 10,
+    "events": 10,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     7.36
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "OS": {
+    "n": 10,
+    "events": 10,
+    "censored": 0,
+    "median_months": 11.69,
+    "median_ci95_months": [
+     3.42,
+     24.22
+    ],
+    "landmark_12m_percent": 50.0
+   },
+   "TTP": {
+    "n": 10,
+    "events": 9,
+    "censored": 1,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     1.84,
+     7.36
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "DOR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "TTR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 10,
+    "grade_3_plus": 6,
+    "sae": 6,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 2
+   },
+   "disposition": {
+    "completed planned treatment": 6,
+    "disease progression": 4
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "arm": "ARM1",
+   "n": 17,
+   "small_n": false,
+   "efficacy_evaluable": 17,
+   "best_overall_response": {
+    "NE": 1,
+    "SD": 8,
+    "PD": 3,
+    "CR": 4,
+    "PR": 1
+   },
+   "objective_response": {
+    "n": 5,
+    "rate": 0.2941,
+    "ci95_exact": [
+     0.1031,
+     0.5596
+    ]
+   },
+   "disease_control": {
+    "n": 13,
+    "rate": 0.7647,
+    "ci95_exact": [
+     0.501,
+     0.9319
+    ]
+   },
+   "PFS": {
+    "n": 17,
+    "events": 17,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     12.77
+    ],
+    "landmark_12m_percent": 29.4
+   },
+   "OS": {
+    "n": 17,
+    "events": 17,
+    "censored": 0,
+    "median_months": 15.49,
+    "median_ci95_months": [
+     5.24,
+     30.64
+    ],
+    "landmark_12m_percent": 58.8
+   },
+   "TTP": {
+    "n": 17,
+    "events": 12,
+    "censored": 5,
+    "median_months": 9.2,
+    "median_ci95_months": [
+     3.68,
+     16.56
+    ],
+    "landmark_12m_percent": 38.1
+   },
+   "DOR": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 7.36,
+    "median_ci95_months": [
+     1.56,
+     null
+    ],
+    "landmark_12m_percent": 20.0
+   },
+   "TTR": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 17,
+    "grade_3_plus": 5,
+    "sae": 5,
+    "ae_leading_to_discontinuation": 1,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 1
+   },
+   "disposition": {
+    "completed planned treatment": 12,
+    "adverse event (registry discontinuation rate)": 1,
+    "disease progression": 4
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": ">= 75 years",
+   "arm": "ARM1",
+   "n": 3,
+   "small_n": true,
+   "efficacy_evaluable": 3,
+   "best_overall_response": {
+    "PR": 1,
+    "SD": 1,
+    "PD": 1
+   },
+   "objective_response": {
+    "n": 1,
+    "rate": 0.3333,
+    "ci95_exact": [
+     0.0084,
+     0.9057
+    ]
+   },
+   "disease_control": {
+    "n": 2,
+    "rate": 0.6667,
+    "ci95_exact": [
+     0.0943,
+     0.9916
+    ]
+   },
+   "PFS": {
+    "n": 3,
+    "events": 3,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "OS": {
+    "n": 3,
+    "events": 3,
+    "censored": 0,
+    "median_months": 6.8,
+    "median_ci95_months": [
+     5.68,
+     null
+    ],
+    "landmark_12m_percent": 33.3
+   },
+   "TTP": {
+    "n": 3,
+    "events": 3,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "DOR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "TTR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 3,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned treatment": 3
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "female",
+   "arm": "ARM1",
+   "n": 6,
+   "small_n": true,
+   "efficacy_evaluable": 6,
+   "best_overall_response": {
+    "SD": 5,
+    "CR": 1
+   },
+   "objective_response": {
+    "n": 1,
+    "rate": 0.1667,
+    "ci95_exact": [
+     0.0042,
+     0.6412
+    ]
+   },
+   "disease_control": {
+    "n": 6,
+    "rate": 1.0,
+    "ci95_exact": [
+     0.5407,
+     1.0
+    ]
+   },
+   "PFS": {
+    "n": 6,
+    "events": 6,
+    "censored": 0,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     3.68,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "OS": {
+    "n": 6,
+    "events": 6,
+    "censored": 0,
+    "median_months": 9.33,
+    "median_ci95_months": [
+     4.24,
+     null
+    ],
+    "landmark_12m_percent": 33.3
+   },
+   "TTP": {
+    "n": 6,
+    "events": 6,
+    "censored": 0,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     3.68,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "DOR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 7.36,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "TTR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 6,
+    "grade_3_plus": 1,
+    "sae": 1,
+    "ae_leading_to_discontinuation": 1,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 1
+   },
+   "disposition": {
+    "adverse event (registry discontinuation rate)": 1,
+    "disease progression": 2,
+    "completed planned treatment": 3
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "arm": "ARM1",
+   "n": 24,
+   "small_n": false,
+   "efficacy_evaluable": 24,
+   "best_overall_response": {
+    "PD": 7,
+    "NE": 1,
+    "PR": 2,
+    "SD": 10,
+    "CR": 4
+   },
+   "objective_response": {
+    "n": 6,
+    "rate": 0.25,
+    "ci95_exact": [
+     0.0977,
+     0.4671
+    ]
+   },
+   "disease_control": {
+    "n": 16,
+    "rate": 0.6667,
+    "ci95_exact": [
+     0.4468,
+     0.8437
+    ]
+   },
+   "PFS": {
+    "n": 24,
+    "events": 24,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     7.36
+    ],
+    "landmark_12m_percent": 20.8
+   },
+   "OS": {
+    "n": 24,
+    "events": 24,
+    "censored": 0,
+    "median_months": 15.49,
+    "median_ci95_months": [
+     6.8,
+     23.12
+    ],
+    "landmark_12m_percent": 58.3
+   },
+   "TTP": {
+    "n": 24,
+    "events": 18,
+    "censored": 6,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     9.2
+    ],
+    "landmark_12m_percent": 26.4
+   },
+   "DOR": {
+    "n": 6,
+    "events": 6,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.56,
+     null
+    ],
+    "landmark_12m_percent": 16.7
+   },
+   "TTR": {
+    "n": 6,
+    "events": 6,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 24,
+    "grade_3_plus": 10,
+    "sae": 10,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 2
+   },
+   "disposition": {
+    "completed planned treatment": 18,
+    "disease progression": 6
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "asian",
+   "arm": "ARM1",
+   "n": 5,
+   "small_n": true,
+   "efficacy_evaluable": 5,
+   "best_overall_response": {
+    "PR": 1,
+    "PD": 1,
+    "SD": 2,
+    "CR": 1
+   },
+   "objective_response": {
+    "n": 2,
+    "rate": 0.4,
+    "ci95_exact": [
+     0.0527,
+     0.8534
+    ]
+   },
+   "disease_control": {
+    "n": 4,
+    "rate": 0.8,
+    "ci95_exact": [
+     0.2836,
+     0.9949
+    ]
+   },
+   "PFS": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 20.0
+   },
+   "OS": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 11.69,
+    "median_ci95_months": [
+     3.03,
+     null
+    ],
+    "landmark_12m_percent": 40.0
+   },
+   "TTP": {
+    "n": 5,
+    "events": 3,
+    "censored": 2,
+    "median_months": 7.36,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 26.7
+   },
+   "DOR": {
+    "n": 2,
+    "events": 2,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 50.0
+   },
+   "TTR": {
+    "n": 2,
+    "events": 2,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 5,
+    "grade_3_plus": 2,
+    "sae": 2,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned treatment": 3,
+    "disease progression": 2
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "black_or_african_american",
+   "arm": "ARM1",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 1,
+   "best_overall_response": {
+    "PD": 1
+   },
+   "objective_response": {
+    "n": 0,
+    "rate": 0.0,
+    "ci95_exact": [
+     0.0,
+     0.975
+    ]
+   },
+   "disease_control": {
+    "n": 0,
+    "rate": 0.0,
+    "ci95_exact": [
+     0.0,
+     0.975
+    ]
+   },
+   "PFS": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "OS": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 13.13,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 100.0
+   },
+   "TTP": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 1,
+    "grade_3_plus": 1,
+    "sae": 1,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "disease progression": 1
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM1",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 1,
+   "best_overall_response": {
+    "PD": 1
+   },
+   "objective_response": {
+    "n": 0,
+    "rate": 0.0,
+    "ci95_exact": [
+     0.0,
+     0.975
+    ]
+   },
+   "disease_control": {
+    "n": 0,
+    "rate": 0.0,
+    "ci95_exact": [
+     0.0,
+     0.975
+    ]
+   },
+   "PFS": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "OS": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 23.0,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 100.0
+   },
+   "TTP": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 1,
+    "grade_3_plus": 1,
+    "sae": 1,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned treatment": 1
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "arm": "ARM1",
+   "n": 23,
+   "small_n": false,
+   "efficacy_evaluable": 23,
+   "best_overall_response": {
+    "PD": 4,
+    "NE": 1,
+    "SD": 13,
+    "CR": 4,
+    "PR": 1
+   },
+   "objective_response": {
+    "n": 5,
+    "rate": 0.2174,
+    "ci95_exact": [
+     0.0746,
+     0.437
+    ]
+   },
+   "disease_control": {
+    "n": 18,
+    "rate": 0.7826,
+    "ci95_exact": [
+     0.563,
+     0.9254
+    ]
+   },
+   "PFS": {
+    "n": 23,
+    "events": 23,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.68,
+     7.36
+    ],
+    "landmark_12m_percent": 17.4
+   },
+   "OS": {
+    "n": 23,
+    "events": 23,
+    "censored": 0,
+    "median_months": 12.77,
+    "median_ci95_months": [
+     7.82,
+     21.39
+    ],
+    "landmark_12m_percent": 52.2
+   },
+   "TTP": {
+    "n": 23,
+    "events": 19,
+    "censored": 4,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     3.68,
+     11.04
+    ],
+    "landmark_12m_percent": 18.5
+   },
+   "DOR": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.56,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "TTR": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 23,
+    "grade_3_plus": 7,
+    "sae": 7,
+    "ae_leading_to_discontinuation": 1,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 3
+   },
+   "disposition": {
+    "completed planned treatment": 17,
+    "adverse event (registry discontinuation rate)": 1,
+    "disease progression": 5
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "arm": "ARM1",
+   "n": 3,
+   "small_n": true,
+   "efficacy_evaluable": 3,
+   "best_overall_response": {
+    "PD": 1,
+    "SD": 1,
+    "CR": 1
+   },
+   "objective_response": {
+    "n": 1,
+    "rate": 0.3333,
+    "ci95_exact": [
+     0.0084,
+     0.9057
+    ]
+   },
+   "disease_control": {
+    "n": 2,
+    "rate": 0.6667,
+    "ci95_exact": [
+     0.0943,
+     0.9916
+    ]
+   },
+   "PFS": {
+    "n": 3,
+    "events": 3,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 33.3
+   },
+   "OS": {
+    "n": 3,
+    "events": 3,
+    "censored": 0,
+    "median_months": 11.93,
+    "median_ci95_months": [
+     4.44,
+     null
+    ],
+    "landmark_12m_percent": 33.3
+   },
+   "TTP": {
+    "n": 3,
+    "events": 2,
+    "censored": 1,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": null
+   },
+   "DOR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 9.09,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "TTR": {
+    "n": 1,
+    "events": 1,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 3,
+    "grade_3_plus": 2,
+    "sae": 2,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned treatment": 3
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "arm": "ARM1",
+   "n": 27,
+   "small_n": false,
+   "efficacy_evaluable": 27,
+   "best_overall_response": {
+    "NE": 1,
+    "SD": 14,
+    "PR": 2,
+    "PD": 6,
+    "CR": 4
+   },
+   "objective_response": {
+    "n": 6,
+    "rate": 0.2222,
+    "ci95_exact": [
+     0.0862,
+     0.4226
+    ]
+   },
+   "disease_control": {
+    "n": 20,
+    "rate": 0.7407,
+    "ci95_exact": [
+     0.5372,
+     0.8889
+    ]
+   },
+   "PFS": {
+    "n": 27,
+    "events": 27,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.03,
+     7.36
+    ],
+    "landmark_12m_percent": 14.8
+   },
+   "OS": {
+    "n": 27,
+    "events": 27,
+    "censored": 0,
+    "median_months": 15.49,
+    "median_ci95_months": [
+     7.82,
+     23.12
+    ],
+    "landmark_12m_percent": 55.6
+   },
+   "TTP": {
+    "n": 27,
+    "events": 22,
+    "censored": 5,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.68,
+     9.2
+    ],
+    "landmark_12m_percent": 18.0
+   },
+   "DOR": {
+    "n": 6,
+    "events": 6,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.56,
+     null
+    ],
+    "landmark_12m_percent": 16.7
+   },
+   "TTR": {
+    "n": 6,
+    "events": 6,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 27,
+    "grade_3_plus": 9,
+    "sae": 9,
+    "ae_leading_to_discontinuation": 1,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 3
+   },
+   "disposition": {
+    "completed planned treatment": 18,
+    "adverse event (registry discontinuation rate)": 1,
+    "disease progression": 8
+   }
+  },
+  {
+   "factor": "T2 to T4 disease",
+   "level": "T2 to T4",
+   "arm": "ARM1",
+   "n": 11,
+   "small_n": false,
+   "efficacy_evaluable": 11,
+   "best_overall_response": {
+    "PD": 2,
+    "SD": 5,
+    "PR": 1,
+    "CR": 3
+   },
+   "objective_response": {
+    "n": 4,
+    "rate": 0.3636,
+    "ci95_exact": [
+     0.1093,
+     0.6921
+    ]
+   },
+   "disease_control": {
+    "n": 9,
+    "rate": 0.8182,
+    "ci95_exact": [
+     0.4822,
+     0.9772
+    ]
+   },
+   "PFS": {
+    "n": 11,
+    "events": 11,
+    "censored": 0,
+    "median_months": 5.24,
+    "median_ci95_months": [
+     1.84,
+     11.04
+    ],
+    "landmark_12m_percent": 18.2
+   },
+   "OS": {
+    "n": 11,
+    "events": 11,
+    "censored": 0,
+    "median_months": 10.25,
+    "median_ci95_months": [
+     4.44,
+     21.39
+    ],
+    "landmark_12m_percent": 45.5
+   },
+   "TTP": {
+    "n": 11,
+    "events": 9,
+    "censored": 2,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     1.84,
+     11.04
+    ],
+    "landmark_12m_percent": 15.9
+   },
+   "DOR": {
+    "n": 4,
+    "events": 4,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.56,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "TTR": {
+    "n": 4,
+    "events": 4,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 11,
+    "grade_3_plus": 3,
+    "sae": 3,
+    "ae_leading_to_discontinuation": 1,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 1
+   },
+   "disposition": {
+    "completed planned treatment": 8,
+    "adverse event (registry discontinuation rate)": 1,
+    "disease progression": 2
+   }
+  },
+  {
+   "factor": "T2 to T4 disease",
+   "level": "not recorded",
+   "arm": "ARM1",
+   "n": 19,
+   "small_n": false,
+   "efficacy_evaluable": 19,
+   "best_overall_response": {
+    "NE": 1,
+    "PD": 5,
+    "SD": 10,
+    "CR": 2,
+    "PR": 1
+   },
+   "objective_response": {
+    "n": 3,
+    "rate": 0.1579,
+    "ci95_exact": [
+     0.0338,
+     0.3958
+    ]
+   },
+   "disease_control": {
+    "n": 13,
+    "rate": 0.6842,
+    "ci95_exact": [
+     0.4345,
+     0.8742
+    ]
+   },
+   "PFS": {
+    "n": 19,
+    "events": 19,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     7.36
+    ],
+    "landmark_12m_percent": 15.8
+   },
+   "OS": {
+    "n": 19,
+    "events": 19,
+    "censored": 0,
+    "median_months": 15.49,
+    "median_ci95_months": [
+     9.33,
+     24.22
+    ],
+    "landmark_12m_percent": 57.9
+   },
+   "TTP": {
+    "n": 19,
+    "events": 15,
+    "censored": 4,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     7.36
+    ],
+    "landmark_12m_percent": 19.4
+   },
+   "DOR": {
+    "n": 3,
+    "events": 3,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 33.3
+   },
+   "TTR": {
+    "n": 3,
+    "events": 3,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 19,
+    "grade_3_plus": 8,
+    "sae": 8,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 2
+   },
+   "disposition": {
+    "completed planned treatment": 13,
+    "disease progression": 6
+   }
+  },
+  {
+   "factor": "ECOG Performance Status",
+   "level": "0",
+   "arm": "ARM1",
+   "n": 21,
+   "small_n": false,
+   "efficacy_evaluable": 21,
+   "best_overall_response": {
+    "PD": 4,
+    "SD": 12,
+    "PR": 1,
+    "CR": 4
+   },
+   "objective_response": {
+    "n": 5,
+    "rate": 0.2381,
+    "ci95_exact": [
+     0.0822,
+     0.4717
+    ]
+   },
+   "disease_control": {
+    "n": 17,
+    "rate": 0.8095,
+    "ci95_exact": [
+     0.5809,
+     0.9455
+    ]
+   },
+   "PFS": {
+    "n": 21,
+    "events": 21,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.42,
+     5.52
+    ],
+    "landmark_12m_percent": 9.5
+   },
+   "OS": {
+    "n": 21,
+    "events": 21,
+    "censored": 0,
+    "median_months": 11.69,
+    "median_ci95_months": [
+     5.68,
+     21.39
+    ],
+    "landmark_12m_percent": 42.9
+   },
+   "TTP": {
+    "n": 21,
+    "events": 17,
+    "censored": 4,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.68,
+     7.36
+    ],
+    "landmark_12m_percent": 11.5
+   },
+   "DOR": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.56,
+     null
+    ],
+    "landmark_12m_percent": 20.0
+   },
+   "TTR": {
+    "n": 5,
+    "events": 5,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 21,
+    "grade_3_plus": 9,
+    "sae": 9,
+    "ae_leading_to_discontinuation": 1,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 3
+   },
+   "disposition": {
+    "completed planned treatment": 14,
+    "adverse event (registry discontinuation rate)": 1,
+    "disease progression": 6
+   }
+  },
+  {
+   "factor": "ECOG Performance Status",
+   "level": "1",
+   "arm": "ARM1",
+   "n": 9,
+   "small_n": true,
+   "efficacy_evaluable": 9,
+   "best_overall_response": {
+    "NE": 1,
+    "PD": 3,
+    "SD": 3,
+    "CR": 1,
+    "PR": 1
+   },
+   "objective_response": {
+    "n": 2,
+    "rate": 0.2222,
+    "ci95_exact": [
+     0.0281,
+     0.6001
+    ]
+   },
+   "disease_control": {
+    "n": 5,
+    "rate": 0.5556,
+    "ci95_exact": [
+     0.212,
+     0.863
+    ]
+   },
+   "PFS": {
+    "n": 9,
+    "events": 9,
+    "censored": 0,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     0.31,
+     14.72
+    ],
+    "landmark_12m_percent": 33.3
+   },
+   "OS": {
+    "n": 9,
+    "events": 9,
+    "censored": 0,
+    "median_months": 17.86,
+    "median_ci95_months": [
+     0.31,
+     30.64
+    ],
+    "landmark_12m_percent": 77.8
+   },
+   "TTP": {
+    "n": 9,
+    "events": 7,
+    "censored": 2,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 37.5
+   },
+   "DOR": {
+    "n": 2,
+    "events": 2,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "TTR": {
+    "n": 2,
+    "events": 2,
+    "censored": 0,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     null
+    ],
+    "landmark_12m_percent": 0.0
+   },
+   "safety": {
+    "any_teae": 9,
+    "grade_3_plus": 2,
+    "sae": 2,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned treatment": 7,
+    "disease progression": 2
+   }
+  }
+ ],
+ "comparisons": [],
+ "feasibility": [
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "65-74 years",
+   "screened": 3215,
+   "eligible": 2490,
+   "eligible_share": 0.7745,
+   "enrolled": 10,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1008
+    },
+    {
+     "criterion": "EL004",
+     "text": "ECOG Performance status 0 or 1",
+     "share_of_screened": 0.0103
+    },
+    {
+     "criterion": "EL028",
+     "text": "Contraindications to cisplatin",
+     "share_of_screened": 0.0096
+    }
+   ]
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "screened": 5269,
+   "eligible": 4053,
+   "eligible_share": 0.7692,
+   "enrolled": 17,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.104
+    },
+    {
+     "criterion": "EL015",
+     "text": "Active Grade ≥2 peripheral neuropathy",
+     "share_of_screened": 0.0091
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0089
+    }
+   ]
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": ">= 75 years",
+   "screened": 1516,
+   "eligible": 1155,
+   "eligible_share": 0.7619,
+   "enrolled": 3,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1055
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0132
+    },
+    {
+     "criterion": "EL003",
+     "text": "T2 to T4 disease, N0 M0 determined by CT imaging and biopsy or transur",
+     "share_of_screened": 0.0125
+    }
+   ]
+  },
+  {
+   "factor": "Sex",
+   "level": "female",
+   "screened": 2268,
+   "eligible": 1731,
+   "eligible_share": 0.7632,
+   "enrolled": 6,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1093
+    },
+    {
+     "criterion": "EL005",
+     "text": "GFR≥60 mls/min.",
+     "share_of_screened": 0.0119
+    },
+    {
+     "criterion": "EL003",
+     "text": "T2 to T4 disease, N0 M0 determined by CT imaging and biopsy or transur",
+     "share_of_screened": 0.0101
+    }
+   ]
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "screened": 7732,
+   "eligible": 5967,
+   "eligible_share": 0.7717,
+   "enrolled": 24,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1014
+    },
+    {
+     "criterion": "EL029",
+     "text": "Patient with reproductive potential not implementing an accepted and e",
+     "share_of_screened": 0.0091
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0091
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "american_indian_or_alaska_native",
+   "screened": 63,
+   "eligible": 51,
+   "eligible_share": 0.8095,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.0476
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0317
+    },
+    {
+     "criterion": "EL019",
+     "text": "Inadequate organ function as evidenced by the following peripheral blo",
+     "share_of_screened": 0.0159
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "asian",
+   "screened": 593,
+   "eligible": 452,
+   "eligible_share": 0.7622,
+   "enrolled": 5,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1046
+    },
+    {
+     "criterion": "EL003",
+     "text": "T2 to T4 disease, N0 M0 determined by CT imaging and biopsy or transur",
+     "share_of_screened": 0.0152
+    },
+    {
+     "criterion": "EL010",
+     "text": "If the EDTA result is < 55mls/min patient is excluded from the study.",
+     "share_of_screened": 0.0118
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "black_or_african_american",
+   "screened": 764,
+   "eligible": 597,
+   "eligible_share": 0.7814,
+   "enrolled": 1,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.0969
+    },
+    {
+     "criterion": "EL022",
+     "text": "Active uncontrolled gastro-oesophageal reflux disease (GORD)",
+     "share_of_screened": 0.0144
+    },
+    {
+     "criterion": "EL020",
+     "text": "Electrocardiogram (ECG) evidence of uncontrolled cardiac arrhythmias,",
+     "share_of_screened": 0.0144
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "more_than_one_race",
+   "screened": 71,
+   "eligible": 56,
+   "eligible_share": 0.7887,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1408
+    },
+    {
+     "criterion": "EL017",
+     "text": "History of severe hypersensitivity reaction (≥Grade 3) to polysorbate",
+     "share_of_screened": 0.0141
+    },
+    {
+     "criterion": "EL015",
+     "text": "Active Grade ≥2 peripheral neuropathy",
+     "share_of_screened": 0.0141
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "native_hawaiian_or_other_pacific_islander",
+   "screened": 18,
+   "eligible": 11,
+   "eligible_share": 0.6111,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1111
+    },
+    {
+     "criterion": "EL017",
+     "text": "History of severe hypersensitivity reaction (≥Grade 3) to polysorbate",
+     "share_of_screened": 0.0556
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0556
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "unknown_or_not_reported",
+   "screened": 367,
+   "eligible": 273,
+   "eligible_share": 0.7439,
+   "enrolled": 1,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1144
+    },
+    {
+     "criterion": "EL025",
+     "text": "Concurrent or planned treatment with strong inhibitors of cytochrome P",
+     "share_of_screened": 0.0163
+    },
+    {
+     "criterion": "EL020",
+     "text": "Electrocardiogram (ECG) evidence of uncontrolled cardiac arrhythmias,",
+     "share_of_screened": 0.0136
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "screened": 8124,
+   "eligible": 6258,
+   "eligible_share": 0.7703,
+   "enrolled": 23,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1033
+    },
+    {
+     "criterion": "EL029",
+     "text": "Patient with reproductive potential not implementing an accepted and e",
+     "share_of_screened": 0.0091
+    },
+    {
+     "criterion": "EL015",
+     "text": "Active Grade ≥2 peripheral neuropathy",
+     "share_of_screened": 0.0091
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "screened": 630,
+   "eligible": 474,
+   "eligible_share": 0.7524,
+   "enrolled": 3,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1238
+    },
+    {
+     "criterion": "EL023",
+     "text": "Active infection requiring systemic antibiotic or anti-fungal medicati",
+     "share_of_screened": 0.0159
+    },
+    {
+     "criterion": "EL020",
+     "text": "Electrocardiogram (ECG) evidence of uncontrolled cardiac arrhythmias,",
+     "share_of_screened": 0.0127
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "screened": 9060,
+   "eligible": 6995,
+   "eligible_share": 0.7721,
+   "enrolled": 27,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1011
+    },
+    {
+     "criterion": "EL029",
+     "text": "Patient with reproductive potential not implementing an accepted and e",
+     "share_of_screened": 0.0091
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0091
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "screened": 310,
+   "eligible": 229,
+   "eligible_share": 0.7387,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1226
+    },
+    {
+     "criterion": "EL013",
+     "text": "Lymph node involvement or metastatic disease",
+     "share_of_screened": 0.0194
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0161
+    }
+   ]
+  },
+  {
+   "factor": "T2 to T4 disease",
+   "level": "T2 to T4",
+   "screened": 2970,
+   "eligible": 2278,
+   "eligible_share": 0.767,
+   "enrolled": 11,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.1061
+    },
+    {
+     "criterion": "EL013",
+     "text": "Lymph node involvement or metastatic disease",
+     "share_of_screened": 0.0108
+    },
+    {
+     "criterion": "EL004",
+     "text": "ECOG Performance status 0 or 1",
+     "share_of_screened": 0.0098
+    }
+   ]
+  },
+  {
+   "factor": "T2 to T4 disease",
+   "level": "not recorded",
+   "screened": 7030,
+   "eligible": 5420,
+   "eligible_share": 0.771,
+   "enrolled": 19,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 0.102
+    },
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.01
+    },
+    {
+     "criterion": "EL015",
+     "text": "Active Grade ≥2 peripheral neuropathy",
+     "share_of_screened": 0.0091
+    }
+   ]
+  },
+  {
+   "factor": "ECOG Performance Status",
+   "level": "0",
+   "screened": 4615,
+   "eligible": 3954,
+   "eligible_share": 0.8568,
+   "enrolled": 21,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL021",
+     "text": "Uncontrolled diabetes mellitus",
+     "share_of_screened": 0.0104
+    },
+    {
+     "criterion": "EL015",
+     "text": "Active Grade ≥2 peripheral neuropathy",
+     "share_of_screened": 0.01
+    },
+    {
+     "criterion": "EL019",
+     "text": "Inadequate organ function as evidenced by the following peripheral blo",
+     "share_of_screened": 0.0093
+    }
+   ]
+  },
+  {
+   "factor": "ECOG Performance Status",
+   "level": "1",
+   "screened": 4353,
+   "eligible": 3744,
+   "eligible_share": 0.8601,
+   "enrolled": 9,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL028",
+     "text": "Contraindications to cisplatin",
+     "share_of_screened": 0.0101
+    },
+    {
+     "criterion": "EL013",
+     "text": "Lymph node involvement or metastatic disease",
+     "share_of_screened": 0.0096
+    },
+    {
+     "criterion": "EL020",
+     "text": "Electrocardiogram (ECG) evidence of uncontrolled cardiac arrhythmias,",
+     "share_of_screened": 0.0092
+    }
+   ]
+  },
+  {
+   "factor": "ECOG Performance Status",
+   "level": "2 or more",
+   "screened": 1032,
+   "eligible": 0,
+   "eligible_share": 0.0,
+   "enrolled": 0,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "ECOG Performance Status ≥ 2",
+     "share_of_screened": 1.0
+    },
+    {
+     "criterion": "EL003",
+     "text": "T2 to T4 disease, N0 M0 determined by CT imaging and biopsy or transur",
+     "share_of_screened": 0.0136
+    },
+    {
+     "criterion": "EL029",
+     "text": "Patient with reproductive potential not implementing an accepted and e",
+     "share_of_screened": 0.0136
+    }
+   ]
+  }
+ ]
+}

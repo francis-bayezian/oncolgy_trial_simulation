@@ -1,0 +1,19 @@
+Factor,Level,Arm vs control,N / N control,ORR difference % (95% CI),PFS HR (95% CI),OS HR (95% CI)
+baseline PSA categories,Higher than or equal to 100 ng/mL,ARM2 vs ARM1,24 / 24,-,-,-
+baseline PSA categories,Higher than or equal to 2 ng/mL but less than 20 ng/mL,ARM2 vs ARM1,11 / 11,-,-,-
+baseline PSA categories,Higher than or equal to 20 ng/mL but less than 100 ng/mL,ARM2 vs ARM1,17 / 17,-,-,-
+Age (FDA standard age bands),65-74 years,ARM2 vs ARM1,15 / 15,-,-,-
+Age (FDA standard age bands),< 65 years,ARM2 vs ARM1,31 / 31,-,-,-
+Age (FDA standard age bands),>= 75 years,ARM2 vs ARM1,6 / 6,-,-,-
+Sex,male,ARM2 vs ARM1,52 / 52,-,-,-
+Race,asian,ARM2 vs ARM1,6 / 6,-,-,-
+Race,black_or_african_american,ARM2 vs ARM1,2 / 2,-,-,-
+Race,more_than_one_race,ARM2 vs ARM1,1 / 1,-,-,-
+Race,unknown_or_not_reported,ARM2 vs ARM1,1 / 1,-,-,-
+Race,white,ARM2 vs ARM1,42 / 42,-,-,-
+Ethnicity,hispanic_or_latino,ARM2 vs ARM1,1 / 1,-,-,-
+Ethnicity,not_hispanic_or_latino,ARM2 vs ARM1,49 / 49,-,-,-
+Ethnicity,unknown_or_not_reported,ARM2 vs ARM1,2 / 2,-,-,-
+Ecog performance status,0,ARM2 vs ARM1,22 / 22,-,-,-
+Ecog performance status,1,ARM2 vs ARM1,28 / 28,-,-,-
+Ecog performance status,2 or more,ARM2 vs ARM1,2 / 2,-,-,-

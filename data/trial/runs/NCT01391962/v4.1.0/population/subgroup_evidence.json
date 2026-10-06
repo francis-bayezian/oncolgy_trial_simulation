@@ -1,0 +1,116 @@
+{
+ "version": "subgroup-evidence-1.0.0",
+ "family": "sarcoma",
+ "phase": null,
+ "factors": [
+  {
+   "key": "var:the_initial_13_patients",
+   "text": "the initial 13 patients",
+   "levels": [],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "NO_LEVELS",
+    "levels": [],
+    "p": [],
+    "source": "the protocol states no levels and no registry table reports the factor"
+   },
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no levels"
+   }
+  },
+  {
+   "key": "var:rest_of_the_patients",
+   "text": "rest of the patients",
+   "levels": [],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "NO_LEVELS",
+    "levels": [],
+    "p": [],
+    "source": "the protocol states no levels and no registry table reports the factor"
+   },
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no levels"
+   }
+  },
+  {
+   "key": "var:patients_with_newly_diagnosed_asps_and_clinical_evidence_of_",
+   "text": "Patients with newly diagnosed ASPS and clinical evidence of disease progression",
+   "levels": [],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "NO_LEVELS",
+    "levels": [],
+    "p": [],
+    "source": "the protocol states no levels and no registry table reports the factor"
+   },
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no levels"
+   }
+  },
+  {
+   "key": "var:ecog_performance_status",
+   "text": "ECOG performance status (0, 1, 2 or more)",
+   "levels": [
+    "0",
+    "1",
+    "2 or more"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "0": 0.3872,
+    "1": 0.5499,
+    "2 or more": 0.0629
+   },
+   "effects": {
+    "reference_level": "0",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "demographic:sex",
+   "text": "sex (female, male)",
+   "levels": [
+    "female",
+    "male"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "female": 0.4815,
+    "male": 0.5185
+   },
+   "effects": {
+    "reference_level": "female",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "male": {
+      "log_effect": 0.0485,
+      "trials": 3,
+      "range_10_90": [
+       0.039,
+       0.24
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  }
+ ],
+ "assumptions": [
+  "A27_subgroup_prevalence_equal",
+  "A28_prognostic_effects"
+ ]
+}

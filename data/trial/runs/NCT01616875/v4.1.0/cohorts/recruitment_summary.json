@@ -1,0 +1,77 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "a1b01e69016caaaea6f2842aada05174c861b2c6deacd18f0665988256f7b174",
+  "population": "d3b6ce1fc5073e5de70695c60528efd44c5474a66898e01ad319b32bb2fc8bca",
+  "eligibility": "37a00df6d42b972b00b353367bccf08311af5c1f07da263f3c33cd3142918a0a"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 30,
+   "source": "maximum_accrual",
+   "evidence": "up to 30 patients will be required"
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_8.4_per_year",
+    "rate_per_year": 8.395492186523885,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 1.8344799704028187,
+     "p30": 4.441237261263312,
+     "p50": 8.395492186523885,
+     "p70": 16.508273720007928,
+     "p90": 43.5680090758688
+    }
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_8.4_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "Cabazitaxel 15 mg/m2 day 1 + cisplatin 70mg/ m2 day 1",
+    "description": "Four cycles of chemotherapy using a combination regimen comprising: Cabazitaxel 15 mg/m2 day 1 + cisplatin 70mg/ m2 day 1. The combination treatment is prescribed every 21 days."
+   }
+  ],
+  "arm_status_note": "arms stated as open",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "This study is not randomised.",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": []
+ },
+ "summary": {
+  "pool": 7698,
+  "target": {
+   "patients": 30,
+   "source": "maximum_accrual",
+   "evidence": "up to 30 patients will be required"
+  },
+  "scenarios": {
+   "accrual_historical_8.4_per_year": {
+    "enrolled": 30,
+    "accrual_years": 4.633915149496588,
+    "arms": {
+     "ARM1": 30
+    },
+    "strata": {
+     "null": 30
+    },
+    "sex": {
+     "male": 24,
+     "female": 6
+    },
+    "age_mean": 63.21233333333334
+   }
+  },
+  "headline_scenario": "accrual_historical_8.4_per_year"
+ }
+}

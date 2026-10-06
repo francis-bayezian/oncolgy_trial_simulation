@@ -1,0 +1,536 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "0cc9e71cce40a2f7c144150475af7adc2485d80a8fbb3ce3efaa4dc7fa10bbab"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "Cabozantinib",
+   "started": 29,
+   "end_of_treatment": {
+    "disease progression": 21,
+    "death": 1,
+    "adverse event (all agents discontinued)": 5,
+    "withdrawal (subject, loss to follow-up or physician decision)": 1,
+    "adverse event (registry discontinuation rate)": 1
+   },
+   "deaths": 1
+  },
+  "ARM2": {
+   "arm": "BEVACIZUMAB",
+   "started": 28,
+   "end_of_treatment": {
+    "adverse event (all agents discontinued)": 9,
+    "death": 1,
+    "disease progression": 17,
+    "adverse event (registry discontinuation rate)": 1
+   },
+   "deaths": 2
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "Efficacy: assessed by the proportion of patients with disease control rate 3 months after\ncabozantinib treatment initiation.",
+   "role": "primary",
+   "class": "proportion",
+   "variable": "disease_control_rate",
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "responders": 11,
+     "rate": 0.3793,
+     "ci95": [
+      0.2068686994865071,
+      0.5773953593355987
+     ],
+     "predictive_rate": {
+      "p10": 0.3103448275862069,
+      "p30": 0.3793103448275862,
+      "p50": 0.4482758620689655,
+      "p70": 0.5172413793103449,
+      "p90": 0.5862068965517241
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.43857089699361856,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting disease_control_rate (4 studies)",
+      "ci95": [
+       0.33265124344650854,
+       0.5504007730832412
+      ]
+     }
+    },
+    "ARM2": {
+     "patients": 28,
+     "responders": 13,
+     "rate": 0.4643,
+     "ci95": [
+      0.27510856029659614,
+      0.6613009238854
+     ],
+     "predictive_rate": {
+      "p10": 0.32142857142857145,
+      "p30": 0.35714285714285715,
+      "p50": 0.42857142857142855,
+      "p70": 0.5,
+      "p90": 0.5714285714285714
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.43857089699361856,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting disease_control_rate (4 studies)",
+      "ci95": [
+       0.33265124344650854,
+       0.5504007730832412
+      ]
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Safety assessed by the proportion of patients with clinical gastro-intestinal (GI)\nperforation/fistula, GI-vaginal fistula and genito-urinary (GU) fistula events grade ≥ 2 (NCI\nCTCAE V.5) occurring up to 1 month after the end of treatment",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 1,
+     "any_grade3_ae": 1,
+     "stopped_for_ae": 6
+    },
+    "ARM2": {
+     "patients": 28,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 4,
+     "any_grade3_ae": 4,
+     "stopped_for_ae": 10
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Progression-free survival",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "progression_free_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "events": 10,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.25,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "evidence median progression-free survival 5.0 months (whole disease family, 20 studies), exponential",
+      "value": 5.032033596644903,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 3.512853712823966,
+      "p30": 4.4435162633073615,
+      "p50": 5.241543303189505,
+      "p70": 6.446354929308015,
+      "p90": 7.829744988222061
+     }
+    },
+    "ARM2": {
+     "patients": 28,
+     "events": 9,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.25,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "evidence median progression-free survival 5.0 months (whole disease family, 20 studies), exponential",
+      "value": 5.032033596644903,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 3.4854015875026114,
+      "p30": 4.345224438764091,
+      "p50": 5.430179537006023,
+      "p70": 6.406684587826852,
+      "p90": 8.777006631786264
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Objective response rate",
+   "role": "secondary",
+   "class": "proportion",
+   "variable": "objective_response_rate",
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "responders": 9,
+     "rate": 0.3103,
+     "ci95": [
+      0.15284593960863158,
+      0.50832335380999
+     ],
+     "predictive_rate": {
+      "p10": 0.10344827586206896,
+      "p30": 0.1724137931034483,
+      "p50": 0.20689655172413793,
+      "p70": 0.2413793103448276,
+      "p90": 0.3103448275862069
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.20009908615935273,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting objective_response_rate (15 studies)",
+      "ci95": [
+       0.14382417092849198,
+       0.2714128546996796
+      ]
+     }
+    },
+    "ARM2": {
+     "patients": 28,
+     "responders": 3,
+     "rate": 0.1071,
+     "ci95": [
+      0.022665090639058947,
+      0.2822643957153243
+     ],
+     "predictive_rate": {
+      "p10": 0.10714285714285714,
+      "p30": 0.14285714285714285,
+      "p50": 0.17857142857142858,
+      "p70": 0.25,
+      "p90": 0.32142857142857145
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.20009908615935273,
+      "unit": "proportion",
+      "level": "disease family mixture (weak)",
+      "source": "evidence arms reporting objective_response_rate (15 studies)",
+      "ci95": [
+       0.14382417092849198,
+       0.2714128546996796
+      ]
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Overall survival",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "overall_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "events": 0,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.25,
+     "input": {
+      "status": "RESOLVED",
+      "value": 23.106597823531473,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of overall_survival (12 studies)",
+      "detail": {
+       "variable": "overall_survival",
+       "family": "gynecologic",
+       "subgroup": "whole disease family",
+       "median_months": 23.106597823531473,
+       "ci95": [
+        20.098665732554274,
+        26.56469190955473
+       ],
+       "single_trial_80": [
+        14.118399221140779,
+        37.81695464305539
+       ],
+       "studies": 12,
+       "arms": 33,
+       "patients": 4766
+      }
+     },
+     "predictive_median_months": {}
+    },
+    "ARM2": {
+     "patients": 28,
+     "events": 1,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.25,
+     "input": {
+      "status": "RESOLVED",
+      "value": 23.106597823531473,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of overall_survival (12 studies)",
+      "detail": {
+       "variable": "overall_survival",
+       "family": "gynecologic",
+       "subgroup": "whole disease family",
+       "median_months": 23.106597823531473,
+       "ci95": [
+        20.098665732554274,
+        26.56469190955473
+       ],
+       "single_trial_80": [
+        14.118399221140779,
+        37.81695464305539
+       ],
+       "studies": 12,
+       "arms": 33,
+       "patients": 4766
+      }
+     },
+     "predictive_median_months": {
+      "p10": 17.561754455818175,
+      "p30": 27.30793010098965,
+      "p50": 53.04078399313631,
+      "p70": 54.70463508763419,
+      "p90": 56.327270320789694
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Toxicities evaluated according to NCI CTCAE v5.0 criteria",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 1,
+     "any_grade3_ae": 1,
+     "stopped_for_ae": 6
+    },
+    "ARM2": {
+     "patients": 28,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 4,
+     "any_grade3_ae": 4,
+     "stopped_for_ae": 10
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Significant toxicities responsible for interruption or dose reduction of cabozantinib treatment",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 1,
+     "any_grade3_ae": 1,
+     "stopped_for_ae": 6
+    },
+    "ARM2": {
+     "patients": 28,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 4,
+     "any_grade3_ae": 4,
+     "stopped_for_ae": 10
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Proportion of patients requiring cabozantinib dose reduction or treatment stopping for toxicity",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 1,
+     "any_grade3_ae": 1,
+     "stopped_for_ae": 6
+    },
+    "ARM2": {
+     "patients": 28,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 4,
+     "any_grade3_ae": 4,
+     "stopped_for_ae": 10
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Scores of Quality-of-life according to French versions of the self-administered standardized validated questionnaire: EORTC QLQ-C30 and its additional cervix cancer module (QLQ–\nCX24)",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "patient_reported_outcome",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "patient_reported_outcome",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "time to ≥10 points deterioration (TTD)",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 29,
+     "events": 8,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.25,
+     "input": {
+      "status": "RESOLVED",
+      "value": 5.032033596644903,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 4.374614081403559,
+      "p30": 5.53279889981117,
+      "p50": 6.430209388023633,
+      "p70": 7.696275936074741,
+      "p90": 11.041805870456479
+     }
+    },
+    "ARM2": {
+     "patients": 28,
+     "events": 10,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 0.25,
+     "input": {
+      "status": "RESOLVED",
+      "value": 5.032033596644903,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 2.6538768030452378,
+      "p30": 3.595834411458528,
+      "p50": 4.330224769045024,
+      "p70": 5.2652524986166815,
+      "p90": 7.323869542815801
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "nutritional outcomes, including: weight, sarcopenia, biological markers, muscle\nmass, and muscle strength under cabozantinib in advanced cervical carcinoma",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 3,
+  "proportion": 2,
+  "continuous": 0,
+  "safety": 4,
+  "not_simulated": 2
+ }
+}

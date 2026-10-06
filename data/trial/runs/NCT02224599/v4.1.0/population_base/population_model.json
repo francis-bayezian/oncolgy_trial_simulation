@@ -1,0 +1,275 @@
+{
+ "population_version": "population-1.0.0",
+ "seed": 20260927,
+ "n": 10000,
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc",
+  "facts": "2b621bc1e384d35b42891d18442dc265987441e991e26e332c8cf8b084def156",
+  "simulation_parameters": "simulation_parameters_v3"
+ },
+ "model": {
+  "demographic:age": {
+   "source": "simulation_parameters_v3",
+   "type": "age",
+   "eligibility_years": [
+    null,
+    null
+   ],
+   "retrieval": {
+    "matched_path": [
+     "MIXED"
+    ],
+    "matched_level": "age_class",
+    "missing_levels": [
+     "disease_family",
+     "disease",
+     "setting"
+    ],
+    "extrapolation_level": 3,
+    "support": {
+     "direct_studies": 0,
+     "direct_N": 0,
+     "borrowed_parent_studies": 22,
+     "effective_information": 0.42642856125972134,
+     "effective_information_unit": "patient-equivalent N (outcome variance / posterior variance of the context parameter)"
+    }
+   },
+   "age_class_mixture": [
+    {
+     "age_class": "ADULT",
+     "weight": 1.0
+    }
+   ]
+  },
+  "demographic:sex": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "female": 0.4282089662230335,
+    "male": 0.5717910337769665
+   }
+  },
+  "demographic:race": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "white": 0.7232170423159957,
+    "asian": 0.10934371543573077,
+    "unknown_or_not_reported": 0.0473942592007075,
+    "black_or_african_american": 0.10170297163083374,
+    "american_indian_or_alaska_native": 0.0060512680541228315,
+    "more_than_one_race": 0.0091214646465875,
+    "native_hawaiian_or_other_pacific_islander": 0.003169278716021968
+   }
+  },
+  "demographic:ethnicity": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "not_hispanic_or_latino": 0.9025806125645696,
+    "hispanic_or_latino": 0.07169426712547758,
+    "unknown_or_not_reported": 0.025725120309952856
+   }
+  },
+  "umls:C1420583": {
+   "source": "protocol_facts",
+   "type": "unresolved",
+   "reason": "stated shares sum to 1.505 > 1",
+   "facts": [
+    "F002",
+    "F011",
+    "F015"
+   ]
+  },
+  "_unresolved": [
+   "umls:C0001899",
+   "umls:C0005437",
+   "umls:C0005821",
+   "umls:C0006147",
+   "umls:C0010294",
+   "umls:C0019046",
+   "umls:C0023671",
+   "umls:C0027950",
+   "umls:C0032961",
+   "umls:C0038317",
+   "umls:C0151375",
+   "umls:C0242957",
+   "umls:C0370231",
+   "umls:C0476474",
+   "umls:C0517627",
+   "umls:C0540036",
+   "umls:C0744827",
+   "umls:C4721806",
+   "var:ability_to_provide_informed_consent",
+   "var:active_autoimmune_disease",
+   "var:active_immunosuppressive_therapy",
+   "var:active_infectious_process",
+   "var:active_ischemic_heart_disease",
+   "var:active_second_invasive_malignancy",
+   "var:ast",
+   "var:available_potentially_curative_therapeutic_option",
+   "var:birth_control_use_or_agreement",
+   "var:contraindications_to_cyp_imiquimod_allergy",
+   "var:expected_survival",
+   "var:female_reproductive_capacity",
+   "var:geographic_conditions_preventing_follow_up_or_compliance",
+   "var:histologic_confirmation",
+   "var:hiv_history",
+   "var:karnofsky_performance_status",
+   "var:known_allergy_to_cyp_or_imiquimod",
+   "var:leukapheresis_consent",
+   "var:measurable_or_evaluable_disease",
+   "var:myocardial_infarction_history_within_six_months",
+   "var:non_physiologic_systemic_steroids",
+   "var:organ_transplant_history",
+   "var:participation_intent",
+   "var:positive_fish_results",
+   "var:previous_therapy_toxicity_grade",
+   "var:psychological_conditions_preventing_follow_up_or_compliance",
+   "var:recist_confirmed_progressive_or_refractory_sm",
+   "var:reproductive_capacity",
+   "var:sexual_partner_birth_control_use",
+   "var:sm_disease_state",
+   "var:tapa_assay_method",
+   "var:tapa_expression_count",
+   "var:willingness_to_provide_whole_blood"
+  ]
+ },
+ "bindings": [
+  {
+   "fact_id": "F002",
+   "kind": "share_of_category",
+   "variable": "umls:C1420583",
+   "category": "Ropporin",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "It reports the proportion of patients with Ropporin expression.",
+   "issues": [],
+   "rendering": "fact F002 is the share of patients whose TAPBP gene (umls:C1420583) is 'Ropporin' (characteristic_distribution: 'Ropporin expression'; level 'tumor cells derived from the bone marrow'; value 6 of 16 (37.5%) [read as proportion 0.375]; population 'patients with MM'; source historical_study (A study by Li et))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes Ropporin expression, matching the Ropporin category of the TAPBP gene variable."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F003",
+   "kind": "share_of_category",
+   "variable": "umls:C1420583",
+   "category": "Ropporin",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "It reports the proportion of cases with Ropporin expression.",
+   "issues": [],
+   "rendering": "fact F003 is the share of patients whose TAPBP gene (umls:C1420583) is 'Ropporin' (characteristic_distribution: 'Ropporin expression'; level 'cases of CLL'; value 6 of 14 (43%) [read as proportion 0.4286]; population 'tumor cells derived from the bone marrow'; source historical_study (A study by Li et))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes Ropporin expression, which is the specified category of the TAPBP gene variable."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F004",
+   "kind": "share_of_category",
+   "variable": "umls:C1420583",
+   "category": "Ropporin",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "It reports the proportion of cases with Ropporin expression.",
+   "issues": [],
+   "rendering": "fact F004 is the share of patients whose TAPBP gene (umls:C1420583) is 'Ropporin' (characteristic_distribution: 'Ropporin expression'; level 'cases of acute myeloid leukemia'; value 2 of 11 (18%) [read as proportion 0.1818]; population 'tumor cells derived from the bone marrow'; source historical_study (A study by Li et))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes Ropporin expression, which is the specified category of the TAPBP gene variable."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F011",
+   "kind": "share_of_category",
+   "variable": "umls:C1420583",
+   "category": "PTTG-1",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "It reports the proportion of patients with PTTG-1 expression.",
+   "issues": [],
+   "rendering": "fact F011 is the share of patients whose TAPBP gene (umls:C1420583) is 'PTTG-1' (characteristic_distribution: 'PTTG-1 is expressed at the transcriptional level'; level 'being expressed'; value 63% [read as proportion 0.63]; population 'MM patients'; source published_literature ((38)))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes transcriptional expression of the PTTG-1 category of the specified gene variable in MM patients."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "fact_id": "F015",
+   "kind": "share_of_category",
+   "variable": "umls:C1420583",
+   "category": "Span-xb",
+   "variable_2": "",
+   "category_2": "",
+   "condition_item": "",
+   "reason": "It reports the proportion of patients with Span-xb transcripts.",
+   "issues": [],
+   "rendering": "fact F015 is the share of patients whose TAPBP gene (umls:C1420583) is 'Span-xb' (characteristic_distribution: 'Using RT-PCR, we have detected Span-xb transcripts'; level 'patients with AML'; value 50% [read as proportion 0.5]; population 'patients with AML'; source not_stated)",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The fact describes Span-xb transcripts, which corresponds to the Span-xb category of the specified gene variable."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  }
+ ],
+ "summary": {
+  "patients": 10000,
+  "age_mean": 61.517672999999995,
+  "age_range": [
+   10.34,
+   103.41
+  ],
+  "share_known": {
+   "demographic:age": 1.0,
+   "demographic:sex": 1.0,
+   "demographic:race": 1.0,
+   "demographic:ethnicity": 1.0,
+   "umls:C1420583": 0.0
+  },
+  "unresolved_variables": 51,
+  "bindings": 5,
+  "usable_bindings": 5,
+  "sources": {
+   "demographic:age": "simulation_parameters_v3",
+   "demographic:sex": "simulation_parameters_v3",
+   "demographic:race": "simulation_parameters_v3",
+   "demographic:ethnicity": "simulation_parameters_v3",
+   "umls:C1420583": "protocol_facts"
+  }
+ }
+}

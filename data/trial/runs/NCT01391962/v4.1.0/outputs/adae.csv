@@ -1,0 +1,1335 @@
+USUBJID,ARM,AETERM,AESER,SOURCE
+S0001,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0001,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0001,ARM2,vomiting,N,safety_v3:RESOLVED
+S0001,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0001,ARM2,fever,N,safety_v3:RESOLVED
+S0001,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0001,ARM2,pain,N,safety_v3:RESOLVED
+S0001,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0001,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0001,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0001,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0001,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0001,ARM2,lipase,N,safety_v3:RESOLVED
+S0001,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0001,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0001,ARM2,flatulence,N,safety_v3:RESOLVED
+S0001,ARM2,diarrhea,N,protocol:F116
+S0001,ARM2,hand-foot skin reactions,N,protocol:F136
+S0001,ARM2,skin discoloration,N,protocol:F138
+S0001,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0001,ARM2,Bleeding events,N,protocol:F168
+S0001,ARM2,Hypothyroidism,N,protocol:F170
+S0002,ARM2,fatigue,N,safety_v3:RESOLVED
+S0002,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0002,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0002,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0002,ARM2,fever,N,safety_v3:RESOLVED
+S0002,ARM2,coughing,N,safety_v3:RESOLVED
+S0002,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0002,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0002,ARM2,headache,N,safety_v3:RESOLVED
+S0002,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0002,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0002,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0002,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0002,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0002,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0002,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0002,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0002,ARM2,lipase,N,safety_v3:RESOLVED
+S0002,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0002,ARM2,flatulence,N,safety_v3:RESOLVED
+S0002,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0002,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0002,ARM2,Severe hypertension,N,protocol:F161
+S0002,ARM2,hypertension,N,protocol:F165
+S0002,ARM2,Hypothyroidism,N,protocol:F170
+S0003,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0003,ARM2,vomiting,N,safety_v3:RESOLVED
+S0003,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0003,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0003,ARM2,fever,N,safety_v3:RESOLVED
+S0003,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0003,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0003,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0003,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0003,ARM2,lipase,N,safety_v3:RESOLVED
+S0003,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0003,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0003,ARM2,hypertension,N,protocol:F114
+S0003,ARM2,Hypothyroidism,N,protocol:F170
+S0003,ARM2,Hypothyroidism,N,protocol:F171
+S0004,ARM2,fatigue,N,safety_v3:RESOLVED
+S0004,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0004,ARM2,vomiting,N,safety_v3:RESOLVED
+S0004,ARM2,fever,N,safety_v3:RESOLVED
+S0004,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0004,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0004,ARM2,headache,N,safety_v3:RESOLVED
+S0004,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0004,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0004,ARM2,back_pain,N,safety_v3:RESOLVED
+S0004,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0004,ARM2,lipase,N,safety_v3:RESOLVED
+S0004,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0004,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0004,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0004,ARM2,flatulence,N,safety_v3:RESOLVED
+S0004,ARM2,diarrhea,N,protocol:F116
+S0004,ARM2,hypertension,N,protocol:F165
+S0005,ARM2,nausea,N,safety_v3:RESOLVED
+S0005,ARM2,stomatitis,N,safety_v3:RESOLVED
+S0005,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0005,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0005,ARM2,fever,N,safety_v3:RESOLVED
+S0005,ARM2,coughing,N,safety_v3:RESOLVED
+S0005,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0005,ARM2,pain,N,safety_v3:RESOLVED
+S0005,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0005,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0005,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0005,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0005,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0005,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0005,ARM2,lipase,N,safety_v3:RESOLVED
+S0005,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0005,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0005,ARM2,flatulence,N,safety_v3:RESOLVED
+S0005,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0005,ARM2,hand-foot skin reactions,N,protocol:F137
+S0005,ARM2,dermatitis,N,protocol:F143
+S0005,ARM2,left ventricular systolic dysfunction,N,protocol:F154
+S0005,ARM2,hypertension,N,protocol:F165
+S0005,ARM2,Hypothyroidism,N,protocol:F170
+S0005,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0006,ARM2,nausea,N,safety_v3:RESOLVED
+S0006,ARM2,stomatitis,N,safety_v3:RESOLVED
+S0006,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0006,ARM2,anemia,N,safety_v3:RESOLVED
+S0006,ARM2,pain,N,safety_v3:RESOLVED
+S0006,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0006,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0006,ARM2,pain_in_limb,N,safety_v3:RESOLVED
+S0006,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0006,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0006,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0006,ARM2,lipase,N,safety_v3:RESOLVED
+S0006,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0006,ARM2,flatulence,N,safety_v3:RESOLVED
+S0006,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0006,ARM2,fever,Y,safety_v3:RESOLVED
+S0006,ARM2,hypertension,N,protocol:F114
+S0006,ARM2,hand-foot skin reactions,N,protocol:F136
+S0006,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0006,ARM2,hypertension,N,protocol:F165
+S0006,ARM2,Hypothyroidism,N,protocol:F170
+S0006,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0007,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0007,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0007,ARM2,fever,N,safety_v3:RESOLVED
+S0007,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0007,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0007,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0007,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0007,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0007,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0007,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0007,ARM2,lipase,N,safety_v3:RESOLVED
+S0007,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0007,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0007,ARM2,hypertension,N,protocol:F114
+S0007,ARM2,diarrhea,N,protocol:F116
+S0007,ARM2,hand-foot skin reactions,N,protocol:F136
+S0007,ARM2,Hypothyroidism,N,protocol:F170
+S0007,ARM2,Hypothyroidism,N,protocol:F171
+S0007,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0008,ARM2,fatigue,N,safety_v3:RESOLVED
+S0008,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0008,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0008,ARM2,nausea,N,safety_v3:RESOLVED
+S0008,ARM2,vomiting,N,safety_v3:RESOLVED
+S0008,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0008,ARM2,fever,N,safety_v3:RESOLVED
+S0008,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0008,ARM2,headache,N,safety_v3:RESOLVED
+S0008,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0008,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0008,ARM2,back_pain,N,safety_v3:RESOLVED
+S0008,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0008,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0008,ARM2,lipase,N,safety_v3:RESOLVED
+S0008,ARM2,blood_bilirubin_increased,N,safety_v3:RESOLVED
+S0008,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0008,ARM2,sleeplessness,N,safety_v3:RESOLVED
+S0008,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0008,ARM2,flatulence,N,safety_v3:RESOLVED
+S0008,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0008,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0008,ARM2,Bleeding events,N,protocol:F168
+S0008,ARM2,Hypothyroidism,N,protocol:F170
+S0009,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0009,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0009,ARM2,fever,N,safety_v3:RESOLVED
+S0009,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0009,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0009,ARM2,headache,N,safety_v3:RESOLVED
+S0009,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0009,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0009,ARM2,pain_in_limb,N,safety_v3:RESOLVED
+S0009,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0009,ARM2,back_pain,N,safety_v3:RESOLVED
+S0009,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0009,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0009,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0009,ARM2,lipase,N,safety_v3:RESOLVED
+S0009,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0009,ARM2,flatulence,N,safety_v3:RESOLVED
+S0009,ARM2,hair color changes,N,protocol:F145
+S0010,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0010,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0010,ARM2,vomiting,N,safety_v3:RESOLVED
+S0010,ARM2,fever,N,safety_v3:RESOLVED
+S0010,ARM2,pain,N,safety_v3:RESOLVED
+S0010,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0010,ARM2,headache,N,safety_v3:RESOLVED
+S0010,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0010,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0010,ARM2,back_pain,N,safety_v3:RESOLVED
+S0010,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0010,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0010,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0010,ARM2,lipase,N,safety_v3:RESOLVED
+S0010,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0010,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0010,ARM2,flatulence,N,safety_v3:RESOLVED
+S0011,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0011,ARM2,vomiting,N,safety_v3:RESOLVED
+S0011,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0011,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0011,ARM2,fever,N,safety_v3:RESOLVED
+S0011,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0011,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0011,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0011,ARM2,pain_in_limb,N,safety_v3:RESOLVED
+S0011,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0011,ARM2,lipase,N,safety_v3:RESOLVED
+S0011,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0011,ARM2,diarrhea,Y,safety_v3:RESOLVED
+S0011,ARM2,fatigue,N,protocol:F115
+S0011,ARM2,alopecia,N,protocol:F146
+S0011,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0011,ARM2,Hypothyroidism,N,protocol:F170
+S0011,ARM2,Hypothyroidism,N,protocol:F171
+S0012,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0012,ARM2,stomatitis,N,safety_v3:RESOLVED
+S0012,ARM2,vomiting,N,safety_v3:RESOLVED
+S0012,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0012,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0012,ARM2,fever,N,safety_v3:RESOLVED
+S0012,ARM2,coughing,N,safety_v3:RESOLVED
+S0012,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0012,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0012,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0012,ARM2,lipase,N,safety_v3:RESOLVED
+S0012,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0012,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0012,ARM2,flatulence,N,safety_v3:RESOLVED
+S0012,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0012,ARM2,pruritus,N,safety_v3:RESOLVED
+S0012,ARM2,hand-foot syndrome,N,protocol:F117
+S0012,ARM2,dermatitis,N,protocol:F143
+S0012,ARM2,hypertension,N,protocol:F165
+S0012,ARM2,Hypothyroidism,N,protocol:F170
+S0012,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0013,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0013,ARM2,fever,N,safety_v3:RESOLVED
+S0013,ARM2,hypothyroidism,N,safety_v3:RESOLVED
+S0013,ARM2,pain,N,safety_v3:RESOLVED
+S0013,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0013,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0013,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0013,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0013,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0013,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0013,ARM2,lipase,N,safety_v3:RESOLVED
+S0013,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0013,ARM2,hypertension,N,protocol:F165
+S0013,ARM2,Hypothyroidism,N,protocol:F171
+S0014,ARM2,coughing,N,safety_v3:RESOLVED
+S0014,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0014,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0014,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0014,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0014,ARM2,myalgia,N,safety_v3:RESOLVED
+S0014,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0014,ARM2,lipase,N,safety_v3:RESOLVED
+S0014,ARM2,gastrointestinal_disorders_-_other,N,safety_v3:RESOLVED
+S0014,ARM2,diarrhea,N,protocol:F116
+S0014,ARM2,skin rash,N,protocol:F141
+S0014,ARM2,Hypothyroidism,N,protocol:F170
+S0015,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0015,ARM2,nausea,N,safety_v3:RESOLVED
+S0015,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0015,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0015,ARM2,fever,N,safety_v3:RESOLVED
+S0015,ARM2,pain,N,safety_v3:RESOLVED
+S0015,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0015,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0015,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0015,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0015,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0015,ARM2,neutrophil_count_decreased,N,safety_v3:RESOLVED
+S0015,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0015,ARM2,lipase,N,safety_v3:RESOLVED
+S0015,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0015,ARM2,flatulence,N,safety_v3:RESOLVED
+S0015,ARM2,nausea,Y,safety_v3:RESOLVED
+S0015,ARM2,hypertension,N,protocol:F165
+S0016,ARM2,vomiting,N,safety_v3:RESOLVED
+S0016,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0016,ARM2,fever,N,safety_v3:RESOLVED
+S0016,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0016,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0016,ARM2,headache,N,safety_v3:RESOLVED
+S0016,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0016,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0016,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0016,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0016,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0016,ARM2,lipase,N,safety_v3:RESOLVED
+S0016,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0016,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0016,ARM2,abdominal_pain,Y,safety_v3:RESOLVED
+S0016,ARM2,nausea,Y,safety_v3:RESOLVED
+S0016,ARM2,skin discoloration,N,protocol:F138
+S0016,ARM2,left ventricular dysfunction,N,protocol:F149
+S0016,ARM2,hypertension,N,protocol:F165
+S0016,ARM2,Hypothyroidism,N,protocol:F170
+S0017,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0017,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0017,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0017,ARM2,fever,N,safety_v3:RESOLVED
+S0017,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0017,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0017,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0017,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0017,ARM2,back_pain,N,safety_v3:RESOLVED
+S0017,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0017,ARM2,lipase,N,safety_v3:RESOLVED
+S0017,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0017,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0017,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0017,ARM2,Hypothyroidism,N,protocol:F170
+S0017,ARM2,Hypothyroidism,N,protocol:F171
+S0018,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0018,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0018,ARM2,fever,N,safety_v3:RESOLVED
+S0018,ARM2,pain,N,safety_v3:RESOLVED
+S0018,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0018,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0018,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0018,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0018,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0018,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0018,ARM2,lipase,N,safety_v3:RESOLVED
+S0018,ARM2,blood_bilirubin_increased,N,safety_v3:RESOLVED
+S0018,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0018,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0018,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0018,ARM2,diarrhea,N,protocol:F116
+S0018,ARM2,Hypothyroidism,N,protocol:F171
+S0019,ARM2,fatigue,N,safety_v3:RESOLVED
+S0019,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0019,ARM2,nausea,N,safety_v3:RESOLVED
+S0019,ARM2,vomiting,N,safety_v3:RESOLVED
+S0019,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0019,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0019,ARM2,fever,N,safety_v3:RESOLVED
+S0019,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0019,ARM2,pain,N,safety_v3:RESOLVED
+S0019,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0019,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0019,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0019,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0019,ARM2,alopecia,N,safety_v3:RESOLVED
+S0019,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0019,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0019,ARM2,lipase,N,safety_v3:RESOLVED
+S0019,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0019,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0019,ARM2,pruritus,N,safety_v3:RESOLVED
+S0019,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0019,ARM2,Bleeding events,N,protocol:F168
+S0020,ARM2,stomatitis,N,safety_v3:RESOLVED
+S0020,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0020,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0020,ARM2,fever,N,safety_v3:RESOLVED
+S0020,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0020,ARM2,pain,N,safety_v3:RESOLVED
+S0020,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0020,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0020,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0020,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0020,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0020,ARM2,lipase,N,safety_v3:RESOLVED
+S0020,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0021,ARM2,fatigue,N,safety_v3:RESOLVED
+S0021,ARM2,vomiting,N,safety_v3:RESOLVED
+S0021,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0021,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0021,ARM2,hypothyroidism,N,safety_v3:RESOLVED
+S0021,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0021,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0021,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0021,ARM2,pain_in_limb,N,safety_v3:RESOLVED
+S0021,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0021,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0021,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0021,ARM2,lipase,N,safety_v3:RESOLVED
+S0021,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0021,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0021,ARM2,hyponatremia,N,safety_v3:RESOLVED
+S0021,ARM2,flatulence,N,safety_v3:RESOLVED
+S0021,ARM2,hand-foot syndrome,N,protocol:F117
+S0021,ARM2,skin discoloration,N,protocol:F138
+S0021,ARM2,alopecia,N,protocol:F146
+S0021,ARM2,left ventricular dysfunction,N,protocol:F149
+S0021,ARM2,hypertension,N,protocol:F165
+S0022,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0022,ARM2,vomiting,N,safety_v3:RESOLVED
+S0022,ARM2,fever,N,safety_v3:RESOLVED
+S0022,ARM2,coughing,N,safety_v3:RESOLVED
+S0022,ARM2,pain,N,safety_v3:RESOLVED
+S0022,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0022,ARM2,headache,N,safety_v3:RESOLVED
+S0022,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0022,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0022,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0022,ARM2,back_pain,N,safety_v3:RESOLVED
+S0022,ARM2,lipase,N,safety_v3:RESOLVED
+S0022,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0022,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0022,ARM2,diarrhea,N,protocol:F116
+S0022,ARM2,left ventricular dysfunction,N,protocol:F149
+S0022,ARM2,Bleeding events,N,protocol:F168
+S0022,ARM2,Hypothyroidism,N,protocol:F170
+S0023,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0023,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0023,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0023,ARM2,fever,N,safety_v3:RESOLVED
+S0023,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0023,ARM2,pain,N,safety_v3:RESOLVED
+S0023,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0023,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0023,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0023,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0023,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0023,ARM2,lipase,N,safety_v3:RESOLVED
+S0023,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0023,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0023,ARM2,hand-foot skin reactions,N,protocol:F136
+S0023,ARM2,Severe hypertension,N,protocol:F161
+S0023,ARM2,hypertension,N,protocol:F165
+S0023,ARM2,Hypothyroidism,N,protocol:F170
+S0024,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0024,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0024,ARM2,nausea,N,safety_v3:RESOLVED
+S0024,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0024,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0024,ARM2,pain,N,safety_v3:RESOLVED
+S0024,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0024,ARM2,headache,N,safety_v3:RESOLVED
+S0024,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0024,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0024,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0024,ARM2,lipase,N,safety_v3:RESOLVED
+S0024,ARM2,rash:_hand-foot_skin_reaction,N,safety_v3:RESOLVED
+S0024,ARM2,lymphocyte_count_decreased,N,safety_v3:RESOLVED
+S0024,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0024,ARM2,abdominal_pain,Y,safety_v3:RESOLVED
+S0024,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0024,ARM2,Bleeding events,N,protocol:F168
+S0024,ARM2,Hypothyroidism,N,protocol:F170
+S0025,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0025,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0025,ARM2,fever,N,safety_v3:RESOLVED
+S0025,ARM2,coughing,N,safety_v3:RESOLVED
+S0025,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0025,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0025,ARM2,headache,N,safety_v3:RESOLVED
+S0025,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0025,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0025,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0025,ARM2,back_pain,N,safety_v3:RESOLVED
+S0025,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0025,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0025,ARM2,lipase,N,safety_v3:RESOLVED
+S0025,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0025,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0025,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0025,ARM2,Bleeding events,N,protocol:F168
+S0025,ARM2,Hypothyroidism,N,protocol:F170
+S0025,ARM2,Hypothyroidism,N,protocol:F171
+S0026,ARM2,fatigue,N,safety_v3:RESOLVED
+S0026,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0026,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0026,ARM2,vomiting,N,safety_v3:RESOLVED
+S0026,ARM2,fever,N,safety_v3:RESOLVED
+S0026,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0026,ARM2,pain,N,safety_v3:RESOLVED
+S0026,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0026,ARM2,headache,N,safety_v3:RESOLVED
+S0026,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0026,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0026,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0026,ARM2,back_pain,N,safety_v3:RESOLVED
+S0026,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0026,ARM2,lipase,N,safety_v3:RESOLVED
+S0026,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0026,ARM2,lymphocyte_count_decreased,N,safety_v3:RESOLVED
+S0026,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0026,ARM2,flatulence,N,safety_v3:RESOLVED
+S0026,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0026,ARM2,hypertension,N,protocol:F165
+S0026,ARM2,Bleeding events,N,protocol:F168
+S0026,ARM2,Hypothyroidism,N,protocol:F170
+S0026,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0027,ARM2,stomatitis,N,safety_v3:RESOLVED
+S0027,ARM2,vomiting,N,safety_v3:RESOLVED
+S0027,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0027,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0027,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0027,ARM2,pain,N,safety_v3:RESOLVED
+S0027,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0027,ARM2,headache,N,safety_v3:RESOLVED
+S0027,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0027,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0027,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0027,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0027,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0027,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0027,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0027,ARM2,lipase,N,safety_v3:RESOLVED
+S0027,ARM2,blood_bilirubin_increased,N,safety_v3:RESOLVED
+S0027,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0027,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0027,ARM2,Bleeding events,N,protocol:F168
+S0027,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0028,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0028,ARM2,vomiting,N,safety_v3:RESOLVED
+S0028,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0028,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0028,ARM2,fever,N,safety_v3:RESOLVED
+S0028,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0028,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0028,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0028,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0028,ARM2,back_pain,N,safety_v3:RESOLVED
+S0028,ARM2,lipase,N,safety_v3:RESOLVED
+S0028,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0028,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0028,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0028,ARM2,hand-foot syndrome,N,protocol:F117
+S0028,ARM2,skin discoloration,N,protocol:F138
+S0028,ARM2,hair color changes,N,protocol:F145
+S0028,ARM2,Bleeding events,N,protocol:F168
+S0029,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0029,ARM2,vomiting,N,safety_v3:RESOLVED
+S0029,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0029,ARM2,fever,N,safety_v3:RESOLVED
+S0029,ARM2,pain,N,safety_v3:RESOLVED
+S0029,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0029,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0029,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0029,ARM2,lipase,N,safety_v3:RESOLVED
+S0029,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0029,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0029,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0029,ARM2,leukocytes,N,safety_v3:RESOLVED
+S0029,ARM2,hand-foot skin reactions,N,protocol:F137
+S0029,ARM2,dermatitis,N,protocol:F143
+S0029,ARM2,hypertension,N,protocol:F165
+S0029,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0030,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0030,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0030,ARM2,pain,N,safety_v3:RESOLVED
+S0030,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0030,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0030,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0030,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0030,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0030,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0030,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0030,ARM2,lipase,N,safety_v3:RESOLVED
+S0030,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0030,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0030,ARM2,flatulence,N,safety_v3:RESOLVED
+S0030,ARM2,pruritus,N,safety_v3:RESOLVED
+S0030,ARM2,Hypothyroidism,N,protocol:F170
+S0031,ARM2,fatigue,N,safety_v3:RESOLVED
+S0031,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0031,ARM2,vomiting,N,safety_v3:RESOLVED
+S0031,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0031,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0031,ARM2,fever,N,safety_v3:RESOLVED
+S0031,ARM2,pain,N,safety_v3:RESOLVED
+S0031,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0031,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0031,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0031,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0031,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0031,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0031,ARM2,lipase,N,safety_v3:RESOLVED
+S0031,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0031,ARM2,flatulence,N,safety_v3:RESOLVED
+S0032,ARM2,fatigue,N,safety_v3:RESOLVED
+S0032,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0032,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0032,ARM2,fever,N,safety_v3:RESOLVED
+S0032,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0032,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0032,ARM2,headache,N,safety_v3:RESOLVED
+S0032,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0032,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0032,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0032,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0032,ARM2,lipase,N,safety_v3:RESOLVED
+S0032,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0032,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0032,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0032,ARM2,fatigue,N,protocol:F115
+S0032,ARM2,diarrhea,N,protocol:F116
+S0033,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0033,ARM2,vomiting,N,safety_v3:RESOLVED
+S0033,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0033,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0033,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0033,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0033,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0033,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0033,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0033,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0033,ARM2,neutrophil_count_decreased,N,safety_v3:RESOLVED
+S0033,ARM2,back_pain,N,safety_v3:RESOLVED
+S0033,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0033,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0033,ARM2,lipase,N,safety_v3:RESOLVED
+S0033,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0033,ARM2,anorexia,Y,safety_v3:RESOLVED
+S0033,ARM2,left ventricular dysfunction,N,protocol:F149
+S0033,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0033,ARM2,Hypothyroidism,N,protocol:F170
+S0033,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0034,ARM2,nausea,N,safety_v3:RESOLVED
+S0034,ARM2,vomiting,N,safety_v3:RESOLVED
+S0034,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0034,ARM2,anorexia,N,safety_v3:RESOLVED
+S0034,ARM2,fever,N,safety_v3:RESOLVED
+S0034,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0034,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0034,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0034,ARM2,pain_in_limb,N,safety_v3:RESOLVED
+S0034,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0034,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0034,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0034,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0034,ARM2,lipase,N,safety_v3:RESOLVED
+S0034,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0034,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0034,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0034,ARM2,Hypothyroidism,N,protocol:F170
+S0035,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0035,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0035,ARM2,fever,N,safety_v3:RESOLVED
+S0035,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0035,ARM2,headache,N,safety_v3:RESOLVED
+S0035,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0035,ARM2,neutrophil_count_decreased,N,safety_v3:RESOLVED
+S0035,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0035,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0035,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0035,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0035,ARM2,lipase,N,safety_v3:RESOLVED
+S0035,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0035,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0035,ARM2,leukocytes,N,safety_v3:RESOLVED
+S0035,ARM2,left ventricular dysfunction,N,protocol:F149
+S0035,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0035,ARM2,Hypothyroidism,N,protocol:F170
+S0036,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0036,ARM2,nausea,N,safety_v3:RESOLVED
+S0036,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0036,ARM2,pain,N,safety_v3:RESOLVED
+S0036,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0036,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0036,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0036,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0036,ARM2,lipase,N,safety_v3:RESOLVED
+S0036,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0036,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0036,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0036,ARM2,flatulence,N,safety_v3:RESOLVED
+S0036,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0036,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0036,ARM2,Hypothyroidism,N,protocol:F171
+S0037,ARM2,nausea,N,safety_v3:RESOLVED
+S0037,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0037,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0037,ARM2,fever,N,safety_v3:RESOLVED
+S0037,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0037,ARM2,pain,N,safety_v3:RESOLVED
+S0037,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0037,ARM2,peripheral_edema,N,safety_v3:RESOLVED
+S0037,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0037,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0037,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0037,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0037,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0037,ARM2,lipase,N,safety_v3:RESOLVED
+S0037,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0037,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0037,ARM2,flatulence,N,safety_v3:RESOLVED
+S0037,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0037,ARM2,hypertension,N,protocol:F114
+S0037,ARM2,skin discoloration,N,protocol:F138
+S0037,ARM2,Hypothyroidism,N,protocol:F170
+S0037,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0038,ARM2,fatigue,N,safety_v3:RESOLVED
+S0038,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0038,ARM2,vomiting,N,safety_v3:RESOLVED
+S0038,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0038,ARM2,fever,N,safety_v3:RESOLVED
+S0038,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0038,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0038,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0038,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0038,ARM2,pain_in_limb,N,safety_v3:RESOLVED
+S0038,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0038,ARM2,neutrophil_count_decreased,N,safety_v3:RESOLVED
+S0038,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0038,ARM2,lipase,N,safety_v3:RESOLVED
+S0038,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0038,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0038,ARM2,flatulence,N,safety_v3:RESOLVED
+S0038,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0038,ARM2,dyspnea,Y,safety_v3:RESOLVED
+S0038,ARM2,skin discoloration,N,protocol:F138
+S0038,ARM2,left ventricular dysfunction,N,protocol:F149
+S0038,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0038,ARM2,Bleeding events,N,protocol:F168
+S0038,ARM2,Hypothyroidism,N,protocol:F170
+S0039,ARM2,fatigue,N,safety_v3:RESOLVED
+S0039,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0039,ARM2,vomiting,N,safety_v3:RESOLVED
+S0039,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0039,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0039,ARM2,pain,N,safety_v3:RESOLVED
+S0039,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0039,ARM2,headache,N,safety_v3:RESOLVED
+S0039,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0039,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0039,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0039,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0039,ARM2,lipase,N,safety_v3:RESOLVED
+S0039,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0039,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0039,ARM2,diarrhea,N,protocol:F116
+S0039,ARM2,hypertension,N,protocol:F165
+S0039,ARM2,Hypothyroidism,N,protocol:F171
+S0039,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0040,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0040,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0040,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0040,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0040,ARM2,fever,N,safety_v3:RESOLVED
+S0040,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0040,ARM2,headache,N,safety_v3:RESOLVED
+S0040,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0040,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0040,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0040,ARM2,back_pain,N,safety_v3:RESOLVED
+S0040,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0040,ARM2,lipase,N,safety_v3:RESOLVED
+S0040,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0040,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0040,ARM2,flatulence,N,safety_v3:RESOLVED
+S0040,ARM2,skin discoloration,N,protocol:F138
+S0040,ARM2,alopecia,N,protocol:F146
+S0040,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0040,ARM2,hypertension,N,protocol:F165
+S0040,ARM2,Hypothyroidism,N,protocol:F170
+S0040,ARM2,Hypothyroidism,N,protocol:F171
+S0041,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0041,ARM2,vomiting,N,safety_v3:RESOLVED
+S0041,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0041,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0041,ARM2,fever,N,safety_v3:RESOLVED
+S0041,ARM2,coughing,N,safety_v3:RESOLVED
+S0041,ARM2,pain,N,safety_v3:RESOLVED
+S0041,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0041,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0041,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0041,ARM2,back_pain,N,safety_v3:RESOLVED
+S0041,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0041,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0041,ARM2,lipase,N,safety_v3:RESOLVED
+S0041,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0041,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0041,ARM2,ast,N,safety_v3:RESOLVED
+S0041,ARM2,flatulence,N,safety_v3:RESOLVED
+S0041,ARM2,fatigue,N,protocol:F115
+S0041,ARM2,hand-foot skin reactions,N,protocol:F136
+S0041,ARM2,dermatitis,N,protocol:F143
+S0041,ARM2,left ventricular dysfunction,N,protocol:F149
+S0041,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0041,ARM2,Hypothyroidism,N,protocol:F170
+S0042,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0042,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0042,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0042,ARM2,coughing,N,safety_v3:RESOLVED
+S0042,ARM2,pain,N,safety_v3:RESOLVED
+S0042,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0042,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0042,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0042,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0042,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0042,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0042,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0042,ARM2,lipase,N,safety_v3:RESOLVED
+S0042,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0042,ARM2,dyspepsia,N,safety_v3:RESOLVED
+S0042,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0042,ARM2,hypertension,N,protocol:F114
+S0042,ARM2,fatigue,N,protocol:F115
+S0042,ARM2,hand-foot skin reactions,N,protocol:F136
+S0042,ARM2,hand-foot skin reactions,N,protocol:F137
+S0042,ARM2,hair color changes,N,protocol:F145
+S0042,ARM2,Hypothyroidism,N,protocol:F170
+S0042,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0043,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0043,ARM2,vomiting,N,safety_v3:RESOLVED
+S0043,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0043,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0043,ARM2,fever,N,safety_v3:RESOLVED
+S0043,ARM2,pain,N,safety_v3:RESOLVED
+S0043,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0043,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0043,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0043,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0043,ARM2,lipase,N,safety_v3:RESOLVED
+S0043,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0043,ARM2,lymphocyte_count_decreased,N,safety_v3:RESOLVED
+S0043,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0043,ARM2,blood_bilirubin_increased,Y,safety_v3:RESOLVED
+S0043,ARM2,skin discoloration,N,protocol:F138
+S0043,ARM2,hypertension,N,protocol:F165
+S0043,ARM2,Hypothyroidism,N,protocol:F170
+S0044,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0044,ARM2,nausea,N,safety_v3:RESOLVED
+S0044,ARM2,vomiting,N,safety_v3:RESOLVED
+S0044,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0044,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0044,ARM2,fever,N,safety_v3:RESOLVED
+S0044,ARM2,pain,N,safety_v3:RESOLVED
+S0044,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0044,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0044,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0044,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0044,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0044,ARM2,alkaline_phosphatase_raised,N,safety_v3:RESOLVED
+S0044,ARM2,lipase,N,safety_v3:RESOLVED
+S0044,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0044,ARM2,flatulence,N,safety_v3:RESOLVED
+S0044,ARM2,hand-foot syndrome,N,protocol:F117
+S0045,ARM2,fatigue,N,safety_v3:RESOLVED
+S0045,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0045,ARM2,stomatitis,N,safety_v3:RESOLVED
+S0045,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0045,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0045,ARM2,anorexia,N,safety_v3:RESOLVED
+S0045,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0045,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0045,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0045,ARM2,headache,N,safety_v3:RESOLVED
+S0045,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0045,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0045,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0045,ARM2,lipase,N,safety_v3:RESOLVED
+S0045,ARM2,lymphocyte_count_decreased,N,safety_v3:RESOLVED
+S0045,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0045,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0045,ARM2,vomiting,Y,safety_v3:RESOLVED
+S0045,ARM2,hand-foot skin reactions,N,protocol:F136
+S0045,ARM2,skin discoloration,N,protocol:F138
+S0045,ARM2,dermatitis,N,protocol:F143
+S0045,ARM2,hair color changes,N,protocol:F145
+S0045,ARM2,left ventricular dysfunction,N,protocol:F149
+S0046,ARM2,constipation,N,safety_v3:RESOLVED
+S0046,ARM2,vomiting,N,safety_v3:RESOLVED
+S0046,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0046,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0046,ARM2,fever,N,safety_v3:RESOLVED
+S0046,ARM2,pain,N,safety_v3:RESOLVED
+S0046,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0046,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0046,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0046,ARM2,hypophosphatemia,N,safety_v3:RESOLVED
+S0046,ARM2,influenza_like_symptoms,N,safety_v3:RESOLVED
+S0046,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0046,ARM2,lipase,N,safety_v3:RESOLVED
+S0046,ARM2,blood_bilirubin_increased,N,safety_v3:RESOLVED
+S0046,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0046,ARM2,flatulence,N,safety_v3:RESOLVED
+S0046,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0046,ARM2,diarrhea,N,protocol:F116
+S0046,ARM2,Bleeding events,N,protocol:F168
+S0046,ARM2,Hypothyroidism,N,protocol:F170
+S0046,ARM2,Hypothyroidism,N,protocol:F171
+S0047,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0047,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0047,ARM2,fever,N,safety_v3:RESOLVED
+S0047,ARM2,pain,N,safety_v3:RESOLVED
+S0047,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0047,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0047,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0047,ARM2,neutrophil_count_decreased,N,safety_v3:RESOLVED
+S0047,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0047,ARM2,back_pain,N,safety_v3:RESOLVED
+S0047,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0047,ARM2,lipase,N,safety_v3:RESOLVED
+S0047,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0047,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0047,ARM2,flatulence,N,safety_v3:RESOLVED
+S0047,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0047,ARM2,hypertension,N,protocol:F165
+S0047,ARM2,Hypothyroidism,N,protocol:F170
+S0048,ARM2,hypertension_variable,N,safety_v3:RESOLVED
+S0048,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0048,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0048,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0048,ARM2,fever,N,safety_v3:RESOLVED
+S0048,ARM2,pain,N,safety_v3:RESOLVED
+S0048,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0048,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0048,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0048,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0048,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0048,ARM2,lipase,N,safety_v3:RESOLVED
+S0048,ARM2,lymphocyte_count_decreased,N,safety_v3:RESOLVED
+S0048,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0048,ARM2,hyponatremia,N,safety_v3:RESOLVED
+S0048,ARM2,flatulence,N,safety_v3:RESOLVED
+S0048,ARM2,left ventricular dysfunction,N,protocol:F149
+S0048,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0048,ARM2,Hypothyroidism,N,protocol:F170
+S0048,ARM2,Hypothyroidism,N,protocol:F171
+S0049,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0049,ARM2,nausea,N,safety_v3:RESOLVED
+S0049,ARM2,vomiting,N,safety_v3:RESOLVED
+S0049,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0049,ARM2,fever,N,safety_v3:RESOLVED
+S0049,ARM2,pain,N,safety_v3:RESOLVED
+S0049,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0049,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0049,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0049,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0049,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0049,ARM2,lipase,N,safety_v3:RESOLVED
+S0049,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0049,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0049,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0049,ARM2,flatulence,N,safety_v3:RESOLVED
+S0049,ARM2,hand-foot skin reactions,N,protocol:F136
+S0049,ARM2,skin discoloration,N,protocol:F138
+S0049,ARM2,dermatitis,N,protocol:F144
+S0049,ARM2,hair color changes,N,protocol:F145
+S0049,ARM2,Hypothyroidism,N,protocol:F170
+S0049,ARM2,Hypothyroidism,N,protocol:F171
+S0049,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0050,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0050,ARM2,vomiting,N,safety_v3:RESOLVED
+S0050,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0050,ARM2,fever,N,safety_v3:RESOLVED
+S0050,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0050,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0050,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0050,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0050,ARM2,back_pain,N,safety_v3:RESOLVED
+S0050,ARM2,alkaline_phosphatase_raised,N,safety_v3:RESOLVED
+S0050,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0050,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0050,ARM2,lipase,N,safety_v3:RESOLVED
+S0050,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0050,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0050,ARM2,diarrhea,N,protocol:F116
+S0050,ARM2,Hypothyroidism,N,protocol:F170
+S0051,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0051,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0051,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0051,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0051,ARM2,fever,N,safety_v3:RESOLVED
+S0051,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0051,ARM2,pain,N,safety_v3:RESOLVED
+S0051,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0051,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0051,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0051,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0051,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0051,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0051,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0051,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0051,ARM2,lipase,N,safety_v3:RESOLVED
+S0051,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0051,ARM2,lymphocyte_count_decreased,N,safety_v3:RESOLVED
+S0051,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0051,ARM2,flatulence,N,safety_v3:RESOLVED
+S0051,ARM2,hypertension,N,protocol:F114
+S0051,ARM2,hand-foot syndrome,N,protocol:F117
+S0051,ARM2,skin discoloration,N,protocol:F138
+S0051,ARM2,left ventricular systolic dysfunction,N,protocol:F154
+S0052,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0052,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0052,ARM2,fever,N,safety_v3:RESOLVED
+S0052,ARM2,pain,N,safety_v3:RESOLVED
+S0052,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0052,ARM2,headache,N,safety_v3:RESOLVED
+S0052,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0052,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0052,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0052,ARM2,lipase,N,safety_v3:RESOLVED
+S0052,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0052,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0052,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0052,ARM2,flatulence,N,safety_v3:RESOLVED
+S0052,ARM2,gastrointestinal_disorders_-_other,N,safety_v3:RESOLVED
+S0052,ARM2,hand-foot skin reactions,N,protocol:F136
+S0052,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0052,ARM2,Hypothyroidism,N,protocol:F170
+S0052,ARM2,Hypothyroidism,N,protocol:F171
+S0053,ARM2,hypertension_variable,N,safety_v3:RESOLVED
+S0053,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0053,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0053,ARM2,fever,N,safety_v3:RESOLVED
+S0053,ARM2,hypothyroidism,N,safety_v3:RESOLVED
+S0053,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0053,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0053,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0053,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0053,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0053,ARM2,lipase,N,safety_v3:RESOLVED
+S0053,ARM2,flatulence,N,safety_v3:RESOLVED
+S0053,ARM2,hand-foot skin reactions,N,protocol:F136
+S0053,ARM2,skin discoloration,N,protocol:F138
+S0053,ARM2,dermatitis,N,protocol:F143
+S0053,ARM2,left ventricular dysfunction,N,protocol:F149
+S0053,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0053,ARM2,Hypothyroidism,N,protocol:F171
+S0053,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0054,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0054,ARM2,stomatitis,N,safety_v3:RESOLVED
+S0054,ARM2,vomiting,N,safety_v3:RESOLVED
+S0054,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0054,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0054,ARM2,fever,N,safety_v3:RESOLVED
+S0054,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0054,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0054,ARM2,headache,N,safety_v3:RESOLVED
+S0054,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0054,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0054,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0054,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0054,ARM2,lipase,N,safety_v3:RESOLVED
+S0054,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0054,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0054,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0054,ARM2,pruritus,N,safety_v3:RESOLVED
+S0054,ARM2,left ventricular dysfunction,N,protocol:F149
+S0054,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0054,ARM2,Hypothyroidism,N,protocol:F170
+S0055,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0055,ARM2,vomiting,N,safety_v3:RESOLVED
+S0055,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0055,ARM2,fever,N,safety_v3:RESOLVED
+S0055,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0055,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0055,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0055,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0055,ARM2,lipase,N,safety_v3:RESOLVED
+S0055,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0055,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0055,ARM2,flatulence,N,safety_v3:RESOLVED
+S0055,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0055,ARM2,hand-foot skin reactions,N,protocol:F136
+S0055,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0055,ARM2,Hypothyroidism,N,protocol:F170
+S0056,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0056,ARM2,anorexia,N,safety_v3:RESOLVED
+S0056,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0056,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0056,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0056,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0056,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0056,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0056,ARM2,lipase,N,safety_v3:RESOLVED
+S0056,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0056,ARM2,flatulence,N,safety_v3:RESOLVED
+S0056,ARM2,pruritus,N,safety_v3:RESOLVED
+S0056,ARM2,anorexia,Y,safety_v3:RESOLVED
+S0056,ARM2,skin discoloration,N,protocol:F138
+S0056,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0056,ARM2,hypertension,N,protocol:F165
+S0056,ARM2,Hypothyroidism,N,protocol:F170
+S0057,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0057,ARM2,vomiting,N,safety_v3:RESOLVED
+S0057,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0057,ARM2,fever,N,safety_v3:RESOLVED
+S0057,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0057,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0057,ARM2,headache,N,safety_v3:RESOLVED
+S0057,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0057,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0057,ARM2,neutrophil_count_decreased,N,safety_v3:RESOLVED
+S0057,ARM2,maculopapular_lesion,N,safety_v3:RESOLVED
+S0057,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0057,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0057,ARM2,lipase,N,safety_v3:RESOLVED
+S0057,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0057,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0057,ARM2,flatulence,N,safety_v3:RESOLVED
+S0057,ARM2,skin discoloration,N,protocol:F138
+S0057,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0057,ARM2,hypertension,N,protocol:F165
+S0058,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0058,ARM2,abdominal_pain,N,safety_v3:RESOLVED
+S0058,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0058,ARM2,fever,N,safety_v3:RESOLVED
+S0058,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0058,ARM2,headache,N,safety_v3:RESOLVED
+S0058,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0058,ARM2,pain_in_limb,N,safety_v3:RESOLVED
+S0058,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0058,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0058,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0058,ARM2,lipase,N,safety_v3:RESOLVED
+S0058,ARM2,dyspepsia,N,safety_v3:RESOLVED
+S0058,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0058,ARM2,flatulence,N,safety_v3:RESOLVED
+S0058,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0058,ARM2,skin discoloration,N,protocol:F138
+S0058,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0058,ARM2,Hypothyroidism,N,protocol:F170
+S0058,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0059,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0059,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0059,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0059,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0059,ARM2,coughing,N,safety_v3:RESOLVED
+S0059,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0059,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0059,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0059,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0059,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0059,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0059,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0059,ARM2,lipase,N,safety_v3:RESOLVED
+S0059,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0059,ARM2,flatulence,N,safety_v3:RESOLVED
+S0059,ARM2,skin discoloration,N,protocol:F138
+S0059,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0059,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0059,ARM2,Hypothyroidism,N,protocol:F170
+S0059,ARM2,Hypothyroidism,N,protocol:F171
+S0059,ARM2,other serious adverse events (not individually predicted),Y,residual to the any-serious prior (subgroup: trials with overlapping drug classes)
+S0060,ARM2,fatigue,N,safety_v3:RESOLVED
+S0060,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0060,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0060,ARM2,fever,N,safety_v3:RESOLVED
+S0060,ARM2,anemia,N,safety_v3:RESOLVED
+S0060,ARM2,hypothyroidism,N,safety_v3:RESOLVED
+S0060,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0060,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0060,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0060,ARM2,white_blood_cell_decreased,N,safety_v3:RESOLVED
+S0060,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0060,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0060,ARM2,back_pain,N,safety_v3:RESOLVED
+S0060,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0060,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0060,ARM2,lipase,N,safety_v3:RESOLVED
+S0060,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0060,ARM2,hyponatremia,N,safety_v3:RESOLVED
+S0060,ARM2,diarrhea,N,protocol:F116
+S0060,ARM2,skin discoloration,N,protocol:F138
+S0060,ARM2,treatment-emergent LVEF values below the lower limit of normal (LLN),N,protocol:F150
+S0060,ARM2,hypertension,N,protocol:F165
+S0060,ARM2,Hypothyroidism,N,protocol:F170
+S0061,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0061,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0061,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0061,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0061,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0061,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0061,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0061,ARM2,alopecia,N,safety_v3:RESOLVED
+S0061,ARM2,hypokalemia,N,safety_v3:RESOLVED
+S0061,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0061,ARM2,lipase,N,safety_v3:RESOLVED
+S0061,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0061,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0061,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0061,ARM2,Hypothyroidism,N,protocol:F170
+S0062,ARM2,diarrhea,N,safety_v3:RESOLVED
+S0062,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0062,ARM2,fever,N,safety_v3:RESOLVED
+S0062,ARM2,coughing,N,safety_v3:RESOLVED
+S0062,ARM2,proteinuria,N,safety_v3:RESOLVED
+S0062,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0062,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0062,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0062,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0062,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0062,ARM2,lipase,N,safety_v3:RESOLVED
+S0062,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0062,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0062,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0062,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0062,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0062,ARM2,hand-foot skin reactions,N,protocol:F136
+S0062,ARM2,skin discoloration,N,protocol:F138
+S0062,ARM2,dermatitis,N,protocol:F144
+S0062,ARM2,Hypothyroidism,N,protocol:F170
+S0062,ARM2,Hypothyroidism,N,protocol:F171
+S0063,ARM2,fatigue,N,safety_v3:RESOLVED
+S0063,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0063,ARM2,vomiting,N,safety_v3:RESOLVED
+S0063,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0063,ARM2,fever,N,safety_v3:RESOLVED
+S0063,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0063,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0063,ARM2,neutrophil_count_decreased,N,safety_v3:RESOLVED
+S0063,ARM2,skin_and_subcutaneous_tissue_disorders_-_other,N,safety_v3:RESOLVED
+S0063,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0063,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0063,ARM2,acneiform_eruptions,N,safety_v3:RESOLVED
+S0063,ARM2,dyspnea,Y,safety_v3:RESOLVED
+S0063,ARM2,Hypothyroidism,N,protocol:F170
+S0063,ARM2,Hypothyroidism,N,protocol:F171
+S0064,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0064,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0064,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0064,ARM2,fever,N,safety_v3:RESOLVED
+S0064,ARM2,anemia,N,safety_v3:RESOLVED
+S0064,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0064,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0064,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0064,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0064,ARM2,lipase,N,safety_v3:RESOLVED
+S0064,ARM2,dyspepsia,N,safety_v3:RESOLVED
+S0064,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0064,ARM2,Hypothyroidism,N,protocol:F170
+S0065,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0065,ARM2,nausea,N,safety_v3:RESOLVED
+S0065,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0065,ARM2,fever,N,safety_v3:RESOLVED
+S0065,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0065,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0065,ARM2,back_pain,N,safety_v3:RESOLVED
+S0065,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0065,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0065,ARM2,lipase,N,safety_v3:RESOLVED
+S0065,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0065,ARM2,dyspepsia,N,safety_v3:RESOLVED
+S0065,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0065,ARM2,flatulence,N,safety_v3:RESOLVED
+S0065,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0065,ARM2,nausea,Y,safety_v3:RESOLVED
+S0065,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0065,ARM2,Severe hypertension,N,protocol:F161
+S0065,ARM2,Bleeding events,N,protocol:F168
+S0065,ARM2,Hypothyroidism,N,protocol:F170
+S0066,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0066,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0066,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0066,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0066,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0066,ARM2,hypoalbuminemia,N,safety_v3:RESOLVED
+S0066,ARM2,liposarcoma_well_differentiated,N,safety_v3:RESOLVED
+S0066,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0066,ARM2,flatulence,N,safety_v3:RESOLVED
+S0066,ARM2,hand-foot syndrome,N,protocol:F117
+S0066,ARM2,hand-foot skin reactions,N,protocol:F136
+S0066,ARM2,skin discoloration,N,protocol:F138
+S0066,ARM2,left ventricular dysfunction,N,protocol:F149
+S0066,ARM2,hypertension,N,protocol:F165
+S0066,ARM2,Hypothyroidism,N,protocol:F170
+S0067,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0067,ARM2,vomiting,N,safety_v3:RESOLVED
+S0067,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0067,ARM2,weight_loss,N,safety_v3:RESOLVED
+S0067,ARM2,fever,N,safety_v3:RESOLVED
+S0067,ARM2,alanine_aminotransferase_increased,N,safety_v3:RESOLVED
+S0067,ARM2,pain,N,safety_v3:RESOLVED
+S0067,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0067,ARM2,headache,N,safety_v3:RESOLVED
+S0067,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0067,ARM2,hyperglycemia,N,safety_v3:RESOLVED
+S0067,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0067,ARM2,lipase,N,safety_v3:RESOLVED
+S0067,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0067,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0067,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0067,ARM2,hand-foot syndrome,N,protocol:F117
+S0067,ARM2,hand-foot skin reactions,N,protocol:F136
+S0067,ARM2,skin discoloration,N,protocol:F138
+S0067,ARM2,Bleeding events,N,protocol:F168
+S0067,ARM2,Hypothyroidism,N,protocol:F170
+S0068,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0068,ARM2,vomiting,N,safety_v3:RESOLVED
+S0068,ARM2,fever,N,safety_v3:RESOLVED
+S0068,ARM2,coughing,N,safety_v3:RESOLVED
+S0068,ARM2,pain,N,safety_v3:RESOLVED
+S0068,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0068,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0068,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0068,ARM2,creatinine_increased,N,safety_v3:RESOLVED
+S0068,ARM2,lipase,N,safety_v3:RESOLVED
+S0068,ARM2,dry_skin,N,safety_v3:RESOLVED
+S0068,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0068,ARM2,flatulence,N,safety_v3:RESOLVED
+S0068,ARM2,sensory_neuropathy,N,safety_v3:RESOLVED
+S0068,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0068,ARM2,Hypothyroidism,N,protocol:F170
+S0069,ARM2,nausea,N,safety_v3:RESOLVED
+S0069,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0069,ARM2,fever,N,safety_v3:RESOLVED
+S0069,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0069,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0069,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0069,ARM2,lipase,N,safety_v3:RESOLVED
+S0069,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0069,ARM2,hand-foot skin reactions,N,protocol:F136
+S0069,ARM2,hair color changes,N,protocol:F145
+S0069,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0069,ARM2,Hypothyroidism,N,protocol:F170
+S0070,ARM2,hypertension_variable,N,safety_v3:RESOLVED
+S0070,ARM2,palmar_plantar_erythrodysesthesia_syndrome,N,safety_v3:RESOLVED
+S0070,ARM2,nausea,N,safety_v3:RESOLVED
+S0070,ARM2,aspartate_aminotransferase_increased,N,safety_v3:RESOLVED
+S0070,ARM2,fever,N,safety_v3:RESOLVED
+S0070,ARM2,pain,N,safety_v3:RESOLVED
+S0070,ARM2,hoarseness,N,safety_v3:RESOLVED
+S0070,ARM2,voice_disturbance,N,safety_v3:RESOLVED
+S0070,ARM2,decreased_platelet_count,N,safety_v3:RESOLVED
+S0070,ARM2,upper_respiratory_infections,N,safety_v3:RESOLVED
+S0070,ARM2,lipase,N,safety_v3:RESOLVED
+S0070,ARM2,rash/desquamation,N,safety_v3:RESOLVED
+S0070,ARM2,hypocalcemia,N,safety_v3:RESOLVED
+S0070,ARM2,hypertension,N,protocol:F114
+S0070,ARM2,skin discoloration,N,protocol:F138
+S0070,ARM2,hair color changes,N,protocol:F145
+S0070,ARM2,alopecia,N,protocol:F146
+S0070,ARM2,an LVEF value below the LLN,N,protocol:F152
+S0070,ARM2,Hypothyroidism,N,protocol:F170
+S0070,ARM2,Hypothyroidism,N,protocol:F171

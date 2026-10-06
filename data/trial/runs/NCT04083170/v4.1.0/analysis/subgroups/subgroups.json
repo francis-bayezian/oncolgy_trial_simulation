@@ -1,0 +1,1067 @@
+{
+ "factors": [
+  {
+   "factor": "Age (FDA standard age bands)",
+   "source": "FDA demographic",
+   "variable": "demographic:age",
+   "note": "",
+   "feasibility_driver": "protocol criteria",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "< 65 years": 10
+   }
+  },
+  {
+   "factor": "Sex",
+   "source": "FDA demographic",
+   "variable": "demographic:sex",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 3 trials; prognostic, A28))",
+   "levels": {
+    "female": 5,
+    "male": 5
+   }
+  },
+  {
+   "factor": "Race",
+   "source": "FDA demographic",
+   "variable": "demographic:race",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "white": 10
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "source": "FDA demographic",
+   "variable": "demographic:ethnicity",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "not_hispanic_or_latino": 8,
+    "unknown_or_not_reported": 1,
+    "hispanic_or_latino": 1
+   }
+  },
+  {
+   "factor": "Region",
+   "source": "FDA demographic",
+   "variable": null,
+   "note": "not simulated: the recruitment model has no site country",
+   "feasibility_driver": null,
+   "prevalence_source": null,
+   "outcome_driver": null
+  },
+  {
+   "factor": "Ecog performance status",
+   "source": "baseline disease factor",
+   "variable": "var:ecog_performance_status",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "1": 3,
+    "0": 7
+   }
+  }
+ ],
+ "rows": [
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "arm": "ARM1",
+   "n": 6,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 5,
+    "grade_3_plus": 3,
+    "sae": 3,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 6
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "arm": "ARM2",
+   "n": 4,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 4,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 4
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "female",
+   "arm": "ARM1",
+   "n": 4,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 3,
+    "grade_3_plus": 2,
+    "sae": 2,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 4
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "female",
+   "arm": "ARM2",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 1,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "arm": "ARM1",
+   "n": 2,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 2,
+    "grade_3_plus": 1,
+    "sae": 1,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 2
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "arm": "ARM2",
+   "n": 3,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 3,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 3
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "arm": "ARM1",
+   "n": 6,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 5,
+    "grade_3_plus": 3,
+    "sae": 3,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 6
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "arm": "ARM2",
+   "n": 4,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 4,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 4
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "arm": "ARM1",
+   "n": 0,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {}
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "arm": "ARM2",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 1,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "arm": "ARM1",
+   "n": 5,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 4,
+    "grade_3_plus": 2,
+    "sae": 2,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 5
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "arm": "ARM2",
+   "n": 3,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 3,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 3
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM1",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 1,
+    "grade_3_plus": 1,
+    "sae": 1,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM2",
+   "n": 0,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {}
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "arm": "ARM1",
+   "n": 3,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 3,
+    "grade_3_plus": 1,
+    "sae": 1,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 3
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "arm": "ARM2",
+   "n": 4,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 4,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 4
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "arm": "ARM1",
+   "n": 3,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 2,
+    "grade_3_plus": 2,
+    "sae": 2,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 3
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "arm": "ARM2",
+   "n": 0,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {}
+  }
+ ],
+ "comparisons": [
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 6,
+   "n_control": 4
+  },
+  {
+   "factor": "Sex",
+   "level": "female",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 4,
+   "n_control": 1
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 2,
+   "n_control": 3
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 6,
+   "n_control": 4
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 0,
+   "n_control": 1
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 5,
+   "n_control": 3
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 1,
+   "n_control": 0
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 3,
+   "n_control": 4
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "arm": "ARM1",
+   "control": "ARM2",
+   "n": 3,
+   "n_control": 0
+  }
+ ],
+ "feasibility": [
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "65-74 years",
+   "screened": 3,
+   "eligible": 2,
+   "eligible_share": 0.6667,
+   "enrolled": 0,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL009",
+     "text": "Other hematologic malignancy such as non-Hodgkin lymphomas",
+     "share_of_screened": 0.3333
+    }
+   ]
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "screened": 9997,
+   "eligible": 7707,
+   "eligible_share": 0.7709,
+   "enrolled": 10,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL008",
+     "text": "Myelodysplasia (MDS)",
+     "share_of_screened": 0.0164
+    },
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0156
+    },
+    {
+     "criterion": "EL016",
+     "text": "A.Uncontrolledviralorbacterialinfectionatthetimeofstudyenrollment",
+     "share_of_screened": 0.0154
+    }
+   ]
+  },
+  {
+   "factor": "Sex",
+   "level": "female",
+   "screened": 4560,
+   "eligible": 3527,
+   "eligible_share": 0.7735,
+   "enrolled": 5,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0175
+    },
+    {
+     "criterion": "EL008",
+     "text": "Myelodysplasia (MDS)",
+     "share_of_screened": 0.0173
+    },
+    {
+     "criterion": "EL016",
+     "text": "A.Uncontrolledviralorbacterialinfectionatthetimeofstudyenrollment",
+     "share_of_screened": 0.0169
+    }
+   ]
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "screened": 5440,
+   "eligible": 4182,
+   "eligible_share": 0.7688,
+   "enrolled": 5,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL011",
+     "text": "B.Renal Function",
+     "share_of_screened": 0.0162
+    },
+    {
+     "criterion": "EL010",
+     "text": "Performancestatus score",
+     "share_of_screened": 0.016
+    },
+    {
+     "criterion": "EL006",
+     "text": "AcuteLymphoblasticLeukemia",
+     "share_of_screened": 0.0156
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "american_indian_or_alaska_native",
+   "screened": 57,
+   "eligible": 48,
+   "eligible_share": 0.8421,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL001",
+     "text": "Age Criteria",
+     "share_of_screened": 0.0351
+    },
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0351
+    },
+    {
+     "criterion": "EL013",
+     "text": "DLCO corrected >50% normal",
+     "share_of_screened": 0.0175
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "asian",
+   "screened": 959,
+   "eligible": 755,
+   "eligible_share": 0.7873,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0209
+    },
+    {
+     "criterion": "EL011",
+     "text": "B.Renal Function",
+     "share_of_screened": 0.0198
+    },
+    {
+     "criterion": "EL010",
+     "text": "Performancestatus score",
+     "share_of_screened": 0.0167
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "black_or_african_american",
+   "screened": 796,
+   "eligible": 597,
+   "eligible_share": 0.75,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "HIVCriteria",
+     "share_of_screened": 0.0289
+    },
+    {
+     "criterion": "EL018",
+     "text": "C. Pregnant or breastfeeding",
+     "share_of_screened": 0.0239
+    },
+    {
+     "criterion": "EL020",
+     "text": "E. extensiveradiation",
+     "share_of_screened": 0.0214
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "more_than_one_race",
+   "screened": 92,
+   "eligible": 74,
+   "eligible_share": 0.8043,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL018",
+     "text": "C. Pregnant or breastfeeding",
+     "share_of_screened": 0.0326
+    },
+    {
+     "criterion": "EL001",
+     "text": "Age Criteria",
+     "share_of_screened": 0.0326
+    },
+    {
+     "criterion": "EL007",
+     "text": "Chronic myelogenous leukemia excluding refractory blast crisis.",
+     "share_of_screened": 0.0217
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "native_hawaiian_or_other_pacific_islander",
+   "screened": 37,
+   "eligible": 31,
+   "eligible_share": 0.8378,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL016",
+     "text": "A.Uncontrolledviralorbacterialinfectionatthetimeofstudyenrollment",
+     "share_of_screened": 0.0541
+    },
+    {
+     "criterion": "EL013",
+     "text": "DLCO corrected >50% normal",
+     "share_of_screened": 0.0541
+    },
+    {
+     "criterion": "EL007",
+     "text": "Chronic myelogenous leukemia excluding refractory blast crisis.",
+     "share_of_screened": 0.027
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "unknown_or_not_reported",
+   "screened": 403,
+   "eligible": 320,
+   "eligible_share": 0.794,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL001",
+     "text": "Age Criteria",
+     "share_of_screened": 0.0248
+    },
+    {
+     "criterion": "EL006",
+     "text": "AcuteLymphoblasticLeukemia",
+     "share_of_screened": 0.0223
+    },
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0174
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "screened": 7656,
+   "eligible": 5884,
+   "eligible_share": 0.7685,
+   "enrolled": 10,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL008",
+     "text": "Myelodysplasia (MDS)",
+     "share_of_screened": 0.0178
+    },
+    {
+     "criterion": "EL016",
+     "text": "A.Uncontrolledviralorbacterialinfectionatthetimeofstudyenrollment",
+     "share_of_screened": 0.0157
+    },
+    {
+     "criterion": "EL015",
+     "text": "Ability tounderstand and thewillingness to sign a written informed con",
+     "share_of_screened": 0.0157
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "screened": 675,
+   "eligible": 537,
+   "eligible_share": 0.7956,
+   "enrolled": 1,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "HIVCriteria",
+     "share_of_screened": 0.0193
+    },
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0163
+    },
+    {
+     "criterion": "EL015",
+     "text": "Ability tounderstand and thewillingness to sign a written informed con",
+     "share_of_screened": 0.0163
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "screened": 9014,
+   "eligible": 6926,
+   "eligible_share": 0.7684,
+   "enrolled": 8,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL008",
+     "text": "Myelodysplasia (MDS)",
+     "share_of_screened": 0.017
+    },
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0158
+    },
+    {
+     "criterion": "EL001",
+     "text": "Age Criteria",
+     "share_of_screened": 0.0154
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "screened": 311,
+   "eligible": 246,
+   "eligible_share": 0.791,
+   "enrolled": 1,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL010",
+     "text": "Performancestatus score",
+     "share_of_screened": 0.0225
+    },
+    {
+     "criterion": "EL004",
+     "text": "AcuteMyeloidLeukemia",
+     "share_of_screened": 0.0225
+    },
+    {
+     "criterion": "EL016",
+     "text": "A.Uncontrolledviralorbacterialinfectionatthetimeofstudyenrollment",
+     "share_of_screened": 0.0193
+    }
+   ]
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "screened": 4390,
+   "eligible": 3383,
+   "eligible_share": 0.7706,
+   "enrolled": 7,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL014",
+     "text": "E.Cardiac function",
+     "share_of_screened": 0.0173
+    },
+    {
+     "criterion": "EL016",
+     "text": "A.Uncontrolledviralorbacterialinfectionatthetimeofstudyenrollment",
+     "share_of_screened": 0.0171
+    },
+    {
+     "criterion": "EL007",
+     "text": "Chronic myelogenous leukemia excluding refractory blast crisis.",
+     "share_of_screened": 0.0164
+    }
+   ]
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "screened": 4798,
+   "eligible": 3695,
+   "eligible_share": 0.7701,
+   "enrolled": 3,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL008",
+     "text": "Myelodysplasia (MDS)",
+     "share_of_screened": 0.0175
+    },
+    {
+     "criterion": "EL006",
+     "text": "AcuteLymphoblasticLeukemia",
+     "share_of_screened": 0.0158
+    },
+    {
+     "criterion": "EL010",
+     "text": "Performancestatus score",
+     "share_of_screened": 0.0156
+    }
+   ]
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "2 or more",
+   "screened": 812,
+   "eligible": 631,
+   "eligible_share": 0.7771,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL017",
+     "text": "B.Active or recent (prior6 month)invasive fungal infectionwithout ID c",
+     "share_of_screened": 0.0259
+    },
+    {
+     "criterion": "EL015",
+     "text": "Ability tounderstand and thewillingness to sign a written informed con",
+     "share_of_screened": 0.0197
+    },
+    {
+     "criterion": "EL018",
+     "text": "C. Pregnant or breastfeeding",
+     "share_of_screened": 0.0185
+    }
+   ]
+  }
+ ]
+}

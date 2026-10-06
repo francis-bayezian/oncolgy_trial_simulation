@@ -1,0 +1,101 @@
+{
+ "subjects": 460,
+ "traces": [
+  "S0316",
+  "S0313",
+  "S0169"
+ ],
+ "any_dose_hold": 419,
+ "any_dose_reduction": 0,
+ "discontinued_for_ae": 20,
+ "deaths": 26,
+ "deaths_on_treatment": 10,
+ "end_of_treatment_reasons": {
+  "completed planned treatment": 316,
+  "death": 10,
+  "withdrawal (subject, loss to follow-up or physician decision)": 28,
+  "disease progression": 86,
+  "adverse event (registry discontinuation rate)": 20
+ },
+ "median_rdi": 1.0,
+ "progression_detected": 92,
+ "adverse_events_after_reporting_window_dropped": 30,
+ "rules_undecidable": [
+  "DM010"
+ ],
+ "screening_funnel": {
+  "generated_patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 8128,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 1872
+  },
+  "not_ruled_out_share": 0.8128,
+  "undecidable_criteria": [
+   "EL005",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL013",
+   "EL014",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL019",
+   "EL020",
+   "EL021",
+   "EL022",
+   "EL023",
+   "EL024",
+   "EL025",
+   "EL027",
+   "EL028",
+   "EL029",
+   "EL030",
+   "EL031",
+   "EL032",
+   "EL033",
+   "EL034",
+   "EL035",
+   "EL039",
+   "EL040"
+  ],
+  "screen_pass_rate": {
+   "value": 0.8104026431768779,
+   "evidence_level": "evidence",
+   "source": "registry recruitment details stating screened and enrolled counts (myeloma_and_plasma_cell; 12 trials, 2371 screened)",
+   "detail": {
+    "estimate": 0.8104026431768779,
+    "ci95": [
+     0.7686345767787867,
+     0.8461397544851209
+    ],
+    "single_trial_80": [
+     0.732286885733318,
+     0.8697783841035241
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.7322901928400358,
+     "p30": 0.7807399412471648,
+     "p50": 0.8104026431768779,
+     "p70": 0.8368907789591518,
+     "p90": 0.869776473399545
+    },
+    "tau_logit": 0.32369095300648587,
+    "groups": 12,
+    "trials": 12,
+    "participants": 2371
+   }
+  },
+  "target": 460.0,
+  "patients_to_screen": {
+   "estimate": 568,
+   "range_80": [
+    529,
+    629
+   ],
+   "basis": "target / registry pass rate (the range is for a single new trial)"
+  }
+ }
+}

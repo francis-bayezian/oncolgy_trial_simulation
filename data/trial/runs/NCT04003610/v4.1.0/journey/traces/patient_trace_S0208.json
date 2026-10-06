@@ -1,0 +1,824 @@
+{
+ "subject_id": "S0208",
+ "arm": "ARM4",
+ "agents": [
+  "pembrolizumab",
+  "gemcitabine",
+  "carboplatin"
+ ],
+ "baseline": {
+  "patient_id": "P007819",
+  "demographic:age": {
+   "value": 50.64,
+   "unit": "year"
+  },
+  "demographic:sex": "female",
+  "demographic:race": "unknown_or_not_reported",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "umls:C0079083": "not eligible",
+  "var:ecog_performance_status": {
+   "value": 0,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 43.5,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 175.9,
+   "unit": "cm"
+  },
+  "var:metastatic_disease_pattern": "other metastatic disease"
+ },
+ "progression_day_latent": 184,
+ "progression_detected_day": null,
+ "off_treatment": [
+  84,
+  "completed planned treatment"
+ ],
+ "dose": {
+  "pembrolizumab": {
+   "value": 200.0,
+   "unit": "mg",
+   "basis": "fixed"
+  },
+  "gemcitabine": {
+   "value": 1000.0,
+   "unit": "mg/m2",
+   "basis": "per_body_surface_area"
+  },
+  "carboplatin": {
+   "value": 5.0,
+   "unit": "auc",
+   "basis": "target_auc"
+  }
+ },
+ "reductions": {
+  "pembrolizumab": 0,
+  "gemcitabine": 0,
+  "carboplatin": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "200 mg"
+  },
+  {
+   "cycle": 1,
+   "agent": "gemcitabine",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "1000 mg/m2"
+  },
+  {
+   "cycle": 1,
+   "agent": "carboplatin",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "5 auc"
+  },
+  {
+   "cycle": 2,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "200 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "gemcitabine",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "1000 mg/m2"
+  },
+  {
+   "cycle": 2,
+   "agent": "carboplatin",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "5 auc"
+  },
+  {
+   "cycle": 3,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "200 mg"
+  },
+  {
+   "cycle": 3,
+   "agent": "gemcitabine",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "1000 mg/m2"
+  },
+  {
+   "cycle": 3,
+   "agent": "carboplatin",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "5 auc"
+  },
+  {
+   "cycle": 4,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "200 mg"
+  },
+  {
+   "cycle": 4,
+   "agent": "gemcitabine",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "1000 mg/m2"
+  },
+  {
+   "cycle": 4,
+   "agent": "carboplatin",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "5 auc"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "anemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 6,
+   "source": "safety_v3:RESOLVED",
+   "end": 7,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "abdominal_pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 27,
+   "source": "safety_v3:RESOLVED",
+   "end": 28,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",
+   "serious": true,
+   "grade": 3,
+   "onset": 38,
+   "source": "safety_v3:RESOLVED",
+   "end": 40,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "diarrhea",
+   "serious": false,
+   "grade": 2,
+   "onset": 45,
+   "source": "protocol:F049",
+   "end": 46,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM026",
+     "category": "Diarrhea/Colitis",
+     "quote": "Withhold",
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hyperglycemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 50,
+   "source": "safety_v3:RESOLVED",
+   "end": 51,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": [
+      "DM030"
+     ]
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "headache",
+   "serious": false,
+   "grade": 2,
+   "onset": 60,
+   "source": "safety_v3:RESOLVED",
+   "end": 61,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "thrombocytopenia",
+   "serious": false,
+   "grade": 1,
+   "onset": 61,
+   "source": "safety_v3:RESOLVED",
+   "end": 62,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "sensory_neuropathy",
+   "serious": false,
+   "grade": 1,
+   "onset": 75,
+   "source": "safety_v3:RESOLVED",
+   "end": 76,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "palmar_plantar_erythrodysesthesia_syndrome",
+   "serious": false,
+   "grade": 1,
+   "onset": 76,
+   "source": "safety_v3:RESOLVED",
+   "end": 77,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM035",
+     "category": "Skin reactions",
+     "quote": "Withhold until adverse\nreaction recovers to\nGrade 0-1",
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "creatinine_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 76,
+   "source": "safety_v3:RESOLVED",
+   "end": 77,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 81,
+   "source": "safety_v3:RESOLVED",
+   "end": 82,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hematuria",
+   "serious": false,
+   "grade": 2,
+   "onset": 83,
+   "source": "safety_v3:RESOLVED",
+   "end": 84,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypertension_variable",
+   "serious": false,
+   "grade": 2,
+   "onset": 84,
+   "source": "safety_v3:RESOLVED",
+   "end": 127,
+   "decisions": {
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "gemcitabine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "peripheral_edema",
+   "serious": false,
+   "grade": 2,
+   "onset": 92,
+   "source": "safety_v3:RESOLVED",
+   "end": 127
+  }
+ ],
+ "events": [
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 50.64, female, unknown_or_not_reported",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start pembrolizumab",
+   "result": "200 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX013",
+   "quote": "Pembrolizumab 200 mg Q3W IV up to 35 cycles"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start gemcitabine",
+   "result": "1000 mg/m2",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX010",
+   "quote": "Gemcitabine 1000 mg/m2 Q3W IV on Days 1 and 8"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start carboplatin",
+   "result": "5 auc",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX011",
+   "quote": "carboplatin AUC 5 (or AUC 4.5 if required per local guidelines) Q3W on Day 1 or 2"
+  },
+  {
+   "day": 6,
+   "visit": "C1D6",
+   "category": "adverse event",
+   "item": "anemia",
+   "result": "grade 1; resolves by day 7",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 6,
+   "visit": "C1D6",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "11.79 g/dL (grade 1)",
+   "consequence": "during anemia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Hemoglobin (10-12 g/dL)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 27,
+   "visit": "C2D6",
+   "category": "adverse event",
+   "item": "abdominal_pain",
+   "result": "grade 2; resolves by day 28",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 38,
+   "visit": "C2D17",
+   "category": "adverse event",
+   "item": "neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",
+   "result": "grade 3 serious; resolves by day 40",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 45,
+   "visit": "C3D3",
+   "category": "adverse event",
+   "item": "diarrhea",
+   "result": "grade 2; resolves by day 46",
+   "consequence": "pembrolizumab held until day 46 (DM026)",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F049; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 50,
+   "visit": "C3D8",
+   "category": "adverse event",
+   "item": "hyperglycemia",
+   "result": "grade 2; resolves by day 51",
+   "consequence": "undecidable: DM030",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 60,
+   "visit": "C3D18",
+   "category": "adverse event",
+   "item": "headache",
+   "result": "grade 2; resolves by day 61",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 61,
+   "visit": "C3D19",
+   "category": "adverse event",
+   "item": "thrombocytopenia",
+   "result": "grade 1; resolves by day 62",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 61,
+   "visit": "C3D19",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "148.97 10^9/L (grade 1)",
+   "consequence": "during thrombocytopenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Platelet count (75-150 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 64,
+   "visit": "TA1",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "evidence",
+   "source": "latent progression time: locked outcome model control curve: exponential (evidence) (evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol)); detected at scheduled assessment"
+  },
+  {
+   "day": 75,
+   "visit": "C4D12",
+   "category": "adverse event",
+   "item": "sensory_neuropathy",
+   "result": "grade 1; resolves by day 76",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 76,
+   "visit": "C4D13",
+   "category": "adverse event",
+   "item": "palmar_plantar_erythrodysesthesia_syndrome",
+   "result": "grade 1; resolves by day 77",
+   "consequence": "pembrolizumab held until day 77 (DM035)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 76,
+   "visit": "C4D13",
+   "category": "adverse event",
+   "item": "creatinine_increased",
+   "result": "grade 1; resolves by day 77",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 76,
+   "visit": "C4D13",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "1.23 x ULN (grade 1)",
+   "consequence": "during creatinine_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Creatinine (1-1.5 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 81,
+   "visit": "C4D18",
+   "category": "adverse event",
+   "item": "pain",
+   "result": "grade 2; resolves by day 82",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 83,
+   "visit": "C4D20",
+   "category": "adverse event",
+   "item": "hematuria",
+   "result": "grade 2; resolves by day 84",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 84,
+   "visit": "C4D21",
+   "category": "adverse event",
+   "item": "hypertension_variable",
+   "result": "grade 2; resolves by day 127",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 84,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "completed planned treatment",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 92,
+   "visit": "TA2",
+   "category": "adverse event",
+   "item": "peripheral_edema",
+   "result": "grade 2; resolves by day 127",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 168,
+   "visit": "FU1",
+   "category": "follow-up",
+   "item": "follow-up visit",
+   "result": "attended",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "follow-up visits: schedule fact SF14 (REVIEW_REQUIRED: used under the accept-review decision, flagged)"
+  }
+ ]
+}

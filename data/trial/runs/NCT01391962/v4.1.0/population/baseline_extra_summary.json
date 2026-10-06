@@ -1,0 +1,99 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT01391962\\v4.1.0\\population_base",
+  "family": "sarcoma",
+  "phase": null,
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.38404290147084436,
+     0.5516117898690541,
+     0.06434530866010159,
+     0.0,
+     0.0
+    ],
+    "trial_range_10_90": [
+     [
+      0.096,
+      0.438,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.549,
+      0.815,
+      0.11,
+      0.0,
+      0.0
+     ]
+    ],
+    "trials": 12,
+    "participants": 749,
+    "source": "registry baseline ECOG of enrolled participants (sarcoma; 12 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 75.74317947841375,
+    "sd": 18.7644853295554,
+    "trials": 284,
+    "participants": 40952,
+    "source": "registry baseline weight of enrolled participants (all oncology; 284 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 167.10206402942504,
+    "sd": 10.915550440259919,
+    "trials": 199,
+    "participants": 26644,
+    "source": "registry baseline height of enrolled participants (all oncology; 199 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "the initial 13 patients",
+    "variable": "var:the_initial_13_patients",
+    "kind": "generated",
+    "prevalence": "the protocol states no levels and no registry table reports the factor",
+    "effect": "no levels"
+   },
+   {
+    "factor": "rest of the patients",
+    "variable": "var:rest_of_the_patients",
+    "kind": "generated",
+    "prevalence": "the protocol states no levels and no registry table reports the factor",
+    "effect": "no levels"
+   },
+   {
+    "factor": "Patients with newly diagnosed ASPS and clinical evidence of disease progression",
+    "variable": "var:patients_with_newly_diagnosed_asps_and_clinical_evidence_of_",
+    "kind": "generated",
+    "prevalence": "the protocol states no levels and no registry table reports the factor",
+    "effect": "no levels"
+   },
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  ]
+ }
+}

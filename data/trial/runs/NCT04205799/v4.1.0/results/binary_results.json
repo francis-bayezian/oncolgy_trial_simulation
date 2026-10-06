@@ -1,0 +1,1366 @@
+{
+ "binary_version": "binary-1.0.0",
+ "seed": 20260927,
+ "replicates": 2000,
+ "inputs": {
+  "studyspec": "0cc9e71cce40a2f7c144150475af7adc2485d80a8fbb3ce3efaa4dc7fa10bbab",
+  "facts": "a0e64479a8ff3d1b55f3baf12e91ca70962e1c9547eb5b199917bb24dd647a44"
+ },
+ "truth": "each arm's true response rate p is unknown: results are given for a grid of p (exact) and at rates the protocol cites",
+ "cited_rate_bindings": [],
+ "rules": [
+  {
+   "decision_rule_id": "DR1",
+   "role": "primary",
+   "arm": "Cabozantinib (Cabozantinib)",
+   "arms": [
+    "ARM1"
+   ],
+   "cohort": "A phase II single-arm two-stage multicentre study",
+   "design_family": "two_stage_other",
+   "rule": {
+    "stages": [
+     {
+      "n": 22,
+      "stop_if_at_most": 7
+     },
+     {
+      "n": 51,
+      "stop_if_at_most": null
+     }
+    ],
+    "success_if_at_least": 21,
+    "p0": 0.3,
+    "p1": 0.5,
+    "alpha": 0.05,
+    "beta": 0.2
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": 0.05,
+     "beta": 0.2,
+     "early_termination": null
+    },
+    "exact": {
+     "at_p0": {
+      "p": 0.3,
+      "prob_success": 0.050834477926282824,
+      "prob_early_stop": 0.6712506765095604,
+      "expected_n": 31.53373038122275
+     },
+     "at_p1": {
+      "p": 0.5,
+      "prob_success": 0.8818267681045971,
+      "prob_early_stop": 0.06690025329589844,
+      "expected_n": 49.059892654418945
+     }
+    },
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 1.0328490473482845e-14,
+     "prob_early_stop": 0.9999933735394271,
+     "expected_n": 22.000192167356612
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 4.701556766905722e-09,
+     "prob_early_stop": 0.9991213081994762,
+     "expected_n": 22.02548206221519
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 4.732309086720119e-06,
+     "prob_early_stop": 0.9886140921921308,
+     "expected_n": 22.330191326428206
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.00037167586444065547,
+     "prob_early_stop": 0.9438554027050537,
+     "expected_n": 23.628193321553443
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.0069468962185203036,
+     "prob_early_stop": 0.8384723517306156,
+     "expected_n": 26.684301799812147
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.050834477926282824,
+     "prob_early_stop": 0.6712506765095604,
+     "expected_n": 31.53373038122275
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.19097879064564313,
+     "prob_early_stop": 0.47355928451527146,
+     "expected_n": 37.26678074905713
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.4383365795019434,
+     "prob_early_stop": 0.28982241568655354,
+     "expected_n": 42.59514994508995
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.7019488706034565,
+     "prob_early_stop": 0.15175417185966372,
+     "expected_n": 46.599129016069746
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.8818267681045971,
+     "prob_early_stop": 0.06690025329589844,
+     "expected_n": 49.059892654418945
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.964384177964321,
+     "prob_early_stop": 0.024298160254969448,
+     "expected_n": 50.295353352605886
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.991461857283153,
+     "prob_early_stop": 0.0070483974370644555,
+     "expected_n": 50.79559647432514
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.9983327754626588,
+     "prob_early_stop": 0.00155998960751757,
+     "expected_n": 50.954760301381995
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.9997505394010212,
+     "prob_early_stop": 0.0002457795181020563,
+     "expected_n": 50.99287239397504
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 1.0,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 22.0
+     },
+     "responders": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 3.0
+     },
+     "observed_rate": {
+      "median": 0.045454545454545456,
+      "q05": 0.0,
+      "q95": 0.13636363636363635
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 0.9985,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 22.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.09090909090909091,
+      "q05": 0.0,
+      "q95": 0.22727272727272727
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 0.989,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 22.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.13636363636363635,
+      "q05": 0.045454545454545456,
+      "q95": 0.2727272727272727
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 0.9475,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 1.0,
+      "q95": 11.0
+     },
+     "observed_rate": {
+      "median": 0.18181818181818182,
+      "q05": 0.045454545454545456,
+      "q95": 0.3181818181818182
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.006,
+     "prob_early_stop_simulated": 0.8475,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 2.0,
+      "q95": 17.0
+     },
+     "observed_rate": {
+      "median": 0.22727272727272727,
+      "q05": 0.09090909090909091,
+      "q95": 0.3333333333333333
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.0485,
+     "prob_early_stop_simulated": 0.6805,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 7.0,
+      "q05": 3.0,
+      "q95": 20.0
+     },
+     "observed_rate": {
+      "median": 0.2727272727272727,
+      "q05": 0.13636363636363635,
+      "q95": 0.39215686274509803
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.1845,
+     "prob_early_stop_simulated": 0.4805,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 15.0,
+      "q05": 4.0,
+      "q95": 24.0
+     },
+     "observed_rate": {
+      "median": 0.3181818181818182,
+      "q05": 0.18181818181818182,
+      "q95": 0.47058823529411764
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.444,
+     "prob_early_stop_simulated": 0.295,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 20.0,
+      "q05": 5.0,
+      "q95": 26.0
+     },
+     "observed_rate": {
+      "median": 0.39215686274509803,
+      "q05": 0.22727272727272727,
+      "q95": 0.5098039215686274
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.7075,
+     "prob_early_stop_simulated": 0.143,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 23.0,
+      "q05": 6.0,
+      "q95": 29.0
+     },
+     "observed_rate": {
+      "median": 0.45098039215686275,
+      "q05": 0.2727272727272727,
+      "q95": 0.5686274509803921
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.883,
+     "prob_early_stop_simulated": 0.061,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 26.0,
+      "q05": 7.0,
+      "q95": 31.0
+     },
+     "observed_rate": {
+      "median": 0.5098039215686274,
+      "q05": 0.3181818181818182,
+      "q95": 0.6078431372549019
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.97,
+     "prob_early_stop_simulated": 0.0195,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 28.0,
+      "q05": 22.0,
+      "q95": 34.0
+     },
+     "observed_rate": {
+      "median": 0.5490196078431373,
+      "q05": 0.43137254901960786,
+      "q95": 0.6666666666666666
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.99,
+     "prob_early_stop_simulated": 0.0095,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 31.0,
+      "q05": 25.0,
+      "q95": 36.0
+     },
+     "observed_rate": {
+      "median": 0.6078431372549019,
+      "q05": 0.49019607843137253,
+      "q95": 0.7058823529411765
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.999,
+     "prob_early_stop_simulated": 0.001,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 33.0,
+      "q05": 27.0,
+      "q95": 38.0
+     },
+     "observed_rate": {
+      "median": 0.6470588235294118,
+      "q05": 0.5294117647058824,
+      "q95": 0.7450980392156863
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 1.0,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 36.0,
+      "q05": 30.0,
+      "q95": 41.0
+     },
+     "observed_rate": {
+      "median": 0.7058823529411765,
+      "q05": 0.5882352941176471,
+      "q95": 0.803921568627451
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": true,
+   "verifier_note": "The protocol specifies one single arm, not a design applied separately to multiple arms; the rendering also calls the efficacy endpoint response rather than disease control.",
+   "evidence_prior": {
+    "status": "CONTEXT_ONLY",
+    "level": "family",
+    "target": "disease_control_rate",
+    "context": {
+     "status": "RESOLVED",
+     "level": "family",
+     "target": "disease_control_rate",
+     "family": "gynecologic",
+     "contexts": 5,
+     "regimens": [
+      "ixabepilone",
+      "ixabepilone + bevacizumab",
+      "ixabepilone + liposomal doxorubicin",
+      "pembrolizumab",
+      "tisotumab vedotin"
+     ],
+     "studies": 5,
+     "rate": {
+      "median": 0.3155657947063446,
+      "q05": 0.03144053276628256,
+      "q10": 0.05392632447183132,
+      "q90": 0.6273522257804871,
+      "q95": 0.700834435224533,
+      "percentiles": {
+       "p10": 0.05392632447183132,
+       "p30": 0.19762969762086868,
+       "p50": 0.3155657947063446,
+       "p70": 0.46265560388565063,
+       "p90": 0.6273522257804871
+      }
+     }
+    },
+    "reason": "only a gynecologic family-level mixture over other regimens (ixabepilone, ixabepilone + bevacizumab, ixabepilone + liposomal doxorubicin, pembrolizumab); no same-regimen or same-class evidence for this arm"
+   },
+   "arm_status": [
+    "unclear"
+   ]
+  },
+  {
+   "decision_rule_id": "DR2",
+   "role": "primary",
+   "arm": "Cabozantinib (Cabozantinib)",
+   "arms": [
+    "ARM1"
+   ],
+   "cohort": "The total sample size to be enrolled is 57 patients.",
+   "design_family": "two_stage_other",
+   "rule": {
+    "stages": [
+     {
+      "n": 22,
+      "stop_if_at_most": 7
+     },
+     {
+      "n": 51,
+      "stop_if_at_most": null
+     }
+    ],
+    "success_if_at_least": 21,
+    "p0": 0.3,
+    "p1": 0.5,
+    "alpha": 0.05,
+    "beta": 0.2
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": 0.05,
+     "beta": 0.2,
+     "early_termination": null
+    },
+    "exact": {
+     "at_p0": {
+      "p": 0.3,
+      "prob_success": 0.050834477926282824,
+      "prob_early_stop": 0.6712506765095604,
+      "expected_n": 31.53373038122275
+     },
+     "at_p1": {
+      "p": 0.5,
+      "prob_success": 0.8818267681045971,
+      "prob_early_stop": 0.06690025329589844,
+      "expected_n": 49.059892654418945
+     }
+    },
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 1.0328490473482845e-14,
+     "prob_early_stop": 0.9999933735394271,
+     "expected_n": 22.000192167356612
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 4.701556766905722e-09,
+     "prob_early_stop": 0.9991213081994762,
+     "expected_n": 22.02548206221519
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 4.732309086720119e-06,
+     "prob_early_stop": 0.9886140921921308,
+     "expected_n": 22.330191326428206
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.00037167586444065547,
+     "prob_early_stop": 0.9438554027050537,
+     "expected_n": 23.628193321553443
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.0069468962185203036,
+     "prob_early_stop": 0.8384723517306156,
+     "expected_n": 26.684301799812147
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.050834477926282824,
+     "prob_early_stop": 0.6712506765095604,
+     "expected_n": 31.53373038122275
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.19097879064564313,
+     "prob_early_stop": 0.47355928451527146,
+     "expected_n": 37.26678074905713
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.4383365795019434,
+     "prob_early_stop": 0.28982241568655354,
+     "expected_n": 42.59514994508995
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.7019488706034565,
+     "prob_early_stop": 0.15175417185966372,
+     "expected_n": 46.599129016069746
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.8818267681045971,
+     "prob_early_stop": 0.06690025329589844,
+     "expected_n": 49.059892654418945
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.964384177964321,
+     "prob_early_stop": 0.024298160254969448,
+     "expected_n": 50.295353352605886
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.991461857283153,
+     "prob_early_stop": 0.0070483974370644555,
+     "expected_n": 50.79559647432514
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.9983327754626588,
+     "prob_early_stop": 0.00155998960751757,
+     "expected_n": 50.954760301381995
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.9997505394010212,
+     "prob_early_stop": 0.0002457795181020563,
+     "expected_n": 50.99287239397504
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 1.0,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 22.0
+     },
+     "responders": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 3.0
+     },
+     "observed_rate": {
+      "median": 0.045454545454545456,
+      "q05": 0.0,
+      "q95": 0.13636363636363635
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 0.9995,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 22.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.09090909090909091,
+      "q05": 0.0,
+      "q95": 0.22727272727272727
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 0.9905,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 22.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.13636363636363635,
+      "q05": 0.045454545454545456,
+      "q95": 0.2727272727272727
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.001,
+     "prob_early_stop_simulated": 0.9435,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 12.0
+     },
+     "observed_rate": {
+      "median": 0.18181818181818182,
+      "q05": 0.09090909090909091,
+      "q95": 0.3181818181818182
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.0025,
+     "prob_early_stop_simulated": 0.8465,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 2.0,
+      "q95": 17.0
+     },
+     "observed_rate": {
+      "median": 0.22727272727272727,
+      "q05": 0.09090909090909091,
+      "q95": 0.3333333333333333
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.047,
+     "prob_early_stop_simulated": 0.671,
+     "enrolled": {
+      "median": 22.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 7.0,
+      "q05": 3.0,
+      "q95": 20.0
+     },
+     "observed_rate": {
+      "median": 0.2727272727272727,
+      "q05": 0.13636363636363635,
+      "q95": 0.39215686274509803
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.1845,
+     "prob_early_stop_simulated": 0.455,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 16.0,
+      "q05": 4.0,
+      "q95": 23.049999999999955
+     },
+     "observed_rate": {
+      "median": 0.3181818181818182,
+      "q05": 0.18181818181818182,
+      "q95": 0.4519607843137246
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.4295,
+     "prob_early_stop_simulated": 0.3005,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 20.0,
+      "q05": 5.0,
+      "q95": 26.0
+     },
+     "observed_rate": {
+      "median": 0.39215686274509803,
+      "q05": 0.22727272727272727,
+      "q95": 0.5098039215686274
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.6985,
+     "prob_early_stop_simulated": 0.156,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 23.0,
+      "q05": 6.0,
+      "q95": 29.0
+     },
+     "observed_rate": {
+      "median": 0.45098039215686275,
+      "q05": 0.2727272727272727,
+      "q95": 0.5686274509803921
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.8725,
+     "prob_early_stop_simulated": 0.07,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 22.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 25.0,
+      "q05": 7.0,
+      "q95": 31.049999999999955
+     },
+     "observed_rate": {
+      "median": 0.49019607843137253,
+      "q05": 0.3181818181818182,
+      "q95": 0.6088235294117638
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.969,
+     "prob_early_stop_simulated": 0.0145,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 28.0,
+      "q05": 22.0,
+      "q95": 34.0
+     },
+     "observed_rate": {
+      "median": 0.5490196078431373,
+      "q05": 0.43137254901960786,
+      "q95": 0.6666666666666666
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.9905,
+     "prob_early_stop_simulated": 0.0085,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 31.0,
+      "q05": 25.0,
+      "q95": 36.0
+     },
+     "observed_rate": {
+      "median": 0.6078431372549019,
+      "q05": 0.49019607843137253,
+      "q95": 0.7058823529411765
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.9985,
+     "prob_early_stop_simulated": 0.0015,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 33.0,
+      "q05": 27.0,
+      "q95": 39.0
+     },
+     "observed_rate": {
+      "median": 0.6470588235294118,
+      "q05": 0.5294117647058824,
+      "q95": 0.7647058823529411
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 1.0,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 51.0,
+      "q05": 51.0,
+      "q95": 51.0
+     },
+     "responders": {
+      "median": 36.0,
+      "q05": 30.0,
+      "q95": 41.0
+     },
+     "observed_rate": {
+      "median": 0.7058823529411765,
+      "q05": 0.5882352941176471,
+      "q95": 0.803921568627451
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": true,
+   "verifier_note": "The protocol specifies one single-arm study, not a design applied separately to multiple arms.",
+   "evidence_prior": {
+    "status": "DESIGN_HYPOTHESIS",
+    "rate": {
+     "median": 0.5
+    },
+    "reason": "the endpoint 'The main objective will be based on joint primary endpoints of efficacy and safe' has no evidence variable: the protocol's design rate is used"
+   },
+   "arm_status": [
+    "unclear"
+   ]
+  },
+  {
+   "decision_rule_id": "DR5",
+   "role": "secondary",
+   "arm": "BEVACIZUMAB (PATIENTS UNDER BEVACIZUMAB)",
+   "arms": [
+    "ARM2"
+   ],
+   "cohort": "19 evaluable bevacizumab pre-treated patients",
+   "design_family": "single_stage",
+   "rule": {
+    "stages": [
+     {
+      "n": 19,
+      "stop_if_at_most": null
+     }
+    ],
+    "success_if_at_least": 8,
+    "p0": 0.2,
+    "p1": 0.5,
+    "alpha": 0.025,
+    "beta": 0.2
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": 0.025,
+     "beta": 0.2,
+     "early_termination": null
+    },
+    "exact": {
+     "at_p0": {
+      "p": 0.2,
+      "prob_success": 0.02327831237681484,
+      "prob_early_stop": 0.0,
+      "expected_n": 19.0
+     },
+     "at_p1": {
+      "p": 0.5,
+      "prob_success": 0.8203582763671877,
+      "prob_early_stop": 0.0,
+      "expected_n": 19.0
+     }
+    },
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 1.7933047540240192e-06,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 0.0002733244240034297,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 0.004084250692487985,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.02327831237681484,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.07745718123624104,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.18196950669989506,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.33443298016246004,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.512224747340589,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.6830739886894164,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.8203582763671877,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.9128735533757184,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.9647720966996358,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.9885590958911373,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.9971774076234201,
+     "prob_early_stop": 0.0,
+     "expected_n": 19.0
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.0,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 3.0
+     },
+     "observed_rate": {
+      "median": 0.05263157894736842,
+      "q05": 0.0,
+      "q95": 0.15789473684210525
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.001,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 4.0
+     },
+     "observed_rate": {
+      "median": 0.10526315789473684,
+      "q05": 0.0,
+      "q95": 0.21052631578947367
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.0035,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.15789473684210525,
+      "q05": 0.05263157894736842,
+      "q95": 0.3157894736842105
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.023,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 1.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.21052631578947367,
+      "q05": 0.05263157894736842,
+      "q95": 0.3684210526315789
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.079,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 2.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.2631578947368421,
+      "q05": 0.10526315789473684,
+      "q95": 0.42105263157894735
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.1745,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 2.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.3157894736842105,
+      "q05": 0.10526315789473684,
+      "q95": 0.47368421052631576
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.3245,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 7.0,
+      "q05": 3.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.3684210526315789,
+      "q05": 0.15789473684210525,
+      "q95": 0.5263157894736842
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.5065,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 4.0,
+      "q95": 11.0
+     },
+     "observed_rate": {
+      "median": 0.42105263157894735,
+      "q05": 0.21052631578947367,
+      "q95": 0.5789473684210527
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.6725,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 5.0,
+      "q95": 12.0
+     },
+     "observed_rate": {
+      "median": 0.42105263157894735,
+      "q05": 0.2631578947368421,
+      "q95": 0.631578947368421
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.8265,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 10.0,
+      "q05": 6.0,
+      "q95": 13.0
+     },
+     "observed_rate": {
+      "median": 0.5263157894736842,
+      "q05": 0.3157894736842105,
+      "q95": 0.6842105263157895
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.9055,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 11.0,
+      "q05": 7.0,
+      "q95": 14.0
+     },
+     "observed_rate": {
+      "median": 0.5789473684210527,
+      "q05": 0.3684210526315789,
+      "q95": 0.7368421052631579
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.9635,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 11.0,
+      "q05": 8.0,
+      "q95": 15.0
+     },
+     "observed_rate": {
+      "median": 0.5789473684210527,
+      "q05": 0.42105263157894735,
+      "q95": 0.7894736842105263
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.989,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 12.0,
+      "q05": 9.0,
+      "q95": 16.0
+     },
+     "observed_rate": {
+      "median": 0.631578947368421,
+      "q05": 0.47368421052631576,
+      "q95": 0.8421052631578947
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 0.9985,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 19.0,
+      "q05": 19.0,
+      "q95": 19.0
+     },
+     "responders": {
+      "median": 13.0,
+      "q05": 10.0,
+      "q95": 16.0
+     },
+     "observed_rate": {
+      "median": 0.6842105263157895,
+      "q05": 0.5263157894736842,
+      "q95": 0.8421052631578947
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": true,
+   "verifier_note": "The rule applies to a bevacizumab pre-treated cohort within the single study, not to a separate bevacizumab arm or to each arm separately.",
+   "evidence_prior": {
+    "status": "CONTEXT_ONLY",
+    "level": "family",
+    "target": "disease_control_rate",
+    "context": {
+     "status": "RESOLVED",
+     "level": "family",
+     "target": "disease_control_rate",
+     "family": "gynecologic",
+     "contexts": 5,
+     "regimens": [
+      "ixabepilone",
+      "ixabepilone + bevacizumab",
+      "ixabepilone + liposomal doxorubicin",
+      "pembrolizumab",
+      "tisotumab vedotin"
+     ],
+     "studies": 5,
+     "rate": {
+      "median": 0.3155657947063446,
+      "q05": 0.03144053276628256,
+      "q10": 0.05392632447183132,
+      "q90": 0.6273522257804871,
+      "q95": 0.700834435224533,
+      "percentiles": {
+       "p10": 0.05392632447183132,
+       "p30": 0.19762969762086868,
+       "p50": 0.3155657947063446,
+       "p70": 0.46265560388565063,
+       "p90": 0.6273522257804871
+      }
+     }
+    },
+    "reason": "only a gynecologic family-level mixture over other regimens (ixabepilone, ixabepilone + bevacizumab, ixabepilone + liposomal doxorubicin, pembrolizumab); no same-regimen or same-class evidence for this arm"
+   },
+   "arm_status": [
+    "unclear"
+   ]
+  }
+ ],
+ "unresolved_decision_rules": [
+  "DR1",
+  "DR2",
+  "DR3",
+  "DR4",
+  "DR5"
+ ],
+ "mode": "decision rules"
+}

@@ -1,0 +1,32 @@
+{
+ "control_arm_id": "ARM1",
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.05073082597856793,
+  "rate_per_year": 0.05206288094709084,
+  "source": "evidence",
+  "wording": "registry participant flow (prostate, PHASE4): left by subject decision, loss to follow-up or physician decision; 14 trials, 1713 participants: 9.9% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "design_alternatives": [],
+ "protocol_toxicities": 2,
+ "asset_ae_signature": {
+  "ARM1": "other",
+  "ARM2": "other"
+ },
+ "bindings_usable": 3,
+ "bindings": 5,
+ "model_calls": 0
+}

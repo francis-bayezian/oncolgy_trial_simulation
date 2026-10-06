@@ -1,0 +1,362 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 31,
+ "facts": [
+  {
+   "kind": "follow_up_visit",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 30,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "safety follow-up visit",
+   "time_origin": "end_of_treatment",
+   "quote": "The safety follow-up visit is 30 days after the last dose of study treatment.",
+   "reason": "A one-time safety follow-up is scheduled 30 days after treatment.",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "ve treatment until disease progression. Participants who receive carboplatin and gemcitabine may receive 4 to 6 cycles. The safety follow-up visit is 30 days after the last dose of study treatment. Report SAEs occurring within 90 days after the last dose of study treatment or within 30 days after the last dose of study treatment when starting a new anticancer therapy, whichever is earlier. I",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol anchors the visit to the last dose of study treatment, not an unspecified end-of-treatment event."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 35,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "initial tumor imaging",
+   "time_origin": "randomization",
+   "quote": "Initial tumor imaging at screening must be performed within 35 days prior to the date of randomization.",
+   "reason": "Screening tumor imaging must occur within 35 days before randomization.",
+   "fact_id": "SF02",
+   "issues": [],
+   "evidence": "ew anticancer treatment, disease progression, pregnancy, death, withdrawal of consent, or the end of the study, whichever occurs first. 8.2.1.1. Initial Tumor Imaging Initial tumor imaging at screening must be performed within 35 days prior to the date of randomization. Any imaging obtained after Cycle 1 Day 1 cannot be included in the screening assessment. The site study team must review sc",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "It matches the initial imaging assessment, timing, origin, and screening context."
+   },
+   "status": "VERIFIED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 14,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening laboratory assessments",
+   "time_origin": "cycle_day",
+   "quote": "Screening laboratory assessments must be performed within 14 days of Cycle 1 Day 1.",
+   "reason": "Screening laboratory tests must be completed within 14 days before treatment starts.",
+   "fact_id": "SF03",
+   "issues": [],
+   "evidence": "dy treatment should be repeated until the values return to normal or baseline or are no longer considered clinically significant by the investigator or medical monitor. Screening laboratory assessments must be performed within 14 days of Cycle 1 Day 1. If performed more than 14 days before Cycle 1 Day 1, then the tests must be repeated and eligibility confirmed before study treatment adminis",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering changes the stated Cycle 1 Day 1 origin to an unspecified cycle day and adds a before-only restriction."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": false,
+   "first_day": 63,
+   "interval_days": null,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 7,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "first on-study tumor imaging",
+   "time_origin": "randomization",
+   "quote": "The first on-study imaging assessment should be performed at 9 weeks (63 days + 7 days) from the date of randomization.",
+   "reason": "The first on-study imaging assessment is scheduled 63 days after randomization with a 7-day allowance.",
+   "fact_id": "SF04",
+   "issues": [],
+   "evidence": "ble alternative. 8.2.2. Tumor Imaging During the Study The first on-study imaging assessment should be performed at 9 weeks (63 days + 7 days) from the date of randomization. Subsequent tumor imaging should be performed every 9 weeks (63 days ± 7 days) or more frequently if clinically indicated. After 54 weeks (378 days ± 7 days), participants who continue receiving study intervention will",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering adds a minus-seven-day tolerance that is not stated in this evidence."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 63,
+   "later_interval_days": 84,
+   "later_after_day": 378,
+   "window_days": 7,
+   "more_often_if_indicated": true,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "CT/MRI tumor imaging",
+   "time_origin": "randomization",
+   "quote": "tumor imaging should be performed every 9 weeks (63 days ± 7 days) or more frequently if clinically indicated. After 54 weeks (378 days ± 7 days), participants who continue receiving study intervention will have imaging every 12 weeks (84 days ± 7 days).",
+   "reason": "Imaging repeats every 9 weeks, changes to every 12 weeks after 54 weeks, and may occur more often if indicated.",
+   "fact_id": "SF05",
+   "issues": [],
+   "evidence": "tumor imaging should be performed every 9 weeks (63 days ± 7 days) or more frequently if clinically indicated. After 54 weeks (378 days ± 7 days), participants who continue receiving study intervention will have imaging every 12 weeks (84 days ± 7 days). Imaging timing should follow calendar days and not be adjusted for delays in cycle starts. Imaging should continue to be performed until di",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering applies the later interval to all patients and adds CT/MRI as an unstated modality."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 63,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 7,
+   "more_often_if_indicated": true,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "bone scans",
+   "time_origin": "randomization",
+   "quote": "Participants with positive bone scans at baseline will be followed with additional scans performed every 9 weeks (± 7 days) from date of randomization, or more frequently if clinically indicated.",
+   "reason": "Additional bone scans apply only to participants with positive baseline scans.",
+   "fact_id": "SF06",
+   "issues": [],
+   "evidence": "r brain metastases. Bone scans at baseline must be sent to central imaging vendor for review with initial tumor imaging. Participants with positive bone scans at baseline will be followed with additional scans performed every 9 weeks (± 7 days) from date of randomization, or more frequently if clinically indicated. For participants with new symptoms suggestive of osseous metastasis, a bone",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering omits that the scheduled subgroup consists of participants with positive baseline bone scans."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 42,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "coagulation testing",
+   "time_origin": "cycle_day",
+   "quote": "Every 2 cycles starting at Cycle 2.",
+   "reason": "Coagulation testing repeats every two 21-day cycles.",
+   "fact_id": "SF07",
+   "issues": [],
+   "evidence": "to receive chemotherapy. Section 8.5.6 Coagulation X X* X X *Every 2 cycles starting at Cycle 2. Section 8.5.6 TSH (T3, T4 if X X* X X *Every 2 cycles starting at abnormal TSH) Cycle 2. Section 8.5.6 Parathyroid X X* X *Every 3 cycles on Day 1 starting (endocrine) for with Cycle 3. Section 8.5.6 pemigatinib participants only Pregnancy testing X* X** X* *Serum only. At screening should be per",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The evidence specifies a cycle-based schedule beginning at Cycle 2, not an unstated 42-day interval."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 42,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "TSH testing",
+   "time_origin": "cycle_day",
+   "quote": "Every 2 cycles starting at Cycle 2.",
+   "reason": "TSH testing repeats every two 21-day cycles.",
+   "fact_id": "SF08",
+   "issues": [],
+   "evidence": "to receive chemotherapy. Section 8.5.6 Coagulation X X* X X *Every 2 cycles starting at Cycle 2. Section 8.5.6 TSH (T3, T4 if X X* X X *Every 2 cycles starting at abnormal TSH) Cycle 2. Section 8.5.6 Parathyroid X X* X *Every 3 cycles on Day 1 starting (endocrine) for with Cycle 3. Section 8.5.6 pemigatinib participants only Pregnancy testing X* X** X* *Serum only. At screening should be per",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The evidence specifies testing every two cycles beginning at Cycle 2, not every 42 days."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 63,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "parathyroid hormone testing",
+   "time_origin": "unclear",
+   "quote": "every 3 cycles starting with Cycle 3 (only for participants who are randomized to receive a regimen that includes pemigatinib)",
+   "reason": "This testing applies only to participants receiving a pemigatinib-containing regimen.",
+   "fact_id": "SF09",
+   "issues": [],
+   "evidence": "testing is required on a more frequent basis if a participant develops hyperphosphatemia during Cycle 1 and is up-titrated (see Section 6.6.2.1). Parathyroid hormone (endocrine) testing will be required at baseline and every 3 cycles starting with Cycle 3 (only for participants who are randomized to receive a regimen that includes pemigatinib) as parathyroid hormone plays a role in calcium",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "It substitutes an unstated 63-day interval for the cycle-based schedule and omits its Cycle 3 start and pemigatinib condition."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "other",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 63,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 7,
+   "more_often_if_indicated": true,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "comprehensive eye examination",
+   "time_origin": "cycle_day",
+   "quote": "once every 3 cycles (± 7 days starting with Cycle 3) for participants randomized to Treatment Groups A and B only",
+   "reason": "The recurring eye examination applies only to Treatment Groups A and B.",
+   "fact_id": "SF10",
+   "issues": [],
+   "evidence": "JTc interval should be used for all subsequent assessments. 8.5.5. Comprehensive Eye Examination A comprehensive eye examination should be performed by a qualified ophthalmologist at screening on all participants, once every 3 cycles (± 7 days starting with Cycle 3) for participants randomized to Treatment Groups A and B only, at EOT for all participants, and as clinically indicated. The ey"
+  },
+  {
+   "kind": "other",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 63,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "12-lead ECG",
+   "time_origin": "cycle_day",
+   "quote": "every 3 cycles thereafter (ie, C7, C10, C13, etc).",
+   "reason": "After the specified earlier ECGs, ECGs repeat every three cycles.",
+   "fact_id": "SF11",
+   "issues": [],
+   "evidence": "ital signs/body X* X X X X X** X X *Height at screening only. weight/height **Only participants scheduled to receive chemotherapy. Section 8.5.3 12-lead ECG X X* X X *Prior to receipt of study drugs on C2D1 and C4D1 and every 3 cycles thereafter (ie, C7, C10, C13, etc). Section 8.5.4 Slit lamp, visual X X* X *Performed every 3 cycles acuity, funduscopy (± 7 days) starting with Cycle 3 with d"
+  },
+  {
+   "kind": "other",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 63,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "quality of life questionnaires",
+   "time_origin": "cycle_day",
+   "quote": "Every 3 cycles on Day 1 starting on Cycle 4.",
+   "reason": "Quality-of-life assessments repeat every three cycles from Cycle 4.",
+   "fact_id": "SF12",
+   "issues": [],
+   "evidence": "ested by investigators. 2. Section 1, Protocol Summary (Table 4: Schedule of Activities) The following updates were made: a. Description of change: Revised QLQ-C30 and EQ-5D-5L assessments during the treatment period to every 3 cycles on Day 1 starting on Cycle 4. Rationale for change: In order to eliminate the requirement that a participant be seen in the clinic to complete the QLQ-C30 and"
+  },
+  {
+   "kind": "other",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": null,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": true,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "comprehensive eye examination",
+   "time_origin": "end_of_treatment",
+   "quote": "at EOT for all participants",
+   "reason": "An eye examination is scheduled at end of treatment for all participants.",
+   "fact_id": "SF13",
+   "issues": [],
+   "evidence": "JTc interval should be used for all subsequent assessments. 8.5.5. Comprehensive Eye Examination A comprehensive eye examination should be performed by a qualified ophthalmologist at screening on all participants, once every 3 cycles (± 7 days starting with Cycle 3) for participants randomized to Treatment Groups A and B only, at EOT for all participants, and as clinically indicated. The ey"
+  },
+  {
+   "kind": "follow_up_visit",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 84,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "survival status",
+   "time_origin": "unclear",
+   "quote": "should be contacted by telephone, email, or visit at least every 12 weeks to assess for survival status",
+   "reason": "Survival follow-up contacts occur at least every 12 weeks after entering survival follow-up.",
+   "fact_id": "SF14",
+   "issues": [],
+   "evidence": "ast dose of study treatment, has confirmed disease progression, or starts a new anticancer therapy, the participant moves into the survival follow-up period and should be contacted by telephone, email, or visit at least every 12 weeks to assess for survival status until death, withdrawal of consent, or the end of the study, whichever occurs first. For participants having entered the survival",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The schedule applies during survival follow-up and states at least every 12 weeks, not every 84 days for all patients."
+   },
+   "status": "REVIEW_REQUIRED"
+  }
+ ]
+}

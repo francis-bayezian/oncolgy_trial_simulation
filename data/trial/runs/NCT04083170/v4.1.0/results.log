@@ -1,0 +1,44 @@
+{
+ "mode": "decision rules",
+ "unresolved_decision_rules": [
+  "DR1",
+  "DR2",
+  "DR3",
+  "DR4"
+ ],
+ "rules": [
+  {
+   "rule": "DR1",
+   "arm": "Regimen A (High dose consisting of 1320 cGy TBI plus fludara",
+   "cohort": "A total of 10 patients will be enrolled ",
+   "cited": [],
+   "p_interest_at_p0": null,
+   "p_interest_at_p1": null
+  },
+  {
+   "rule": "DR2",
+   "arm": "RegimenB (Intermediatedoseconsistingof400cGyTBIplusFludarabi",
+   "cohort": "A total of 10 patients will be enrolled ",
+   "cited": [],
+   "p_interest_at_p0": null,
+   "p_interest_at_p1": null
+  },
+  {
+   "rule": "DR3",
+   "arm": "Regimen A (High dose consisting of 1320 cGy TBI plus fludara",
+   "cohort": "A total of 10 patients will be enrolled ",
+   "cited": [],
+   "p_interest_at_p0": null,
+   "p_interest_at_p1": null
+  },
+  {
+   "rule": "DR4",
+   "arm": "RegimenB (Intermediatedoseconsistingof400cGyTBIplusFludarabi",
+   "cohort": "A total of 10 patients will be enrolled ",
+   "cited": [],
+   "p_interest_at_p0": null,
+   "p_interest_at_p1": null
+  }
+ ],
+ "model_calls": 0
+}

@@ -1,0 +1,148 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT01625234\\v4.1.0\\population_base",
+  "family": "lung",
+  "phase": null,
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.31696032727803947,
+     0.5982648098099234,
+     0.08449291843189367,
+     0.00028194448014353133,
+     0.0
+    ],
+    "trial_range_10_90": [
+     [
+      0.156,
+      0.462,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.464,
+      0.734,
+      0.153,
+      0.0,
+      0.0
+     ]
+    ],
+    "trials": 74,
+    "participants": 21610,
+    "source": "registry baseline ECOG of enrolled participants (lung; 74 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 69.41589156908665,
+    "sd": 17.761793141214298,
+    "trials": 29,
+    "participants": 4270,
+    "source": "registry baseline weight of enrolled participants (lung; 29 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 167.5625477264838,
+    "sd": 10.22135647939946,
+    "trials": 23,
+    "participants": 2881,
+    "source": "registry baseline height of enrolled participants (lung; 23 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "each dose/expansion cohort",
+    "variable": "var:each_dose_expansion_cohort",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "tumor type/population",
+    "variable": "var:tumor_type_population",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "prior treatment cohort",
+    "variable": "var:prior_treatment_cohort",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 2 trials, fewer than 3)",
+    "effect": "registry results reported by this subgroup (up to 5 trials; prognostic, A28)"
+   },
+   {
+    "factor": "genomic alterations",
+    "variable": "var:genomic_alterations",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor"
+   },
+   {
+    "factor": "presence of baseline CNS metastases or leptomeningeal disease",
+    "variable": "var:presence_of_baseline_cns_metastases_or_leptomeningeal_diseas",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (all oncology; 4 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "ALK-positive",
+    "variable": "var:alk_positive",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "ALK-negative",
+    "variable": "var:alk_negative",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "MET status as confirmed centrally",
+    "variable": "var:met_status_as_confirmed_centrally",
+    "kind": "generated",
+    "prevalence": "the protocol states no levels and no registry table reports the factor",
+    "effect": "no levels"
+   },
+   {
+    "factor": "central testing for ALK will no longer be required",
+    "variable": "var:central_testing_for_alk_will_no_longer_be_required",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 2 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   },
+   {
+    "factor": "age (< 65 years, >= 65 years)",
+    "variable": "demographic:age",
+    "kind": "age",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  ]
+ }
+}

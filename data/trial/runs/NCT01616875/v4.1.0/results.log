@@ -1,0 +1,17 @@
+{
+ "mode": "decision rules",
+ "unresolved_decision_rules": [
+  "DR1"
+ ],
+ "rules": [
+  {
+   "rule": "DR1",
+   "arm": "Cabazitaxel 15 mg/m2 day 1 + cisplatin 70mg/ m2 day 1 (Four ",
+   "cohort": "26 patients",
+   "cited": [],
+   "p_interest_at_p0": 0.037703329593720705,
+   "p_interest_at_p1": 0.8006400384662486
+  }
+ ],
+ "model_calls": 0
+}

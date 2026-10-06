@@ -1,0 +1,673 @@
+{
+ "outcomes_version": "outcomes-1.0.0",
+ "inputs": {
+  "studyspec": "9f61263a2faad6d1d336cb0cd9a60c04b28f9239bfc4d7eba9c57d14230db8f5",
+  "facts": "7b4169874cc70f0698b2f92cd2394e7be84122be375b22692bace2196e542a4f"
+ },
+ "arms": [
+  {
+   "arm_id": "ARM1",
+   "label": "Piflufolastat (18F) injection (Trade name: PYLARIFY®)",
+   "description": "Piflufolastat (18F) injection (Trade name: PYLARIFY®)"
+  },
+  {
+   "arm_id": "ARM2",
+   "label": "Flotufolastat (18F) injection (Trade name: POSLUMA®)",
+   "description": "Flotufolastat (18F) injection (Trade name: POSLUMA®)"
+  }
+ ],
+ "control_arm_id": "ARM1",
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "effect": {
+  "grid_hr": [
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9,
+   0.95,
+   1.0,
+   1.1,
+   1.2,
+   1.3
+  ],
+  "design_alternatives": [],
+  "asset_prior": {
+   "status": "RESOLVED",
+   "comparisons": 2,
+   "mu_log_hr": 0.20674381219715898,
+   "se_mu": 0.21897877056154236,
+   "tau2": 0.07196187711261347,
+   "predictive_sd": 0.3462854011783605,
+   "hr_median": 1.229667505607934,
+   "hr_predictive_95": [
+    0.6237765249578874,
+    2.4240767548123467
+   ],
+   "note": "indirect evidence: adding a drug to a radiotherapy-containing regimen in other (adult) cancers; no comparison of the protocol's own experimental addition exists in the asset",
+   "comparisons_used": [
+    {
+     "fusion_id": "12fea832340e8a35",
+     "disease": "Prostate carcinoma",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "bicalutamide"
+     ],
+     "log_hr_add_on": 0.43072993086113065,
+     "se": 0.1617393155611274,
+     "hr_add_on": 1.5383800248805677
+    },
+    {
+     "fusion_id": "9e76aad9af19a22d",
+     "disease": "Malignant Head and Neck Neoplasm",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "cetuximab"
+     ],
+     "log_hr_add_on": -0.0073395526232417265,
+     "se": 0.1477210612501004,
+     "hr_add_on": 0.9926873161180804
+    }
+   ],
+   "decision": "insufficient evidence: shown for reference, not used (user decision 2026-09-27)"
+  },
+  "definition": "S_experimental(t) = S_control(t) ** HR (proportional hazards on the whole EFS curve)"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.05073082597856793,
+  "rate_per_year": 0.05206288094709084,
+  "source": "evidence",
+  "wording": "registry participant flow (prostate, PHASE4): left by subject decision, loss to follow-up or physician decision; 14 trials, 1713 participants: 9.9% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "toxicities_protocol": [
+  {
+   "event": "diarrhea",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.006999999999999999,
+   "upper": null,
+   "fact_id": "F028"
+  },
+  {
+   "event": "blood pressure increase",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.005,
+   "upper": null,
+   "fact_id": "F029"
+  }
+ ],
+ "adverse_events_asset": {
+  "ARM1": {
+   "classes": [],
+   "unmapped": [],
+   "class_signature": "other",
+   "event_terms": 1928,
+   "missing_classes": [],
+   "extra_classes": [
+    "other"
+   ],
+   "events": [
+    {
+     "event": "fatigue",
+     "seriousness": "non_serious",
+     "rate": 0.33366170207492785,
+     "q025": 0.25523878730486066,
+     "q975": 0.3604150382936227
+    },
+    {
+     "event": "nausea",
+     "seriousness": "non_serious",
+     "rate": 0.2569841608153932,
+     "q025": 0.19442547387594752,
+     "q975": 0.28701764802996077
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "non_serious",
+     "rate": 0.20768165758049606,
+     "q025": 0.19264695090125397,
+     "q975": 0.2246350340982497
+    },
+    {
+     "event": "anemia",
+     "seriousness": "non_serious",
+     "rate": 0.1512986371109691,
+     "q025": 0.11017021015087775,
+     "q975": 0.17176458051423737
+    },
+    {
+     "event": "constipation",
+     "seriousness": "non_serious",
+     "rate": 0.12740435392250565,
+     "q025": 0.10992004078347968,
+     "q975": 0.17080888550037504
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "non_serious",
+     "rate": 0.12334762229725557,
+     "q025": 0.10979949858276031,
+     "q975": 0.17076345265100912
+    },
+    {
+     "event": "anorexia",
+     "seriousness": "non_serious",
+     "rate": 0.11178735595504305,
+     "q025": 0.08153116230374265,
+     "q975": 0.12952699697763675
+    },
+    {
+     "event": "alopecia",
+     "seriousness": "non_serious",
+     "rate": 0.09320900011690761,
+     "q025": 0.08084309716043436,
+     "q975": 0.1288582820591356
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "non_serious",
+     "rate": 0.08968003588199905,
+     "q025": 0.06185223535503078,
+     "q975": 0.12788924674569738
+    },
+    {
+     "event": "fever",
+     "seriousness": "non_serious",
+     "rate": 0.08939014690755057,
+     "q025": 0.08095740534240689,
+     "q975": 0.12441511161399009
+    },
+    {
+     "event": "headache",
+     "seriousness": "non_serious",
+     "rate": 0.08539200560044637,
+     "q025": 0.06030933241028425,
+     "q975": 0.09627096313154107
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "non_serious",
+     "rate": 0.08435730599623742,
+     "q025": 0.05992798513230582,
+     "q975": 0.09596362281512567
+    },
+    {
+     "event": "coughing",
+     "seriousness": "non_serious",
+     "rate": 0.08182295780757406,
+     "q025": 0.059727972701015916,
+     "q975": 0.0959161074620123
+    },
+    {
+     "event": "sensory_neuropathy",
+     "seriousness": "non_serious",
+     "rate": 0.06737069467435935,
+     "q025": 0.04627021863757199,
+     "q975": 0.09645857586183933
+    },
+    {
+     "event": "hot_flushes",
+     "seriousness": "non_serious",
+     "rate": 0.06541783758884094,
+     "q025": 0.04378333786292164,
+     "q975": 0.09647751603448292
+    },
+    {
+     "event": "back_pain",
+     "seriousness": "non_serious",
+     "rate": 0.06481090403582068,
+     "q025": 0.05919783662241126,
+     "q975": 0.07114007287380641
+    },
+    {
+     "event": "sleeplessness",
+     "seriousness": "non_serious",
+     "rate": 0.0641188726395904,
+     "q025": 0.04510054746896132,
+     "q975": 0.07100008875597272
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "non_serious",
+     "rate": 0.06405743024948754,
+     "q025": 0.044523239592871904,
+     "q975": 0.0710589882019267
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "rate": 0.06391810606789197,
+     "q025": 0.04386558149596475,
+     "q975": 0.09203025439639623
+    },
+    {
+     "event": "hypertension_variable",
+     "seriousness": "non_serious",
+     "rate": 0.06295273595244222,
+     "q025": 0.043717943701602736,
+     "q975": 0.0711692164966775
+    },
+    {
+     "event": "stomatitis",
+     "seriousness": "non_serious",
+     "rate": 0.05931513278574402,
+     "q025": 0.04321751630297296,
+     "q975": 0.07100122405687237
+    },
+    {
+     "event": "peripheral_edema",
+     "seriousness": "non_serious",
+     "rate": 0.05192673607059012,
+     "q025": 0.0433089953058447,
+     "q975": 0.0707974212000852
+    },
+    {
+     "event": "febrile_neutropenia",
+     "seriousness": "serious",
+     "rate": 0.025303482314774556,
+     "q025": 0.016824947981718512,
+     "q975": 0.03756354500796865
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "serious",
+     "rate": 0.02507170507737655,
+     "q025": 0.01640060560034453,
+     "q975": 0.037824277999181026
+    },
+    {
+     "event": "anemia",
+     "seriousness": "serious",
+     "rate": 0.018321475672577598,
+     "q025": 0.011907073230510257,
+     "q975": 0.031464533878347876
+    },
+    {
+     "event": "pneumonia",
+     "seriousness": "serious",
+     "rate": 0.017215457869305707,
+     "q025": 0.011755932154492384,
+     "q975": 0.02640275831011788
+    },
+    {
+     "event": "fever",
+     "seriousness": "serious",
+     "rate": 0.013325202401089288,
+     "q025": 0.010126686579835205,
+     "q975": 0.01959006229355372
+    },
+    {
+     "event": "fatigue",
+     "seriousness": "serious",
+     "rate": 0.013246617896667704,
+     "q025": 0.008646438447072932,
+     "q975": 0.01969895157001996
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "serious",
+     "rate": 0.011948857240352675,
+     "q025": 0.008491807211835574,
+     "q975": 0.016507837774783214
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "serious",
+     "rate": 0.010184604190196825,
+     "q025": 0.008476304106180173,
+     "q975": 0.014235975931136766
+    }
+   ],
+   "note": "adult registry evidence at treatment-class level, extrapolated to this protocol's population"
+  },
+  "ARM2": {
+   "classes": [],
+   "unmapped": [],
+   "class_signature": "other",
+   "event_terms": 1928,
+   "missing_classes": [],
+   "extra_classes": [
+    "other"
+   ],
+   "events": [
+    {
+     "event": "fatigue",
+     "seriousness": "non_serious",
+     "rate": 0.33366170207492785,
+     "q025": 0.25523878730486066,
+     "q975": 0.3604150382936227
+    },
+    {
+     "event": "nausea",
+     "seriousness": "non_serious",
+     "rate": 0.2569841608153932,
+     "q025": 0.19442547387594752,
+     "q975": 0.28701764802996077
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "non_serious",
+     "rate": 0.20768165758049606,
+     "q025": 0.19264695090125397,
+     "q975": 0.2246350340982497
+    },
+    {
+     "event": "anemia",
+     "seriousness": "non_serious",
+     "rate": 0.1512986371109691,
+     "q025": 0.11017021015087775,
+     "q975": 0.17176458051423737
+    },
+    {
+     "event": "constipation",
+     "seriousness": "non_serious",
+     "rate": 0.12740435392250565,
+     "q025": 0.10992004078347968,
+     "q975": 0.17080888550037504
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "non_serious",
+     "rate": 0.12334762229725557,
+     "q025": 0.10979949858276031,
+     "q975": 0.17076345265100912
+    },
+    {
+     "event": "anorexia",
+     "seriousness": "non_serious",
+     "rate": 0.11178735595504305,
+     "q025": 0.08153116230374265,
+     "q975": 0.12952699697763675
+    },
+    {
+     "event": "alopecia",
+     "seriousness": "non_serious",
+     "rate": 0.09320900011690761,
+     "q025": 0.08084309716043436,
+     "q975": 0.1288582820591356
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "non_serious",
+     "rate": 0.08968003588199905,
+     "q025": 0.06185223535503078,
+     "q975": 0.12788924674569738
+    },
+    {
+     "event": "fever",
+     "seriousness": "non_serious",
+     "rate": 0.08939014690755057,
+     "q025": 0.08095740534240689,
+     "q975": 0.12441511161399009
+    },
+    {
+     "event": "headache",
+     "seriousness": "non_serious",
+     "rate": 0.08539200560044637,
+     "q025": 0.06030933241028425,
+     "q975": 0.09627096313154107
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "non_serious",
+     "rate": 0.08435730599623742,
+     "q025": 0.05992798513230582,
+     "q975": 0.09596362281512567
+    },
+    {
+     "event": "coughing",
+     "seriousness": "non_serious",
+     "rate": 0.08182295780757406,
+     "q025": 0.059727972701015916,
+     "q975": 0.0959161074620123
+    },
+    {
+     "event": "sensory_neuropathy",
+     "seriousness": "non_serious",
+     "rate": 0.06737069467435935,
+     "q025": 0.04627021863757199,
+     "q975": 0.09645857586183933
+    },
+    {
+     "event": "hot_flushes",
+     "seriousness": "non_serious",
+     "rate": 0.06541783758884094,
+     "q025": 0.04378333786292164,
+     "q975": 0.09647751603448292
+    },
+    {
+     "event": "back_pain",
+     "seriousness": "non_serious",
+     "rate": 0.06481090403582068,
+     "q025": 0.05919783662241126,
+     "q975": 0.07114007287380641
+    },
+    {
+     "event": "sleeplessness",
+     "seriousness": "non_serious",
+     "rate": 0.0641188726395904,
+     "q025": 0.04510054746896132,
+     "q975": 0.07100008875597272
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "non_serious",
+     "rate": 0.06405743024948754,
+     "q025": 0.044523239592871904,
+     "q975": 0.0710589882019267
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "rate": 0.06391810606789197,
+     "q025": 0.04386558149596475,
+     "q975": 0.09203025439639623
+    },
+    {
+     "event": "hypertension_variable",
+     "seriousness": "non_serious",
+     "rate": 0.06295273595244222,
+     "q025": 0.043717943701602736,
+     "q975": 0.0711692164966775
+    },
+    {
+     "event": "stomatitis",
+     "seriousness": "non_serious",
+     "rate": 0.05931513278574402,
+     "q025": 0.04321751630297296,
+     "q975": 0.07100122405687237
+    },
+    {
+     "event": "peripheral_edema",
+     "seriousness": "non_serious",
+     "rate": 0.05192673607059012,
+     "q025": 0.0433089953058447,
+     "q975": 0.0707974212000852
+    },
+    {
+     "event": "febrile_neutropenia",
+     "seriousness": "serious",
+     "rate": 0.025303482314774556,
+     "q025": 0.016824947981718512,
+     "q975": 0.03756354500796865
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "serious",
+     "rate": 0.02507170507737655,
+     "q025": 0.01640060560034453,
+     "q975": 0.037824277999181026
+    },
+    {
+     "event": "anemia",
+     "seriousness": "serious",
+     "rate": 0.018321475672577598,
+     "q025": 0.011907073230510257,
+     "q975": 0.031464533878347876
+    },
+    {
+     "event": "pneumonia",
+     "seriousness": "serious",
+     "rate": 0.017215457869305707,
+     "q025": 0.011755932154492384,
+     "q975": 0.02640275831011788
+    },
+    {
+     "event": "fever",
+     "seriousness": "serious",
+     "rate": 0.013325202401089288,
+     "q025": 0.010126686579835205,
+     "q975": 0.01959006229355372
+    },
+    {
+     "event": "fatigue",
+     "seriousness": "serious",
+     "rate": 0.013246617896667704,
+     "q025": 0.008646438447072932,
+     "q975": 0.01969895157001996
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "serious",
+     "rate": 0.011948857240352675,
+     "q025": 0.008491807211835574,
+     "q975": 0.016507837774783214
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "serious",
+     "rate": 0.010184604190196825,
+     "q025": 0.008476304106180173,
+     "q975": 0.014235975931136766
+    }
+   ],
+   "note": "adult registry evidence at treatment-class level, extrapolated to this protocol's population"
+  }
+ },
+ "bindings": [
+  {
+   "role": "analysis_rule",
+   "ref": "SS2",
+   "value": 52.0,
+   "issues": [
+    "follow-up must be a positive number of years"
+   ],
+   "evidence_text": "to obtain a minimum of 52 evaluable patients",
+   "fact_id": null,
+   "years": 0,
+   "population": "patients with low PSA\n(≤0.5 ng/mL) BCR of prostate cancer following RP",
+   "quote": "Approximately 60 patients will be screened for inclusion into the study to obtain a minimum of 52 evaluable patients (i.e., have evaluable PET scans for both piflufolastat (18F) and flotufolastat (18F) available for analysis).",
+   "rendering": "the final analysis is conducted once 52 eligible and evaluable patients with low PSA\n(≤0.5 ng/mL) BCR of prostate cancer following RP have been enrolled and all have been followed for at least 0 year(s)",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol specifies obtaining a minimum of 52 evaluable patients but does not require all patients to have at least 0 years of follow-up before final analysis."
+   },
+   "semantic_status": "INCORRECT",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "control_arm",
+   "arm_id": "ARM1",
+   "fact_id": null,
+   "issues": [],
+   "evidence_text": "Piflufolastat (18F) injection (Trade name: PYLARIFY®): Piflufolastat (18F) injection (Trade name: PYLARIFY®); Flotufolastat (18F) injection (Trade name: POSLUMA®): Flotufolastat (18F) injection (Trade name: POSLUMA®)",
+   "rendering": "the protocol's control (reference) arm, the arm without the experimental addition, is 'Piflufolastat (18F) injection (Trade name: PYLARIFY®)' (Piflufolastat (18F) injection (Trade name: PYLARIFY®))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "Piflufolastat is identified as the comparator/reference treatment, while flotufolastat is the investigational product."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "efs_model_family",
+   "family": "not_stated",
+   "quote": "",
+   "fact_id": null,
+   "issues": [
+    "the model-family quote is not in the protocol text"
+   ],
+   "rendering": "the protocol states that the reference group's EFS is represented by a not_stated: ''",
+   "verification": {
+    "votes": [
+     "NOT_A_RULE",
+     "NOT_A_RULE",
+     "NOT_A_RULE"
+    ],
+    "reviewer_note": "The supplied text does not state an EFS value or an EFS model for any group."
+   },
+   "semantic_status": "NOT_A_RULE",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F028",
+   "event": "diarrhea",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F028 is the incidence of diarrhea (grade ) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'adverse reactions reported in ≥0.4% of patients: diarrhea'; level 'diarrhea'; value 0.7% [read as proportion 0.007]; population 'patients with prostate cancer'; treatment 'flotufolastat (18F)'; source historical_study (marketing authorization studies of flotufolastat (18F)))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 0.7% diarrhea incidence to flotufolastat in patients with prostate cancer based on the cited marketing authorization studies."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F029",
+   "event": "blood pressure increase",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F029 is the incidence of blood pressure increase (grade ) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'blood pressure increase'; level 'blood pressure increase'; value 0.5% [read as proportion 0.005]; population 'patients with prostate cancer'; treatment 'flotufolastat (18F)'; source historical_study (marketing authorization studies of flotufolastat (18F)))",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly assigns the 0.5% blood pressure increase incidence to flotufolastat in the cited marketing authorization studies."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  }
+ ],
+ "assessment_timing": "EFS events are observed at their true time: detection at the next scheduled assessment is not applied",
+ "efs_origin": "enrollment (= randomization): the protocol does not state the EFS time origin (user decision 2026-09-27)"
+}

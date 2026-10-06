@@ -1,0 +1,115 @@
+Factor,Level,Arm vs control,N / N control,ORR difference % (95% CI),PFS HR (95% CI),OS HR (95% CI)
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM3 vs ARM8,14 / 10,"20.0 (-18.6, 58.6)",0.388 (0.139-1.084),-
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM4 vs ARM8,16 / 10,"7.5 (-29.5, 44.5)",0.366 (0.135-0.993),-
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM5 vs ARM8,17 / 10,"17.1 (-20.0, 54.1)",0.579 (0.229-1.461),-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM3 vs ARM8,9 / 4,"-55.6 (-88.0, -23.1)",1.671 (0.476-5.863),-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM4 vs ARM8,13 / 4,"-38.5 (-64.9, -12.0)",1.391 (0.452-4.281),-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM5 vs ARM8,17 / 4,"-52.9 (-76.7, -29.2)",1.326 (0.45-3.913),-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM3 vs ARM8,12 / 7,"-23.8 (-69.2, 21.5)",1.437 (0.517-3.997),-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM4 vs ARM8,8 / 7,"30.4 (-12.9, 73.6)",2.121 (0.639-7.038),-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM5 vs ARM8,10 / 7,"-37.1 (-81.4, 7.1)",1.246 (0.435-3.565),-
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM3 vs ARM8,14 / 13,"-10.4 (-47.4, 26.5)",1.19 (0.506-2.801),-
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM4 vs ARM8,19 / 13,"-14.6 (-48.8, 19.7)",1.185 (0.544-2.583),-
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM5 vs ARM8,7 / 13,"-17.6 (-60.7, 25.5)",1.306 (0.436-3.916),-
+tumor  type/population,Disease Population Group 1,ARM3 vs ARM8,13 / 8,"-11.5 (-55.1, 32.0)",0.834 (0.287-2.425),-
+tumor  type/population,Disease Population Group 1,ARM4 vs ARM8,19 / 8,"-7.9 (-49.0, 33.3)",0.738 (0.27-2.018),-
+tumor  type/population,Disease Population Group 1,ARM5 vs ARM8,15 / 8,"10.0 (-32.6, 52.6)",0.666 (0.239-1.855),-
+tumor  type/population,Disease Population Group 2,ARM3 vs ARM8,19 / 15,"12.6 (-20.8, 46.1)",0.835 (0.397-1.755),-
+tumor  type/population,Disease Population Group 2,ARM4 vs ARM8,20 / 15,"15.0 (-18.0, 48.0)",0.841 (0.407-1.737),-
+tumor  type/population,Disease Population Group 2,ARM5 vs ARM8,14 / 15,"-18.6 (-51.4, 14.2)",2.17 (0.908-5.189),-
+tumor  type/population,Disease Population Group 3,ARM3 vs ARM8,17 / 11,"-34.2 (-70.0, 1.5)",2.209 (0.951-5.131),-
+tumor  type/population,Disease Population Group 3,ARM4 vs ARM8,17 / 11,"-16.6 (-53.6, 20.4)",0.984 (0.435-2.225),-
+tumor  type/population,Disease Population Group 3,ARM5 vs ARM8,22 / 11,"-27.3 (-62.1, 7.5)",0.726 (0.32-1.646),-
+prior  treatment  cohort,No,ARM3 vs ARM8,21 / 22,"-6.9 (-36.8, 22.9)",0.831 (0.426-1.621),-
+prior  treatment  cohort,No,ARM4 vs ARM8,29 / 22,"-2.8 (-30.5, 24.8)",0.766 (0.413-1.418),-
+prior  treatment  cohort,No,ARM5 vs ARM8,17 / 22,"-36.9 (-64.5, -9.3)",0.928 (0.465-1.855),-
+prior  treatment  cohort,Yes,ARM3 vs ARM8,28 / 12,"-5.9 (-39.0, 27.1)",1.101 (0.516-2.352),-
+prior  treatment  cohort,Yes,ARM4 vs ARM8,27 / 12,"2.8 (-30.8, 36.4)",1.095 (0.524-2.291),-
+prior  treatment  cohort,Yes,ARM5 vs ARM8,34 / 12,"8.3 (-24.2, 40.9)",0.864 (0.413-1.808),-
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM3 vs ARM8,18 / 9,"-22.2 (-60.6, 16.2)",0.823 (0.332-2.039),-
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM4 vs ARM8,15 / 9,"-33.3 (-72.3, 5.6)",1.318 (0.541-3.211),-
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM5 vs ARM8,19 / 9,"-24.6 (-62.5, 13.4)",0.813 (0.334-1.977),-
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM3 vs ARM8,14 / 9,"5.6 (-36.2, 47.3)",1.437 (0.562-3.674),-
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM4 vs ARM8,13 / 9,"9.4 (-32.9, 51.7)",0.894 (0.356-2.244),-
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM5 vs ARM8,12 / 9,"5.6 (-37.5, 48.6)",1.103 (0.437-2.786),-
+genomic  alterations,bcr/abl translocation above detection limit,ARM3 vs ARM8,10 / 8,"-17.5 (-59.2, 24.2)",1.068 (0.368-3.098),-
+genomic  alterations,bcr/abl translocation above detection limit,ARM4 vs ARM8,13 / 8,"24.0 (-18.7, 66.8)",0.364 (0.116-1.141),-
+genomic  alterations,bcr/abl translocation above detection limit,ARM5 vs ARM8,14 / 8,"-16.1 (-55.9, 23.8)",0.649 (0.234-1.801),-
+genomic  alterations,t(4;11) translocation above detection limit,ARM3 vs ARM8,7 / 8,"-7.1 (-57.6, 43.3)",2.651 (0.745-9.431),-
+genomic  alterations,t(4;11) translocation above detection limit,ARM4 vs ARM8,15 / 8,"-3.3 (-46.2, 39.5)",1.191 (0.474-2.991),-
+genomic  alterations,t(4;11) translocation above detection limit,ARM5 vs ARM8,6 / 8,"0.0 (-52.9, 52.9)",2.024 (0.514-7.964),-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM3 vs ARM8,30 / 23,"-25.2 (-51.4, 1.0)",0.932 (0.508-1.709),-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM4 vs ARM8,30 / 23,"-15.2 (-41.7, 11.2)",0.875 (0.486-1.574),-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM5 vs ARM8,32 / 23,"-24.6 (-50.4, 1.3)",1.183 (0.66-2.123),-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM3 vs ARM8,19 / 11,"23.9 (-7.9, 55.7)",1.087 (0.484-2.444),-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM4 vs ARM8,26 / 11,"28.0 (-1.8, 57.8)",0.775 (0.341-1.759),-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM5 vs ARM8,19 / 11,"18.7 (-12.8, 50.1)",0.6 (0.249-1.442),-
+ALK-positive,Negative,ARM3 vs ARM8,26 / 20,"-1.5 (-30.0, 26.9)",0.903 (0.463-1.762),-
+ALK-positive,Negative,ARM4 vs ARM8,28 / 20,"2.9 (-25.4, 31.1)",0.63 (0.319-1.242),-
+ALK-positive,Negative,ARM5 vs ARM8,23 / 20,"-9.6 (-38.1, 19.0)",0.478 (0.235-0.969),-
+ALK-positive,Positive,ARM3 vs ARM8,23 / 14,"-20.8 (-53.1, 11.5)",1.169 (0.578-2.366),-
+ALK-positive,Positive,ARM4 vs ARM8,28 / 14,"-10.7 (-41.9, 20.4)",1.355 (0.703-2.61),-
+ALK-positive,Positive,ARM5 vs ARM8,28 / 14,"-17.9 (-49.0, 13.3)",1.926 (0.971-3.817),-
+ALK-negative,Negative,ARM3 vs ARM8,19 / 19,"-10.5 (-42.1, 21.1)",1.054 (0.527-2.109),-
+ALK-negative,Negative,ARM4 vs ARM8,21 / 19,"-14.5 (-45.1, 16.1)",0.84 (0.425-1.657),-
+ALK-negative,Negative,ARM5 vs ARM8,22 / 19,"-20.8 (-50.5, 8.9)",0.819 (0.413-1.625),-
+ALK-negative,Positive,ARM3 vs ARM8,30 / 15,"-6.7 (-37.4, 24.1)",1.046 (0.531-2.058),-
+ALK-negative,Positive,ARM4 vs ARM8,35 / 15,"7.6 (-22.5, 37.8)",0.933 (0.483-1.806),-
+ALK-negative,Positive,ARM5 vs ARM8,29 / 15,"-1.8 (-32.9, 29.2)",1.109 (0.571-2.155),-
+central  testing  for  ALK  will  no  longer  be  required,No,ARM3 vs ARM8,25 / 13,"1.5 (-31.1, 34.2)",0.613 (0.267-1.408),-
+central  testing  for  ALK  will  no  longer  be  required,No,ARM4 vs ARM8,26 / 13,"26.9 (-5.2, 59.1)",0.473 (0.201-1.111),-
+central  testing  for  ALK  will  no  longer  be  required,No,ARM5 vs ARM8,27 / 13,"-1.4 (-33.5, 30.7)",0.609 (0.269-1.379),-
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM3 vs ARM8,24 / 21,"-15.5 (-44.4, 13.5)",1.329 (0.704-2.51),-
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM4 vs ARM8,30 / 21,"-23.8 (-50.9, 3.3)",1.282 (0.709-2.318),-
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM5 vs ARM8,24 / 21,"-15.5 (-44.4, 13.5)",1.152 (0.621-2.136),-
+Age (FDA standard age bands),65-74 years,ARM3 vs ARM8,16 / 6,"-62.5 (-86.2, -38.8)",1.582 (0.607-4.124),-
+Age (FDA standard age bands),65-74 years,ARM4 vs ARM8,10 / 6,"-40.0 (-70.4, -9.6)",1.44 (0.492-4.214),-
+Age (FDA standard age bands),65-74 years,ARM5 vs ARM8,11 / 6,"-72.7 (-99.1, -46.4)",1.847 (0.654-5.218),-
+Age (FDA standard age bands),< 65 years,ARM3 vs ARM8,30 / 27,"-0.4 (-25.4, 24.7)",0.913 (0.514-1.62),-
+Age (FDA standard age bands),< 65 years,ARM4 vs ARM8,40 / 27,"8.0 (-15.9, 31.8)",0.796 (0.461-1.376),-
+Age (FDA standard age bands),< 65 years,ARM5 vs ARM8,35 / 27,"5.8 (-18.7, 30.3)",0.727 (0.417-1.269),-
+Age (FDA standard age bands),>= 75 years,ARM3 vs ARM8,3 / 1,"0.0 (0.0, 0.0)",5.166 (0.463-57.697),-
+Age (FDA standard age bands),>= 75 years,ARM4 vs ARM8,6 / 1,"-50.0 (-90.0, -10.0)",1.743 (0.251-12.096),-
+Age (FDA standard age bands),>= 75 years,ARM5 vs ARM8,5 / 1,"-60.0 (-102.9, -17.1)",1.6 (0.191-13.39),-
+Sex,female,ARM3 vs ARM8,22 / 16,"-18.8 (-49.6, 12.1)",0.86 (0.423-1.747),-
+Sex,female,ARM4 vs ARM8,28 / 16,"-29.5 (-58.5, -0.4)",1.361 (0.727-2.547),-
+Sex,female,ARM5 vs ARM8,26 / 16,"-38.0 (-66.8, -9.2)",0.97 (0.495-1.898),-
+Sex,male,ARM3 vs ARM8,27 / 18,"0.0 (-28.1, 28.1)",1.132 (0.558-2.297),-
+Sex,male,ARM4 vs ARM8,28 / 18,"23.8 (-4.7, 52.3)",0.56 (0.273-1.15),-
+Sex,male,ARM5 vs ARM8,25 / 18,"14.7 (-14.6, 44.0)",0.855 (0.426-1.716),-
+Race,asian,ARM3 vs ARM8,6 / 5,"30.0 (-23.2, 83.2)",0.3 (0.058-1.556),-
+Race,asian,ARM4 vs ARM8,7 / 5,"22.9 (-27.9, 73.6)",0.694 (0.185-2.608),-
+Race,asian,ARM5 vs ARM8,6 / 5,"46.7 (-4.8, 98.2)",0.516 (0.131-2.038),-
+Race,black_or_african_american,ARM3 vs ARM8,3 / 3,"0.0 (-75.4, 75.4)",3.03 (0.411-22.346),-
+Race,black_or_african_american,ARM4 vs ARM8,7 / 3,"-23.8 (-88.5, 40.9)",0.261 (0.036-1.874),-
+Race,black_or_african_american,ARM5 vs ARM8,4 / 3,"-66.7 (-120.0, -13.3)",0.742 (0.139-3.957),-
+Race,more_than_one_race,ARM3 vs ARM8,0 / 0,-,-,-
+Race,more_than_one_race,ARM4 vs ARM8,0 / 0,-,-,-
+Race,more_than_one_race,ARM5 vs ARM8,1 / 0,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM3 vs ARM8,0 / 1,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM4 vs ARM8,0 / 1,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM5 vs ARM8,0 / 1,-,-,-
+Race,unknown_or_not_reported,ARM3 vs ARM8,2 / 2,"0.0 (0.0, 0.0)",0.703 (0.041-12.174),-
+Race,unknown_or_not_reported,ARM4 vs ARM8,1 / 2,"0.0 (0.0, 0.0)",-,-
+Race,unknown_or_not_reported,ARM5 vs ARM8,4 / 2,"75.0 (32.6, 117.4)",0.024 (0.001-0.629),-
+Race,white,ARM3 vs ARM8,38 / 23,"-21.4 (-46.7, 3.9)",1.297 (0.745-2.258),-
+Race,white,ARM4 vs ARM8,41 / 23,"-9.7 (-34.8, 15.5)",1.164 (0.68-1.994),-
+Race,white,ARM5 vs ARM8,36 / 23,"-24.8 (-50.1, 0.6)",1.236 (0.707-2.16),-
+Ethnicity,hispanic_or_latino,ARM3 vs ARM8,3 / 2,"-66.7 (-120.0, -13.3)",5.84 (0.337-101.182),-
+Ethnicity,hispanic_or_latino,ARM4 vs ARM8,4 / 2,"-75.0 (-117.4, -32.6)",0.969 (0.144-6.535),-
+Ethnicity,hispanic_or_latino,ARM5 vs ARM8,3 / 2,"-66.7 (-120.0, -13.3)",0.341 (0.033-3.476),-
+Ethnicity,not_hispanic_or_latino,ARM3 vs ARM8,43 / 29,"-6.4 (-29.8, 17.0)",1.063 (0.638-1.771),-
+Ethnicity,not_hispanic_or_latino,ARM4 vs ARM8,51 / 29,"0.7 (-22.0, 23.5)",0.85 (0.511-1.411),-
+Ethnicity,not_hispanic_or_latino,ARM5 vs ARM8,47 / 29,"-10.0 (-32.9, 12.9)",0.96 (0.58-1.59),-
+Ethnicity,unknown_or_not_reported,ARM3 vs ARM8,3 / 3,"0.0 (-75.4, 75.4)",0.552 (0.087-3.512),-
+Ethnicity,unknown_or_not_reported,ARM4 vs ARM8,1 / 3,"66.7 (13.3, 120.0)",0.881 (0.079-9.843),-
+Ethnicity,unknown_or_not_reported,ARM5 vs ARM8,1 / 3,"66.7 (13.3, 120.0)",0.881 (0.079-9.843),-
+Ecog performance status,0,ARM3 vs ARM8,16 / 10,"-2.5 (-41.0, 36.0)",1.617 (0.659-3.968),-
+Ecog performance status,0,ARM4 vs ARM8,22 / 10,"10.0 (-26.9, 46.9)",0.877 (0.382-2.013),-
+Ecog performance status,0,ARM5 vs ARM8,15 / 10,"6.7 (-32.8, 46.2)",0.589 (0.235-1.477),-
+Ecog performance status,1,ARM3 vs ARM8,24 / 21,"-6.6 (-35.8, 22.7)",0.791 (0.412-1.52),-
+Ecog performance status,1,ARM4 vs ARM8,31 / 21,"-7.2 (-34.8, 20.4)",0.85 (0.455-1.588),-
+Ecog performance status,1,ARM5 vs ARM8,31 / 21,"-13.7 (-41.1, 13.7)",0.969 (0.527-1.784),-
+Ecog performance status,2 or more,ARM3 vs ARM8,9 / 3,"-33.3 (-94.9, 28.3)",1.385 (0.367-5.236),-
+Ecog performance status,2 or more,ARM4 vs ARM8,3 / 3,"0.0 (-75.4, 75.4)",0.601 (0.083-4.341),-
+Ecog performance status,2 or more,ARM5 vs ARM8,5 / 3,"-46.7 (-110.5, 17.2)",5.706 (1.024-31.804),-

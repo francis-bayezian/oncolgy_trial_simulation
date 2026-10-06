@@ -1,0 +1,59 @@
+{
+ "control_arm_id": "ARM1",
+ "control_efs": {
+  "status": "RESOLVED",
+  "family": "cure_model",
+  "cure_fraction": 0.56,
+  "failure_rate_per_year": 1.087375860742081,
+  "anchor": {
+   "years": 2,
+   "efs": 0.61,
+   "fact_id": "F047"
+  },
+  "facts": [
+   "F056",
+   "F047"
+  ],
+  "fit_checks": [
+   {
+    "years": 2,
+    "stated": 0.61,
+    "model": 0.61
+   }
+  ],
+  "family_quote": "The reference group\n(XRT alone, no Isotretinoin) is best represented by a PCM with long-term EFS (cure) rate\nof 56%, and two-year EFS of 61%, based on the most recently available COG data in a\nsimilar cohort of patients (R Sposto, personal communication).",
+  "note": "cure model S(t) = pi + (1 - pi) exp(-lambda t) with exponential failure times among non-cured patients"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.01,
+  "rate_per_year": 0.01005033585350145,
+  "wording": "with an annual 1% censoring rate."
+ },
+ "off_study_limit": {
+  "days": 3652.5,
+  "rule_id": "DC11",
+  "wording": "e) The tenth anniversary of the date the patient was enrolled on this study."
+ },
+ "analysis_rule": {
+  "evaluable_target": 280.0,
+  "min_followup_years": 1,
+  "population": "medulloblastoma patients",
+  "wording": "The final analysis for the trial will be conducted once 280 eligible and evaluable\nmedulloblastoma patients have been enrolled and all have been followed for at least 1\nyear as specified in Amendment #2.",
+  "excluded_share": 0.1
+ },
+ "design_alternatives": [
+  0.591,
+  0.543,
+  0.547,
+  0.489
+ ],
+ "protocol_toxicities": 0,
+ "asset_ae_signature": {
+  "ARM1": "platinum+radiotherapy_or_radiopharmaceutical+vinca_alkaloid_or_microtubule",
+  "ARM2": "platinum+radiotherapy_or_radiopharmaceutical+vinca_alkaloid_or_microtubule"
+ },
+ "bindings_usable": 6,
+ "bindings": 7,
+ "model_calls": 0
+}

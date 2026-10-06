@@ -1,0 +1,88 @@
+{
+ "safety_version": "safety-1.0.0",
+ "scenario": "accrual_historical_10.8_per_year",
+ "replicates": 2000,
+ "seed": 20260927,
+ "arms": [
+  {
+   "arm_id": "ARM1",
+   "label": "Piflufolastat (18F) injection (Trade name: PYLARIFY®)",
+   "enrolled": 52,
+   "asset_signature": "other",
+   "missing_classes": [],
+   "unmapped_agents": [],
+   "safety_v3": {
+    "status": "NO_EVIDENCE",
+    "reason": "no agent of the regimen has a pharmacological class in the asset (no fallback to a catch-all group); the protocol cites no incidence for this arm: no source quantifies its adverse events, so none are simulated",
+    "features": {
+     "classes": [],
+     "unclassified_agent": true,
+     "agents": [],
+     "phase": "PHASE4",
+     "pediatric": false,
+     "disease_family": "prostate",
+     "log_relative_dose": 0.0,
+     "dose_unknown": true
+    },
+    "classes_without_data": null
+   },
+   "events": []
+  },
+  {
+   "arm_id": "ARM2",
+   "label": "Flotufolastat (18F) injection (Trade name: POSLUMA®)",
+   "enrolled": 52,
+   "asset_signature": "other",
+   "missing_classes": [],
+   "unmapped_agents": [],
+   "safety_v3": {
+    "status": "PROTOCOL_CITED",
+    "reason": "no agent of the regimen has a pharmacological class in the asset (no fallback to a catch-all group); the protocol's cited incidences are used (2 events)",
+    "features": {
+     "classes": [],
+     "unclassified_agent": true,
+     "agents": [],
+     "phase": "PHASE4",
+     "pediatric": false,
+     "disease_family": "prostate",
+     "log_relative_dose": 0.0,
+     "dose_unknown": true
+    },
+    "classes_without_data": null
+   },
+   "events": [
+    {
+     "term": "diarrhea",
+     "seriousness": "grade not stated",
+     "source": "protocol:F028",
+     "logit_mu": -4.954820514989859,
+     "logit_sigma": 0.0,
+     "rate_median": 0.006999999999999999,
+     "enrolled": 52,
+     "simulated_affected": {
+      "median": 0.0,
+      "q05": 0.0,
+      "q95": 2.0
+     }
+    },
+    {
+     "term": "blood pressure increase",
+     "seriousness": "grade not stated",
+     "source": "protocol:F029",
+     "logit_mu": -5.293304824724492,
+     "logit_sigma": 0.0,
+     "rate_median": 0.005,
+     "enrolled": 52,
+     "simulated_affected": {
+      "median": 0.0,
+      "q05": 0.0,
+      "q95": 1.0
+     }
+    }
+   ]
+  }
+ ],
+ "source": "safety asset V3 (safety-asset-3.1.0) and protocol-stated incidences",
+ "status": "RESOLVED",
+ "note": "V3 rates: regimen classes, relative dose, phase, age group and disease family from the protocol; an arm with no classified agent is UNRESOLVED (no catch-all group)"
+}

@@ -1,0 +1,172 @@
+{
+ "version": "subgroup-evidence-1.0.0",
+ "family": "urothelial",
+ "phase": "PHASE2",
+ "factors": [
+  {
+   "key": "umls:C0079083",
+   "text": "Carboplatin-eligible versus not eligible",
+   "levels": [
+    "Carboplatin-eligible",
+    "not eligible"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "existing",
+   "mix": {
+    "Carboplatin-eligible": 0.0,
+    "not eligible": 1.0
+   },
+   "effects": {
+    "reference_level": "Carboplatin-eligible",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:pd_l1_cps_category",
+   "text": "PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10",
+   "levels": [
+    "PD-L1 CPS ≥ 10",
+    "PD-L1 CPS < 10"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "existing",
+   "mix": {
+    "PD-L1 CPS ≥ 10": 0.0,
+    "PD-L1 CPS < 10": 1.0
+   },
+   "effects": {
+    "reference_level": "PD-L1 CPS ≥ 10",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "PD-L1 CPS < 10": {
+      "log_effect": 0.0824,
+      "trials": 12,
+      "range_10_90": [
+       -0.021,
+       0.225
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 12 trials; prognostic, A28)"
+   }
+  },
+  {
+   "key": "var:metastatic_disease_pattern",
+   "text": "LN-only disease versus other metastatic disease",
+   "levels": [
+    "LN-only disease",
+    "other metastatic disease"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "LN-only disease",
+     "other metastatic disease"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "LN-only disease": 0.5034,
+    "other metastatic disease": 0.4966
+   },
+   "effects": {
+    "reference_level": "LN-only disease",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:ecog_performance_status",
+   "text": "ECOG performance status (0, 1, 2 or more)",
+   "levels": [
+    "0",
+    "1",
+    "2 or more"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "0": 0.4645,
+    "1": 0.4192,
+    "2 or more": 0.1163
+   },
+   "effects": {
+    "reference_level": "0",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "demographic:sex",
+   "text": "sex (female, male)",
+   "levels": [
+    "female",
+    "male"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "female": 0.2268,
+    "male": 0.7732
+   },
+   "effects": {
+    "reference_level": "female",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "male": {
+      "log_effect": 0.0485,
+      "trials": 3,
+      "range_10_90": [
+       0.039,
+       0.24
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  },
+  {
+   "key": "demographic:age",
+   "text": "age (< 65 years, >= 65 years)",
+   "levels": [
+    "< 65 years",
+    ">= 65 years"
+   ],
+   "source": "baseline factor",
+   "kind": "age",
+   "mix": {
+    "< 65 years": 0.5269,
+    ">= 65 years": 0.4731
+   },
+   "effects": {
+    "reference_level": "< 65 years",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  }
+ ],
+ "assumptions": [
+  "A27_subgroup_prevalence_equal",
+  "A28_prognostic_effects"
+ ]
+}

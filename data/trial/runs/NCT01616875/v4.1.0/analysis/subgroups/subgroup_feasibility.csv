@@ -1,0 +1,21 @@
+Factor,Level,Screened,Eligible (%),Enrolled,Most frequent failing criteria (% of screened),Driver
+Age (FDA standard age bands),65-74 years,3215,2490 (77%),10,EL012 ECOG Performance Status ≥ 2 (10%); EL004 ECOG Performance status 0 or 1 (1%); EL028 Contraindications to cisplatin (1%),protocol criteria
+Age (FDA standard age bands),< 65 years,5269,4053 (77%),17,EL012 ECOG Performance Status ≥ 2 (10%); EL015 Active Grade ≥2 peripheral neuropathy (1%); EL021 Uncontrolled diabetes mellitus (1%),protocol criteria
+Age (FDA standard age bands),>= 75 years,1516,1155 (76%),3,"EL012 ECOG Performance Status ≥ 2 (11%); EL021 Uncontrolled diabetes mellitus (1%); EL003 T2 to T4 disease, N0 M0 determined by CT (1%)",protocol criteria
+Sex,female,2268,1731 (76%),6,"EL012 ECOG Performance Status ≥ 2 (11%); EL005 GFR≥60 mls/min. (1%); EL003 T2 to T4 disease, N0 M0 determined by CT (1%)",patient mix
+Sex,male,7732,5967 (77%),24,EL012 ECOG Performance Status ≥ 2 (10%); EL029 Patient with reproductive potential not  (1%); EL021 Uncontrolled diabetes mellitus (1%),patient mix
+Race,american_indian_or_alaska_native,63,51 (81%),0,EL012 ECOG Performance Status ≥ 2 (5%); EL021 Uncontrolled diabetes mellitus (3%); EL019 Inadequate organ function as evidenced b (2%),patient mix
+Race,asian,593,452 (76%),5,"EL012 ECOG Performance Status ≥ 2 (10%); EL003 T2 to T4 disease, N0 M0 determined by CT (2%); EL010 If the EDTA result is < 55mls/min patien (1%)",patient mix
+Race,black_or_african_american,764,597 (78%),1,EL012 ECOG Performance Status ≥ 2 (10%); EL022 Active uncontrolled gastro-oesophageal r (1%); EL020 Electrocardiogram (ECG) evidence of unco (1%),patient mix
+Race,more_than_one_race,71,56 (79%),0,EL012 ECOG Performance Status ≥ 2 (14%); EL017 History of severe hypersensitivity react (1%); EL015 Active Grade ≥2 peripheral neuropathy (1%),patient mix
+Race,native_hawaiian_or_other_pacific_islander,18,11 (61%),0,EL012 ECOG Performance Status ≥ 2 (11%); EL017 History of severe hypersensitivity react (6%); EL021 Uncontrolled diabetes mellitus (6%),patient mix
+Race,unknown_or_not_reported,367,273 (74%),1,EL012 ECOG Performance Status ≥ 2 (11%); EL025 Concurrent or planned treatment with str (2%); EL020 Electrocardiogram (ECG) evidence of unco (1%),patient mix
+Race,white,8124,6258 (77%),23,EL012 ECOG Performance Status ≥ 2 (10%); EL029 Patient with reproductive potential not  (1%); EL015 Active Grade ≥2 peripheral neuropathy (1%),patient mix
+Ethnicity,hispanic_or_latino,630,474 (75%),3,EL012 ECOG Performance Status ≥ 2 (12%); EL023 Active infection requiring systemic anti (2%); EL020 Electrocardiogram (ECG) evidence of unco (1%),patient mix
+Ethnicity,not_hispanic_or_latino,9060,6995 (77%),27,EL012 ECOG Performance Status ≥ 2 (10%); EL029 Patient with reproductive potential not  (1%); EL021 Uncontrolled diabetes mellitus (1%),patient mix
+Ethnicity,unknown_or_not_reported,310,229 (74%),0,EL012 ECOG Performance Status ≥ 2 (12%); EL013 Lymph node involvement or metastatic dis (2%); EL021 Uncontrolled diabetes mellitus (2%),patient mix
+T2 to T4 disease,T2 to T4,2970,2278 (77%),11,EL012 ECOG Performance Status ≥ 2 (11%); EL013 Lymph node involvement or metastatic dis (1%); EL004 ECOG Performance status 0 or 1 (1%),protocol criteria
+T2 to T4 disease,not recorded,7030,5420 (77%),19,EL012 ECOG Performance Status ≥ 2 (10%); EL021 Uncontrolled diabetes mellitus (1%); EL015 Active Grade ≥2 peripheral neuropathy (1%),protocol criteria
+ECOG Performance Status,0,4615,3954 (86%),21,EL021 Uncontrolled diabetes mellitus (1%); EL015 Active Grade ≥2 peripheral neuropathy (1%); EL019 Inadequate organ function as evidenced b (1%),protocol criteria
+ECOG Performance Status,1,4353,3744 (86%),9,EL028 Contraindications to cisplatin (1%); EL013 Lymph node involvement or metastatic dis (1%); EL020 Electrocardiogram (ECG) evidence of unco (1%),protocol criteria
+ECOG Performance Status,2 or more,1032,0 (0%),0,"EL012 ECOG Performance Status ≥ 2 (100%); EL003 T2 to T4 disease, N0 M0 determined by CT (1%); EL029 Patient with reproductive potential not  (1%)",protocol criteria

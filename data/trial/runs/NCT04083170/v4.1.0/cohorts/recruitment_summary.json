@@ -1,0 +1,83 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "f192952225bdae1956f0c7055dc3d3ae3c804dd43a5b387194f2eef7910902ef",
+  "population": "73f8974d67b1899a2c5206787ca9156a6fc7837f34c5ba5df445b9c3ffed6153",
+  "eligibility": "885f22fd5e444a598daf668d0fd2ecb8d8d4c8756459fb226d4978e3bacafbb0"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 10,
+   "source": "target_accrual",
+   "evidence": "Ten patients will be enrolled"
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_8.3_per_year",
+    "rate_per_year": 8.319776915306083,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 1.7837590550245312,
+     "p30": 4.378895837372247,
+     "p50": 8.319776915306083,
+     "p70": 16.341434863751466,
+     "p90": 43.80000953818204
+    }
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_8.3_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "Regimen A",
+    "description": "High dose consisting of 1320 cGy TBI plus fludarabine plus cyclophosphamidefollowedbyunmanipulatedcordblood anddilanubicel"
+   },
+   {
+    "arm_id": "ARM2",
+    "label": "RegimenB",
+    "description": "Intermediatedoseconsistingof400cGyTBIplusFludarabineplus cyclophosphamide plus thiotepa followed by unmanipulated cord blood and dilanubicel"
+   }
+  ],
+  "arm_status_note": "arms stated as open",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": []
+ },
+ "summary": {
+  "pool": 7709,
+  "target": {
+   "patients": 10,
+   "source": "target_accrual",
+   "evidence": "Ten patients will be enrolled"
+  },
+  "scenarios": {
+   "accrual_historical_8.3_per_year": {
+    "enrolled": 10,
+    "accrual_years": 1.772745735036717,
+    "arms": {
+     "ARM1": 6,
+     "ARM2": 4
+    },
+    "strata": {
+     "null": 10
+    },
+    "sex": {
+     "female": 5,
+     "male": 5
+    },
+    "age_mean": 51.71
+   }
+  },
+  "headline_scenario": "accrual_historical_8.3_per_year"
+ }
+}

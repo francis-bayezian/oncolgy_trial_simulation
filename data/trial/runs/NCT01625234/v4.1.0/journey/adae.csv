@@ -1,0 +1,1829 @@
+USUBJID,AESEQ,AETERM,AESER,AETOXGR,AESTDY,AEENDY,AEACN,AERULE,ARMCD,TRTEMFL
+S0001,1,upper_abdominal_pain,N,2,33,57,no_modification,DM014,ARM5,Y
+S0001,2,nausea,N,1,57,85,no_modification,DM014,ARM5,Y
+S0001,3,back_pain,N,2,70,85,no_modification,DM014,ARM5,Y
+S0001,4,blood_creatinine_increased,N,2,72,85,no_modification,DM014,ARM5,Y
+S0001,5,blood_alkaline_phosphatase_increased,N,2,132,141,no_modification,DM014,ARM5,Y
+S0001,6,decreased_platelet_count,N,1,148,169,no_modification,DM014,ARM5,Y
+S0001,7,pleural_effusion_disorder,N,2,166,169,no_modification,DM014,ARM5,Y
+S0001,8,conjunctivitis,N,1,177,197,no_modification,DM014,ARM5,Y
+S0001,9,peripheral_edema,N,1,253,281,NOT APPLICABLE,,ARM5,Y
+S0002,1,fatigue,N,1,3,29,no_modification,DM014,ARM8,Y
+S0002,2,dyspnea,N,1,9,29,no_modification,DM014,ARM8,Y
+S0002,3,hypokalemia,N,1,22,29,no_modification,DM014,ARM8,Y
+S0002,4,diarrhea,N,2,24,29,no_modification,DM014,ARM8,Y
+S0002,5,hypoalbuminemia,N,1,25,29,no_modification,DM014,ARM8,Y
+S0002,6,upper_abdominal_pain,N,2,27,29,no_modification,DM014,ARM8,Y
+S0002,7,headache,N,2,34,57,no_modification,DM014,ARM8,Y
+S0002,8,blood_alkaline_phosphatase_increased,N,2,38,57,no_modification,DM014,ARM8,Y
+S0002,9,constipation,N,1,49,57,no_modification,DM014,ARM8,Y
+S0002,10,dizziness,N,2,50,57,no_modification,DM014,ARM8,Y
+S0002,11,anemia,N,1,83,85,NOT APPLICABLE,,ARM8,Y
+S0002,12,upper_respiratory_infections,N,1,86,113,NOT APPLICABLE,,ARM8,Y
+S0003,1,fatigue,N,2,10,29,no_modification,DM014,ARM3,Y
+S0003,2,decreased_platelet_count,N,1,31,57,no_modification,DM014,ARM3,Y
+S0003,3,edema,N,1,74,85,no_modification,DM014,ARM3,Y
+S0003,4,peripheral_edema,N,2,94,113,no_modification,DM014,ARM3,Y
+S0003,5,hypocalcemia,N,2,107,113,no_modification,DM014,ARM3,Y
+S0003,6,chest_pain,N,1,162,169,no_modification,DM014,ARM3,Y
+S0003,7,fever,N,1,171,197,no_modification,DM014,ARM3,Y
+S0003,8,abdomen_distended,N,1,215,225,no_modification,DM014,ARM3,Y
+S0003,9,amylase_increased,N,2,238,253,no_modification,DM014,ARM3,Y
+S0004,1,peripheral_edema,N,1,12,29,no_modification,DM014,ARM5,Y
+S0004,2,hemoptysis,N,1,21,29,no_modification,DM014,ARM5,Y
+S0004,3,blood_alkaline_phosphatase_increased,N,1,84,85,no_modification,DM014,ARM5,Y
+S0004,4,hyponatremia,N,1,124,141,no_modification,DM014,ARM5,Y
+S0004,5,conjunctivitis,N,2,140,141,no_modification,DM014,ARM5,Y
+S0004,6,decreased_platelet_count,N,1,160,169,no_modification,DM014,ARM5,Y
+S0004,7,thrombocytopenia,Y,3,211,253,NOT APPLICABLE,,ARM5,Y
+S0004,8,lipase_increased,N,2,216,225,no_modification,DM014,ARM5,Y
+S0004,9,constipation,N,1,280,281,no_modification,DM014,ARM5,Y
+S0005,1,hypokalemia,N,2,12,29,no_modification,DM014,ARM4,Y
+S0005,2,pain_in_limb,N,1,41,57,no_modification,DM014,ARM4,Y
+S0005,3,decrease_in_appetite,N,1,57,85,no_modification,DM014,ARM4,Y
+S0005,4,peripheral_edema,N,2,60,85,no_modification,DM014,ARM4,Y
+S0005,5,diarrhea,N,1,122,141,NOT APPLICABLE,,ARM4,Y
+S0005,6,dyspnea,N,1,122,141,NOT APPLICABLE,,ARM4,Y
+S0005,7,vomiting,N,1,125,141,NOT APPLICABLE,,ARM4,Y
+S0005,8,hemoptysis,N,1,127,141,NOT APPLICABLE,,ARM4,Y
+S0005,9,creatinine_renal_clearance_decreased,N,1,143,169,NOT APPLICABLE,,ARM4,Y
+S0006,1,decreased_platelet_count,N,1,50,57,no_modification,DM014,ARM5,Y
+S0006,2,aspartate_aminotransferase_increased,N,2,68,85,no_modification,DM014,ARM5,Y
+S0006,3,hyponatremia,N,1,86,113,no_modification,DM014,ARM5,Y
+S0006,4,diarrhea,N,2,181,197,no_modification,DM014,ARM5,Y
+S0006,5,peripheral_edema,N,1,287,309,NOT APPLICABLE,,ARM5,Y
+S0006,6,pruritus,N,1,309,337,NOT APPLICABLE,,ARM5,Y
+S0007,1,constipation,N,1,18,29,no_modification,DM014,ARM3,Y
+S0007,2,decrease_in_appetite,N,1,38,57,no_modification,DM014,ARM3,Y
+S0007,3,chest_pain,N,2,39,57,no_modification,DM014,ARM3,Y
+S0007,4,amylase_increased,N,2,82,85,no_modification,DM014,ARM3,Y
+S0007,5,decreased_platelet_count,N,1,126,141,no_modification,DM014,ARM3,Y
+S0007,6,peripheral_edema,N,2,127,141,no_modification,DM014,ARM3,Y
+S0007,7,creatinine_renal_clearance_decreased,N,1,159,169,no_modification,DM014,ARM3,Y
+S0007,8,fatigue,N,1,180,197,no_modification,DM014,ARM3,Y
+S0007,9,edema,N,1,217,225,no_modification,DM014,ARM3,Y
+S0007,10,hypocalcemia,N,2,270,281,no_modification,DM014,ARM3,Y
+S0007,11,coughing,N,1,283,309,NOT APPLICABLE,,ARM3,Y
+S0008,1,dyspnoea_exertional,N,1,85,113,no_modification,DM014,ARM5,Y
+S0008,2,conjunctivitis,N,2,116,141,no_modification,DM014,ARM5,Y
+S0008,3,nausea,N,2,130,141,no_modification,DM014,ARM5,Y
+S0008,4,headache,N,2,152,169,no_modification,DM014,ARM5,Y
+S0008,5,blood_creatinine_increased,N,2,170,197,no_modification,DM014,ARM5,Y
+S0008,6,alanine_aminotransferase_increased,N,2,217,225,no_modification,DM014,ARM5,Y
+S0008,7,hypoalbuminemia,N,2,297,309,no_modification,DM014,ARM5,Y
+S0008,8,dyspnea,N,2,310,337,no_modification,DM014,ARM5,Y
+S0008,9,peripheral_edema,N,1,388,393,no_modification,DM014,ARM5,Y
+S0009,1,decrease_in_appetite,N,1,3,29,no_modification,DM014,ARM4,Y
+S0009,2,hemoptysis,N,1,17,29,no_modification,DM014,ARM4,Y
+S0009,3,thrombocytopenia,N,1,118,141,no_modification,DM014,ARM4,Y
+S0009,4,vomiting,N,1,121,141,no_modification,DM014,ARM4,Y
+S0009,5,creatinine_renal_clearance_decreased,N,1,167,169,no_modification,DM014,ARM4,Y
+S0009,6,hypoalbuminemia,N,2,190,197,NOT APPLICABLE,,ARM4,Y
+S0009,7,febrile_neutropenia,Y,3,192,225,NOT APPLICABLE,,ARM4,Y
+S0010,1,hypoalbuminemia,N,1,84,85,no_modification,DM014,ARM4,Y
+S0010,2,anemia,N,2,122,141,no_modification,DM014,ARM4,Y
+S0010,3,creatinine_renal_clearance_decreased,N,2,122,141,no_modification,DM014,ARM4,Y
+S0010,4,musculoskeletal_chest_pain,N,2,132,141,no_modification,DM014,ARM4,Y
+S0010,5,decrease_in_appetite,N,2,150,169,no_modification,DM014,ARM4,Y
+S0010,6,dyspnea,N,1,152,169,no_modification,DM014,ARM4,Y
+S0010,7,febrile_neutropenia,Y,3,182,225,NOT APPLICABLE,,ARM4,Y
+S0010,8,asthenia,N,2,199,225,no_modification,DM014,ARM4,Y
+S0010,9,neutrophil_count_decreased,Y,3,276,309,NOT APPLICABLE,,ARM4,Y
+S0010,10,hemoptysis,N,2,296,309,NOT APPLICABLE,,ARM4,Y
+S0010,11,dyspepsia,N,1,311,337,NOT APPLICABLE,,ARM4,Y
+S0011,1,blood_creatinine_increased,N,1,48,57,no_modification,DM014,ARM4,Y
+S0011,2,decrease_in_appetite,N,2,54,57,no_modification,DM014,ARM4,Y
+S0011,3,thrombocytopenia,N,2,66,85,no_modification,DM014,ARM4,Y
+S0011,4,diarrhea,N,2,84,85,no_modification,DM014,ARM4,Y
+S0011,5,hyponatremia,N,1,104,113,no_modification,DM014,ARM4,Y
+S0012,1,nausea,N,2,13,29,no_modification,DM014,ARM3,Y
+S0012,2,decrease_in_appetite,N,2,41,57,no_modification,DM014,ARM3,Y
+S0012,3,vomiting,N,2,76,85,no_modification,DM014,ARM3,Y
+S0012,4,amylase_increased,N,2,85,113,no_modification,DM014,ARM3,Y
+S0012,5,decreased_platelet_count,N,1,99,113,no_modification,DM014,ARM3,Y
+S0012,6,hypocalcemia,N,1,103,113,no_modification,DM014,ARM3,Y
+S0012,7,chest_pain,N,2,108,113,no_modification,DM014,ARM3,Y
+S0012,8,creatinine_renal_clearance_decreased,N,2,120,141,no_modification,DM014,ARM3,Y
+S0012,9,edema,N,1,136,141,no_modification,DM014,ARM3,Y
+S0012,10,fever,N,1,137,141,no_modification,DM014,ARM3,Y
+S0012,11,lipase_increased,N,2,137,141,no_modification,DM014,ARM3,Y
+S0012,12,constipation,N,1,143,169,no_modification,DM014,ARM3,Y
+S0012,13,drug-related AEs,N,2,164,169,no_modification,DM014,ARM3,Y
+S0012,14,abdomen_distended,N,2,181,197,no_modification,DM014,ARM3,Y
+S0013,1,headache,N,2,7,29,no_modification,DM014,ARM3,Y
+S0013,2,productive_cough,N,1,12,29,no_modification,DM014,ARM3,Y
+S0013,3,amylase_increased,N,2,95,113,no_modification,DM014,ARM3,Y
+S0013,4,blood_alkaline_phosphatase_increased,N,1,297,309,no_modification,DM014,ARM3,Y
+S0013,5,decreased_platelet_count,N,1,313,337,no_modification,DM014,ARM3,Y
+S0013,6,coughing,N,2,381,393,no_modification,DM014,ARM3,Y
+S0013,7,hypocalcemia,N,2,385,393,no_modification,DM014,ARM3,Y
+S0013,8,anemia,N,1,462,477,no_modification,DM014,ARM3,Y
+S0013,9,back_pain,N,1,487,505,no_modification,DM014,ARM3,Y
+S0013,10,nausea,N,1,545,561,no_modification,DM014,ARM3,Y
+S0013,11,lipase_increased,N,1,598,617,no_modification,DM014,ARM3,Y
+S0013,12,edema,N,2,618,645,no_modification,DM014,ARM3,Y
+S0013,13,constipation,N,2,670,673,no_modification,DM014,ARM3,Y
+S0014,1,hyponatremia,N,2,90,113,no_modification,DM014,ARM5,Y
+S0014,2,constipation,N,1,290,309,no_modification,DM014,ARM5,Y
+S0014,3,blood_creatinine_increased,N,2,539,561,no_modification,DM014,ARM5,Y
+S0014,4,peripheral_edema,N,1,608,617,no_modification,DM014,ARM5,Y
+S0014,5,pruritus,N,2,630,645,no_modification,DM014,ARM5,Y
+S0014,6,hypoalbuminemia,N,1,680,701,no_modification,DM014,ARM5,Y
+S0015,1,decreased_platelet_count,N,1,46,57,no_modification,DM014,ARM5,Y
+S0015,2,peripheral_edema,N,1,85,113,no_modification,DM014,ARM5,Y
+S0015,3,conjunctivitis,N,2,87,113,no_modification,DM014,ARM5,Y
+S0015,4,pleural_effusion_disorder,N,2,99,113,no_modification,DM014,ARM5,Y
+S0015,5,hypoalbuminemia,N,1,104,113,no_modification,DM014,ARM5,Y
+S0015,6,hyponatremia,N,2,108,113,no_modification,DM014,ARM5,Y
+S0015,7,constipation,N,1,131,141,no_modification,DM014,ARM5,Y
+S0015,8,nausea,N,2,140,141,no_modification,DM014,ARM5,Y
+S0015,9,upper_respiratory_infections,N,2,143,169,no_modification,DM014,ARM5,Y
+S0016,1,chest_pain,N,2,13,29,no_modification,DM014,ARM3,Y
+S0016,2,hypocalcemia,N,1,38,57,no_modification,DM014,ARM3,Y
+S0016,3,amylase_increased,N,2,40,57,no_modification,DM014,ARM3,Y
+S0016,4,constipation,N,1,61,85,no_modification,DM014,ARM3,Y
+S0016,5,anemia,N,2,66,85,no_modification,DM014,ARM3,Y
+S0016,6,pain_in_limb,N,1,98,113,no_modification,DM014,ARM3,Y
+S0016,7,pleural_effusion_disorder,N,2,105,113,no_modification,DM014,ARM3,Y
+S0016,8,fatigue,N,1,121,141,NOT APPLICABLE,,ARM3,Y
+S0016,9,edema,N,2,122,141,NOT APPLICABLE,,ARM3,Y
+S0016,10,abdomen_distended,N,2,125,141,NOT APPLICABLE,,ARM3,Y
+S0016,11,blood_alkaline_phosphatase_increased,N,2,132,141,NOT APPLICABLE,,ARM3,Y
+S0017,1,decreased_platelet_count,N,2,116,141,no_modification,DM014,ARM3,Y
+S0017,2,hypocalcemia,N,1,173,197,no_modification,DM014,ARM3,Y
+S0017,3,creatinine_renal_clearance_decreased,N,2,181,197,no_modification,DM014,ARM3,Y
+S0017,4,chest_pain,N,1,254,281,no_modification,DM014,ARM3,Y
+S0017,5,amylase_increased,N,2,274,281,no_modification,DM014,ARM3,Y
+S0017,6,blood_alkaline_phosphatase_increased,N,1,276,281,no_modification,DM014,ARM3,Y
+S0017,7,nausea,N,2,327,337,no_modification,DM014,ARM3,Y
+S0018,1,thrombocytopenia,N,1,15,29,no_modification,DM014,ARM4,Y
+S0018,2,vomiting,N,2,24,29,no_modification,DM014,ARM4,Y
+S0018,3,peripheral_edema,N,1,27,29,no_modification,DM014,ARM4,Y
+S0018,4,hypokalemia,N,2,34,57,no_modification,DM014,ARM4,Y
+S0018,5,hemoptysis,N,2,39,57,no_modification,DM014,ARM4,Y
+S0018,6,coughing,N,1,71,85,no_modification,DM014,ARM4,Y
+S0018,7,creatinine_renal_clearance_decreased,N,2,99,113,no_modification,DM014,ARM4,Y
+S0018,8,decrease_in_appetite,N,2,132,141,no_modification,DM014,ARM4,Y
+S0018,9,hypoalbuminemia,N,1,169,197,no_modification,DM014,ARM4,Y
+S0018,10,abdominal_pain,N,1,182,197,no_modification,DM014,ARM4,Y
+S0018,11,dyspnea,N,1,211,225,no_modification,DM014,ARM4,Y
+S0018,12,asthenia,N,1,214,225,no_modification,DM014,ARM4,Y
+S0019,1,blood_alkaline_phosphatase_increased,N,1,85,113,no_modification,DM014,ARM8,Y
+S0019,2,productive_cough,N,2,106,113,no_modification,DM014,ARM8,Y
+S0019,3,pruritus,N,2,118,141,no_modification,DM014,ARM8,Y
+S0019,4,disease_progression,Y,3,123,169,NOT APPLICABLE,,ARM8,Y
+S0019,5,hypoalbuminemia,N,2,133,141,no_modification,DM014,ARM8,Y
+S0019,6,fatigue,N,1,148,169,no_modification,DM014,ARM8,Y
+S0020,1,constipation,N,1,14,29,no_modification,DM014,ARM3,Y
+S0020,2,fatigue,N,1,21,29,no_modification,DM014,ARM3,Y
+S0020,3,upper_respiratory_infections,N,1,24,29,no_modification,DM014,ARM3,Y
+S0020,4,lipase_increased,N,2,25,29,no_modification,DM014,ARM3,Y
+S0020,5,abdomen_distended,N,1,44,57,no_modification,DM014,ARM3,Y
+S0020,6,chest_pain,N,2,45,57,no_modification,DM014,ARM3,Y
+S0020,7,creatinine_renal_clearance_decreased,N,2,45,57,no_modification,DM014,ARM3,Y
+S0020,8,amylase_increased,N,2,47,57,no_modification,DM014,ARM3,Y
+S0020,9,hypocalcemia,N,1,64,85,NOT APPLICABLE,,ARM3,Y
+S0020,10,edema,N,2,69,85,NOT APPLICABLE,,ARM3,Y
+S0020,11,dyspepsia,N,1,72,85,NOT APPLICABLE,,ARM3,Y
+S0020,12,peripheral_edema,Y,3,72,113,NOT APPLICABLE,,ARM3,Y
+S0020,13,decreased_platelet_count,N,1,84,85,NOT APPLICABLE,,ARM3,Y
+S0020,14,headache,N,2,87,113,NOT APPLICABLE,,ARM3,Y
+S0021,1,hypoalbuminemia,N,2,3,29,no_modification,DM014,ARM4,Y
+S0021,2,hypokalemia,N,2,9,29,no_modification,DM014,ARM4,Y
+S0021,3,thrombocytopenia,N,1,29,57,no_modification,DM014,ARM4,Y
+S0021,4,creatinine_renal_clearance_decreased,N,2,40,57,no_modification,DM014,ARM4,Y
+S0021,5,decrease_in_appetite,N,2,52,57,no_modification,DM014,ARM4,Y
+S0021,6,hemoptysis,N,1,62,85,no_modification,DM014,ARM4,Y
+S0021,7,asthenia,N,2,101,113,no_modification,DM014,ARM4,Y
+S0021,8,hyponatremia,N,2,106,113,no_modification,DM014,ARM4,Y
+S0021,9,blood_creatinine_increased,N,2,127,141,NOT APPLICABLE,,ARM4,Y
+S0022,1,amylase_increased,N,1,1,29,no_modification,DM014,ARM8,Y
+S0022,2,diarrhea,N,1,27,29,no_modification,DM014,ARM8,Y
+S0022,3,abdomen_distended,N,1,40,57,no_modification,DM014,ARM8,Y
+S0022,4,hypoalbuminemia,N,1,68,85,NOT APPLICABLE,,ARM8,Y
+S0022,5,chest_pain,N,1,73,85,NOT APPLICABLE,,ARM8,Y
+S0023,1,constipation,N,1,92,113,no_modification,DM014,ARM5,Y
+S0023,2,blood_creatinine_increased,N,1,123,141,no_modification,DM014,ARM5,Y
+S0023,3,blood_alkaline_phosphatase_increased,N,2,310,337,no_modification,DM014,ARM5,Y
+S0023,4,dyspnoea_exertional,N,1,457,477,no_modification,DM014,ARM5,Y
+S0023,5,peripheral_edema,N,2,461,477,no_modification,DM014,ARM5,Y
+S0024,1,hyponatremia,N,2,22,29,no_modification,DM014,ARM4,Y
+S0024,2,fatigue,N,2,41,57,no_modification,DM014,ARM4,Y
+S0024,3,rash_erythematous_macules_or_papules,N,1,55,57,no_modification,DM014,ARM4,Y
+S0024,4,musculoskeletal_chest_pain,N,1,59,85,no_modification,DM014,ARM4,Y
+S0024,5,hypokalemia,N,2,74,85,no_modification,DM014,ARM4,Y
+S0024,6,thrombocytopenia,N,2,96,113,no_modification,DM014,ARM4,Y
+S0024,7,peripheral_edema,N,1,99,113,no_modification,DM014,ARM4,Y
+S0024,8,amylase_increased,N,2,119,141,no_modification,DM014,ARM4,Y
+S0024,9,vomiting,N,1,179,197,NOT APPLICABLE,,ARM4,Y
+S0024,10,decrease_in_appetite,N,1,190,197,NOT APPLICABLE,,ARM4,Y
+S0024,11,creatinine_renal_clearance_decreased,N,2,191,197,NOT APPLICABLE,,ARM4,Y
+S0025,1,vomiting,N,2,15,29,no_modification,DM014,ARM4,Y
+S0025,2,musculoskeletal_chest_pain,N,1,45,57,no_modification,DM014,ARM4,Y
+S0025,3,decrease_in_appetite,N,2,116,141,no_modification,DM014,ARM4,Y
+S0025,4,blood_creatinine_increased,N,1,120,141,no_modification,DM014,ARM4,Y
+S0025,5,hypokalemia,N,1,140,141,no_modification,DM014,ARM4,Y
+S0025,6,thrombocytopenia,N,2,147,169,no_modification,DM014,ARM4,Y
+S0025,7,blood_alkaline_phosphatase_increased,N,1,153,169,no_modification,DM014,ARM4,Y
+S0025,8,hemoptysis,N,2,156,169,no_modification,DM014,ARM4,Y
+S0026,1,dyspnea,N,2,11,29,no_modification,DM014,ARM4,Y
+S0026,2,upper_respiratory_infections,N,1,22,29,no_modification,DM014,ARM4,Y
+S0026,3,vomiting,N,1,30,57,no_modification,DM014,ARM4,Y
+S0026,4,creatinine_renal_clearance_decreased,N,2,31,57,no_modification,DM014,ARM4,Y
+S0026,5,pleural_effusion_disorder,Y,3,31,85,NOT APPLICABLE,,ARM4,Y
+S0026,6,peripheral_edema,N,2,36,57,no_modification,DM014,ARM4,Y
+S0026,7,back_pain,N,2,54,57,no_modification,DM014,ARM4,Y
+S0026,8,musculoskeletal_chest_pain,N,1,58,85,no_modification,DM014,ARM4,Y
+S0026,9,alanine_aminotransferase_increased,N,1,80,85,NOT APPLICABLE,,ARM4,Y
+S0026,10,decrease_in_appetite,N,1,84,85,NOT APPLICABLE,,ARM4,Y
+S0026,11,thrombocytopenia,N,2,87,113,NOT APPLICABLE,,ARM4,Y
+S0026,12,hypoalbuminemia,N,2,88,113,NOT APPLICABLE,,ARM4,Y
+S0027,1,hypoalbuminemia,N,1,9,29,no_modification,DM014,ARM8,Y
+S0027,2,lipase_increased,N,2,32,57,no_modification,DM014,ARM8,Y
+S0027,3,chest_pain,N,2,35,57,no_modification,DM014,ARM8,Y
+S0027,4,headache,N,2,50,57,no_modification,DM014,ARM8,Y
+S0027,5,pruritus,N,2,68,85,NOT APPLICABLE,,ARM8,Y
+S0027,6,productive_cough,N,1,70,85,NOT APPLICABLE,,ARM8,Y
+S0027,7,abdomen_distended,N,1,77,85,NOT APPLICABLE,,ARM8,Y
+S0027,8,dyspnoea_exertional,N,2,84,85,NOT APPLICABLE,,ARM8,Y
+S0027,9,disease_progression,Y,3,84,113,NOT APPLICABLE,,ARM8,Y
+S0028,1,blood_alkaline_phosphatase_increased,N,1,22,29,no_modification,DM014,ARM8,Y
+S0028,2,blood_creatinine_increased,N,1,106,113,no_modification,DM014,ARM8,Y
+S0028,3,hyperglycemia,Y,3,173,225,NOT APPLICABLE,,ARM8,Y
+S0028,4,amylase_increased,N,1,183,197,no_modification,DM014,ARM8,Y
+S0028,5,headache,N,1,260,281,no_modification,DM014,ARM8,Y
+S0028,6,dyspnoea_exertional,N,1,303,309,no_modification,DM014,ARM8,Y
+S0028,7,anemia,N,1,319,337,no_modification,DM014,ARM8,Y
+S0028,8,hypoalbuminemia,N,1,382,393,no_modification,DM014,ARM8,Y
+S0028,9,thrombocytopenia,N,2,408,421,no_modification,DM014,ARM8,Y
+S0028,10,dyspnea,N,1,409,421,no_modification,DM014,ARM8,Y
+S0028,11,fever,N,2,634,645,NOT APPLICABLE,,ARM8,Y
+S0029,1,lipase_increased,N,1,7,29,no_modification,DM014,ARM5,Y
+S0029,2,drug-related AEs,N,2,23,29,no_modification,DM014,ARM5,Y
+S0029,3,dizziness,N,1,33,57,no_modification,DM014,ARM5,Y
+S0029,4,dyspnea,N,1,51,57,no_modification,DM014,ARM5,Y
+S0029,5,conjunctivitis,N,1,63,85,no_modification,DM014,ARM5,Y
+S0029,6,constipation,N,1,79,85,no_modification,DM014,ARM5,Y
+S0029,7,hypoalbuminemia,N,2,83,85,no_modification,DM014,ARM5,Y
+S0029,8,peripheral_edema,N,1,111,113,no_modification,DM014,ARM5,Y
+S0029,9,hyponatremia,N,2,123,141,NOT APPLICABLE,,ARM5,Y
+S0029,10,dyspnoea_exertional,N,1,139,141,NOT APPLICABLE,,ARM5,Y
+S0030,1,pruritus,N,2,29,57,no_modification,DM014,ARM5,Y
+S0030,2,headache,N,1,40,57,no_modification,DM014,ARM5,Y
+S0030,3,diarrhea,N,1,67,85,no_modification,DM014,ARM5,Y
+S0030,4,alanine_aminotransferase_increased,N,1,108,113,no_modification,DM014,ARM5,Y
+S0030,5,hyponatremia,N,2,118,141,no_modification,DM014,ARM5,Y
+S0030,6,blood_creatinine_increased,N,2,155,169,no_modification,DM014,ARM5,Y
+S0030,7,peripheral_edema,N,1,174,197,NOT APPLICABLE,,ARM5,Y
+S0030,8,constipation,N,2,188,197,NOT APPLICABLE,,ARM5,Y
+S0030,9,hypoalbuminemia,N,1,197,225,NOT APPLICABLE,,ARM5,Y
+S0031,1,decrease_in_appetite,N,1,2,29,no_modification,DM014,ARM3,Y
+S0031,2,creatinine_renal_clearance_decreased,N,1,19,29,no_modification,DM014,ARM3,Y
+S0031,3,decreased_platelet_count,N,2,36,57,no_modification,DM014,ARM3,Y
+S0031,4,chest_pain,N,2,39,57,no_modification,DM014,ARM3,Y
+S0031,5,lipase_increased,N,1,70,85,no_modification,DM014,ARM3,Y
+S0031,6,edema,N,2,102,113,no_modification,DM014,ARM3,Y
+S0031,7,hypocalcemia,N,2,105,113,no_modification,DM014,ARM3,Y
+S0031,8,abdomen_distended,N,2,105,113,no_modification,DM014,ARM3,Y
+S0031,9,hypertension_variable,Y,3,105,141,NOT APPLICABLE,,ARM3,Y
+S0031,10,blood_alkaline_phosphatase_increased,N,2,121,141,NOT APPLICABLE,,ARM3,Y
+S0032,1,aspartate_aminotransferase_increased,N,1,35,57,no_modification,DM014,ARM5,Y
+S0032,2,pneumonia,Y,3,48,85,NOT APPLICABLE,,ARM5,Y
+S0032,3,vomiting,N,2,55,57,no_modification,DM014,ARM5,Y
+S0032,4,hypoalbuminemia,N,1,74,85,no_modification,DM014,ARM5,Y
+S0032,5,conjunctivitis,N,2,87,113,no_modification,DM014,ARM5,Y
+S0032,6,pruritus,N,2,101,113,no_modification,DM014,ARM5,Y
+S0032,7,decreased_platelet_count,N,1,112,113,no_modification,DM014,ARM5,Y
+S0032,8,peripheral_edema,N,1,114,141,NOT APPLICABLE,,ARM5,Y
+S0033,1,hypokalemia,N,1,11,29,no_modification,DM014,ARM8,Y
+S0033,2,amylase_increased,N,2,53,57,no_modification,DM014,ARM8,Y
+S0033,3,abdomen_distended,N,2,83,85,no_modification,DM014,ARM8,Y
+S0033,4,anemia,N,2,102,113,no_modification,DM014,ARM8,Y
+S0033,5,aspartate_aminotransferase_increased,N,1,166,169,no_modification,DM014,ARM8,Y
+S0033,6,disease_progression,Y,3,196,225,NOT APPLICABLE,,ARM8,Y
+S0033,7,creatinine_renal_clearance_decreased,N,2,225,253,no_modification,DM014,ARM8,Y
+S0033,8,upper_abdominal_pain,N,2,284,309,no_modification,DM014,ARM8,Y
+S0033,9,back_pain,N,2,285,309,no_modification,DM014,ARM8,Y
+S0033,10,diarrhea,N,2,289,309,no_modification,DM014,ARM8,Y
+S0033,11,hypoalbuminemia,N,2,380,393,no_modification,DM014,ARM8,Y
+S0034,1,headache,N,1,12,29,no_modification,DM014,ARM4,Y
+S0034,2,musculoskeletal_chest_pain,N,1,28,29,no_modification,DM014,ARM4,Y
+S0034,3,hypoalbuminemia,N,1,37,57,no_modification,DM014,ARM4,Y
+S0034,4,decrease_in_appetite,N,1,40,57,no_modification,DM014,ARM4,Y
+S0034,5,febrile_neutropenia,Y,3,51,85,NOT APPLICABLE,,ARM4,Y
+S0034,6,abdomen_distended,N,1,96,113,no_modification,DM014,ARM4,Y
+S0034,7,pleural_effusion_disorder,Y,3,113,169,NOT APPLICABLE,,ARM4,Y
+S0034,8,creatinine_renal_clearance_decreased,N,1,118,141,NOT APPLICABLE,,ARM4,Y
+S0034,9,fatigue,N,2,124,141,NOT APPLICABLE,,ARM4,Y
+S0035,1,fatigue,N,1,50,57,no_modification,DM014,ARM4,Y
+S0035,2,pleural_effusion_disorder,Y,3,60,113,NOT APPLICABLE,,ARM4,Y
+S0035,3,musculoskeletal_chest_pain,N,2,87,113,no_modification,DM014,ARM4,Y
+S0035,4,abdomen_distended,N,2,104,113,no_modification,DM014,ARM4,Y
+S0035,5,coughing,N,2,147,169,no_modification,DM014,ARM4,Y
+S0035,6,asthenia,N,2,148,169,no_modification,DM014,ARM4,Y
+S0035,7,decreased_platelet_count,N,1,184,197,NOT APPLICABLE,,ARM4,Y
+S0035,8,thrombocytopenia,N,1,194,197,NOT APPLICABLE,,ARM4,Y
+S0036,1,fever,N,1,2,29,no_modification,DM014,ARM8,Y
+S0036,2,pruritus,N,1,20,29,no_modification,DM014,ARM8,Y
+S0036,3,anemia,N,1,27,29,no_modification,DM014,ARM8,Y
+S0036,4,constipation,N,1,34,57,no_modification,DM014,ARM8,Y
+S0036,5,aspartate_aminotransferase_increased,N,1,63,85,no_modification,DM014,ARM8,Y
+S0036,6,blood_alkaline_phosphatase_increased,N,2,115,141,no_modification,DM014,ARM8,Y
+S0036,7,diarrhea,N,2,165,169,no_modification,DM014,ARM8,Y
+S0036,8,decrease_in_appetite,N,2,244,253,NOT APPLICABLE,,ARM8,Y
+S0037,1,diarrhea,N,1,41,57,no_modification,DM014,ARM8,Y
+S0037,2,neutrophil_count_decreased,Y,3,68,113,NOT APPLICABLE,,ARM8,Y
+S0037,3,anemia,N,1,74,85,no_modification,DM014,ARM8,Y
+S0037,4,hypokalemia,N,2,96,113,no_modification,DM014,ARM8,Y
+S0037,5,aspartate_aminotransferase_increased,N,1,213,225,no_modification,DM014,ARM8,Y
+S0037,6,asthenia,N,1,241,253,no_modification,DM014,ARM8,Y
+S0037,7,hyponatremia,N,2,278,281,no_modification,DM014,ARM8,Y
+S0037,8,decrease_in_appetite,N,1,279,281,no_modification,DM014,ARM8,Y
+S0037,9,hypoalbuminemia,N,1,287,309,NOT APPLICABLE,,ARM8,Y
+S0038,1,hyponatremia,N,2,5,29,no_modification,DM014,ARM5,Y
+S0038,2,hypoalbuminemia,N,2,33,57,no_modification,DM014,ARM5,Y
+S0038,3,decreased_platelet_count,N,1,38,57,no_modification,DM014,ARM5,Y
+S0038,4,alanine_aminotransferase_increased,N,2,39,57,no_modification,DM014,ARM5,Y
+S0038,5,peripheral_edema,N,2,66,85,NOT APPLICABLE,,ARM5,Y
+S0038,6,conjunctivitis,N,1,70,85,NOT APPLICABLE,,ARM5,Y
+S0038,7,anemia,N,1,83,85,NOT APPLICABLE,,ARM5,Y
+S0039,1,aspartate_aminotransferase_increased,N,2,52,57,no_modification,DM014,ARM8,Y
+S0039,2,abdomen_distended,N,1,97,113,no_modification,DM014,ARM8,Y
+S0039,3,hemoptysis,N,1,127,141,no_modification,DM014,ARM8,Y
+S0039,4,diarrhea,N,2,191,197,no_modification,DM014,ARM8,Y
+S0039,5,hypoalbuminemia,N,1,255,281,no_modification,DM014,ARM8,Y
+S0039,6,disease_progression,Y,3,291,337,NOT APPLICABLE,,ARM8,Y
+S0039,7,anemia,N,2,367,393,no_modification,DM014,ARM8,Y
+S0039,8,hypokalemia,N,1,375,393,no_modification,DM014,ARM8,Y
+S0039,9,chest_pain,N,2,409,421,no_modification,DM014,ARM8,Y
+S0040,1,amylase_increased,N,1,60,85,no_modification,DM014,ARM3,Y
+S0040,2,nausea,N,2,130,141,no_modification,DM014,ARM3,Y
+S0040,3,chest_pain,N,1,130,141,no_modification,DM014,ARM3,Y
+S0040,4,hypocalcemia,N,1,331,337,no_modification,DM014,ARM3,Y
+S0040,5,constipation,N,1,447,449,no_modification,DM014,ARM3,Y
+S0040,6,blood_alkaline_phosphatase_increased,N,1,610,617,no_modification,DM014,ARM3,Y
+S0040,7,drug-related AEs,N,1,612,617,no_modification,DM014,ARM3,Y
+S0040,8,hyponatremia,N,1,670,673,no_modification,DM014,ARM3,Y
+S0040,9,edema,N,2,722,729,no_modification,DM014,ARM3,Y
+S0040,10,creatinine_renal_clearance_decreased,N,2,749,756,NOT APPLICABLE,,ARM3,Y
+S0041,1,headache,N,2,4,29,no_modification,DM014,ARM8,Y
+S0041,2,diarrhea,N,2,11,29,no_modification,DM014,ARM8,Y
+S0041,3,productive_cough,N,2,13,29,no_modification,DM014,ARM8,Y
+S0041,4,hypoalbuminemia,N,2,51,57,no_modification,DM014,ARM8,Y
+S0041,5,anemia,N,1,63,85,NOT APPLICABLE,,ARM8,Y
+S0041,6,pruritus,N,2,72,85,NOT APPLICABLE,,ARM8,Y
+S0041,7,constipation,N,1,78,85,NOT APPLICABLE,,ARM8,Y
+S0042,1,constipation,N,2,13,29,no_modification,DM014,ARM4,Y
+S0042,2,thrombocytopenia,N,2,25,29,no_modification,DM014,ARM4,Y
+S0042,3,musculoskeletal_chest_pain,N,2,27,29,no_modification,DM014,ARM4,Y
+S0042,4,hypokalemia,N,1,36,57,no_modification,DM014,ARM4,Y
+S0042,5,decrease_in_appetite,N,2,39,57,no_modification,DM014,ARM4,Y
+S0042,6,peripheral_edema,N,1,50,57,no_modification,DM014,ARM4,Y
+S0042,7,back_pain,N,2,57,85,no_modification,DM014,ARM4,Y
+S0042,8,hemoptysis,N,2,82,85,no_modification,DM014,ARM4,Y
+S0042,9,creatinine_renal_clearance_decreased,N,1,91,113,no_modification,DM014,ARM4,Y
+S0042,10,vomiting,N,1,118,141,NOT APPLICABLE,,ARM4,Y
+S0043,1,blood_alkaline_phosphatase_increased,N,1,6,29,no_modification,DM014,ARM3,Y
+S0043,2,weight_loss,N,2,47,57,no_modification,DM014,ARM3,Y
+S0043,3,decreased_platelet_count,N,2,65,85,no_modification,DM014,ARM3,Y
+S0043,4,edema,N,2,74,85,no_modification,DM014,ARM3,Y
+S0043,5,aspartate_aminotransferase_increased,N,1,130,141,no_modification,DM014,ARM3,Y
+S0043,6,constipation,N,2,150,169,no_modification,DM014,ARM3,Y
+S0043,7,conjunctivitis,N,1,157,169,no_modification,DM014,ARM3,Y
+S0043,8,hyponatremia,N,1,167,169,no_modification,DM014,ARM3,Y
+S0043,9,amylase_increased,N,1,210,225,no_modification,DM014,ARM3,Y
+S0043,10,chest_pain,N,1,220,225,no_modification,DM014,ARM3,Y
+S0043,11,hypocalcemia,N,1,225,253,no_modification,DM014,ARM3,Y
+S0043,12,headache,N,2,235,253,NOT APPLICABLE,,ARM3,Y
+S0043,13,nausea,N,1,254,281,NOT APPLICABLE,,ARM3,Y
+S0044,1,amylase_increased,N,1,12,29,no_modification,DM014,ARM3,Y
+S0044,2,hyponatremia,N,2,19,29,no_modification,DM014,ARM3,Y
+S0044,3,lipase_increased,N,1,44,57,no_modification,DM014,ARM3,Y
+S0044,4,chest_pain,N,1,94,113,no_modification,DM014,ARM3,Y
+S0044,5,back_pain,N,1,126,141,no_modification,DM014,ARM3,Y
+S0044,6,blood_alkaline_phosphatase_increased,N,1,139,141,no_modification,DM014,ARM3,Y
+S0044,7,dyspepsia,N,1,200,225,no_modification,DM014,ARM3,Y
+S0044,8,headache,N,2,228,253,no_modification,DM014,ARM3,Y
+S0044,9,anemia,N,2,239,253,no_modification,DM014,ARM3,Y
+S0044,10,decreased_platelet_count,N,1,270,281,no_modification,DM014,ARM3,Y
+S0044,11,hypocalcemia,N,2,288,309,no_modification,DM014,ARM3,Y
+S0044,12,pleural_effusion_disorder,N,2,319,337,no_modification,DM014,ARM3,Y
+S0044,13,edema,N,1,359,365,no_modification,DM014,ARM3,Y
+S0044,14,fatigue,N,1,390,393,no_modification,DM014,ARM3,Y
+S0044,15,creatinine_renal_clearance_decreased,N,2,414,421,NOT APPLICABLE,,ARM3,Y
+S0044,16,dyspnea,N,2,419,421,NOT APPLICABLE,,ARM3,Y
+S0045,1,headache,N,1,25,29,no_modification,DM014,ARM8,Y
+S0045,2,diarrhea,N,2,46,57,no_modification,DM014,ARM8,Y
+S0045,3,dyspepsia,N,2,48,57,no_modification,DM014,ARM8,Y
+S0045,4,fever,N,2,56,57,no_modification,DM014,ARM8,Y
+S0045,5,aspartate_aminotransferase_increased,N,1,68,85,no_modification,DM014,ARM8,Y
+S0045,6,constipation,N,1,70,85,no_modification,DM014,ARM8,Y
+S0045,7,nausea,N,1,141,169,no_modification,DM014,ARM8,Y
+S0045,8,abdomen_distended,N,2,159,169,no_modification,DM014,ARM8,Y
+S0046,1,amylase_increased,N,1,80,85,no_modification,DM014,ARM4,Y
+S0046,2,abdomen_distended,N,2,100,113,no_modification,DM014,ARM4,Y
+S0046,3,hyponatremia,N,1,102,113,no_modification,DM014,ARM4,Y
+S0046,4,creatinine_renal_clearance_decreased,N,2,135,141,no_modification,DM014,ARM4,Y
+S0046,5,fatigue,N,2,168,169,no_modification,DM014,ARM4,Y
+S0046,6,hypoalbuminemia,N,2,219,225,no_modification,DM014,ARM4,Y
+S0046,7,vomiting,N,1,277,281,no_modification,DM014,ARM4,Y
+S0046,8,decrease_in_appetite,N,1,285,309,no_modification,DM014,ARM4,Y
+S0046,9,rash_erythematous_macules_or_papules,N,2,291,309,no_modification,DM014,ARM4,Y
+S0046,10,hemoptysis,N,2,299,309,no_modification,DM014,ARM4,Y
+S0046,11,peripheral_edema,N,1,320,337,no_modification,DM014,ARM4,Y
+S0046,12,disease_progression,Y,3,323,365,NOT APPLICABLE,,ARM4,Y
+S0046,13,febrile_neutropenia,Y,3,349,393,NOT APPLICABLE,,ARM4,Y
+S0047,1,diarrhea,N,2,7,29,no_modification,DM014,ARM4,Y
+S0047,2,dyspnea,N,1,10,29,no_modification,DM014,ARM4,Y
+S0047,3,decrease_in_appetite,N,2,19,29,no_modification,DM014,ARM4,Y
+S0047,4,creatinine_renal_clearance_decreased,N,2,20,29,no_modification,DM014,ARM4,Y
+S0047,5,vomiting,N,1,28,29,no_modification,DM014,ARM4,Y
+S0047,6,thrombocytopenia,N,2,31,57,no_modification,DM014,ARM4,Y
+S0047,7,hyponatremia,N,1,49,57,no_modification,DM014,ARM4,Y
+S0047,8,blood_creatinine_increased,N,2,55,57,no_modification,DM014,ARM4,Y
+S0047,9,hemoptysis,N,1,56,57,no_modification,DM014,ARM4,Y
+S0047,10,abdominal_pain,N,1,64,85,NOT APPLICABLE,,ARM4,Y
+S0047,11,musculoskeletal_chest_pain,N,2,72,85,NOT APPLICABLE,,ARM4,Y
+S0048,1,peripheral_edema,N,1,6,29,no_modification,DM014,ARM5,Y
+S0048,2,hyponatremia,N,2,116,141,no_modification,DM014,ARM5,Y
+S0048,3,blood_creatinine_increased,N,1,144,169,no_modification,DM014,ARM5,Y
+S0048,4,decreased_platelet_count,N,1,189,197,no_modification,DM014,ARM5,Y
+S0048,5,constipation,N,1,202,225,no_modification,DM014,ARM5,Y
+S0048,6,hypoalbuminemia,N,2,217,225,no_modification,DM014,ARM5,Y
+S0048,7,blood_alkaline_phosphatase_increased,N,2,239,253,no_modification,DM014,ARM5,Y
+S0048,8,aspartate_aminotransferase_increased,N,2,241,253,no_modification,DM014,ARM5,Y
+S0048,9,headache,N,1,262,281,no_modification,DM014,ARM5,Y
+S0048,10,thrombocytopenia,Y,3,269,309,NOT APPLICABLE,,ARM5,Y
+S0049,1,chest_pain,N,1,39,57,no_modification,DM014,ARM8,Y
+S0049,2,hyponatremia,N,1,43,57,no_modification,DM014,ARM8,Y
+S0049,3,diarrhea,N,2,65,85,no_modification,DM014,ARM8,Y
+S0049,4,blood_alkaline_phosphatase_increased,N,1,137,141,no_modification,DM014,ARM8,Y
+S0049,5,abdomen_distended,N,1,175,197,no_modification,DM014,ARM8,Y
+S0049,6,creatinine_renal_clearance_decreased,N,2,179,197,no_modification,DM014,ARM8,Y
+S0049,7,anemia,N,1,213,225,no_modification,DM014,ARM8,Y
+S0049,8,pruritus,N,1,217,225,no_modification,DM014,ARM8,Y
+S0049,9,fever,N,2,268,281,no_modification,DM014,ARM8,Y
+S0049,10,abdominal_pain,N,2,279,281,no_modification,DM014,ARM8,Y
+S0049,11,constipation,N,1,289,309,no_modification,DM014,ARM8,Y
+S0049,12,neutrophil_count_decreased,Y,3,404,449,NOT APPLICABLE,,ARM8,Y
+S0050,1,hypokalemia,N,2,6,29,no_modification,DM014,ARM8,Y
+S0050,2,hypoalbuminemia,N,1,18,29,no_modification,DM014,ARM8,Y
+S0050,3,constipation,N,1,20,29,no_modification,DM014,ARM8,Y
+S0050,4,prolonged_qt_interval,N,2,24,29,no_modification,DM014,ARM8,Y
+S0050,5,disease_progression,Y,3,71,113,NOT APPLICABLE,,ARM8,Y
+S0050,6,asthenia,N,2,102,113,no_modification,DM014,ARM8,Y
+S0050,7,anemia,N,2,145,169,no_modification,DM014,ARM8,Y
+S0050,8,peripheral_edema,N,1,169,197,no_modification,DM014,ARM8,Y
+S0051,1,nausea,N,1,3,29,no_modification,DM014,ARM3,Y
+S0051,2,edema,N,1,4,29,no_modification,DM014,ARM3,Y
+S0051,3,amylase_increased,N,2,18,29,no_modification,DM014,ARM3,Y
+S0051,4,pleural_effusion_disorder,N,2,18,29,no_modification,DM014,ARM3,Y
+S0051,5,hypocalcemia,N,2,21,29,no_modification,DM014,ARM3,Y
+S0051,6,fatigue,N,2,27,29,no_modification,DM014,ARM3,Y
+S0051,7,dyspepsia,N,1,30,57,no_modification,DM014,ARM3,Y
+S0051,8,constipation,N,2,33,57,no_modification,DM014,ARM3,Y
+S0051,9,decreased_platelet_count,N,2,49,57,no_modification,DM014,ARM3,Y
+S0051,10,peripheral_edema,N,1,68,85,NOT APPLICABLE,,ARM3,Y
+S0051,11,fever,N,1,71,85,NOT APPLICABLE,,ARM3,Y
+S0051,12,decrease_in_appetite,N,2,83,85,NOT APPLICABLE,,ARM3,Y
+S0052,1,asthenia,N,2,24,29,no_modification,DM014,ARM5,Y
+S0052,2,drug-related AEs,N,2,30,57,no_modification,DM014,ARM5,Y
+S0052,3,prolonged_qt_interval,N,1,52,57,no_modification,DM014,ARM5,Y
+S0052,4,constipation,N,1,69,85,no_modification,DM014,ARM5,Y
+S0052,5,decreased_platelet_count,N,2,79,85,no_modification,DM014,ARM5,Y
+S0052,6,thrombocytopenia,Y,3,179,225,NOT APPLICABLE,,ARM5,Y
+S0052,7,amylase_increased,N,1,227,253,no_modification,DM014,ARM5,Y
+S0052,8,conjunctivitis,N,2,245,253,no_modification,DM014,ARM5,Y
+S0052,9,alanine_aminotransferase_increased,N,1,248,253,no_modification,DM014,ARM5,Y
+S0052,10,dyspnea,N,1,259,281,no_modification,DM014,ARM5,Y
+S0053,1,hyponatremia,N,1,15,29,no_modification,DM014,ARM4,Y
+S0053,2,pruritus,N,1,23,29,no_modification,DM014,ARM4,Y
+S0053,3,rash_erythematous_macules_or_papules,N,1,26,29,no_modification,DM014,ARM4,Y
+S0053,4,peripheral_edema,N,2,27,29,no_modification,DM014,ARM4,Y
+S0053,5,decrease_in_appetite,N,1,34,57,no_modification,DM014,ARM4,Y
+S0053,6,thrombocytopenia,N,1,34,57,no_modification,DM014,ARM4,Y
+S0053,7,musculoskeletal_chest_pain,N,2,35,57,no_modification,DM014,ARM4,Y
+S0053,8,back_pain,N,2,59,85,NOT APPLICABLE,,ARM4,Y
+S0054,1,coughing,N,1,12,29,no_modification,DM014,ARM3,Y
+S0054,2,rash_erythematous_macules_or_papules,N,2,20,29,no_modification,DM014,ARM3,Y
+S0054,3,lipase_increased,N,1,24,29,no_modification,DM014,ARM3,Y
+S0054,4,fever,N,2,39,57,no_modification,DM014,ARM3,Y
+S0054,5,nausea,N,1,40,57,no_modification,DM014,ARM3,Y
+S0054,6,hemoptysis,N,1,41,57,no_modification,DM014,ARM3,Y
+S0054,7,creatinine_renal_clearance_decreased,N,1,46,57,no_modification,DM014,ARM3,Y
+S0054,8,fatigue,N,1,49,57,no_modification,DM014,ARM3,Y
+S0055,1,upper_abdominal_pain,N,1,23,29,no_modification,DM014,ARM5,Y
+S0055,2,alanine_aminotransferase_increased,N,2,83,85,no_modification,DM014,ARM5,Y
+S0055,3,thrombocytopenia,Y,3,286,337,NOT APPLICABLE,,ARM5,Y
+S0055,4,peripheral_edema,N,2,339,365,no_modification,DM014,ARM5,Y
+S0055,5,conjunctivitis,N,1,349,365,no_modification,DM014,ARM5,Y
+S0055,6,constipation,N,1,378,393,no_modification,DM014,ARM5,Y
+S0055,7,blood_creatinine_increased,N,2,566,589,NOT APPLICABLE,,ARM5,Y
+S0056,1,hemoptysis,N,1,5,29,no_modification,DM014,ARM4,Y
+S0056,2,pain_in_limb,N,2,89,113,no_modification,DM014,ARM4,Y
+S0056,3,thrombocytopenia,N,2,146,169,no_modification,DM014,ARM4,Y
+S0056,4,dyspnea,N,2,218,225,no_modification,DM014,ARM4,Y
+S0056,5,musculoskeletal_chest_pain,N,1,455,477,no_modification,DM014,ARM4,Y
+S0056,6,fatigue,N,1,496,505,no_modification,DM014,ARM4,Y
+S0056,7,febrile_neutropenia,Y,3,505,561,NOT APPLICABLE,,ARM4,Y
+S0056,8,back_pain,N,1,523,533,no_modification,DM014,ARM4,Y
+S0056,9,creatinine_renal_clearance_decreased,N,1,595,617,no_modification,DM014,ARM4,Y
+S0056,10,decrease_in_appetite,N,2,615,617,no_modification,DM014,ARM4,Y
+S0057,1,abdomen_distended,N,2,13,29,no_modification,DM014,ARM8,Y
+S0057,2,blood_alkaline_phosphatase_increased,N,1,22,29,no_modification,DM014,ARM8,Y
+S0057,3,diarrhea,N,1,34,57,no_modification,DM014,ARM8,Y
+S0057,4,disease_progression,Y,3,40,85,NOT APPLICABLE,,ARM8,Y
+S0057,5,drug-related AEs,N,2,74,85,no_modification,DM014,ARM8,Y
+S0057,6,anemia,N,1,113,141,no_modification,DM014,ARM8,Y
+S0057,7,hypoalbuminemia,N,2,141,169,no_modification,DM014,ARM8,Y
+S0057,8,dizziness,N,1,175,197,NOT APPLICABLE,,ARM8,Y
+S0057,9,headache,N,2,190,197,NOT APPLICABLE,,ARM8,Y
+S0058,1,peripheral_edema,N,2,4,29,no_modification,DM014,ARM4,Y
+S0058,2,abdominal_pain,N,2,11,29,no_modification,DM014,ARM4,Y
+S0058,3,vomiting,N,2,15,29,no_modification,DM014,ARM4,Y
+S0058,4,thrombocytopenia,N,2,30,57,no_modification,DM014,ARM4,Y
+S0058,5,blood_creatinine_increased,N,1,38,57,no_modification,DM014,ARM4,Y
+S0058,6,decrease_in_appetite,N,2,43,57,no_modification,DM014,ARM4,Y
+S0058,7,dyspnea,N,1,55,57,no_modification,DM014,ARM4,Y
+S0058,8,lipase_increased,N,1,56,57,no_modification,DM014,ARM4,Y
+S0058,9,asthenia,N,1,74,85,NOT APPLICABLE,,ARM4,Y
+S0058,10,alanine_aminotransferase_increased,N,1,85,113,NOT APPLICABLE,,ARM4,Y
+S0059,1,pruritus,N,2,56,57,no_modification,DM014,ARM4,Y
+S0059,2,neutrophil_count_decreased,Y,3,62,113,NOT APPLICABLE,,ARM4,Y
+S0059,3,hemoptysis,N,1,76,85,no_modification,DM014,ARM4,Y
+S0059,4,fatigue,N,2,90,113,no_modification,DM014,ARM4,Y
+S0059,5,decrease_in_appetite,N,1,109,113,no_modification,DM014,ARM4,Y
+S0059,6,dyspnea,N,1,155,169,no_modification,DM014,ARM4,Y
+S0059,7,musculoskeletal_chest_pain,N,1,212,225,no_modification,DM014,ARM4,Y
+S0059,8,headache,N,1,214,225,no_modification,DM014,ARM4,Y
+S0059,9,creatinine_renal_clearance_decreased,N,2,238,253,no_modification,DM014,ARM4,Y
+S0059,10,lipase_increased,N,2,245,253,no_modification,DM014,ARM4,Y
+S0059,11,asthenia,N,1,262,281,no_modification,DM014,ARM4,Y
+S0059,12,back_pain,N,2,295,309,NOT APPLICABLE,,ARM4,Y
+S0059,13,weight_loss,N,1,301,309,NOT APPLICABLE,,ARM4,Y
+S0059,14,abdomen_distended,N,2,304,309,NOT APPLICABLE,,ARM4,Y
+S0060,1,vomiting,N,1,6,29,no_modification,DM014,ARM4,Y
+S0060,2,hypoalbuminemia,N,1,53,57,no_modification,DM014,ARM4,Y
+S0060,3,fatigue,N,1,163,169,no_modification,DM014,ARM4,Y
+S0060,4,hemoptysis,N,1,233,253,no_modification,DM014,ARM4,Y
+S0060,5,dizziness,N,1,298,309,no_modification,DM014,ARM4,Y
+S0060,6,fever,N,2,359,365,NOT APPLICABLE,,ARM4,Y
+S0061,1,pain_in_limb,N,1,17,29,no_modification,DM014,ARM4,Y
+S0061,2,diarrhea,N,1,19,29,no_modification,DM014,ARM4,Y
+S0061,3,thrombocytopenia,N,2,47,57,no_modification,DM014,ARM4,Y
+S0061,4,peripheral_edema,N,2,67,85,no_modification,DM014,ARM4,Y
+S0061,5,back_pain,N,2,70,85,no_modification,DM014,ARM4,Y
+S0061,6,anemia,N,2,75,85,no_modification,DM014,ARM4,Y
+S0061,7,abdominal_pain,N,2,129,141,NOT APPLICABLE,,ARM4,Y
+S0061,8,musculoskeletal_chest_pain,N,2,133,141,NOT APPLICABLE,,ARM4,Y
+S0062,1,hypoalbuminemia,N,1,39,57,no_modification,DM014,ARM4,Y
+S0062,2,conjunctivitis,N,1,60,85,no_modification,DM014,ARM4,Y
+S0062,3,creatinine_renal_clearance_decreased,N,2,109,113,no_modification,DM014,ARM4,Y
+S0062,4,dyspnea,N,1,138,141,no_modification,DM014,ARM4,Y
+S0062,5,peripheral_edema,N,1,190,197,no_modification,DM014,ARM4,Y
+S0062,6,blood_alkaline_phosphatase_increased,N,1,204,225,no_modification,DM014,ARM4,Y
+S0062,7,hypokalemia,N,1,217,225,no_modification,DM014,ARM4,Y
+S0062,8,vomiting,N,1,221,225,no_modification,DM014,ARM4,Y
+S0062,9,musculoskeletal_chest_pain,N,1,227,253,no_modification,DM014,ARM4,Y
+S0062,10,pain_in_limb,N,2,234,253,no_modification,DM014,ARM4,Y
+S0062,11,hyponatremia,N,1,282,309,NOT APPLICABLE,,ARM4,Y
+S0063,1,hypoalbuminemia,N,1,46,57,no_modification,DM014,ARM4,Y
+S0063,2,asthenia,N,2,77,85,no_modification,DM014,ARM4,Y
+S0063,3,diarrhea,N,2,141,169,no_modification,DM014,ARM4,Y
+S0063,4,thrombocytopenia,N,2,254,281,no_modification,DM014,ARM4,Y
+S0063,5,musculoskeletal_chest_pain,N,1,258,281,no_modification,DM014,ARM4,Y
+S0063,6,vomiting,N,2,299,309,no_modification,DM014,ARM4,Y
+S0063,7,lipase_increased,N,1,323,337,no_modification,DM014,ARM4,Y
+S0063,8,fatigue,N,2,404,421,no_modification,DM014,ARM4,Y
+S0063,9,neutrophil_count_decreased,Y,3,529,561,NOT APPLICABLE,,ARM4,Y
+S0063,10,decrease_in_appetite,N,1,588,589,no_modification,DM014,ARM4,Y
+S0064,1,headache,N,1,5,29,no_modification,DM014,ARM5,Y
+S0064,2,decreased_platelet_count,N,2,10,29,no_modification,DM014,ARM5,Y
+S0064,3,dyspnea,N,1,14,29,no_modification,DM014,ARM5,Y
+S0064,4,aspartate_aminotransferase_increased,N,1,18,29,no_modification,DM014,ARM5,Y
+S0064,5,vomiting,N,1,19,29,no_modification,DM014,ARM5,Y
+S0064,6,hypoalbuminemia,N,1,34,57,no_modification,DM014,ARM5,Y
+S0064,7,neutrophil_count_decreased,Y,3,52,85,NOT APPLICABLE,,ARM5,Y
+S0064,8,peripheral_edema,N,2,53,57,no_modification,DM014,ARM5,Y
+S0064,9,dyspnoea_exertional,N,1,53,57,no_modification,DM014,ARM5,Y
+S0064,10,hyponatremia,N,2,59,85,NOT APPLICABLE,,ARM5,Y
+S0064,11,constipation,N,2,64,85,NOT APPLICABLE,,ARM5,Y
+S0064,12,back_pain,N,2,87,113,NOT APPLICABLE,,ARM5,Y
+S0065,1,amylase_increased,N,2,31,57,no_modification,DM014,ARM3,Y
+S0065,2,anemia,N,1,33,57,no_modification,DM014,ARM3,Y
+S0065,3,edema,N,1,37,57,no_modification,DM014,ARM3,Y
+S0065,4,fatigue,N,2,82,85,no_modification,DM014,ARM3,Y
+S0065,5,pleural_effusion_disorder,N,2,86,113,no_modification,DM014,ARM3,Y
+S0065,6,blood_alkaline_phosphatase_increased,N,1,101,113,no_modification,DM014,ARM3,Y
+S0065,7,fever,N,1,117,141,no_modification,DM014,ARM3,Y
+S0065,8,chest_pain,N,2,123,141,no_modification,DM014,ARM3,Y
+S0065,9,constipation,N,1,150,169,no_modification,DM014,ARM3,Y
+S0065,10,lipase_increased,N,1,173,197,NOT APPLICABLE,,ARM3,Y
+S0065,11,hypoalbuminemia,N,1,184,197,NOT APPLICABLE,,ARM3,Y
+S0066,1,hypoalbuminemia,N,2,5,29,no_modification,DM014,ARM5,Y
+S0066,2,vomiting,N,1,6,29,no_modification,DM014,ARM5,Y
+S0066,3,neutrophil_count_decreased,Y,3,14,57,NOT APPLICABLE,,ARM5,Y
+S0066,4,dyspnoea_exertional,N,1,21,29,no_modification,DM014,ARM5,Y
+S0066,5,blood_alkaline_phosphatase_increased,N,1,28,29,no_modification,DM014,ARM5,Y
+S0066,6,pruritus,N,1,30,57,no_modification,DM014,ARM5,Y
+S0066,7,peripheral_edema,N,2,74,85,NOT APPLICABLE,,ARM5,Y
+S0066,8,hyponatremia,N,1,78,85,NOT APPLICABLE,,ARM5,Y
+S0066,9,dyspepsia,N,1,86,113,NOT APPLICABLE,,ARM5,Y
+S0067,1,blood_alkaline_phosphatase_increased,N,1,55,57,no_modification,DM014,ARM3,Y
+S0067,2,constipation,N,1,85,113,no_modification,DM014,ARM3,Y
+S0067,3,hypocalcemia,N,1,121,141,no_modification,DM014,ARM3,Y
+S0067,4,upper_respiratory_infections,N,1,139,141,no_modification,DM014,ARM3,Y
+S0067,5,pleural_effusion_disorder,N,1,186,197,no_modification,DM014,ARM3,Y
+S0067,6,back_pain,N,2,309,337,no_modification,DM014,ARM3,Y
+S0067,7,edema,N,1,333,337,no_modification,DM014,ARM3,Y
+S0067,8,chest_pain,N,2,367,393,no_modification,DM014,ARM3,Y
+S0067,9,nausea,N,1,386,393,no_modification,DM014,ARM3,Y
+S0067,10,fatigue,N,2,466,477,no_modification,DM014,ARM3,Y
+S0067,11,decreased_platelet_count,N,1,513,533,NOT APPLICABLE,,ARM3,Y
+S0067,12,coughing,N,2,523,533,NOT APPLICABLE,,ARM3,Y
+S0068,1,diarrhea,N,1,7,29,no_modification,DM014,ARM4,Y
+S0068,2,hyponatremia,N,1,12,29,no_modification,DM014,ARM4,Y
+S0068,3,dyspepsia,N,1,21,29,no_modification,DM014,ARM4,Y
+S0068,4,dyspnea,N,2,26,29,no_modification,DM014,ARM4,Y
+S0068,5,creatinine_renal_clearance_decreased,N,2,30,57,no_modification,DM014,ARM4,Y
+S0068,6,lipase_increased,N,2,37,57,no_modification,DM014,ARM4,Y
+S0068,7,hypoalbuminemia,N,1,44,57,no_modification,DM014,ARM4,Y
+S0068,8,pleural_effusion_disorder,Y,3,54,85,NOT APPLICABLE,,ARM4,Y
+S0068,9,musculoskeletal_chest_pain,N,1,62,85,NOT APPLICABLE,,ARM4,Y
+S0068,10,hypokalemia,N,2,67,85,NOT APPLICABLE,,ARM4,Y
+S0068,11,thrombocytopenia,N,2,73,85,NOT APPLICABLE,,ARM4,Y
+S0069,1,dizziness,N,1,41,57,no_modification,DM014,ARM5,Y
+S0069,2,productive_cough,N,2,52,57,no_modification,DM014,ARM5,Y
+S0069,3,blood_creatinine_increased,N,1,58,85,no_modification,DM014,ARM5,Y
+S0069,4,alanine_aminotransferase_increased,N,2,156,169,no_modification,DM014,ARM5,Y
+S0069,5,conjunctivitis,N,1,197,225,no_modification,DM014,ARM5,Y
+S0069,6,amylase_increased,N,2,280,281,no_modification,DM014,ARM5,Y
+S0069,7,musculoskeletal_chest_pain,N,1,285,309,no_modification,DM014,ARM5,Y
+S0069,8,vomiting,N,2,349,365,no_modification,DM014,ARM5,Y
+S0069,9,lipase_increased,N,1,400,421,no_modification,DM014,ARM5,Y
+S0069,10,hypoalbuminemia,N,2,464,477,no_modification,DM014,ARM5,Y
+S0069,11,constipation,N,2,541,561,no_modification,DM014,ARM5,Y
+S0070,1,constipation,N,2,31,57,no_modification,DM014,ARM5,Y
+S0070,2,hypoalbuminemia,N,2,60,85,no_modification,DM014,ARM5,Y
+S0070,3,peripheral_edema,N,2,64,85,no_modification,DM014,ARM5,Y
+S0070,4,conjunctivitis,N,1,80,85,no_modification,DM014,ARM5,Y
+S0070,5,back_pain,N,2,86,113,no_modification,DM014,ARM5,Y
+S0070,6,amylase_increased,N,2,101,113,no_modification,DM014,ARM5,Y
+S0070,7,dyspnoea_exertional,N,2,104,113,no_modification,DM014,ARM5,Y
+S0070,8,alanine_aminotransferase_increased,N,1,109,113,no_modification,DM014,ARM5,Y
+S0071,1,dyspnea,N,2,8,29,no_modification,DM014,ARM4,Y
+S0071,2,diarrhea,N,2,32,57,no_modification,DM014,ARM4,Y
+S0071,3,abdomen_distended,N,1,40,57,no_modification,DM014,ARM4,Y
+S0071,4,hypoalbuminemia,N,2,46,57,no_modification,DM014,ARM4,Y
+S0071,5,drug-related AEs,N,1,46,57,no_modification,DM014,ARM4,Y
+S0071,6,musculoskeletal_chest_pain,N,2,55,57,no_modification,DM014,ARM4,Y
+S0071,7,creatinine_renal_clearance_decreased,N,2,62,85,NOT APPLICABLE,,ARM4,Y
+S0071,8,dyspepsia,N,1,66,85,NOT APPLICABLE,,ARM4,Y
+S0071,9,peripheral_edema,N,1,69,85,NOT APPLICABLE,,ARM4,Y
+S0071,10,decrease_in_appetite,N,2,81,85,NOT APPLICABLE,,ARM4,Y
+S0071,11,hemoptysis,N,1,84,85,NOT APPLICABLE,,ARM4,Y
+S0072,1,nausea,N,2,45,57,no_modification,DM014,ARM5,Y
+S0072,2,neutrophil_count_decreased,Y,3,46,85,NOT APPLICABLE,,ARM5,Y
+S0072,3,pruritus,N,1,233,253,no_modification,DM014,ARM5,Y
+S0072,4,headache,N,2,267,281,no_modification,DM014,ARM5,Y
+S0072,5,hemoptysis,N,1,313,337,no_modification,DM014,ARM5,Y
+S0072,6,thrombocytopenia,Y,3,362,393,NOT APPLICABLE,,ARM5,Y
+S0072,7,hyponatremia,N,1,620,645,no_modification,DM014,ARM5,Y
+S0072,8,dyspnoea_exertional,N,1,658,673,no_modification,DM014,ARM5,Y
+S0072,9,peripheral_edema,N,2,738,745,NOT APPLICABLE,,ARM5,Y
+S0073,1,chest_pain,N,1,37,57,no_modification,DM014,ARM3,Y
+S0073,2,lipase_increased,N,2,67,85,no_modification,DM014,ARM3,Y
+S0073,3,edema,N,1,72,85,no_modification,DM014,ARM3,Y
+S0073,4,abdomen_distended,N,1,90,113,no_modification,DM014,ARM3,Y
+S0073,5,hypocalcemia,N,1,102,113,no_modification,DM014,ARM3,Y
+S0073,6,coughing,N,1,133,141,no_modification,DM014,ARM3,Y
+S0073,7,fatigue,N,1,155,169,no_modification,DM014,ARM3,Y
+S0073,8,nausea,N,1,185,197,no_modification,DM014,ARM3,Y
+S0073,9,aspartate_aminotransferase_increased,N,1,222,225,no_modification,DM014,ARM3,Y
+S0074,1,hyponatremia,N,1,29,57,no_modification,DM014,ARM3,Y
+S0074,2,coughing,N,2,70,85,no_modification,DM014,ARM3,Y
+S0074,3,hypertension_variable,Y,3,127,169,NOT APPLICABLE,,ARM3,Y
+S0074,4,chest_pain,N,2,131,141,no_modification,DM014,ARM3,Y
+S0074,5,pleural_effusion_disorder,N,2,177,197,no_modification,DM014,ARM3,Y
+S0074,6,hypocalcemia,N,1,233,253,no_modification,DM014,ARM3,Y
+S0074,7,abdomen_distended,N,2,253,281,no_modification,DM014,ARM3,Y
+S0074,8,fatigue,N,1,276,281,no_modification,DM014,ARM3,Y
+S0074,9,fever,N,1,312,337,no_modification,DM014,ARM3,Y
+S0074,10,blood_alkaline_phosphatase_increased,N,1,328,337,no_modification,DM014,ARM3,Y
+S0074,11,amylase_increased,N,2,342,365,no_modification,DM014,ARM3,Y
+S0074,12,decreased_platelet_count,N,2,364,365,no_modification,DM014,ARM3,Y
+S0074,13,edema,N,2,394,421,NOT APPLICABLE,,ARM3,Y
+S0074,14,peripheral_edema,Y,3,413,449,NOT APPLICABLE,,ARM3,Y
+S0075,1,peripheral_edema,N,2,19,29,no_modification,DM014,ARM5,Y
+S0075,2,amylase_increased,N,2,51,57,no_modification,DM014,ARM5,Y
+S0075,3,aspartate_aminotransferase_increased,N,1,73,85,no_modification,DM014,ARM5,Y
+S0075,4,blood_creatinine_increased,N,1,75,85,no_modification,DM014,ARM5,Y
+S0075,5,fever,N,1,106,113,no_modification,DM014,ARM5,Y
+S0075,6,decreased_platelet_count,N,1,117,141,NOT APPLICABLE,,ARM5,Y
+S0075,7,alanine_aminotransferase_increased,N,2,121,141,NOT APPLICABLE,,ARM5,Y
+S0075,8,neutrophil_count_decreased,Y,3,128,169,NOT APPLICABLE,,ARM5,Y
+S0075,9,nausea,N,1,136,141,NOT APPLICABLE,,ARM5,Y
+S0076,1,peripheral_edema,Y,3,40,85,NOT APPLICABLE,,ARM3,Y
+S0076,2,abdomen_distended,N,2,47,57,no_modification,DM014,ARM3,Y
+S0076,3,nausea,N,2,60,85,no_modification,DM014,ARM3,Y
+S0076,4,chest_pain,N,2,67,85,no_modification,DM014,ARM3,Y
+S0076,5,blood_alkaline_phosphatase_increased,N,1,69,85,no_modification,DM014,ARM3,Y
+S0076,6,amylase_increased,N,1,81,85,no_modification,DM014,ARM3,Y
+S0076,7,hypocalcemia,N,1,254,281,no_modification,DM014,ARM3,Y
+S0076,8,fever,N,1,276,281,no_modification,DM014,ARM3,Y
+S0076,9,headache,N,1,284,309,no_modification,DM014,ARM3,Y
+S0076,10,edema,N,1,330,337,no_modification,DM014,ARM3,Y
+S0077,1,hypoalbuminemia,N,2,5,29,no_modification,DM014,ARM5,Y
+S0077,2,alanine_aminotransferase_increased,N,2,13,29,no_modification,DM014,ARM5,Y
+S0077,3,abdominal_pain,N,1,27,29,no_modification,DM014,ARM5,Y
+S0077,4,decreased_platelet_count,N,2,44,57,no_modification,DM014,ARM5,Y
+S0077,5,hemoptysis,N,1,52,57,no_modification,DM014,ARM5,Y
+S0077,6,peripheral_edema,N,2,53,57,no_modification,DM014,ARM5,Y
+S0077,7,dyspnoea_exertional,N,2,54,57,no_modification,DM014,ARM5,Y
+S0077,8,decrease_in_appetite,N,1,57,85,no_modification,DM014,ARM5,Y
+S0077,9,pruritus,N,1,69,85,NOT APPLICABLE,,ARM5,Y
+S0077,10,vomiting,N,2,71,85,NOT APPLICABLE,,ARM5,Y
+S0078,1,drug-related AEs,N,2,87,113,no_modification,DM014,ARM3,Y
+S0078,2,fatigue,N,1,133,141,no_modification,DM014,ARM3,Y
+S0078,3,lipase_increased,N,2,159,169,no_modification,DM014,ARM3,Y
+S0078,4,decreased_platelet_count,N,1,171,197,no_modification,DM014,ARM3,Y
+S0078,5,abdomen_distended,N,1,225,253,no_modification,DM014,ARM3,Y
+S0078,6,blood_alkaline_phosphatase_increased,N,1,275,281,no_modification,DM014,ARM3,Y
+S0078,7,edema,N,1,297,309,no_modification,DM014,ARM3,Y
+S0078,8,conjunctivitis,N,1,317,337,no_modification,DM014,ARM3,Y
+S0078,9,rash_erythematous_macules_or_papules,N,1,349,365,no_modification,DM014,ARM3,Y
+S0078,10,upper_respiratory_infections,N,2,405,421,no_modification,DM014,ARM3,Y
+S0078,11,amylase_increased,N,2,512,533,NOT APPLICABLE,,ARM3,Y
+S0079,1,constipation,N,2,64,85,no_modification,DM014,ARM8,Y
+S0079,2,neutrophil_count_decreased,Y,3,66,113,NOT APPLICABLE,,ARM8,Y
+S0079,3,pruritus,N,1,76,85,no_modification,DM014,ARM8,Y
+S0079,4,aspartate_aminotransferase_increased,N,2,82,85,no_modification,DM014,ARM8,Y
+S0079,5,hypoalbuminemia,N,1,119,141,no_modification,DM014,ARM8,Y
+S0079,6,headache,N,1,195,197,NOT APPLICABLE,,ARM8,Y
+S0080,1,conjunctivitis,N,1,53,57,no_modification,DM014,ARM5,Y
+S0080,2,musculoskeletal_chest_pain,N,2,54,57,no_modification,DM014,ARM5,Y
+S0080,3,hyponatremia,N,1,116,141,no_modification,DM014,ARM5,Y
+S0080,4,peripheral_edema,N,1,127,141,no_modification,DM014,ARM5,Y
+S0080,5,decreased_platelet_count,N,2,161,169,no_modification,DM014,ARM5,Y
+S0080,6,aspartate_aminotransferase_increased,N,1,166,169,no_modification,DM014,ARM5,Y
+S0080,7,hypoalbuminemia,N,1,218,225,no_modification,DM014,ARM5,Y
+S0080,8,dyspnoea_exertional,N,2,220,225,no_modification,DM014,ARM5,Y
+S0081,1,pruritus,N,2,4,29,no_modification,DM014,ARM8,Y
+S0081,2,hypokalemia,N,2,11,29,no_modification,DM014,ARM8,Y
+S0081,3,asthenia,N,2,15,29,no_modification,DM014,ARM8,Y
+S0081,4,blood_alkaline_phosphatase_increased,N,2,23,29,no_modification,DM014,ARM8,Y
+S0081,5,abdomen_distended,N,1,30,57,no_modification,DM014,ARM8,Y
+S0081,6,constipation,N,1,34,57,no_modification,DM014,ARM8,Y
+S0081,7,fatigue,N,1,35,57,no_modification,DM014,ARM8,Y
+S0081,8,aspartate_aminotransferase_increased,N,1,58,85,NOT APPLICABLE,,ARM8,Y
+S0081,9,headache,N,2,75,85,NOT APPLICABLE,,ARM8,Y
+S0082,1,chest_pain,N,1,57,85,no_modification,DM014,ARM3,Y
+S0082,2,fatigue,N,1,86,113,no_modification,DM014,ARM3,Y
+S0082,3,edema,N,1,94,113,no_modification,DM014,ARM3,Y
+S0082,4,headache,N,1,96,113,no_modification,DM014,ARM3,Y
+S0082,5,decreased_platelet_count,N,2,121,141,no_modification,DM014,ARM3,Y
+S0082,6,hypocalcemia,N,1,127,141,no_modification,DM014,ARM3,Y
+S0082,7,blood_alkaline_phosphatase_increased,N,1,151,169,no_modification,DM014,ARM3,Y
+S0082,8,aspartate_aminotransferase_increased,N,2,183,197,NOT APPLICABLE,,ARM3,Y
+S0082,9,amylase_increased,N,1,184,197,NOT APPLICABLE,,ARM3,Y
+S0083,1,pain_in_limb,N,2,57,85,no_modification,DM014,ARM4,Y
+S0083,2,abdomen_distended,N,2,131,141,no_modification,DM014,ARM4,Y
+S0083,3,diarrhea,N,2,180,197,no_modification,DM014,ARM4,Y
+S0083,4,constipation,N,2,231,253,no_modification,DM014,ARM4,Y
+S0083,5,vomiting,N,1,234,253,no_modification,DM014,ARM4,Y
+S0083,6,musculoskeletal_chest_pain,N,1,305,309,no_modification,DM014,ARM4,Y
+S0083,7,thrombocytopenia,N,2,399,421,no_modification,DM014,ARM4,Y
+S0083,8,pleural_effusion_disorder,Y,3,423,477,NOT APPLICABLE,,ARM4,Y
+S0083,9,upper_abdominal_pain,N,1,459,477,NOT APPLICABLE,,ARM4,Y
+S0084,1,headache,N,1,6,29,no_modification,DM014,ARM5,Y
+S0084,2,neutrophil_count_decreased,Y,3,20,57,NOT APPLICABLE,,ARM5,Y
+S0084,3,conjunctivitis,N,2,47,57,no_modification,DM014,ARM5,Y
+S0084,4,drug-related AEs,N,1,52,57,no_modification,DM014,ARM5,Y
+S0084,5,thrombocytopenia,Y,3,231,281,NOT APPLICABLE,,ARM5,Y
+S0084,6,fatigue,Y,3,247,281,NOT APPLICABLE,,ARM5,Y
+S0084,7,hypoalbuminemia,N,1,327,337,no_modification,DM014,ARM5,Y
+S0084,8,peripheral_edema,N,2,344,365,no_modification,DM014,ARM5,Y
+S0084,9,hyponatremia,N,1,359,365,no_modification,DM014,ARM5,Y
+S0084,10,dyspnoea_exertional,N,1,411,421,no_modification,DM014,ARM5,Y
+S0084,11,blood_creatinine_increased,N,1,429,449,no_modification,DM014,ARM5,Y
+S0085,1,vomiting,N,1,1,29,no_modification,DM014,ARM5,Y
+S0085,2,hypoalbuminemia,N,2,6,29,no_modification,DM014,ARM5,Y
+S0085,3,amylase_increased,N,1,19,29,no_modification,DM014,ARM5,Y
+S0085,4,peripheral_edema,N,1,155,169,no_modification,DM014,ARM5,Y
+S0085,5,constipation,N,2,179,197,no_modification,DM014,ARM5,Y
+S0085,6,aspartate_aminotransferase_increased,N,2,197,225,no_modification,DM014,ARM5,Y
+S0085,7,dyspnea,N,1,231,253,NOT APPLICABLE,,ARM5,Y
+S0086,1,lipase_increased,N,1,17,29,no_modification,DM014,ARM4,Y
+S0086,2,peripheral_edema,N,1,44,57,no_modification,DM014,ARM4,Y
+S0086,3,neutrophil_count_decreased,Y,3,46,85,NOT APPLICABLE,,ARM4,Y
+S0086,4,hyponatremia,N,1,72,85,NOT APPLICABLE,,ARM4,Y
+S0086,5,decrease_in_appetite,N,1,73,85,NOT APPLICABLE,,ARM4,Y
+S0086,6,asthenia,N,2,77,85,NOT APPLICABLE,,ARM4,Y
+S0086,7,pruritus,N,2,80,85,NOT APPLICABLE,,ARM4,Y
+S0087,1,anemia,N,1,35,57,no_modification,DM014,ARM3,Y
+S0087,2,hypocalcemia,N,1,38,57,no_modification,DM014,ARM3,Y
+S0087,3,decreased_platelet_count,N,1,40,57,no_modification,DM014,ARM3,Y
+S0087,4,abdomen_distended,N,1,41,57,no_modification,DM014,ARM3,Y
+S0087,5,constipation,N,1,45,57,no_modification,DM014,ARM3,Y
+S0087,6,edema,N,2,45,57,no_modification,DM014,ARM3,Y
+S0087,7,amylase_increased,N,1,57,85,no_modification,DM014,ARM3,Y
+S0087,8,back_pain,N,2,60,85,NOT APPLICABLE,,ARM3,Y
+S0087,9,nausea,N,1,67,85,NOT APPLICABLE,,ARM3,Y
+S0087,10,fatigue,N,1,85,113,NOT APPLICABLE,,ARM3,Y
+S0087,11,chest_pain,N,2,87,113,NOT APPLICABLE,,ARM3,Y
+S0088,1,productive_cough,N,1,33,57,no_modification,DM014,ARM8,Y
+S0088,2,headache,N,1,50,57,no_modification,DM014,ARM8,Y
+S0088,3,creatinine_renal_clearance_decreased,N,1,65,85,no_modification,DM014,ARM8,Y
+S0088,4,hypoalbuminemia,N,1,97,113,no_modification,DM014,ARM8,Y
+S0088,5,fever,N,2,108,113,no_modification,DM014,ARM8,Y
+S0088,6,anemia,N,2,121,141,no_modification,DM014,ARM8,Y
+S0088,7,blood_alkaline_phosphatase_increased,N,1,148,169,no_modification,DM014,ARM8,Y
+S0088,8,aspartate_aminotransferase_increased,N,1,213,225,no_modification,DM014,ARM8,Y
+S0088,9,hypokalemia,N,2,218,225,no_modification,DM014,ARM8,Y
+S0088,10,blood_creatinine_increased,N,2,240,253,no_modification,DM014,ARM8,Y
+S0088,11,asthenia,N,2,351,365,no_modification,DM014,ARM8,Y
+S0088,12,neutrophil_count_decreased,Y,3,393,449,NOT APPLICABLE,,ARM8,Y
+S0088,13,pruritus,N,2,428,449,no_modification,DM014,ARM8,Y
+S0089,1,fever,N,2,6,29,no_modification,DM014,ARM5,Y
+S0089,2,peripheral_edema,N,1,16,29,no_modification,DM014,ARM5,Y
+S0089,3,hypoalbuminemia,N,1,58,85,no_modification,DM014,ARM5,Y
+S0089,4,upper_respiratory_infections,N,1,62,85,no_modification,DM014,ARM5,Y
+S0089,5,blood_creatinine_increased,N,1,64,85,no_modification,DM014,ARM5,Y
+S0089,6,dyspnoea_exertional,N,1,65,85,no_modification,DM014,ARM5,Y
+S0089,7,back_pain,N,2,110,113,no_modification,DM014,ARM5,Y
+S0090,1,headache,N,2,9,29,no_modification,DM014,ARM5,Y
+S0090,2,neutrophil_count_decreased,Y,3,63,113,NOT APPLICABLE,,ARM5,Y
+S0090,3,lipase_increased,N,1,68,85,no_modification,DM014,ARM5,Y
+S0090,4,aspartate_aminotransferase_increased,N,2,73,85,no_modification,DM014,ARM5,Y
+S0090,5,peripheral_edema,N,2,106,113,no_modification,DM014,ARM5,Y
+S0090,6,chest_pain,N,2,268,281,no_modification,DM014,ARM5,Y
+S0090,7,constipation,N,2,293,309,no_modification,DM014,ARM5,Y
+S0090,8,blood_creatinine_increased,N,2,297,309,no_modification,DM014,ARM5,Y
+S0090,9,hyponatremia,N,1,336,337,no_modification,DM014,ARM5,Y
+S0090,10,blood_alkaline_phosphatase_increased,N,2,359,365,NOT APPLICABLE,,ARM5,Y
+S0091,1,fatigue,N,1,38,57,no_modification,DM014,ARM3,Y
+S0091,2,edema,N,2,71,85,no_modification,DM014,ARM3,Y
+S0091,3,chest_pain,N,2,74,85,no_modification,DM014,ARM3,Y
+S0091,4,fever,N,2,89,113,no_modification,DM014,ARM3,Y
+S0091,5,amylase_increased,N,2,192,197,no_modification,DM014,ARM3,Y
+S0091,6,creatinine_renal_clearance_decreased,N,2,231,253,no_modification,DM014,ARM3,Y
+S0091,7,constipation,N,1,354,365,no_modification,DM014,ARM3,Y
+S0091,8,decreased_platelet_count,N,2,433,449,no_modification,DM014,ARM3,Y
+S0091,9,hypoalbuminemia,N,1,471,477,NOT APPLICABLE,,ARM3,Y
+S0092,1,conjunctivitis,N,1,28,29,no_modification,DM014,ARM5,Y
+S0092,2,constipation,N,2,48,57,no_modification,DM014,ARM5,Y
+S0092,3,headache,N,1,73,85,no_modification,DM014,ARM5,Y
+S0092,4,back_pain,N,1,79,85,no_modification,DM014,ARM5,Y
+S0092,5,blood_creatinine_increased,N,2,89,113,no_modification,DM014,ARM5,Y
+S0092,6,upper_respiratory_infections,N,2,92,113,no_modification,DM014,ARM5,Y
+S0092,7,dyspnea,N,1,102,113,no_modification,DM014,ARM5,Y
+S0092,8,hyponatremia,N,1,112,113,no_modification,DM014,ARM5,Y
+S0092,9,peripheral_edema,N,1,125,141,NOT APPLICABLE,,ARM5,Y
+S0093,1,hypoalbuminemia,N,1,2,29,no_modification,DM014,ARM8,Y
+S0093,2,anemia,N,2,4,29,no_modification,DM014,ARM8,Y
+S0093,3,abdominal_pain,Y,3,24,57,NOT APPLICABLE,,ARM8,Y
+S0093,4,constipation,N,2,57,85,no_modification,DM014,ARM8,Y
+S0093,5,pneumonia,Y,3,70,113,NOT APPLICABLE,,ARM8,Y
+S0093,6,decrease_in_appetite,N,2,86,113,no_modification,DM014,ARM8,Y
+S0093,7,dyspnea,N,1,111,113,no_modification,DM014,ARM8,Y
+S0093,8,blood_creatinine_increased,N,2,124,141,no_modification,DM014,ARM8,Y
+S0093,9,pruritus,N,2,183,197,NOT APPLICABLE,,ARM8,Y
+S0093,10,headache,N,2,196,197,NOT APPLICABLE,,ARM8,Y
+S0094,1,dyspepsia,N,2,13,29,no_modification,DM014,ARM4,Y
+S0094,2,musculoskeletal_chest_pain,N,2,18,29,no_modification,DM014,ARM4,Y
+S0094,3,decrease_in_appetite,N,2,56,57,no_modification,DM014,ARM4,Y
+S0094,4,hypokalemia,N,1,58,85,NOT APPLICABLE,,ARM4,Y
+S0094,5,amylase_increased,N,1,70,85,NOT APPLICABLE,,ARM4,Y
+S0094,6,creatinine_renal_clearance_decreased,N,1,70,85,NOT APPLICABLE,,ARM4,Y
+S0094,7,blood_creatinine_increased,N,1,71,85,NOT APPLICABLE,,ARM4,Y
+S0094,8,hyponatremia,N,2,80,85,NOT APPLICABLE,,ARM4,Y
+S0094,9,pain_in_limb,N,2,84,85,NOT APPLICABLE,,ARM4,Y
+S0095,1,hypoalbuminemia,N,2,13,29,no_modification,DM014,ARM8,Y
+S0095,2,edema,N,1,20,29,no_modification,DM014,ARM8,Y
+S0095,3,dyspnea,N,2,29,57,no_modification,DM014,ARM8,Y
+S0095,4,productive_cough,N,2,29,57,no_modification,DM014,ARM8,Y
+S0095,5,blood_alkaline_phosphatase_increased,N,2,32,57,no_modification,DM014,ARM8,Y
+S0095,6,dyspnoea_exertional,N,2,33,57,no_modification,DM014,ARM8,Y
+S0095,7,pruritus,N,1,34,57,no_modification,DM014,ARM8,Y
+S0095,8,blood_creatinine_increased,N,2,39,57,no_modification,DM014,ARM8,Y
+S0095,9,hypokalemia,N,2,52,57,no_modification,DM014,ARM8,Y
+S0095,10,nausea,N,1,73,85,NOT APPLICABLE,,ARM8,Y
+S0095,11,constipation,N,2,77,85,NOT APPLICABLE,,ARM8,Y
+S0095,12,anemia,N,1,79,85,NOT APPLICABLE,,ARM8,Y
+S0096,1,hypocalcemia,N,2,3,29,no_modification,DM014,ARM3,Y
+S0096,2,pain_in_limb,N,1,12,29,no_modification,DM014,ARM3,Y
+S0096,3,hemoptysis,N,2,32,57,no_modification,DM014,ARM3,Y
+S0096,4,decreased_platelet_count,N,2,32,57,no_modification,DM014,ARM3,Y
+S0096,5,amylase_increased,N,2,34,57,no_modification,DM014,ARM3,Y
+S0096,6,pleural_effusion_disorder,N,1,52,57,no_modification,DM014,ARM3,Y
+S0096,7,nausea,N,2,69,85,no_modification,DM014,ARM3,Y
+S0096,8,chest_pain,N,1,70,85,no_modification,DM014,ARM3,Y
+S0097,1,blood_creatinine_increased,N,1,11,29,no_modification,DM014,ARM4,Y
+S0097,2,rash_erythematous_macules_or_papules,N,2,168,169,no_modification,DM014,ARM4,Y
+S0097,3,musculoskeletal_chest_pain,N,1,172,197,no_modification,DM014,ARM4,Y
+S0097,4,decrease_in_appetite,N,2,200,225,no_modification,DM014,ARM4,Y
+S0097,5,alanine_aminotransferase_increased,N,2,203,225,no_modification,DM014,ARM4,Y
+S0097,6,thrombocytopenia,N,2,231,253,no_modification,DM014,ARM4,Y
+S0097,7,hypoalbuminemia,N,2,244,253,no_modification,DM014,ARM4,Y
+S0097,8,febrile_neutropenia,Y,3,259,309,NOT APPLICABLE,,ARM4,Y
+S0097,9,dyspepsia,N,2,305,309,NOT APPLICABLE,,ARM4,Y
+S0098,1,fever,N,2,3,29,no_modification,DM014,ARM8,Y
+S0098,2,productive_cough,N,2,6,29,no_modification,DM014,ARM8,Y
+S0098,3,hypoalbuminemia,N,2,8,29,no_modification,DM014,ARM8,Y
+S0098,4,anemia,N,2,18,29,no_modification,DM014,ARM8,Y
+S0098,5,hemoptysis,N,1,51,57,no_modification,DM014,ARM8,Y
+S0098,6,abdomen_distended,N,2,53,57,no_modification,DM014,ARM8,Y
+S0098,7,fatigue,N,2,58,85,NOT APPLICABLE,,ARM8,Y
+S0099,1,blood_alkaline_phosphatase_increased,N,2,30,57,no_modification,DM014,ARM3,Y
+S0099,2,pain_in_limb,N,1,36,57,no_modification,DM014,ARM3,Y
+S0099,3,edema,N,2,44,57,no_modification,DM014,ARM3,Y
+S0099,4,dizziness,N,2,46,57,no_modification,DM014,ARM3,Y
+S0099,5,chest_pain,N,1,51,57,no_modification,DM014,ARM3,Y
+S0099,6,nausea,N,1,75,85,no_modification,DM014,ARM3,Y
+S0099,7,amylase_increased,N,2,114,141,no_modification,DM014,ARM3,Y
+S0099,8,hypocalcemia,N,2,157,169,no_modification,DM014,ARM3,Y
+S0099,9,constipation,N,2,166,169,no_modification,DM014,ARM3,Y
+S0099,10,pleural_effusion_disorder,N,1,173,197,no_modification,DM014,ARM3,Y
+S0099,11,pneumonia,Y,3,355,393,NOT APPLICABLE,,ARM3,Y
+S0100,1,abdomen_distended,N,2,3,29,no_modification,DM014,ARM8,Y
+S0100,2,constipation,N,2,5,29,no_modification,DM014,ARM8,Y
+S0100,3,headache,N,2,17,29,no_modification,DM014,ARM8,Y
+S0100,4,hypoalbuminemia,N,2,26,29,no_modification,DM014,ARM8,Y
+S0100,5,blood_creatinine_increased,N,2,28,29,no_modification,DM014,ARM8,Y
+S0100,6,amylase_increased,N,2,29,57,no_modification,DM014,ARM8,Y
+S0100,7,hemoptysis,N,1,44,57,no_modification,DM014,ARM8,Y
+S0100,8,anemia,N,2,65,85,NOT APPLICABLE,,ARM8,Y
+S0100,9,pruritus,N,2,74,85,NOT APPLICABLE,,ARM8,Y
+S0100,10,fatigue,N,1,78,85,NOT APPLICABLE,,ARM8,Y
+S0101,1,decrease_in_appetite,N,2,43,57,no_modification,DM014,ARM4,Y
+S0101,2,lipase_increased,N,1,45,57,no_modification,DM014,ARM4,Y
+S0101,3,dizziness,N,1,49,57,no_modification,DM014,ARM4,Y
+S0101,4,creatinine_renal_clearance_decreased,N,1,51,57,no_modification,DM014,ARM4,Y
+S0101,5,musculoskeletal_chest_pain,N,2,52,57,no_modification,DM014,ARM4,Y
+S0101,6,asthenia,N,1,61,85,NOT APPLICABLE,,ARM4,Y
+S0101,7,peripheral_edema,N,1,64,85,NOT APPLICABLE,,ARM4,Y
+S0101,8,abdomen_distended,N,1,64,85,NOT APPLICABLE,,ARM4,Y
+S0102,1,upper_abdominal_pain,N,1,107,113,no_modification,DM014,ARM8,Y
+S0102,2,disease_progression,Y,3,129,169,NOT APPLICABLE,,ARM8,Y
+S0102,3,productive_cough,N,2,133,141,no_modification,DM014,ARM8,Y
+S0102,4,headache,N,2,165,169,no_modification,DM014,ARM8,Y
+S0102,5,thrombocytopenia,Y,3,183,225,NOT APPLICABLE,,ARM8,Y
+S0102,6,hypoalbuminemia,N,1,198,225,NOT APPLICABLE,,ARM8,Y
+S0103,1,blood_alkaline_phosphatase_increased,N,1,19,29,no_modification,DM014,ARM3,Y
+S0103,2,hyponatremia,N,2,23,29,no_modification,DM014,ARM3,Y
+S0103,3,amylase_increased,N,1,25,29,no_modification,DM014,ARM3,Y
+S0103,4,hypocalcemia,N,1,33,57,no_modification,DM014,ARM3,Y
+S0103,5,edema,N,1,36,57,no_modification,DM014,ARM3,Y
+S0103,6,lipase_increased,N,2,39,57,no_modification,DM014,ARM3,Y
+S0103,7,pleural_effusion_disorder,N,1,46,57,no_modification,DM014,ARM3,Y
+S0103,8,chest_pain,N,1,56,57,no_modification,DM014,ARM3,Y
+S0103,9,back_pain,N,2,108,113,no_modification,DM014,ARM3,Y
+S0103,10,creatinine_renal_clearance_decreased,N,1,134,141,NOT APPLICABLE,,ARM3,Y
+S0103,11,decrease_in_appetite,N,2,135,141,NOT APPLICABLE,,ARM3,Y
+S0103,12,abdomen_distended,N,1,136,141,NOT APPLICABLE,,ARM3,Y
+S0104,1,fatigue,N,1,19,29,no_modification,DM014,ARM3,Y
+S0104,2,edema,N,2,27,29,no_modification,DM014,ARM3,Y
+S0104,3,creatinine_renal_clearance_decreased,N,2,34,57,no_modification,DM014,ARM3,Y
+S0104,4,amylase_increased,N,1,44,57,no_modification,DM014,ARM3,Y
+S0104,5,aspartate_aminotransferase_increased,N,1,69,85,no_modification,DM014,ARM3,Y
+S0104,6,dyspepsia,N,1,75,85,no_modification,DM014,ARM3,Y
+S0104,7,chest_pain,N,1,77,85,no_modification,DM014,ARM3,Y
+S0104,8,constipation,N,1,88,113,no_modification,DM014,ARM3,Y
+S0104,9,peripheral_edema,Y,3,104,141,NOT APPLICABLE,,ARM3,Y
+S0104,10,hemoptysis,N,2,169,197,no_modification,DM014,ARM3,Y
+S0104,11,hypocalcemia,N,1,184,197,NOT APPLICABLE,,ARM3,Y
+S0105,1,amylase_increased,N,2,17,29,no_modification,DM014,ARM5,Y
+S0105,2,pruritus,N,2,55,57,no_modification,DM014,ARM5,Y
+S0105,3,blood_alkaline_phosphatase_increased,N,2,69,85,no_modification,DM014,ARM5,Y
+S0105,4,pneumonia,Y,3,71,113,NOT APPLICABLE,,ARM5,Y
+S0105,5,peripheral_edema,N,1,78,85,no_modification,DM014,ARM5,Y
+S0105,6,dyspnea,N,2,89,113,no_modification,DM014,ARM5,Y
+S0105,7,diarrhea,N,2,112,113,no_modification,DM014,ARM5,Y
+S0105,8,conjunctivitis,N,2,131,141,NOT APPLICABLE,,ARM5,Y
+S0106,1,peripheral_edema,N,2,1,29,no_modification,DM014,ARM5,Y
+S0106,2,fever,N,2,9,29,no_modification,DM014,ARM5,Y
+S0106,3,hypoalbuminemia,N,1,21,29,no_modification,DM014,ARM5,Y
+S0106,4,upper_respiratory_infections,N,2,28,29,no_modification,DM014,ARM5,Y
+S0106,5,blood_alkaline_phosphatase_increased,N,1,65,85,no_modification,DM014,ARM5,Y
+S0106,6,vomiting,N,1,76,85,no_modification,DM014,ARM5,Y
+S0106,7,dyspnea,N,1,76,85,no_modification,DM014,ARM5,Y
+S0106,8,headache,N,2,81,85,no_modification,DM014,ARM5,Y
+S0106,9,pruritus,N,1,98,113,no_modification,DM014,ARM5,Y
+S0106,10,blood_creatinine_increased,N,1,103,113,no_modification,DM014,ARM5,Y
+S0106,11,back_pain,N,1,104,113,no_modification,DM014,ARM5,Y
+S0106,12,hyponatremia,N,2,106,113,no_modification,DM014,ARM5,Y
+S0106,13,diarrhea,N,2,131,141,NOT APPLICABLE,,ARM5,Y
+S0107,1,abdomen_distended,N,1,16,29,no_modification,DM014,ARM4,Y
+S0107,2,dyspnea,N,1,21,29,no_modification,DM014,ARM4,Y
+S0107,3,hemoptysis,N,1,36,57,no_modification,DM014,ARM4,Y
+S0107,4,back_pain,N,2,65,85,no_modification,DM014,ARM4,Y
+S0107,5,pleural_effusion_disorder,N,2,65,85,no_modification,DM014,ARM4,Y
+S0107,6,hypoalbuminemia,N,1,71,85,no_modification,DM014,ARM4,Y
+S0107,7,vomiting,N,1,86,113,no_modification,DM014,ARM4,Y
+S0107,8,chest_pain,N,2,106,113,no_modification,DM014,ARM4,Y
+S0107,9,dyspepsia,N,1,122,141,no_modification,DM014,ARM4,Y
+S0107,10,diarrhea,N,2,151,169,no_modification,DM014,ARM4,Y
+S0107,11,hyponatremia,N,2,227,253,no_modification,DM014,ARM4,Y
+S0107,12,thrombocytopenia,N,2,227,253,no_modification,DM014,ARM4,Y
+S0107,13,creatinine_renal_clearance_decreased,N,2,234,253,no_modification,DM014,ARM4,Y
+S0107,14,musculoskeletal_chest_pain,N,2,292,309,NOT APPLICABLE,,ARM4,Y
+S0108,1,anemia,N,1,14,29,no_modification,DM014,ARM8,Y
+S0108,2,constipation,N,2,34,57,no_modification,DM014,ARM8,Y
+S0108,3,aspartate_aminotransferase_increased,N,2,57,85,no_modification,DM014,ARM8,Y
+S0108,4,headache,N,1,114,141,no_modification,DM014,ARM8,Y
+S0109,1,dyspnea,N,1,55,57,no_modification,DM014,ARM5,Y
+S0109,2,fatigue,N,2,76,85,no_modification,DM014,ARM5,Y
+S0109,3,hyponatremia,N,2,80,85,no_modification,DM014,ARM5,Y
+S0109,4,decreased_platelet_count,N,2,126,141,no_modification,DM014,ARM5,Y
+S0109,5,fever,N,2,135,141,no_modification,DM014,ARM5,Y
+S0109,6,conjunctivitis,N,2,149,169,no_modification,DM014,ARM5,Y
+S0109,7,vomiting,N,2,159,169,no_modification,DM014,ARM5,Y
+S0109,8,hypoalbuminemia,N,2,226,253,no_modification,DM014,ARM5,Y
+S0109,9,constipation,N,2,261,281,no_modification,DM014,ARM5,Y
+S0109,10,peripheral_edema,N,1,417,421,no_modification,DM014,ARM5,Y
+S0110,1,hypoalbuminemia,N,1,1,29,no_modification,DM014,ARM5,Y
+S0110,2,fever,N,1,1,29,no_modification,DM014,ARM5,Y
+S0110,3,peripheral_edema,N,2,6,29,no_modification,DM014,ARM5,Y
+S0111,1,musculoskeletal_chest_pain,N,2,16,29,no_modification,DM014,ARM4,Y
+S0111,2,dyspnea,N,2,22,29,no_modification,DM014,ARM4,Y
+S0111,3,conjunctivitis,N,2,42,57,no_modification,DM014,ARM4,Y
+S0111,4,hemoptysis,N,1,149,169,no_modification,DM014,ARM4,Y
+S0111,5,decrease_in_appetite,N,1,159,169,no_modification,DM014,ARM4,Y
+S0111,6,hypokalemia,N,2,188,197,no_modification,DM014,ARM4,Y
+S0111,7,neutrophil_count_decreased,Y,3,192,225,NOT APPLICABLE,,ARM4,Y
+S0111,8,diarrhea,N,1,199,225,no_modification,DM014,ARM4,Y
+S0111,9,alanine_aminotransferase_increased,N,1,235,253,no_modification,DM014,ARM4,Y
+S0111,10,creatinine_renal_clearance_decreased,N,2,299,309,NOT APPLICABLE,,ARM4,Y
+S0112,1,musculoskeletal_chest_pain,N,1,1,29,no_modification,DM014,ARM4,Y
+S0112,2,hemoptysis,N,2,48,57,no_modification,DM014,ARM4,Y
+S0112,3,hypoalbuminemia,N,2,69,85,no_modification,DM014,ARM4,Y
+S0112,4,peripheral_edema,N,1,138,141,no_modification,DM014,ARM4,Y
+S0112,5,dyspnea,N,2,277,281,no_modification,DM014,ARM4,Y
+S0112,6,creatinine_renal_clearance_decreased,N,1,345,365,no_modification,DM014,ARM4,Y
+S0112,7,dyspepsia,N,2,360,365,no_modification,DM014,ARM4,Y
+S0113,1,vomiting,N,1,80,85,no_modification,DM014,ARM3,Y
+S0113,2,chest_pain,N,2,99,113,no_modification,DM014,ARM3,Y
+S0113,3,peripheral_edema,Y,3,155,197,NOT APPLICABLE,,ARM3,Y
+S0113,4,abdomen_distended,N,2,167,169,no_modification,DM014,ARM3,Y
+S0113,5,disease_progression,Y,3,239,281,NOT APPLICABLE,,ARM3,Y
+S0113,6,hypocalcemia,N,1,256,281,no_modification,DM014,ARM3,Y
+S0113,7,amylase_increased,N,1,288,309,NOT APPLICABLE,,ARM3,Y
+S0113,8,hypertension_variable,Y,3,308,337,NOT APPLICABLE,,ARM3,Y
+S0114,1,aspartate_aminotransferase_increased,N,2,10,29,no_modification,DM014,ARM8,Y
+S0114,2,chest_pain,N,1,15,29,no_modification,DM014,ARM8,Y
+S0114,3,blood_alkaline_phosphatase_increased,N,1,17,29,no_modification,DM014,ARM8,Y
+S0114,4,conjunctivitis,N,1,17,29,no_modification,DM014,ARM8,Y
+S0114,5,edema,N,1,47,57,no_modification,DM014,ARM8,Y
+S0114,6,headache,N,1,52,57,no_modification,DM014,ARM8,Y
+S0114,7,dizziness,N,2,57,85,no_modification,DM014,ARM8,Y
+S0114,8,fever,N,1,63,85,NOT APPLICABLE,,ARM8,Y
+S0114,9,peripheral_edema,N,2,70,85,NOT APPLICABLE,,ARM8,Y
+S0114,10,dyspepsia,N,1,75,85,NOT APPLICABLE,,ARM8,Y
+S0114,11,asthenia,N,1,77,85,NOT APPLICABLE,,ARM8,Y
+S0115,1,edema,N,2,21,29,no_modification,DM014,ARM3,Y
+S0115,2,chest_pain,N,2,25,29,no_modification,DM014,ARM3,Y
+S0115,3,vomiting,N,1,30,57,no_modification,DM014,ARM3,Y
+S0115,4,upper_respiratory_infections,N,1,33,57,no_modification,DM014,ARM3,Y
+S0115,5,creatinine_renal_clearance_decreased,N,1,45,57,no_modification,DM014,ARM3,Y
+S0115,6,decreased_platelet_count,N,1,58,85,NOT APPLICABLE,,ARM3,Y
+S0115,7,lipase_increased,N,1,61,85,NOT APPLICABLE,,ARM3,Y
+S0115,8,amylase_increased,N,1,62,85,NOT APPLICABLE,,ARM3,Y
+S0115,9,hypocalcemia,N,1,63,85,NOT APPLICABLE,,ARM3,Y
+S0115,10,productive_cough,N,1,63,85,NOT APPLICABLE,,ARM3,Y
+S0115,11,headache,N,2,68,85,NOT APPLICABLE,,ARM3,Y
+S0115,12,constipation,N,1,76,85,NOT APPLICABLE,,ARM3,Y
+S0116,1,decrease_in_appetite,N,2,32,57,no_modification,DM014,ARM4,Y
+S0116,2,blood_creatinine_increased,N,2,39,57,no_modification,DM014,ARM4,Y
+S0116,3,hypoalbuminemia,N,1,62,85,no_modification,DM014,ARM4,Y
+S0116,4,diarrhea,N,2,97,113,no_modification,DM014,ARM4,Y
+S0116,5,lipase_increased,N,2,103,113,no_modification,DM014,ARM4,Y
+S0116,6,creatinine_renal_clearance_decreased,N,1,186,197,no_modification,DM014,ARM4,Y
+S0116,7,peripheral_edema,N,2,190,197,no_modification,DM014,ARM4,Y
+S0116,8,vomiting,N,1,227,253,no_modification,DM014,ARM4,Y
+S0116,9,dyspnea,N,2,245,253,no_modification,DM014,ARM4,Y
+S0117,1,headache,N,2,10,29,no_modification,DM014,ARM8,Y
+S0117,2,abdomen_distended,N,1,26,29,no_modification,DM014,ARM8,Y
+S0117,3,hypoalbuminemia,N,2,41,57,no_modification,DM014,ARM8,Y
+S0117,4,blood_alkaline_phosphatase_increased,N,2,56,57,no_modification,DM014,ARM8,Y
+S0117,5,decrease_in_appetite,N,1,57,85,no_modification,DM014,ARM8,Y
+S0117,6,hypokalemia,N,2,57,85,no_modification,DM014,ARM8,Y
+S0117,7,dizziness,N,2,58,85,NOT APPLICABLE,,ARM8,Y
+S0117,8,diarrhea,N,2,62,85,NOT APPLICABLE,,ARM8,Y
+S0117,9,blood_creatinine_increased,N,2,80,85,NOT APPLICABLE,,ARM8,Y
+S0118,1,amylase_increased,N,2,8,29,no_modification,DM014,ARM3,Y
+S0118,2,anemia,N,1,10,29,no_modification,DM014,ARM3,Y
+S0118,3,constipation,N,1,15,29,no_modification,DM014,ARM3,Y
+S0118,4,chest_pain,N,1,41,57,no_modification,DM014,ARM3,Y
+S0118,5,edema,N,2,60,85,NOT APPLICABLE,,ARM3,Y
+S0118,6,pleural_effusion_disorder,N,1,61,85,NOT APPLICABLE,,ARM3,Y
+S0118,7,hypocalcemia,N,2,78,85,NOT APPLICABLE,,ARM3,Y
+S0118,8,decreased_platelet_count,N,1,82,85,NOT APPLICABLE,,ARM3,Y
+S0119,1,creatinine_renal_clearance_decreased,N,1,6,29,no_modification,DM014,ARM5,Y
+S0119,2,peripheral_edema,N,1,77,85,no_modification,DM014,ARM5,Y
+S0119,3,headache,N,2,97,113,no_modification,DM014,ARM5,Y
+S0119,4,fatigue,N,2,100,113,no_modification,DM014,ARM5,Y
+S0119,5,upper_respiratory_infections,N,1,134,141,no_modification,DM014,ARM5,Y
+S0119,6,hypocalcemia,N,2,139,141,no_modification,DM014,ARM5,Y
+S0119,7,blood_creatinine_increased,N,1,180,197,NOT APPLICABLE,,ARM5,Y
+S0120,1,conjunctivitis,N,2,67,85,no_modification,DM014,ARM5,Y
+S0120,2,fever,N,2,110,113,no_modification,DM014,ARM5,Y
+S0120,3,hypoalbuminemia,N,1,114,141,no_modification,DM014,ARM5,Y
+S0120,4,dyspnoea_exertional,N,1,137,141,no_modification,DM014,ARM5,Y
+S0120,5,pruritus,N,2,153,169,no_modification,DM014,ARM5,Y
+S0120,6,dyspnea,N,2,167,169,no_modification,DM014,ARM5,Y
+S0120,7,peripheral_edema,N,1,205,225,no_modification,DM014,ARM5,Y
+S0120,8,thrombocytopenia,Y,3,211,253,NOT APPLICABLE,,ARM5,Y
+S0120,9,amylase_increased,N,2,225,253,no_modification,DM014,ARM5,Y
+S0121,1,peripheral_edema,N,2,2,29,no_modification,DM014,ARM4,Y
+S0121,2,decrease_in_appetite,N,2,21,29,no_modification,DM014,ARM4,Y
+S0121,3,fatigue,N,2,22,29,no_modification,DM014,ARM4,Y
+S0121,4,creatinine_renal_clearance_decreased,N,1,70,85,no_modification,DM014,ARM4,Y
+S0121,5,musculoskeletal_chest_pain,N,2,94,113,no_modification,DM014,ARM4,Y
+S0121,6,hemoptysis,N,2,95,113,no_modification,DM014,ARM4,Y
+S0121,7,amylase_increased,N,2,103,113,no_modification,DM014,ARM4,Y
+S0121,8,vomiting,N,1,129,141,no_modification,DM014,ARM4,Y
+S0121,9,febrile_neutropenia,Y,3,130,169,NOT APPLICABLE,,ARM4,Y
+S0121,10,lipase_increased,N,2,132,141,no_modification,DM014,ARM4,Y
+S0121,11,hypokalemia,N,1,144,169,no_modification,DM014,ARM4,Y
+S0121,12,dyspepsia,N,1,180,197,no_modification,DM014,ARM4,Y
+S0121,13,pruritus,N,1,189,197,no_modification,DM014,ARM4,Y
+S0121,14,pleural_effusion_disorder,Y,3,255,309,NOT APPLICABLE,,ARM4,Y
+S0122,1,drug-related AEs,N,1,49,57,no_modification,DM014,ARM4,Y
+S0122,2,decrease_in_appetite,N,1,59,85,no_modification,DM014,ARM4,Y
+S0122,3,creatinine_renal_clearance_decreased,N,1,104,113,no_modification,DM014,ARM4,Y
+S0122,4,musculoskeletal_chest_pain,N,2,152,169,no_modification,DM014,ARM4,Y
+S0122,5,hemoptysis,N,2,194,197,no_modification,DM014,ARM4,Y
+S0122,6,peripheral_edema,N,2,198,225,no_modification,DM014,ARM4,Y
+S0122,7,vomiting,N,2,257,281,no_modification,DM014,ARM4,Y
+S0122,8,thrombocytopenia,N,2,343,365,no_modification,DM014,ARM4,Y
+S0122,9,blood_creatinine_increased,N,2,417,421,NOT APPLICABLE,,ARM4,Y
+S0123,1,decrease_in_appetite,N,2,16,29,no_modification,DM014,ARM4,Y
+S0123,2,hypoalbuminemia,N,1,39,57,no_modification,DM014,ARM4,Y
+S0123,3,vomiting,N,1,40,57,no_modification,DM014,ARM4,Y
+S0123,4,creatinine_renal_clearance_decreased,N,2,41,57,no_modification,DM014,ARM4,Y
+S0123,5,musculoskeletal_chest_pain,N,1,51,57,no_modification,DM014,ARM4,Y
+S0123,6,dyspnea,N,2,72,85,NOT APPLICABLE,,ARM4,Y
+S0124,1,abdomen_distended,N,2,1,29,no_modification,DM014,ARM8,Y
+S0124,2,dyspnea,N,1,18,29,no_modification,DM014,ARM8,Y
+S0124,3,blood_alkaline_phosphatase_increased,N,2,80,85,no_modification,DM014,ARM8,Y
+S0124,4,hypoalbuminemia,N,1,90,113,no_modification,DM014,ARM8,Y
+S0124,5,decrease_in_appetite,N,1,94,113,no_modification,DM014,ARM8,Y
+S0124,6,fatigue,N,1,99,113,no_modification,DM014,ARM8,Y
+S0124,7,coughing,N,1,105,113,no_modification,DM014,ARM8,Y
+S0124,8,headache,N,1,121,141,no_modification,DM014,ARM8,Y
+S0124,9,blood_creatinine_increased,N,2,146,169,no_modification,DM014,ARM8,Y
+S0124,10,pruritus,N,2,152,169,no_modification,DM014,ARM8,Y
+S0124,11,constipation,N,2,195,197,NOT APPLICABLE,,ARM8,Y
+S0124,12,anemia,N,2,195,197,NOT APPLICABLE,,ARM8,Y
+S0124,13,dyspnoea_exertional,N,2,198,225,NOT APPLICABLE,,ARM8,Y
+S0125,1,diarrhea,N,1,1,29,no_modification,DM014,ARM5,Y
+S0125,2,dyspnoea_exertional,N,1,9,29,no_modification,DM014,ARM5,Y
+S0125,3,headache,N,1,21,29,no_modification,DM014,ARM5,Y
+S0125,4,conjunctivitis,N,2,43,57,no_modification,DM014,ARM5,Y
+S0125,5,pleural_effusion_disorder,N,1,47,57,no_modification,DM014,ARM5,Y
+S0125,6,dizziness,N,2,57,85,no_modification,DM014,ARM5,Y
+S0125,7,fever,N,1,60,85,NOT APPLICABLE,,ARM5,Y
+S0125,8,back_pain,N,1,61,85,NOT APPLICABLE,,ARM5,Y
+S0125,9,pruritus,N,1,64,85,NOT APPLICABLE,,ARM5,Y
+S0125,10,alanine_aminotransferase_increased,N,1,68,85,NOT APPLICABLE,,ARM5,Y
+S0125,11,hyponatremia,N,2,77,85,NOT APPLICABLE,,ARM5,Y
+S0125,12,aspartate_aminotransferase_increased,N,2,78,85,NOT APPLICABLE,,ARM5,Y
+S0126,1,creatinine_renal_clearance_decreased,N,1,11,29,no_modification,DM014,ARM4,Y
+S0126,2,back_pain,N,2,34,57,no_modification,DM014,ARM4,Y
+S0126,3,decrease_in_appetite,N,2,44,57,no_modification,DM014,ARM4,Y
+S0126,4,dyspnea,N,2,57,85,no_modification,DM014,ARM4,Y
+S0126,5,fatigue,N,1,63,85,NOT APPLICABLE,,ARM4,Y
+S0126,6,hypoalbuminemia,N,1,64,85,NOT APPLICABLE,,ARM4,Y
+S0126,7,musculoskeletal_chest_pain,N,1,81,85,NOT APPLICABLE,,ARM4,Y
+S0127,1,blood_alkaline_phosphatase_increased,N,2,7,29,no_modification,DM014,ARM4,Y
+S0127,2,decrease_in_appetite,N,2,17,29,no_modification,DM014,ARM4,Y
+S0127,3,blood_creatinine_increased,N,2,19,29,no_modification,DM014,ARM4,Y
+S0127,4,thrombocytopenia,N,1,19,29,no_modification,DM014,ARM4,Y
+S0127,5,fever,N,2,21,29,no_modification,DM014,ARM4,Y
+S0127,6,rash_erythematous_macules_or_papules,N,2,31,57,no_modification,DM014,ARM4,Y
+S0127,7,fatigue,N,1,32,57,no_modification,DM014,ARM4,Y
+S0127,8,amylase_increased,N,1,48,57,no_modification,DM014,ARM4,Y
+S0127,9,vomiting,N,1,70,85,NOT APPLICABLE,,ARM4,Y
+S0127,10,alanine_aminotransferase_increased,N,2,71,85,NOT APPLICABLE,,ARM4,Y
+S0127,11,peripheral_edema,N,1,81,85,NOT APPLICABLE,,ARM4,Y
+S0127,12,hemoptysis,N,1,86,113,NOT APPLICABLE,,ARM4,Y
+S0128,1,decreased_platelet_count,N,1,6,29,no_modification,DM014,ARM4,Y
+S0128,2,peripheral_edema,N,2,15,29,no_modification,DM014,ARM4,Y
+S0128,3,hemoptysis,N,2,32,57,no_modification,DM014,ARM4,Y
+S0128,4,coughing,N,1,41,57,no_modification,DM014,ARM4,Y
+S0128,5,neutrophil_count_decreased,Y,3,42,85,NOT APPLICABLE,,ARM4,Y
+S0128,6,back_pain,N,2,67,85,no_modification,DM014,ARM4,Y
+S0128,7,drug-related AEs,N,2,78,85,no_modification,DM014,ARM4,Y
+S0128,8,asthenia,N,1,83,85,no_modification,DM014,ARM4,Y
+S0128,9,fatigue,N,2,91,113,no_modification,DM014,ARM4,Y
+S0128,10,hypoalbuminemia,N,2,105,113,no_modification,DM014,ARM4,Y
+S0128,11,amylase_increased,N,1,115,141,NOT APPLICABLE,,ARM4,Y
+S0128,12,decrease_in_appetite,N,1,128,141,NOT APPLICABLE,,ARM4,Y
+S0128,13,dyspnea,N,1,139,141,NOT APPLICABLE,,ARM4,Y
+S0129,1,decrease_in_appetite,N,2,17,29,no_modification,DM014,ARM4,Y
+S0129,2,creatinine_renal_clearance_decreased,N,2,17,29,no_modification,DM014,ARM4,Y
+S0129,3,hypoalbuminemia,N,1,21,29,no_modification,DM014,ARM4,Y
+S0129,4,drug-related AEs,N,1,22,29,no_modification,DM014,ARM4,Y
+S0129,5,amylase_increased,N,1,23,29,no_modification,DM014,ARM4,Y
+S0129,6,fatigue,N,1,25,29,no_modification,DM014,ARM4,Y
+S0129,7,diarrhea,N,2,29,57,no_modification,DM014,ARM4,Y
+S0130,1,hyponatremia,N,1,10,29,no_modification,DM014,ARM5,Y
+S0130,2,blood_creatinine_increased,N,1,97,113,no_modification,DM014,ARM5,Y
+S0130,3,pruritus,N,1,133,141,no_modification,DM014,ARM5,Y
+S0130,4,abdomen_distended,N,2,134,141,no_modification,DM014,ARM5,Y
+S0130,5,conjunctivitis,N,2,135,141,no_modification,DM014,ARM5,Y
+S0130,6,hypoalbuminemia,N,1,151,169,no_modification,DM014,ARM5,Y
+S0130,7,decreased_platelet_count,N,2,176,197,NOT APPLICABLE,,ARM5,Y
+S0130,8,peripheral_edema,N,1,178,197,NOT APPLICABLE,,ARM5,Y
+S0131,1,abdomen_distended,N,1,19,29,no_modification,DM014,ARM3,Y
+S0131,2,lipase_increased,N,2,38,57,no_modification,DM014,ARM3,Y
+S0131,3,constipation,N,1,105,113,no_modification,DM014,ARM3,Y
+S0131,4,hypocalcemia,N,2,229,253,no_modification,DM014,ARM3,Y
+S0131,5,rash_erythematous_macules_or_papules,N,1,291,309,no_modification,DM014,ARM3,Y
+S0131,6,pleural_effusion_disorder,N,1,387,393,no_modification,DM014,ARM3,Y
+S0131,7,chest_pain,N,2,396,421,no_modification,DM014,ARM3,Y
+S0131,8,decreased_platelet_count,N,2,609,617,no_modification,DM014,ARM3,Y
+S0131,9,edema,N,2,683,701,no_modification,DM014,ARM3,Y
+S0131,10,fatigue,N,2,692,701,no_modification,DM014,ARM3,Y
+S0132,1,hemoptysis,N,2,9,29,no_modification,DM014,ARM4,Y
+S0132,2,vomiting,N,2,21,29,no_modification,DM014,ARM4,Y
+S0132,3,asthenia,N,1,32,57,no_modification,DM014,ARM4,Y
+S0132,4,hypokalemia,N,2,45,57,no_modification,DM014,ARM4,Y
+S0132,5,decrease_in_appetite,N,2,64,85,no_modification,DM014,ARM4,Y
+S0132,6,hypoalbuminemia,N,2,75,85,no_modification,DM014,ARM4,Y
+S0132,7,febrile_neutropenia,Y,3,81,113,NOT APPLICABLE,,ARM4,Y
+S0132,8,musculoskeletal_chest_pain,N,1,123,141,NOT APPLICABLE,,ARM4,Y
+S0133,1,headache,N,2,24,29,no_modification,DM014,ARM3,Y
+S0133,2,hypocalcemia,N,2,29,57,no_modification,DM014,ARM3,Y
+S0133,3,amylase_increased,N,2,54,57,no_modification,DM014,ARM3,Y
+S0133,4,creatinine_renal_clearance_decreased,N,1,73,85,no_modification,DM014,ARM3,Y
+S0133,5,pleural_effusion_disorder,N,1,104,113,no_modification,DM014,ARM3,Y
+S0133,6,blood_alkaline_phosphatase_increased,N,2,147,169,no_modification,DM014,ARM3,Y
+S0133,7,fever,N,1,168,169,no_modification,DM014,ARM3,Y
+S0133,8,lipase_increased,N,1,188,197,no_modification,DM014,ARM3,Y
+S0133,9,decreased_platelet_count,N,1,221,225,no_modification,DM014,ARM3,Y
+S0133,10,abdomen_distended,N,1,235,253,no_modification,DM014,ARM3,Y
+S0133,11,upper_respiratory_infections,N,1,382,393,no_modification,DM014,ARM3,Y
+S0133,12,chest_pain,N,1,402,421,no_modification,DM014,ARM3,Y
+S0133,13,fatigue,N,1,431,449,no_modification,DM014,ARM3,Y
+S0133,14,edema,N,2,451,477,NOT APPLICABLE,,ARM3,Y
+S0134,1,lipase_increased,N,2,32,57,no_modification,DM014,ARM3,Y
+S0134,2,blood_alkaline_phosphatase_increased,N,1,64,85,no_modification,DM014,ARM3,Y
+S0134,3,fever,N,1,99,113,no_modification,DM014,ARM3,Y
+S0134,4,dyspnea,N,2,107,113,no_modification,DM014,ARM3,Y
+S0134,5,abdomen_distended,N,1,152,169,no_modification,DM014,ARM3,Y
+S0134,6,edema,N,1,158,169,no_modification,DM014,ARM3,Y
+S0134,7,decreased_platelet_count,N,2,170,197,no_modification,DM014,ARM3,Y
+S0134,8,hypocalcemia,N,1,182,197,no_modification,DM014,ARM3,Y
+S0134,9,chest_pain,N,1,183,197,no_modification,DM014,ARM3,Y
+S0134,10,amylase_increased,N,1,241,253,NOT APPLICABLE,,ARM3,Y
+S0135,1,nausea,N,1,3,29,no_modification,DM014,ARM8,Y
+S0135,2,anemia,N,1,28,29,no_modification,DM014,ARM8,Y
+S0135,3,fever,N,1,60,85,no_modification,DM014,ARM8,Y
+S0135,4,pruritus,N,1,102,113,no_modification,DM014,ARM8,Y
+S0135,5,dyspnea,N,2,165,169,no_modification,DM014,ARM8,Y
+S0135,6,thrombocytopenia,N,2,188,197,no_modification,DM014,ARM8,Y
+S0135,7,asthenia,N,2,220,225,no_modification,DM014,ARM8,Y
+S0135,8,hypokalemia,N,2,229,253,NOT APPLICABLE,,ARM8,Y
+S0135,9,constipation,N,1,243,253,NOT APPLICABLE,,ARM8,Y
+S0135,10,fatigue,N,1,246,253,NOT APPLICABLE,,ARM8,Y
+S0136,1,abdomen_distended,N,2,31,57,no_modification,DM014,ARM8,Y
+S0136,2,fatigue,N,1,68,85,no_modification,DM014,ARM8,Y
+S0136,3,thrombocytopenia,N,1,109,113,no_modification,DM014,ARM8,Y
+S0136,4,hypoalbuminemia,N,1,134,141,no_modification,DM014,ARM8,Y
+S0136,5,decrease_in_appetite,N,1,199,225,no_modification,DM014,ARM8,Y
+S0136,6,headache,N,1,207,225,no_modification,DM014,ARM8,Y
+S0136,7,dyspnea,N,2,227,253,no_modification,DM014,ARM8,Y
+S0137,1,abdomen_distended,N,2,33,57,no_modification,DM014,ARM3,Y
+S0137,2,hypocalcemia,N,1,47,57,no_modification,DM014,ARM3,Y
+S0137,3,chest_pain,N,2,60,85,no_modification,DM014,ARM3,Y
+S0137,4,edema,N,1,61,85,no_modification,DM014,ARM3,Y
+S0137,5,upper_respiratory_infections,N,2,73,85,no_modification,DM014,ARM3,Y
+S0137,6,creatinine_renal_clearance_decreased,N,2,75,85,no_modification,DM014,ARM3,Y
+S0137,7,fatigue,N,1,92,113,no_modification,DM014,ARM3,Y
+S0137,8,decreased_platelet_count,N,1,92,113,no_modification,DM014,ARM3,Y
+S0137,9,amylase_increased,N,2,124,141,NOT APPLICABLE,,ARM3,Y
+S0137,10,rash_erythematous_macules_or_papules,N,2,125,141,NOT APPLICABLE,,ARM3,Y
+S0138,1,fever,N,1,34,57,no_modification,DM014,ARM5,Y
+S0138,2,hypoalbuminemia,N,1,38,57,no_modification,DM014,ARM5,Y
+S0138,3,aspartate_aminotransferase_increased,N,2,41,57,no_modification,DM014,ARM5,Y
+S0138,4,upper_abdominal_pain,N,2,44,57,no_modification,DM014,ARM5,Y
+S0138,5,pleural_effusion_disorder,N,1,69,85,no_modification,DM014,ARM5,Y
+S0138,6,nausea,N,1,76,85,no_modification,DM014,ARM5,Y
+S0138,7,back_pain,N,1,82,85,no_modification,DM014,ARM5,Y
+S0138,8,constipation,N,2,94,113,no_modification,DM014,ARM5,Y
+S0138,9,peripheral_edema,N,1,100,113,no_modification,DM014,ARM5,Y
+S0138,10,dyspepsia,N,2,113,141,no_modification,DM014,ARM5,Y
+S0138,11,dyspnea,N,1,117,141,NOT APPLICABLE,,ARM5,Y
+S0138,12,decreased_platelet_count,N,1,134,141,NOT APPLICABLE,,ARM5,Y
+S0139,1,decrease_in_appetite,N,2,3,29,no_modification,DM014,ARM4,Y
+S0139,2,aspartate_aminotransferase_increased,N,2,164,169,no_modification,DM014,ARM4,Y
+S0139,3,hyponatremia,N,1,442,449,no_modification,DM014,ARM4,Y
+S0139,4,febrile_neutropenia,Y,3,540,589,NOT APPLICABLE,,ARM4,Y
+S0140,1,asthenia,N,1,9,29,no_modification,DM014,ARM4,Y
+S0140,2,creatinine_renal_clearance_decreased,N,1,32,57,no_modification,DM014,ARM4,Y
+S0140,3,vomiting,N,1,57,85,no_modification,DM014,ARM4,Y
+S0140,4,musculoskeletal_chest_pain,N,2,84,85,no_modification,DM014,ARM4,Y
+S0140,5,dyspnea,N,2,138,141,no_modification,DM014,ARM4,Y
+S0140,6,decrease_in_appetite,N,1,142,169,no_modification,DM014,ARM4,Y
+S0140,7,hyponatremia,N,2,153,169,no_modification,DM014,ARM4,Y
+S0140,8,anemia,N,1,216,225,no_modification,DM014,ARM4,Y
+S0140,9,thrombocytopenia,N,2,221,225,no_modification,DM014,ARM4,Y
+S0140,10,fatigue,N,2,238,253,NOT APPLICABLE,,ARM4,Y
+S0141,1,hypocalcemia,N,2,74,85,no_modification,DM014,ARM3,Y
+S0141,2,amylase_increased,N,1,165,169,no_modification,DM014,ARM3,Y
+S0141,3,decreased_platelet_count,N,2,419,421,no_modification,DM014,ARM3,Y
+S0141,4,chest_pain,N,2,557,561,no_modification,DM014,ARM3,Y
+S0141,5,abdomen_distended,N,2,701,729,no_modification,DM014,ARM3,Y
+S0142,1,chest_pain,N,2,7,29,no_modification,DM014,ARM4,Y
+S0142,2,pleural_effusion_disorder,Y,3,35,85,NOT APPLICABLE,,ARM4,Y
+S0142,3,diarrhea,N,2,44,57,no_modification,DM014,ARM4,Y
+S0142,4,anemia,N,1,62,85,no_modification,DM014,ARM4,Y
+S0142,5,vomiting,N,2,63,85,no_modification,DM014,ARM4,Y
+S0142,6,decrease_in_appetite,N,2,94,113,no_modification,DM014,ARM4,Y
+S0142,7,abdominal_pain,N,2,104,113,no_modification,DM014,ARM4,Y
+S0142,8,hypoalbuminemia,N,2,120,141,NOT APPLICABLE,,ARM4,Y
+S0142,9,peripheral_edema,N,2,125,141,NOT APPLICABLE,,ARM4,Y
+S0143,1,peripheral_edema,N,1,112,113,no_modification,DM014,ARM4,Y
+S0143,2,dizziness,N,2,118,141,no_modification,DM014,ARM4,Y
+S0143,3,diarrhea,N,1,126,141,no_modification,DM014,ARM4,Y
+S0143,4,decrease_in_appetite,N,1,154,169,no_modification,DM014,ARM4,Y
+S0143,5,hypokalemia,N,2,170,197,no_modification,DM014,ARM4,Y
+S0143,6,back_pain,N,2,219,225,no_modification,DM014,ARM4,Y
+S0143,7,thrombocytopenia,N,2,234,253,no_modification,DM014,ARM4,Y
+S0143,8,hemoptysis,N,2,304,309,no_modification,DM014,ARM4,Y
+S0143,9,rash_erythematous_macules_or_papules,N,1,309,337,no_modification,DM014,ARM4,Y
+S0143,10,vomiting,N,2,351,365,no_modification,DM014,ARM4,Y
+S0143,11,creatinine_renal_clearance_decreased,N,1,385,393,no_modification,DM014,ARM4,Y
+S0144,1,constipation,N,2,5,29,no_modification,DM014,ARM3,Y
+S0144,2,decreased_platelet_count,N,1,13,29,no_modification,DM014,ARM3,Y
+S0144,3,anemia,N,2,14,29,no_modification,DM014,ARM3,Y
+S0144,4,hyponatremia,N,2,31,57,no_modification,DM014,ARM3,Y
+S0144,5,hemoptysis,N,2,35,57,no_modification,DM014,ARM3,Y
+S0144,6,chest_pain,N,2,52,57,NOT APPLICABLE,,ARM3,Y
+S0144,7,edema,N,1,52,57,NOT APPLICABLE,,ARM3,Y
+S0144,8,amylase_increased,N,1,64,85,NOT APPLICABLE,,ARM3,Y
+S0144,9,fever,N,1,66,85,NOT APPLICABLE,,ARM3,Y
+S0144,10,blood_alkaline_phosphatase_increased,N,1,66,85,NOT APPLICABLE,,ARM3,Y
+S0145,1,musculoskeletal_chest_pain,N,2,14,29,no_modification,DM014,ARM4,Y
+S0145,2,vomiting,N,1,39,57,no_modification,DM014,ARM4,Y
+S0145,3,lipase_increased,N,1,40,57,no_modification,DM014,ARM4,Y
+S0145,4,hemoptysis,N,2,41,57,no_modification,DM014,ARM4,Y
+S0145,5,creatinine_renal_clearance_decreased,N,2,55,57,no_modification,DM014,ARM4,Y
+S0145,6,drug-related AEs,N,2,56,57,no_modification,DM014,ARM4,Y
+S0145,7,fatigue,N,2,89,113,no_modification,DM014,ARM4,Y
+S0145,8,pruritus,N,1,92,113,no_modification,DM014,ARM4,Y
+S0145,9,decrease_in_appetite,N,2,97,113,no_modification,DM014,ARM4,Y
+S0145,10,thrombocytopenia,N,1,102,113,no_modification,DM014,ARM4,Y
+S0145,11,hyponatremia,N,2,131,141,no_modification,DM014,ARM4,Y
+S0146,1,hypoalbuminemia,N,1,2,29,no_modification,DM014,ARM8,Y
+S0146,2,pleural_effusion_disorder,N,1,11,29,no_modification,DM014,ARM8,Y
+S0146,3,pruritus,N,2,12,29,no_modification,DM014,ARM8,Y
+S0146,4,aspartate_aminotransferase_increased,N,1,26,29,no_modification,DM014,ARM8,Y
+S0146,5,anemia,N,1,28,29,no_modification,DM014,ARM8,Y
+S0146,6,chest_pain,N,1,35,57,no_modification,DM014,ARM8,Y
+S0146,7,dizziness,N,2,60,85,NOT APPLICABLE,,ARM8,Y
+S0146,8,disease_progression,Y,3,68,113,NOT APPLICABLE,,ARM8,Y
+S0146,9,hypokalemia,N,1,72,85,NOT APPLICABLE,,ARM8,Y
+S0146,10,creatinine_renal_clearance_decreased,N,2,83,85,NOT APPLICABLE,,ARM8,Y
+S0147,1,headache,N,1,8,29,no_modification,DM014,ARM3,Y
+S0147,2,edema,N,2,17,29,no_modification,DM014,ARM3,Y
+S0147,3,hypocalcemia,N,1,20,29,no_modification,DM014,ARM3,Y
+S0147,4,vomiting,N,2,22,29,no_modification,DM014,ARM3,Y
+S0147,5,alanine_aminotransferase_increased,N,2,31,57,no_modification,DM014,ARM3,Y
+S0147,6,dyspepsia,N,1,46,57,no_modification,DM014,ARM3,Y
+S0147,7,blood_alkaline_phosphatase_increased,N,1,80,85,no_modification,DM014,ARM3,Y
+S0147,8,pleural_effusion_disorder,N,1,85,113,no_modification,DM014,ARM3,Y
+S0147,9,chest_pain,N,1,90,113,no_modification,DM014,ARM3,Y
+S0147,10,decreased_platelet_count,N,2,109,113,no_modification,DM014,ARM3,Y
+S0147,11,pruritus,N,2,111,113,no_modification,DM014,ARM3,Y
+S0147,12,weight_loss,N,1,114,141,NOT APPLICABLE,,ARM3,Y
+S0147,13,conjunctivitis,N,1,128,141,NOT APPLICABLE,,ARM3,Y
+S0147,14,creatinine_renal_clearance_decreased,N,1,130,141,NOT APPLICABLE,,ARM3,Y
+S0148,1,fever,N,1,12,29,no_modification,DM014,ARM5,Y
+S0148,2,back_pain,N,1,19,29,no_modification,DM014,ARM5,Y
+S0148,3,headache,N,2,20,29,no_modification,DM014,ARM5,Y
+S0148,4,decreased_platelet_count,N,1,42,57,no_modification,DM014,ARM5,Y
+S0148,5,conjunctivitis,N,1,45,57,no_modification,DM014,ARM5,Y
+S0148,6,hypoalbuminemia,N,1,52,57,no_modification,DM014,ARM5,Y
+S0148,7,peripheral_edema,N,2,67,85,NOT APPLICABLE,,ARM5,Y
+S0148,8,upper_abdominal_pain,N,1,70,85,NOT APPLICABLE,,ARM5,Y
+S0149,1,coughing,N,2,1,29,no_modification,DM014,ARM4,Y
+S0149,2,creatinine_renal_clearance_decreased,N,1,35,57,no_modification,DM014,ARM4,Y
+S0149,3,musculoskeletal_chest_pain,N,1,72,85,no_modification,DM014,ARM4,Y
+S0149,4,hypoalbuminemia,N,1,87,113,no_modification,DM014,ARM4,Y
+S0149,5,diarrhea,N,1,91,113,no_modification,DM014,ARM4,Y
+S0149,6,hypokalemia,N,2,101,113,no_modification,DM014,ARM4,Y
+S0149,7,decrease_in_appetite,N,1,136,141,no_modification,DM014,ARM4,Y
+S0149,8,hemoptysis,N,1,166,169,no_modification,DM014,ARM4,Y
+S0149,9,fatigue,N,1,173,197,no_modification,DM014,ARM4,Y
+S0150,1,blood_alkaline_phosphatase_increased,N,2,32,57,no_modification,DM014,ARM5,Y
+S0150,2,hypoalbuminemia,N,2,44,57,no_modification,DM014,ARM5,Y
+S0150,3,decreased_platelet_count,N,2,130,141,no_modification,DM014,ARM5,Y
+S0150,4,aspartate_aminotransferase_increased,N,2,154,169,no_modification,DM014,ARM5,Y
+S0150,5,upper_respiratory_infections,N,2,287,309,no_modification,DM014,ARM5,Y
+S0150,6,thrombocytopenia,Y,3,295,337,NOT APPLICABLE,,ARM5,Y
+S0150,7,peripheral_edema,N,2,324,337,no_modification,DM014,ARM5,Y
+S0150,8,dyspnoea_exertional,N,2,355,365,no_modification,DM014,ARM5,Y
+S0150,9,nausea,N,2,423,449,NOT APPLICABLE,,ARM5,Y
+S0151,1,coughing,N,2,21,29,no_modification,DM014,ARM8,Y
+S0151,2,constipation,N,2,65,85,no_modification,DM014,ARM8,Y
+S0151,3,dyspepsia,N,1,71,85,no_modification,DM014,ARM8,Y
+S0151,4,diarrhea,N,1,75,85,no_modification,DM014,ARM8,Y
+S0151,5,abdomen_distended,N,1,79,85,no_modification,DM014,ARM8,Y
+S0151,6,blood_alkaline_phosphatase_increased,N,2,86,113,no_modification,DM014,ARM8,Y
+S0151,7,productive_cough,N,1,93,113,no_modification,DM014,ARM8,Y
+S0151,8,hypokalemia,N,1,102,113,no_modification,DM014,ARM8,Y
+S0151,9,headache,N,1,142,169,NOT APPLICABLE,,ARM8,Y
+S0152,1,diarrhea,N,1,50,57,no_modification,DM014,ARM8,Y
+S0152,2,upper_abdominal_pain,N,1,125,141,no_modification,DM014,ARM8,Y
+S0152,3,amylase_increased,N,1,135,141,no_modification,DM014,ARM8,Y
+S0152,4,hemoptysis,N,1,154,169,no_modification,DM014,ARM8,Y
+S0152,5,constipation,N,2,155,169,no_modification,DM014,ARM8,Y
+S0152,6,hypokalemia,N,1,172,197,no_modification,DM014,ARM8,Y
+S0152,7,headache,N,1,178,197,no_modification,DM014,ARM8,Y
+S0152,8,anemia,N,1,197,225,no_modification,DM014,ARM8,Y
+S0152,9,fatigue,N,2,218,225,no_modification,DM014,ARM8,Y
+S0152,10,hypoalbuminemia,N,1,230,253,NOT APPLICABLE,,ARM8,Y
+S0153,1,edema,N,2,7,29,no_modification,DM014,ARM3,Y
+S0153,2,constipation,N,1,8,29,no_modification,DM014,ARM3,Y
+S0153,3,fatigue,N,1,18,29,no_modification,DM014,ARM3,Y
+S0153,4,hypocalcemia,N,1,36,57,no_modification,DM014,ARM3,Y
+S0153,5,nausea,N,1,38,57,no_modification,DM014,ARM3,Y
+S0153,6,pleural_effusion_disorder,N,2,54,57,no_modification,DM014,ARM3,Y
+S0153,7,chest_pain,N,2,57,85,no_modification,DM014,ARM3,Y
+S0153,8,amylase_increased,N,1,68,85,NOT APPLICABLE,,ARM3,Y
+S0153,9,vomiting,N,1,82,85,NOT APPLICABLE,,ARM3,Y
+S0154,1,hypertension_variable,Y,3,9,57,NOT APPLICABLE,,ARM3,Y
+S0154,2,blood_alkaline_phosphatase_increased,N,2,16,29,no_modification,DM014,ARM3,Y
+S0154,3,amylase_increased,N,2,23,29,no_modification,DM014,ARM3,Y
+S0154,4,abdomen_distended,N,1,24,29,no_modification,DM014,ARM3,Y
+S0154,5,hypocalcemia,N,2,39,57,no_modification,DM014,ARM3,Y
+S0154,6,back_pain,N,2,50,57,no_modification,DM014,ARM3,Y
+S0154,7,chest_pain,N,2,55,57,no_modification,DM014,ARM3,Y
+S0154,8,nausea,N,1,58,85,NOT APPLICABLE,,ARM3,Y
+S0154,9,decreased_platelet_count,N,2,63,85,NOT APPLICABLE,,ARM3,Y
+S0154,10,edema,N,2,67,85,NOT APPLICABLE,,ARM3,Y
+S0154,11,pleural_effusion_disorder,N,1,69,85,NOT APPLICABLE,,ARM3,Y
+S0155,1,constipation,N,1,40,57,no_modification,DM014,ARM5,Y
+S0155,2,diarrhea,N,2,65,85,no_modification,DM014,ARM5,Y
+S0155,3,hypoalbuminemia,N,2,85,113,no_modification,DM014,ARM5,Y
+S0155,4,back_pain,N,2,98,113,no_modification,DM014,ARM5,Y
+S0155,5,decreased_platelet_count,N,1,115,141,no_modification,DM014,ARM5,Y
+S0155,6,prolonged_qt_interval,N,1,187,197,no_modification,DM014,ARM5,Y
+S0155,7,peripheral_edema,N,1,311,337,no_modification,DM014,ARM5,Y
+S0155,8,headache,N,1,358,365,no_modification,DM014,ARM5,Y
+S0155,9,decrease_in_appetite,N,1,421,449,NOT APPLICABLE,,ARM5,Y
+S0156,1,pruritus,N,2,73,85,no_modification,DM014,ARM5,Y
+S0156,2,hypoalbuminemia,N,2,99,113,no_modification,DM014,ARM5,Y
+S0156,3,peripheral_edema,N,1,248,253,no_modification,DM014,ARM5,Y
+S0156,4,blood_creatinine_increased,N,1,282,309,no_modification,DM014,ARM5,Y
+S0156,5,blood_alkaline_phosphatase_increased,N,1,290,309,no_modification,DM014,ARM5,Y
+S0156,6,abdominal_pain,N,1,296,309,no_modification,DM014,ARM5,Y
+S0156,7,back_pain,N,2,373,393,no_modification,DM014,ARM5,Y
+S0156,8,drug-related AEs,N,1,509,533,no_modification,DM014,ARM5,Y
+S0156,9,constipation,N,2,541,561,no_modification,DM014,ARM5,Y
+S0156,10,vomiting,N,2,748,755,NOT APPLICABLE,,ARM5,Y
+S0157,1,constipation,N,1,17,29,no_modification,DM014,ARM5,Y
+S0157,2,hypoalbuminemia,N,1,24,29,no_modification,DM014,ARM5,Y
+S0157,3,dyspnea,N,2,27,29,no_modification,DM014,ARM5,Y
+S0157,4,dyspnoea_exertional,N,2,33,57,no_modification,DM014,ARM5,Y
+S0157,5,hyponatremia,N,1,44,57,no_modification,DM014,ARM5,Y
+S0157,6,upper_respiratory_infections,N,2,49,57,no_modification,DM014,ARM5,Y
+S0157,7,peripheral_edema,N,1,56,57,no_modification,DM014,ARM5,Y
+S0157,8,conjunctivitis,N,1,57,85,no_modification,DM014,ARM5,Y
+S0157,9,alanine_aminotransferase_increased,N,1,69,85,NOT APPLICABLE,,ARM5,Y
+S0157,10,diarrhea,N,2,74,85,NOT APPLICABLE,,ARM5,Y
+S0157,11,hemoptysis,N,2,77,85,NOT APPLICABLE,,ARM5,Y
+S0158,1,abdomen_distended,N,2,22,29,no_modification,DM014,ARM4,Y
+S0158,2,vomiting,N,1,28,29,no_modification,DM014,ARM4,Y
+S0158,3,hypokalemia,N,1,39,57,no_modification,DM014,ARM4,Y
+S0158,4,thrombocytopenia,N,2,59,85,no_modification,DM014,ARM4,Y
+S0158,5,hyponatremia,N,1,88,113,no_modification,DM014,ARM4,Y
+S0158,6,decrease_in_appetite,N,1,102,113,no_modification,DM014,ARM4,Y
+S0158,7,creatinine_renal_clearance_decreased,N,2,110,113,no_modification,DM014,ARM4,Y
+S0158,8,alanine_aminotransferase_increased,N,1,114,141,no_modification,DM014,ARM4,Y
+S0158,9,hemoptysis,N,1,183,197,NOT APPLICABLE,,ARM4,Y
+S0159,1,diarrhea,N,2,3,29,no_modification,DM014,ARM4,Y
+S0159,2,musculoskeletal_chest_pain,N,2,15,29,no_modification,DM014,ARM4,Y
+S0159,3,hypoalbuminemia,N,2,28,29,no_modification,DM014,ARM4,Y
+S0159,4,decrease_in_appetite,N,1,68,85,no_modification,DM014,ARM4,Y
+S0159,5,vomiting,N,1,79,85,no_modification,DM014,ARM4,Y
+S0159,6,headache,N,2,151,169,no_modification,DM014,ARM4,Y
+S0159,7,thrombocytopenia,N,1,181,197,NOT APPLICABLE,,ARM4,Y
+S0159,8,hypokalemia,N,2,181,197,NOT APPLICABLE,,ARM4,Y
+S0160,1,musculoskeletal_chest_pain,N,2,3,29,no_modification,DM014,ARM4,Y
+S0160,2,asthenia,N,1,53,57,no_modification,DM014,ARM4,Y
+S0160,3,diarrhea,N,1,60,85,no_modification,DM014,ARM4,Y
+S0160,4,hemoptysis,N,2,112,113,no_modification,DM014,ARM4,Y
+S0160,5,creatinine_renal_clearance_decreased,N,1,160,169,no_modification,DM014,ARM4,Y
+S0160,6,hyponatremia,N,1,189,197,no_modification,DM014,ARM4,Y
+S0160,7,back_pain,N,2,265,281,no_modification,DM014,ARM4,Y
+S0161,1,decreased_platelet_count,N,1,23,29,no_modification,DM014,ARM3,Y
+S0161,2,blood_alkaline_phosphatase_increased,N,2,64,85,no_modification,DM014,ARM3,Y
+S0161,3,coughing,N,2,82,85,no_modification,DM014,ARM3,Y
+S0161,4,abdomen_distended,N,1,92,113,no_modification,DM014,ARM3,Y
+S0161,5,hypocalcemia,N,2,131,141,no_modification,DM014,ARM3,Y
+S0161,6,creatinine_renal_clearance_decreased,N,1,135,141,no_modification,DM014,ARM3,Y
+S0161,7,chest_pain,N,2,140,141,no_modification,DM014,ARM3,Y
+S0161,8,amylase_increased,N,1,174,197,no_modification,DM014,ARM3,Y
+S0161,9,fatigue,N,2,213,225,no_modification,DM014,ARM3,Y
+S0161,10,nausea,N,2,233,253,no_modification,DM014,ARM3,Y
+S0161,11,constipation,N,1,241,253,no_modification,DM014,ARM3,Y
+S0161,12,lipase_increased,N,1,277,281,no_modification,DM014,ARM3,Y
+S0161,13,edema,N,2,293,309,no_modification,DM014,ARM3,Y
+S0161,14,peripheral_edema,N,2,330,337,no_modification,DM014,ARM3,Y
+S0161,15,peripheral_edema,Y,3,330,365,NOT APPLICABLE,,ARM3,Y
+S0161,16,upper_respiratory_infections,N,1,337,365,no_modification,DM014,ARM3,Y
+S0162,1,diarrhea,N,1,8,29,no_modification,DM014,ARM5,Y
+S0162,2,upper_abdominal_pain,N,2,11,29,no_modification,DM014,ARM5,Y
+S0162,3,fever,N,1,30,57,no_modification,DM014,ARM5,Y
+S0162,4,vomiting,N,1,35,57,no_modification,DM014,ARM5,Y
+S0162,5,peripheral_edema,N,1,48,57,no_modification,DM014,ARM5,Y
+S0162,6,decrease_in_appetite,N,1,49,57,no_modification,DM014,ARM5,Y
+S0162,7,lipase_increased,N,1,50,57,no_modification,DM014,ARM5,Y
+S0162,8,conjunctivitis,N,1,55,57,no_modification,DM014,ARM5,Y
+S0162,9,decreased_platelet_count,N,1,63,85,NOT APPLICABLE,,ARM5,Y
+S0162,10,blood_creatinine_increased,N,1,64,85,NOT APPLICABLE,,ARM5,Y
+S0162,11,back_pain,N,1,70,85,NOT APPLICABLE,,ARM5,Y
+S0162,12,thrombocytopenia,Y,3,76,113,NOT APPLICABLE,,ARM5,Y
+S0162,13,aspartate_aminotransferase_increased,N,1,78,85,NOT APPLICABLE,,ARM5,Y
+S0163,1,pleural_effusion_disorder,N,2,21,29,no_modification,DM014,ARM3,Y
+S0163,2,alanine_aminotransferase_increased,N,1,26,29,no_modification,DM014,ARM3,Y
+S0163,3,fever,N,1,36,57,no_modification,DM014,ARM3,Y
+S0163,4,hypocalcemia,N,2,37,57,no_modification,DM014,ARM3,Y
+S0163,5,hemoptysis,N,2,41,57,no_modification,DM014,ARM3,Y
+S0163,6,lipase_increased,N,2,43,57,no_modification,DM014,ARM3,Y
+S0163,7,edema,N,2,43,57,no_modification,DM014,ARM3,Y
+S0163,8,amylase_increased,N,2,51,57,no_modification,DM014,ARM3,Y
+S0163,9,chest_pain,N,2,57,85,no_modification,DM014,ARM3,Y
+S0163,10,fatigue,N,2,67,85,NOT APPLICABLE,,ARM3,Y
+S0163,11,hypokalemia,N,2,69,85,NOT APPLICABLE,,ARM3,Y
+S0163,12,decreased_platelet_count,N,1,71,85,NOT APPLICABLE,,ARM3,Y
+S0164,1,diarrhea,N,1,7,29,no_modification,DM014,ARM5,Y
+S0164,2,hypoalbuminemia,N,2,11,29,no_modification,DM014,ARM5,Y
+S0164,3,conjunctivitis,N,2,13,29,no_modification,DM014,ARM5,Y
+S0164,4,peripheral_edema,N,2,18,29,no_modification,DM014,ARM5,Y
+S0164,5,lipase_increased,N,1,36,57,no_modification,DM014,ARM5,Y
+S0164,6,hemoptysis,N,2,60,85,NOT APPLICABLE,,ARM5,Y
+S0164,7,blood_creatinine_increased,N,2,62,85,NOT APPLICABLE,,ARM5,Y
+S0164,8,dizziness,N,2,69,85,NOT APPLICABLE,,ARM5,Y
+S0164,9,decreased_platelet_count,N,1,76,85,NOT APPLICABLE,,ARM5,Y
+S0164,10,headache,N,2,86,113,NOT APPLICABLE,,ARM5,Y
+S0165,1,decrease_in_appetite,N,2,25,29,no_modification,DM014,ARM4,Y
+S0165,2,neutrophil_count_decreased,Y,3,51,85,NOT APPLICABLE,,ARM4,Y
+S0165,3,hypoalbuminemia,N,1,85,113,no_modification,DM014,ARM4,Y
+S0165,4,creatinine_renal_clearance_decreased,N,1,98,113,no_modification,DM014,ARM4,Y
+S0165,5,peripheral_edema,N,1,174,197,no_modification,DM014,ARM4,Y
+S0165,6,dyspepsia,N,2,222,225,no_modification,DM014,ARM4,Y
+S0165,7,musculoskeletal_chest_pain,N,2,225,253,no_modification,DM014,ARM4,Y
+S0165,8,dyspnea,N,1,268,281,no_modification,DM014,ARM4,Y
+S0165,9,asthenia,N,2,301,309,NOT APPLICABLE,,ARM4,Y
+S0166,1,amylase_increased,N,2,5,29,no_modification,DM014,ARM3,Y
+S0166,2,decreased_platelet_count,N,2,12,29,no_modification,DM014,ARM3,Y
+S0166,3,headache,N,1,30,57,no_modification,DM014,ARM3,Y
+S0166,4,blood_alkaline_phosphatase_increased,N,2,76,85,no_modification,DM014,ARM3,Y
+S0166,5,abdomen_distended,N,2,94,113,no_modification,DM014,ARM3,Y
+S0166,6,hypocalcemia,N,2,134,141,no_modification,DM014,ARM3,Y
+S0166,7,hemoptysis,N,2,199,225,NOT APPLICABLE,,ARM3,Y
+S0167,1,peripheral_edema,N,2,62,85,no_modification,DM014,ARM5,Y
+S0167,2,blood_alkaline_phosphatase_increased,N,2,89,113,no_modification,DM014,ARM5,Y
+S0167,3,pain_in_limb,N,1,126,141,no_modification,DM014,ARM5,Y
+S0167,4,vomiting,N,2,141,169,no_modification,DM014,ARM5,Y
+S0167,5,alanine_aminotransferase_increased,N,2,142,169,no_modification,DM014,ARM5,Y
+S0167,6,pruritus,N,1,164,169,no_modification,DM014,ARM5,Y
+S0167,7,hypoalbuminemia,N,2,167,169,no_modification,DM014,ARM5,Y
+S0167,8,anemia,N,1,174,197,NOT APPLICABLE,,ARM5,Y
+S0167,9,dyspnea,Y,3,186,225,NOT APPLICABLE,,ARM5,Y
+S0167,10,constipation,N,2,195,197,NOT APPLICABLE,,ARM5,Y
+S0168,1,lipase_increased,N,1,2,29,no_modification,DM014,ARM4,Y
+S0168,2,hypoalbuminemia,N,2,5,29,no_modification,DM014,ARM4,Y
+S0168,3,musculoskeletal_chest_pain,N,1,138,141,no_modification,DM014,ARM4,Y
+S0168,4,decreased_platelet_count,N,1,155,169,no_modification,DM014,ARM4,Y
+S0168,5,dyspepsia,N,1,211,225,no_modification,DM014,ARM4,Y
+S0168,6,prolonged_qt_interval,N,1,213,225,no_modification,DM014,ARM4,Y
+S0168,7,nausea,N,1,221,225,no_modification,DM014,ARM4,Y
+S0168,8,diarrhea,N,2,231,253,no_modification,DM014,ARM4,Y
+S0168,9,peripheral_edema,N,2,545,561,no_modification,DM014,ARM4,Y
+S0168,10,hemoptysis,N,1,545,561,no_modification,DM014,ARM4,Y
+S0169,1,conjunctivitis,N,2,7,29,no_modification,DM014,ARM5,Y
+S0169,2,decrease_in_appetite,N,1,14,29,no_modification,DM014,ARM5,Y
+S0169,3,hypoalbuminemia,N,1,14,29,no_modification,DM014,ARM5,Y
+S0169,4,peripheral_edema,N,2,25,29,no_modification,DM014,ARM5,Y
+S0169,5,vomiting,N,1,25,29,no_modification,DM014,ARM5,Y
+S0169,6,headache,N,2,29,57,no_modification,DM014,ARM5,Y
+S0169,7,blood_alkaline_phosphatase_increased,N,2,35,57,no_modification,DM014,ARM5,Y
+S0169,8,diarrhea,N,2,41,57,no_modification,DM014,ARM5,Y
+S0169,9,pruritus,N,2,79,85,no_modification,DM014,ARM5,Y
+S0169,10,upper_respiratory_infections,N,2,79,85,no_modification,DM014,ARM5,Y
+S0169,11,decreased_platelet_count,N,2,79,85,no_modification,DM014,ARM5,Y
+S0169,12,constipation,N,1,83,85,no_modification,DM014,ARM5,Y
+S0169,13,upper_abdominal_pain,N,1,107,113,no_modification,DM014,ARM5,Y
+S0169,14,alanine_aminotransferase_increased,N,2,128,141,NOT APPLICABLE,,ARM5,Y
+S0170,1,peripheral_edema,N,1,24,29,no_modification,DM014,ARM5,Y
+S0170,2,hypoalbuminemia,N,1,51,57,no_modification,DM014,ARM5,Y
+S0170,3,back_pain,N,2,51,57,no_modification,DM014,ARM5,Y
+S0170,4,headache,N,1,66,85,NOT APPLICABLE,,ARM5,Y
+S0171,1,thrombocytopenia,N,1,2,29,no_modification,DM014,ARM4,Y
+S0171,2,hypoalbuminemia,N,1,23,29,no_modification,DM014,ARM4,Y
+S0171,3,hemoptysis,N,2,27,29,no_modification,DM014,ARM4,Y
+S0171,4,headache,N,2,39,57,no_modification,DM014,ARM4,Y
+S0171,5,creatinine_renal_clearance_decreased,N,2,50,57,no_modification,DM014,ARM4,Y
+S0171,6,musculoskeletal_chest_pain,N,1,55,57,no_modification,DM014,ARM4,Y
+S0171,7,diarrhea,N,2,58,85,NOT APPLICABLE,,ARM4,Y
+S0171,8,decrease_in_appetite,N,1,83,85,NOT APPLICABLE,,ARM4,Y
+S0171,9,blood_alkaline_phosphatase_increased,N,2,85,113,NOT APPLICABLE,,ARM4,Y
+S0172,1,dyspnea,N,1,2,29,no_modification,DM014,ARM8,Y
+S0172,2,diarrhea,N,2,138,141,no_modification,DM014,ARM8,Y
+S0172,3,anemia,N,1,178,197,no_modification,DM014,ARM8,Y
+S0172,4,abdomen_distended,N,1,287,309,no_modification,DM014,ARM8,Y
+S0172,5,constipation,N,1,416,421,no_modification,DM014,ARM8,Y
+S0172,6,edema,N,1,533,561,no_modification,DM014,ARM8,Y
+S0172,7,blood_creatinine_increased,N,1,540,561,no_modification,DM014,ARM8,Y
+S0172,8,lipase_increased,N,2,574,589,no_modification,DM014,ARM8,Y
+S0172,9,dyspnoea_exertional,N,2,623,645,NOT APPLICABLE,,ARM8,Y
+S0173,1,decreased_platelet_count,N,1,33,57,no_modification,DM014,ARM3,Y
+S0173,2,constipation,N,1,50,57,no_modification,DM014,ARM3,Y
+S0173,3,rash_erythematous_macules_or_papules,N,2,94,113,no_modification,DM014,ARM3,Y
+S0173,4,nausea,N,2,112,113,no_modification,DM014,ARM3,Y
+S0173,5,amylase_increased,N,1,119,141,no_modification,DM014,ARM3,Y
+S0173,6,hypocalcemia,N,1,135,141,no_modification,DM014,ARM3,Y
+S0173,7,alanine_aminotransferase_increased,N,1,189,197,no_modification,DM014,ARM3,Y
+S0173,8,chest_pain,N,2,228,253,no_modification,DM014,ARM3,Y
+S0173,9,creatinine_renal_clearance_decreased,N,2,232,253,no_modification,DM014,ARM3,Y
+S0173,10,edema,N,2,297,309,NOT APPLICABLE,,ARM3,Y
+S0174,1,decrease_in_appetite,N,2,57,85,no_modification,DM014,ARM4,Y
+S0174,2,febrile_neutropenia,Y,3,58,113,NOT APPLICABLE,,ARM4,Y
+S0174,3,lipase_increased,N,1,196,197,no_modification,DM014,ARM4,Y
+S0174,4,creatinine_renal_clearance_decreased,N,1,227,253,no_modification,DM014,ARM4,Y
+S0174,5,pain_in_limb,N,2,242,253,no_modification,DM014,ARM4,Y
+S0174,6,musculoskeletal_chest_pain,N,2,293,309,no_modification,DM014,ARM4,Y
+S0174,7,hemoptysis,N,1,356,365,NOT APPLICABLE,,ARM4,Y
+S0175,1,chest_pain,N,2,20,29,no_modification,DM014,ARM3,Y
+S0175,2,pleural_effusion_disorder,N,2,29,57,no_modification,DM014,ARM3,Y
+S0175,3,peripheral_edema,Y,3,31,85,NOT APPLICABLE,,ARM3,Y
+S0175,4,hemoptysis,N,1,40,57,no_modification,DM014,ARM3,Y
+S0175,5,disease_progression,Y,3,40,85,NOT APPLICABLE,,ARM3,Y
+S0175,6,fatigue,N,2,45,57,no_modification,DM014,ARM3,Y
+S0175,7,fever,N,2,52,57,no_modification,DM014,ARM3,Y
+S0175,8,amylase_increased,N,1,60,85,NOT APPLICABLE,,ARM3,Y
+S0175,9,decreased_platelet_count,N,2,72,85,NOT APPLICABLE,,ARM3,Y
+S0175,10,hypocalcemia,N,2,78,85,NOT APPLICABLE,,ARM3,Y
+S0175,11,creatinine_renal_clearance_decreased,N,1,82,85,NOT APPLICABLE,,ARM3,Y
+S0175,12,blood_alkaline_phosphatase_increased,N,1,84,85,NOT APPLICABLE,,ARM3,Y
+S0176,1,hypocalcemia,N,2,18,29,no_modification,DM014,ARM3,Y
+S0176,2,creatinine_renal_clearance_decreased,N,2,25,29,no_modification,DM014,ARM3,Y
+S0176,3,hemoptysis,N,1,106,113,no_modification,DM014,ARM3,Y
+S0176,4,fever,N,1,125,141,no_modification,DM014,ARM3,Y
+S0176,5,abdomen_distended,N,2,135,141,no_modification,DM014,ARM3,Y
+S0176,6,chest_pain,N,1,292,309,no_modification,DM014,ARM3,Y
+S0176,7,decreased_platelet_count,N,1,300,309,no_modification,DM014,ARM3,Y
+S0176,8,blood_alkaline_phosphatase_increased,N,2,367,393,no_modification,DM014,ARM3,Y
+S0176,9,fatigue,N,2,415,421,no_modification,DM014,ARM3,Y
+S0176,10,anemia,N,1,548,561,no_modification,DM014,ARM3,Y
+S0176,11,constipation,N,2,561,589,no_modification,DM014,ARM3,Y
+S0176,12,pruritus,N,2,580,589,no_modification,DM014,ARM3,Y
+S0176,13,amylase_increased,N,1,634,645,no_modification,DM014,ARM3,Y
+S0176,14,lipase_increased,N,1,673,701,no_modification,DM014,ARM3,Y
+S0176,15,edema,N,2,691,701,NOT APPLICABLE,,ARM3,Y
+S0177,1,alanine_aminotransferase_increased,N,2,23,29,no_modification,DM014,ARM4,Y
+S0177,2,asthenia,N,1,141,169,no_modification,DM014,ARM4,Y
+S0177,3,creatinine_renal_clearance_decreased,N,1,173,197,no_modification,DM014,ARM4,Y
+S0177,4,decrease_in_appetite,N,1,176,197,no_modification,DM014,ARM4,Y
+S0177,5,fatigue,N,2,250,253,no_modification,DM014,ARM4,Y
+S0177,6,vomiting,N,2,313,337,no_modification,DM014,ARM4,Y
+S0177,7,thrombocytopenia,N,1,315,337,no_modification,DM014,ARM4,Y
+S0177,8,musculoskeletal_chest_pain,N,1,386,393,no_modification,DM014,ARM4,Y
+S0178,1,decreased_platelet_count,N,2,5,29,no_modification,DM014,ARM3,Y
+S0178,2,constipation,N,1,8,29,no_modification,DM014,ARM3,Y
+S0178,3,back_pain,N,2,9,29,no_modification,DM014,ARM3,Y
+S0178,4,headache,N,1,15,29,no_modification,DM014,ARM3,Y
+S0178,5,dyspnoea_exertional,N,2,23,29,no_modification,DM014,ARM3,Y
+S0178,6,pleural_effusion_disorder,N,1,24,29,no_modification,DM014,ARM3,Y
+S0178,7,anemia,N,2,31,57,no_modification,DM014,ARM3,Y
+S0178,8,rash_erythematous_macules_or_papules,N,2,33,57,no_modification,DM014,ARM3,Y
+S0178,9,conjunctivitis,N,2,38,57,no_modification,DM014,ARM3,Y
+S0178,10,coughing,N,2,52,57,no_modification,DM014,ARM3,Y
+S0178,11,abdomen_distended,N,2,52,57,no_modification,DM014,ARM3,Y
+S0178,12,hemoptysis,N,1,63,85,NOT APPLICABLE,,ARM3,Y
+S0178,13,hypocalcemia,N,1,66,85,NOT APPLICABLE,,ARM3,Y
+S0178,14,chest_pain,N,2,85,113,NOT APPLICABLE,,ARM3,Y
+S0179,1,decreased_platelet_count,N,2,1,29,no_modification,DM014,ARM5,Y
+S0179,2,conjunctivitis,N,1,20,29,no_modification,DM014,ARM5,Y
+S0179,3,aspartate_aminotransferase_increased,N,1,22,29,no_modification,DM014,ARM5,Y
+S0179,4,peripheral_edema,N,1,28,29,no_modification,DM014,ARM5,Y
+S0179,5,hypoalbuminemia,N,1,80,85,no_modification,DM014,ARM5,Y
+S0179,6,blood_alkaline_phosphatase_increased,N,1,104,113,no_modification,DM014,ARM5,Y
+S0179,7,musculoskeletal_chest_pain,N,2,127,141,no_modification,DM014,ARM5,Y
+S0179,8,upper_respiratory_infections,N,2,165,169,no_modification,DM014,ARM5,Y
+S0179,9,decrease_in_appetite,N,2,186,197,NOT APPLICABLE,,ARM5,Y
+S0180,1,anemia,N,1,9,29,no_modification,DM014,ARM4,Y
+S0180,2,rash_erythematous_macules_or_papules,N,1,11,29,no_modification,DM014,ARM4,Y
+S0180,3,diarrhea,N,2,31,57,no_modification,DM014,ARM4,Y
+S0180,4,hypoalbuminemia,N,1,91,113,no_modification,DM014,ARM4,Y
+S0180,5,musculoskeletal_chest_pain,N,2,124,141,no_modification,DM014,ARM4,Y
+S0180,6,decrease_in_appetite,N,1,208,225,no_modification,DM014,ARM4,Y
+S0180,7,hemoptysis,N,2,209,225,no_modification,DM014,ARM4,Y
+S0181,1,back_pain,N,2,44,57,no_modification,DM014,ARM8,Y
+S0181,2,fever,N,1,46,57,no_modification,DM014,ARM8,Y
+S0181,3,hypoalbuminemia,N,1,219,225,no_modification,DM014,ARM8,Y
+S0181,4,aspartate_aminotransferase_increased,N,1,353,365,no_modification,DM014,ARM8,Y
+S0181,5,headache,N,2,375,393,no_modification,DM014,ARM8,Y
+S0181,6,upper_abdominal_pain,N,1,391,393,no_modification,DM014,ARM8,Y
+S0181,7,decrease_in_appetite,N,2,414,421,NOT APPLICABLE,,ARM8,Y
+S0182,1,anemia,N,2,1,29,no_modification,DM014,ARM8,Y
+S0182,2,diarrhea,N,2,3,29,no_modification,DM014,ARM8,Y
+S0182,3,hypokalemia,N,2,6,29,no_modification,DM014,ARM8,Y
+S0182,4,upper_abdominal_pain,N,1,21,29,no_modification,DM014,ARM8,Y
+S0182,5,abdomen_distended,N,1,28,29,no_modification,DM014,ARM8,Y
+S0182,6,productive_cough,N,1,34,57,no_modification,DM014,ARM8,Y
+S0182,7,constipation,N,2,74,85,NOT APPLICABLE,,ARM8,Y
+S0182,8,decrease_in_appetite,N,1,78,85,NOT APPLICABLE,,ARM8,Y
+S0183,1,conjunctivitis,N,2,20,29,no_modification,DM014,ARM5,Y
+S0183,2,back_pain,N,1,27,29,no_modification,DM014,ARM5,Y
+S0183,3,productive_cough,N,2,27,29,no_modification,DM014,ARM5,Y
+S0183,4,constipation,N,2,31,57,no_modification,DM014,ARM5,Y
+S0183,5,peripheral_edema,N,1,40,57,no_modification,DM014,ARM5,Y
+S0183,6,pruritus,N,2,41,57,no_modification,DM014,ARM5,Y
+S0183,7,hypoalbuminemia,N,1,58,85,NOT APPLICABLE,,ARM5,Y
+S0183,8,blood_alkaline_phosphatase_increased,N,1,63,85,NOT APPLICABLE,,ARM5,Y
+S0184,1,peripheral_edema,N,1,18,29,no_modification,DM014,ARM3,Y
+S0184,2,headache,N,2,20,29,no_modification,DM014,ARM3,Y
+S0184,3,lipase_increased,N,2,34,57,no_modification,DM014,ARM3,Y
+S0184,4,fatigue,N,1,57,85,no_modification,DM014,ARM3,Y
+S0184,5,hypoalbuminemia,N,1,66,85,no_modification,DM014,ARM3,Y
+S0184,6,amylase_increased,N,2,66,85,no_modification,DM014,ARM3,Y
+S0184,7,hypocalcemia,N,2,92,113,no_modification,DM014,ARM3,Y
+S0184,8,chest_pain,N,1,111,113,no_modification,DM014,ARM3,Y
+S0184,9,abdomen_distended,N,2,121,141,NOT APPLICABLE,,ARM3,Y
+S0184,10,nausea,N,2,133,141,NOT APPLICABLE,,ARM3,Y
+S0184,11,creatinine_renal_clearance_decreased,N,2,135,141,NOT APPLICABLE,,ARM3,Y
+S0184,12,coughing,N,1,141,169,NOT APPLICABLE,,ARM3,Y
+S0185,1,dyspnoea_exertional,N,1,11,29,no_modification,DM014,ARM5,Y
+S0185,2,pruritus,N,1,35,57,no_modification,DM014,ARM5,Y
+S0185,3,blood_alkaline_phosphatase_increased,N,2,179,197,no_modification,DM014,ARM5,Y
+S0185,4,hyponatremia,N,2,208,225,no_modification,DM014,ARM5,Y
+S0185,5,lipase_increased,N,2,250,253,no_modification,DM014,ARM5,Y
+S0185,6,aspartate_aminotransferase_increased,N,2,272,281,no_modification,DM014,ARM5,Y
+S0185,7,hypoalbuminemia,N,1,288,309,no_modification,DM014,ARM5,Y
+S0185,8,decreased_platelet_count,N,2,358,365,no_modification,DM014,ARM5,Y
+S0185,9,peripheral_edema,N,1,397,421,NOT APPLICABLE,,ARM5,Y
+S0185,10,neutrophil_count_decreased,Y,3,415,449,NOT APPLICABLE,,ARM5,Y
+S0186,1,hypoalbuminemia,N,2,11,29,no_modification,DM014,ARM5,Y
+S0186,2,blood_creatinine_increased,N,2,54,57,no_modification,DM014,ARM5,Y
+S0186,3,drug-related AEs,N,2,65,85,no_modification,DM014,ARM5,Y
+S0186,4,conjunctivitis,N,1,75,85,no_modification,DM014,ARM5,Y
+S0186,5,hemoptysis,N,1,91,113,no_modification,DM014,ARM5,Y
+S0186,6,decreased_platelet_count,N,1,151,169,no_modification,DM014,ARM5,Y
+S0186,7,back_pain,N,1,166,169,no_modification,DM014,ARM5,Y
+S0186,8,hyponatremia,N,2,172,197,no_modification,DM014,ARM5,Y
+S0186,9,blood_alkaline_phosphatase_increased,N,2,228,253,NOT APPLICABLE,,ARM5,Y
+S0187,1,diarrhea,N,1,9,29,no_modification,DM014,ARM5,Y
+S0187,2,dyspnea,N,2,61,85,no_modification,DM014,ARM5,Y
+S0187,3,pruritus,N,1,83,85,no_modification,DM014,ARM5,Y
+S0187,4,amylase_increased,N,1,154,169,no_modification,DM014,ARM5,Y
+S0187,5,aspartate_aminotransferase_increased,N,1,199,225,no_modification,DM014,ARM5,Y
+S0187,6,lipase_increased,N,1,223,225,no_modification,DM014,ARM5,Y
+S0187,7,hypoalbuminemia,N,2,274,281,no_modification,DM014,ARM5,Y
+S0187,8,decreased_platelet_count,N,1,286,309,NOT APPLICABLE,,ARM5,Y
+S0188,1,rash_erythematous_macules_or_papules,N,1,20,29,no_modification,DM014,ARM3,Y
+S0188,2,edema,N,2,34,57,no_modification,DM014,ARM3,Y
+S0188,3,amylase_increased,N,2,50,57,no_modification,DM014,ARM3,Y
+S0188,4,pleural_effusion_disorder,N,2,50,57,no_modification,DM014,ARM3,Y
+S0188,5,hypoalbuminemia,N,2,55,57,no_modification,DM014,ARM3,Y
+S0188,6,chest_pain,N,1,56,57,no_modification,DM014,ARM3,Y
+S0188,7,constipation,N,1,72,85,no_modification,DM014,ARM3,Y
+S0188,8,abdomen_distended,N,2,81,85,no_modification,DM014,ARM3,Y
+S0188,9,decreased_platelet_count,N,2,86,113,no_modification,DM014,ARM3,Y
+S0188,10,lipase_increased,N,1,89,113,no_modification,DM014,ARM3,Y
+S0188,11,upper_respiratory_infections,N,1,107,113,no_modification,DM014,ARM3,Y
+S0188,12,hypocalcemia,N,1,110,113,no_modification,DM014,ARM3,Y
+S0188,13,pain_in_limb,N,2,112,113,no_modification,DM014,ARM3,Y
+S0188,14,back_pain,N,2,140,141,NOT APPLICABLE,,ARM3,Y
+S0189,1,nausea,N,1,48,57,no_modification,DM014,ARM3,Y
+S0189,2,edema,N,1,49,57,no_modification,DM014,ARM3,Y
+S0189,3,pleural_effusion_disorder,N,2,52,57,no_modification,DM014,ARM3,Y
+S0189,4,hypocalcemia,N,1,72,85,no_modification,DM014,ARM3,Y
+S0189,5,chest_pain,N,2,78,85,no_modification,DM014,ARM3,Y
+S0189,6,creatinine_renal_clearance_decreased,N,2,79,85,no_modification,DM014,ARM3,Y
+S0189,7,amylase_increased,N,1,92,113,no_modification,DM014,ARM3,Y
+S0189,8,lipase_increased,N,1,134,141,no_modification,DM014,ARM3,Y
+S0189,9,peripheral_edema,Y,3,144,197,NOT APPLICABLE,,ARM3,Y
+S0189,10,decreased_platelet_count,N,1,151,169,no_modification,DM014,ARM3,Y
+S0189,11,fatigue,N,2,170,197,NOT APPLICABLE,,ARM3,Y
+S0189,12,headache,N,2,175,197,NOT APPLICABLE,,ARM3,Y
+S0189,13,abdomen_distended,N,1,181,197,NOT APPLICABLE,,ARM3,Y
+S0190,1,coughing,N,1,18,29,no_modification,DM014,ARM3,Y
+S0190,2,chest_pain,N,2,21,29,no_modification,DM014,ARM3,Y
+S0190,3,edema,N,1,34,57,no_modification,DM014,ARM3,Y
+S0190,4,lipase_increased,N,2,58,85,no_modification,DM014,ARM3,Y
+S0190,5,fatigue,N,2,71,85,no_modification,DM014,ARM3,Y
+S0190,6,pain_in_limb,N,1,75,85,no_modification,DM014,ARM3,Y
+S0190,7,amylase_increased,N,1,77,85,no_modification,DM014,ARM3,Y
+S0190,8,decreased_platelet_count,N,2,96,113,no_modification,DM014,ARM3,Y
+S0190,9,pleural_effusion_disorder,N,1,100,113,no_modification,DM014,ARM3,Y
+S0190,10,fever,N,2,123,141,no_modification,DM014,ARM3,Y
+S0190,11,anemia,N,2,172,197,no_modification,DM014,ARM3,Y
+S0190,12,dizziness,N,2,231,253,no_modification,DM014,ARM3,Y
+S0190,13,creatinine_renal_clearance_decreased,N,1,271,281,no_modification,DM014,ARM3,Y
+S0190,14,upper_respiratory_infections,N,1,371,393,no_modification,DM014,ARM3,Y

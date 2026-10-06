@@ -1,0 +1,86 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "9f61263a2faad6d1d336cb0cd9a60c04b28f9239bfc4d7eba9c57d14230db8f5",
+  "population": "09e7223aa65b2fd752554bf00700922898ac6f472684fdf9ff4a71df8a360d97",
+  "eligibility": "41722cfe7407cedea289131497d626cc38127b45a0cdd776b5f77841b8f6a227"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 52,
+   "source": "evaluable target (no stated accrual target)"
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_10.8_per_year",
+    "rate_per_year": 10.803901902738522,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 2.1773878602520678,
+     "p30": 5.431408288126935,
+     "p50": 10.803901902738522,
+     "p70": 22.1422339751949,
+     "p90": 63.63937013335908
+    }
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_10.8_per_year",
+  "design": {
+   "within_patient": {
+    "arm_order": [
+     "ARM1",
+     "ARM2"
+    ],
+    "evidence": "This is a multi-center, prospective intra-patient comparator study of urinary\nradioactivity (standardized uptake values [SUV]) following both piflufolastat (18F)\nand flotufolastat (18F) positron emission tomography (PET) in patients with low\nprostate-specific antigen (PSA; ≤0.5 ng/mL) biochemical recurrence (BCR) of\nprostate cancer following radical prostatectomy (RP)."
+   }
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "Piflufolastat (18F) injection (Trade name: PYLARIFY®)",
+    "description": "Piflufolastat (18F) injection (Trade name: PYLARIFY®)"
+   },
+   {
+    "arm_id": "ARM2",
+    "label": "Flotufolastat (18F) injection (Trade name: POSLUMA®)",
+    "description": "Flotufolastat (18F) injection (Trade name: POSLUMA®)"
+   }
+  ],
+  "arm_status_note": "no arm is stated to be open in the compiled version: every arm not stated to be closed is assumed to enroll",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "serve as their own\ncontrol",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": []
+ },
+ "summary": {
+  "pool": 7871,
+  "target": {
+   "patients": 52,
+   "source": "evaluable target (no stated accrual target)"
+  },
+  "scenarios": {
+   "accrual_historical_10.8_per_year": {
+    "enrolled": 104,
+    "accrual_years": 4.496454529033675,
+    "arms": {
+     "ARM1": 52,
+     "ARM2": 52
+    },
+    "strata": {
+     "null": 104
+    },
+    "sex": {
+     "male": 104
+    },
+    "age_mean": 63.08096153846154
+   }
+  },
+  "headline_scenario": "accrual_historical_10.8_per_year"
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod",
+   "started": 17,
+   "end_of_treatment": {
+    "completed planned treatment": 11,
+    "adverse event (registry discontinuation rate)": 3,
+    "disease progression": 3
+   },
+   "deaths": 0
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "safety/toxicity",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 17,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 5,
+     "any_grade3_ae": 5,
+     "stopped_for_ae": 3
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "immune efficacy (IE)",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 0,
+  "proportion": 0,
+  "continuous": 0,
+  "safety": 1,
+  "not_simulated": 1
+ }
+}

@@ -1,0 +1,168 @@
+{
+ "version": "subgroup-evidence-1.0.0",
+ "family": "gynecologic",
+ "phase": null,
+ "factors": [
+  {
+   "key": "var:patients_previously_treated_or_not_with_cabozantinib",
+   "text": "patients previously treated or not with cabozantinib",
+   "levels": [
+    "Previously treated",
+    "Previously untreated"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "Previously treated",
+     "Previously untreated"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "Previously treated": 0.5034,
+    "Previously untreated": 0.4966
+   },
+   "effects": {
+    "reference_level": "Previously treated",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:bevacizumab_pre_treated_cohort",
+   "text": "bevacizumab pre-treated cohort",
+   "levels": [
+    "Prior bevacizumab treated",
+    "Prior bevacizumab untreated"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "Prior bevacizumab treated",
+     "Prior bevacizumab untreated"
+    ],
+    "p": [
+     0.4557,
+     0.5443
+    ],
+    "trial_range_10_90": [
+     [
+      0.345,
+      0.456
+     ],
+     [
+      0.544,
+      0.655
+     ]
+    ],
+    "trials": 3,
+    "participants": 1400,
+    "measures": [
+     "Prior Bevacizumab"
+    ],
+    "source": "registry baseline tables of enrolled participants (all oncology; 3 trials)"
+   },
+   "mix": {
+    "Prior bevacizumab treated": 0.4546,
+    "Prior bevacizumab untreated": 0.5454
+   },
+   "effects": {
+    "reference_level": "Prior bevacizumab treated",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:ecog_performance_status",
+   "text": "ECOG performance status (0, 1, 2 or more)",
+   "levels": [
+    "0",
+    "1",
+    "2 or more"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "0": 0.5266,
+    "1": 0.4257,
+    "2 or more": 0.0477
+   },
+   "effects": {
+    "reference_level": "0",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "demographic:sex",
+   "text": "sex (female, male)",
+   "levels": [
+    "female",
+    "male"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "female": 0.9919,
+    "male": 0.0081
+   },
+   "effects": {
+    "reference_level": "female",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "male": {
+      "log_effect": 0.0485,
+      "trials": 3,
+      "range_10_90": [
+       0.039,
+       0.24
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  },
+  {
+   "key": "demographic:age",
+   "text": "age (< 65 years, >= 65 years)",
+   "levels": [
+    "< 65 years",
+    ">= 65 years"
+   ],
+   "source": "baseline factor",
+   "kind": "age",
+   "mix": {
+    "< 65 years": 0.7786,
+    ">= 65 years": 0.2214
+   },
+   "effects": {
+    "reference_level": "< 65 years",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  }
+ ],
+ "assumptions": [
+  "A27_subgroup_prevalence_equal",
+  "A28_prognostic_effects"
+ ]
+}

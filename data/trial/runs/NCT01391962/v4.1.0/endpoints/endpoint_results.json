@@ -1,0 +1,303 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "e210f25280f43b9023f3df75394eaef47b6e179921b73f6cf3f6001146969a9e"
+ },
+ "participant_flow": {
+  "ARM2": {
+   "arm": "sunitinib malate (37.5 mg)",
+   "started": 70,
+   "end_of_treatment": {
+    "disease progression": 46,
+    "adverse event (all agents discontinued)": 3,
+    "death": 3,
+    "end of simulated follow-up": 13,
+    "adverse event (registry discontinuation rate)": 3,
+    "withdrawal (subject, loss to follow-up or physician decision)": 2
+   },
+   "deaths": 3
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "clinical response",
+   "role": "primary",
+   "class": "proportion",
+   "variable": "objective_response_rate",
+   "by_arm": {
+    "ARM2": {
+     "patients": 70,
+     "responders": 26,
+     "rate": 0.3714,
+     "ci95": [
+      0.2588698044922683,
+      0.49523413735668687
+     ],
+     "predictive_rate": {
+      "p10": 0.32857142857142857,
+      "p30": 0.3671428571428571,
+      "p50": 0.38571428571428573,
+      "p70": 0.4142857142857143,
+      "p90": 0.4714285714285714
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.3902439024390244,
+      "unit": "proportion",
+      "level": "protocol-cited, same regimen",
+      "source": "protocol fact F124 (sunitinib, n = 41)",
+      "small_sample": false
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Progression-free survival (PFS)",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "progression_free_survival",
+   "by_arm": {
+    "ARM2": {
+     "patients": 70,
+     "events": 67,
+     "km_median_months": 8.55,
+     "median_ci95_months": [
+      8.59,
+      13.86
+     ],
+     "survival_percent": {
+      "12m": 41.4,
+      "24m": 23.9,
+      "36m": 12.0,
+      "60m": 3.0
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential",
+      "value": 10.999999999999998,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 7.7419257597710756,
+      "p30": 8.128054137921865,
+      "p50": 8.483817185147293,
+      "p70": 9.120149760685363,
+      "p90": 9.496874962039296
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Duration of overall response",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "duration_of_response",
+   "by_arm": {
+    "ARM2": {
+     "patients": 70,
+     "events": 70,
+     "km_median_months": 2.01,
+     "median_ci95_months": [
+      1.53,
+      2.45
+     ],
+     "survival_percent": {
+      "12m": 1.4,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 2.367122281544802,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of duration_of_response (1 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "sarcoma",
+       "subgroup": "whole disease family",
+       "median_months": 2.367122281544802,
+       "ci95": [
+        0.8415420638584806,
+        6.658333714294466
+       ],
+       "single_trial_80": [
+        1.1407006745467503,
+        4.9121281514208714
+       ],
+       "studies": 1,
+       "arms": 2,
+       "patients": 7
+      }
+     },
+     "predictive_median_months": {
+      "p10": 1.494256597125529,
+      "p30": 1.7657477875995296,
+      "p50": 2.157206915204919,
+      "p70": 2.4123056028505325,
+      "p90": 2.4732985459393255
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "The duration of overall CR",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "duration_of_response",
+   "by_arm": {
+    "ARM2": {
+     "patients": 70,
+     "events": 70,
+     "km_median_months": 1.92,
+     "median_ci95_months": [
+      1.77,
+      2.83
+     ],
+     "survival_percent": {
+      "12m": 5.7,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 2.367122281544802,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of duration_of_response (1 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "sarcoma",
+       "subgroup": "whole disease family",
+       "median_months": 2.367122281544802,
+       "ci95": [
+        0.8415420638584806,
+        6.658333714294466
+       ],
+       "single_trial_80": [
+        1.1407006745467503,
+        4.9121281514208714
+       ],
+       "studies": 1,
+       "arms": 2,
+       "patients": 7
+      }
+     },
+     "predictive_median_months": {
+      "p10": 1.506078970448206,
+      "p30": 1.8384089376175887,
+      "p50": 1.918677145783833,
+      "p70": 2.120824368724635,
+      "p90": 2.3386216633674866
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Duration of stable disease",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": null,
+   "by_arm": {
+    "ARM2": {
+     "patients": 70,
+     "events": 68,
+     "km_median_months": 11.53,
+     "median_ci95_months": [
+      8.22,
+      13.23
+     ],
+     "survival_percent": {
+      "12m": 45.7,
+      "24m": 17.1,
+      "36m": 10.0,
+      "60m": 2.9
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 10.999999999999998,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 10.1601626869863,
+      "p30": 10.831229557299508,
+      "p50": 11.530349474306059,
+      "p70": 11.648086324145304,
+      "p90": 12.239349959435746
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "best response",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "time to final disease progression following treatment with both agents",
+   "role": "exploratory",
+   "class": "time_to_event",
+   "variable": null,
+   "by_arm": {
+    "ARM2": {
+     "patients": 70,
+     "events": 68,
+     "km_median_months": 13.79,
+     "median_ci95_months": [
+      8.95,
+      14.39
+     ],
+     "survival_percent": {
+      "12m": 55.4,
+      "24m": 24.8,
+      "36m": 7.3,
+      "60m": 1.5
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 10.999999999999998,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 9.235232482232425,
+      "p30": 13.111292314046498,
+      "p50": 13.785989293160121,
+      "p70": 14.805212769472206,
+      "p90": 15.802504686840514
+     }
+    }
+   },
+   "status": "SIMULATED"
+  }
+ ],
+ "counts": {
+  "time_to_event": 5,
+  "proportion": 1,
+  "continuous": 0,
+  "safety": 0,
+  "not_simulated": 1
+ }
+}

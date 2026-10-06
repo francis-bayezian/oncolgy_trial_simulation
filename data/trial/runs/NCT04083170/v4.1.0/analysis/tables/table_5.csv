@@ -1,0 +1,9 @@
+Parameter,ARM1 Regimen A (N=6),ARM2 RegimenB (N=4)
+"Duration of treatment, days: mean (SD)",1.0 (0.0),1.0 (0.0)
+"Median (min, max)","1 (1, 1)","1 (1, 1)"
+"Total exposure, person-years",0.0,0.0
+Any duration (at least 1 dose),6 (100.0),4 (100.0)
+>= 1 month,0 (0.0),0 (0.0)
+>= 3 months,0 (0.0),0 (0.0)
+>= 6 months,0 (0.0),0 (0.0)
+>= 12 months,0 (0.0),0 (0.0)

@@ -1,0 +1,84 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 2,
+ "facts": [
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 14.0,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "MRI baseline scan",
+   "time_origin": "unclear",
+   "quote": "baseline scan within 2 weeks of commencing first cycle of chemotherapy",
+   "reason": "The optional substudy MRI has a baseline timing requirement, but the source gives it in weeks.",
+   "interval_source": "parsed from the quote",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "cified) 3. MRI (optional substudy) baseline scan within 2 weeks of commencing first cycle of chemotherapy 4. MRI (optional substudy) within one week prior to cycles 2+4 5. Bloods to be repeated if baseline sample is not within 7 days of first cycle of treatment 6. GFR to be assessed according to local practice (recommended use of eGFR using the CKD-EPI formula (Appendix 2) 7. 3-5 weeks afte",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering changes the timing origin to an unspecified point before treatment and makes the optional substudy scan mandatory."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": null,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "MRI scan",
+   "time_origin": "cycle_day",
+   "quote": "within one week prior to cycles 2+4",
+   "reason": "The optional substudy MRI is scheduled before cycles 2 and 4, but the source gives the timing in weeks.",
+   "fact_id": "SF02",
+   "issues": [
+    "no number"
+   ],
+   "evidence": "cified) 3. MRI (optional substudy) baseline scan within 2 weeks of commencing first cycle of chemotherapy 4. MRI (optional substudy) within one week prior to cycles 2+4 5. Bloods to be repeated if baseline sample is not within 7 days of first cycle of treatment 6. GFR to be assessed according to local practice (recommended use of eGFR using the CKD-EPI formula (Appendix 2) 7. 3-5 weeks afte"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 7,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "baseline blood sample",
+   "time_origin": "unclear",
+   "quote": "Bloods to be repeated if baseline sample is not within 7 days of first cycle of treatment",
+   "reason": "Baseline bloods must meet a 7-day recency criterion or be repeated.",
+   "fact_id": "SF03",
+   "issues": [],
+   "evidence": "cified) 3. MRI (optional substudy) baseline scan within 2 weeks of commencing first cycle of chemotherapy 4. MRI (optional substudy) within one week prior to cycles 2+4 5. Bloods to be repeated if baseline sample is not within 7 days of first cycle of treatment 6. GFR to be assessed according to local practice (recommended use of eGFR using the CKD-EPI formula (Appendix 2) 7. 3-5 weeks afte",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The evidence schedules repeat bloods conditionally, not a mandatory baseline blood sample for all patients."
+   },
+   "status": "REVIEW_REQUIRED"
+  }
+ ]
+}

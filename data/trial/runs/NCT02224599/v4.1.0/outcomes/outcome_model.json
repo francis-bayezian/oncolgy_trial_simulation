@@ -1,0 +1,2877 @@
+{
+ "outcomes_version": "outcomes-1.0.0",
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc",
+  "facts": "2b621bc1e384d35b42891d18442dc265987441e991e26e332c8cf8b084def156"
+ },
+ "arms": [
+  {
+   "arm_id": "ARM1",
+   "label": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod",
+   "description": "Patients will receive five (5) days of low-dose cyclophosphamide prior to each vaccination with TAPA-pulsed DCs to decrease Treg activity. TAPA-pulsed DCs will be administered at a fixed dose of up to 1 X 107 DCs following cyclophosphamide administration. DC vaccination schedule will be once every seven (7) days via intradermal (ID) injections for a total of 3 vaccinations. Topical Imiquimod will also be administered once after the TAPA-pulsed DC vaccination, to optimize immune responses."
+  }
+ ],
+ "control_arm_id": null,
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "effect": {
+  "grid_hr": [
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9,
+   0.95,
+   1.0,
+   1.1,
+   1.2,
+   1.3
+  ],
+  "design_alternatives": [],
+  "asset_prior": {
+   "status": "RESOLVED",
+   "comparisons": 2,
+   "mu_log_hr": 0.20674381219715898,
+   "se_mu": 0.21897877056154236,
+   "tau2": 0.07196187711261347,
+   "predictive_sd": 0.3462854011783605,
+   "hr_median": 1.229667505607934,
+   "hr_predictive_95": [
+    0.6237765249578874,
+    2.4240767548123467
+   ],
+   "note": "indirect evidence: adding a drug to a radiotherapy-containing regimen in other (adult) cancers; no comparison of the protocol's own experimental addition exists in the asset",
+   "comparisons_used": [
+    {
+     "fusion_id": "12fea832340e8a35",
+     "disease": "Prostate carcinoma",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "bicalutamide"
+     ],
+     "log_hr_add_on": 0.43072993086113065,
+     "se": 0.1617393155611274,
+     "hr_add_on": 1.5383800248805677
+    },
+    {
+     "fusion_id": "9e76aad9af19a22d",
+     "disease": "Malignant Head and Neck Neoplasm",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "cetuximab"
+     ],
+     "log_hr_add_on": -0.0073395526232417265,
+     "se": 0.1477210612501004,
+     "hr_add_on": 0.9926873161180804
+    }
+   ],
+   "decision": "insufficient evidence: shown for reference, not used (user decision 2026-09-27)"
+  },
+  "definition": "S_experimental(t) = S_control(t) ** HR (proportional hazards on the whole EFS curve)"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.02745467390633405,
+  "rate_per_year": 0.027838596767248983,
+  "source": "evidence",
+  "wording": "registry participant flow (mixed_solid_tumors): left by subject decision, loss to follow-up or physician decision; 27 trials, 3813 participants: 5.4% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "toxicities_protocol": [],
+ "adverse_events_asset": {
+  "ARM1": {
+   "classes": [
+    "alkylating_agent"
+   ],
+   "unmapped": [],
+   "class_signature": "alkylating_agent",
+   "event_terms": 665,
+   "missing_classes": [],
+   "extra_classes": [],
+   "events": [
+    {
+     "event": "fatigue",
+     "seriousness": "non_serious",
+     "rate": 0.4267910193115575,
+     "q025": 0.3184710858752303,
+     "q975": 0.5866958856195751
+    },
+    {
+     "event": "nausea",
+     "seriousness": "non_serious",
+     "rate": 0.25121264090882434,
+     "q025": 0.12528168747036125,
+     "q975": 0.39483358326614654
+    },
+    {
+     "event": "lymphopenia",
+     "seriousness": "non_serious",
+     "rate": 0.22476929780829058,
+     "q025": 0.11394780899409213,
+     "q975": 0.42341075523896743
+    },
+    {
+     "event": "constipation",
+     "seriousness": "non_serious",
+     "rate": 0.20467607903855461,
+     "q025": 0.11468574387024454,
+     "q975": 0.28895127847446855
+    },
+    {
+     "event": "anemia",
+     "seriousness": "non_serious",
+     "rate": 0.19761483391910956,
+     "q025": 0.1108798299097126,
+     "q975": 0.3386515390861029
+    },
+    {
+     "event": "hyperglycemia",
+     "seriousness": "non_serious",
+     "rate": 0.16133944036848166,
+     "q025": 0.08117836743360861,
+     "q975": 0.3212069127482726
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "non_serious",
+     "rate": 0.16108055747061722,
+     "q025": 0.08329322528920409,
+     "q975": 0.2807733096284886
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "non_serious",
+     "rate": 0.15331184162259273,
+     "q025": 0.06265912155844221,
+     "q975": 0.28586396169029066
+    },
+    {
+     "event": "headache",
+     "seriousness": "non_serious",
+     "rate": 0.1508458888427477,
+     "q025": 0.08108906224942827,
+     "q975": 0.2687659972262704
+    },
+    {
+     "event": "coughing",
+     "seriousness": "non_serious",
+     "rate": 0.11602810314779535,
+     "q025": 0.06337101424204052,
+     "q975": 0.21280039254366168
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "non_serious",
+     "rate": 0.11022641040142006,
+     "q025": 0.06098461561358402,
+     "q975": 0.17110459717818105
+    },
+    {
+     "event": "weight_loss",
+     "seriousness": "non_serious",
+     "rate": 0.0947880659047539,
+     "q025": 0.04911351562356897,
+     "q975": 0.19721593063590268
+    },
+    {
+     "event": "decreased_platelet_count",
+     "seriousness": "non_serious",
+     "rate": 0.09478006995651261,
+     "q025": 0.044336465152602894,
+     "q975": 0.22392468816588912
+    },
+    {
+     "event": "anorexia",
+     "seriousness": "non_serious",
+     "rate": 0.09404543241876408,
+     "q025": 0.046692476672462464,
+     "q975": 0.20823901444232856
+    },
+    {
+     "event": "dizziness",
+     "seriousness": "non_serious",
+     "rate": 0.09246630382005867,
+     "q025": 0.0595646135504082,
+     "q975": 0.16706042928644044
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "rate": 0.09039575500436448,
+     "q025": 0.036096513753021295,
+     "q975": 0.20021473807724272
+    },
+    {
+     "event": "hypoalbuminemia",
+     "seriousness": "non_serious",
+     "rate": 0.08825835908147006,
+     "q025": 0.033092035416785875,
+     "q975": 0.21098909981135405
+    },
+    {
+     "event": "sleeplessness",
+     "seriousness": "non_serious",
+     "rate": 0.08718246099741485,
+     "q025": 0.04985141126200721,
+     "q975": 0.1537290066942749
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "non_serious",
+     "rate": 0.08615001577759199,
+     "q025": 0.04892888097395762,
+     "q975": 0.12779881700084128
+    },
+    {
+     "event": "leukopenia",
+     "seriousness": "non_serious",
+     "rate": 0.08592273665355635,
+     "q025": 0.026816609189577737,
+     "q975": 0.2144478377096777
+    },
+    {
+     "event": "rash_erythematous_macules_or_papules",
+     "seriousness": "non_serious",
+     "rate": 0.08475121930910784,
+     "q025": 0.04331463210259929,
+     "q975": 0.16694250772969269
+    },
+    {
+     "event": "fever",
+     "seriousness": "non_serious",
+     "rate": 0.08459492844774118,
+     "q025": 0.04515872007080074,
+     "q975": 0.1620100727361452
+    },
+    {
+     "event": "hyponatremia",
+     "seriousness": "non_serious",
+     "rate": 0.08194105084185323,
+     "q025": 0.03464968971265628,
+     "q975": 0.16661589512861744
+    },
+    {
+     "event": "decrease_in_appetite",
+     "seriousness": "non_serious",
+     "rate": 0.06917991864004513,
+     "q025": 0.023873998019232616,
+     "q975": 0.20031560635786858
+    },
+    {
+     "event": "sensory_neuropathy",
+     "seriousness": "non_serious",
+     "rate": 0.06738318864205811,
+     "q025": 0.018013710198001215,
+     "q975": 0.20890894427575527
+    },
+    {
+     "event": "back_pain",
+     "seriousness": "non_serious",
+     "rate": 0.06450743868137696,
+     "q025": 0.03286320579779906,
+     "q975": 0.1240808320772307
+    },
+    {
+     "event": "pruritus",
+     "seriousness": "non_serious",
+     "rate": 0.06254122084261914,
+     "q025": 0.031432180709514694,
+     "q975": 0.14932208415187317
+    },
+    {
+     "event": "arthralgia",
+     "seriousness": "non_serious",
+     "rate": 0.0619415221957426,
+     "q025": 0.03434177055062376,
+     "q975": 0.0949492887005065
+    },
+    {
+     "event": "memory_impairment",
+     "seriousness": "non_serious",
+     "rate": 0.061826516768483,
+     "q025": 0.022538772614979195,
+     "q975": 0.16464863614207592
+    },
+    {
+     "event": "confusion",
+     "seriousness": "non_serious",
+     "rate": 0.0617396151475811,
+     "q025": 0.025936298382454988,
+     "q975": 0.12964024325880738
+    },
+    {
+     "event": "muscle_weakness",
+     "seriousness": "non_serious",
+     "rate": 0.061069925287441554,
+     "q025": 0.017020520253201794,
+     "q975": 0.1653275966363319
+    },
+    {
+     "event": "peripheral_edema",
+     "seriousness": "non_serious",
+     "rate": 0.06033387753422463,
+     "q025": 0.026877774827879612,
+     "q975": 0.12091300338583842
+    },
+    {
+     "event": "alanine_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "rate": 0.05565373231432537,
+     "q025": 0.02356748019037934,
+     "q975": 0.14724962215350862
+    },
+    {
+     "event": "leukocytes",
+     "seriousness": "non_serious",
+     "rate": 0.05168706664968303,
+     "q025": 0.011780834090710892,
+     "q975": 0.17145984709916398
+    },
+    {
+     "event": "hemoglobin_normal_12_16_gm",
+     "seriousness": "non_serious",
+     "rate": 0.050756551088232266,
+     "q025": 0.013329664124353083,
+     "q975": 0.16886047209677235
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "non_serious",
+     "rate": 0.05041736897772466,
+     "q025": 0.02424865905813774,
+     "q975": 0.09569658584822856
+    },
+    {
+     "event": "febrile_neutropenia",
+     "seriousness": "serious",
+     "rate": 0.09136486810059657,
+     "q025": 0.034103596061860045,
+     "q975": 0.2257249326638608
+    },
+    {
+     "event": "neutrophil_count_decreased",
+     "seriousness": "serious",
+     "rate": 0.049567737771456705,
+     "q025": 0.013677536664831808,
+     "q975": 0.16122658610961813
+    },
+    {
+     "event": "decreased_platelet_count",
+     "seriousness": "serious",
+     "rate": 0.04744607153774606,
+     "q025": 0.012941308510809782,
+     "q975": 0.15660642947089465
+    },
+    {
+     "event": "lymphopenia",
+     "seriousness": "serious",
+     "rate": 0.0458297647123974,
+     "q025": 0.01005661909913351,
+     "q975": 0.16015704259495206
+    },
+    {
+     "event": "white_blood_cell_decreased",
+     "seriousness": "serious",
+     "rate": 0.03672864462157681,
+     "q025": 0.009096460310984199,
+     "q975": 0.1271839410164554
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "serious",
+     "rate": 0.03630535338505876,
+     "q025": 0.012028887002544857,
+     "q975": 0.15892940877105294
+    },
+    {
+     "event": "death_finding",
+     "seriousness": "serious",
+     "rate": 0.03560698413081352,
+     "q025": 0.009194232031492628,
+     "q975": 0.12432972358310698
+    },
+    {
+     "event": "pneumonia",
+     "seriousness": "serious",
+     "rate": 0.034343350300382554,
+     "q025": 0.012603403365240651,
+     "q975": 0.11310223650125852
+    },
+    {
+     "event": "anemia",
+     "seriousness": "serious",
+     "rate": 0.03277448906370156,
+     "q025": 0.009831729846272935,
+     "q975": 0.09621754263490405
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "serious",
+     "rate": 0.03273245593164264,
+     "q025": 0.011744498654493342,
+     "q975": 0.12203991327880487
+    },
+    {
+     "event": "deep_vein_thrombosis",
+     "seriousness": "serious",
+     "rate": 0.02726479414618039,
+     "q025": 0.006261390810820123,
+     "q975": 0.11435097541797996
+    },
+    {
+     "event": "arthralgia",
+     "seriousness": "serious",
+     "rate": 0.027247882900024153,
+     "q025": 0.006148868681803771,
+     "q975": 0.11891889125317871
+    },
+    {
+     "event": "oral_pain",
+     "seriousness": "serious",
+     "rate": 0.026876612673628862,
+     "q025": 0.006119476828393488,
+     "q975": 0.12577007191019907
+    },
+    {
+     "event": "altered_mental_status_disorientation_lethargy_stupor_or_coma",
+     "seriousness": "serious",
+     "rate": 0.02621383367256059,
+     "q025": 0.004669330017595254,
+     "q975": 0.1209353528956266
+    },
+    {
+     "event": "sudden_death",
+     "seriousness": "serious",
+     "rate": 0.025856905661830312,
+     "q025": 0.004371405616619525,
+     "q975": 0.12163000042388554
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "serious",
+     "rate": 0.024935882861101155,
+     "q025": 0.004666267526494829,
+     "q975": 0.12541456333393114
+    },
+    {
+     "event": "sepsis",
+     "seriousness": "serious",
+     "rate": 0.024768676381548137,
+     "q025": 0.00849382472234026,
+     "q975": 0.09217367275899424
+    },
+    {
+     "event": "decrease_in_appetite",
+     "seriousness": "serious",
+     "rate": 0.0247270878957485,
+     "q025": 0.003677931137050144,
+     "q975": 0.11405343976626703
+    },
+    {
+     "event": "graft_failure",
+     "seriousness": "serious",
+     "rate": 0.02469844014810338,
+     "q025": 0.004450956869339024,
+     "q975": 0.09550712500777275
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "serious",
+     "rate": 0.024646639931364928,
+     "q025": 0.00949267359255855,
+     "q975": 0.08180284099195884
+    },
+    {
+     "event": "melena",
+     "seriousness": "serious",
+     "rate": 0.024639670438661047,
+     "q025": 0.004553043068666619,
+     "q975": 0.1179476714362548
+    },
+    {
+     "event": "hypoalbuminemia",
+     "seriousness": "serious",
+     "rate": 0.024446100692704628,
+     "q025": 0.0037170649974716747,
+     "q975": 0.11836467338950855
+    },
+    {
+     "event": "cancer_pain",
+     "seriousness": "serious",
+     "rate": 0.024303336281078582,
+     "q025": 0.004619224551023992,
+     "q975": 0.11337340523313957
+    },
+    {
+     "event": "acute_myeloid_leukemia_aml_m2",
+     "seriousness": "serious",
+     "rate": 0.024292122479389923,
+     "q025": 0.003489732517807082,
+     "q975": 0.11591229698941935
+    },
+    {
+     "event": "hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.02427051766286717,
+     "q025": 0.004863165967605647,
+     "q975": 0.12439997677104782
+    },
+    {
+     "event": "hematuria",
+     "seriousness": "serious",
+     "rate": 0.024257028098036863,
+     "q025": 0.0037854566806595504,
+     "q975": 0.11731899937535104
+    },
+    {
+     "event": "basal_cell_carcinoma",
+     "seriousness": "serious",
+     "rate": 0.02422004887161429,
+     "q025": 0.004526992141446575,
+     "q975": 0.12062312723811582
+    },
+    {
+     "event": "mycoses",
+     "seriousness": "serious",
+     "rate": 0.024213006472699812,
+     "q025": 0.003561048485603051,
+     "q975": 0.12063211073546809
+    },
+    {
+     "event": "hematoma_subdural",
+     "seriousness": "serious",
+     "rate": 0.02417117484064077,
+     "q025": 0.003566517089067653,
+     "q975": 0.11804904344669771
+    },
+    {
+     "event": "colonic_adenomas",
+     "seriousness": "serious",
+     "rate": 0.02415188494586919,
+     "q025": 0.00331934525002492,
+     "q975": 0.11293914426030491
+    },
+    {
+     "event": "squamous_cell_carcinoma_of_skin",
+     "seriousness": "serious",
+     "rate": 0.02399732359025294,
+     "q025": 0.004610492794994866,
+     "q975": 0.11348940501239302
+    },
+    {
+     "event": "atrial_fibrillation",
+     "seriousness": "serious",
+     "rate": 0.0239723026184964,
+     "q025": 0.005285192550095095,
+     "q975": 0.109548648179862
+    },
+    {
+     "event": "neutropenic_infection",
+     "seriousness": "serious",
+     "rate": 0.02393375567730005,
+     "q025": 0.0044668389680074996,
+     "q975": 0.11902858009950601
+    },
+    {
+     "event": "exfoliative_rash",
+     "seriousness": "serious",
+     "rate": 0.023896894122918885,
+     "q025": 0.003659214597883015,
+     "q975": 0.11522021118974214
+    },
+    {
+     "event": "hypocalcemia",
+     "seriousness": "serious",
+     "rate": 0.02384564341104794,
+     "q025": 0.0031200223286494137,
+     "q975": 0.09299930770907253
+    },
+    {
+     "event": "fungal_pneumonia",
+     "seriousness": "serious",
+     "rate": 0.02382711886484108,
+     "q025": 0.0033297692044277826,
+     "q975": 0.09711328049785552
+    },
+    {
+     "event": "post_procedural_haemorrhage",
+     "seriousness": "serious",
+     "rate": 0.023809950020778722,
+     "q025": 0.0036006683670191885,
+     "q975": 0.11834452682523135
+    },
+    {
+     "event": "equilibration_disorder",
+     "seriousness": "serious",
+     "rate": 0.023792145751264974,
+     "q025": 0.0035580123934824204,
+     "q975": 0.12167036668535405
+    },
+    {
+     "event": "pneumonia_respiratory_syncytial_viral",
+     "seriousness": "serious",
+     "rate": 0.023776900911382855,
+     "q025": 0.0034021391580164625,
+     "q975": 0.12019758562727738
+    },
+    {
+     "event": "takotsubo_cardiomyopathy",
+     "seriousness": "serious",
+     "rate": 0.02376059041761213,
+     "q025": 0.004431236476940554,
+     "q975": 0.1127062414917607
+    },
+    {
+     "event": "maculopapular_lesion",
+     "seriousness": "serious",
+     "rate": 0.023732921070175904,
+     "q025": 0.0035332257546418304,
+     "q975": 0.11788483819819896
+    },
+    {
+     "event": "diverticulitis",
+     "seriousness": "serious",
+     "rate": 0.023731826610829725,
+     "q025": 0.0036587746303396057,
+     "q975": 0.09701120321652217
+    },
+    {
+     "event": "chest_pain",
+     "seriousness": "serious",
+     "rate": 0.023708183417609288,
+     "q025": 0.003436011086156603,
+     "q975": 0.11766470860521644
+    },
+    {
+     "event": "leukocytes",
+     "seriousness": "serious",
+     "rate": 0.02367598815704669,
+     "q025": 0.003215110851702455,
+     "q975": 0.10997813607412085
+    },
+    {
+     "event": "bronchopulmonary_aspergillosis",
+     "seriousness": "serious",
+     "rate": 0.023670479978473,
+     "q025": 0.0045012231067806125,
+     "q975": 0.1228442077020308
+    },
+    {
+     "event": "malignant_melanoma_radial_growth_phase",
+     "seriousness": "serious",
+     "rate": 0.02366608047586766,
+     "q025": 0.0037128355004753294,
+     "q975": 0.1108570868984554
+    },
+    {
+     "event": "malignant_neoplasm_progression",
+     "seriousness": "serious",
+     "rate": 0.023656654536869548,
+     "q025": 0.003759470357873294,
+     "q975": 0.11703440602535971
+    },
+    {
+     "event": "staphylococcal_bacteraemia",
+     "seriousness": "serious",
+     "rate": 0.023633467025359033,
+     "q025": 0.003633806028773991,
+     "q975": 0.11214141332028439
+    },
+    {
+     "event": "fracture_of_lumbar_spine",
+     "seriousness": "serious",
+     "rate": 0.023604617111266712,
+     "q025": 0.003584753665663271,
+     "q975": 0.11372442939321352
+    },
+    {
+     "event": "urinary_retention",
+     "seriousness": "serious",
+     "rate": 0.02360033778531396,
+     "q025": 0.0034457880954911735,
+     "q975": 0.09566749277538375
+    },
+    {
+     "event": "graft_vs_host_disease",
+     "seriousness": "serious",
+     "rate": 0.023588770533937736,
+     "q025": 0.003612047466794119,
+     "q975": 0.11758407925933109
+    },
+    {
+     "event": "subcutaneous_abscess",
+     "seriousness": "serious",
+     "rate": 0.023583893422817845,
+     "q025": 0.003538182815080895,
+     "q975": 0.09636292210149146
+    },
+    {
+     "event": "flank_pain",
+     "seriousness": "serious",
+     "rate": 0.023568200650110414,
+     "q025": 0.0036024688153406354,
+     "q975": 0.0959368728939286
+    },
+    {
+     "event": "rhinitis",
+     "seriousness": "serious",
+     "rate": 0.023565036993463198,
+     "q025": 0.0032359735385079987,
+     "q975": 0.11976103898547909
+    },
+    {
+     "event": "international_normalised_ratio_increased",
+     "seriousness": "serious",
+     "rate": 0.023557002597941502,
+     "q025": 0.0044305756308006755,
+     "q975": 0.11046231369406947
+    },
+    {
+     "event": "back_pain",
+     "seriousness": "serious",
+     "rate": 0.023549503909518398,
+     "q025": 0.004407559820746657,
+     "q975": 0.09383259594229104
+    },
+    {
+     "event": "cellulitis_staphylococcal",
+     "seriousness": "serious",
+     "rate": 0.023548616465342332,
+     "q025": 0.003395676441127651,
+     "q975": 0.09401576808631433
+    },
+    {
+     "event": "pulmonary_fibrosis",
+     "seriousness": "serious",
+     "rate": 0.023547486967224168,
+     "q025": 0.003643171452021094,
+     "q975": 0.12056960925363146
+    },
+    {
+     "event": "hyperkalemia",
+     "seriousness": "serious",
+     "rate": 0.02352044268496447,
+     "q025": 0.002689875250875594,
+     "q975": 0.11221695876934625
+    },
+    {
+     "event": "myocardial_ischemia",
+     "seriousness": "serious",
+     "rate": 0.023514450649127654,
+     "q025": 0.003195600215115236,
+     "q975": 0.09633925373331642
+    },
+    {
+     "event": "atrial_flutter",
+     "seriousness": "serious",
+     "rate": 0.023500352088569126,
+     "q025": 0.0034389359498862696,
+     "q975": 0.11351360438271868
+    },
+    {
+     "event": "gastroesophageal_reflux_disease",
+     "seriousness": "serious",
+     "rate": 0.023465793624967955,
+     "q025": 0.0033811024201877834,
+     "q975": 0.12052898459098242
+    },
+    {
+     "event": "thrombosis",
+     "seriousness": "serious",
+     "rate": 0.02343700581260018,
+     "q025": 0.004825196077675812,
+     "q975": 0.11339326973142119
+    },
+    {
+     "event": "chronic_lymphocytic_leukemia",
+     "seriousness": "serious",
+     "rate": 0.023431798344351377,
+     "q025": 0.003254682830222836,
+     "q975": 0.1107871498601406
+    },
+    {
+     "event": "adenocarcinoma_of_pancreas",
+     "seriousness": "serious",
+     "rate": 0.02342983900270729,
+     "q025": 0.0031741928555684604,
+     "q975": 0.11560910396069102
+    },
+    {
+     "event": "cardiac_failure_secondary_to_chest_deformity",
+     "seriousness": "serious",
+     "rate": 0.023428751054371456,
+     "q025": 0.0032451587056167184,
+     "q975": 0.11076230649612771
+    },
+    {
+     "event": "hemothorax",
+     "seriousness": "serious",
+     "rate": 0.02341371580238577,
+     "q025": 0.00355725689599779,
+     "q975": 0.11342328700272605
+    },
+    {
+     "event": "pneumonia_due_to_klebsiella_pneumoniae",
+     "seriousness": "serious",
+     "rate": 0.023410667703064617,
+     "q025": 0.0034656918290671157,
+     "q975": 0.11951377116201059
+    },
+    {
+     "event": "craniocerebral_trauma",
+     "seriousness": "serious",
+     "rate": 0.023401756518054737,
+     "q025": 0.003370095746247855,
+     "q975": 0.11178485985837175
+    },
+    {
+     "event": "fracture_of_pelvis",
+     "seriousness": "serious",
+     "rate": 0.023399413414528326,
+     "q025": 0.003293697064346685,
+     "q975": 0.09679029271638842
+    },
+    {
+     "event": "ankle_fracture",
+     "seriousness": "serious",
+     "rate": 0.02338919031019772,
+     "q025": 0.003169644206733604,
+     "q975": 0.11698914084501355
+    },
+    {
+     "event": "congestive_heart_failure",
+     "seriousness": "serious",
+     "rate": 0.023373979564884732,
+     "q025": 0.0032921811583418105,
+     "q975": 0.11840809333858422
+    },
+    {
+     "event": "hip_fractures",
+     "seriousness": "serious",
+     "rate": 0.023370685201857033,
+     "q025": 0.004613431258294001,
+     "q975": 0.09538999681149854
+    },
+    {
+     "event": "hypotension_orthostatic",
+     "seriousness": "serious",
+     "rate": 0.023370605409925523,
+     "q025": 0.0034304520693935734,
+     "q975": 0.11854296050900286
+    },
+    {
+     "event": "cystitis",
+     "seriousness": "serious",
+     "rate": 0.023370019792187054,
+     "q025": 0.00451644203633364,
+     "q975": 0.11664043373533337
+    },
+    {
+     "event": "tumor_lysis_syndrome",
+     "seriousness": "serious",
+     "rate": 0.02336860607900999,
+     "q025": 0.003521832148237854,
+     "q975": 0.11820160903514473
+    },
+    {
+     "event": "platelets",
+     "seriousness": "serious",
+     "rate": 0.023362355493063987,
+     "q025": 0.004424051630652487,
+     "q975": 0.1157441031423804
+    },
+    {
+     "event": "hyperthermia",
+     "seriousness": "serious",
+     "rate": 0.023358934378441304,
+     "q025": 0.004337919661853041,
+     "q975": 0.12125737167025571
+    },
+    {
+     "event": "keratitis",
+     "seriousness": "serious",
+     "rate": 0.023344104551592148,
+     "q025": 0.003257669339454702,
+     "q975": 0.11170706681223032
+    },
+    {
+     "event": "obstruction_of_colon",
+     "seriousness": "serious",
+     "rate": 0.023344007271792165,
+     "q025": 0.003398319400275361,
+     "q975": 0.11938311414839357
+    },
+    {
+     "event": "secondary_malignant_neoplasm_of_bone",
+     "seriousness": "serious",
+     "rate": 0.023341346044237245,
+     "q025": 0.0033310789293214786,
+     "q975": 0.1223703397586259
+    },
+    {
+     "event": "blood_potassium_decreased",
+     "seriousness": "serious",
+     "rate": 0.023340171533556137,
+     "q025": 0.003430207648313001,
+     "q975": 0.12162314964350679
+    },
+    {
+     "event": "malignant_melanoma_metastatic",
+     "seriousness": "serious",
+     "rate": 0.02333473945983127,
+     "q025": 0.0032995683427499826,
+     "q975": 0.11022462978342143
+    },
+    {
+     "event": "upper_gastrointestinal_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.023327761317859012,
+     "q025": 0.003374945865461884,
+     "q975": 0.09203931812239644
+    },
+    {
+     "event": "bronchiectasis",
+     "seriousness": "serious",
+     "rate": 0.023299154559342616,
+     "q025": 0.003725179853962098,
+     "q975": 0.10947473647472726
+    },
+    {
+     "event": "gastroenteritis",
+     "seriousness": "serious",
+     "rate": 0.023296662401110713,
+     "q025": 0.003440072677796504,
+     "q975": 0.111933587252568
+    },
+    {
+     "event": "pulmonary_infiltrate",
+     "seriousness": "serious",
+     "rate": 0.023290224163710682,
+     "q025": 0.0035810527768229856,
+     "q975": 0.11525874318535786
+    },
+    {
+     "event": "ischemic_stroke",
+     "seriousness": "serious",
+     "rate": 0.023283693586736487,
+     "q025": 0.003406900839777614,
+     "q975": 0.09651234419984883
+    },
+    {
+     "event": "creatinine_increased",
+     "seriousness": "serious",
+     "rate": 0.023279077182194154,
+     "q025": 0.0036013434150095752,
+     "q975": 0.11708880236325411
+    },
+    {
+     "event": "spondylarthritis",
+     "seriousness": "serious",
+     "rate": 0.023272947887372115,
+     "q025": 0.0032503443965307527,
+     "q975": 0.1144545730616117
+    },
+    {
+     "event": "muscular_weakness_lower_extremities",
+     "seriousness": "serious",
+     "rate": 0.023257461915940254,
+     "q025": 0.00336504046400048,
+     "q975": 0.10989360668592893
+    },
+    {
+     "event": "sinus_tachycardia",
+     "seriousness": "serious",
+     "rate": 0.023248674229024022,
+     "q025": 0.002465931466427737,
+     "q975": 0.11756228863067004
+    },
+    {
+     "event": "escherichia_sepsis",
+     "seriousness": "serious",
+     "rate": 0.023245656841210792,
+     "q025": 0.0032753973921572734,
+     "q975": 0.11479405214779695
+    },
+    {
+     "event": "tonsillitis",
+     "seriousness": "serious",
+     "rate": 0.02324474113860142,
+     "q025": 0.003402670769555218,
+     "q975": 0.09547025849848055
+    },
+    {
+     "event": "pulmonary_edema",
+     "seriousness": "serious",
+     "rate": 0.023242444176998805,
+     "q025": 0.004508737778396375,
+     "q975": 0.11578079270600869
+    },
+    {
+     "event": "haemophilus_infections",
+     "seriousness": "serious",
+     "rate": 0.023234794742117326,
+     "q025": 0.003164856482282808,
+     "q975": 0.11524735477989821
+    },
+    {
+     "event": "myocardial_infarction",
+     "seriousness": "serious",
+     "rate": 0.02323199937628575,
+     "q025": 0.0033940496599222277,
+     "q975": 0.1173265239590594
+    },
+    {
+     "event": "pathological_fracture",
+     "seriousness": "serious",
+     "rate": 0.02321853802556903,
+     "q025": 0.003229844559303555,
+     "q975": 0.09473170971234719
+    },
+    {
+     "event": "hematoma",
+     "seriousness": "serious",
+     "rate": 0.023206784384240432,
+     "q025": 0.003284320081190929,
+     "q975": 0.09495948500781376
+    },
+    {
+     "event": "normocytic_normochromic_anemia",
+     "seriousness": "serious",
+     "rate": 0.023206308766201535,
+     "q025": 0.003619869688830472,
+     "q975": 0.09692697514854828
+    },
+    {
+     "event": "rash_generalised",
+     "seriousness": "serious",
+     "rate": 0.023196975324616842,
+     "q025": 0.003177829530436475,
+     "q975": 0.11815049755089004
+    },
+    {
+     "event": "herpes_simplex_infections",
+     "seriousness": "serious",
+     "rate": 0.023195195672827414,
+     "q025": 0.004373702929897808,
+     "q975": 0.11984303497989877
+    },
+    {
+     "event": "cerebral_ischemia",
+     "seriousness": "serious",
+     "rate": 0.02318362056796812,
+     "q025": 0.00324919478161443,
+     "q975": 0.1106506778681297
+    },
+    {
+     "event": "abscess_intestinal",
+     "seriousness": "serious",
+     "rate": 0.023183452147945524,
+     "q025": 0.0035812832999818694,
+     "q975": 0.11325026818545743
+    },
+    {
+     "event": "photophobia",
+     "seriousness": "serious",
+     "rate": 0.023181268907949942,
+     "q025": 0.0034405758008835747,
+     "q975": 0.1171626423337438
+    },
+    {
+     "event": "acute_coronary_syndrome",
+     "seriousness": "serious",
+     "rate": 0.02317722237600546,
+     "q025": 0.0034626432400146822,
+     "q975": 0.12005264004563702
+    },
+    {
+     "event": "subarachnoid_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.023167071863380222,
+     "q025": 0.0037559279939794504,
+     "q975": 0.11764045324625866
+    },
+    {
+     "event": "compression_of_spinal_cord",
+     "seriousness": "serious",
+     "rate": 0.023167023469292856,
+     "q025": 0.0036804796619198917,
+     "q975": 0.11314788514800926
+    },
+    {
+     "event": "focal_infection",
+     "seriousness": "serious",
+     "rate": 0.023160228722379245,
+     "q025": 0.003527399356004268,
+     "q975": 0.11125235496707016
+    },
+    {
+     "event": "bronchopneumonia",
+     "seriousness": "serious",
+     "rate": 0.02313736418541051,
+     "q025": 0.003732930798705557,
+     "q975": 0.11358678588100532
+    },
+    {
+     "event": "ureteral_obstruction",
+     "seriousness": "serious",
+     "rate": 0.023136959071985604,
+     "q025": 0.003268233467591342,
+     "q975": 0.11367969353686053
+    },
+    {
+     "event": "pelvic_pain",
+     "seriousness": "serious",
+     "rate": 0.02312720219678749,
+     "q025": 0.003253238754543502,
+     "q975": 0.12402472977784737
+    },
+    {
+     "event": "pneumothorax",
+     "seriousness": "serious",
+     "rate": 0.02312401606974561,
+     "q025": 0.003375308705204919,
+     "q975": 0.11997154163037921
+    },
+    {
+     "event": "skull_fractures",
+     "seriousness": "serious",
+     "rate": 0.023108546452181813,
+     "q025": 0.003710486402292869,
+     "q975": 0.1227250590129784
+    },
+    {
+     "event": "enterobacter_sepsis",
+     "seriousness": "serious",
+     "rate": 0.023105862111773172,
+     "q025": 0.0035532540209936452,
+     "q975": 0.0964755876942434
+    },
+    {
+     "event": "facial_bones_fracture",
+     "seriousness": "serious",
+     "rate": 0.02308785094265981,
+     "q025": 0.0032622662155887554,
+     "q975": 0.11900381077929097
+    },
+    {
+     "event": "disturbance_in_attention",
+     "seriousness": "serious",
+     "rate": 0.0230878035991538,
+     "q025": 0.003771411440344689,
+     "q975": 0.11499814941087508
+    },
+    {
+     "event": "drug_eruptions",
+     "seriousness": "serious",
+     "rate": 0.02307889742696914,
+     "q025": 0.0032753550204025067,
+     "q975": 0.09528746844968987
+    },
+    {
+     "event": "venoocclusive_disease",
+     "seriousness": "serious",
+     "rate": 0.023073882637085916,
+     "q025": 0.004590968339092303,
+     "q975": 0.11049299963382385
+    },
+    {
+     "event": "hydrocephalus",
+     "seriousness": "serious",
+     "rate": 0.023066972852821006,
+     "q025": 0.0035646807616357317,
+     "q975": 0.11244872766216828
+    },
+    {
+     "event": "peripheral_nervous_system_diseases",
+     "seriousness": "serious",
+     "rate": 0.02306235654223989,
+     "q025": 0.003576021213845398,
+     "q975": 0.09673886801547385
+    },
+    {
+     "event": "bronchitis_bacterial",
+     "seriousness": "serious",
+     "rate": 0.023053517415957705,
+     "q025": 0.0033978645290818326,
+     "q975": 0.11561263307558604
+    },
+    {
+     "event": "cholangitis",
+     "seriousness": "serious",
+     "rate": 0.023053512085106982,
+     "q025": 0.0033350350911860727,
+     "q975": 0.11151275877479505
+    },
+    {
+     "event": "disease_progression",
+     "seriousness": "serious",
+     "rate": 0.023049126476752977,
+     "q025": 0.003378304577557808,
+     "q975": 0.11363490545565966
+    },
+    {
+     "event": "hypoglycemia",
+     "seriousness": "serious",
+     "rate": 0.02303983329437495,
+     "q025": 0.0033118217526751266,
+     "q975": 0.11537960364203026
+    },
+    {
+     "event": "depressed_level_of_consciousness",
+     "seriousness": "serious",
+     "rate": 0.02303561403441344,
+     "q025": 0.004482191255907934,
+     "q975": 0.11575879012144405
+    },
+    {
+     "event": "liver_pain",
+     "seriousness": "serious",
+     "rate": 0.023018946573537084,
+     "q025": 0.0034070170106094886,
+     "q975": 0.1193574962006178
+    },
+    {
+     "event": "hypercalcemia",
+     "seriousness": "serious",
+     "rate": 0.023018875145856856,
+     "q025": 0.0035415737501444037,
+     "q975": 0.09604302559387581
+    },
+    {
+     "event": "hepatic_enzyme_increased",
+     "seriousness": "serious",
+     "rate": 0.02300438252179287,
+     "q025": 0.004352893058367231,
+     "q975": 0.12200934316846124
+    },
+    {
+     "event": "lung_neoplasm_malignant",
+     "seriousness": "serious",
+     "rate": 0.022999400274777895,
+     "q025": 0.003207676525765987,
+     "q975": 0.09707770424442716
+    },
+    {
+     "event": "malignant_neoplasm_of_liver",
+     "seriousness": "serious",
+     "rate": 0.022983741421031892,
+     "q025": 0.0034060222814864577,
+     "q975": 0.11796002811831079
+    },
+    {
+     "event": "heart_diseases",
+     "seriousness": "serious",
+     "rate": 0.02296845649294954,
+     "q025": 0.0037171129726031875,
+     "q975": 0.09483532026031657
+    },
+    {
+     "event": "respiratory_tract_infections",
+     "seriousness": "serious",
+     "rate": 0.022959866963001056,
+     "q025": 0.0033231497885231197,
+     "q975": 0.09671691040706529
+    },
+    {
+     "event": "anemia_hemolytic",
+     "seriousness": "serious",
+     "rate": 0.022956124708680817,
+     "q025": 0.003647140778551831,
+     "q975": 0.1212994197478487
+    },
+    {
+     "event": "gout",
+     "seriousness": "serious",
+     "rate": 0.022941005062739855,
+     "q025": 0.0031864714484740307,
+     "q975": 0.11688842902168144
+    },
+    {
+     "event": "hyponatremia",
+     "seriousness": "serious",
+     "rate": 0.02293079653022706,
+     "q025": 0.004612997357207965,
+     "q975": 0.09636821760507437
+    },
+    {
+     "event": "complete_atrioventricular_block",
+     "seriousness": "serious",
+     "rate": 0.02292741146451199,
+     "q025": 0.0033030905694864327,
+     "q975": 0.11814195246485541
+    },
+    {
+     "event": "cerebral_infarction",
+     "seriousness": "serious",
+     "rate": 0.022917057871291793,
+     "q025": 0.0031653570223304194,
+     "q975": 0.11729598321609762
+    },
+    {
+     "event": "respiratory_failure",
+     "seriousness": "serious",
+     "rate": 0.022915261069605584,
+     "q025": 0.0032745296502502217,
+     "q975": 0.11096960616149436
+    },
+    {
+     "event": "coughing",
+     "seriousness": "serious",
+     "rate": 0.02291205096469519,
+     "q025": 0.0033385821130776337,
+     "q975": 0.11270672820001826
+    },
+    {
+     "event": "neuralgia",
+     "seriousness": "serious",
+     "rate": 0.022909850223862355,
+     "q025": 0.0036466621446971004,
+     "q975": 0.12244156643761288
+    },
+    {
+     "event": "mini_mental_status_examination_abnormal",
+     "seriousness": "serious",
+     "rate": 0.022903718602385846,
+     "q025": 0.0026375255211839393,
+     "q975": 0.1144384379193945
+    },
+    {
+     "event": "uveitis",
+     "seriousness": "serious",
+     "rate": 0.022902918721795226,
+     "q025": 0.0032996264275744294,
+     "q975": 0.11478079897277602
+    },
+    {
+     "event": "menorrhagia",
+     "seriousness": "serious",
+     "rate": 0.022901396503042536,
+     "q025": 0.0033774551504386235,
+     "q975": 0.1126761469974743
+    },
+    {
+     "event": "urinary_tract_infection",
+     "seriousness": "serious",
+     "rate": 0.02289949978127593,
+     "q025": 0.004516179522091222,
+     "q975": 0.11311307885400451
+    },
+    {
+     "event": "pain_procedural",
+     "seriousness": "serious",
+     "rate": 0.02289909139382232,
+     "q025": 0.0035602417143703134,
+     "q975": 0.11624259993682415
+    },
+    {
+     "event": "hypokalemia",
+     "seriousness": "serious",
+     "rate": 0.022892601279621838,
+     "q025": 0.0032128619092291247,
+     "q975": 0.09671656633645018
+    },
+    {
+     "event": "tonic_clonic_epilepsy",
+     "seriousness": "serious",
+     "rate": 0.022891187348767186,
+     "q025": 0.003329771366910404,
+     "q975": 0.11411632864870742
+    },
+    {
+     "event": "rectal_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.022889102218470073,
+     "q025": 0.004474334616844039,
+     "q975": 0.1100896842732607
+    },
+    {
+     "event": "liver_dysfunction",
+     "seriousness": "serious",
+     "rate": 0.022887800510284252,
+     "q025": 0.0032345660010314925,
+     "q975": 0.11411134069755069
+    },
+    {
+     "event": "hematemesis",
+     "seriousness": "serious",
+     "rate": 0.02288297570290042,
+     "q025": 0.0033351075122610182,
+     "q975": 0.10981417482665495
+    },
+    {
+     "event": "first_degree_atrioventricular_block",
+     "seriousness": "serious",
+     "rate": 0.02288220878273229,
+     "q025": 0.003350438718690051,
+     "q975": 0.11662416667615945
+    },
+    {
+     "event": "creatinine",
+     "seriousness": "serious",
+     "rate": 0.022877357925398085,
+     "q025": 0.0034939123112208608,
+     "q975": 0.10980541253540028
+    },
+    {
+     "event": "infectious_lung_disorder",
+     "seriousness": "serious",
+     "rate": 0.022876849544844924,
+     "q025": 0.0032257734978163167,
+     "q975": 0.11361861639257986
+    },
+    {
+     "event": "superficial_thrombophlebitis",
+     "seriousness": "serious",
+     "rate": 0.02286391197448174,
+     "q025": 0.00331982552335468,
+     "q975": 0.09528244553679739
+    },
+    {
+     "event": "pyramidal_tract_dysfunction",
+     "seriousness": "serious",
+     "rate": 0.022860786186925844,
+     "q025": 0.003230582626338086,
+     "q975": 0.09519256642740229
+    },
+    {
+     "event": "pulmonary_hypertension",
+     "seriousness": "serious",
+     "rate": 0.02285564481870035,
+     "q025": 0.003170056039248749,
+     "q975": 0.1120416601539581
+    },
+    {
+     "event": "cardiopulmonary_arrest",
+     "seriousness": "serious",
+     "rate": 0.02285483964029774,
+     "q025": 0.0034311436837498087,
+     "q975": 0.11147289110773463
+    },
+    {
+     "event": "cardiomyopathy_dilated",
+     "seriousness": "serious",
+     "rate": 0.02285274056902837,
+     "q025": 0.0032730180913376353,
+     "q975": 0.11446975191338345
+    },
+    {
+     "event": "neurologic_symptoms",
+     "seriousness": "serious",
+     "rate": 0.022844288745941826,
+     "q025": 0.0033073673646098613,
+     "q975": 0.095731593941915
+    },
+    {
+     "event": "hemoglobin_normal_12_16_gm",
+     "seriousness": "serious",
+     "rate": 0.022835067122799327,
+     "q025": 0.003306876414225982,
+     "q975": 0.09339443646431543
+    },
+    {
+     "event": "thyroid_cancer_follicular_cell",
+     "seriousness": "serious",
+     "rate": 0.022824575386101952,
+     "q025": 0.0032524248142610634,
+     "q975": 0.09699664469668819
+    },
+    {
+     "event": "gastric_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.022822513945514537,
+     "q025": 0.0027009958732440364,
+     "q975": 0.11571366374751423
+    },
+    {
+     "event": "gastrointestinal_infection",
+     "seriousness": "serious",
+     "rate": 0.02282236031545582,
+     "q025": 0.003497795331746263,
+     "q975": 0.09541540592151433
+    },
+    {
+     "event": "epistaxis",
+     "seriousness": "serious",
+     "rate": 0.022812052768306567,
+     "q025": 0.0031332630927119855,
+     "q975": 0.09532419389436085
+    },
+    {
+     "event": "performance_status_decreased",
+     "seriousness": "serious",
+     "rate": 0.02280032083665246,
+     "q025": 0.0033865448214410996,
+     "q975": 0.11058098080075568
+    },
+    {
+     "event": "tremor",
+     "seriousness": "serious",
+     "rate": 0.022796782157166448,
+     "q025": 0.003261256687134442,
+     "q975": 0.110005316960301
+    },
+    {
+     "event": "supraventricular_arrhythmia",
+     "seriousness": "serious",
+     "rate": 0.02277884293386695,
+     "q025": 0.0032549839108440156,
+     "q975": 0.11415843541631612
+    },
+    {
+     "event": "haemorrhage_urinary_tract",
+     "seriousness": "serious",
+     "rate": 0.022764095493187725,
+     "q025": 0.0033640099406864253,
+     "q975": 0.12098485135682846
+    },
+    {
+     "event": "diarrhoea_infectious",
+     "seriousness": "serious",
+     "rate": 0.022757875306456357,
+     "q025": 0.003282244492263321,
+     "q975": 0.11211587187504145
+    },
+    {
+     "event": "pseudomonal_sepsis",
+     "seriousness": "serious",
+     "rate": 0.022756786919873134,
+     "q025": 0.00338690578918809,
+     "q975": 0.11819692743689265
+    },
+    {
+     "event": "cardiac_arrhythmia",
+     "seriousness": "serious",
+     "rate": 0.022756751084465093,
+     "q025": 0.0032974156223225747,
+     "q975": 0.11272988884512875
+    },
+    {
+     "event": "lymphoma",
+     "seriousness": "serious",
+     "rate": 0.022752991741698134,
+     "q025": 0.0024425473293832006,
+     "q975": 0.10977580820090745
+    },
+    {
+     "event": "pulmonary_alveolar_haemorrhage",
+     "seriousness": "serious",
+     "rate": 0.022751957423727,
+     "q025": 0.003258085973401951,
+     "q975": 0.11234757033672362
+    },
+    {
+     "event": "renal_colic",
+     "seriousness": "serious",
+     "rate": 0.022743447706860497,
+     "q025": 0.003341143335732868,
+     "q975": 0.10944502073601571
+    },
+    {
+     "event": "colitis",
+     "seriousness": "serious",
+     "rate": 0.022737146860125724,
+     "q025": 0.0033581546103809375,
+     "q975": 0.11343711907693839
+    },
+    {
+     "event": "impaired_cognition",
+     "seriousness": "serious",
+     "rate": 0.022722304960711422,
+     "q025": 0.003290321526506486,
+     "q975": 0.11819495256111964
+    },
+    {
+     "event": "sinus_bradycardia",
+     "seriousness": "serious",
+     "rate": 0.02272096563874553,
+     "q025": 0.003192451324158523,
+     "q975": 0.11732542549684909
+    },
+    {
+     "event": "osteolysis",
+     "seriousness": "serious",
+     "rate": 0.022715877199872343,
+     "q025": 0.0035776814231406485,
+     "q975": 0.11163689796744233
+    },
+    {
+     "event": "squamous_cell_carcinoma_of_mouth",
+     "seriousness": "serious",
+     "rate": 0.022713899199097644,
+     "q025": 0.0033619212854923467,
+     "q975": 0.11777279958927164
+    },
+    {
+     "event": "liver_failure",
+     "seriousness": "serious",
+     "rate": 0.022709731091777395,
+     "q025": 0.0032580012821855245,
+     "q975": 0.11893575570399002
+    },
+    {
+     "event": "hemiplegia",
+     "seriousness": "serious",
+     "rate": 0.022707092162925484,
+     "q025": 0.0035050421345414304,
+     "q975": 0.11719314637095306
+    },
+    {
+     "event": "anal_abscess",
+     "seriousness": "serious",
+     "rate": 0.022700818726753905,
+     "q025": 0.0026012097258048816,
+     "q975": 0.11510330527608793
+    },
+    {
+     "event": "lower_abdominal_pain",
+     "seriousness": "serious",
+     "rate": 0.02269039032191733,
+     "q025": 0.003277800905329044,
+     "q975": 0.11523823992745282
+    },
+    {
+     "event": "supraventricular_tachycardia",
+     "seriousness": "serious",
+     "rate": 0.02268510452279876,
+     "q025": 0.003231024542598236,
+     "q975": 0.09653175471634057
+    },
+    {
+     "event": "weight_loss",
+     "seriousness": "serious",
+     "rate": 0.02267990453429522,
+     "q025": 0.0026604210288781833,
+     "q975": 0.09404605082529202
+    },
+    {
+     "event": "monoparesis",
+     "seriousness": "serious",
+     "rate": 0.022679811386025518,
+     "q025": 0.0031679301663855015,
+     "q975": 0.11261288907308797
+    },
+    {
+     "event": "intervertebral_disk_displacement",
+     "seriousness": "serious",
+     "rate": 0.022676362068180772,
+     "q025": 0.0032793210203501877,
+     "q975": 0.09389970046073107
+    },
+    {
+     "event": "radius_fractures",
+     "seriousness": "serious",
+     "rate": 0.022675406664201044,
+     "q025": 0.003131665350027591,
+     "q975": 0.11664414219274377
+    },
+    {
+     "event": "hematochezia",
+     "seriousness": "serious",
+     "rate": 0.02265696910623092,
+     "q025": 0.0031764494596152287,
+     "q975": 0.11272237963524562
+    },
+    {
+     "event": "hemoglobin_low",
+     "seriousness": "serious",
+     "rate": 0.022647465904805757,
+     "q025": 0.003510866994706067,
+     "q975": 0.09547369848364097
+    },
+    {
+     "event": "respiratory_distress_syndrome_adult",
+     "seriousness": "serious",
+     "rate": 0.02263904407118655,
+     "q025": 0.003438748750510172,
+     "q975": 0.11369660624585136
+    },
+    {
+     "event": "anorexia",
+     "seriousness": "serious",
+     "rate": 0.022632113132799475,
+     "q025": 0.003568835638027527,
+     "q975": 0.11640509104834265
+    },
+    {
+     "event": "dizziness",
+     "seriousness": "serious",
+     "rate": 0.022631035360286388,
+     "q025": 0.003733176019788443,
+     "q975": 0.09670080659655203
+    },
+    {
+     "event": "cardiac_failure_acute",
+     "seriousness": "serious",
+     "rate": 0.022607456241059663,
+     "q025": 0.0032040724771638927,
+     "q975": 0.09605542017954413
+    },
+    {
+     "event": "sciatica",
+     "seriousness": "serious",
+     "rate": 0.02126551154049173,
+     "q025": 0.003503653315220468,
+     "q975": 0.11298848623816703
+    },
+    {
+     "event": "stevens_johnson_syndrome",
+     "seriousness": "serious",
+     "rate": 0.02123483295870965,
+     "q025": 0.003435643565742035,
+     "q975": 0.1130656003441112
+    },
+    {
+     "event": "cardiopulmonary_failure",
+     "seriousness": "serious",
+     "rate": 0.02122454872526683,
+     "q025": 0.0032056507853819843,
+     "q975": 0.09567010173505006
+    },
+    {
+     "event": "glaucoma",
+     "seriousness": "serious",
+     "rate": 0.02121853169293774,
+     "q025": 0.0032001627849513967,
+     "q975": 0.11246086476601684
+    },
+    {
+     "event": "endocarditis",
+     "seriousness": "serious",
+     "rate": 0.021204215215059954,
+     "q025": 0.0036276629182052434,
+     "q975": 0.11002642176814163
+    },
+    {
+     "event": "cardiac_arrest",
+     "seriousness": "serious",
+     "rate": 0.021198811251679973,
+     "q025": 0.0031465028364425513,
+     "q975": 0.11852081775500492
+    },
+    {
+     "event": "hypertension_variable",
+     "seriousness": "serious",
+     "rate": 0.021157991487767477,
+     "q025": 0.002678057662314363,
+     "q975": 0.11724297419337486
+    },
+    {
+     "event": "intestinal_obstruction",
+     "seriousness": "serious",
+     "rate": 0.019835436730873797,
+     "q025": 0.0031999147353032028,
+     "q975": 0.10910789782486671
+    },
+    {
+     "event": "hypertensive_crisis",
+     "seriousness": "serious",
+     "rate": 0.019832063572130215,
+     "q025": 0.003311558454910149,
+     "q975": 0.11753936176794219
+    },
+    {
+     "event": "neutropenic_sepsis",
+     "seriousness": "serious",
+     "rate": 0.01982272306651301,
+     "q025": 0.0032929025942806975,
+     "q975": 0.09707435635474888
+    },
+    {
+     "event": "sick_sinus_syndrome",
+     "seriousness": "serious",
+     "rate": 0.019804038837064275,
+     "q025": 0.0031313702497741385,
+     "q975": 0.11490192796800529
+    },
+    {
+     "event": "dysarthria",
+     "seriousness": "serious",
+     "rate": 0.019801910220202983,
+     "q025": 0.0035168819798128536,
+     "q975": 0.10933808199332637
+    },
+    {
+     "event": "secondary_malignant_neoplasm_of_liver",
+     "seriousness": "serious",
+     "rate": 0.019792446984480704,
+     "q025": 0.003260432055575805,
+     "q975": 0.11692481612325051
+    },
+    {
+     "event": "depression_dominant",
+     "seriousness": "serious",
+     "rate": 0.01978255817780949,
+     "q025": 0.003247548521715322,
+     "q975": 0.11894775183954232
+    },
+    {
+     "event": "shock_cardiogenic",
+     "seriousness": "serious",
+     "rate": 0.019781257930222798,
+     "q025": 0.0032997100661260517,
+     "q975": 0.11174786189843829
+    },
+    {
+     "event": "pericardial_effusion",
+     "seriousness": "serious",
+     "rate": 0.019779918648207183,
+     "q025": 0.003619953583840748,
+     "q975": 0.11528640420773723
+    },
+    {
+     "event": "erysipelas",
+     "seriousness": "serious",
+     "rate": 0.019779816104333502,
+     "q025": 0.003318449192433093,
+     "q975": 0.10962778986938315
+    },
+    {
+     "event": "carcinoma_basosquamous",
+     "seriousness": "serious",
+     "rate": 0.019772456588123394,
+     "q025": 0.003777325121624134,
+     "q975": 0.11286993640159336
+    },
+    {
+     "event": "lower_gastrointestinal_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.019771965225204975,
+     "q025": 0.0033111322804779022,
+     "q975": 0.09379081001379842
+    },
+    {
+     "event": "vasovagal_syncope",
+     "seriousness": "serious",
+     "rate": 0.019767625297631215,
+     "q025": 0.003272256578215634,
+     "q975": 0.11830289326495097
+    },
+    {
+     "event": "acute_cholecystitis",
+     "seriousness": "serious",
+     "rate": 0.01976382593945287,
+     "q025": 0.0025342213653007876,
+     "q975": 0.10979231736061164
+    },
+    {
+     "event": "peripheral_motor_neuropathy",
+     "seriousness": "serious",
+     "rate": 0.019763050400507944,
+     "q025": 0.0031645298576273057,
+     "q975": 0.11438831390370081
+    },
+    {
+     "event": "peripheral_edema",
+     "seriousness": "serious",
+     "rate": 0.01975692790953021,
+     "q025": 0.002604421809080677,
+     "q975": 0.11287031052476862
+    },
+    {
+     "event": "nodal_rhythm_disorder",
+     "seriousness": "serious",
+     "rate": 0.019755711914052225,
+     "q025": 0.0032065945762568514,
+     "q975": 0.10967672204063483
+    },
+    {
+     "event": "tumour_pain",
+     "seriousness": "serious",
+     "rate": 0.019755650737409397,
+     "q025": 0.00353796381270776,
+     "q975": 0.1097338851917678
+    },
+    {
+     "event": "hepatitis_toxic",
+     "seriousness": "serious",
+     "rate": 0.019751350477235786,
+     "q025": 0.0026928483844128113,
+     "q975": 0.11891523125660226
+    },
+    {
+     "event": "nausea_and_vomiting",
+     "seriousness": "serious",
+     "rate": 0.01975017443921945,
+     "q025": 0.0036576068753561126,
+     "q975": 0.11684287017595825
+    },
+    {
+     "event": "tumor_flare",
+     "seriousness": "serious",
+     "rate": 0.01974776383867828,
+     "q025": 0.003350099776812925,
+     "q975": 0.09587543816339418
+    },
+    {
+     "event": "nephrolithiasis",
+     "seriousness": "serious",
+     "rate": 0.019736474639901032,
+     "q025": 0.003309442759501434,
+     "q975": 0.109410503749411
+    },
+    {
+     "event": "pulmonary_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.019736236717586834,
+     "q025": 0.0034417963022334106,
+     "q975": 0.10981973733369947
+    },
+    {
+     "event": "hodgkin_disease",
+     "seriousness": "serious",
+     "rate": 0.019734347308259084,
+     "q025": 0.0031838827139624147,
+     "q975": 0.11260354614357306
+    },
+    {
+     "event": "wound_infection",
+     "seriousness": "serious",
+     "rate": 0.019712032445097255,
+     "q025": 0.0033047519289281582,
+     "q975": 0.09660955088491575
+    },
+    {
+     "event": "arthropathy",
+     "seriousness": "serious",
+     "rate": 0.01969361777505145,
+     "q025": 0.0026725236722256202,
+     "q975": 0.09684296132571862
+    },
+    {
+     "event": "arthritis_bacterial",
+     "seriousness": "serious",
+     "rate": 0.019680139127374787,
+     "q025": 0.004502581756395896,
+     "q975": 0.12088963136649626
+    },
+    {
+     "event": "squamous_cell_carcinoma",
+     "seriousness": "serious",
+     "rate": 0.019666403699419594,
+     "q025": 0.003239555557864993,
+     "q975": 0.11169366381873802
+    },
+    {
+     "event": "breast_carcinoma",
+     "seriousness": "serious",
+     "rate": 0.019659554932228394,
+     "q025": 0.0032563803678039138,
+     "q975": 0.09364305263159907
+    },
+    {
+     "event": "heart_failure",
+     "seriousness": "serious",
+     "rate": 0.019656403660462396,
+     "q025": 0.003453497386925453,
+     "q975": 0.09378570401566602
+    },
+    {
+     "event": "bradycardia",
+     "seriousness": "serious",
+     "rate": 0.019641567289358088,
+     "q025": 0.0032319159425576445,
+     "q975": 0.09636372133244046
+    },
+    {
+     "event": "femoral_fractures",
+     "seriousness": "serious",
+     "rate": 0.019637983423095893,
+     "q025": 0.0032998957042443895,
+     "q975": 0.11880301205135087
+    },
+    {
+     "event": "chills",
+     "seriousness": "serious",
+     "rate": 0.019628272552138608,
+     "q025": 0.003140670886382908,
+     "q975": 0.11178575636718913
+    },
+    {
+     "event": "erythema_multiforme",
+     "seriousness": "serious",
+     "rate": 0.01962636585554594,
+     "q025": 0.0032582492642335577,
+     "q975": 0.11475093937515721
+    },
+    {
+     "event": "inflammatory_disease_of_mucous_membrane",
+     "seriousness": "serious",
+     "rate": 0.019624660799067002,
+     "q025": 0.0034040486138635583,
+     "q975": 0.09520809926906863
+    },
+    {
+     "event": "abdomen_distended",
+     "seriousness": "serious",
+     "rate": 0.01962321357593156,
+     "q025": 0.0034926186518055412,
+     "q975": 0.09586542415589883
+    },
+    {
+     "event": "arthritis_infective",
+     "seriousness": "serious",
+     "rate": 0.019622964068029568,
+     "q025": 0.0032453424192683774,
+     "q975": 0.0939936693236569
+    },
+    {
+     "event": "addison_disease",
+     "seriousness": "serious",
+     "rate": 0.01962281907260718,
+     "q025": 0.0035380640985317392,
+     "q975": 0.09515741346398045
+    },
+    {
+     "event": "pulmonary_thrombosis",
+     "seriousness": "serious",
+     "rate": 0.019622669842912298,
+     "q025": 0.0033453000381404884,
+     "q975": 0.11428399886001535
+    },
+    {
+     "event": "neck_pain",
+     "seriousness": "serious",
+     "rate": 0.019608950625451177,
+     "q025": 0.0033017446283172217,
+     "q975": 0.11330423185692887
+    },
+    {
+     "event": "tumor_progression",
+     "seriousness": "serious",
+     "rate": 0.019597496995678327,
+     "q025": 0.003667185238979537,
+     "q975": 0.11411141480181211
+    },
+    {
+     "event": "peripheral_artery_aneurysm",
+     "seriousness": "serious",
+     "rate": 0.019595580329452637,
+     "q025": 0.0033103795368819217,
+     "q975": 0.11942107562931595
+    },
+    {
+     "event": "dental_abscess",
+     "seriousness": "serious",
+     "rate": 0.019593627226164843,
+     "q025": 0.0026410827290639133,
+     "q975": 0.11025499527989682
+    },
+    {
+     "event": "intracranial_hypertension",
+     "seriousness": "serious",
+     "rate": 0.01959114199063069,
+     "q025": 0.0032007109633896058,
+     "q975": 0.09695316869964779
+    },
+    {
+     "event": "shock",
+     "seriousness": "serious",
+     "rate": 0.0195804120070805,
+     "q025": 0.002423138014610385,
+     "q975": 0.1192493731449886
+    },
+    {
+     "event": "appendicitis",
+     "seriousness": "serious",
+     "rate": 0.019579609034334398,
+     "q025": 0.00335018359245496,
+     "q975": 0.09360269903636459
+    },
+    {
+     "event": "vitreous_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.019578300545012167,
+     "q025": 0.003415294073993834,
+     "q975": 0.1146210915767821
+    },
+    {
+     "event": "falls",
+     "seriousness": "serious",
+     "rate": 0.019576183212348015,
+     "q025": 0.0037173759357141535,
+     "q975": 0.11855837609963611
+    },
+    {
+     "event": "leukopenia",
+     "seriousness": "serious",
+     "rate": 0.019562100993893886,
+     "q025": 0.004354309183708014,
+     "q975": 0.09710596191636094
+    },
+    {
+     "event": "lobar_pneumonia",
+     "seriousness": "serious",
+     "rate": 0.01955790381819939,
+     "q025": 0.002611154784864059,
+     "q975": 0.09556669702618942
+    },
+    {
+     "event": "diplopia",
+     "seriousness": "serious",
+     "rate": 0.019548818034031034,
+     "q025": 0.003383914342634589,
+     "q975": 0.11608565397980364
+    },
+    {
+     "event": "chronic_cholecystitis",
+     "seriousness": "serious",
+     "rate": 0.01954858020474786,
+     "q025": 0.002595690433452643,
+     "q975": 0.11096880427102541
+    },
+    {
+     "event": "urticaria",
+     "seriousness": "serious",
+     "rate": 0.019544492785416014,
+     "q025": 0.0036321648005561234,
+     "q975": 0.11353076050027963
+    },
+    {
+     "event": "intra-abdominal_haemorrhage",
+     "seriousness": "serious",
+     "rate": 0.01953715575557984,
+     "q025": 0.003191738014689985,
+     "q975": 0.09305705045146083
+    },
+    {
+     "event": "bulla",
+     "seriousness": "serious",
+     "rate": 0.019534933458187742,
+     "q025": 0.003386755407395754,
+     "q975": 0.09386513770862054
+    },
+    {
+     "event": "agranulocytosis",
+     "seriousness": "serious",
+     "rate": 0.01952749127488366,
+     "q025": 0.0035915119867302027,
+     "q975": 0.11125739117491733
+    },
+    {
+     "event": "sudden_cardiac_death",
+     "seriousness": "serious",
+     "rate": 0.019502985910481285,
+     "q025": 0.0033021679724142814,
+     "q975": 0.10926414699309012
+    },
+    {
+     "event": "pelvic_venous_thrombosis",
+     "seriousness": "serious",
+     "rate": 0.019501612783795447,
+     "q025": 0.003484159101990553,
+     "q975": 0.09457712792865643
+    },
+    {
+     "event": "pleurodesis",
+     "seriousness": "serious",
+     "rate": 0.019497918861310085,
+     "q025": 0.003308605389832212,
+     "q975": 0.11865256380399639
+    },
+    {
+     "event": "bowen_s_disease",
+     "seriousness": "serious",
+     "rate": 0.01949461565741408,
+     "q025": 0.003485681739554258,
+     "q975": 0.11101065810795503
+    },
+    {
+     "event": "blood_urea_increased",
+     "seriousness": "serious",
+     "rate": 0.019485041921953265,
+     "q025": 0.0033391938196941054,
+     "q975": 0.11121560287089804
+    },
+    {
+     "event": "memory_impairment",
+     "seriousness": "serious",
+     "rate": 0.01947238399293861,
+     "q025": 0.002581743972239672,
+     "q975": 0.11165997121593699
+    },
+    {
+     "event": "compression_fracture_of_vertebral_column",
+     "seriousness": "serious",
+     "rate": 0.01946595057347955,
+     "q025": 0.0034109350671443057,
+     "q975": 0.11814157609235529
+    },
+    {
+     "event": "rash_erythematous_macules_or_papules",
+     "seriousness": "serious",
+     "rate": 0.01946472879222014,
+     "q025": 0.0034663097748984235,
+     "q975": 0.11317347268848521
+    },
+    {
+     "event": "adenocarcinoma_of_esophagus",
+     "seriousness": "serious",
+     "rate": 0.01946249746023397,
+     "q025": 0.003296553369154122,
+     "q975": 0.0967123315846338
+    },
+    {
+     "event": "skin_carcinoma",
+     "seriousness": "serious",
+     "rate": 0.019455766548441906,
+     "q025": 0.003351128757097461,
+     "q975": 0.09099034215570853
+    },
+    {
+     "event": "upper_abdominal_pain",
+     "seriousness": "serious",
+     "rate": 0.01945560790509969,
+     "q025": 0.0024485777949664425,
+     "q975": 0.09463158281274014
+    },
+    {
+     "event": "gastrointestinal_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.019451835959093583,
+     "q025": 0.0035541364173211337,
+     "q975": 0.11021022778850355
+    },
+    {
+     "event": "coronary_artery_disease",
+     "seriousness": "serious",
+     "rate": 0.019441021470768857,
+     "q025": 0.0031870093511230427,
+     "q975": 0.09704403289046415
+    },
+    {
+     "event": "transient_ischemic_attack",
+     "seriousness": "serious",
+     "rate": 0.019428235575943524,
+     "q025": 0.0032800574568229044,
+     "q975": 0.09630139391086633
+    },
+    {
+     "event": "lymphadenopathy",
+     "seriousness": "serious",
+     "rate": 0.019417126445600903,
+     "q025": 0.003230727658089893,
+     "q975": 0.0924096602054123
+    },
+    {
+     "event": "pleural_effusion_malignant",
+     "seriousness": "serious",
+     "rate": 0.01941111030327291,
+     "q025": 0.0026677656049430357,
+     "q975": 0.11772346233800937
+    },
+    {
+     "event": "ascites",
+     "seriousness": "serious",
+     "rate": 0.019408659080988502,
+     "q025": 0.00319109322909744,
+     "q975": 0.11420657591145399
+    },
+    {
+     "event": "hypersensitivity",
+     "seriousness": "serious",
+     "rate": 0.01939505549217289,
+     "q025": 0.0024834563555600777,
+     "q975": 0.0967110502059012
+    },
+    {
+     "event": "kidney_failure_acute",
+     "seriousness": "serious",
+     "rate": 0.019385766603432077,
+     "q025": 0.004495242461135197,
+     "q975": 0.0952881040442377
+    },
+    {
+     "event": "drug_allergy",
+     "seriousness": "serious",
+     "rate": 0.019385516159782668,
+     "q025": 0.003143965471974751,
+     "q975": 0.09612242669814747
+    },
+    {
+     "event": "blood_lactate_dehydrogenase_increased",
+     "seriousness": "serious",
+     "rate": 0.019382989529578357,
+     "q025": 0.003706208997807157,
+     "q975": 0.11658719121317405
+    },
+    {
+     "event": "angina_pectoris",
+     "seriousness": "serious",
+     "rate": 0.019365397755236987,
+     "q025": 0.0033796738844411255,
+     "q975": 0.11309481503057073
+    },
+    {
+     "event": "speech_disorders",
+     "seriousness": "serious",
+     "rate": 0.019364756737314685,
+     "q025": 0.003228301582791846,
+     "q975": 0.11239531673467126
+    },
+    {
+     "event": "white_blood_cell_count_decreased",
+     "seriousness": "serious",
+     "rate": 0.019362108837280845,
+     "q025": 0.003645532886582551,
+     "q975": 0.11825024186569061
+    },
+    {
+     "event": "post_procedural_infection",
+     "seriousness": "serious",
+     "rate": 0.01935970745489378,
+     "q025": 0.003352475131207335,
+     "q975": 0.11665072609806405
+    },
+    {
+     "event": "venous_thrombosis_limb",
+     "seriousness": "serious",
+     "rate": 0.019346478926309224,
+     "q025": 0.002676843597702637,
+     "q975": 0.09708939050874542
+    },
+    {
+     "event": "colonic_fistula",
+     "seriousness": "serious",
+     "rate": 0.019344209673715924,
+     "q025": 0.0026174340651649807,
+     "q975": 0.11714178160444266
+    },
+    {
+     "event": "aortic_injury",
+     "seriousness": "serious",
+     "rate": 0.019334582780116315,
+     "q025": 0.003147467572835592,
+     "q975": 0.09546051416814541
+    },
+    {
+     "event": "dysphonia",
+     "seriousness": "serious",
+     "rate": 0.01932063784028904,
+     "q025": 0.003247784712252542,
+     "q975": 0.09589780447308024
+    },
+    {
+     "event": "pelvic_infection",
+     "seriousness": "serious",
+     "rate": 0.019307970162405104,
+     "q025": 0.0031853448580807116,
+     "q975": 0.11140847343971663
+    },
+    {
+     "event": "small_intestinal_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.01928940341908984,
+     "q025": 0.0032910608253258213,
+     "q975": 0.11110191036002735
+    },
+    {
+     "event": "immune_thrombocytopenic_purpura",
+     "seriousness": "serious",
+     "rate": 0.019283385080218214,
+     "q025": 0.0031735573635657053,
+     "q975": 0.11106997602515407
+    },
+    {
+     "event": "neutrophils",
+     "seriousness": "serious",
+     "rate": 0.019272125565775344,
+     "q025": 0.0032027561632405597,
+     "q975": 0.09351989618914389
+    },
+    {
+     "event": "clostridium_difficile_colitis",
+     "seriousness": "serious",
+     "rate": 0.019252720368428216,
+     "q025": 0.003299560749975965,
+     "q975": 0.11613947143613887
+    },
+    {
+     "event": "hyperglycemia",
+     "seriousness": "serious",
+     "rate": 0.019222532858931128,
+     "q025": 0.0034351472686916505,
+     "q975": 0.09153120180814409
+    },
+    {
+     "event": "pneumococcal_sepsis",
+     "seriousness": "serious",
+     "rate": 0.019220732417094835,
+     "q025": 0.003356647922816516,
+     "q975": 0.11082649455859822
+    },
+    {
+     "event": "blurred_vision",
+     "seriousness": "serious",
+     "rate": 0.01921981772719623,
+     "q025": 0.0033893620849287003,
+     "q975": 0.09645057297246432
+    },
+    {
+     "event": "acute_respiratory_failure",
+     "seriousness": "serious",
+     "rate": 0.01920547743595949,
+     "q025": 0.0034397723478232964,
+     "q975": 0.1132187149372886
+    },
+    {
+     "event": "lymphocyte_count_decreased",
+     "seriousness": "serious",
+     "rate": 0.01918100845240538,
+     "q025": 0.0044624035884598895,
+     "q975": 0.11720390643432935
+    },
+    {
+     "event": "gait/walking",
+     "seriousness": "serious",
+     "rate": 0.01917250495156374,
+     "q025": 0.002650832585048109,
+     "q975": 0.09484880877594863
+    },
+    {
+     "event": "metastatic_pain",
+     "seriousness": "serious",
+     "rate": 0.019147907853929464,
+     "q025": 0.003341748990823575,
+     "q975": 0.09538764524010702
+    },
+    {
+     "event": "anxiety",
+     "seriousness": "serious",
+     "rate": 0.01914589667814428,
+     "q025": 0.00377179142333583,
+     "q975": 0.09598597476616824
+    },
+    {
+     "event": "pulmonary_artery_thrombosis",
+     "seriousness": "serious",
+     "rate": 0.019123740594101688,
+     "q025": 0.0032067485287904894,
+     "q975": 0.11536786305429135
+    },
+    {
+     "event": "confusion",
+     "seriousness": "serious",
+     "rate": 0.01909212232206387,
+     "q025": 0.0037449561328520256,
+     "q975": 0.09526833787977877
+    },
+    {
+     "event": "acute_pulmonary_edema",
+     "seriousness": "serious",
+     "rate": 0.019060323840319318,
+     "q025": 0.0033335680198610432,
+     "q975": 0.11111739750150212
+    },
+    {
+     "event": "pain_in_limb",
+     "seriousness": "serious",
+     "rate": 0.01903422866557522,
+     "q025": 0.002599163159406952,
+     "q975": 0.11361705356738884
+    },
+    {
+     "event": "cerebral_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.01899034078740884,
+     "q025": 0.003470758859835174,
+     "q975": 0.11075078751844786
+    },
+    {
+     "event": "cellulitis",
+     "seriousness": "serious",
+     "rate": 0.018982818218399984,
+     "q025": 0.003712249388159231,
+     "q975": 0.11530546284024769
+    },
+    {
+     "event": "asthenia",
+     "seriousness": "serious",
+     "rate": 0.018977414104062455,
+     "q025": 0.005194959193023471,
+     "q975": 0.09095571347518076
+    },
+    {
+     "event": "hypotension",
+     "seriousness": "serious",
+     "rate": 0.018965706088944073,
+     "q025": 0.004628159877319825,
+     "q975": 0.0962933192999747
+    },
+    {
+     "event": "premature_ventricular_contractions",
+     "seriousness": "serious",
+     "rate": 0.018954264511735652,
+     "q025": 0.0032792985727054962,
+     "q975": 0.11195714632728551
+    },
+    {
+     "event": "blood_calcium_increased",
+     "seriousness": "serious",
+     "rate": 0.018948573811201318,
+     "q025": 0.003216338452727045,
+     "q975": 0.11474665326971029
+    },
+    {
+     "event": "kidney_failure",
+     "seriousness": "serious",
+     "rate": 0.018916070189200742,
+     "q025": 0.0037496767054258084,
+     "q975": 0.11228134454198864
+    },
+    {
+     "event": "general_physical_health_deterioration",
+     "seriousness": "serious",
+     "rate": 0.018901917510696115,
+     "q025": 0.005213875881338279,
+     "q975": 0.0908523786619163
+    },
+    {
+     "event": "chronic_obstructive_airway_disease",
+     "seriousness": "serious",
+     "rate": 0.018871004501319514,
+     "q025": 0.00354785611648844,
+     "q975": 0.11102143053352709
+    },
+    {
+     "event": "systemic_inflammatory_response_syndrome",
+     "seriousness": "serious",
+     "rate": 0.01884367350070775,
+     "q025": 0.0031464955090214136,
+     "q975": 0.11033394739874039
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "serious",
+     "rate": 0.01881861201169277,
+     "q025": 0.006567983582862555,
+     "q975": 0.08265113977636288
+    },
+    {
+     "event": "constipation",
+     "seriousness": "serious",
+     "rate": 0.018760292556436298,
+     "q025": 0.004465245265640704,
+     "q975": 0.09608773287912073
+    },
+    {
+     "event": "aphasia",
+     "seriousness": "serious",
+     "rate": 0.018755222074433905,
+     "q025": 0.004336671519616321,
+     "q975": 0.094205839324384
+    },
+    {
+     "event": "herpes_zoster_disease",
+     "seriousness": "serious",
+     "rate": 0.018537385663825973,
+     "q025": 0.003473495403118321,
+     "q975": 0.09551595079258107
+    },
+    {
+     "event": "syncope",
+     "seriousness": "serious",
+     "rate": 0.018534211512879553,
+     "q025": 0.0048912459859784515,
+     "q975": 0.11408988550272234
+    },
+    {
+     "event": "tumour_haemorrhage",
+     "seriousness": "serious",
+     "rate": 0.0185328454223321,
+     "q025": 0.003298921568972854,
+     "q975": 0.09225415438505943
+    },
+    {
+     "event": "contusions",
+     "seriousness": "serious",
+     "rate": 0.01850044141478656,
+     "q025": 0.003205316313399058,
+     "q975": 0.09692043504313591
+    },
+    {
+     "event": "headache",
+     "seriousness": "serious",
+     "rate": 0.01837982473649847,
+     "q025": 0.004585150788737009,
+     "q975": 0.0963381522455327
+    },
+    {
+     "event": "musculoskeletal_chest_pain",
+     "seriousness": "serious",
+     "rate": 0.01834661938824373,
+     "q025": 0.003394175503593871,
+     "q975": 0.09334334515085346
+    },
+    {
+     "event": "septic_shock",
+     "seriousness": "serious",
+     "rate": 0.018215224471941273,
+     "q025": 0.0032270763665654505,
+     "q975": 0.09612396564358407
+    },
+    {
+     "event": "nausea",
+     "seriousness": "serious",
+     "rate": 0.018199923702987755,
+     "q025": 0.00847794547725191,
+     "q975": 0.06340046239264069
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "serious",
+     "rate": 0.01819685426100747,
+     "q025": 0.008457098353927706,
+     "q975": 0.05165452837618018
+    },
+    {
+     "event": "intracranial_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.018195760366376018,
+     "q025": 0.0032345040774723987,
+     "q975": 0.0926155423877623
+    },
+    {
+     "event": "somnolence",
+     "seriousness": "serious",
+     "rate": 0.018166850249090635,
+     "q025": 0.0033276326738587584,
+     "q975": 0.0962498696254735
+    },
+    {
+     "event": "hemiparesis",
+     "seriousness": "serious",
+     "rate": 0.018162879649316996,
+     "q025": 0.003371037933915105,
+     "q975": 0.0936775648689169
+    },
+    {
+     "event": "pleural_effusion_disorder",
+     "seriousness": "serious",
+     "rate": 0.018129544465466836,
+     "q025": 0.0034333584583334607,
+     "q975": 0.11307291546154985
+    },
+    {
+     "event": "fever",
+     "seriousness": "serious",
+     "rate": 0.018115008087521915,
+     "q025": 0.006289373875537989,
+     "q975": 0.07061709816310979
+    },
+    {
+     "event": "pancreatitis",
+     "seriousness": "serious",
+     "rate": 0.018064307537009314,
+     "q025": 0.0035070885439517233,
+     "q975": 0.09630742964784031
+    },
+    {
+     "event": "autoimmune_hemolytic_anemia",
+     "seriousness": "serious",
+     "rate": 0.018000574557129674,
+     "q025": 0.004467562503421223,
+     "q975": 0.11659426408124676
+    },
+    {
+     "event": "blood_bilirubin_increased",
+     "seriousness": "serious",
+     "rate": 0.017966618269820385,
+     "q025": 0.0032385754938148857,
+     "q975": 0.09429901718647637
+    },
+    {
+     "event": "multiple_organ_failure",
+     "seriousness": "serious",
+     "rate": 0.017958205936350523,
+     "q025": 0.003792943388024195,
+     "q975": 0.09335263925040894
+    },
+    {
+     "event": "ataxia",
+     "seriousness": "serious",
+     "rate": 0.017890011465586556,
+     "q025": 0.0032135057716973434,
+     "q975": 0.09072421923720121
+    },
+    {
+     "event": "lower_respiratory_tract_infection",
+     "seriousness": "serious",
+     "rate": 0.017857536641658144,
+     "q025": 0.003150766568102133,
+     "q975": 0.09203909998461188
+    },
+    {
+     "event": "aspartate_aminotransferase_increased",
+     "seriousness": "serious",
+     "rate": 0.017787759456382307,
+     "q025": 0.003539226575764301,
+     "q975": 0.09628879800393325
+    },
+    {
+     "event": "seizures",
+     "seriousness": "serious",
+     "rate": 0.01773111959675188,
+     "q025": 0.006097041085836907,
+     "q975": 0.07090798512124837
+    },
+    {
+     "event": "cholelithiasis",
+     "seriousness": "serious",
+     "rate": 0.017633258138887643,
+     "q025": 0.003216892975918224,
+     "q975": 0.11152628116152362
+    },
+    {
+     "event": "alanine_aminotransferase_increased",
+     "seriousness": "serious",
+     "rate": 0.017517906234793768,
+     "q025": 0.0031799869558549105,
+     "q975": 0.09129739874778006
+    },
+    {
+     "event": "fatigue",
+     "seriousness": "serious",
+     "rate": 0.017364898968623248,
+     "q025": 0.00632334129813796,
+     "q975": 0.08146036050270729
+    },
+    {
+     "event": "tachycardia_ventricular",
+     "seriousness": "serious",
+     "rate": 0.017267711377964484,
+     "q025": 0.0025805140106292535,
+     "q975": 0.09210147056660575
+    },
+    {
+     "event": "diabetes_mellitus",
+     "seriousness": "serious",
+     "rate": 0.01721321534505685,
+     "q025": 0.0031819491726518914,
+     "q975": 0.09629791528352083
+    },
+    {
+     "event": "pain",
+     "seriousness": "serious",
+     "rate": 0.01684672500584019,
+     "q025": 0.0037949102957383785,
+     "q975": 0.08843365724334341
+    },
+    {
+     "event": "bronchitis",
+     "seriousness": "serious",
+     "rate": 0.016747764287352175,
+     "q025": 0.0033790796385229313,
+     "q975": 0.09185482142262945
+    },
+    {
+     "event": "cholecystitis",
+     "seriousness": "serious",
+     "rate": 0.016630177289655476,
+     "q025": 0.00330029100339893,
+     "q975": 0.0903737462494869
+    },
+    {
+     "event": "infection",
+     "seriousness": "serious",
+     "rate": 0.013989736359687178,
+     "q025": 0.0032943302093897085,
+     "q975": 0.08571453959304058
+    },
+    {
+     "event": "dehydration",
+     "seriousness": "serious",
+     "rate": 0.013883974382425128,
+     "q025": 0.004763881701962435,
+     "q975": 0.06827772994288624
+    },
+    {
+     "event": "cerebrovascular_accident",
+     "seriousness": "serious",
+     "rate": 0.013465793250637906,
+     "q025": 0.0033843038824382947,
+     "q975": 0.0842497057271527
+    },
+    {
+     "event": "small_bowel_obstruction",
+     "seriousness": "serious",
+     "rate": 0.01333919664925652,
+     "q025": 0.0032194708075119617,
+     "q975": 0.09586922991982588
+    },
+    {
+     "event": "pancytopenia",
+     "seriousness": "serious",
+     "rate": 0.013109514106705127,
+     "q025": 0.003308920471997848,
+     "q975": 0.08412461306685286
+    },
+    {
+     "event": "pulmonary_embolism",
+     "seriousness": "serious",
+     "rate": 0.01243502458513148,
+     "q025": 0.003446386565541582,
+     "q975": 0.07093595362319362
+    }
+   ],
+   "note": "adult registry evidence at treatment-class level, extrapolated to this protocol's population"
+  }
+ },
+ "bindings": [
+  {
+   "role": "control_arm",
+   "arm_id": "",
+   "fact_id": null,
+   "issues": [
+    "'' is not a randomized arm"
+   ],
+   "evidence_text": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod: Patients will receive five (5) days of low-dose cyclophosphamide prior to each vaccination with TAPA-pulsed DCs to decrease Treg activity. TAPA-pulsed DCs will be administered at a fixed dose of up to 1 X 107 DCs following cyclophosphamide administration. DC vaccination schedule will be once every seven (7) days via intradermal (ID) injections for a total of 3 vaccinations. Topical Imiquimod will also be administered once after the TAPA-pulsed DC vaccination, to optimize immune responses.",
+   "rendering": "the protocol's control (reference) arm, the arm without the experimental addition, is '?' ()",
+   "verification": {
+    "votes": [
+     "NOT_A_RULE",
+     "NOT_A_RULE",
+     "NOT_A_RULE"
+    ],
+    "reviewer_note": "The supplied protocol describes a single treatment strategy but does not specify a control or reference arm."
+   },
+   "semantic_status": "NOT_A_RULE",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "efs_model_family",
+   "family": "not_stated",
+   "quote": "",
+   "fact_id": null,
+   "issues": [
+    "the model-family quote is not in the protocol text"
+   ],
+   "rendering": "the protocol states that the reference group's EFS is represented by a not_stated: ''",
+   "verification": {
+    "votes": [
+     "NOT_A_RULE",
+     "NOT_A_RULE",
+     "NOT_A_RULE"
+    ],
+    "reviewer_note": "The supplied protocol does not state an EFS model or reference-group EFS rate."
+   },
+   "semantic_status": "NOT_A_RULE",
+   "status": "REVIEW_REQUIRED"
+  }
+ ],
+ "assessment_timing": "EFS events are observed at their true time: detection at the next scheduled assessment is not applied",
+ "efs_origin": "enrollment (= randomization): the protocol does not state the EFS time origin (user decision 2026-09-27)"
+}

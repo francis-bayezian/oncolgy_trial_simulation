@@ -1,0 +1,1073 @@
+{
+ "outcomes_version": "outcomes-1.0.0",
+ "inputs": {
+  "studyspec": "e210f25280f43b9023f3df75394eaef47b6e179921b73f6cf3f6001146969a9e",
+  "facts": "e6c1b27ba6420d752cce2baa0416cf7a50d169e93698c17782b02f65669e0b63"
+ },
+ "arms": [
+  {
+   "arm_id": "ARM2",
+   "label": "sunitinib malate (37.5 mg)",
+   "description": "sunitinib malate (37.5 mg)"
+  }
+ ],
+ "control_arm_id": null,
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "effect": {
+  "grid_hr": [
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9,
+   0.95,
+   1.0,
+   1.1,
+   1.2,
+   1.3
+  ],
+  "design_alternatives": [],
+  "asset_prior": {
+   "status": "RESOLVED",
+   "comparisons": 2,
+   "mu_log_hr": 0.20674381219715898,
+   "se_mu": 0.21897877056154236,
+   "tau2": 0.07196187711261347,
+   "predictive_sd": 0.3462854011783605,
+   "hr_median": 1.229667505607934,
+   "hr_predictive_95": [
+    0.6237765249578874,
+    2.4240767548123467
+   ],
+   "note": "indirect evidence: adding a drug to a radiotherapy-containing regimen in other (adult) cancers; no comparison of the protocol's own experimental addition exists in the asset",
+   "comparisons_used": [
+    {
+     "fusion_id": "12fea832340e8a35",
+     "disease": "Prostate carcinoma",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "bicalutamide"
+     ],
+     "log_hr_add_on": 0.43072993086113065,
+     "se": 0.1617393155611274,
+     "hr_add_on": 1.5383800248805677
+    },
+    {
+     "fusion_id": "9e76aad9af19a22d",
+     "disease": "Malignant Head and Neck Neoplasm",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "cetuximab"
+     ],
+     "log_hr_add_on": -0.0073395526232417265,
+     "se": 0.1477210612501004,
+     "hr_add_on": 0.9926873161180804
+    }
+   ],
+   "decision": "insufficient evidence: shown for reference, not used (user decision 2026-09-27)"
+  },
+  "definition": "S_experimental(t) = S_control(t) ** HR (proportional hazards on the whole EFS curve)"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.04464458766513446,
+  "rate_per_year": 0.04567184822263323,
+  "source": "evidence",
+  "wording": "registry participant flow (sarcoma): left by subject decision, loss to follow-up or physician decision; 403 trials, 28713 participants: 8.7% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "toxicities_protocol": [
+  {
+   "event": "hypertension",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.12,
+   "upper": null,
+   "fact_id": "F114"
+  },
+  {
+   "event": "fatigue",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.11,
+   "upper": null,
+   "fact_id": "F115"
+  },
+  {
+   "event": "diarrhea",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.09,
+   "upper": null,
+   "fact_id": "F116"
+  },
+  {
+   "event": "hand-foot syndrome",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.09,
+   "upper": null,
+   "fact_id": "F117"
+  },
+  {
+   "event": "hand-foot skin reactions",
+   "grade": "all-grade",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.19,
+   "upper": null,
+   "fact_id": "F136"
+  },
+  {
+   "event": "hand-foot skin reactions",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.05,
+   "upper": null,
+   "fact_id": "F137"
+  },
+  {
+   "event": "skin discoloration",
+   "grade": "no grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.28,
+   "upper": null,
+   "fact_id": "F138"
+  },
+  {
+   "event": "dry skin",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.01,
+   "upper": null,
+   "fact_id": "F140"
+  },
+  {
+   "event": "skin rash",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.01,
+   "upper": null,
+   "fact_id": "F141"
+  },
+  {
+   "event": "skin rash",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.01,
+   "upper": null,
+   "fact_id": "F142"
+  },
+  {
+   "event": "dermatitis",
+   "grade": "all-grade",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.08,
+   "upper": null,
+   "fact_id": "F143"
+  },
+  {
+   "event": "dermatitis",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.02,
+   "upper": null,
+   "fact_id": "F144"
+  },
+  {
+   "event": "hair color changes",
+   "grade": "no grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.1,
+   "upper": null,
+   "fact_id": "F145"
+  },
+  {
+   "event": "alopecia",
+   "grade": "no grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.06,
+   "upper": null,
+   "fact_id": "F146"
+  },
+  {
+   "event": "congestive heart failure",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.03,
+   "upper": 0.08,
+   "fact_id": "F148"
+  },
+  {
+   "event": "left ventricular dysfunction",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.12,
+   "upper": 0.14,
+   "fact_id": "F149"
+  },
+  {
+   "event": "treatment-emergent LVEF values below the lower limit of normal (LLN)",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.10526315789473684,
+   "upper": null,
+   "fact_id": "F150"
+  },
+  {
+   "event": "an LVEF value below the LLN",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.27,
+   "upper": null,
+   "fact_id": "F152"
+  },
+  {
+   "event": "left ventricular systolic dysfunction",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.02,
+   "upper": null,
+   "fact_id": "F154"
+  },
+  {
+   "event": "Severe hypertension",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.04,
+   "upper": null,
+   "fact_id": "F161"
+  },
+  {
+   "event": "hypertension",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.28,
+   "upper": null,
+   "fact_id": "F165"
+  },
+  {
+   "event": "Bleeding events",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.18,
+   "upper": null,
+   "fact_id": "F168"
+  },
+  {
+   "event": "Hypothyroidism",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.71,
+   "upper": null,
+   "fact_id": "F170"
+  },
+  {
+   "event": "Hypothyroidism",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.36,
+   "upper": null,
+   "fact_id": "F171"
+  }
+ ],
+ "adverse_events_asset": {
+  "ARM2": {
+   "classes": [
+    "radiotherapy_or_radiopharmaceutical",
+    "vegfr_multikinase_inhibitor"
+   ],
+   "unmapped": [],
+   "class_signature": "radiotherapy_or_radiopharmaceutical+vegfr_multikinase_inhibitor",
+   "event_terms": 19,
+   "missing_classes": [],
+   "extra_classes": [],
+   "events": [
+    {
+     "event": "fatigue",
+     "seriousness": "non_serious",
+     "rate": 0.648539025903845,
+     "q025": 0.39528034052073724,
+     "q975": 0.83622836755856
+    },
+    {
+     "event": "anemia",
+     "seriousness": "non_serious",
+     "rate": 0.6392646944778908,
+     "q025": 0.40054914907401196,
+     "q975": 0.8290250849048131
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "non_serious",
+     "rate": 0.5092179297560234,
+     "q025": 0.273850011490984,
+     "q975": 0.7416010825944691
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "rate": 0.40679646777660416,
+     "q025": 0.19899478824304462,
+     "q975": 0.607107660728105
+    },
+    {
+     "event": "mucositis/stomatitis",
+     "seriousness": "non_serious",
+     "rate": 0.33716187136938025,
+     "q025": 0.1622066295716332,
+     "q975": 0.5979242832551959
+    },
+    {
+     "event": "nausea_and_vomiting",
+     "seriousness": "non_serious",
+     "rate": 0.31965795962233834,
+     "q025": 0.12580219768243592,
+     "q975": 0.577998097953009
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "non_serious",
+     "rate": 0.20728789857964475,
+     "q025": 0.084401036354873,
+     "q975": 0.4922979850263951
+    },
+    {
+     "event": "hypertension_variable",
+     "seriousness": "non_serious",
+     "rate": 0.1658260321956797,
+     "q025": 0.060768284735013244,
+     "q975": 0.4864132965871876
+    },
+    {
+     "event": "creatinine_increased",
+     "seriousness": "non_serious",
+     "rate": 0.1554327439964573,
+     "q025": 0.03565400421317791,
+     "q975": 0.5584588883634142
+    },
+    {
+     "event": "sickle_cell_dactylitis",
+     "seriousness": "non_serious",
+     "rate": 0.11256638809278159,
+     "q025": 0.022954203899938186,
+     "q975": 0.42009369570164623
+    },
+    {
+     "event": "hemorrhage",
+     "seriousness": "non_serious",
+     "rate": 0.11118704562985228,
+     "q025": 0.024259549406834176,
+     "q975": 0.42660300362202
+    },
+    {
+     "event": "lymphopenia",
+     "seriousness": "non_serious",
+     "rate": 0.09012647923150346,
+     "q025": 0.017526917373981654,
+     "q975": 0.3942658882364265
+    },
+    {
+     "event": "lymphopenia",
+     "seriousness": "serious",
+     "rate": 0.2649694939962001,
+     "q025": 0.0503536031243931,
+     "q975": 0.6634212365205883
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "serious",
+     "rate": 0.19829722859064974,
+     "q025": 0.06635120795534953,
+     "q975": 0.4907398966965303
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "serious",
+     "rate": 0.1670789488225527,
+     "q025": 0.062126440887890905,
+     "q975": 0.4855732557223535
+    },
+    {
+     "event": "hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.12177938428484364,
+     "q025": 0.03550063460842167,
+     "q975": 0.43786059911814806
+    },
+    {
+     "event": "anemia",
+     "seriousness": "serious",
+     "rate": 0.118881352127002,
+     "q025": 0.03438597313025718,
+     "q975": 0.4154438194112001
+    },
+    {
+     "event": "nausea_and_vomiting",
+     "seriousness": "serious",
+     "rate": 0.09058754994942507,
+     "q025": 0.017712669820245178,
+     "q975": 0.4852573852258288
+    },
+    {
+     "event": "creatinine_increased",
+     "seriousness": "serious",
+     "rate": 0.08852391965108505,
+     "q025": 0.019217898049577832,
+     "q975": 0.3937355383935968
+    }
+   ],
+   "note": "adult registry evidence at treatment-class level, extrapolated to this protocol's population"
+  }
+ },
+ "bindings": [
+  {
+   "role": "analysis_rule",
+   "ref": "SS3",
+   "value": 22.0,
+   "issues": [
+    "follow-up must be a positive number of years"
+   ],
+   "evidence_text": "the 22 evaluable patients randomized to each treatment",
+   "fact_id": null,
+   "years": 0,
+   "population": "patients with ASPS",
+   "quote": "The PFS will be estimated based on the 22 evaluable patients randomized to each treatment.",
+   "rendering": "the final analysis is conducted once 22 eligible and evaluable patients with ASPS have been enrolled and all have been followed for at least 0 year(s)",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCOMPLETE"
+    ],
+    "reviewer_note": "The rendering adds an unsupported follow-up condition and does not preserve that the 22 evaluable patients are randomized to each treatment arm."
+   },
+   "semantic_status": "INCORRECT",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "control_arm",
+   "arm_id": "",
+   "fact_id": null,
+   "issues": [
+    "'' is not a randomized arm"
+   ],
+   "evidence_text": "sunitinib malate (37.5 mg): sunitinib malate (37.5 mg)",
+   "rendering": "the protocol's control (reference) arm, the arm without the experimental addition, is '?' ()",
+   "verification": {
+    "votes": [
+     "NOT_A_RULE",
+     "INCOMPLETE",
+     "NOT_A_RULE"
+    ],
+    "reviewer_note": "The protocol describes two randomized active-treatment arms and does not designate a control or reference arm."
+   },
+   "semantic_status": "NOT_A_RULE",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "efs_model_family",
+   "family": "not_stated",
+   "quote": "",
+   "fact_id": null,
+   "issues": [
+    "the model-family quote is not in the protocol text"
+   ],
+   "rendering": "the protocol states that the reference group's EFS is represented by a not_stated: ''",
+   "verification": {
+    "votes": [
+     "NOT_A_RULE",
+     "NOT_A_RULE",
+     "NOT_A_RULE"
+    ],
+    "reviewer_note": "The evidence is empty and does not state any protocol requirement or EFS role."
+   },
+   "semantic_status": "NOT_A_RULE",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F114",
+   "event": "hypertension",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F114 is the incidence of hypertension (grade grade 3) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'grade 3 adverse events'; level 'hypertension'; value 12% [read as proportion 0.12]; population 'patients with MRCC'; treatment 'sunitinib'; source historical_study (Motzer et al., 2009b))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 12% incidence of grade 3 hypertension reported for sunitinib-treated patients with MRCC."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F115",
+   "event": "fatigue",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F115 is the incidence of fatigue (grade grade 3) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'grade 3 adverse events'; level 'fatigue'; value 11% [read as proportion 0.11]; population 'patients with MRCC'; treatment 'sunitinib'; source historical_study (Motzer et al., 2009b))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The item correctly binds the 11% incidence of grade 3 fatigue to sunitinib-treated patients with MRCC."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F116",
+   "event": "diarrhea",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F116 is the incidence of diarrhea (grade grade 3) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'grade 3 adverse events'; level 'diarrhea'; value 9% [read as proportion 0.09]; population 'patients with MRCC'; treatment 'sunitinib'; source historical_study (Motzer et al., 2009b))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The evidence reports observed grade 3 diarrhea in sunitinib-treated patients at an incidence of 9%."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F117",
+   "event": "hand-foot syndrome",
+   "grade": "grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F117 is the incidence of hand-foot syndrome (grade grade 3) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'grade 3 adverse events'; level 'hand-foot syndrome'; value 9% [read as proportion 0.09]; population 'patients with MRCC'; treatment 'sunitinib'; source historical_study (Motzer et al., 2009b))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The cited sentence reports grade 3 hand-foot syndrome in 9% of sunitinib-treated patients with MRCC."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F136",
+   "event": "hand-foot skin reactions",
+   "grade": "all-grade",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F136 is the incidence of hand-foot skin reactions (grade all-grade) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'all-grade hand-foot skin reactions'; level 'all-grade'; value 19% [read as proportion 0.19]; population 'patients receiving sunitinib'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering correctly binds the 19% all-grade hand-foot skin reaction incidence to patients receiving sunitinib and distinguishes it from the 5% grade 3–4 incidence."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F137",
+   "event": "hand-foot skin reactions",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F137 is the incidence of hand-foot skin reactions (grade grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'hand-foot skin reactions'; level 'grades 3-4'; value 5% [read as proportion 0.05]; population 'patients receiving sunitinib'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 5% grade 3–4 hand-foot skin reaction incidence to patients receiving sunitinib in the cited study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F138",
+   "event": "skin discoloration",
+   "grade": "no grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F138 is the incidence of skin discoloration (grade no grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'skin discoloration'; level 'no grades 3-4'; value 28% [read as proportion 0.28]; population 'patients receiving sunitinib therapy'; treatment 'sunitinib'; source historical_study (Rosenbaum et al.,\n2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 28% skin-discoloration incidence with no grade 3–4 cases to patients receiving sunitinib therapy."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F140",
+   "event": "dry skin",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F140 is the incidence of dry skin (grade grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'dry skin'; level 'grades 3-4'; value 1% [read as proportion 0.01]; population 'patients receiving sunitinib'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The protocol reports dry skin at 1% for grades 3-4 among patients receiving sunitinib."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F141",
+   "event": "skin rash",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F141 is the incidence of skin rash (grade grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'skin rash'; level 'grades 3-4'; value 1% [read as proportion 0.01]; population 'patients receiving sunitinib therapy'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 1% grade 3–4 skin-rash incidence to patients receiving sunitinib therapy and cites the supplied historical study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F142",
+   "event": "skin rash",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F142 is the incidence of skin rash (grade grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'skin rash'; level 'grades 3-4'; value 1% [read as proportion 0.01]; population 'patients receiving sunitinib'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The protocol reports skin rash at 1% for grades 3–4 among patients receiving sunitinib therapy."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F143",
+   "event": "dermatitis",
+   "grade": "all-grade",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F143 is the incidence of dermatitis (grade all-grade) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'dermatitis'; level 'all-grade'; value 8% [read as proportion 0.08]; population 'patients receiving sunitinib'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The cited 8% dermatitis incidence is an all-grade adverse-event rate reported for patients receiving sunitinib."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F144",
+   "event": "dermatitis",
+   "grade": "grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F144 is the incidence of dermatitis (grade grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'dermatitis'; level 'grades 3-4'; value 2% [read as proportion 0.02]; population 'patients receiving sunitinib'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 2% grade 3–4 dermatitis incidence to patients receiving sunitinib."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F145",
+   "event": "hair color changes",
+   "grade": "no grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F145 is the incidence of hair color changes (grade no grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'hair color changes'; level 'all-grade'; value 10% [read as proportion 0.1]; population 'patients receiving sunitinib therapy'; treatment 'sunitinib'; source historical_study (Rosenbaum et al.,\n2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds a 10% incidence of hair color changes with no grade 3–4 events to patients receiving sunitinib therapy."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F146",
+   "event": "alopecia",
+   "grade": "no grades 3-4",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F146 is the incidence of alopecia (grade no grades 3-4) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'alopecia'; level 'no grades 3-4'; value 6% [read as proportion 0.06]; population 'patients receiving sunitinib therapy'; treatment 'sunitinib'; source historical_study (Rosenbaum et al.,\n2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "INCORRECT",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The item correctly binds alopecia incidence of 6% with no grade 3–4 events among patients receiving sunitinib therapy."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F147",
+   "event": "phototoxicity",
+   "grade": "all-grade",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [
+    "fact states a bound (less than), not a rate"
+   ],
+   "rendering": "fact F147 is the incidence of phototoxicity (grade all-grade) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'phototoxicity'; level 'all-grade'; value less than <0.1% [read as proportion 0.001]; population 'patients receiving sunitinib'; treatment 'sunitinib'; source historical_study (Rosenbaum et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly assigns the reported all-grade phototoxicity incidence of less than 0.1% to patients receiving sunitinib."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F148",
+   "event": "congestive heart failure",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F148 is the incidence of congestive heart failure (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'congestive heart failure'; value 3% to 8% [read as proportion 0.03 to 0.08]; population 'patients undergoing treatment with sunitinib'; treatment 'sunitinib'; source historical_study (Chu et al., 2007; Khakoo et al., 2008; Schmidinger et al., 2008; Telli et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The protocol reports congestive heart failure in 3%-8% of patients undergoing treatment with sunitinib, matching the adverse-event role, population, treatment, and value."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F149",
+   "event": "left ventricular dysfunction",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F149 is the incidence of left ventricular dysfunction (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'left ventricular dysfunction'; value 12% to 14% [read as proportion 0.12 to 0.14]; population 'patients undergoing treatment with sunitinib'; treatment 'sunitinib'; source historical_study (Chu et al., 2007; Khakoo et al., 2008; Schmidinger et al., 2008; Telli et al., 2008))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 12%–14% incidence to left ventricular dysfunction in patients undergoing sunitinib treatment, as reported in the cited historical studies."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F150",
+   "event": "treatment-emergent LVEF values below the lower limit of normal (LLN)",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F150 is the incidence of treatment-emergent LVEF values below the lower limit of normal (LLN) (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'treatment-emergent LVEF values below the lower limit of normal (LLN)'; level 'sunitinib'; value 22 of 209 (11%) [read as proportion 0.1053]; population 'subjects with imatinib-resistant or -intolerant GIST'; treatment 'sunitinib'; source historical_study (a phase 3 GIST study))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The cited study reports treatment-emergent LVEF values below the LLN in 22 of 209 subjects with imatinib-resistant or -intolerant GIST receiving sunitinib."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F152",
+   "event": "an LVEF value below the LLN",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F152 is the incidence of an LVEF value below the LLN (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'an LVEF value below the LLN'; level 'sunitinib'; value 27% [read as proportion 0.27]; population 'treatment-naive RCC patients'; treatment 'sunitinib'; source not_stated (a phase 3 study))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The evidence reports a 27% incidence of LVEF values below the LLN among treatment-naive RCC patients receiving sunitinib in a phase 3 study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F154",
+   "event": "left ventricular systolic dysfunction",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F154 is the incidence of left ventricular systolic dysfunction (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'left ventricular systolic dysfunction'; value 2% [read as proportion 0.02]; population '461 patients enrolled in CDUS-monitored trials with sunitinib alone'; treatment 'sunitinib alone'; source not_stated (CDUS data))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The evidence states that 2% of 461 patients receiving sunitinib alone experienced left ventricular systolic dysfunction, matching the rendered adverse-event incidence and population."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F155",
+   "event": "Torsade de Pointes",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [
+    "fact states a bound (less than), not a rate"
+   ],
+   "rendering": "fact F155 is the incidence of Torsade de Pointes (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'Torsade de Pointes'; value less than <0.1% [read as proportion 0.001]; population 'sunitinib-exposed patients'; treatment 'sunitinib'; source not_stated)",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The cited incidence is an adverse-event rate reported for sunitinib-exposed patients and is not a hypothesis, threshold, stopping rule, or different group."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F156",
+   "event": "hypertension",
+   "grade": "Grade 3",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F156 is the incidence of hypertension (grade Grade 3) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'Grade 3 hypertension'; level 'Grade 3'; value 6.1% [read as proportion 0.061]; population '8054 solid tumor subjects treated with single-agent sunitinib'; treatment 'sunitinib'; source not_stated)",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The incidence and treatment are stated correctly, but the protocol does not identify these subjects as ARM2 or limit the finding to that arm."
+   },
+   "semantic_status": "INCORRECT",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F161",
+   "event": "Severe hypertension",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F161 is the incidence of Severe hypertension (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'Severe hypertension'; level 'GIST subjects on sunitinib'; value 4% [read as proportion 0.04]; population 'GIST subjects'; treatment 'sunitinib'; source published_literature (Investigator’s Brochure, 2009))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering preserves the 4% incidence of severe hypertension among GIST subjects receiving sunitinib, as reported in the cited safety information."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F165",
+   "event": "hypertension",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F165 is the incidence of hypertension (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'hypertension'; value 28% [read as proportion 0.28]; population '461 patients enrolled in CDUS-monitored trials with sunitinib alone'; treatment 'sunitinib alone'; source not_stated (CDUS data))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly represents the protocol-reported 28% incidence of hypertension among 461 patients receiving sunitinib alone."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F168",
+   "event": "Bleeding events",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F168 is the incidence of Bleeding events (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'Bleeding events'; level 'sunitinib'; value 18% [read as proportion 0.18]; at 'double-blind treatment phase'; population 'patients in the GIST phase 3 study'; treatment 'sunitinib'; source historical_study)",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The text reports an 18% incidence of bleeding events among patients receiving sunitinib during the double-blind treatment phase of the GIST phase 3 study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F170",
+   "event": "Hypothyroidism",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F170 is the incidence of Hypothyroidism (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'Hypothyroidism'; level 'RCC'; value 71% [read as proportion 0.71]; population 'patients with RCC treated with sunitinib'; treatment 'sunitinib'; source historical_study (Rini et al., 2007))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The cited 71% hypothyroidism incidence is reported for patients with RCC treated with sunitinib, with no grade specified."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F171",
+   "event": "Hypothyroidism",
+   "grade": "not stated",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F171 is the incidence of Hypothyroidism (grade not stated) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'Hypothyroidism'; level 'GIST'; value 36% [read as proportion 0.36]; population 'patients with GIST treated with sunitinib'; treatment 'sunitinib'; source historical_study (Desai et al., 2006))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The 36% hypothyroidism incidence is reported for patients with GIST treated with sunitinib and is correctly bound as a historical treatment-associated adverse-event rate."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  }
+ ],
+ "assessment_timing": "EFS events are observed at their true time: detection at the next scheduled assessment is not applied",
+ "efs_origin": "enrollment (= randomization): the protocol does not state the EFS time origin (user decision 2026-09-27)"
+}

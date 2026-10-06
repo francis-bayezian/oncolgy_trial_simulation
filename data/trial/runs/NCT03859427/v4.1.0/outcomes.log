@@ -1,0 +1,32 @@
+{
+ "control_arm_id": "ARM2",
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.033869156605989104,
+  "rate_per_year": 0.03445600529391453,
+  "source": "evidence",
+  "wording": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left by subject decision, loss to follow-up or physician decision; 102 trials, 36525 participants: 6.7% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "design_alternatives": [],
+ "protocol_toxicities": 24,
+ "asset_ae_signature": {
+  "ARM1": "corticosteroid+immunomodulatory_imid",
+  "ARM2": "corticosteroid+immunomodulatory_imid"
+ },
+ "bindings_usable": 25,
+ "bindings": 37,
+ "model_calls": 0
+}

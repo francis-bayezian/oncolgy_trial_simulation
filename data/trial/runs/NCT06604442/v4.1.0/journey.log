@@ -1,0 +1,69 @@
+{
+ "subjects": 104,
+ "traces": [
+  "S0001-P1",
+  "S0001-P2",
+  "S0002-P1"
+ ],
+ "any_dose_hold": 0,
+ "any_dose_reduction": 0,
+ "discontinued_for_ae": 0,
+ "deaths": 0,
+ "deaths_on_treatment": 0,
+ "end_of_treatment_reasons": {
+  "completed planned procedures": 101,
+  "withdrawal (subject, loss to follow-up or physician decision)": 2,
+  "disease progression": 1
+ },
+ "median_rdi": 1.0,
+ "progression_detected": 1,
+ "adverse_events_after_reporting_window_dropped": 0,
+ "rules_undecidable": [],
+ "screening_funnel": {
+  "generated_patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7871,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2129
+  },
+  "not_ruled_out_share": 0.7871,
+  "undecidable_criteria": [
+   "EL002",
+   "EL003",
+   "EL005",
+   "EL006",
+   "EL009",
+   "EL010",
+   "EL011",
+   "EL012"
+  ],
+  "screen_pass_rate": {
+   "value": 0.7867370240202337,
+   "evidence_level": "evidence",
+   "source": "registry recruitment details stating screened and enrolled counts (prostate; 23 trials, 7838 screened)",
+   "detail": {
+    "estimate": 0.7867370240202337,
+    "ci95": [
+     0.7461619154739233,
+     0.8223703386735023
+    ],
+    "single_trial_80": [
+     0.6662621183052605,
+     0.8720724876026538
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.6662672782857874,
+     "p30": 0.741564694012456,
+     "p50": 0.7867370240202337,
+     "p70": 0.825867667392703,
+     "p90": 0.872069898678054
+    },
+    "tau_logit": 0.464896274158428,
+    "groups": 23,
+    "trials": 23,
+    "participants": 7838
+   }
+  },
+  "target": null
+ }
+}

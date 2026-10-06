@@ -1,0 +1,177 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "9f61263a2faad6d1d336cb0cd9a60c04b28f9239bfc4d7eba9c57d14230db8f5"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "Piflufolastat (18F) injection (Trade name: PYLARIFY®)",
+   "started": 52,
+   "end_of_treatment": {
+    "completed planned procedures": 52
+   },
+   "deaths": 0
+  },
+  "ARM2": {
+   "arm": "Flotufolastat (18F) injection (Trade name: POSLUMA®)",
+   "started": 52,
+   "end_of_treatment": {
+    "completed planned procedures": 49,
+    "withdrawal (subject, loss to follow-up or physician decision)": 2,
+    "disease progression": 1
+   },
+   "deaths": 0
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "the difference in urinary bladder SUVmean",
+   "role": "primary",
+   "class": "continuous",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "SIMULATED",
+   "design": {
+    "effect": 10.0,
+    "sd": 25.152637136957445,
+    "sd_source": "derived from the protocol's power statement (80% power for 10 at n = 52, alpha 0.05 two-sided, rank test efficiency 3/pi)",
+    "n": 52,
+    "paired": true
+   },
+   "at_design_effect": {
+    "true_effect": 10.0,
+    "p_success": 0.795,
+    "observed_mean_difference": {
+     "p10": 5.519683191622209,
+     "p30": 8.451187218138083,
+     "p50": 10.064788598910692,
+     "p70": 12.066577145990648,
+     "p90": 14.636049807924426
+    }
+   },
+   "at_no_effect": {
+    "true_effect": 0.0,
+    "p_success": 0.055,
+    "observed_mean_difference": {
+     "p10": -4.4849363524682655,
+     "p30": -1.7540112238345902,
+     "p50": 0.19234143130041526,
+     "p70": 1.9580234795306193,
+     "p90": 4.617029726204894
+    }
+   },
+   "input": {
+    "level": "protocol design (power statement)",
+    "source": "a mean of paired differences of 10 in SUVmean"
+   }
+  },
+  {
+   "endpoint": "Patient-level detection rate",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Patient-level detection rate by baseline PSA categories",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Detection rate for local recurrences in prostate bed for the following subregions",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Detection rate for PLN lesions",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Central reader qualitative assessment of the presence or absence of ureteric radioactivity",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "qualitative_or_feasibility",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "qualitative_or_feasibility",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "SUVmax, peak SUV (SUVpeak) and total bladder radioactivity",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "SUVmean, SUVpeak for normal organs, including liver and spleen",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Detection rate for distant metastatic lesions and in the following subregions:",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Qualitative 3-point scale by expert readers (as previously described by Kuo et al, 2024)",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "qualitative_or_feasibility",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "qualitative_or_feasibility",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Incidence of TEAEs after each PSMA PET scan.",
+   "role": "safety",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 0,
+  "proportion": 0,
+  "continuous": 1,
+  "safety": 0,
+  "not_simulated": 10
+ }
+}

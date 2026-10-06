@@ -1,0 +1,323 @@
+{
+ "subject_id": "S0007",
+ "arm": "ARM1",
+ "agents": [
+  "intrathecal_therapy",
+  "intrathecal_methotrexate"
+ ],
+ "baseline": {
+  "patient_id": "P002046",
+  "demographic:age": {
+   "value": 43.65,
+   "unit": "year"
+  },
+  "demographic:sex": "female",
+  "demographic:race": "white",
+  "demographic:ethnicity": "unknown_or_not_reported",
+  "var:ecog_performance_status": {
+   "value": 1,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 85.1,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 173.5,
+   "unit": "cm"
+  }
+ },
+ "progression_day_latent": 58,
+ "progression_detected_day": null,
+ "off_treatment": [
+  1,
+  "completed planned procedures"
+ ],
+ "dose": {
+  "intrathecal_therapy": null,
+  "intrathecal_methotrexate": null
+ },
+ "reductions": {
+  "intrathecal_therapy": 0,
+  "intrathecal_methotrexate": 0
+ },
+ "exposure": [],
+ "adverse_events": [
+  {
+   "term": "abdominal_pain",
+   "serious": false,
+   "grade": 1,
+   "onset": 1,
+   "source": "safety_v3:PARTIAL",
+   "end": 8,
+   "decisions": {
+    "intrathecal_therapy": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "intrathecal_methotrexate": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neutropenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 4,
+   "source": "safety_v3:PARTIAL",
+   "end": 11
+  },
+  {
+   "term": "febrile_neutropenia",
+   "serious": true,
+   "grade": 3,
+   "onset": 6,
+   "source": "safety_v3:PARTIAL",
+   "end": 20
+  },
+  {
+   "term": "rash_erythematous_macules_or_papules",
+   "serious": false,
+   "grade": 2,
+   "onset": 11,
+   "source": "safety_v3:PARTIAL",
+   "end": 18
+  },
+  {
+   "term": "asthenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 13,
+   "source": "safety_v3:PARTIAL",
+   "end": 20
+  },
+  {
+   "term": "coughing",
+   "serious": false,
+   "grade": 2,
+   "onset": 13,
+   "source": "safety_v3:PARTIAL",
+   "end": 20
+  },
+  {
+   "term": "fever",
+   "serious": false,
+   "grade": 1,
+   "onset": 23,
+   "source": "safety_v3:PARTIAL",
+   "end": 30
+  }
+ ],
+ "events": [
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 43.65, female, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start intrathecal_therapy",
+   "result": "dose not compiled",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX004",
+   "quote": null
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start intrathecal_methotrexate",
+   "result": "dose not compiled",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX012",
+   "quote": null
+  },
+  {
+   "day": 1,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "abdominal_pain",
+   "result": "grade 1; resolves by day 8",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 1,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "completed planned procedures",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 4,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "neutropenia",
+   "result": "grade 2; resolves by day 11",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 4,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "1.43 10^9/L (grade 2)",
+   "consequence": "during neutropenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Absolute neutrophil count (1-1.5 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 6,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "febrile_neutropenia",
+   "result": "grade 3 serious; resolves by day 20",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 6,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "0.62 10^9/L (grade 3)",
+   "consequence": "during febrile_neutropenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 3 range for Absolute neutrophil count (0.5-1 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 11,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "rash_erythematous_macules_or_papules",
+   "result": "grade 2; resolves by day 18",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 13,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "asthenia",
+   "result": "grade 2; resolves by day 20",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 13,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "coughing",
+   "result": "grade 2; resolves by day 20",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 23,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "fever",
+   "result": "grade 1; resolves by day 30",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  }
+ ]
+}

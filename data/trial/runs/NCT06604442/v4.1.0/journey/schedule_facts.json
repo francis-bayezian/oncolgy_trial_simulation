@@ -1,0 +1,62 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 6,
+ "facts": [
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 14,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening",
+   "time_origin": "unclear",
+   "quote": "Patients will be screened within 14 days of Visit 1",
+   "reason": "The protocol requires screening within 14 days of Visit 1.",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "duct-specific training and in line with the FDA approved USPI for the respective radiopharmaceutical. Any image interpretation disagreements will be resolved by a third independent adjudicator. Patients will be screened within 14 days of Visit 1 (Days -14 to 1) and screening data will be reviewed to determine patient eligibility. Patients who meet all of the inclusion criteria and none of th",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering omits the required origin at Visit 1 and leaves it unspecified."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 14,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening PSA laboratory testing",
+   "time_origin": "unclear",
+   "quote": "PSA level will be collected at screening (within 14 days of Visit 2)",
+   "reason": "Screening PSA collection is specified within 14 days of Visit 2.",
+   "fact_id": "SF02",
+   "issues": [],
+   "evidence": "Patients’ PSA level will be collected at screening (within 14 days of Visit 2) according to site standard of care laboratory testing.",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering omits the required origin at Visit 2 and leaves it unspecified."
+   },
+   "status": "REVIEW_REQUIRED"
+  }
+ ]
+}

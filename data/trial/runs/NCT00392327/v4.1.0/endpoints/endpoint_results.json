@@ -1,0 +1,280 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "d488a0ad74e5a7b72d5af105f6da1669ac7c512420e371d7e51985e83a240340"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "REGIMEN A",
+   "started": 202,
+   "end_of_treatment": {
+    "completed planned treatment": 143,
+    "withdrawal (subject, loss to follow-up or physician decision)": 15,
+    "adverse event (registry discontinuation rate)": 11,
+    "disease progression": 29,
+    "death": 4
+   },
+   "deaths": 13
+  },
+  "ARM2": {
+   "arm": "REGIMEN B",
+   "started": 198,
+   "end_of_treatment": {
+    "completed planned treatment": 141,
+    "withdrawal (subject, loss to follow-up or physician decision)": 14,
+    "disease progression": 33,
+    "adverse event (registry discontinuation rate)": 8,
+    "death": 2
+   },
+   "deaths": 13
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "event-free survival (EFS) percentage",
+   "role": "primary",
+   "class": "time_to_event",
+   "variable": "event_free_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 202,
+     "events": 84,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": 72.2,
+      "24m": 61.7,
+      "36m": 59.7,
+      "60m": 58.1
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "locked outcome model control curve: cure_model",
+      "value": null,
+      "cure_fraction": 0.56
+     },
+     "predictive_median_months": {
+      "p10": 54.451850849259195,
+      "p30": 60.46628546998298,
+      "p50": 64.02335313271263,
+      "p70": 68.40764963938182,
+      "p90": 74.5435066126706
+     }
+    },
+    "ARM2": {
+     "patients": 198,
+     "events": 76,
+     "km_median_months": null,
+     "median_ci95_months": null,
+     "survival_percent": {
+      "12m": 72.6,
+      "24m": 66.4,
+      "36m": 64.3,
+      "60m": 61.0
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "locked outcome model control curve: cure_model",
+      "value": null,
+      "cure_fraction": 0.56
+     },
+     "predictive_median_months": {
+      "p10": 60.18144989200625,
+      "p30": 66.75185294085632,
+      "p50": 71.14602603996599,
+      "p70": 76.90366284935429,
+      "p90": 84.44877093330743
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "tumor response to radiation therapy ± carboplatin",
+   "role": "secondary",
+   "class": "proportion",
+   "variable": "objective_response_rate",
+   "by_arm": {
+    "ARM1": {
+     "patients": 202,
+     "responders": 62,
+     "rate": 0.3069,
+     "ci95": [
+      0.24411633536780908,
+      0.37551489213608924
+     ],
+     "predictive_rate": {
+      "p10": 0.2376237623762376,
+      "p30": 0.27722772277227725,
+      "p50": 0.3069306930693069,
+      "p70": 0.33663366336633666,
+      "p90": 0.37623762376237624
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.30358765470387106,
+      "unit": "proportion",
+      "level": "trials with overlapping drug classes",
+      "source": "evidence arms reporting objective_response_rate (3 studies)",
+      "ci95": [
+       0.21744966737914315,
+       0.40613840829571474
+      ]
+     }
+    },
+    "ARM2": {
+     "patients": 198,
+     "responders": 61,
+     "rate": 0.3081,
+     "ci95": [
+      0.24456469119837598,
+      0.37744986199482855
+     ],
+     "predictive_rate": {
+      "p10": 0.23686868686868687,
+      "p30": 0.27626262626262627,
+      "p50": 0.30303030303030304,
+      "p70": 0.3333333333333333,
+      "p90": 0.3888888888888889
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.30358765470387106,
+      "unit": "proportion",
+      "level": "trials with overlapping drug classes",
+      "source": "evidence arms reporting objective_response_rate (3 studies)",
+      "ci95": [
+       0.21744966737914315,
+       0.40613840829571474
+      ]
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "time to death",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 202,
+     "events": 197,
+     "km_median_months": 7.85,
+     "median_ci95_months": [
+      6.71,
+      8.87
+     ],
+     "survival_percent": {
+      "12m": 33.9,
+      "24m": 10.8,
+      "36m": 3.1,
+      "60m": 0.5
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 7.6493937993463215,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 7.092628414610044,
+      "p30": 7.554378453413239,
+      "p50": 7.846143835216724,
+      "p70": 8.423461981918093,
+      "p90": 8.990908493554542
+     }
+    },
+    "ARM2": {
+     "patients": 198,
+     "events": 194,
+     "km_median_months": 7.73,
+     "median_ci95_months": [
+      7.1,
+      9.41
+     ],
+     "survival_percent": {
+      "12m": 36.9,
+      "24m": 14.3,
+      "36m": 3.7,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 7.6493937993463215,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 6.397339974514106,
+      "p30": 6.790223674965857,
+      "p50": 7.616681410496275,
+      "p70": 8.661388099319229,
+      "p90": 9.125753473508933
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "grade 4 ototoxicity rates",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 202,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 76,
+     "any_grade3_ae": 76,
+     "stopped_for_ae": 11
+    },
+    "ARM2": {
+     "patients": 198,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 88,
+     "any_grade3_ae": 88,
+     "stopped_for_ae": 8
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "two-year QOL and NP assessment",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "patient_reported_outcome",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "patient_reported_outcome",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 2,
+  "proportion": 1,
+  "continuous": 0,
+  "safety": 1,
+  "not_simulated": 1
+ }
+}

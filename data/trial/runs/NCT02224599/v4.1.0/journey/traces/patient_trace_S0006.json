@@ -1,0 +1,670 @@
+{
+ "subject_id": "S0006",
+ "arm": "ARM1",
+ "agents": [
+  "cyclophosphamide",
+  "tapa_pulsed_dendritic_cells"
+ ],
+ "baseline": {
+  "patient_id": "P008104",
+  "demographic:age": {
+   "value": 76.31,
+   "unit": "year"
+  },
+  "demographic:sex": "male",
+  "demographic:race": "white",
+  "demographic:ethnicity": "hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 1,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 48.1,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 159.5,
+   "unit": "cm"
+  }
+ },
+ "progression_day_latent": 160,
+ "progression_detected_day": null,
+ "off_treatment": [
+  21,
+  "completed planned treatment"
+ ],
+ "dose": {
+  "cyclophosphamide": {
+   "value": 1.6,
+   "unit": "mg/kg/day",
+   "basis": "per_body_weight"
+  },
+  "tapa_pulsed_dendritic_cells": {
+   "value": 1.0,
+   "unit": "dc",
+   "basis": "fixed"
+  }
+ },
+ "reductions": {
+  "cyclophosphamide": 0,
+  "tapa_pulsed_dendritic_cells": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 5,
+   "administrations": 5,
+   "dose": "1.6 mg/kg/day"
+  },
+  {
+   "cycle": 1,
+   "agent": "tapa_pulsed_dendritic_cells",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "1 dc"
+  },
+  {
+   "cycle": 2,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 5,
+   "administrations": 5,
+   "dose": "1.6 mg/kg/day"
+  },
+  {
+   "cycle": 2,
+   "agent": "tapa_pulsed_dendritic_cells",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "1 dc"
+  },
+  {
+   "cycle": 3,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 5,
+   "administrations": 5,
+   "dose": "1.6 mg/kg/day"
+  },
+  {
+   "cycle": 3,
+   "agent": "tapa_pulsed_dendritic_cells",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "1 dc"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "decrease_in_appetite",
+   "serious": false,
+   "grade": 2,
+   "onset": 1,
+   "source": "safety_v3:RESOLVED",
+   "end": 2,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fever",
+   "serious": true,
+   "grade": 3,
+   "onset": 2,
+   "source": "safety_v3:RESOLVED",
+   "end": 4,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "alopecia",
+   "serious": false,
+   "grade": 1,
+   "onset": 4,
+   "source": "safety_v3:RESOLVED",
+   "end": 5,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "xerostomia",
+   "serious": false,
+   "grade": 2,
+   "onset": 5,
+   "source": "safety_v3:RESOLVED",
+   "end": 8,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "constipation",
+   "serious": false,
+   "grade": 2,
+   "onset": 12,
+   "source": "safety_v3:RESOLVED",
+   "end": 15,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hyperglycemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 12,
+   "source": "safety_v3:RESOLVED",
+   "end": 15,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dysgeusia",
+   "serious": false,
+   "grade": 1,
+   "onset": 15,
+   "source": "safety_v3:RESOLVED",
+   "end": 16,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "aspartate_aminotransferase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 20,
+   "source": "safety_v3:RESOLVED",
+   "end": 27,
+   "decisions": {
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "tapa_pulsed_dendritic_cells": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "anorexia",
+   "serious": false,
+   "grade": 2,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 29
+  },
+  {
+   "term": "asthenia",
+   "serious": false,
+   "grade": 1,
+   "onset": 33,
+   "source": "safety_v3:RESOLVED",
+   "end": 40
+  },
+  {
+   "term": "headache",
+   "serious": false,
+   "grade": 1,
+   "onset": 37,
+   "source": "safety_v3:RESOLVED",
+   "end": 44
+  },
+  {
+   "term": "anemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 43,
+   "source": "safety_v3:RESOLVED",
+   "end": 50
+  },
+  {
+   "term": "febrile_neutropenia",
+   "serious": false,
+   "grade": 1,
+   "onset": 44,
+   "source": "safety_v3:RESOLVED",
+   "end": 51
+  },
+  {
+   "term": "alanine_aminotransferase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 45,
+   "source": "safety_v3:RESOLVED",
+   "end": 52
+  },
+  {
+   "term": "rash_erythematous_macules_or_papules",
+   "serious": false,
+   "grade": 1,
+   "onset": 45,
+   "source": "safety_v3:RESOLVED",
+   "end": 52
+  },
+  {
+   "term": "edema",
+   "serious": false,
+   "grade": 1,
+   "onset": 46,
+   "source": "safety_v3:RESOLVED",
+   "end": 53
+  },
+  {
+   "term": "leukocytes",
+   "serious": false,
+   "grade": 1,
+   "onset": 51,
+   "source": "safety_v3:RESOLVED",
+   "end": 58
+  }
+ ],
+ "events": [
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 76.31, male, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start cyclophosphamide",
+   "result": "1.6 mg/kg/day",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX001",
+   "quote": "The patient will receive a 5-day course of CYP (1.6 mg/kg/day with maximum dose of 100\nmg/day), which may be taken at home, beginning 5-7 days prior to each DC vaccination."
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start tapa_pulsed_dendritic_cells",
+   "result": "1 dc",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX002",
+   "quote": "TAPA-pulsed DC will be administered at a vaccine dose of up to 1 x 107 DC, in\ninjection-grade saline solution to bring total volume to 1 mL, if necessary."
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "adverse event",
+   "item": "decrease_in_appetite",
+   "result": "grade 2; resolves by day 2",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 2,
+   "visit": "C1D2",
+   "category": "adverse event",
+   "item": "fever",
+   "result": "grade 3 serious; resolves by day 4",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 4,
+   "visit": "C1D4",
+   "category": "adverse event",
+   "item": "alopecia",
+   "result": "grade 1; resolves by day 5",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 5,
+   "visit": "C1D5",
+   "category": "adverse event",
+   "item": "xerostomia",
+   "result": "grade 2; resolves by day 8",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 12,
+   "visit": "C2D5",
+   "category": "adverse event",
+   "item": "constipation",
+   "result": "grade 2; resolves by day 15",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 12,
+   "visit": "C2D5",
+   "category": "adverse event",
+   "item": "hyperglycemia",
+   "result": "grade 2; resolves by day 15",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 15,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "dysgeusia",
+   "result": "grade 1; resolves by day 16",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 20,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "aspartate_aminotransferase_increased",
+   "result": "grade 1; resolves by day 27",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 20,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "AST",
+   "result": "1.13 x ULN (grade 1)",
+   "consequence": "during aspartate_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for AST (1-3 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 21,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "completed planned treatment",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 22,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "anorexia",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 33,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "asthenia",
+   "result": "grade 1; resolves by day 40",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 37,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "headache",
+   "result": "grade 1; resolves by day 44",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 43,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "anemia",
+   "result": "grade 1; resolves by day 50",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 43,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "10.56 g/dL (grade 1)",
+   "consequence": "during anemia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Hemoglobin (10-12 g/dL)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 44,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "febrile_neutropenia",
+   "result": "grade 1; resolves by day 51",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 44,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "1.82 10^9/L (grade 1)",
+   "consequence": "during febrile_neutropenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Absolute neutrophil count (1.5-2 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 45,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "alanine_aminotransferase_increased",
+   "result": "grade 1; resolves by day 52",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 45,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "1.63 x ULN (grade 1)",
+   "consequence": "during alanine_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for ALT (1-3 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 45,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "rash_erythematous_macules_or_papules",
+   "result": "grade 1; resolves by day 52",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 46,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "edema",
+   "result": "grade 1; resolves by day 53",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 51,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "leukocytes",
+   "result": "grade 1; resolves by day 58",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  }
+ ]
+}

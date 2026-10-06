@@ -1,0 +1,3846 @@
+{
+ "safety_version": "safety-1.0.0",
+ "scenario": "accrual_124_per_year_derived",
+ "replicates": 2000,
+ "seed": 20260927,
+ "arms": [
+  {
+   "arm_id": "ARM1",
+   "label": "Pemigatinib Plus Pembrolizumab",
+   "enrolled": 104,
+   "asset_signature": "pd1_pdl1_inhibitor",
+   "missing_classes": [],
+   "unmapped_agents": [
+    "pemigatinib"
+   ],
+   "safety_v3": {
+    "status": "RESOLVED",
+    "reason": null,
+    "features": {
+     "classes": [
+      "other_targeted_small_molecule",
+      "pd1_pdl1_inhibitor"
+     ],
+     "unclassified_agent": false,
+     "agents": [
+      {
+       "agent": "pemigatinib",
+       "class": "other_targeted_small_molecule"
+      },
+      {
+       "agent": "pemigatinib",
+       "class": "other_targeted_small_molecule"
+      },
+      {
+       "agent": "pembrolizumab",
+       "class": "pd1_pdl1_inhibitor"
+      },
+      {
+       "agent": "pemigatinib",
+       "class": "other_targeted_small_molecule"
+      }
+     ],
+     "phase": "PHASE2",
+     "pediatric": false,
+     "disease_family": "urothelial",
+     "log_relative_dose": 0.0,
+     "dose_unknown": false
+    },
+    "classes_without_data": []
+   },
+   "events": [
+    {
+     "term": "fatigue",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.032443455047559064,
+     "logit_sigma": 1.5413594051133872,
+     "rate_median": 0.4918898476061446,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 52.0,
+      "q05": 8.0,
+      "q95": 96.0
+     }
+    },
+    {
+     "term": "anemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.4769365728712878,
+     "logit_sigma": 1.868353302905518,
+     "rate_median": 0.3829757693987665,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 41.0,
+      "q05": 3.0,
+      "q95": 97.0
+     }
+    },
+    {
+     "term": "diarrhea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.5570456816642678,
+     "logit_sigma": 1.4291544946849928,
+     "rate_median": 0.36423130715363017,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 38.0,
+      "q05": 4.0,
+      "q95": 89.0
+     }
+    },
+    {
+     "term": "nausea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.6684237229832253,
+     "logit_sigma": 1.394185920368332,
+     "rate_median": 0.33884988539431254,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 36.0,
+      "q05": 5.0,
+      "q95": 88.0
+     }
+    },
+    {
+     "term": "constipation",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.008419995811591,
+     "logit_sigma": 1.3283506900190891,
+     "rate_median": 0.26728917394473417,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 29.0,
+      "q05": 4.0,
+      "q95": 80.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.3364365640320806,
+     "logit_sigma": 1.252726986122628,
+     "rate_median": 0.20809667509248866,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 22.0,
+      "q05": 3.0,
+      "q95": 70.0
+     }
+    },
+    {
+     "term": "lipase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.4155309115159178,
+     "logit_sigma": 1.829015889962815,
+     "rate_median": 0.19536315185410835,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 20.0,
+      "q05": 1.0,
+      "q95": 87.0
+     }
+    },
+    {
+     "term": "sleeplessness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.5649288756226831,
+     "logit_sigma": 1.113296143102105,
+     "rate_median": 0.17294052272842478,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 18.0,
+      "q05": 3.0,
+      "q95": 60.0
+     }
+    },
+    {
+     "term": "hematuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6124840692644729,
+     "logit_sigma": 1.5129032587613604,
+     "rate_median": 0.16624401880648523,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 17.0,
+      "q05": 1.0,
+      "q95": 73.0
+     }
+    },
+    {
+     "term": "arthralgia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.649737350134251,
+     "logit_sigma": 1.2767885417190303,
+     "rate_median": 0.1611444506157866,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 17.0,
+      "q05": 1.0,
+      "q95": 62.049999999999955
+     }
+    },
+    {
+     "term": "headache",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6498496656791037,
+     "logit_sigma": 1.299530802378696,
+     "rate_median": 0.16112926872456107,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 17.0,
+      "q05": 2.0,
+      "q95": 63.0
+     }
+    },
+    {
+     "term": "pruritus",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6618929407221692,
+     "logit_sigma": 1.3055592021606182,
+     "rate_median": 0.15950805580201047,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 16.0,
+      "q05": 2.0,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "hypertension_variable",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6731655104344183,
+     "logit_sigma": 1.3982049319980503,
+     "rate_median": 0.1580025903320623,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 17.0,
+      "q05": 1.0,
+      "q95": 66.0
+     }
+    },
+    {
+     "term": "aspartate_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6920079198759606,
+     "logit_sigma": 1.5869274289048239,
+     "rate_median": 0.15551196160227218,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 16.0,
+      "q05": 1.0,
+      "q95": 74.0
+     }
+    },
+    {
+     "term": "hyponatremia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6944264745245434,
+     "logit_sigma": 1.770496420568957,
+     "rate_median": 0.1551946022449982,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 16.5,
+      "q05": 0.0,
+      "q95": 79.0
+     }
+    },
+    {
+     "term": "back_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.740208116593979,
+     "logit_sigma": 1.0769611861860802,
+     "rate_median": 0.14928650178541997,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 15.0,
+      "q05": 3.0,
+      "q95": 54.0
+     }
+    },
+    {
+     "term": "alanine_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7450988226467876,
+     "logit_sigma": 1.6100966351962323,
+     "rate_median": 0.14866644668761186,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 16.0,
+      "q05": 1.0,
+      "q95": 75.0
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7853276209428692,
+     "logit_sigma": 1.2612859788435589,
+     "rate_median": 0.14364652667987993,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 16.0,
+      "q05": 2.0,
+      "q95": 60.049999999999955
+     }
+    },
+    {
+     "term": "hypomagnesemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8206734101146487,
+     "logit_sigma": 1.6746739384156235,
+     "rate_median": 0.13935308870754617,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 15.0,
+      "q05": 1.0,
+      "q95": 77.0
+     }
+    },
+    {
+     "term": "dyspnea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.834633057471395,
+     "logit_sigma": 1.239922809700436,
+     "rate_median": 0.1376872687069994,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 1.0,
+      "q95": 62.0
+     }
+    },
+    {
+     "term": "weight_loss",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8498905207964849,
+     "logit_sigma": 1.2449025058233447,
+     "rate_median": 0.13588575163386613,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 1.0,
+      "q95": 58.0
+     }
+    },
+    {
+     "term": "abdominal_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8590958022815458,
+     "logit_sigma": 1.1176352025051122,
+     "rate_median": 0.13480847837128823,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 2.0,
+      "q95": 52.0
+     }
+    },
+    {
+     "term": "decrease_in_appetite",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8757925865189553,
+     "logit_sigma": 1.5107639764111556,
+     "rate_median": 0.132872893636515,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 1.0,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "proteinuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8878878586338828,
+     "logit_sigma": 1.690866016386854,
+     "rate_median": 0.13148548206894653,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 0.0,
+      "q95": 77.0
+     }
+    },
+    {
+     "term": "hyperglycemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9080933107375755,
+     "logit_sigma": 1.723068520273011,
+     "rate_median": 0.12919521033063552,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 1.0,
+      "q95": 74.0
+     }
+    },
+    {
+     "term": "hypoalbuminemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9255857348112753,
+     "logit_sigma": 2.23401544325947,
+     "rate_median": 0.12723997804122586,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 13.5,
+      "q05": 0.0,
+      "q95": 88.0
+     }
+    },
+    {
+     "term": "vomiting",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9474864841982023,
+     "logit_sigma": 1.3086372215680497,
+     "rate_median": 0.12482769023615269,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 13.0,
+      "q05": 1.0,
+      "q95": 57.0
+     }
+    },
+    {
+     "term": "coughing",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9486597294655694,
+     "logit_sigma": 1.2654363050492803,
+     "rate_median": 0.12469957459832573,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 13.0,
+      "q05": 1.0,
+      "q95": 57.0
+     }
+    },
+    {
+     "term": "rash_erythematous_macules_or_papules",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0541105945830576,
+     "logit_sigma": 1.5721924561244285,
+     "rate_median": 0.1136376870557551,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.9500000000000028,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0784431171791997,
+     "logit_sigma": 2.043482249273412,
+     "rate_median": 0.11120975923285699,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.0,
+      "q95": 81.0
+     }
+    },
+    {
+     "term": "dizziness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0897231056514416,
+     "logit_sigma": 1.130872174772307,
+     "rate_median": 0.11009970092085045,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 1.0,
+      "q95": 46.0
+     }
+    },
+    {
+     "term": "hypophosphatemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.115592765959651,
+     "logit_sigma": 1.926967820458652,
+     "rate_median": 0.107590498859869,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 0.0,
+      "q95": 78.04999999999995
+     }
+    },
+    {
+     "term": "pain_in_limb",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1174258663276744,
+     "logit_sigma": 1.3446130891264723,
+     "rate_median": 0.107414620688047,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 1.0,
+      "q95": 57.0
+     }
+    },
+    {
+     "term": "dysgeusia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1281018978916846,
+     "logit_sigma": 1.4322180947639966,
+     "rate_median": 0.10639531963057854,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 1.0,
+      "q95": 61.0
+     }
+    },
+    {
+     "term": "peripheral_edema",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1705592432550964,
+     "logit_sigma": 1.3153243911039585,
+     "rate_median": 0.10242560820487755,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 1.0,
+      "q95": 49.0
+     }
+    },
+    {
+     "term": "maculopapular_lesion",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2396872936158636,
+     "logit_sigma": 1.9346150289405775,
+     "rate_median": 0.09624273750091272,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 76.0
+     }
+    },
+    {
+     "term": "creatinine_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2587187914578433,
+     "logit_sigma": 1.919600669445301,
+     "rate_median": 0.09460004860567939,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 72.0
+     }
+    },
+    {
+     "term": "dry_skin",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.312398397540298,
+     "logit_sigma": 1.4744404781113511,
+     "rate_median": 0.09010132329711262,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 55.0
+     }
+    },
+    {
+     "term": "gastroesophageal_reflux_disease",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3491636977443133,
+     "logit_sigma": 1.6509492211709254,
+     "rate_median": 0.08713226915573911,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 8.5,
+      "q05": 0.0,
+      "q95": 62.0
+     }
+    },
+    {
+     "term": "anorexia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.420776000080152,
+     "logit_sigma": 1.605194825900066,
+     "rate_median": 0.08160208066196957,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 59.0
+     }
+    },
+    {
+     "term": "chills",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.427469979593127,
+     "logit_sigma": 1.7710342259630458,
+     "rate_median": 0.0811018155272626,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "dysuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4480972079760477,
+     "logit_sigma": 1.803574731978576,
+     "rate_median": 0.07957780808351728,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 66.0
+     }
+    },
+    {
+     "term": "hypocalcemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4558415814813896,
+     "logit_sigma": 1.797154236211132,
+     "rate_median": 0.0790124137448168,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 63.0
+     }
+    },
+    {
+     "term": "myalgia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4772002953628034,
+     "logit_sigma": 1.3847491690421254,
+     "rate_median": 0.07747206086674666,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 50.049999999999955
+     }
+    },
+    {
+     "term": "oral_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.561519615031951,
+     "logit_sigma": 2.379424917150993,
+     "rate_median": 0.07165638898816326,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 83.0
+     }
+    },
+    {
+     "term": "dyspepsia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.5994124966748777,
+     "logit_sigma": 1.1427017033573421,
+     "rate_median": 0.069176240630572,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 36.0
+     }
+    },
+    {
+     "term": "pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.609627365522182,
+     "logit_sigma": 1.9623502801908241,
+     "rate_median": 0.06852138374470089,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 67.04999999999995
+     }
+    },
+    {
+     "term": "hypokalemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.677782374953801,
+     "logit_sigma": 1.4315155587157409,
+     "rate_median": 0.06429716662869356,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 46.049999999999955
+     }
+    },
+    {
+     "term": "increased_frequency_of_micturition",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.678035898136421,
+     "logit_sigma": 2.4607614870359806,
+     "rate_median": 0.0642819155877885,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 85.04999999999995
+     }
+    },
+    {
+     "term": "hyperkalemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.6847112026935935,
+     "logit_sigma": 1.9317977230651344,
+     "rate_median": 0.063881563612119,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 65.04999999999995
+     }
+    },
+    {
+     "term": "alkaline_phosphatase_raised",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.686207752369597,
+     "logit_sigma": 2.0967667602672106,
+     "rate_median": 0.06379212726914794,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 71.0
+     }
+    },
+    {
+     "term": "nasal_congestion_finding",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.692447372880656,
+     "logit_sigma": 1.715900264383138,
+     "rate_median": 0.0634204930458211,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 55.0
+     }
+    },
+    {
+     "term": "leukopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.7326958418405187,
+     "logit_sigma": 2.228616736522924,
+     "rate_median": 0.061071395679469974,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 75.0
+     }
+    },
+    {
+     "term": "sensory_neuropathy",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.7505768537935453,
+     "logit_sigma": 1.8523843287103463,
+     "rate_median": 0.060054079904159036,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 59.049999999999955
+     }
+    },
+    {
+     "term": "stomatitis",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.7626217704092673,
+     "logit_sigma": 2.0503468033764314,
+     "rate_median": 0.05937776546341483,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 67.0
+     }
+    },
+    {
+     "term": "blood_creatinine_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8016283978824537,
+     "logit_sigma": 1.3361891179303935,
+     "rate_median": 0.05723624375275464,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 36.0
+     }
+    },
+    {
+     "term": "depression_dominant",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8054432399158853,
+     "logit_sigma": 1.494558578784526,
+     "rate_median": 0.05703074125754577,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 5.5,
+      "q05": 0.0,
+      "q95": 41.0
+     }
+    },
+    {
+     "term": "hypothyroidism",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8335177142032015,
+     "logit_sigma": 1.3510967102439964,
+     "rate_median": 0.055539587677167095,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 35.0
+     }
+    },
+    {
+     "term": "neutrophil_count_decreased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8593451078893453,
+     "logit_sigma": 2.1263344238529855,
+     "rate_median": 0.054200262149890155,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 69.0
+     }
+    },
+    {
+     "term": "dehydration",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8827628030514614,
+     "logit_sigma": 1.3762796423965433,
+     "rate_median": 0.05301226684497611,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 39.0
+     }
+    },
+    {
+     "term": "hypercalcemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.892393172770555,
+     "logit_sigma": 2.133229291895911,
+     "rate_median": 0.0525308792767397,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 68.0
+     }
+    },
+    {
+     "term": "decreased_platelet_count",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8959837227261085,
+     "logit_sigma": 2.019005997593738,
+     "rate_median": 0.05235245948062656,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 60.0
+     }
+    },
+    {
+     "term": "paresthesia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.929150882873209,
+     "logit_sigma": 1.7157113256069496,
+     "rate_median": 0.05073120073251602,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 46.0
+     }
+    },
+    {
+     "term": "upper_respiratory_infections",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.9345199233090673,
+     "logit_sigma": 1.396764814874106,
+     "rate_median": 0.050473263721133727,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 36.0
+     }
+    },
+    {
+     "term": "acute_kidney_injury",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.751379382697757,
+     "logit_sigma": 1.3987730120207011,
+     "rate_median": 0.06000879507481898,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 41.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.823707028504874,
+     "logit_sigma": 1.225719934721906,
+     "rate_median": 0.05605645626509549,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 33.0
+     }
+    },
+    {
+     "term": "pneumonia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.0769083393548713,
+     "logit_sigma": 1.5440887713084572,
+     "rate_median": 0.04406987658264738,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 40.049999999999955
+     }
+    },
+    {
+     "term": "sepsis",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.7656032556465,
+     "logit_sigma": 1.315682226986419,
+     "rate_median": 0.022629680960490627,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 18.0
+     }
+    },
+    {
+     "term": "anemia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.993545769556857,
+     "logit_sigma": 2.4010351383512107,
+     "rate_median": 0.018100564501451588,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 49.0
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.9992508982937136,
+     "logit_sigma": 1.4012217926780934,
+     "rate_median": 0.017999445904033497,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 16.049999999999955
+     }
+    },
+    {
+     "term": "death_finding",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.073781123493998,
+     "logit_sigma": 2.379430322120178,
+     "rate_median": 0.01672834048420714,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 46.049999999999955
+     }
+    },
+    {
+     "term": "pneumonitis",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.14511502042184,
+     "logit_sigma": 1.3297782020980193,
+     "rate_median": 0.0155945705739981,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 14.0
+     }
+    },
+    {
+     "term": "hematuria",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.146491791593586,
+     "logit_sigma": 1.4370974368418161,
+     "rate_median": 0.015573449326069022,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 16.0
+     }
+    },
+    {
+     "term": "small_bowel_obstruction",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.402609191010237,
+     "logit_sigma": 1.2618401335260536,
+     "rate_median": 0.012097213151512336,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 10.0
+     }
+    },
+    {
+     "term": "hyperphosphatemia",
+     "seriousness": "grade not stated",
+     "source": "protocol:F051",
+     "logit_mu": 0.0,
+     "logit_sigma": 0.0,
+     "rate_median": 0.5,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 52.0,
+      "q05": 43.95,
+      "q95": 60.0
+     }
+    },
+    {
+     "term": "event",
+     "seriousness": "grade Grade 3 event or higher",
+     "source": "protocol:F053",
+     "logit_mu": 0.2818511521409875,
+     "logit_sigma": 0.0,
+     "rate_median": 0.57,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 59.0,
+      "q05": 51.0,
+      "q95": 68.0
+     }
+    },
+    {
+     "term": "TEAE with a fatal outcome",
+     "seriousness": "grade fatal outcome",
+     "source": "protocol:F055",
+     "logit_mu": -3.1780538303479453,
+     "logit_sigma": 0.0,
+     "rate_median": 0.04,
+     "enrolled": 104,
+     "simulated_affected": {
+      "median": 4.0,
+      "q05": 1.0,
+      "q95": 7.0499999999999545
+     }
+    }
+   ]
+  },
+  {
+   "arm_id": "ARM2",
+   "label": "Pemigatinib Alone",
+   "enrolled": 87,
+   "asset_signature": "pd1_pdl1_inhibitor",
+   "missing_classes": [],
+   "unmapped_agents": [
+    "pemigatinib"
+   ],
+   "safety_v3": {
+    "status": "RESOLVED",
+    "reason": null,
+    "features": {
+     "classes": [
+      "other_targeted_small_molecule"
+     ],
+     "unclassified_agent": false,
+     "agents": [
+      {
+       "agent": "pemigatinib",
+       "class": "other_targeted_small_molecule"
+      },
+      {
+       "agent": "pemigatinib",
+       "class": "other_targeted_small_molecule"
+      }
+     ],
+     "phase": "PHASE2",
+     "pediatric": false,
+     "disease_family": "urothelial",
+     "log_relative_dose": 0.0,
+     "dose_unknown": true
+    },
+    "classes_without_data": []
+   },
+   "events": [
+    {
+     "term": "fatigue",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.07465483924882675,
+     "logit_sigma": 1.5411810487879225,
+     "rate_median": 0.4813449536339044,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 42.0,
+      "q05": 5.0,
+      "q95": 81.0
+     }
+    },
+    {
+     "term": "diarrhea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.8163693309929213,
+     "logit_sigma": 1.4289540917895498,
+     "rate_median": 0.30653489318257654,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 27.0,
+      "q05": 3.0,
+      "q95": 73.0
+     }
+    },
+    {
+     "term": "nausea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.8551327072398669,
+     "logit_sigma": 1.3940036851751525,
+     "rate_median": 0.298357264680114,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 26.0,
+      "q05": 3.0,
+      "q95": 71.04999999999995
+     }
+    },
+    {
+     "term": "anorexia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.2008346600805129,
+     "logit_sigma": 1.602546552458251,
+     "rate_median": 0.23132676839266436,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 20.0,
+      "q05": 1.0,
+      "q95": 72.0
+     }
+    },
+    {
+     "term": "anemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.2648624661632695,
+     "logit_sigma": 1.8682198507527632,
+     "rate_median": 0.2201379815214124,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 19.0,
+      "q05": 1.0,
+      "q95": 74.0
+     }
+    },
+    {
+     "term": "constipation",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.3410423555582032,
+     "logit_sigma": 1.3281123348526238,
+     "rate_median": 0.20733869582975872,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 18.0,
+      "q05": 2.0,
+      "q95": 61.0
+     }
+    },
+    {
+     "term": "palmar_plantar_erythrodysesthesia_syndrome",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.3937075660252274,
+     "logit_sigma": 3.516750103510985,
+     "rate_median": 0.19881652463863134,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 16.0,
+      "q05": 0.0,
+      "q95": 86.0
+     }
+    },
+    {
+     "term": "creatinine_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.5559553577288474,
+     "logit_sigma": 1.912303303536277,
+     "rate_median": 0.17422779316076403,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 15.0,
+      "q05": 0.0,
+      "q95": 73.0
+     }
+    },
+    {
+     "term": "pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8520238238091462,
+     "logit_sigma": 1.9597861896145914,
+     "rate_median": 0.13563545197651417,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.0,
+      "q95": 69.0
+     }
+    },
+    {
+     "term": "alkaline_phosphatase_raised",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8633603327585857,
+     "logit_sigma": 2.0887474761995652,
+     "rate_median": 0.13431185838252177,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.0,
+      "q95": 70.0
+     }
+    },
+    {
+     "term": "dyspnea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.8982731691221302,
+     "logit_sigma": 1.2394849776081551,
+     "rate_median": 0.13030404239800672,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 1.0,
+      "q95": 48.0
+     }
+    },
+    {
+     "term": "sleeplessness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.899563583708812,
+     "logit_sigma": 1.1126077751524575,
+     "rate_median": 0.1301578760459466,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 1.0,
+      "q95": 41.049999999999955
+     }
+    },
+    {
+     "term": "hypomagnesemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9277062772458193,
+     "logit_sigma": 1.674043031325628,
+     "rate_median": 0.12700467795784026,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 0.0,
+      "q95": 62.0
+     }
+    },
+    {
+     "term": "hypophosphatemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9669219901857113,
+     "logit_sigma": 1.9256971250118693,
+     "rate_median": 0.12271987983567942,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 0.0,
+      "q95": 67.0
+     }
+    },
+    {
+     "term": "hemoglobin_normal_12_16_gm",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9929947217047488,
+     "logit_sigma": 2.704533252244701,
+     "rate_median": 0.11994039556788552,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 0.0,
+      "q95": 80.0
+     }
+    },
+    {
+     "term": "white_blood_cell_decreased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9972002059712368,
+     "logit_sigma": 3.3395090451582528,
+     "rate_median": 0.11949719598453924,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 84.0
+     }
+    },
+    {
+     "term": "vomiting",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.000948605131249,
+     "logit_sigma": 1.3083711496255095,
+     "rate_median": 0.11910336053992361,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 1.0,
+      "q95": 48.0
+     }
+    },
+    {
+     "term": "hair_loss/alopecia_(scalp_or_body)",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0179205697597915,
+     "logit_sigma": 2.93932625408359,
+     "rate_median": 0.11733417964797543,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 83.0
+     }
+    },
+    {
+     "term": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0258419164103767,
+     "logit_sigma": 2.042762035770968,
+     "rate_median": 0.11651627410520016,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 68.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.054910270934912,
+     "logit_sigma": 1.2519475514073153,
+     "rate_median": 0.11355716520714287,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 1.0,
+      "q95": 46.0
+     }
+    },
+    {
+     "term": "rash/desquamation",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0607207187014183,
+     "logit_sigma": 2.074740071508716,
+     "rate_median": 0.11297358630259274,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 67.04999999999995
+     }
+    },
+    {
+     "term": "headache",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0646393774914062,
+     "logit_sigma": 1.2990139990624576,
+     "rate_median": 0.11258149049384006,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 1.0,
+      "q95": 47.049999999999955
+     }
+    },
+    {
+     "term": "dysgeusia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.0894575562004656,
+     "logit_sigma": 1.4311645026327922,
+     "rate_median": 0.11012572155433721,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 49.0
+     }
+    },
+    {
+     "term": "back_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1171745691196313,
+     "logit_sigma": 1.0764514045789644,
+     "rate_median": 0.10743871661715866,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 1.0,
+      "q95": 36.0
+     }
+    },
+    {
+     "term": "abdominal_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1483297510416266,
+     "logit_sigma": 1.1172008633470678,
+     "rate_median": 0.10448740474767237,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 1.0,
+      "q95": 37.0
+     }
+    },
+    {
+     "term": "dizziness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.289191009315219,
+     "logit_sigma": 1.1301020579009409,
+     "rate_median": 0.09202212207414705,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 35.0
+     }
+    },
+    {
+     "term": "hypertension_variable",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2941611783214904,
+     "logit_sigma": 1.3977489064003332,
+     "rate_median": 0.0916076855328945,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 44.0
+     }
+    },
+    {
+     "term": "hyperglycemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2951349756411243,
+     "logit_sigma": 1.722481098417892,
+     "rate_median": 0.09152668251085859,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 55.0
+     }
+    },
+    {
+     "term": "hyponatremia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.297692090883845,
+     "logit_sigma": 1.7703049005392686,
+     "rate_median": 0.09131428150336762,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 56.049999999999955
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3334252480692776,
+     "logit_sigma": 1.260946658240162,
+     "rate_median": 0.08839227052225965,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 37.0
+     }
+    },
+    {
+     "term": "weight_loss",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3577083952492655,
+     "logit_sigma": 1.2445966140243248,
+     "rate_median": 0.08645501524975996,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 36.049999999999955
+     }
+    },
+    {
+     "term": "leukopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.391640828468349,
+     "logit_sigma": 2.2277667044738507,
+     "rate_median": 0.08381235015148011,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 67.0
+     }
+    },
+    {
+     "term": "hematuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4199822739716295,
+     "logit_sigma": 1.511748821300705,
+     "rate_median": 0.08166158477925711,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 44.0
+     }
+    },
+    {
+     "term": "increased_frequency_of_micturition",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4238901751498454,
+     "logit_sigma": 2.4531796300914763,
+     "rate_median": 0.08136899836206729,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 70.0
+     }
+    },
+    {
+     "term": "hypocalcemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.434457873794924,
+     "logit_sigma": 1.795759230007599,
+     "rate_median": 0.08058256958427377,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 54.0
+     }
+    },
+    {
+     "term": "coughing",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.449095464245194,
+     "logit_sigma": 1.2650742079736303,
+     "rate_median": 0.07950472130264813,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 36.0
+     }
+    },
+    {
+     "term": "dry_skin",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.460544165612073,
+     "logit_sigma": 1.4732119475125405,
+     "rate_median": 0.0786708860354956,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 41.0
+     }
+    },
+    {
+     "term": "neuropathy:_sensory",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.467704524770414,
+     "logit_sigma": 2.2417898633778073,
+     "rate_median": 0.07815345371021337,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 67.04999999999995
+     }
+    },
+    {
+     "term": "pain_in_limb",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.52522772732563,
+     "logit_sigma": 1.3438352129168794,
+     "rate_median": 0.07410843785098488,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 35.049999999999955
+     }
+    },
+    {
+     "term": "creatinine",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.541138288637189,
+     "logit_sigma": 2.4374326206884547,
+     "rate_median": 0.07302408342211326,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 70.0
+     }
+    },
+    {
+     "term": "depression_dominant",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.5457187226541884,
+     "logit_sigma": 1.4902491435997614,
+     "rate_median": 0.07271463241271531,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 42.0
+     }
+    },
+    {
+     "term": "peripheral_edema",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.5866872330529964,
+     "logit_sigma": 1.3147997135226477,
+     "rate_median": 0.07000013742915075,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 36.049999999999955
+     }
+    },
+    {
+     "term": "hypoalbuminemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.6156147605933384,
+     "logit_sigma": 2.233886505552833,
+     "rate_median": 0.06814021690484073,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 66.0
+     }
+    },
+    {
+     "term": "chills",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.6438850053296905,
+     "logit_sigma": 1.7694568336372485,
+     "rate_median": 0.06636690563566489,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 53.0
+     }
+    },
+    {
+     "term": "dehydration",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.685038444651264,
+     "logit_sigma": 1.3735648072176545,
+     "rate_median": 0.06386199710352429,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 35.0
+     }
+    },
+    {
+     "term": "dysuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.720611344523104,
+     "logit_sigma": 1.7972694345288518,
+     "rate_median": 0.06176802768107367,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 50.0
+     }
+    },
+    {
+     "term": "pain_other",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.734653516382084,
+     "logit_sigma": 2.4539285015771863,
+     "rate_median": 0.06095923574429567,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 70.0
+     }
+    },
+    {
+     "term": "dyspepsia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.762604902949314,
+     "logit_sigma": 1.1413109106972539,
+     "rate_median": 0.05937870755257309,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 27.0
+     }
+    },
+    {
+     "term": "myalgia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.7647643356369196,
+     "logit_sigma": 1.383950573464465,
+     "rate_median": 0.0592582117227006,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 34.0
+     }
+    },
+    {
+     "term": "pruritus",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.767318049836522,
+     "logit_sigma": 1.3052477902226558,
+     "rate_median": 0.05911601077296028,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 30.0
+     }
+    },
+    {
+     "term": "aspartate_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.7732682893087865,
+     "logit_sigma": 1.5867955202697495,
+     "rate_median": 0.058785917599246555,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 39.0
+     }
+    },
+    {
+     "term": "arthralgia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8008544912696247,
+     "logit_sigma": 1.2763388563111575,
+     "rate_median": 0.05727801826409914,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 30.0
+     }
+    },
+    {
+     "term": "alanine_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.827145550990846,
+     "logit_sigma": 1.6099212075976856,
+     "rate_median": 0.05587478733775137,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 42.049999999999955
+     }
+    },
+    {
+     "term": "maculopapular_lesion",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.842769302381415,
+     "logit_sigma": 1.9335088969490188,
+     "rate_median": 0.055056286919866734,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 50.0
+     }
+    },
+    {
+     "term": "rash_erythematous_macules_or_papules",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.868344347236647,
+     "logit_sigma": 1.5718215255464338,
+     "rate_median": 0.053740784260567845,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 37.0
+     }
+    },
+    {
+     "term": "lipase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.9071763432103084,
+     "logit_sigma": 1.8285576904771645,
+     "rate_median": 0.051799948819980415,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 4.0,
+      "q05": 0.0,
+      "q95": 44.0
+     }
+    },
+    {
+     "term": "sensory_neuropathy",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.9138993385850362,
+     "logit_sigma": 1.851685823400687,
+     "rate_median": 0.05147073063380189,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 4.0,
+      "q05": 0.0,
+      "q95": 47.0
+     }
+    },
+    {
+     "term": "decrease_in_appetite",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.9228036574436493,
+     "logit_sigma": 1.5106388855934354,
+     "rate_median": 0.05103774063636698,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 33.0
+     }
+    },
+    {
+     "term": "neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": 0.8093894280110909,
+     "logit_sigma": 2.0728541631235347,
+     "rate_median": 0.6919793798528975,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 59.0,
+      "q05": 5.0,
+      "q95": 86.0
+     }
+    },
+    {
+     "term": "neutropenia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.9053709829683445,
+     "logit_sigma": 2.8444375629685688,
+     "rate_median": 0.01973612693167723,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 60.0
+     }
+    },
+    {
+     "term": "anemia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.922196784228446,
+     "logit_sigma": 2.3991514565313317,
+     "rate_median": 0.01941322163835764,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 44.049999999999955
+     }
+    },
+    {
+     "term": "fatigue",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.9945693766180894,
+     "logit_sigma": 2.023235897692777,
+     "rate_median": 0.01808238097172303,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 27.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.089582301607319,
+     "logit_sigma": 1.2216393610682093,
+     "rate_median": 0.016470409750036438,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 9.0
+     }
+    },
+    {
+     "term": "sepsis",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.195974925784583,
+     "logit_sigma": 1.3111436985601195,
+     "rate_median": 0.014832734277282683,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 11.0
+     }
+    },
+    {
+     "term": "acute_kidney_injury",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.2620421785145135,
+     "logit_sigma": 1.3963235444275135,
+     "rate_median": 0.013897625508028083,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 12.0
+     }
+    },
+    {
+     "term": "pneumonia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.293934818888716,
+     "logit_sigma": 1.5428193300154631,
+     "rate_median": 0.01346726185108924,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 12.0
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.383832397354968,
+     "logit_sigma": 1.398412935782171,
+     "rate_median": 0.012323680250481497,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 10.0
+     }
+    },
+    {
+     "term": "dehydration",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.412295012758481,
+     "logit_sigma": 1.5727143399499472,
+     "rate_median": 0.011982004496061722,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 13.0
+     }
+    },
+    {
+     "term": "thrombocytopenia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.457288046663262,
+     "logit_sigma": 2.8095056106125074,
+     "rate_median": 0.011460887626009322,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 53.049999999999955
+     }
+    },
+    {
+     "term": "diarrhea",
+     "seriousness": "grade not stated",
+     "source": "protocol:F049",
+     "logit_mu": -0.7081850579244856,
+     "logit_sigma": 0.0,
+     "rate_median": 0.33,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 29.0,
+      "q05": 22.0,
+      "q95": 36.0
+     }
+    }
+   ]
+  },
+  {
+   "arm_id": "ARM3",
+   "label": "Standard of Care",
+   "enrolled": 87,
+   "asset_signature": "antimetabolite+pd1_pdl1_inhibitor+platinum",
+   "missing_classes": [],
+   "unmapped_agents": [
+    "pemigatinib"
+   ],
+   "safety_v3": {
+    "status": "RESOLVED",
+    "reason": null,
+    "features": {
+     "classes": [
+      "antimetabolite",
+      "pd1_pdl1_inhibitor",
+      "platinum"
+     ],
+     "unclassified_agent": false,
+     "agents": [
+      {
+       "agent": "gemcitabine",
+       "class": "antimetabolite"
+      },
+      {
+       "agent": "carboplatin",
+       "class": "platinum"
+      },
+      {
+       "agent": "carboplatin",
+       "class": "platinum"
+      },
+      {
+       "agent": "pembrolizumab",
+       "class": "pd1_pdl1_inhibitor"
+      }
+     ],
+     "phase": "PHASE2",
+     "pediatric": false,
+     "disease_family": "urothelial",
+     "log_relative_dose": 0.0,
+     "dose_unknown": false
+    },
+    "classes_without_data": []
+   },
+   "events": [
+    {
+     "term": "nausea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.48551179847680753,
+     "logit_sigma": 1.3938412682284533,
+     "rate_median": 0.3809514417231412,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 32.0,
+      "q05": 4.0,
+      "q95": 74.0
+     }
+    },
+    {
+     "term": "fatigue",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.5455711323673822,
+     "logit_sigma": 1.5411330042613365,
+     "rate_median": 0.3668925492362453,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 31.0,
+      "q05": 3.0,
+      "q95": 75.04999999999995
+     }
+    },
+    {
+     "term": "anemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.6603785099023346,
+     "logit_sigma": 1.8677332440382286,
+     "rate_median": 0.3406545896757633,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 29.0,
+      "q05": 2.0,
+      "q95": 80.0
+     }
+    },
+    {
+     "term": "constipation",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.1174861066519202,
+     "logit_sigma": 1.327805985569889,
+     "rate_median": 0.24647788263229287,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 22.0,
+      "q05": 2.0,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "diarrhea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.4106987779988867,
+     "logit_sigma": 1.4289414979190809,
+     "rate_median": 0.19612386412582747,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 17.0,
+      "q05": 1.0,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "alanine_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.532330710101899,
+     "logit_sigma": 1.608240037243621,
+     "rate_median": 0.1776529309764487,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 15.0,
+      "q05": 1.0,
+      "q95": 66.0
+     }
+    },
+    {
+     "term": "decreased_platelet_count",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.5395850476764523,
+     "logit_sigma": 2.0163187452168314,
+     "rate_median": 0.17659560473231958,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 15.0,
+      "q05": 0.0,
+      "q95": 74.0
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6519346040271556,
+     "logit_sigma": 1.2586413016587161,
+     "rate_median": 0.16084765370948634,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 1.0,
+      "q95": 53.0
+     }
+    },
+    {
+     "term": "vomiting",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6890139887600888,
+     "logit_sigma": 1.3078959292992867,
+     "rate_median": 0.15590555420907856,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 1.0,
+      "q95": 54.049999999999955
+     }
+    },
+    {
+     "term": "decrease_in_appetite",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7733663957800792,
+     "logit_sigma": 1.5082043624193804,
+     "rate_median": 0.1451241841116582,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 1.0,
+      "q95": 57.0
+     }
+    },
+    {
+     "term": "neutrophil_count_decreased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7821409828510917,
+     "logit_sigma": 2.12338218815036,
+     "rate_median": 0.14403896736029034,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 13.0,
+      "q05": 0.0,
+      "q95": 73.0
+     }
+    },
+    {
+     "term": "aspartate_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7961254124938242,
+     "logit_sigma": 1.5848825115481746,
+     "rate_median": 0.14232337069965081,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 1.0,
+      "q95": 59.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9067250428845335,
+     "logit_sigma": 1.2523918927929079,
+     "rate_median": 0.1293492237906927,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 1.0,
+      "q95": 49.0
+     }
+    },
+    {
+     "term": "hyperglycemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.924546336345099,
+     "logit_sigma": 1.7215090553679504,
+     "rate_median": 0.1273554479335604,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 0.0,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "hyponatremia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9501639772712795,
+     "logit_sigma": 1.7682484150210045,
+     "rate_median": 0.12453547923616372,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 0.0,
+      "q95": 62.0
+     }
+    },
+    {
+     "term": "hypomagnesemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9635477602691966,
+     "logit_sigma": 1.6734628780527154,
+     "rate_median": 0.12308361114882141,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 11.0,
+      "q05": 0.0,
+      "q95": 60.0
+     }
+    },
+    {
+     "term": "hypoalbuminemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1410828414181395,
+     "logit_sigma": 2.230925397027597,
+     "rate_median": 0.1051674427161295,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 71.0
+     }
+    },
+    {
+     "term": "hematuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1515823444561324,
+     "logit_sigma": 1.5096310297543885,
+     "rate_median": 0.10418345156070244,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 50.0
+     }
+    },
+    {
+     "term": "hypothyroidism",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.208936383296822,
+     "logit_sigma": 1.3241134566483619,
+     "rate_median": 0.09895086436489202,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 43.049999999999955
+     }
+    },
+    {
+     "term": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.21571881921383,
+     "logit_sigma": 2.043127070550224,
+     "rate_median": 0.09834778788805627,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 66.04999999999995
+     }
+    },
+    {
+     "term": "headache",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2500709702141144,
+     "logit_sigma": 1.2996695446609616,
+     "rate_median": 0.09534334333012595,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 42.0
+     }
+    },
+    {
+     "term": "dyspnea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2883121403609774,
+     "logit_sigma": 1.2392519708474006,
+     "rate_median": 0.09209558147048623,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 39.049999999999955
+     }
+    },
+    {
+     "term": "pruritus",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.299772525103523,
+     "logit_sigma": 1.3031206741852197,
+     "rate_median": 0.0911418021396015,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 44.0
+     }
+    },
+    {
+     "term": "sleeplessness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3592105699115122,
+     "logit_sigma": 1.1132241148580126,
+     "rate_median": 0.08633644635465287,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 34.049999999999955
+     }
+    },
+    {
+     "term": "dizziness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3716279356177647,
+     "logit_sigma": 1.130467067993047,
+     "rate_median": 0.08536195206674158,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 1.0,
+      "q95": 33.0
+     }
+    },
+    {
+     "term": "hypertension_variable",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3724976943051477,
+     "logit_sigma": 1.3978808065502701,
+     "rate_median": 0.08529406989065552,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 42.049999999999955
+     }
+    },
+    {
+     "term": "asthenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3988053423111317,
+     "logit_sigma": 1.5694023522102065,
+     "rate_median": 0.08326384049062047,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 52.0
+     }
+    },
+    {
+     "term": "abdominal_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4001046933970276,
+     "logit_sigma": 1.11707972340118,
+     "rate_median": 0.08316471344741129,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 32.0
+     }
+    },
+    {
+     "term": "back_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4145959535711556,
+     "logit_sigma": 1.0773541396784725,
+     "rate_median": 0.08206643221118533,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 1.0,
+      "q95": 31.0
+     }
+    },
+    {
+     "term": "weight_loss",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4154288953189704,
+     "logit_sigma": 1.2436032987326113,
+     "rate_median": 0.08200370727156926,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 35.0
+     }
+    },
+    {
+     "term": "rash_erythematous_macules_or_papules",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4206193309756667,
+     "logit_sigma": 1.5695377509698765,
+     "rate_median": 0.08161382271270651,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 49.0
+     }
+    },
+    {
+     "term": "hyperkalemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4821889977127123,
+     "logit_sigma": 1.9246005649977944,
+     "rate_median": 0.07711626830909599,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 57.0
+     }
+    },
+    {
+     "term": "coughing",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.511525683062936,
+     "logit_sigma": 1.264711004762975,
+     "rate_median": 0.07505412633963035,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 33.0
+     }
+    },
+    {
+     "term": "arthralgia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.5507513264438275,
+     "logit_sigma": 1.277107855278059,
+     "rate_median": 0.07237602679470802,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 35.0
+     }
+    },
+    {
+     "term": "blood_creatinine_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.571242027433325,
+     "logit_sigma": 1.3292862562348549,
+     "rate_median": 0.07101232439396729,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 33.049999999999955
+     }
+    },
+    {
+     "term": "hypokalemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.5945025709089933,
+     "logit_sigma": 1.429184680841713,
+     "rate_median": 0.06949306465783121,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 37.0
+     }
+    },
+    {
+     "term": "hypocalcemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.622384243275703,
+     "logit_sigma": 1.7954191807674857,
+     "rate_median": 0.06771162879821732,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 52.049999999999955
+     }
+    },
+    {
+     "term": "leukopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.622840708668001,
+     "logit_sigma": 2.2273991748659543,
+     "rate_median": 0.0676828193003923,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 65.0
+     }
+    },
+    {
+     "term": "chills",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.641534141410788,
+     "logit_sigma": 1.7702024280299087,
+     "rate_median": 0.06651271924090306,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 52.0
+     }
+    },
+    {
+     "term": "peripheral_edema",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.6488355786842654,
+     "logit_sigma": 1.3149908774944485,
+     "rate_median": 0.06606081425033977,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 33.0
+     }
+    },
+    {
+     "term": "anorexia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.708097367472975,
+     "logit_sigma": 1.6041534576458318,
+     "rate_median": 0.062497236402491135,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 44.0
+     }
+    },
+    {
+     "term": "lipase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.745724672079678,
+     "logit_sigma": 1.834509577822734,
+     "rate_median": 0.060328559247350075,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 53.0
+     }
+    },
+    {
+     "term": "hiccough",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.7915802637037914,
+     "logit_sigma": 1.5993069666140707,
+     "rate_median": 0.05778086204397528,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 45.0
+     }
+    },
+    {
+     "term": "dysgeusia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.823341607375883,
+     "logit_sigma": 1.4316512309002247,
+     "rate_median": 0.05607579534330383,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 35.0
+     }
+    },
+    {
+     "term": "paresthesia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8372180176201516,
+     "logit_sigma": 1.7131691203239263,
+     "rate_median": 0.05534580739609591,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 43.0
+     }
+    },
+    {
+     "term": "proteinuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.878152173802572,
+     "logit_sigma": 1.6772956940693082,
+     "rate_median": 0.05324420709320489,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 42.0
+     }
+    },
+    {
+     "term": "increased_frequency_of_micturition",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.9090145065172686,
+     "logit_sigma": 2.4593325234867627,
+     "rate_median": 0.05170973862473543,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 67.0
+     }
+    },
+    {
+     "term": "acute_kidney_injury",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8987824016975976,
+     "logit_sigma": 1.4017182146754785,
+     "rate_median": 0.05221378614005493,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 4.0,
+      "q05": 0.0,
+      "q95": 32.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.2129861274350517,
+     "logit_sigma": 1.2293255050628877,
+     "rate_median": 0.03867994578578171,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 3.0,
+      "q05": 0.0,
+      "q95": 22.0
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.85523969708994,
+     "logit_sigma": 1.3983654102198324,
+     "rate_median": 0.020729711181816674,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 16.0
+     }
+    },
+    {
+     "term": "pneumonia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.915937468202554,
+     "logit_sigma": 1.5422965751357218,
+     "rate_median": 0.01953273528348757,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 17.0
+     }
+    },
+    {
+     "term": "sepsis",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.002420730164364,
+     "logit_sigma": 1.315825327047185,
+     "rate_median": 0.017943503168599686,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 12.0
+     }
+    },
+    {
+     "term": "pneumonitis",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.229897260442714,
+     "logit_sigma": 1.3091638721866126,
+     "rate_median": 0.0143451086591548,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 11.0
+     }
+    },
+    {
+     "term": "diarrhea",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.3140922986612695,
+     "logit_sigma": 1.4458660319786092,
+     "rate_median": 0.013202061568723132,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 11.0
+     }
+    },
+    {
+     "term": "hematuria",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.337623067228608,
+     "logit_sigma": 1.40521912088603,
+     "rate_median": 0.012898993739123562,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 11.0
+     }
+    },
+    {
+     "term": "alanine_aminotransferase_increased",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.425037481393756,
+     "logit_sigma": 1.5732208944677448,
+     "rate_median": 0.01183208788883661,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 12.0
+     }
+    },
+    {
+     "term": "decreased_platelet_count",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.572336658911878,
+     "logit_sigma": 2.287389301689415,
+     "rate_median": 0.010228090070541498,
+     "enrolled": 87,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 30.0
+     }
+    }
+   ]
+  },
+  {
+   "arm_id": "ARM4",
+   "label": "Gemcitabine and Carboplatin",
+   "enrolled": 94,
+   "asset_signature": "antimetabolite+pd1_pdl1_inhibitor+platinum",
+   "missing_classes": [],
+   "unmapped_agents": [
+    "pemigatinib"
+   ],
+   "safety_v3": {
+    "status": "RESOLVED",
+    "reason": null,
+    "features": {
+     "classes": [
+      "antimetabolite",
+      "pd1_pdl1_inhibitor",
+      "platinum"
+     ],
+     "unclassified_agent": false,
+     "agents": [
+      {
+       "agent": "gemcitabine",
+       "class": "antimetabolite"
+      },
+      {
+       "agent": "carboplatin",
+       "class": "platinum"
+      },
+      {
+       "agent": "carboplatin",
+       "class": "platinum"
+      },
+      {
+       "agent": "pembrolizumab",
+       "class": "pd1_pdl1_inhibitor"
+      }
+     ],
+     "phase": "PHASE2",
+     "pediatric": false,
+     "disease_family": "urothelial",
+     "log_relative_dose": 0.0,
+     "dose_unknown": false
+    },
+    "classes_without_data": []
+   },
+   "events": [
+    {
+     "term": "nausea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.48551179847680753,
+     "logit_sigma": 1.3938412682284533,
+     "rate_median": 0.3809514417231412,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 36.0,
+      "q05": 5.0,
+      "q95": 81.0
+     }
+    },
+    {
+     "term": "fatigue",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.5455711323673822,
+     "logit_sigma": 1.5411330042613365,
+     "rate_median": 0.3668925492362453,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 34.0,
+      "q05": 3.0,
+      "q95": 84.0
+     }
+    },
+    {
+     "term": "anemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -0.6603785099023346,
+     "logit_sigma": 1.8677332440382286,
+     "rate_median": 0.3406545896757633,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 33.0,
+      "q05": 2.0,
+      "q95": 87.0
+     }
+    },
+    {
+     "term": "constipation",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.1174861066519202,
+     "logit_sigma": 1.327805985569889,
+     "rate_median": 0.24647788263229287,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 22.0,
+      "q05": 3.0,
+      "q95": 71.0
+     }
+    },
+    {
+     "term": "diarrhea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.4106987779988867,
+     "logit_sigma": 1.4289414979190809,
+     "rate_median": 0.19612386412582747,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 18.0,
+      "q05": 1.0,
+      "q95": 69.0
+     }
+    },
+    {
+     "term": "alanine_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.532330710101899,
+     "logit_sigma": 1.608240037243621,
+     "rate_median": 0.1776529309764487,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 17.0,
+      "q05": 1.0,
+      "q95": 71.0
+     }
+    },
+    {
+     "term": "decreased_platelet_count",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.5395850476764523,
+     "logit_sigma": 2.0163187452168314,
+     "rate_median": 0.17659560473231958,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 16.0,
+      "q05": 0.0,
+      "q95": 78.0
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6519346040271556,
+     "logit_sigma": 1.2586413016587161,
+     "rate_median": 0.16084765370948634,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 15.0,
+      "q05": 1.9500000000000028,
+      "q95": 60.0
+     }
+    },
+    {
+     "term": "vomiting",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.6890139887600888,
+     "logit_sigma": 1.3078959292992867,
+     "rate_median": 0.15590555420907856,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 16.0,
+      "q05": 2.0,
+      "q95": 58.0
+     }
+    },
+    {
+     "term": "decrease_in_appetite",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7733663957800792,
+     "logit_sigma": 1.5082043624193804,
+     "rate_median": 0.1451241841116582,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 14.0,
+      "q05": 1.0,
+      "q95": 63.0
+     }
+    },
+    {
+     "term": "neutrophil_count_decreased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7821409828510917,
+     "logit_sigma": 2.12338218815036,
+     "rate_median": 0.14403896736029034,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.0,
+      "q95": 80.0
+     }
+    },
+    {
+     "term": "aspartate_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.7961254124938242,
+     "logit_sigma": 1.5848825115481746,
+     "rate_median": 0.14232337069965081,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 13.5,
+      "q05": 0.0,
+      "q95": 66.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9067250428845335,
+     "logit_sigma": 1.2523918927929079,
+     "rate_median": 0.1293492237906927,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 1.0,
+      "q95": 54.049999999999955
+     }
+    },
+    {
+     "term": "hyperglycemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.924546336345099,
+     "logit_sigma": 1.7215090553679504,
+     "rate_median": 0.1273554479335604,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.0,
+      "q95": 68.0
+     }
+    },
+    {
+     "term": "hyponatremia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9501639772712795,
+     "logit_sigma": 1.7682484150210045,
+     "rate_median": 0.12453547923616372,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.0,
+      "q95": 70.0
+     }
+    },
+    {
+     "term": "hypomagnesemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -1.9635477602691966,
+     "logit_sigma": 1.6734628780527154,
+     "rate_median": 0.12308361114882141,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 12.0,
+      "q05": 0.0,
+      "q95": 62.0
+     }
+    },
+    {
+     "term": "hypoalbuminemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1410828414181395,
+     "logit_sigma": 2.230925397027597,
+     "rate_median": 0.1051674427161295,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 79.0
+     }
+    },
+    {
+     "term": "hematuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.1515823444561324,
+     "logit_sigma": 1.5096310297543885,
+     "rate_median": 0.10418345156070244,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 57.0
+     }
+    },
+    {
+     "term": "hypothyroidism",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.208936383296822,
+     "logit_sigma": 1.3241134566483619,
+     "rate_median": 0.09895086436489202,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 1.0,
+      "q95": 47.0
+     }
+    },
+    {
+     "term": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.21571881921383,
+     "logit_sigma": 2.043127070550224,
+     "rate_median": 0.09834778788805627,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 10.0,
+      "q05": 0.0,
+      "q95": 70.0
+     }
+    },
+    {
+     "term": "headache",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2500709702141144,
+     "logit_sigma": 1.2996695446609616,
+     "rate_median": 0.09534334333012595,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 0.0,
+      "q95": 45.0
+     }
+    },
+    {
+     "term": "dyspnea",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.2883121403609774,
+     "logit_sigma": 1.2392519708474006,
+     "rate_median": 0.09209558147048623,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 42.0
+     }
+    },
+    {
+     "term": "pruritus",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.299772525103523,
+     "logit_sigma": 1.3031206741852197,
+     "rate_median": 0.0911418021396015,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 9.0,
+      "q05": 1.0,
+      "q95": 45.0
+     }
+    },
+    {
+     "term": "sleeplessness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3592105699115122,
+     "logit_sigma": 1.1132241148580126,
+     "rate_median": 0.08633644635465287,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 35.0
+     }
+    },
+    {
+     "term": "dizziness",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3716279356177647,
+     "logit_sigma": 1.130467067993047,
+     "rate_median": 0.08536195206674158,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 36.0
+     }
+    },
+    {
+     "term": "hypertension_variable",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3724976943051477,
+     "logit_sigma": 1.3978808065502701,
+     "rate_median": 0.08529406989065552,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 48.0
+     }
+    },
+    {
+     "term": "asthenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.3988053423111317,
+     "logit_sigma": 1.5694023522102065,
+     "rate_median": 0.08326384049062047,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 49.0
+     }
+    },
+    {
+     "term": "abdominal_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4001046933970276,
+     "logit_sigma": 1.11707972340118,
+     "rate_median": 0.08316471344741129,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 33.0
+     }
+    },
+    {
+     "term": "back_pain",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4145959535711556,
+     "logit_sigma": 1.0773541396784725,
+     "rate_median": 0.08206643221118533,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 1.0,
+      "q95": 34.049999999999955
+     }
+    },
+    {
+     "term": "weight_loss",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4154288953189704,
+     "logit_sigma": 1.2436032987326113,
+     "rate_median": 0.08200370727156926,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 1.0,
+      "q95": 38.0
+     }
+    },
+    {
+     "term": "rash_erythematous_macules_or_papules",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4206193309756667,
+     "logit_sigma": 1.5695377509698765,
+     "rate_median": 0.08161382271270651,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 8.0,
+      "q05": 0.0,
+      "q95": 54.0
+     }
+    },
+    {
+     "term": "hyperkalemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.4821889977127123,
+     "logit_sigma": 1.9246005649977944,
+     "rate_median": 0.07711626830909599,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 62.0
+     }
+    },
+    {
+     "term": "coughing",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.511525683062936,
+     "logit_sigma": 1.264711004762975,
+     "rate_median": 0.07505412633963035,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 39.0
+     }
+    },
+    {
+     "term": "arthralgia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.5507513264438275,
+     "logit_sigma": 1.277107855278059,
+     "rate_median": 0.07237602679470802,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 37.049999999999955
+     }
+    },
+    {
+     "term": "blood_creatinine_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.571242027433325,
+     "logit_sigma": 1.3292862562348549,
+     "rate_median": 0.07101232439396729,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.5,
+      "q05": 0.0,
+      "q95": 38.0
+     }
+    },
+    {
+     "term": "hypokalemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.5945025709089933,
+     "logit_sigma": 1.429184680841713,
+     "rate_median": 0.06949306465783121,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 40.0
+     }
+    },
+    {
+     "term": "hypocalcemia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.622384243275703,
+     "logit_sigma": 1.7954191807674857,
+     "rate_median": 0.06771162879821732,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 57.0
+     }
+    },
+    {
+     "term": "leukopenia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.622840708668001,
+     "logit_sigma": 2.2273991748659543,
+     "rate_median": 0.0676828193003923,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 68.0
+     }
+    },
+    {
+     "term": "chills",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.641534141410788,
+     "logit_sigma": 1.7702024280299087,
+     "rate_median": 0.06651271924090306,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 7.0,
+      "q05": 0.0,
+      "q95": 54.0
+     }
+    },
+    {
+     "term": "peripheral_edema",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.6488355786842654,
+     "logit_sigma": 1.3149908774944485,
+     "rate_median": 0.06606081425033977,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 36.0
+     }
+    },
+    {
+     "term": "anorexia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.708097367472975,
+     "logit_sigma": 1.6041534576458318,
+     "rate_median": 0.062497236402491135,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 45.0
+     }
+    },
+    {
+     "term": "lipase_increased",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.745724672079678,
+     "logit_sigma": 1.834509577822734,
+     "rate_median": 0.060328559247350075,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 52.049999999999955
+     }
+    },
+    {
+     "term": "hiccough",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.7915802637037914,
+     "logit_sigma": 1.5993069666140707,
+     "rate_median": 0.05778086204397528,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 45.049999999999955
+     }
+    },
+    {
+     "term": "dysgeusia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.823341607375883,
+     "logit_sigma": 1.4316512309002247,
+     "rate_median": 0.05607579534330383,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 37.049999999999955
+     }
+    },
+    {
+     "term": "paresthesia",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8372180176201516,
+     "logit_sigma": 1.7131691203239263,
+     "rate_median": 0.05534580739609591,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 47.0
+     }
+    },
+    {
+     "term": "proteinuria",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.878152173802572,
+     "logit_sigma": 1.6772956940693082,
+     "rate_median": 0.05324420709320489,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 44.0
+     }
+    },
+    {
+     "term": "increased_frequency_of_micturition",
+     "seriousness": "non_serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.9090145065172686,
+     "logit_sigma": 2.4593325234867627,
+     "rate_median": 0.05170973862473543,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 71.0
+     }
+    },
+    {
+     "term": "acute_kidney_injury",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -2.8987824016975976,
+     "logit_sigma": 1.4017182146754785,
+     "rate_median": 0.05221378614005493,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 33.0
+     }
+    },
+    {
+     "term": "urinary_tract_infection",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.2129861274350517,
+     "logit_sigma": 1.2293255050628877,
+     "rate_median": 0.03867994578578171,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 4.0,
+      "q05": 0.0,
+      "q95": 23.0
+     }
+    },
+    {
+     "term": "fever",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.85523969708994,
+     "logit_sigma": 1.3983654102198324,
+     "rate_median": 0.020729711181816674,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 16.0
+     }
+    },
+    {
+     "term": "pneumonia",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -3.915937468202554,
+     "logit_sigma": 1.5422965751357218,
+     "rate_median": 0.01953273528348757,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 21.0
+     }
+    },
+    {
+     "term": "sepsis",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.002420730164364,
+     "logit_sigma": 1.315825327047185,
+     "rate_median": 0.017943503168599686,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 12.049999999999955
+     }
+    },
+    {
+     "term": "pneumonitis",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.229897260442714,
+     "logit_sigma": 1.3091638721866126,
+     "rate_median": 0.0143451086591548,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 11.0
+     }
+    },
+    {
+     "term": "diarrhea",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.3140922986612695,
+     "logit_sigma": 1.4458660319786092,
+     "rate_median": 0.013202061568723132,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 13.0
+     }
+    },
+    {
+     "term": "hematuria",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.337623067228608,
+     "logit_sigma": 1.40521912088603,
+     "rate_median": 0.012898993739123562,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 13.0
+     }
+    },
+    {
+     "term": "alanine_aminotransferase_increased",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.425037481393756,
+     "logit_sigma": 1.5732208944677448,
+     "rate_median": 0.01183208788883661,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 12.0
+     }
+    },
+    {
+     "term": "decreased_platelet_count",
+     "seriousness": "serious",
+     "source": "safety_v3:RESOLVED",
+     "logit_mu": -4.572336658911878,
+     "logit_sigma": 2.287389301689415,
+     "rate_median": 0.010228090070541498,
+     "enrolled": 94,
+     "simulated_affected": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 28.0
+     }
+    }
+   ]
+  }
+ ],
+ "source": "safety asset V3 (safety-asset-3.1.0) and protocol-stated incidences",
+ "status": "RESOLVED",
+ "note": "V3 rates: regimen classes, relative dose, phase, age group and disease family from the protocol; an arm with no classified agent is UNRESOLVED (no catch-all group)"
+}

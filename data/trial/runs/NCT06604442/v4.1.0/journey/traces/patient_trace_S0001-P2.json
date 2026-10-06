@@ -1,0 +1,155 @@
+{
+ "subject_id": "S0001-P2",
+ "arm": "ARM2",
+ "agents": [
+  "flotufolastat_fluorine"
+ ],
+ "baseline": {
+  "patient_id": "P005590",
+  "demographic:age": {
+   "value": 65.87,
+   "unit": "year"
+  },
+  "demographic:sex": "male",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 0,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 77.6,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 159.3,
+   "unit": "cm"
+  },
+  "var:baseline_psa_categories": "Higher than or equal to 100 ng/mL"
+ },
+ "progression_day_latent": 1913,
+ "progression_detected_day": null,
+ "off_treatment": [
+  10,
+  "completed planned procedures"
+ ],
+ "dose": {
+  "flotufolastat_fluorine": {
+   "value": 296.0,
+   "unit": "mbq",
+   "basis": "fixed"
+  }
+ },
+ "reductions": {
+  "flotufolastat_fluorine": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "flotufolastat_fluorine",
+   "planned_administrations": 9,
+   "administrations": 9,
+   "dose": "296 mbq"
+  }
+ ],
+ "adverse_events": [],
+ "events": [
+  {
+   "day": -14,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -14,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 65.87, male, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -14,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -14,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -14,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -14,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -14,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 2,
+   "visit": "C1D2",
+   "category": "treatment",
+   "item": "start flotufolastat_fluorine",
+   "result": "296 mbq",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX002",
+   "quote": "296±20% MBq (8±20% mCi) administered as an IV bolus injection"
+  },
+  {
+   "day": 10,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "completed planned procedures",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  }
+ ]
+}

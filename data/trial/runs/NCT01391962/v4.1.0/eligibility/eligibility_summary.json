@@ -1,0 +1,391 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "e210f25280f43b9023f3df75394eaef47b6e179921b73f6cf3f6001146969a9e",
+  "population": "f2010cc0d0efddef6907f21eb34a54917c0205087c9c3e872157ebe62c85047a"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 8575,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 1425
+  },
+  "eligible_share": 0.8575,
+  "proven_eligible_share": 0.8575,
+  "not_proven_ineligible_share": 0.8575,
+  "criteria": {
+   "evaluated": [
+    "EL001",
+    "EL004",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL025",
+    "EL026",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034",
+    "EL036",
+    "EL037",
+    "EL038",
+    "EL039",
+    "EL040",
+    "EL041",
+    "EL042",
+    "EL043"
+   ],
+   "procedural": [
+    "EL005",
+    "EL007",
+    "EL008",
+    "EL010"
+   ],
+   "permissive": [
+    "EL003",
+    "EL006",
+    "EL009"
+   ],
+   "informational": [
+    "EL002",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL027",
+    "EL028",
+    "EL035",
+    "EL044"
+   ],
+   "run_with_review_flag": [
+    "EL015",
+    "EL018",
+    "EL019",
+    "EL030",
+    "EL039",
+    "EL040"
+   ]
+  },
+  "per_criterion": {
+   "EL001": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (histologically confirmed metastatic alveolar soft part sarcoma is one of ['histologically confirmed metastatic alveolar soft part sarcoma'] AND not curable by surgery is one of ['not curable by surgery'] AND Diagnosis of malignancy is present [qualifier: by the department of patho"
+   },
+   "EL004": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (at least one lesion that can be accurately measured in at least one dimension is present [qualifier: longest diameter to be recorded] AND (longest diameter at least 20 mm [qualifier: with conventional techniques] OR longest diameter at least 10 mm [qualifier: with spiral CT scan])"
+   },
+   "EL011": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (prior therapy is absent [qualifier: no] AND metastatic disease is present [qualifier: not curable by surgery])"
+   },
+   "EL012": {
+    "met": 9594,
+    "not_met": 0,
+    "unknown": 406,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Age at least 16 year AND [IF Patients age at least 16 and at most 17 year THEN (BSA at least 1.7 m2 OR weigh at least 60 kg)])"
+   },
+   "EL013": {
+    "met": 10000,
+    "not_met": 0,
+    "unknown": 0,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ECOG performance status at most 2"
+   },
+   "EL014": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Life expectancy greater than 3 month"
+   },
+   "EL015": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (leukocytes greater than 3000 /mcl AND absolute neutrophil count greater than 1500 /mcl AND platelets greater than 100000 /mcl AND hemoglobin greater than 9 g/dl AND total serum bilirubin is one of ['normal institutional limits'] AND AST(SGOT)/ALT(SGPT) None 2.5 times institutional"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: QTc less than 480 msec [assessed: in screening electrocardiogram] [qualifier: with Bazett’s correction]"
+   },
+   "EL017": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (((a history of Class II heart failure is present AND asymptomatic on treatment is present) OR prior anthracycline exposure greater than 350 mg/m2 [qualifier: cumulative dose] OR central thoracic radiation that included the heart in the\nradiotherapy port is present) AND cardiac fun"
+   },
+   "EL018": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (blood pressure (BP) greater than 140 mmhg [qualifier: (systolic)] AND blood pressure (BP) greater than 90 mmhg [qualifier: (diastolic)])"
+   },
+   "EL019": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Left ventricular ejection fraction (LVEF) at least None times institutional lower limit of normal {NOT EXECUTABLE}"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF women of childbearing potential is one of ['women of childbearing potential'] THEN pregnancy test is one of ['negative'] [assessed: prior to study entry]]"
+   },
+   "EL026": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF ((Women is one of ['female'] AND child-bearing potential is one of ['child-bearing potential']) OR men is one of ['male']) THEN agree to use two reliable forms of contraception is present [assessed: prior to study entry, for the duration of study participation, and for 2 months"
+   },
+   "EL029": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: swallow whole tablets and capsules is present"
+   },
+   "EL030": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: prior treatment with any VEGF receptor tyrosine kinase inhibitor is present"
+   },
+   "EL031": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: any other investigational agents is present [qualifier: receiving]"
+   },
+   "EL032": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Major surgery occurs within 4 week before study entry (protocol wording: 'entry into the study') [assessed: within 4 weeks prior to entry into the study] OR a surgical incision is present [qualifier: not fully healed])"
+   },
+   "EL033": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (familial long QT syndrome is present [qualifier: history of] OR medications that may cause QTc interval prolongation is present [qualifier: use of])"
+   },
+   "EL034": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (pre-existing thyroid abnormality is one of ['pre-existing thyroid abnormality'] AND thyroid function is one of ['unable to maintain thyroid function in the normal range with medication'])"
+   },
+   "EL036": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (uncontrolled intercurrent illness is present OR hypertension is present [qualifier: uncontrolled] OR ongoing or active infection is present OR symptomatic congestive heart failure is present OR unstable angina pectoris is present OR cardiac arrhythmia is present OR psychiat"
+   },
+   "EL037": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: any condition is present [qualifier: impairs their ability to swallow, retain, and/or absorb the drug]"
+   },
+   "EL038": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (serious or non-healing wound is present OR ulcer is present OR abdominal fistula occurs within 28 day before treatment [assessed: within 28 days of treatment] [qualifier: history of] OR gastrointestinal perforation occurs within 28 day before treatment [assessed: within 28 "
+   },
+   "EL039": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (proteinuria greater than 2 [qualifier: on two consecutive dipsticks taken no less than 1 week apart] OR 24-hour urine protein greater than 1 g)"
+   },
+   "EL040": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (proteinuria less than 2 + AND urinalysis occurs within 1 week before study enrollment (protocol wording: 'enrollment') [assessed: within 1 week prior to enrollment] [qualifier: do not need the\nurinalysis repeated])"
+   },
+   "EL041": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (HIV-positive is present AND combination antiretroviral therapy is present [qualifier: on])"
+   },
+   "EL042": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: pregnant women is present"
+   },
+   "EL043": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (unstable or serious medical conditions is present OR uncontrolled diabetes is present OR uncontrolled hypertension is present OR symptomatic congestive heart failure is present OR unstable angina pectoris is present OR myocardial infarction within the past 6 months is prese"
+   }
+  },
+  "decisive_exclusions": {
+   "EL041": 74,
+   "EL034": 73,
+   "EL030": 70,
+   "EL037": 69,
+   "EL016": 66,
+   "EL019": 65,
+   "EL038": 63,
+   "EL015": 63,
+   "EL011": 63,
+   "EL017": 62,
+   "EL001": 61,
+   "EL039": 61,
+   "EL033": 60,
+   "EL018": 60,
+   "EL042": 60,
+   "EL031": 60,
+   "EL032": 59,
+   "EL043": 59,
+   "EL026": 58,
+   "EL029": 57,
+   "EL040": 57,
+   "EL014": 53,
+   "EL004": 52,
+   "EL025": 52,
+   "EL036": 46,
+   "EL012": 1
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL001": 10000,
+   "EL004": 10000,
+   "EL011": 10000,
+   "EL014": 10000,
+   "EL015": 10000,
+   "EL016": 10000,
+   "EL017": 10000,
+   "EL018": 10000,
+   "EL019": 10000,
+   "EL025": 10000,
+   "EL026": 10000,
+   "EL029": 10000,
+   "EL030": 10000,
+   "EL031": 10000,
+   "EL032": 10000,
+   "EL033": 10000,
+   "EL034": 10000,
+   "EL036": 10000,
+   "EL037": 10000,
+   "EL038": 10000,
+   "EL039": 10000,
+   "EL040": 10000,
+   "EL041": 10000,
+   "EL042": 10000,
+   "EL043": 10000,
+   "EL012": 406
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.8522535045629653,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (sarcoma; 6 trials, 548 screened)",
+    "detail": {
+     "estimate": 0.8522535045629653,
+     "ci95": [
+      0.7778592679468123,
+      0.9047830883568544
+     ],
+     "single_trial_80": [
+      0.7364525396402701,
+      0.9225251197007027
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.7364578558948517,
+      "p30": 0.8108933405220878,
+      "p50": 0.8522535045629653,
+      "p70": 0.8858411590596622,
+      "p90": 0.9225231619872564
+     },
+     "tau_logit": 0.5049359393932489,
+     "groups": 6,
+     "trials": 6,
+     "participants": 548
+    }
+   },
+   "target_eligible_share": 0.8522535045629653,
+   "share_excluded_by_decided_criteria": 0.0,
+   "residual_pass_needed": 0.8522535045629653,
+   "per_criterion_pass_probability": 0.9938699713083671,
+   "criteria": [
+    "EL001",
+    "EL004",
+    "EL011",
+    "EL012",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL025",
+    "EL026",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034",
+    "EL036",
+    "EL037",
+    "EL038",
+    "EL039",
+    "EL040",
+    "EL041",
+    "EL042",
+    "EL043"
+   ]
+  }
+ }
+}

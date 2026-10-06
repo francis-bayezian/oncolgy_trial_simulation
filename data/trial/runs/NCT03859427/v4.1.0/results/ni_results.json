@@ -1,0 +1,154 @@
+{
+ "ni_version": "ni-binary-1.1.0",
+ "design": {
+  "status": "RESOLVED",
+  "fraction": 0.6,
+  "control_phrase": "twice-weekly KRd 27 mg/m2",
+  "comparator": "Rd",
+  "quote": "preserves at least 60% of twice-weekly KRd 27 mg/m2 effect vs Rd.",
+  "alpha": 0.025,
+  "analysis_id": "AN1",
+  "design_assumption": {
+   "rate": 0.866,
+   "quote": "true RR of 1 with ORR = 86.6% for both arms (once-weekly KRd 56 mg/m2 vs twice-weekly KRd 27 mg/m2)"
+  },
+  "total_n": 460.0,
+  "n_per_arm": [
+   230,
+   230
+  ]
+ },
+ "historical": {
+  "status": "RESOLVED",
+  "control_rate": [
+   0.871,
+   "F020",
+   "87.1%"
+  ],
+  "comparator_rate": [
+   0.667,
+   "F021",
+   "66.7%"
+  ],
+  "log_rr": 0.2668519309368791,
+  "rr": 1.3058470764617691,
+  "var_log_rr": 0.001741820634050169,
+  "variance_basis": [
+   "from the stated 95% CI (F031)",
+   "from the stated 95% CI (F033)"
+  ],
+  "var_log_control": 0.00041119098396237715
+ },
+ "evidence_prior": {
+  "status": "RESOLVED",
+  "level": "protocol-cited historical, same regimen",
+  "source": "protocol fact F020 (87.1%); heterogeneity data/simulation_parameters_v3/proportions/tau_posteriors.parquet (regimen level, median 0.23)",
+  "studies": 1,
+  "rate": {
+   "median": 0.8712374891059005,
+   "q05": 0.7831638874649615,
+   "q10": 0.8147237542552946,
+   "q90": 0.9123728227765018,
+   "q95": 0.9266604360634136,
+   "percentiles": {
+    "p10": 0.8147237542552946,
+    "p30": 0.8531119575630243,
+    "p50": 0.8712374891059005,
+    "p70": 0.8874831178886223,
+    "p90": 0.9123728227765018
+   }
+  }
+ },
+ "evidence_prior_context": {
+  "status": "RESOLVED",
+  "level": "family",
+  "target": "objective_response_rate",
+  "family": "myeloma_and_plasma_cell",
+  "contexts": 33,
+  "regimens": [
+   "allogeneic hsct + fludarabine + melphalan + bortezomib + ixazomib",
+   "allogeneic hsct + fludarabine + melphalan + bortezomib + placebo",
+   "bendamustine hydrochloride",
+   "bendamustine hydrochloride + bortezomib",
+   "bortezomib",
+   "bortezomib + lenalidomide + dexamethasone + stem cell mobilization + autologous stem cell transplant",
+   "bortezomib + placebo to vorinostat",
+   "bortezomib + thalidomide",
+   "carfilzomib + cyclophosphamide + dexamethasone",
+   "carfilzomib + dexamethasone",
+   "cyclophosphamide",
+   "cyclophosphamide + dexamethasone + lenalidomide"
+  ],
+  "studies": 34,
+  "rate": {
+   "median": 0.453111931681633,
+   "q05": 0.030962322838604454,
+   "q10": 0.04997711293399334,
+   "q90": 0.9120618820190429,
+   "q95": 0.9516324788331985,
+   "percentiles": {
+    "p10": 0.04997711293399334,
+    "p30": 0.1737923815846443,
+    "p50": 0.453111931681633,
+    "p70": 0.7271481215953827,
+    "p90": 0.9120618820190429
+   }
+  }
+ },
+ "power_at_protocol_assumption": {
+  "rate": 0.866,
+  "rr": 1.0,
+  "power": 0.77165
+ },
+ "p_success_curve": [
+  {
+   "rr": 0.8,
+   "p_noninferior": 0.0
+  },
+  {
+   "rr": 0.85,
+   "p_noninferior": 0.0004
+  },
+  {
+   "rr": 0.9,
+   "p_noninferior": 0.022
+  },
+  {
+   "rr": 0.95,
+   "p_noninferior": 0.24715
+  },
+  {
+   "rr": 1.0,
+   "p_noninferior": 0.77595
+  },
+  {
+   "rr": 1.05,
+   "p_noninferior": 0.9792
+  }
+ ],
+ "p_success_basis": "prior on the control response rate (protocol-cited historical, same regimen)",
+ "predicted_response": {
+  "control_true_rate": {
+   "median": 0.8712374891059005,
+   "q05": 0.7831638874649615,
+   "q10": 0.8147237542552946,
+   "q90": 0.9123728227765018,
+   "q95": 0.9266604360634136,
+   "percentiles": {
+    "p10": 0.8147237542552946,
+    "p30": 0.8531119575630243,
+    "p50": 0.8712374891059005,
+    "p70": 0.8874831178886223,
+    "p90": 0.9123728227765018
+   }
+  },
+  "observed_rate_90_at_n": [
+   0.7782608695652173,
+   0.9347826086956522
+  ],
+  "n_per_arm": 230,
+  "level": "protocol-cited historical, same regimen",
+  "studies": 1,
+  "note": "the evidence has no information on dosing schedule: both arms share this prediction under RR = 1"
+ }
+}

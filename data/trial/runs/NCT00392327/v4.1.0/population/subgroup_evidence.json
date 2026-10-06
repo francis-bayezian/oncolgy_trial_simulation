@@ -1,0 +1,139 @@
+{
+ "version": "subgroup-evidence-1.0.0",
+ "family": "central_nervous_system",
+ "phase": null,
+ "factors": [
+  {
+   "key": "var:tumor_location",
+   "text": "location",
+   "levels": [
+    "Medulloblastoma",
+    "Diffusely Anaplastic Medulloblastoma"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "existing",
+   "mix": {
+    "Medulloblastoma": 1.0,
+    "Diffusely Anaplastic Medulloblastoma": 0.0
+   },
+   "effects": {
+    "reference_level": "Medulloblastoma",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:dissemination_status",
+   "text": "dissemination",
+   "levels": [
+    "M0",
+    "M+"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "M0",
+     "M+"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 0,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 0 trials, fewer than 3)"
+   },
+   "mix": {
+    "M0": 0.5034,
+    "M+": 0.4966
+   },
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor"
+   }
+  },
+  {
+   "key": "var:tumor_location",
+   "text": "medulloblastoma and PNET patients",
+   "levels": [],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "existing",
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no levels"
+   }
+  },
+  {
+   "key": "var:tumor_location",
+   "text": "medulloblastoma patients only",
+   "levels": [],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "existing",
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no levels"
+   }
+  },
+  {
+   "key": "var:ecog_performance_status",
+   "text": "ECOG performance status (0, 1, 2 or more)",
+   "levels": [
+    "0",
+    "1",
+    "2 or more"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "0": 0.3916,
+    "1": 0.471,
+    "2 or more": 0.1374
+   },
+   "effects": {
+    "reference_level": "0",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "demographic:sex",
+   "text": "sex (female, male)",
+   "levels": [
+    "female",
+    "male"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "female": 0.3925,
+    "male": 0.6075
+   },
+   "effects": {
+    "reference_level": "female",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "male": {
+      "log_effect": 0.0485,
+      "trials": 3,
+      "range_10_90": [
+       0.039,
+       0.24
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  }
+ ],
+ "assumptions": [
+  "A27_subgroup_prevalence_equal",
+  "A28_prognostic_effects"
+ ]
+}

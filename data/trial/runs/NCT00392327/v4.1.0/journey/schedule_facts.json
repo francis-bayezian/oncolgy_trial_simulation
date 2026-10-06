@@ -1,0 +1,111 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 16,
+ "facts": [
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 7,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "eligibility clinical and laboratory studies",
+   "time_origin": "enrollment",
+   "quote": "All clinical and laboratory studies to determine eligibility must be performed within 7 days prior to enrollment",
+   "reason": "Eligibility studies must be completed within 7 days before enrollment.",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "al must be available in the patient's medical/research record which will serve as the source document for verification at the time of audit. All clinical and laboratory studies to determine eligibility must be performed within 7 days prior to enrollment unless otherwise indicated. Laboratory values used to assess eligibility must be no older than seven (7) days at the start of therapy. Labo",
+   "verification": {
+    "votes": [
+     "INCOMPLETE",
+     "INCOMPLETE",
+     "INCOMPLETE"
+    ],
+    "reviewer_note": "The rendering omits the protocol's exception for otherwise indicated timing."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 7,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "eligibility laboratory values",
+   "time_origin": "first_dose",
+   "quote": "Laboratory values used to assess eligibility must be no older than seven (7) days at the start of therapy",
+   "reason": "Eligibility laboratory values may be no more than 7 days old at therapy start.",
+   "fact_id": "SF02",
+   "issues": [],
+   "evidence": "al must be available in the patient's medical/research record which will serve as the source document for verification at the time of audit. All clinical and laboratory studies to determine eligibility must be performed within 7 days prior to enrollment unless otherwise indicated. Laboratory values used to assess eligibility must be no older than seven (7) days at the start of therapy. Labo",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol anchors the laboratory-value age to the start of therapy, not explicitly to the first dose."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 10,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "pre-operative spinal MRI",
+   "time_origin": "unclear",
+   "quote": "Spinal MRI (T-1 weighted imaging with and without gadolinium) is required within 10 days of surgery if done pre- operatively",
+   "reason": "The protocol specifies a pre-operative spinal MRI window relative to surgery.",
+   "fact_id": "SF03",
+   "issues": [
+    "quote not found verbatim in the protocol text"
+   ],
+   "evidence": ""
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "post-operative spinal MRI",
+   "time_origin": "unclear",
+   "quote": "Spinal MRI (T-1 weighted imaging with and without gadolinium) is required within 28 days of surgery if done post-operatively",
+   "reason": "The protocol specifies a post-operative spinal MRI window relative to surgery.",
+   "fact_id": "SF04",
+   "issues": [],
+   "evidence": "Spinal MRI (T-1 weighted imaging with and without gadolinium) is required within 28 days of surgery if done post-operatively and within 10 days of surgery if done pre- operatively. If an MRI scan is performed within 10 days prior to surgery, than o",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering loses the surgery-relative origin and states an unclear before-event timing."
+   },
+   "status": "REVIEW_REQUIRED"
+  }
+ ]
+}

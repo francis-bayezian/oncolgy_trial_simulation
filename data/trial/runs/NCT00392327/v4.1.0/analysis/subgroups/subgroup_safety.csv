@@ -1,0 +1,55 @@
+Factor,Level,Arm,N,Any TEAE,Grade >= 3,SAE,AE -> discontinuation,AE -> dose modification,Deaths,Disposition
+location,Medulloblastoma,ARM1,140,140 (100%),52 (37%),52 (37%),9 (6%),94 (67%),11 (8%),completed planned treatment: 101; disease progression: 18; adverse event (registry discontinuation rate): 9
+location,Medulloblastoma,ARM2,135,135 (100%),62 (46%),62 (46%),7 (5%),83 (61%),8 (6%),"completed planned treatment: 94; disease progression: 25; withdrawal (subject, loss to follow-up or physician decision): 7"
+location,not recorded,ARM1,62,62 (100%),24 (39%),24 (39%),2 (3%),37 (60%),2 (3%),"completed planned treatment: 42; disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 7"
+location,not recorded,ARM2,63,63 (100%),26 (41%),26 (41%),1 (2%),41 (65%),5 (8%),"completed planned treatment: 47; disease progression: 8; withdrawal (subject, loss to follow-up or physician decision): 7"
+dissemination,M+,ARM1,99,99 (100%),36 (36%),36 (36%),5 (5%),60 (61%),4 (4%),"completed planned treatment: 77; disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 5"
+dissemination,M+,ARM2,85,85 (100%),42 (49%),42 (49%),5 (6%),64 (75%),5 (6%),completed planned treatment: 61; disease progression: 15; adverse event (registry discontinuation rate): 5
+dissemination,M0,ARM1,103,103 (100%),40 (39%),40 (39%),6 (6%),71 (69%),9 (9%),"completed planned treatment: 66; disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 10"
+dissemination,M0,ARM2,113,113 (100%),46 (41%),46 (41%),3 (3%),60 (53%),8 (7%),"completed planned treatment: 80; disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 10"
+Randomisation stratum,(1) M0 Medulloblastoma with >1.5 cm2 residual,ARM1,48,48 (100%),20 (42%),20 (42%),3 (6%),34 (71%),4 (8%),"completed planned treatment: 32; disease progression: 9; withdrawal (subject, loss to follow-up or physician decision): 4"
+Randomisation stratum,(1) M0 Medulloblastoma with >1.5 cm2 residual,ARM2,43,43 (100%),17 (40%),17 (40%),1 (2%),26 (60%),2 (5%),"completed planned treatment: 29; disease progression: 9; withdrawal (subject, loss to follow-up or physician decision): 3"
+Randomisation stratum,(2) M+ Medulloblastoma,ARM1,114,114 (100%),39 (34%),39 (34%),6 (5%),71 (62%),6 (5%),"completed planned treatment: 86; disease progression: 14; withdrawal (subject, loss to follow-up or physician decision): 6"
+Randomisation stratum,(2) M+ Medulloblastoma,ARM2,107,107 (100%),49 (46%),49 (46%),4 (4%),69 (64%),6 (6%),"completed planned treatment: 75; disease progression: 20; withdrawal (subject, loss to follow-up or physician decision): 8"
+Randomisation stratum,(3) M0 Diffusely Anaplastic Medulloblastoma,ARM1,40,40 (100%),17 (42%),17 (42%),2 (5%),26 (65%),3 (8%),"completed planned treatment: 25; disease progression: 6; withdrawal (subject, loss to follow-up or physician decision): 5"
+Randomisation stratum,(3) M0 Diffusely Anaplastic Medulloblastoma,ARM2,48,48 (100%),22 (46%),22 (46%),3 (6%),29 (60%),5 (10%),"completed planned treatment: 37; disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 3"
+Age (ICH E11 paediatric bands),12-17 years,ARM1,66,66 (100%),24 (36%),24 (36%),1 (2%),46 (70%),3 (5%),"completed planned treatment: 49; disease progression: 9; withdrawal (subject, loss to follow-up or physician decision): 7"
+Age (ICH E11 paediatric bands),12-17 years,ARM2,53,53 (100%),22 (42%),22 (42%),4 (8%),35 (66%),4 (8%),"completed planned treatment: 34; disease progression: 7; withdrawal (subject, loss to follow-up or physician decision): 6"
+Age (ICH E11 paediatric bands),2-11 years,ARM1,133,133 (100%),50 (38%),50 (38%),10 (8%),82 (62%),9 (7%),completed planned treatment: 91; disease progression: 20; adverse event (registry discontinuation rate): 10
+Age (ICH E11 paediatric bands),2-11 years,ARM2,145,145 (100%),66 (46%),66 (46%),4 (3%),89 (61%),9 (6%),"completed planned treatment: 107; disease progression: 26; withdrawal (subject, loss to follow-up or physician decision): 8"
+Age (ICH E11 paediatric bands),>= 18 years,ARM1,3,3 (100%),2 (67%),2 (67%),0 (0%),3 (100%),1 (33%),completed planned treatment: 3
+Age (ICH E11 paediatric bands),>= 18 years,ARM2,0,0,0,0,0,0,0,
+Sex,female,ARM1,87,87 (100%),29 (33%),29 (33%),4 (5%),54 (62%),4 (5%),"completed planned treatment: 67; disease progression: 10; withdrawal (subject, loss to follow-up or physician decision): 6"
+Sex,female,ARM2,71,71 (100%),31 (44%),31 (44%),2 (3%),45 (63%),4 (6%),"completed planned treatment: 50; disease progression: 13; withdrawal (subject, loss to follow-up or physician decision): 6"
+Sex,male,ARM1,115,115 (100%),47 (41%),47 (41%),7 (6%),77 (67%),9 (8%),"completed planned treatment: 76; disease progression: 19; withdrawal (subject, loss to follow-up or physician decision): 9"
+Sex,male,ARM2,127,127 (100%),57 (45%),57 (45%),6 (5%),79 (62%),9 (7%),"completed planned treatment: 91; disease progression: 20; withdrawal (subject, loss to follow-up or physician decision): 8"
+Race,american_indian_or_alaska_native,ARM1,0,0,0,0,0,0,0,
+Race,american_indian_or_alaska_native,ARM2,2,2 (100%),1 (50%),1 (50%),0 (0%),2 (100%),0 (0%),disease progression: 1; completed planned treatment: 1
+Race,asian,ARM1,7,7 (100%),1 (14%),1 (14%),1 (14%),3 (43%),1 (14%),"completed planned treatment: 5; adverse event (registry discontinuation rate): 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,asian,ARM2,5,5 (100%),5 (100%),5 (100%),0 (0%),4 (80%),0 (0%),"disease progression: 2; completed planned treatment: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,black_or_african_american,ARM1,13,13 (100%),3 (23%),3 (23%),1 (8%),8 (62%),0 (0%),"completed planned treatment: 9; withdrawal (subject, loss to follow-up or physician decision): 2; adverse event (registry discontinuation rate): 1"
+Race,black_or_african_american,ARM2,10,10 (100%),3 (30%),3 (30%),0 (0%),6 (60%),1 (10%),completed planned treatment: 8; disease progression: 2
+Race,native_hawaiian_or_other_pacific_islander,ARM1,0,0,0,0,0,0,0,
+Race,native_hawaiian_or_other_pacific_islander,ARM2,1,1 (100%),1 (100%),1 (100%),0 (0%),1 (100%),0 (0%),completed planned treatment: 1
+Race,other,ARM1,5,5 (100%),1 (20%),1 (20%),0 (0%),3 (60%),1 (20%),"completed planned treatment: 2; withdrawal (subject, loss to follow-up or physician decision): 2; disease progression: 1"
+Race,other,ARM2,3,3 (100%),1 (33%),1 (33%),0 (0%),2 (67%),0 (0%),"withdrawal (subject, loss to follow-up or physician decision): 2; completed planned treatment: 1"
+Race,unknown_or_not_reported,ARM1,3,3 (100%),1 (33%),1 (33%),1 (33%),2 (67%),0 (0%),completed planned treatment: 1; adverse event (registry discontinuation rate): 1; disease progression: 1
+Race,unknown_or_not_reported,ARM2,0,0,0,0,0,0,0,
+Race,white,ARM1,174,174 (100%),70 (40%),70 (40%),8 (5%),115 (66%),11 (6%),"completed planned treatment: 126; disease progression: 26; withdrawal (subject, loss to follow-up or physician decision): 10"
+Race,white,ARM2,177,177 (100%),77 (44%),77 (44%),8 (5%),109 (62%),12 (7%),"completed planned treatment: 128; disease progression: 28; withdrawal (subject, loss to follow-up or physician decision): 11"
+Ethnicity,hispanic_or_latino,ARM1,21,21 (100%),7 (33%),7 (33%),0 (0%),18 (86%),1 (5%),completed planned treatment: 16; disease progression: 5
+Ethnicity,hispanic_or_latino,ARM2,23,23 (100%),12 (52%),12 (52%),2 (9%),12 (52%),0 (0%),completed planned treatment: 20; adverse event (registry discontinuation rate): 2; disease progression: 1
+Ethnicity,not_hispanic_or_latino,ARM1,180,180 (100%),69 (38%),69 (38%),11 (6%),113 (63%),12 (7%),"completed planned treatment: 126; disease progression: 24; withdrawal (subject, loss to follow-up or physician decision): 15"
+Ethnicity,not_hispanic_or_latino,ARM2,174,174 (100%),75 (43%),75 (43%),6 (3%),111 (64%),13 (7%),"completed planned treatment: 121; disease progression: 31; withdrawal (subject, loss to follow-up or physician decision): 14"
+Ethnicity,unknown_or_not_reported,ARM1,1,1 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1
+Ethnicity,unknown_or_not_reported,ARM2,1,1 (100%),1 (100%),1 (100%),0 (0%),1 (100%),0 (0%),disease progression: 1
+Residual,< 1.5 cm2,ARM1,133,133 (100%),51 (38%),51 (38%),4 (3%),84 (63%),9 (7%),"completed planned treatment: 94; disease progression: 20; withdrawal (subject, loss to follow-up or physician decision): 12"
+Residual,< 1.5 cm2,ARM2,125,125 (100%),61 (49%),61 (49%),4 (3%),82 (66%),6 (5%),"completed planned treatment: 88; disease progression: 21; withdrawal (subject, loss to follow-up or physician decision): 11"
+Residual,>= 1.5 cm2,ARM1,69,69 (100%),25 (36%),25 (36%),7 (10%),47 (68%),4 (6%),completed planned treatment: 49; disease progression: 9; adverse event (registry discontinuation rate): 7
+Residual,>= 1.5 cm2,ARM2,73,73 (100%),27 (37%),27 (37%),4 (5%),42 (58%),7 (10%),completed planned treatment: 53; disease progression: 12; adverse event (registry discontinuation rate): 4
+Ecog performance status,0,ARM1,78,78 (100%),26 (33%),26 (33%),4 (5%),50 (64%),6 (8%),"completed planned treatment: 55; disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 7"
+Ecog performance status,0,ARM2,79,79 (100%),38 (48%),38 (48%),3 (4%),48 (61%),7 (9%),"completed planned treatment: 55; disease progression: 12; withdrawal (subject, loss to follow-up or physician decision): 8"
+Ecog performance status,1,ARM1,88,88 (100%),39 (44%),39 (44%),5 (6%),60 (68%),4 (5%),"completed planned treatment: 62; disease progression: 13; withdrawal (subject, loss to follow-up or physician decision): 7"
+Ecog performance status,1,ARM2,98,98 (100%),38 (39%),38 (39%),3 (3%),61 (62%),5 (5%),"completed planned treatment: 75; disease progression: 15; withdrawal (subject, loss to follow-up or physician decision): 5"
+Ecog performance status,2 or more,ARM1,36,36 (100%),11 (31%),11 (31%),2 (6%),21 (58%),3 (8%),completed planned treatment: 26; disease progression: 5; death: 2
+Ecog performance status,2 or more,ARM2,21,21 (100%),12 (57%),12 (57%),2 (10%),15 (71%),1 (5%),completed planned treatment: 11; disease progression: 6; adverse event (registry discontinuation rate): 2

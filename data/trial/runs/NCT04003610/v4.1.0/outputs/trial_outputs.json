@@ -1,0 +1,1882 @@
+{
+ "outputs_version": "outputs-1.0.0",
+ "seed": 20260927,
+ "protocol_id": "INCB 54828-205",
+ "cohort_file": "cohort_accrual_124_per_year_derived.jsonl",
+ "datasets": {
+  "adsl.csv": 372,
+  "adae.csv": 4144,
+  "adtte.csv": 372
+ },
+ "tables": {
+  "participant_flow": {
+   "ARM1": {
+    "enrolled": 104
+   },
+   "ARM2": {
+    "enrolled": 87
+   },
+   "ARM3": {
+    "enrolled": 87
+   },
+   "ARM4": {
+    "enrolled": 94
+   }
+  },
+  "baseline_characteristics": {
+   "ARM1": {
+    "participants": 104,
+    "age_years": {
+     "mean": 65.2,
+     "sd": 10.3,
+     "median": 65.6,
+     "min": 40.9,
+     "max": 86.4
+    },
+    "sex_percent": {
+     "male": 82.7,
+     "female": 17.3
+    },
+    "race_percent": {
+     "white": 86.5,
+     "unknown_or_not_reported": 5.8,
+     "black_or_african_american": 4.8,
+     "asian": 1.9,
+     "native_hawaiian_or_other_pacific_islander": 1.0
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 88.5,
+     "hispanic_or_latino": 8.7,
+     "unknown_or_not_reported": 2.9
+    }
+   },
+   "ARM2": {
+    "participants": 87,
+    "age_years": {
+     "mean": 65.3,
+     "sd": 10.3,
+     "median": 64.3,
+     "min": 43.1,
+     "max": 88.9
+    },
+    "sex_percent": {
+     "male": 81.6,
+     "female": 18.4
+    },
+    "race_percent": {
+     "white": 75.9,
+     "black_or_african_american": 11.5,
+     "unknown_or_not_reported": 6.9,
+     "asian": 4.6,
+     "american_indian_or_alaska_native": 1.1
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 88.5,
+     "hispanic_or_latino": 10.3,
+     "unknown_or_not_reported": 1.1
+    }
+   },
+   "ARM3": {
+    "participants": 87,
+    "age_years": {
+     "mean": 64.2,
+     "sd": 10.3,
+     "median": 65.3,
+     "min": 35.8,
+     "max": 86.3
+    },
+    "sex_percent": {
+     "male": 78.2,
+     "female": 21.8
+    },
+    "race_percent": {
+     "white": 79.3,
+     "black_or_african_american": 9.2,
+     "asian": 6.9,
+     "native_hawaiian_or_other_pacific_islander": 1.1,
+     "american_indian_or_alaska_native": 1.1,
+     "more_than_one_race": 1.1,
+     "unknown_or_not_reported": 1.1
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 89.7,
+     "hispanic_or_latino": 6.9,
+     "unknown_or_not_reported": 3.4
+    }
+   },
+   "ARM4": {
+    "participants": 94,
+    "age_years": {
+     "mean": 62.4,
+     "sd": 10.4,
+     "median": 62.7,
+     "min": 39.2,
+     "max": 92.1
+    },
+    "sex_percent": {
+     "male": 74.5,
+     "female": 25.5
+    },
+    "race_percent": {
+     "white": 80.9,
+     "black_or_african_american": 7.4,
+     "asian": 5.3,
+     "unknown_or_not_reported": 4.3,
+     "american_indian_or_alaska_native": 2.1
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 85.1,
+     "hispanic_or_latino": 9.6,
+     "unknown_or_not_reported": 5.3
+    }
+   },
+   "TOTAL": {
+    "participants": 372,
+    "age_years": {
+     "mean": 64.3,
+     "sd": 10.4,
+     "median": 64.5,
+     "min": 35.8,
+     "max": 92.1
+    },
+    "sex_percent": {
+     "male": 79.3,
+     "female": 20.7
+    },
+    "race_percent": {
+     "white": 80.9,
+     "black_or_african_american": 8.1,
+     "asian": 4.6,
+     "unknown_or_not_reported": 4.6,
+     "american_indian_or_alaska_native": 1.1,
+     "native_hawaiian_or_other_pacific_islander": 0.5,
+     "more_than_one_race": 0.3
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 87.9,
+     "hispanic_or_latino": 8.9,
+     "unknown_or_not_reported": 3.2
+    }
+   }
+  },
+  "adverse_events": {
+   "ARM1": {
+    "participants": 104,
+    "any_serious_percent": 55.8,
+    "any_other_percent": 100.0,
+    "top_events": [
+     {
+      "term": "nasal_congestion_finding",
+      "serious": false,
+      "participants": 96,
+      "percent": 92.3
+     },
+     {
+      "term": "hypoalbuminemia",
+      "serious": false,
+      "participants": 95,
+      "percent": 91.3
+     },
+     {
+      "term": "hypertension_variable",
+      "serious": false,
+      "participants": 94,
+      "percent": 90.4
+     },
+     {
+      "term": "dyspnea",
+      "serious": false,
+      "participants": 87,
+      "percent": 83.7
+     },
+     {
+      "term": "arthralgia",
+      "serious": false,
+      "participants": 83,
+      "percent": 79.8
+     },
+     {
+      "term": "hypocalcemia",
+      "serious": false,
+      "participants": 78,
+      "percent": 75.0
+     },
+     {
+      "term": "dysuria",
+      "serious": false,
+      "participants": 73,
+      "percent": 70.2
+     },
+     {
+      "term": "decrease_in_appetite",
+      "serious": false,
+      "participants": 71,
+      "percent": 68.3
+     },
+     {
+      "term": "event",
+      "serious": false,
+      "participants": 54,
+      "percent": 51.9
+     },
+     {
+      "term": "hyperphosphatemia",
+      "serious": false,
+      "participants": 52,
+      "percent": 50.0
+     },
+     {
+      "term": "nausea",
+      "serious": false,
+      "participants": 50,
+      "percent": 48.1
+     },
+     {
+      "term": "pruritus",
+      "serious": false,
+      "participants": 43,
+      "percent": 41.3
+     },
+     {
+      "term": "other serious adverse events (not individually predicted)",
+      "serious": true,
+      "participants": 39,
+      "percent": 37.5
+     },
+     {
+      "term": "hypomagnesemia",
+      "serious": false,
+      "participants": 35,
+      "percent": 33.7
+     },
+     {
+      "term": "blood_creatinine_increased",
+      "serious": false,
+      "participants": 35,
+      "percent": 33.7
+     }
+    ]
+   },
+   "ARM3": {
+    "participants": 87,
+    "any_serious_percent": 39.1,
+    "any_other_percent": 100.0,
+    "top_events": [
+     {
+      "term": "decreased_platelet_count",
+      "serious": false,
+      "participants": 68,
+      "percent": 78.2
+     },
+     {
+      "term": "anemia",
+      "serious": false,
+      "participants": 66,
+      "percent": 75.9
+     },
+     {
+      "term": "nausea",
+      "serious": false,
+      "participants": 63,
+      "percent": 72.4
+     },
+     {
+      "term": "vomiting",
+      "serious": false,
+      "participants": 56,
+      "percent": 64.4
+     },
+     {
+      "term": "coughing",
+      "serious": false,
+      "participants": 39,
+      "percent": 44.8
+     },
+     {
+      "term": "abdominal_pain",
+      "serious": false,
+      "participants": 30,
+      "percent": 34.5
+     },
+     {
+      "term": "rash_erythematous_macules_or_papules",
+      "serious": false,
+      "participants": 27,
+      "percent": 31.0
+     },
+     {
+      "term": "other serious adverse events (not individually predicted)",
+      "serious": true,
+      "participants": 26,
+      "percent": 29.9
+     },
+     {
+      "term": "asthenia",
+      "serious": false,
+      "participants": 23,
+      "percent": 26.4
+     },
+     {
+      "term": "fever",
+      "serious": false,
+      "participants": 23,
+      "percent": 26.4
+     },
+     {
+      "term": "headache",
+      "serious": false,
+      "participants": 22,
+      "percent": 25.3
+     },
+     {
+      "term": "anorexia",
+      "serious": false,
+      "participants": 20,
+      "percent": 23.0
+     },
+     {
+      "term": "hiccough",
+      "serious": false,
+      "participants": 19,
+      "percent": 21.8
+     },
+     {
+      "term": "hypothyroidism",
+      "serious": false,
+      "participants": 18,
+      "percent": 20.7
+     },
+     {
+      "term": "dizziness",
+      "serious": false,
+      "participants": 17,
+      "percent": 19.5
+     }
+    ]
+   },
+   "ARM2": {
+    "participants": 87,
+    "any_serious_percent": 44.8,
+    "any_other_percent": 100.0,
+    "top_events": [
+     {
+      "term": "pain",
+      "serious": false,
+      "participants": 84,
+      "percent": 96.6
+     },
+     {
+      "term": "anemia",
+      "serious": false,
+      "participants": 68,
+      "percent": 78.2
+     },
+     {
+      "term": "palmar_plantar_erythrodysesthesia_syndrome",
+      "serious": false,
+      "participants": 68,
+      "percent": 78.2
+     },
+     {
+      "term": "diarrhea",
+      "serious": false,
+      "participants": 61,
+      "percent": 70.1
+     },
+     {
+      "term": "chills",
+      "serious": false,
+      "participants": 56,
+      "percent": 64.4
+     },
+     {
+      "term": "hemoglobin_normal_12_16_gm",
+      "serious": false,
+      "participants": 54,
+      "percent": 62.1
+     },
+     {
+      "term": "constipation",
+      "serious": false,
+      "participants": 50,
+      "percent": 57.5
+     },
+     {
+      "term": "thrombocytopenia",
+      "serious": false,
+      "participants": 46,
+      "percent": 52.9
+     },
+     {
+      "term": "creatinine_increased",
+      "serious": false,
+      "participants": 40,
+      "percent": 46.0
+     },
+     {
+      "term": "hypertension_variable",
+      "serious": false,
+      "participants": 32,
+      "percent": 36.8
+     },
+     {
+      "term": "headache",
+      "serious": false,
+      "participants": 28,
+      "percent": 32.2
+     },
+     {
+      "term": "dizziness",
+      "serious": false,
+      "participants": 27,
+      "percent": 31.0
+     },
+     {
+      "term": "dry_skin",
+      "serious": false,
+      "participants": 26,
+      "percent": 29.9
+     },
+     {
+      "term": "nausea",
+      "serious": false,
+      "participants": 26,
+      "percent": 29.9
+     },
+     {
+      "term": "hematuria",
+      "serious": false,
+      "participants": 22,
+      "percent": 25.3
+     }
+    ]
+   },
+   "ARM4": {
+    "participants": 94,
+    "any_serious_percent": 33.0,
+    "any_other_percent": 89.4,
+    "top_events": [
+     {
+      "term": "anemia",
+      "serious": false,
+      "participants": 73,
+      "percent": 77.7
+     },
+     {
+      "term": "nausea",
+      "serious": false,
+      "participants": 55,
+      "percent": 58.5
+     },
+     {
+      "term": "hematuria",
+      "serious": false,
+      "participants": 47,
+      "percent": 50.0
+     },
+     {
+      "term": "fever",
+      "serious": false,
+      "participants": 33,
+      "percent": 35.1
+     },
+     {
+      "term": "decrease_in_appetite",
+      "serious": false,
+      "participants": 31,
+      "percent": 33.0
+     },
+     {
+      "term": "hiccough",
+      "serious": false,
+      "participants": 31,
+      "percent": 33.0
+     },
+     {
+      "term": "urinary_tract_infection",
+      "serious": false,
+      "participants": 28,
+      "percent": 29.8
+     },
+     {
+      "term": "increased_frequency_of_micturition",
+      "serious": false,
+      "participants": 27,
+      "percent": 28.7
+     },
+     {
+      "term": "hypertension_variable",
+      "serious": false,
+      "participants": 26,
+      "percent": 27.7
+     },
+     {
+      "term": "hypoalbuminemia",
+      "serious": false,
+      "participants": 26,
+      "percent": 27.7
+     },
+     {
+      "term": "anorexia",
+      "serious": false,
+      "participants": 25,
+      "percent": 26.6
+     },
+     {
+      "term": "hyperkalemia",
+      "serious": false,
+      "participants": 25,
+      "percent": 26.6
+     },
+     {
+      "term": "alanine_aminotransferase_increased",
+      "serious": false,
+      "participants": 23,
+      "percent": 24.5
+     },
+     {
+      "term": "dysgeusia",
+      "serious": false,
+      "participants": 21,
+      "percent": 22.3
+     },
+     {
+      "term": "fatigue",
+      "serious": false,
+      "participants": 20,
+      "percent": 21.3
+     }
+    ]
+   }
+  },
+  "adverse_event_dependence": {
+   "ARM1": {
+    "any_serious_target": 0.588,
+    "prior_level": "subgroup: trials with overlapping drug classes",
+    "copula_rho": 0.0,
+    "serious_rate_scale": 1.0,
+    "fit": "residual serious term 0.425 added so that any serious event matches the prior"
+   },
+   "ARM2": {
+    "any_serious_target": 0.401,
+    "prior_level": "subgroup: PHASE2 trials",
+    "copula_rho": 0.0,
+    "serious_rate_scale": 1.0,
+    "fit": "residual serious term 0.050 added so that any serious event matches the prior"
+   },
+   "ARM3": {
+    "any_serious_target": 0.353,
+    "prior_level": "subgroup: trials with overlapping drug classes",
+    "copula_rho": 0.0,
+    "serious_rate_scale": 1.0,
+    "fit": "residual serious term 0.235 added so that any serious event matches the prior"
+   },
+   "ARM4": {
+    "any_serious_target": 0.353,
+    "prior_level": "subgroup: trials with overlapping drug classes",
+    "copula_rho": 0.621,
+    "serious_rate_scale": 1.0,
+    "fit": "matched"
+   }
+  }
+ },
+ "feasibility": {
+  "screening": {
+   "eligible_share_bounds": [
+    0.7786,
+    0.7786
+   ],
+   "patients_to_screen_for_target": {
+    "at_least": 478,
+    "at_most": 478
+   },
+   "note": "the upper bound needs every unchecked criterion to be met; the lower bound counts only patients proven eligible. Narrowing them needs the variables the unchecked criteria use",
+   "unchecked_criteria": [
+    {
+     "criterion_id": "EL003",
+     "rendering": "ELIGIBLE ONLY IF: (Male or female is one of ['male', 'female'] AND aged None 18 year [assessed: at the time of signing the informed consent] {NOT EXECUTABLE} AN"
+    },
+    {
+     "criterion_id": "EL005",
+     "rendering": "ELIGIBLE ONLY IF: (Histologically documented is present AND (UC is one of ['metastatic'] OR UC is one of ['unresectable']) AND primary site is one of ['bladder'"
+    },
+    {
+     "criterion_id": "EL006",
+     "rendering": "ELIGIBLE ONLY IF: ((histologies is one of ['transitional cell'] OR histologies is one of ['mixed transitional cell']) AND urothelial component at least 50 %)"
+    },
+    {
+     "criterion_id": "EL007",
+     "rendering": "PROHIBITED: EXCLUDED IF: non-UC of the urinary tract is present"
+    },
+    {
+     "criterion_id": "EL008",
+     "rendering": "ELIGIBLE ONLY IF: measurable target lesion at least 1 times RECIST v1.1 [qualifier: as assessed by the local site investigator/radiologist]"
+    },
+    {
+     "criterion_id": "EL009",
+     "rendering": "ELIGIBLE ONLY IF: ((Creatinine clearance at least 60 and at most 30 ml/min [qualifier: measured by the Cockcroft-Gault\nformula or 24-hour urine] {NOT EXECUTABLE"
+    },
+    {
+     "criterion_id": "EL010",
+     "rendering": "ELIGIBLE ONLY IF: (FGFR3 mutation is present [qualifier: known] OR fgfr3 rearrangement is present [qualifier: known])"
+    },
+    {
+     "criterion_id": "EL011",
+     "rendering": "PROHIBITED: EXCLUDED IF: gene amplifications only is present"
+    },
+    {
+     "criterion_id": "EL012",
+     "rendering": "ELIGIBLE ONLY IF: (laboratory test result of PD-L1 is present [assessed: at screening] [qualifier: Local or central] AND [IF local result is absent THEN (formal"
+    },
+    {
+     "criterion_id": "EL013",
+     "rendering": "ELIGIBLE ONLY IF: (prior systemic chemotherapy for metastatic or unresectable UC is absent OR (Adjuvant platinum-based chemotherapy is one of ['Adjuvant platinu"
+    },
+    {
+     "criterion_id": "EL016",
+     "rendering": "ELIGIBLE ONLY IF: [IF NOT participant country is one of ['Japan'] THEN ((Male is one of ['male'] AND agree to take appropriate precautions to avoid fathering ch"
+    },
+    {
+     "criterion_id": "EL019",
+     "rendering": "PROHIBITED: EXCLUDED IF: Prior receipt of a selective FGFR inhibitor is present [qualifier: for any indication or reason]"
+    },
+    {
+     "criterion_id": "EL021",
+     "rendering": "PROHIBITED: EXCLUDED IF: anticancer medications or investigational drugs for unresectable and/or metastatic disease is present [qualifier: not including adjuvan"
+    },
+    {
+     "criterion_id": "EL022",
+     "rendering": "PROHIBITED: EXCLUDED IF: Concurrent anticancer therapy is present [qualifier: except for treatment allowed per protocol]"
+    },
+    {
+     "criterion_id": "EL023",
+     "rendering": "PROHIBITED: EXCLUDED IF: disease that is suitable for local therapy administered with curative intent is present"
+    }
+   ],
+   "decisive_exclusions": {
+    "EL039": 73,
+    "EL019": 72,
+    "EL043": 72,
+    "EL031": 68,
+    "EL027": 66,
+    "EL054": 65,
+    "EL022": 65,
+    "EL011": 64,
+    "EL032": 63,
+    "EL051": 63,
+    "EL033": 63,
+    "EL052": 62,
+    "EL028": 62,
+    "EL003": 61,
+    "EL030": 61,
+    "EL044": 61,
+    "EL053": 60,
+    "EL016": 58,
+    "EL050": 58,
+    "EL025": 58,
+    "EL010": 57,
+    "EL005": 57,
+    "EL038": 57,
+    "EL008": 57,
+    "EL009": 56,
+    "EL055": 55,
+    "EL006": 54,
+    "EL013": 54,
+    "EL041": 54,
+    "EL024": 52,
+    "EL035": 52,
+    "EL042": 52,
+    "EL026": 51,
+    "EL049": 51,
+    "EL023": 50,
+    "EL045": 50,
+    "EL048": 49,
+    "EL036": 48,
+    "EL012": 48,
+    "EL029": 48,
+    "EL040": 46,
+    "EL007": 45,
+    "EL056": 43,
+    "EL021": 42
+   }
+  },
+  "accrual": {
+   "historical_model": {
+    "status": "RESOLVED",
+    "patients_per_year": {
+     "median": 9.870964162373241,
+     "q10": 2.1144689058398667,
+     "q25": 4.278681644964026,
+     "q75": 23.87371953954659,
+     "q90": 54.07866526344537,
+     "percentiles": {
+      "p10": 2.1144689058398667,
+      "p30": 5.1613336767149285,
+      "p50": 9.870964162373241,
+      "p70": 19.468732717027617,
+      "p90": 54.07866526344537
+     }
+    },
+    "enrollment_duration_years": {
+     "median": 37.426198628125626,
+     "q10": 6.9041669967121715,
+     "q25": 15.69618499166597,
+     "q75": 87.18855864143374,
+     "q90": 175.565790742168,
+     "percentiles": {
+      "p10": 6.9041669967121715,
+      "p30": 19.1794327975807,
+      "p50": 37.426198628125626,
+      "p70": 72.24750755716592,
+      "p90": 175.565790742168
+     }
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.00325,
+     "2y": 0.014375,
+     "3y": 0.02975,
+     "5y": 0.0665
+    }
+   },
+   "protocol_scenarios": [
+    {
+     "scenario": "accrual_historical_11.4_per_year",
+     "source": "protocol (quoted)",
+     "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+     "patients_per_year": 11.35264098457988,
+     "patients_per_month": 0.9460534153816567,
+     "enrolled": {
+      "median": 372.0,
+      "q10": 372.0,
+      "q25": 372.0,
+      "q75": 372.0,
+      "q90": 372.0
+     },
+     "enrollment_duration_years": {
+      "median": 32.65887102319119,
+      "q10": 30.51269777506914,
+      "q25": 31.518517083627433,
+      "q75": 33.800043052645634,
+      "q90": 34.878113328919454
+     },
+     "p_enrollment_complete_by": {
+      "1y": 0.0,
+      "2y": 0.0,
+      "3y": 0.0,
+      "5y": 0.0
+     },
+     "note": "Poisson arrivals at the stated rate; accrual stops at the protocol's evaluable target; site activation and rate uncertainty are not included"
+    },
+    {
+     "scenario": "accrual_124_per_year_derived",
+     "source": "protocol (quoted)",
+     "wording": "Assuming uniform accrual of the participants over a 36-month period",
+     "patients_per_year": 124.0,
+     "patients_per_month": 10.333333333333334,
+     "enrolled": {
+      "median": 372.0,
+      "q10": 372.0,
+      "q25": 372.0,
+      "q75": 372.0,
+      "q90": 372.0
+     },
+     "enrollment_duration_years": {
+      "median": 2.990875350600285,
+      "q10": 2.792491476395381,
+      "q25": 2.884966756126195,
+      "q75": 3.0977810556130407,
+      "q90": 3.194821270231099
+     },
+     "p_enrollment_complete_by": {
+      "1y": 0.0,
+      "2y": 0.0,
+      "3y": 0.5196,
+      "5y": 1.0
+     },
+     "note": "Poisson arrivals at the stated rate; accrual stops at the protocol's evaluable target; site activation and rate uncertainty are not included"
+    }
+   ]
+  },
+  "sites_needed": {
+   "status": "RESOLVED",
+   "target": 372,
+   "by_accrual_period": {
+    "2y": {
+     "sites": ">200",
+     "p_complete_at_200": 0.178
+    },
+    "3y": {
+     "sites": ">200",
+     "p_complete_at_200": 0.291
+    },
+    "5y": {
+     "sites": ">200",
+     "p_complete_at_200": 0.468
+    }
+   },
+   "note": "sites as listed in registry records; the model's site effect is observational (trials that list more sites recruit faster)"
+  },
+  "trial_failure_risk": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2020,
+    "arms": 4,
+    "disease_family": "urothelial"
+   },
+   "sponsor_class": "INDUSTRY (protocol (quoted): company legal form: 'Incyte Corporation')",
+   "probabilities": {
+    "completed": 0.5805506664626406,
+    "terminated_accrual": 0.08647106133986322,
+    "terminated_other": 0.23705827178235003,
+    "withdrawn": 0.09592000041514608
+   },
+   "p_accrual_failure": 0.1823910617550093,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  },
+  "retention": {
+   "loss_to_follow_up": {
+    "status": "RESOLVED",
+    "annual_probability": 0.03661909069721547,
+    "rate_per_year": 0.03730640094375821,
+    "source": "evidence",
+    "wording": "registry participant flow (urothelial, PHASE2): left by subject decision, loss to follow-up or physician decision; 132 trials, 7508 participants: 7.2% over the study, spread over 2 years (assumption A18)"
+   },
+   "off_study_limit": null
+  },
+  "decision_probabilities": {
+   "kind": "time-to-event",
+   "success_by_effect": {
+    "accrual_124_per_year_derived": [
+     {
+      "hr": 0.5,
+      "p_success": 0.994
+     },
+     {
+      "hr": 0.55,
+      "p_success": 0.97
+     },
+     {
+      "hr": 0.6,
+      "p_success": 0.911
+     },
+     {
+      "hr": 0.65,
+      "p_success": 0.768
+     },
+     {
+      "hr": 0.7,
+      "p_success": 0.639
+     },
+     {
+      "hr": 0.75,
+      "p_success": 0.444
+     },
+     {
+      "hr": 0.8,
+      "p_success": 0.306
+     },
+     {
+      "hr": 0.85,
+      "p_success": 0.199
+     },
+     {
+      "hr": 0.9,
+      "p_success": 0.108
+     },
+     {
+      "hr": 0.95,
+      "p_success": 0.057
+     },
+     {
+      "hr": 1.0,
+      "p_success": 0.034
+     },
+     {
+      "hr": 1.1,
+      "p_success": 0.009
+     },
+     {
+      "hr": 1.2,
+      "p_success": 0.001
+     },
+     {
+      "hr": 1.3,
+      "p_success": 0.0
+     }
+    ]
+   }
+  },
+  "subgroups": {
+   "no effect": {
+    "all": {
+     "subjects": 372,
+     "efs_3y_percent": null
+    },
+    "sex=male": {
+     "subjects": 295,
+     "efs_3y_percent": null
+    },
+    "sex=female": {
+     "subjects": 77,
+     "efs_3y_percent": null
+    },
+    "age=65 or older": {
+     "subjects": 176,
+     "efs_3y_percent": null
+    },
+    "age=18 to 64": {
+     "subjects": 196,
+     "efs_3y_percent": null
+    },
+    "stratum=ST6": {
+     "subjects": 45,
+     "efs_3y_percent": null
+    },
+    "stratum=ST1": {
+     "subjects": 44,
+     "efs_3y_percent": null
+    },
+    "stratum=ST2": {
+     "subjects": 47,
+     "efs_3y_percent": null
+    },
+    "stratum=ST8": {
+     "subjects": 46,
+     "efs_3y_percent": null
+    },
+    "stratum=ST3": {
+     "subjects": 40,
+     "efs_3y_percent": null
+    },
+    "stratum=ST4": {
+     "subjects": 55,
+     "efs_3y_percent": null
+    },
+    "stratum=ST7": {
+     "subjects": 52,
+     "efs_3y_percent": null
+    },
+    "stratum=ST5": {
+     "subjects": 43,
+     "efs_3y_percent": null
+    }
+   }
+  },
+  "subgroup_estimates": {
+   "context": {
+    "age_group": "mixed",
+    "phase": "PHASE2"
+   },
+   "arms": {
+    "ARM1": {
+     "serious_adverse_event": {
+      "status": "RESOLVED",
+      "target": "serious_adverse_event",
+      "family": "urothelial",
+      "headline_subgroup": "trials with overlapping drug classes",
+      "headline": {
+       "estimate": 0.5883397262347105,
+       "ci50": [
+        0.5265347508920574,
+        0.6474783726193837
+       ],
+       "ci95": [
+        0.4080878239252958,
+        0.7476443695060425
+       ],
+       "between_study_tau_logit": 0.7083389087279833,
+       "single_trial_80": [
+        0.3388913756722096,
+        0.7993843148035976
+       ],
+       "single_trial_percentiles": {
+        "p10": 0.33890005743349966,
+        "p30": 0.4843948834207677,
+        "p50": 0.5883397262347105,
+        "p70": 0.6849583059942018,
+        "p90": 0.7993781004303255
+       },
+       "studies": 3,
+       "arms": 6,
+       "patients": 604
+      },
+      "breakdown": {
+       "age group": {
+        "adult": {
+         "estimate": 0.3781314173125139,
+         "ci50": [
+          0.34001093569519647,
+          0.4178201138894531
+         ],
+         "ci95": [
+          0.27305932161799756,
+          0.4960455405705115
+         ],
+         "between_study_tau_logit": 1.0873032273980185,
+         "single_trial_80": [
+          0.12718008899121405,
+          0.7173087734323299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.12718608243833046,
+          "p30": 0.25311788214083153,
+          "p50": 0.3781314173125139,
+          "p70": 0.5217557723195879,
+          "p90": 0.7172978251059763
+         },
+         "studies": 16,
+         "arms": 24,
+         "patients": 1459
+        },
+        "mixed": {
+         "estimate": 0.11638669384696754,
+         "ci50": [
+          0.08722328206228966,
+          0.15365950189533198
+         ],
+         "ci95": [
+          0.04928278188581737,
+          0.2507604357916056
+         ],
+         "between_study_tau_logit": 0.0,
+         "single_trial_80": [
+          0.06680228078305166,
+          0.19508163367945888
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06680371740787104,
+          "p30": 0.09307886681827404,
+          "p50": 0.11638669384696754,
+          "p70": 0.14460044323207963,
+          "p90": 0.1950780150906181
+         },
+         "studies": 2,
+         "arms": 2,
+         "patients": 41
+        }
+       },
+       "phase": {
+        "PHASE2": {
+         "estimate": 0.4011663679068508,
+         "ci50": [
+          0.35278746846233633,
+          0.45155092825709436
+         ],
+         "ci95": [
+          0.2689813148085575,
+          0.5494829740475011
+         ],
+         "between_study_tau_logit": 1.2282779566132611,
+         "single_trial_80": [
+          0.11683025426983351,
+          0.7723415105440299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.11683658003040881,
+          "p30": 0.25647549680853027,
+          "p50": 0.4011663679068508,
+          "p70": 0.5654113099756958,
+          "p90": 0.772330730922296
+         },
+         "studies": 16,
+         "arms": 19,
+         "patients": 678
+        },
+        "PHASE3": {
+         "estimate": 0.23881498522274983,
+         "ci50": [
+          0.1857131452793123,
+          0.30147893641206763
+         ],
+         "ci95": [
+          0.11047226140256626,
+          0.44214815339484376
+         ],
+         "between_study_tau_logit": 1.1034791134310353,
+         "single_trial_80": [
+          0.06310514960928261,
+          0.593726945803908
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06310858747631162,
+          "p30": 0.14322745100626555,
+          "p50": 0.23881498522274983,
+          "p70": 0.37060176876384143,
+          "p90": 0.5937129199427749
+         },
+         "studies": 2,
+         "arms": 7,
+         "patients": 822
+        }
+       },
+       "drug classes": {
+        "not overlapping": {
+         "estimate": 0.30450979470962014,
+         "ci50": [
+          0.26509491371128124,
+          0.3470177714848473
+         ],
+         "ci95": [
+          0.19958474149826635,
+          0.4346422101933173
+         ],
+         "between_study_tau_logit": 1.1881670791084382,
+         "single_trial_80": [
+          0.08374379812023203,
+          0.6771503412627394
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.08374834115371042,
+          "p30": 0.18740850737874834,
+          "p50": 0.30450979470962014,
+          "p70": 0.4539088238481026,
+          "p90": 0.6771373976461168
+         },
+         "studies": 15,
+         "arms": 20,
+         "patients": 896
+        },
+        "overlapping": {
+         "estimate": 0.5883397262347105,
+         "ci50": [
+          0.5265347508920574,
+          0.6474783726193837
+         ],
+         "ci95": [
+          0.4080878239252958,
+          0.7476443695060425
+         ],
+         "between_study_tau_logit": 0.7083389087279833,
+         "single_trial_80": [
+          0.3388913756722096,
+          0.7993843148035976
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.33890005743349966,
+          "p30": 0.4843948834207677,
+          "p50": 0.5883397262347105,
+          "p70": 0.6849583059942018,
+          "p90": 0.7993781004303255
+         },
+         "studies": 3,
+         "arms": 6,
+         "patients": 604
+        }
+       }
+      },
+      "protocol_subgroup": {
+       "definition": "mixed trials in urothelial with overlapping drug classes",
+       "studies": 0,
+       "attention": true,
+       "note": "the evidence holds too few trials like this protocol: the headline borrows from other subgroups"
+      },
+      "family_mixture_studies": 18
+     }
+    },
+    "ARM2": {
+     "serious_adverse_event": {
+      "status": "RESOLVED",
+      "target": "serious_adverse_event",
+      "family": "urothelial",
+      "headline_subgroup": "PHASE2 trials",
+      "headline": {
+       "estimate": 0.4011663679068508,
+       "ci50": [
+        0.35278746846233633,
+        0.45155092825709436
+       ],
+       "ci95": [
+        0.2689813148085575,
+        0.5494829740475011
+       ],
+       "between_study_tau_logit": 1.2282779566132611,
+       "single_trial_80": [
+        0.11683025426983351,
+        0.7723415105440299
+       ],
+       "single_trial_percentiles": {
+        "p10": 0.11683658003040881,
+        "p30": 0.25647549680853027,
+        "p50": 0.4011663679068508,
+        "p70": 0.5654113099756958,
+        "p90": 0.772330730922296
+       },
+       "studies": 16,
+       "arms": 19,
+       "patients": 678
+      },
+      "breakdown": {
+       "age group": {
+        "adult": {
+         "estimate": 0.3781314173125139,
+         "ci50": [
+          0.34001093569519647,
+          0.4178201138894531
+         ],
+         "ci95": [
+          0.27305932161799756,
+          0.4960455405705115
+         ],
+         "between_study_tau_logit": 1.0873032273980185,
+         "single_trial_80": [
+          0.12718008899121405,
+          0.7173087734323299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.12718608243833046,
+          "p30": 0.25311788214083153,
+          "p50": 0.3781314173125139,
+          "p70": 0.5217557723195879,
+          "p90": 0.7172978251059763
+         },
+         "studies": 16,
+         "arms": 24,
+         "patients": 1459
+        },
+        "mixed": {
+         "estimate": 0.11638669384696754,
+         "ci50": [
+          0.08722328206228966,
+          0.15365950189533198
+         ],
+         "ci95": [
+          0.04928278188581737,
+          0.2507604357916056
+         ],
+         "between_study_tau_logit": 0.0,
+         "single_trial_80": [
+          0.06680228078305166,
+          0.19508163367945888
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06680371740787104,
+          "p30": 0.09307886681827404,
+          "p50": 0.11638669384696754,
+          "p70": 0.14460044323207963,
+          "p90": 0.1950780150906181
+         },
+         "studies": 2,
+         "arms": 2,
+         "patients": 41
+        }
+       },
+       "phase": {
+        "PHASE2": {
+         "estimate": 0.4011663679068508,
+         "ci50": [
+          0.35278746846233633,
+          0.45155092825709436
+         ],
+         "ci95": [
+          0.2689813148085575,
+          0.5494829740475011
+         ],
+         "between_study_tau_logit": 1.2282779566132611,
+         "single_trial_80": [
+          0.11683025426983351,
+          0.7723415105440299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.11683658003040881,
+          "p30": 0.25647549680853027,
+          "p50": 0.4011663679068508,
+          "p70": 0.5654113099756958,
+          "p90": 0.772330730922296
+         },
+         "studies": 16,
+         "arms": 19,
+         "patients": 678
+        },
+        "PHASE3": {
+         "estimate": 0.23881498522274983,
+         "ci50": [
+          0.1857131452793123,
+          0.30147893641206763
+         ],
+         "ci95": [
+          0.11047226140256626,
+          0.44214815339484376
+         ],
+         "between_study_tau_logit": 1.1034791134310353,
+         "single_trial_80": [
+          0.06310514960928261,
+          0.593726945803908
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06310858747631162,
+          "p30": 0.14322745100626555,
+          "p50": 0.23881498522274983,
+          "p70": 0.37060176876384143,
+          "p90": 0.5937129199427749
+         },
+         "studies": 2,
+         "arms": 7,
+         "patients": 822
+        }
+       },
+       "drug classes": {
+        "not overlapping": {
+         "estimate": 0.323472630601188,
+         "ci50": [
+          0.29007568264739386,
+          0.35877147284608546
+         ],
+         "ci95": [
+          0.23244869216976383,
+          0.4301642645360746
+         ],
+         "between_study_tau_logit": 1.0406968693219683,
+         "single_trial_80": [
+          0.10864708220802015,
+          0.6522442615831198
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.10865208458229278,
+          "p30": 0.214651563356348,
+          "p50": 0.323472630601188,
+          "p70": 0.45546697383372575,
+          "p90": 0.6522325453600402
+         },
+         "studies": 17,
+         "arms": 25,
+         "patients": 1432
+        },
+        "overlapping": {
+         "estimate": 0.9637681159420289,
+         "ci50": [
+          0.9451313574470245,
+          0.976233865402174
+         ],
+         "ci95": [
+          0.8826984383740695,
+          0.9894767260956736
+         ],
+         "between_study_tau_logit": 0.0,
+         "single_trial_80": [
+          0.9209453109459284,
+          0.9838023948348866
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.9209475826612683,
+          "p30": 0.9499351481883003,
+          "p50": 0.9637681159420289,
+          "p70": 0.9738840984011637,
+          "p90": 0.9838018975979533
+         },
+         "studies": 1,
+         "arms": 1,
+         "patients": 68
+        }
+       }
+      },
+      "protocol_subgroup": {
+       "definition": "mixed trials in urothelial with overlapping drug classes",
+       "studies": 0,
+       "attention": true,
+       "note": "the evidence holds too few trials like this protocol: the headline borrows from other subgroups"
+      },
+      "family_mixture_studies": 18
+     }
+    },
+    "ARM3": {
+     "serious_adverse_event": {
+      "status": "RESOLVED",
+      "target": "serious_adverse_event",
+      "family": "urothelial",
+      "headline_subgroup": "trials with overlapping drug classes",
+      "headline": {
+       "estimate": 0.35344982527871316,
+       "ci50": [
+        0.31472845730871535,
+        0.39419472624227936
+       ],
+       "ci95": [
+        0.2478531315657646,
+        0.47558860297577593
+       ],
+       "between_study_tau_logit": 0.8533937485931996,
+       "single_trial_80": [
+        0.14847586452877287,
+        0.631530173349616
+       ],
+       "single_trial_percentiles": {
+        "p10": 0.1484813245220512,
+        "p30": 0.25512294675373276,
+        "p50": 0.35344982527871316,
+        "p70": 0.4659664743756045,
+        "p90": 0.6315201241564931
+       },
+       "studies": 10,
+       "arms": 15,
+       "patients": 916
+      },
+      "breakdown": {
+       "age group": {
+        "adult": {
+         "estimate": 0.3781314173125139,
+         "ci50": [
+          0.34001093569519647,
+          0.4178201138894531
+         ],
+         "ci95": [
+          0.27305932161799756,
+          0.4960455405705115
+         ],
+         "between_study_tau_logit": 1.0873032273980185,
+         "single_trial_80": [
+          0.12718008899121405,
+          0.7173087734323299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.12718608243833046,
+          "p30": 0.25311788214083153,
+          "p50": 0.3781314173125139,
+          "p70": 0.5217557723195879,
+          "p90": 0.7172978251059763
+         },
+         "studies": 16,
+         "arms": 24,
+         "patients": 1459
+        },
+        "mixed": {
+         "estimate": 0.11638669384696754,
+         "ci50": [
+          0.08722328206228966,
+          0.15365950189533198
+         ],
+         "ci95": [
+          0.04928278188581737,
+          0.2507604357916056
+         ],
+         "between_study_tau_logit": 0.0,
+         "single_trial_80": [
+          0.06680228078305166,
+          0.19508163367945888
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06680371740787104,
+          "p30": 0.09307886681827404,
+          "p50": 0.11638669384696754,
+          "p70": 0.14460044323207963,
+          "p90": 0.1950780150906181
+         },
+         "studies": 2,
+         "arms": 2,
+         "patients": 41
+        }
+       },
+       "phase": {
+        "PHASE2": {
+         "estimate": 0.4011663679068508,
+         "ci50": [
+          0.35278746846233633,
+          0.45155092825709436
+         ],
+         "ci95": [
+          0.2689813148085575,
+          0.5494829740475011
+         ],
+         "between_study_tau_logit": 1.2282779566132611,
+         "single_trial_80": [
+          0.11683025426983351,
+          0.7723415105440299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.11683658003040881,
+          "p30": 0.25647549680853027,
+          "p50": 0.4011663679068508,
+          "p70": 0.5654113099756958,
+          "p90": 0.772330730922296
+         },
+         "studies": 16,
+         "arms": 19,
+         "patients": 678
+        },
+        "PHASE3": {
+         "estimate": 0.23881498522274983,
+         "ci50": [
+          0.1857131452793123,
+          0.30147893641206763
+         ],
+         "ci95": [
+          0.11047226140256626,
+          0.44214815339484376
+         ],
+         "between_study_tau_logit": 1.1034791134310353,
+         "single_trial_80": [
+          0.06310514960928261,
+          0.593726945803908
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06310858747631162,
+          "p30": 0.14322745100626555,
+          "p50": 0.23881498522274983,
+          "p70": 0.37060176876384143,
+          "p90": 0.5937129199427749
+         },
+         "studies": 2,
+         "arms": 7,
+         "patients": 822
+        }
+       },
+       "drug classes": {
+        "overlapping": {
+         "estimate": 0.35344982527871316,
+         "ci50": [
+          0.31472845730871535,
+          0.39419472624227936
+         ],
+         "ci95": [
+          0.2478531315657646,
+          0.47558860297577593
+         ],
+         "between_study_tau_logit": 0.8533937485931996,
+         "single_trial_80": [
+          0.14847586452877287,
+          0.631530173349616
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.1484813245220512,
+          "p30": 0.25512294675373276,
+          "p50": 0.35344982527871316,
+          "p70": 0.4659664743756045,
+          "p90": 0.6315201241564931
+         },
+         "studies": 10,
+         "arms": 15,
+         "patients": 916
+        },
+        "not overlapping": {
+         "estimate": 0.3764809173069669,
+         "ci50": [
+          0.30576450941930394,
+          0.4528832080539297
+         ],
+         "ci95": [
+          0.19446410051475826,
+          0.6016239512054871
+         ],
+         "between_study_tau_logit": 1.4629044509790399,
+         "single_trial_80": [
+          0.07778205216880961,
+          0.8121203356419074
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.07778738837754182,
+          "p30": 0.2125005559345817,
+          "p50": 0.3764809173069669,
+          "p70": 0.5746610583531396,
+          "p90": 0.8121089851039311
+         },
+         "studies": 8,
+         "arms": 11,
+         "patients": 584
+        }
+       }
+      },
+      "protocol_subgroup": {
+       "definition": "mixed trials in urothelial with overlapping drug classes",
+       "studies": 1,
+       "attention": true,
+       "note": "the evidence holds too few trials like this protocol: the headline borrows from other subgroups"
+      },
+      "family_mixture_studies": 18
+     }
+    },
+    "ARM4": {
+     "serious_adverse_event": {
+      "status": "RESOLVED",
+      "target": "serious_adverse_event",
+      "family": "urothelial",
+      "headline_subgroup": "trials with overlapping drug classes",
+      "headline": {
+       "estimate": 0.35344982527871316,
+       "ci50": [
+        0.31472845730871535,
+        0.39419472624227936
+       ],
+       "ci95": [
+        0.2478531315657646,
+        0.47558860297577593
+       ],
+       "between_study_tau_logit": 0.8533937485931996,
+       "single_trial_80": [
+        0.14847586452877287,
+        0.631530173349616
+       ],
+       "single_trial_percentiles": {
+        "p10": 0.1484813245220512,
+        "p30": 0.25512294675373276,
+        "p50": 0.35344982527871316,
+        "p70": 0.4659664743756045,
+        "p90": 0.6315201241564931
+       },
+       "studies": 10,
+       "arms": 15,
+       "patients": 916
+      },
+      "breakdown": {
+       "age group": {
+        "adult": {
+         "estimate": 0.3781314173125139,
+         "ci50": [
+          0.34001093569519647,
+          0.4178201138894531
+         ],
+         "ci95": [
+          0.27305932161799756,
+          0.4960455405705115
+         ],
+         "between_study_tau_logit": 1.0873032273980185,
+         "single_trial_80": [
+          0.12718008899121405,
+          0.7173087734323299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.12718608243833046,
+          "p30": 0.25311788214083153,
+          "p50": 0.3781314173125139,
+          "p70": 0.5217557723195879,
+          "p90": 0.7172978251059763
+         },
+         "studies": 16,
+         "arms": 24,
+         "patients": 1459
+        },
+        "mixed": {
+         "estimate": 0.11638669384696754,
+         "ci50": [
+          0.08722328206228966,
+          0.15365950189533198
+         ],
+         "ci95": [
+          0.04928278188581737,
+          0.2507604357916056
+         ],
+         "between_study_tau_logit": 0.0,
+         "single_trial_80": [
+          0.06680228078305166,
+          0.19508163367945888
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06680371740787104,
+          "p30": 0.09307886681827404,
+          "p50": 0.11638669384696754,
+          "p70": 0.14460044323207963,
+          "p90": 0.1950780150906181
+         },
+         "studies": 2,
+         "arms": 2,
+         "patients": 41
+        }
+       },
+       "phase": {
+        "PHASE2": {
+         "estimate": 0.4011663679068508,
+         "ci50": [
+          0.35278746846233633,
+          0.45155092825709436
+         ],
+         "ci95": [
+          0.2689813148085575,
+          0.5494829740475011
+         ],
+         "between_study_tau_logit": 1.2282779566132611,
+         "single_trial_80": [
+          0.11683025426983351,
+          0.7723415105440299
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.11683658003040881,
+          "p30": 0.25647549680853027,
+          "p50": 0.4011663679068508,
+          "p70": 0.5654113099756958,
+          "p90": 0.772330730922296
+         },
+         "studies": 16,
+         "arms": 19,
+         "patients": 678
+        },
+        "PHASE3": {
+         "estimate": 0.23881498522274983,
+         "ci50": [
+          0.1857131452793123,
+          0.30147893641206763
+         ],
+         "ci95": [
+          0.11047226140256626,
+          0.44214815339484376
+         ],
+         "between_study_tau_logit": 1.1034791134310353,
+         "single_trial_80": [
+          0.06310514960928261,
+          0.593726945803908
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06310858747631162,
+          "p30": 0.14322745100626555,
+          "p50": 0.23881498522274983,
+          "p70": 0.37060176876384143,
+          "p90": 0.5937129199427749
+         },
+         "studies": 2,
+         "arms": 7,
+         "patients": 822
+        }
+       },
+       "drug classes": {
+        "overlapping": {
+         "estimate": 0.35344982527871316,
+         "ci50": [
+          0.31472845730871535,
+          0.39419472624227936
+         ],
+         "ci95": [
+          0.2478531315657646,
+          0.47558860297577593
+         ],
+         "between_study_tau_logit": 0.8533937485931996,
+         "single_trial_80": [
+          0.14847586452877287,
+          0.631530173349616
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.1484813245220512,
+          "p30": 0.25512294675373276,
+          "p50": 0.35344982527871316,
+          "p70": 0.4659664743756045,
+          "p90": 0.6315201241564931
+         },
+         "studies": 10,
+         "arms": 15,
+         "patients": 916
+        },
+        "not overlapping": {
+         "estimate": 0.3764809173069669,
+         "ci50": [
+          0.30576450941930394,
+          0.4528832080539297
+         ],
+         "ci95": [
+          0.19446410051475826,
+          0.6016239512054871
+         ],
+         "between_study_tau_logit": 1.4629044509790399,
+         "single_trial_80": [
+          0.07778205216880961,
+          0.8121203356419074
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.07778738837754182,
+          "p30": 0.2125005559345817,
+          "p50": 0.3764809173069669,
+          "p70": 0.5746610583531396,
+          "p90": 0.8121089851039311
+         },
+         "studies": 8,
+         "arms": 11,
+         "patients": 584
+        }
+       }
+      },
+      "protocol_subgroup": {
+       "definition": "mixed trials in urothelial with overlapping drug classes",
+       "studies": 1,
+       "attention": true,
+       "note": "the evidence holds too few trials like this protocol: the headline borrows from other subgroups"
+      },
+      "family_mixture_studies": 18
+     }
+    }
+   },
+   "evidence": {
+    "evidence_table": {
+     "path": "data\\simulation_parameters_v1\\evidence_table.parquet",
+     "sha256": "11162d3dafdb88e99de4c19311ff5bf714674a86770c71e176706b05e8a5158e",
+     "verified_against": "simulation_parameters_v3 manifest"
+    },
+    "maps": {
+     "disease_families.json": "ebcbb7fe870ceee3f2595dd60d451fef70f85dbe9aba2eba3daf76886edd16ee",
+     "drug_classes.json": "b5453248218f22ed63b82565493cc532040578b59becc78fdd0a8d22b88583d2"
+    }
+   },
+   "note": "estimates are the random-effects average of the most similar subgroup of studies; the 95% confidence interval is for that average, the single-trial range for one new trial (held-out studies: median absolute error 0.16 for any serious event)"
+  }
+ }
+}

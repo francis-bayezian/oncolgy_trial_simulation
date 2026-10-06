@@ -1,0 +1,39 @@
+Factor,Level,Screened,Eligible (%),Enrolled,Most frequent failing criteria (% of screened),Driver
+original ISS stage at study entry (stage 1 or 2 vs stage 3),stage 1 or 2,7614,6192 (81%),333,EL040 History or evidence of any other clinica (1%); EL019 History of other malignancy within the p (1%); EL023 Uncontrolled hypertension (1%),patient mix
+original ISS stage at study entry (stage 1 or 2 vs stage 3),stage 3,2386,1936 (81%),127,EL025 216 (1%); EL024 Active congestive heart failure (New Yor (1%); EL030 230 (1%),patient mix
+prior lenalidomide treatment (yes vs no),no,5315,4341 (82%),227,EL032 232 (1%); EL006 Refractory is defined as disease that is (1%); EL039 Subject likely to not be available to co (1%),patient mix
+prior lenalidomide treatment (yes vs no),yes,4685,3787 (81%),233,EL040 History or evidence of any other clinica (1%); EL014 202 (1%); EL023 Uncontrolled hypertension (1%),patient mix
+prior PI treatment (yes vs no),no,4958,4011 (81%),218,EL014 202 (1%); EL024 Active congestive heart failure (New Yor (1%); EL040 History or evidence of any other clinica (1%),patient mix
+prior PI treatment (yes vs no),yes,5042,4117 (82%),242,EL040 History or evidence of any other clinica (1%); EL023 Uncontrolled hypertension (1%); EL021 Acute active infection requiring systemi (1%),patient mix
+prior anti-CD38 exposure (yes vs no),no,5060,4112 (81%),241,EL023 Uncontrolled hypertension (1%); EL019 History of other malignancy within the p (1%); EL039 Subject likely to not be available to co (1%),patient mix
+prior anti-CD38 exposure (yes vs no),yes,4940,4016 (81%),219,EL032 232 (1%); EL040 History or evidence of any other clinica (1%); EL025 216 (1%),patient mix
+"prior bortezomib treatment (yes, no)",no,2839,2310 (81%),147,EL014 202 (1%); EL007 104 (1%); EL039 Subject likely to not be available to co (1%),patient mix
+"prior bortezomib treatment (yes, no)",yes,7161,5818 (81%),313,EL040 History or evidence of any other clinica (1%); EL023 Uncontrolled hypertension (1%); EL019 History of other malignancy within the p (1%),patient mix
+Age (protocol cut points),18-<65 years,6124,4973 (81%),277,EL021 Acute active infection requiring systemi (1%); EL040 History or evidence of any other clinica (1%); EL023 Uncontrolled hypertension (1%),protocol criteria
+Age (protocol cut points),65-<75 years,2809,2281 (81%),142,EL024 Active congestive heart failure (New Yor (1%); EL040 History or evidence of any other clinica (1%); EL032 232 (1%),protocol criteria
+Age (protocol cut points),>= 75 years,1067,874 (82%),41,EL032 232 (1%); EL027 225 (1%); EL031 Absolute neutrophil count (ANC) < 1 x 10 (1%),protocol criteria
+number of prior therapies (1 vs > 1; 1 vs 2 vs > 2),1,4228,3436 (81%),189,EL040 History or evidence of any other clinica (1%); EL018 206 (1%); EL019 History of other malignancy within the p (1%),patient mix
+number of prior therapies (1 vs > 1; 1 vs 2 vs > 2),> 1,5772,4692 (81%),271,EL039 Subject likely to not be available to co (1%); EL040 History or evidence of any other clinica (1%); EL021 Acute active infection requiring systemi (1%),patient mix
+cytogenetic risk measured by FISH (high-risk vs standard risk),high-risk,3003,2462 (82%),140,EL025 216 (1%); EL028 228 (1%); EL024 Active congestive heart failure (New Yor (1%),patient mix
+cytogenetic risk measured by FISH (high-risk vs standard risk),standard risk,6997,5666 (81%),320,EL040 History or evidence of any other clinica (1%); EL023 Uncontrolled hypertension (1%); EL029 229 (1%),patient mix
+bortezomib refractory status (yes vs no),no,4923,3959 (80%),221,EL014 202 (1%); EL019 History of other malignancy within the p (1%); EL040 History or evidence of any other clinica (1%),patient mix
+bortezomib refractory status (yes vs no),yes,5077,4169 (82%),239,EL040 History or evidence of any other clinica (1%); EL027 225 (1%); EL039 Subject likely to not be available to co (1%),patient mix
+lenalidomide refractory status (yes vs no),no,5171,4193 (81%),217,EL035 Female subjects of childbearing potentia (1%); EL019 History of other malignancy within the p (1%); EL023 Uncontrolled hypertension (1%),patient mix
+lenalidomide refractory status (yes vs no),yes,4829,3935 (81%),243,EL040 History or evidence of any other clinica (1%); EL032 232 (1%); EL027 225 (1%),patient mix
+prior transplant (yes vs no),no,4139,3357 (81%),200,EL024 Active congestive heart failure (New Yor (1%); EL029 229 (1%); EL032 232 (1%),patient mix
+prior transplant (yes vs no),yes,5861,4771 (81%),260,EL019 History of other malignancy within the p (1%); EL023 Uncontrolled hypertension (1%); EL040 History or evidence of any other clinica (1%),patient mix
+Sex,female,4332,3515 (81%),210,EL040 History or evidence of any other clinica (1%); EL021 Acute active infection requiring systemi (1%); EL032 232 (1%),protocol criteria
+Sex,male,5668,4613 (81%),250,EL023 Uncontrolled hypertension (1%); EL040 History or evidence of any other clinica (1%); EL024 Active congestive heart failure (New Yor (1%),protocol criteria
+Race,american_indian_or_alaska_native,62,47 (76%),4,EL019 History of other malignancy within the p (3%); EL032 232 (3%); EL022 Acute active infection requiring systemi (3%),patient mix
+Race,asian,757,606 (80%),38,EL039 Subject likely to not be available to co (1%); EL022 Acute active infection requiring systemi (1%); EL023 Uncontrolled hypertension (1%),patient mix
+Race,black_or_african_american,925,740 (80%),53,EL013 201 (1%); EL015 203 (1%); EL014 202 (1%),patient mix
+Race,more_than_one_race,88,77 (88%),4,EL039 Subject likely to not be available to co (2%); EL014 202 (2%); EL023 Uncontrolled hypertension (1%),patient mix
+Race,native_hawaiian_or_other_pacific_islander,24,15 (62%),0,EL030 230 (8%); EL019 History of other malignancy within the p (4%); EL008 105 (4%),patient mix
+Race,unknown_or_not_reported,413,341 (83%),19,EL008 105 (2%); EL035 Female subjects of childbearing potentia (1%); EL025 216 (1%),patient mix
+Race,white,7731,6302 (82%),342,EL040 History or evidence of any other clinica (1%); EL032 232 (1%); EL027 225 (1%),patient mix
+Ethnicity,hispanic_or_latino,676,541 (80%),19,EL014 202 (1%); EL035 Female subjects of childbearing potentia (1%); EL024 Active congestive heart failure (New Yor (1%),patient mix
+Ethnicity,not_hispanic_or_latino,9035,7353 (81%),430,EL040 History or evidence of any other clinica (1%); EL023 Uncontrolled hypertension (1%); EL019 History of other malignancy within the p (1%),patient mix
+Ethnicity,unknown_or_not_reported,289,234 (81%),11,EL040 History or evidence of any other clinica (2%); EL029 229 (2%); EL035 Female subjects of childbearing potentia (1%),patient mix
+Eastern Cooperative Oncology Group Performance Status (ECOG ,0,4127,3373 (82%),192,EL040 History or evidence of any other clinica (1%); EL014 202 (1%); EL027 225 (1%),protocol criteria
+Eastern Cooperative Oncology Group Performance Status (ECOG ,1,4669,3792 (81%),212,EL019 History of other malignancy within the p (1%); EL040 History or evidence of any other clinica (1%); EL034 244 (1%),protocol criteria
+Eastern Cooperative Oncology Group Performance Status (ECOG ,2 or more,1204,963 (80%),56,EL013 201 (1%); EL024 Active congestive heart failure (New Yor (1%); EL014 202 (1%),protocol criteria

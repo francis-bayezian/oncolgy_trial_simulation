@@ -1,0 +1,614 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "3c396a3eadb6a232eae3d1a03067dc1064f5d6d8c048e2096d32d7909fb40db9"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "Once-weekly",
+   "started": 222,
+   "end_of_treatment": {
+    "completed planned treatment": 151,
+    "death": 4,
+    "withdrawal (subject, loss to follow-up or physician decision)": 13,
+    "disease progression": 41,
+    "adverse event (registry discontinuation rate)": 13
+   },
+   "deaths": 14
+  },
+  "ARM2": {
+   "arm": "Twice-weekly",
+   "started": 238,
+   "end_of_treatment": {
+    "completed planned treatment": 165,
+    "death": 6,
+    "disease progression": 45,
+    "withdrawal (subject, loss to follow-up or physician decision)": 15,
+    "adverse event (registry discontinuation rate)": 7
+   },
+   "deaths": 12
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "overall response",
+   "role": "primary",
+   "class": "proportion",
+   "variable": "objective_response_rate",
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "responders": 195,
+     "rate": 0.8784,
+     "ci95": [
+      0.8279981049000378,
+      0.9182995060370412
+     ],
+     "predictive_rate": {
+      "p10": 0.8373873873873874,
+      "p30": 0.8558558558558559,
+      "p50": 0.8693693693693694,
+      "p70": 0.8828828828828829,
+      "p90": 0.8963963963963963
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.871,
+      "unit": "proportion",
+      "level": "protocol-cited, same regimen",
+      "source": "protocol fact F020 (KRd)",
+      "small_sample": false
+     }
+    },
+    "ARM2": {
+     "patients": 238,
+     "responders": 206,
+     "rate": 0.8655,
+     "ci95": [
+      0.8155227141577794,
+      0.9061828374440919
+     ],
+     "predictive_rate": {
+      "p10": 0.8403361344537815,
+      "p30": 0.8571428571428571,
+      "p50": 0.8697478991596639,
+      "p70": 0.8823529411764706,
+      "p90": 0.8991596638655462
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.871,
+      "unit": "proportion",
+      "level": "protocol-cited, same regimen",
+      "source": "protocol fact F028 (KRd 27 mg/m2 twice-weekly)",
+      "small_sample": false
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "PFS over the duration of the study",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "progression_free_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "events": 171,
+     "km_median_months": 25.03,
+     "median_ci95_months": [
+      22.2,
+      29.96
+     ],
+     "survival_percent": {
+      "12m": 69.8,
+      "24m": 51.3,
+      "36m": 37.0,
+      "60m": 21.8
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+      "value": 26.3,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 21.578552145067782,
+      "p30": 23.29246392537887,
+      "p50": 25.02965662991622,
+      "p70": 25.829772319648562,
+      "p90": 28.593736740492325
+     }
+    },
+    "ARM2": {
+     "patients": 238,
+     "events": 191,
+     "km_median_months": 27.01,
+     "median_ci95_months": [
+      21.8,
+      28.95
+     ],
+     "survival_percent": {
+      "12m": 75.7,
+      "24m": 53.2,
+      "36m": 35.8,
+      "60m": 17.2
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+      "value": 26.3,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 23.292029937188644,
+      "p30": 25.047787870177793,
+      "p50": 26.103093716551122,
+      "p70": 27.51896156037604,
+      "p90": 29.20888490121009
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "patient-reported convenience with carfilzomib-dosing schedule",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "patient_reported_outcome",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "patient_reported_outcome",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "incidence of treatment-emergent adverse events",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 109,
+     "any_grade3_ae": 109,
+     "stopped_for_ae": 13
+    },
+    "ARM2": {
+     "patients": 238,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 126,
+     "any_grade3_ae": 126,
+     "stopped_for_ae": 7
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "time to response (TTR)",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "time_to_response",
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "events": 222,
+     "km_median_months": 1.57,
+     "median_ci95_months": [
+      1.28,
+      1.67
+     ],
+     "survival_percent": {
+      "12m": 0.5,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 1.6,
+      "unit": "months",
+      "level": "protocol-cited, same regimen",
+      "source": "protocol fact F038 (KRd arm)"
+     },
+     "predictive_median_months": {
+      "p10": 1.387615518827916,
+      "p30": 1.4964984582775527,
+      "p50": 1.5680907730037665,
+      "p70": 1.5811735705920502,
+      "p90": 1.6308552118234858
+     }
+    },
+    "ARM2": {
+     "patients": 238,
+     "events": 237,
+     "km_median_months": 1.73,
+     "median_ci95_months": [
+      1.37,
+      1.76
+     ],
+     "survival_percent": {
+      "12m": 0.6,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 1.6,
+      "unit": "months",
+      "level": "protocol-cited, same regimen",
+      "source": "protocol fact F038 (KRd arm)"
+     },
+     "predictive_median_months": {
+      "p10": 1.5060251317063762,
+      "p30": 1.5982004862084476,
+      "p50": 1.6846098381700352,
+      "p70": 1.7819072604730704,
+      "p90": 1.8653884195547326
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "duration of response (DOR)",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "duration_of_response",
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "events": 198,
+     "km_median_months": 13.63,
+     "median_ci95_months": [
+      13.61,
+      17.98
+     ],
+     "survival_percent": {
+      "12m": 51.7,
+      "24m": 28.9,
+      "36m": 21.4,
+      "60m": 9.5
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 15.620392260336011,
+      "unit": "months",
+      "level": "adult trials with overlapping drug classes",
+      "source": "evidence medians of duration_of_response (5 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "myeloma_and_plasma_cell",
+       "subgroup": "adult trials with overlapping drug classes",
+       "median_months": 15.620392260336011,
+       "ci95": [
+        12.4898556206809,
+        19.53558646128396
+       ],
+       "single_trial_80": [
+        9.17058106250963,
+        26.606455218443145
+       ],
+       "studies": 5,
+       "arms": 15,
+       "patients": 2812
+      }
+     },
+     "predictive_median_months": {
+      "p10": 11.331658766611046,
+      "p30": 12.20470093006595,
+      "p50": 13.819909830707854,
+      "p70": 15.20999362475509,
+      "p90": 15.916285161859296
+     }
+    },
+    "ARM2": {
+     "patients": 238,
+     "events": 217,
+     "km_median_months": 16.31,
+     "median_ci95_months": [
+      14.1,
+      18.4
+     ],
+     "survival_percent": {
+      "12m": 56.1,
+      "24m": 35.9,
+      "36m": 21.2,
+      "60m": 7.5
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 15.620392260336011,
+      "unit": "months",
+      "level": "adult trials with overlapping drug classes",
+      "source": "evidence medians of duration_of_response (5 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "myeloma_and_plasma_cell",
+       "subgroup": "adult trials with overlapping drug classes",
+       "median_months": 15.620392260336011,
+       "ci95": [
+        12.4898556206809,
+        19.53558646128396
+       ],
+       "single_trial_80": [
+        9.17058106250963,
+        26.606455218443145
+       ],
+       "studies": 5,
+       "arms": 15,
+       "patients": 2812
+      }
+     },
+     "predictive_median_months": {
+      "p10": 12.907885717911604,
+      "p30": 14.363086971609409,
+      "p50": 16.946272081422013,
+      "p70": 17.363734080779537,
+      "p90": 17.70912255302385
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "time to progression (TTP)",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "time_to_progression",
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "events": 183,
+     "km_median_months": 25.43,
+     "median_ci95_months": [
+      20.42,
+      27.28
+     ],
+     "survival_percent": {
+      "12m": 70.2,
+      "24m": 51.9,
+      "36m": 36.8,
+      "60m": 16.4
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+      "value": 26.3,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 21.447494283294773,
+      "p30": 23.79829390399482,
+      "p50": 25.428048369184587,
+      "p70": 25.787791181843474,
+      "p90": 26.708228924718583
+     }
+    },
+    "ARM2": {
+     "patients": 238,
+     "events": 184,
+     "km_median_months": 24.9,
+     "median_ci95_months": [
+      22.27,
+      29.73
+     ],
+     "survival_percent": {
+      "12m": 71.6,
+      "24m": 50.8,
+      "36m": 38.1,
+      "60m": 20.3
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+      "value": 26.3,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 22.739522442822345,
+      "p30": 23.507265812203833,
+      "p50": 24.897564196130425,
+      "p70": 26.239719496080433,
+      "p90": 29.169727806634295
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "OS over the duration of the study",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "overall_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "events": 121,
+     "km_median_months": 52.08,
+     "median_ci95_months": [
+      43.66,
+      62.36
+     ],
+     "survival_percent": {
+      "12m": 89.2,
+      "24m": 73.2,
+      "36m": 64.3,
+      "60m": 43.5
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 48.3,
+      "unit": "months",
+      "level": "protocol-cited, same regimen",
+      "source": "protocol fact F023 (KRd)"
+     },
+     "predictive_median_months": {
+      "p10": 46.770702567197716,
+      "p30": 50.373079900138485,
+      "p50": 52.07894634705319,
+      "p70": 53.66955664156217,
+      "p90": 55.89839648383637
+     }
+    },
+    "ARM2": {
+     "patients": 238,
+     "events": 126,
+     "km_median_months": 50.53,
+     "median_ci95_months": [
+      45.7,
+      64.8
+     ],
+     "survival_percent": {
+      "12m": 87.8,
+      "24m": 76.2,
+      "36m": 65.4,
+      "60m": 45.7
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 48.3,
+      "unit": "months",
+      "level": "protocol-cited, same regimen",
+      "source": "protocol fact F023 (KRd)"
+     },
+     "predictive_median_months": {
+      "p10": 46.853530093268795,
+      "p30": 49.06677841310224,
+      "p50": 50.50837820312664,
+      "p70": 55.4163063565949,
+      "p90": 61.03869321701238
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "MRD[-]CR",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "MRD[-] status at 12 months",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "physical functioning and role functioning",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "treatment satisfaction",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "safety laboratory test results",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 222,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 109,
+     "any_grade3_ae": 109,
+     "stopped_for_ae": 13
+    },
+    "ARM2": {
+     "patients": 238,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 126,
+     "any_grade3_ae": 126,
+     "stopped_for_ae": 7
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "left ventricular ejection fraction",
+   "role": "safety",
+   "class": "not_simulated",
+   "variable": "physiological_measurement",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "physiological_measurement",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "vital signs",
+   "role": "safety",
+   "class": "not_simulated",
+   "variable": "physiological_measurement",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "physiological_measurement",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 5,
+  "proportion": 1,
+  "continuous": 0,
+  "safety": 2,
+  "not_simulated": 7
+ }
+}

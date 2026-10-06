@@ -1,0 +1,799 @@
+{
+ "subject_id": "S0026",
+ "arm": "ARM1",
+ "agents": [
+  "cabazitaxel",
+  "cisplatin"
+ ],
+ "baseline": {
+  "patient_id": "P003596",
+  "demographic:age": {
+   "value": 74.71,
+   "unit": "year"
+  },
+  "demographic:sex": "male",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 0,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 59.7,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 159.2,
+   "unit": "cm"
+  }
+ },
+ "progression_day_latent": 56,
+ "progression_detected_day": 56,
+ "off_treatment": [
+  56,
+  "disease progression"
+ ],
+ "dose": {
+  "cabazitaxel": {
+   "value": 15.0,
+   "unit": "mg/m2",
+   "basis": "per_body_surface_area"
+  },
+  "cisplatin": {
+   "value": 70.0,
+   "unit": "mg/m2",
+   "basis": "per_body_surface_area"
+  }
+ },
+ "reductions": {
+  "cabazitaxel": 0,
+  "cisplatin": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "cabazitaxel",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "15 mg/m2"
+  },
+  {
+   "cycle": 1,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "70 mg/m2"
+  },
+  {
+   "cycle": 2,
+   "agent": "cabazitaxel",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "15 mg/m2"
+  },
+  {
+   "cycle": 2,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "70 mg/m2"
+  },
+  {
+   "cycle": 3,
+   "agent": "cabazitaxel",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "15 mg/m2"
+  },
+  {
+   "cycle": 3,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "70 mg/m2"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "vomiting",
+   "serious": false,
+   "grade": 1,
+   "onset": 8,
+   "source": "safety_v3:RESOLVED",
+   "end": 22,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "decreased_platelet_count",
+   "serious": false,
+   "grade": 1,
+   "onset": 18,
+   "source": "safety_v3:RESOLVED",
+   "end": 22,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "white_blood_cell_decreased",
+   "serious": false,
+   "grade": 1,
+   "onset": 21,
+   "source": "safety_v3:RESOLVED",
+   "end": 22,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "anorexia",
+   "serious": false,
+   "grade": 1,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "creatinine",
+   "serious": false,
+   "grade": 1,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": [
+      "DM017"
+     ]
+    }
+   }
+  },
+  {
+   "term": "hyperglycemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 24,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "leukopenia",
+   "serious": false,
+   "grade": 1,
+   "onset": 26,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "alanine_aminotransferase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 28,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "pain_other",
+   "serious": false,
+   "grade": 1,
+   "onset": 38,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "rash_erythematous_macules_or_papules",
+   "serious": false,
+   "grade": 2,
+   "onset": 38,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "abdominal_pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 45,
+   "source": "safety_v3:RESOLVED",
+   "end": 64,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "weight_loss",
+   "serious": false,
+   "grade": 1,
+   "onset": 47,
+   "source": "safety_v3:RESOLVED",
+   "end": 64,
+   "decisions": {
+    "cabazitaxel": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypomagnesemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 62,
+   "source": "safety_v3:RESOLVED",
+   "end": 64
+  },
+  {
+   "term": "peripheral_edema",
+   "serious": false,
+   "grade": 1,
+   "onset": 62,
+   "source": "safety_v3:RESOLVED",
+   "end": 64
+  },
+  {
+   "term": "neuropathy:_sensory",
+   "serious": false,
+   "grade": 2,
+   "onset": 64,
+   "source": "safety_v3:RESOLVED",
+   "end": 71
+  },
+  {
+   "term": "aspartate_aminotransferase_increased",
+   "serious": false,
+   "grade": 2,
+   "onset": 64,
+   "source": "safety_v3:RESOLVED",
+   "end": 71
+  },
+  {
+   "term": "rash/desquamation",
+   "serious": false,
+   "grade": 1,
+   "onset": 72,
+   "source": "safety_v3:RESOLVED",
+   "end": 79
+  },
+  {
+   "term": "myalgia",
+   "serious": false,
+   "grade": 1,
+   "onset": 76,
+   "source": "safety_v3:RESOLVED",
+   "end": 83
+  },
+  {
+   "term": "fever",
+   "serious": false,
+   "grade": 2,
+   "onset": 80,
+   "source": "safety_v3:RESOLVED",
+   "end": 87
+  },
+  {
+   "term": "dehydration",
+   "serious": true,
+   "grade": 3,
+   "onset": 84,
+   "source": "safety_v3:RESOLVED",
+   "end": 98
+  }
+ ],
+ "events": [
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 74.71, male, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start cabazitaxel",
+   "result": "15 mg/m2",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX001",
+   "quote": "Patients will receive cabazitaxel 15mg/m2 with cisplatin 70mg/m2 day 1."
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start cisplatin",
+   "result": "70 mg/m2",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX002",
+   "quote": "Intravenous infusion over 1-2 hours"
+  },
+  {
+   "day": 8,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "vomiting",
+   "result": "grade 1; resolves by day 22",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 18,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "decreased_platelet_count",
+   "result": "grade 1; resolves by day 22",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 21,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "white_blood_cell_decreased",
+   "result": "grade 1; resolves by day 22",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 21,
+   "visit": "C2D1",
+   "category": "laboratory",
+   "item": "White blood cell count",
+   "result": "3.92 10^9/L (grade 1)",
+   "consequence": "during white_blood_cell_decreased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for White blood cell count (3-4 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 22,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "anorexia",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "creatinine",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "undecidable: DM017",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 24,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "hyperglycemia",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 26,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "leukopenia",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 26,
+   "visit": "C3D1",
+   "category": "laboratory",
+   "item": "White blood cell count",
+   "result": "3.3 10^9/L (grade 1)",
+   "consequence": "during leukopenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for White blood cell count (3-4 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 28,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "alanine_aminotransferase_increased",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 28,
+   "visit": "C3D1",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "2.35 x ULN (grade 1)",
+   "consequence": "during alanine_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for ALT (1-3 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 38,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "pain_other",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 38,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "rash_erythematous_macules_or_papules",
+   "result": "grade 2; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 45,
+   "visit": "C4D1",
+   "category": "adverse event",
+   "item": "abdominal_pain",
+   "result": "grade 2; resolves by day 64",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 47,
+   "visit": "C4D1",
+   "category": "adverse event",
+   "item": "weight_loss",
+   "result": "grade 1; resolves by day 64",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 56,
+   "visit": "unscheduled",
+   "category": "tumour assessment",
+   "item": "progression",
+   "result": "progressive disease",
+   "consequence": "no tumour assessment schedule resolved: recorded at its true time",
+   "evidence_level": "assumption",
+   "source": "evidence median progression-free survival 3.8 months (adult trials, 6 studies), exponential"
+  },
+  {
+   "day": 56,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "disease progression",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 62,
+   "visit": "C4D1",
+   "category": "adverse event",
+   "item": "hypomagnesemia",
+   "result": "grade 1; resolves by day 64",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 62,
+   "visit": "C4D1",
+   "category": "adverse event",
+   "item": "peripheral_edema",
+   "result": "grade 1; resolves by day 64",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 64,
+   "visit": "C4D1",
+   "category": "adverse event",
+   "item": "neuropathy:_sensory",
+   "result": "grade 2; resolves by day 71",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 64,
+   "visit": "C4D1",
+   "category": "adverse event",
+   "item": "aspartate_aminotransferase_increased",
+   "result": "grade 2; resolves by day 71",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 64,
+   "visit": "C4D1",
+   "category": "laboratory",
+   "item": "AST",
+   "result": "4.03 x ULN (grade 2)",
+   "consequence": "during aspartate_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for AST (3-5 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 72,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "rash/desquamation",
+   "result": "grade 1; resolves by day 79",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 76,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "myalgia",
+   "result": "grade 1; resolves by day 83",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 80,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "fever",
+   "result": "grade 2; resolves by day 87",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 84,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "dehydration",
+   "result": "grade 3 serious; resolves by day 98",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 104,
+   "visit": "follow-up",
+   "category": "disposition",
+   "item": "death",
+   "result": "died during follow-up",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "registry participant flow (urothelial): died during the study period; 221 trials, 25195 participants",
+   "assumption": "A15_death_timing"
+  }
+ ]
+}

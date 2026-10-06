@@ -1,0 +1,23 @@
+{
+ "summary": {
+  "status": "RESOLVED",
+  "arms": {
+   "ARM3": {
+    "enrolled": 49,
+    "events": 60
+   },
+   "ARM4": {
+    "enrolled": 56,
+    "events": 60
+   },
+   "ARM5": {
+    "enrolled": 51,
+    "events": 60
+   },
+   "ARM8": {
+    "enrolled": 34,
+    "events": 60
+   }
+  }
+ }
+}

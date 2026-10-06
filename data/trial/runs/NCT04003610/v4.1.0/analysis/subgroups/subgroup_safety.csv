@@ -1,0 +1,121 @@
+Factor,Level,Arm,N,Any TEAE,Grade >= 3,SAE,AE -> discontinuation,AE -> dose modification,Deaths,Disposition
+Carboplatin-eligible versus not eligible,not eligible,ARM1,13,13 (100%),7 (54%),7 (54%),2 (15%),2 (15%),0 (0%),"completed planned treatment: 9; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Carboplatin-eligible versus not eligible,not eligible,ARM2,12,12 (100%),4 (33%),4 (33%),1 (8%),0 (0%),0 (0%),completed planned treatment: 8; disease progression: 3; adverse event (registry discontinuation rate): 1
+Carboplatin-eligible versus not eligible,not eligible,ARM3,17,17 (100%),13 (76%),13 (76%),0 (0%),3 (18%),2 (12%),"completed planned treatment: 9; disease progression: 5; withdrawal (subject, loss to follow-up or physician decision): 3"
+Carboplatin-eligible versus not eligible,not eligible,ARM4,16,16 (100%),7 (44%),7 (44%),1 (6%),6 (38%),1 (6%),"disease progression: 8; completed planned treatment: 7; withdrawal (subject, loss to follow-up or physician decision): 1"
+Carboplatin-eligible versus not eligible,not recorded,ARM1,86,84 (98%),32 (37%),32 (37%),4 (5%),22 (26%),6 (7%),"completed planned treatment: 49; disease progression: 30; withdrawal (subject, loss to follow-up or physician decision): 5"
+Carboplatin-eligible versus not eligible,not recorded,ARM2,78,75 (96%),36 (46%),36 (46%),3 (4%),0 (0%),7 (9%),"completed planned treatment: 46; disease progression: 23; withdrawal (subject, loss to follow-up or physician decision): 6"
+Carboplatin-eligible versus not eligible,not recorded,ARM3,78,75 (96%),30 (38%),30 (38%),1 (1%),15 (19%),6 (8%),"completed planned treatment: 44; disease progression: 25; withdrawal (subject, loss to follow-up or physician decision): 7"
+Carboplatin-eligible versus not eligible,not recorded,ARM4,72,70 (97%),33 (46%),33 (46%),3 (4%),16 (22%),6 (8%),"completed planned treatment: 43; disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 10"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM1,67,65 (97%),19 (28%),19 (28%),5 (7%),15 (22%),4 (6%),"completed planned treatment: 40; disease progression: 20; withdrawal (subject, loss to follow-up or physician decision): 5"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM2,65,62 (95%),30 (46%),30 (46%),3 (5%),0 (0%),5 (8%),"completed planned treatment: 41; disease progression: 17; withdrawal (subject, loss to follow-up or physician decision): 4"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM3,67,65 (97%),31 (46%),31 (46%),0 (0%),13 (19%),8 (12%),"completed planned treatment: 38; disease progression: 19; withdrawal (subject, loss to follow-up or physician decision): 8"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM4,56,55 (98%),21 (38%),21 (38%),3 (5%),15 (27%),4 (7%),"completed planned treatment: 29; disease progression: 19; withdrawal (subject, loss to follow-up or physician decision): 7"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM1,32,32 (100%),20 (62%),20 (62%),1 (3%),9 (28%),2 (6%),"completed planned treatment: 18; disease progression: 12; withdrawal (subject, loss to follow-up or physician decision): 1"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM2,25,25 (100%),10 (40%),10 (40%),1 (4%),0 (0%),2 (8%),"completed planned treatment: 13; disease progression: 9; withdrawal (subject, loss to follow-up or physician decision): 2"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM3,28,27 (96%),12 (43%),12 (43%),1 (4%),5 (18%),0 (0%),"completed planned treatment: 15; disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 2"
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM4,32,31 (97%),19 (59%),19 (59%),1 (3%),7 (22%),3 (9%),"completed planned treatment: 21; disease progression: 7; withdrawal (subject, loss to follow-up or physician decision): 4"
+LN-only disease versus other metastatic disease,LN-only disease,ARM1,45,43 (96%),18 (40%),18 (40%),3 (7%),7 (16%),2 (4%),"completed planned treatment: 23; disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 2"
+LN-only disease versus other metastatic disease,LN-only disease,ARM2,45,44 (98%),20 (44%),20 (44%),3 (7%),0 (0%),3 (7%),"completed planned treatment: 26; disease progression: 13; withdrawal (subject, loss to follow-up or physician decision): 3"
+LN-only disease versus other metastatic disease,LN-only disease,ARM3,50,50 (100%),27 (54%),27 (54%),1 (2%),11 (22%),3 (6%),"completed planned treatment: 30; disease progression: 15; withdrawal (subject, loss to follow-up or physician decision): 5"
+LN-only disease versus other metastatic disease,LN-only disease,ARM4,45,45 (100%),21 (47%),21 (47%),2 (4%),12 (27%),6 (13%),"completed planned treatment: 25; disease progression: 16; withdrawal (subject, loss to follow-up or physician decision): 3"
+LN-only disease versus other metastatic disease,other metastatic disease,ARM1,54,54 (100%),21 (39%),21 (39%),3 (6%),17 (31%),4 (7%),"completed planned treatment: 35; disease progression: 14; withdrawal (subject, loss to follow-up or physician decision): 4"
+LN-only disease versus other metastatic disease,other metastatic disease,ARM2,45,43 (96%),20 (44%),20 (44%),1 (2%),0 (0%),4 (9%),"completed planned treatment: 28; disease progression: 13; withdrawal (subject, loss to follow-up or physician decision): 3"
+LN-only disease versus other metastatic disease,other metastatic disease,ARM3,45,42 (93%),16 (36%),16 (36%),0 (0%),7 (16%),5 (11%),"completed planned treatment: 23; disease progression: 15; withdrawal (subject, loss to follow-up or physician decision): 5"
+LN-only disease versus other metastatic disease,other metastatic disease,ARM4,43,41 (95%),19 (44%),19 (44%),2 (5%),10 (23%),1 (2%),"completed planned treatment: 25; disease progression: 10; withdrawal (subject, loss to follow-up or physician decision): 8"
+Randomisation stratum,Carboplatin-eligible,ARM1,8,8 (100%),1 (12%),1 (12%),1 (12%),1 (12%),0 (0%),"completed planned treatment: 5; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible,ARM2,10,10 (100%),5 (50%),5 (50%),0 (0%),0 (0%),0 (0%),"completed planned treatment: 7; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible,ARM3,8,7 (88%),3 (38%),3 (38%),1 (12%),3 (38%),0 (0%),"completed planned treatment: 5; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible,ARM4,7,7 (100%),5 (71%),5 (71%),0 (0%),1 (14%),1 (14%),"disease progression: 4; completed planned treatment: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM1,27,27 (100%),12 (44%),12 (44%),1 (4%),7 (26%),3 (11%),"completed planned treatment: 15; disease progression: 10; withdrawal (subject, loss to follow-up or physician decision): 2"
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM2,25,24 (96%),12 (48%),12 (48%),1 (4%),0 (0%),1 (4%),completed planned treatment: 17; disease progression: 6; adverse event (registry discontinuation rate): 1
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM3,25,24 (96%),13 (52%),13 (52%),0 (0%),4 (16%),3 (12%),"completed planned treatment: 13; disease progression: 10; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM4,28,27 (96%),12 (43%),12 (43%),1 (4%),6 (21%),3 (11%),"completed planned treatment: 15; disease progression: 10; withdrawal (subject, loss to follow-up or physician decision): 3"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM1,9,8 (89%),4 (44%),4 (44%),1 (11%),1 (11%),0 (0%),completed planned treatment: 5; disease progression: 3; adverse event (registry discontinuation rate): 1
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM2,14,14 (100%),5 (36%),5 (36%),0 (0%),0 (0%),1 (7%),completed planned treatment: 9; disease progression: 5
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM3,10,10 (100%),3 (30%),3 (30%),0 (0%),1 (10%),0 (0%),"completed planned treatment: 6; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 2"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM4,11,11 (100%),4 (36%),4 (36%),0 (0%),4 (36%),1 (9%),"completed planned treatment: 8; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM1,18,18 (100%),8 (44%),8 (44%),1 (6%),6 (33%),1 (6%),completed planned treatment: 10; disease progression: 8
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM2,13,12 (92%),3 (23%),3 (23%),1 (8%),0 (0%),3 (23%),completed planned treatment: 8; disease progression: 4; adverse event (registry discontinuation rate): 1
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM3,13,12 (92%),4 (31%),4 (31%),0 (0%),0 (0%),2 (15%),"completed planned treatment: 8; disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM4,9,8 (89%),5 (56%),5 (56%),0 (0%),4 (44%),0 (0%),"completed planned treatment: 7; disease progression: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM1,22,22 (100%),6 (27%),6 (27%),0 (0%),5 (23%),2 (9%),"completed planned treatment: 18; disease progression: 3; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM2,18,17 (94%),11 (61%),11 (61%),2 (11%),0 (0%),2 (11%),"completed planned treatment: 8; disease progression: 5; withdrawal (subject, loss to follow-up or physician decision): 3"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM3,28,28 (100%),12 (43%),12 (43%),0 (0%),8 (29%),3 (11%),"completed planned treatment: 15; disease progression: 8; withdrawal (subject, loss to follow-up or physician decision): 4"
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM4,24,24 (100%),12 (50%),12 (50%),2 (8%),5 (21%),1 (4%),"completed planned treatment: 12; disease progression: 7; withdrawal (subject, loss to follow-up or physician decision): 4"
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM1,15,14 (93%),8 (53%),8 (53%),2 (13%),4 (27%),0 (0%),"disease progression: 6; completed planned treatment: 5; withdrawal (subject, loss to follow-up or physician decision): 2"
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM2,10,10 (100%),4 (40%),4 (40%),0 (0%),0 (0%),0 (0%),"completed planned treatment: 5; disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM3,11,11 (100%),8 (73%),8 (73%),0 (0%),2 (18%),0 (0%),"completed planned treatment: 6; disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 1"
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM4,9,9 (100%),2 (22%),2 (22%),1 (11%),2 (22%),1 (11%),"completed planned treatment: 6; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Age (FDA standard age bands),65-74 years,ARM1,33,33 (100%),15 (45%),15 (45%),1 (3%),7 (21%),3 (9%),"completed planned treatment: 16; disease progression: 15; withdrawal (subject, loss to follow-up or physician decision): 1"
+Age (FDA standard age bands),65-74 years,ARM2,24,23 (96%),8 (33%),8 (33%),1 (4%),0 (0%),2 (8%),"completed planned treatment: 15; disease progression: 7; withdrawal (subject, loss to follow-up or physician decision): 1"
+Age (FDA standard age bands),65-74 years,ARM3,24,24 (100%),12 (50%),12 (50%),1 (4%),2 (8%),4 (17%),"completed planned treatment: 11; disease progression: 8; withdrawal (subject, loss to follow-up or physician decision): 4"
+Age (FDA standard age bands),65-74 years,ARM4,22,22 (100%),9 (41%),9 (41%),0 (0%),7 (32%),0 (0%),"completed planned treatment: 15; disease progression: 5; withdrawal (subject, loss to follow-up or physician decision): 2"
+Age (FDA standard age bands),< 65 years,ARM1,53,52 (98%),20 (38%),20 (38%),5 (9%),13 (25%),3 (6%),"completed planned treatment: 31; disease progression: 15; withdrawal (subject, loss to follow-up or physician decision): 5"
+Age (FDA standard age bands),< 65 years,ARM2,50,49 (98%),21 (42%),21 (42%),2 (4%),0 (0%),4 (8%),"completed planned treatment: 30; disease progression: 13; withdrawal (subject, loss to follow-up or physician decision): 5"
+Age (FDA standard age bands),< 65 years,ARM3,56,54 (96%),24 (43%),24 (43%),0 (0%),11 (20%),4 (7%),"completed planned treatment: 34; disease progression: 17; withdrawal (subject, loss to follow-up or physician decision): 4"
+Age (FDA standard age bands),< 65 years,ARM4,48,47 (98%),25 (52%),25 (52%),3 (6%),9 (19%),5 (10%),"completed planned treatment: 25; disease progression: 17; withdrawal (subject, loss to follow-up or physician decision): 6"
+Age (FDA standard age bands),>= 75 years,ARM1,13,12 (92%),4 (31%),4 (31%),0 (0%),4 (31%),0 (0%),completed planned treatment: 11; disease progression: 2
+Age (FDA standard age bands),>= 75 years,ARM2,16,15 (94%),11 (69%),11 (69%),1 (6%),0 (0%),1 (6%),completed planned treatment: 9; disease progression: 6; adverse event (registry discontinuation rate): 1
+Age (FDA standard age bands),>= 75 years,ARM3,15,14 (93%),7 (47%),7 (47%),0 (0%),5 (33%),0 (0%),"completed planned treatment: 8; disease progression: 5; withdrawal (subject, loss to follow-up or physician decision): 2"
+Age (FDA standard age bands),>= 75 years,ARM4,18,17 (94%),6 (33%),6 (33%),1 (6%),6 (33%),2 (11%),"completed planned treatment: 10; disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 3"
+Sex,female,ARM1,24,24 (100%),12 (50%),12 (50%),0 (0%),5 (21%),2 (8%),"completed planned treatment: 15; disease progression: 8; withdrawal (subject, loss to follow-up or physician decision): 1"
+Sex,female,ARM2,22,20 (91%),10 (45%),10 (45%),1 (5%),0 (0%),0 (0%),"completed planned treatment: 13; disease progression: 6; withdrawal (subject, loss to follow-up or physician decision): 2"
+Sex,female,ARM3,26,25 (96%),12 (46%),12 (46%),0 (0%),5 (19%),4 (15%),"completed planned treatment: 14; disease progression: 8; withdrawal (subject, loss to follow-up or physician decision): 3"
+Sex,female,ARM4,24,23 (96%),12 (50%),12 (50%),2 (8%),5 (21%),2 (8%),"completed planned treatment: 12; disease progression: 8; withdrawal (subject, loss to follow-up or physician decision): 4"
+Sex,male,ARM1,75,73 (97%),27 (36%),27 (36%),6 (8%),19 (25%),4 (5%),"completed planned treatment: 43; disease progression: 24; withdrawal (subject, loss to follow-up or physician decision): 5"
+Sex,male,ARM2,68,67 (99%),30 (44%),30 (44%),3 (4%),0 (0%),7 (10%),"completed planned treatment: 41; disease progression: 20; withdrawal (subject, loss to follow-up or physician decision): 4"
+Sex,male,ARM3,69,67 (97%),31 (45%),31 (45%),1 (1%),13 (19%),4 (6%),"completed planned treatment: 39; disease progression: 22; withdrawal (subject, loss to follow-up or physician decision): 7"
+Sex,male,ARM4,64,63 (98%),28 (44%),28 (44%),2 (3%),17 (27%),5 (8%),"completed planned treatment: 38; disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 7"
+Race,american_indian_or_alaska_native,ARM1,0,0,0,0,0,0,0,
+Race,american_indian_or_alaska_native,ARM2,0,0,0,0,0,0,0,
+Race,american_indian_or_alaska_native,ARM3,0,0,0,0,0,0,0,
+Race,american_indian_or_alaska_native,ARM4,2,2 (100%),2 (100%),2 (100%),0 (0%),1 (50%),0 (0%),"completed planned treatment: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,asian,ARM1,5,5 (100%),2 (40%),2 (40%),0 (0%),3 (60%),1 (20%),completed planned treatment: 3; disease progression: 2
+Race,asian,ARM2,6,5 (83%),3 (50%),3 (50%),0 (0%),0 (0%),1 (17%),"completed planned treatment: 4; disease progression: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,asian,ARM3,3,3 (100%),1 (33%),1 (33%),0 (0%),1 (33%),0 (0%),"disease progression: 1; completed planned treatment: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,asian,ARM4,12,12 (100%),4 (33%),4 (33%),1 (8%),2 (17%),1 (8%),"completed planned treatment: 7; withdrawal (subject, loss to follow-up or physician decision): 3; disease progression: 2"
+Race,black_or_african_american,ARM1,8,8 (100%),5 (62%),5 (62%),1 (12%),1 (12%),1 (12%),completed planned treatment: 5; disease progression: 2; adverse event (registry discontinuation rate): 1
+Race,black_or_african_american,ARM2,4,4 (100%),2 (50%),2 (50%),0 (0%),0 (0%),0 (0%),completed planned treatment: 3; disease progression: 1
+Race,black_or_african_american,ARM3,8,8 (100%),2 (25%),2 (25%),0 (0%),1 (12%),1 (12%),"disease progression: 3; completed planned treatment: 3; withdrawal (subject, loss to follow-up or physician decision): 2"
+Race,black_or_african_american,ARM4,8,7 (88%),6 (75%),6 (75%),2 (25%),1 (12%),2 (25%),"disease progression: 4; completed planned treatment: 3; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,more_than_one_race,ARM1,0,0,0,0,0,0,0,
+Race,more_than_one_race,ARM2,0,0,0,0,0,0,0,
+Race,more_than_one_race,ARM3,0,0,0,0,0,0,0,
+Race,more_than_one_race,ARM4,1,1 (100%),1 (100%),1 (100%),0 (0%),0 (0%),0 (0%),disease progression: 1
+Race,native_hawaiian_or_other_pacific_islander,ARM1,1,1 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1
+Race,native_hawaiian_or_other_pacific_islander,ARM2,0,0,0,0,0,0,0,
+Race,native_hawaiian_or_other_pacific_islander,ARM3,0,0,0,0,0,0,0,
+Race,native_hawaiian_or_other_pacific_islander,ARM4,0,0,0,0,0,0,0,
+Race,unknown_or_not_reported,ARM1,6,6 (100%),2 (33%),2 (33%),0 (0%),1 (17%),1 (17%),completed planned treatment: 5; disease progression: 1
+Race,unknown_or_not_reported,ARM2,3,3 (100%),2 (67%),2 (67%),0 (0%),0 (0%),0 (0%),completed planned treatment: 3
+Race,unknown_or_not_reported,ARM3,1,1 (100%),0 (0%),0 (0%),0 (0%),1 (100%),0 (0%),completed planned treatment: 1
+Race,unknown_or_not_reported,ARM4,4,4 (100%),2 (50%),2 (50%),0 (0%),2 (50%),1 (25%),"completed planned treatment: 2; disease progression: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,white,ARM1,79,77 (97%),30 (38%),30 (38%),5 (6%),19 (24%),3 (4%),"completed planned treatment: 44; disease progression: 27; withdrawal (subject, loss to follow-up or physician decision): 6"
+Race,white,ARM2,77,75 (97%),33 (43%),33 (43%),4 (5%),0 (0%),6 (8%),"completed planned treatment: 44; disease progression: 24; withdrawal (subject, loss to follow-up or physician decision): 5"
+Race,white,ARM3,83,80 (96%),40 (48%),40 (48%),1 (1%),15 (18%),7 (8%),"completed planned treatment: 48; disease progression: 26; withdrawal (subject, loss to follow-up or physician decision): 7"
+Race,white,ARM4,61,60 (98%),25 (41%),25 (41%),1 (2%),16 (26%),3 (5%),"completed planned treatment: 37; disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 5"
+Ethnicity,hispanic_or_latino,ARM1,7,7 (100%),3 (43%),3 (43%),2 (29%),2 (29%),0 (0%),"completed planned treatment: 3; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Ethnicity,hispanic_or_latino,ARM2,4,4 (100%),0 (0%),0 (0%),0 (0%),0 (0%),1 (25%),disease progression: 2; completed planned treatment: 2
+Ethnicity,hispanic_or_latino,ARM3,9,9 (100%),4 (44%),4 (44%),0 (0%),1 (11%),0 (0%),"disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 3; completed planned treatment: 2"
+Ethnicity,hispanic_or_latino,ARM4,2,2 (100%),1 (50%),1 (50%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1; disease progression: 1
+Ethnicity,not_hispanic_or_latino,ARM1,88,86 (98%),34 (39%),34 (39%),2 (2%),22 (25%),6 (7%),"completed planned treatment: 54; disease progression: 29; withdrawal (subject, loss to follow-up or physician decision): 5"
+Ethnicity,not_hispanic_or_latino,ARM2,85,82 (96%),39 (46%),39 (46%),4 (5%),0 (0%),6 (7%),"completed planned treatment: 51; disease progression: 24; withdrawal (subject, loss to follow-up or physician decision): 6"
+Ethnicity,not_hispanic_or_latino,ARM3,83,81 (98%),39 (47%),39 (47%),1 (1%),16 (19%),8 (10%),"completed planned treatment: 49; disease progression: 25; withdrawal (subject, loss to follow-up or physician decision): 7"
+Ethnicity,not_hispanic_or_latino,ARM4,83,81 (98%),38 (46%),38 (46%),4 (5%),21 (25%),7 (8%),"completed planned treatment: 47; disease progression: 24; withdrawal (subject, loss to follow-up or physician decision): 11"
+Ethnicity,unknown_or_not_reported,ARM1,4,4 (100%),2 (50%),2 (50%),2 (50%),0 (0%),0 (0%),adverse event (registry discontinuation rate): 2; disease progression: 1; completed planned treatment: 1
+Ethnicity,unknown_or_not_reported,ARM2,1,1 (100%),1 (100%),1 (100%),0 (0%),0 (0%),0 (0%),completed planned treatment: 1
+Ethnicity,unknown_or_not_reported,ARM3,3,2 (67%),0 (0%),0 (0%),0 (0%),1 (33%),0 (0%),completed planned treatment: 2; disease progression: 1
+Ethnicity,unknown_or_not_reported,ARM4,3,3 (100%),1 (33%),1 (33%),0 (0%),1 (33%),0 (0%),completed planned treatment: 2; disease progression: 1
+ECOG performance status,0,ARM1,41,41 (100%),19 (46%),19 (46%),4 (10%),10 (24%),1 (2%),"completed planned treatment: 22; disease progression: 12; withdrawal (subject, loss to follow-up or physician decision): 5"
+ECOG performance status,0,ARM2,36,33 (92%),19 (53%),19 (53%),2 (6%),0 (0%),5 (14%),"completed planned treatment: 22; disease progression: 9; withdrawal (subject, loss to follow-up or physician decision): 3"
+ECOG performance status,0,ARM3,48,47 (98%),23 (48%),23 (48%),0 (0%),13 (27%),3 (6%),"completed planned treatment: 30; disease progression: 14; withdrawal (subject, loss to follow-up or physician decision): 3"
+ECOG performance status,0,ARM4,40,38 (95%),14 (35%),14 (35%),1 (2%),10 (25%),4 (10%),"completed planned treatment: 24; disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 4"
+ECOG performance status,1,ARM1,46,44 (96%),14 (30%),14 (30%),2 (4%),10 (22%),4 (9%),"completed planned treatment: 27; disease progression: 17; withdrawal (subject, loss to follow-up or physician decision): 1"
+ECOG performance status,1,ARM2,43,43 (100%),18 (42%),18 (42%),1 (2%),0 (0%),1 (2%),"completed planned treatment: 23; disease progression: 16; withdrawal (subject, loss to follow-up or physician decision): 3"
+ECOG performance status,1,ARM3,36,35 (97%),14 (39%),14 (39%),1 (3%),3 (8%),3 (8%),"completed planned treatment: 17; disease progression: 12; withdrawal (subject, loss to follow-up or physician decision): 6"
+ECOG performance status,1,ARM4,39,39 (100%),18 (46%),18 (46%),2 (5%),9 (23%),2 (5%),"completed planned treatment: 21; disease progression: 13; withdrawal (subject, loss to follow-up or physician decision): 5"
+ECOG performance status,2 or more,ARM1,12,12 (100%),6 (50%),6 (50%),0 (0%),4 (33%),1 (8%),completed planned treatment: 9; disease progression: 3
+ECOG performance status,2 or more,ARM2,11,11 (100%),3 (27%),3 (27%),1 (9%),0 (0%),1 (9%),completed planned treatment: 9; disease progression: 1; adverse event (registry discontinuation rate): 1
+ECOG performance status,2 or more,ARM3,11,10 (91%),6 (55%),6 (55%),0 (0%),2 (18%),2 (18%),"completed planned treatment: 6; disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 1"
+ECOG performance status,2 or more,ARM4,9,9 (100%),8 (89%),8 (89%),1 (11%),3 (33%),1 (11%),"completed planned treatment: 5; disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 2"

@@ -1,0 +1,860 @@
+{
+ "binary_version": "binary-1.0.0",
+ "seed": 20260927,
+ "replicates": 2000,
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc",
+  "facts": "2b621bc1e384d35b42891d18442dc265987441e991e26e332c8cf8b084def156"
+ },
+ "truth": "each arm's true response rate p is unknown: results are given for a grid of p (exact) and at rates the protocol cites",
+ "cited_rate_bindings": [],
+ "rules": [
+  {
+   "decision_rule_id": "DR1",
+   "role": "primary",
+   "arm": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod (Patients will receive five (5) days of low-dose cyclophosphamide prior to each vaccination\nwith TAPA-pulsed DCs to decrease Treg activity. TAPA-pulsed DCs will be administered\nat a fixed dose of up to 1 X 107 DCs following cyclophosphamide administration. DC\nvaccination schedule will be once every seven (7) days via intradermal (ID) injections for\na total of 3 vaccinations. Topical Imiquimod will also be administered once after the\nTAPA-pulsed DC vaccination, to optimize immune responses.)",
+   "arms": [
+    "ARM1"
+   ],
+   "cohort": "total of 17 patients",
+   "design_family": "two_stage_other",
+   "rule": {
+    "stages": [
+     {
+      "n": 6,
+      "stop_if_at_most": 0
+     },
+     {
+      "n": 17,
+      "stop_if_at_most": null
+     }
+    ],
+    "success_if_at_least": 3,
+    "p0": 0.05,
+    "p1": 0.35,
+    "alpha": 0.05,
+    "beta": 0.1
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": 0.05,
+     "beta": 0.1,
+     "early_termination": null
+    },
+    "exact": {
+     "at_p0": {
+      "p": 0.05,
+      "prob_success": 0.03905363467212025,
+      "prob_early_stop": 0.735091890625,
+      "expected_n": 8.913989203124999,
+      "prob_success_ignoring_interim": 0.05025297817250559
+     },
+     "at_p1": {
+      "p": 0.35,
+      "prob_success": 0.9069492500184148,
+      "prob_early_stop": 0.075418890625,
+      "expected_n": 16.170392203125,
+      "prob_success_ignoring_interim": 0.9672746442063841
+     }
+    },
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 0.03905363467212025,
+     "prob_early_stop": 0.735091890625,
+     "expected_n": 8.913989203124999
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 0.19060597167222382,
+     "prob_early_stop": 0.5314409999999999,
+     "expected_n": 11.154149
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 0.39682144245051126,
+     "prob_early_stop": 0.377149515625,
+     "expected_n": 12.851355328125
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.590081637226906,
+     "prob_early_stop": 0.26214399999999993,
+     "expected_n": 14.116416000000001
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.7393350693746464,
+     "prob_early_stop": 0.17797851562500003,
+     "expected_n": 15.042236328125
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.8417593490899862,
+     "prob_early_stop": 0.11764900000000006,
+     "expected_n": 15.705860999999999
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.9069492500184148,
+     "prob_early_stop": 0.075418890625,
+     "expected_n": 16.170392203125
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.9465733362221068,
+     "prob_early_stop": 0.04665599999999999,
+     "expected_n": 16.486784
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.9700390698660154,
+     "prob_early_stop": 0.02768064062499997,
+     "expected_n": 16.695512953125
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.9837112426757814,
+     "prob_early_stop": 0.015625,
+     "expected_n": 16.828125
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.9915329471498009,
+     "prob_early_stop": 0.008303765624999994,
+     "expected_n": 16.908658578125
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.9958711435001866,
+     "prob_early_stop": 0.004096000000000002,
+     "expected_n": 16.954944
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.9981565783128272,
+     "prob_early_stop": 0.0018382656249999992,
+     "expected_n": 16.979779078125
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.999270412412258,
+     "prob_early_stop": 0.0007290000000000006,
+     "expected_n": 16.991981
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.042,
+     "prob_early_stop_simulated": 0.741,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 0.0,
+      "q05": 0.0,
+      "q95": 2.0
+     },
+     "observed_rate": {
+      "median": 0.0,
+      "q05": 0.0,
+      "q95": 0.11764705882352941
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.1905,
+     "prob_early_stop_simulated": 0.528,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 0.0,
+      "q05": 0.0,
+      "q95": 4.0
+     },
+     "observed_rate": {
+      "median": 0.0,
+      "q05": 0.0,
+      "q95": 0.23529411764705882
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.3915,
+     "prob_early_stop_simulated": 0.38,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 6.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.11764705882352941,
+      "q05": 0.0,
+      "q95": 0.29411764705882354
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.583,
+     "prob_early_stop_simulated": 0.2675,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 6.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 0.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.17647058823529413,
+      "q05": 0.0,
+      "q95": 0.35294117647058826
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.7415,
+     "prob_early_stop_simulated": 0.177,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 6.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 0.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.23529411764705882,
+      "q05": 0.0,
+      "q95": 0.4117647058823529
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.846,
+     "prob_early_stop_simulated": 0.1125,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 6.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 0.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.29411764705882354,
+      "q05": 0.0,
+      "q95": 0.47058823529411764
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.914,
+     "prob_early_stop_simulated": 0.0695,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 6.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 0.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.35294117647058826,
+      "q05": 0.0,
+      "q95": 0.5294117647058824
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.947,
+     "prob_early_stop_simulated": 0.0475,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 17.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 7.0,
+      "q05": 2.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.4117647058823529,
+      "q05": 0.11764705882352941,
+      "q95": 0.5882352941176471
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.9675,
+     "prob_early_stop_simulated": 0.0305,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 17.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 4.0,
+      "q95": 11.0
+     },
+     "observed_rate": {
+      "median": 0.47058823529411764,
+      "q05": 0.23529411764705882,
+      "q95": 0.6470588235294118
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.982,
+     "prob_early_stop_simulated": 0.017,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 17.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 5.0,
+      "q95": 12.0
+     },
+     "observed_rate": {
+      "median": 0.5294117647058824,
+      "q05": 0.29411764705882354,
+      "q95": 0.7058823529411765
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.991,
+     "prob_early_stop_simulated": 0.009,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 17.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 6.0,
+      "q95": 13.0
+     },
+     "observed_rate": {
+      "median": 0.5294117647058824,
+      "q05": 0.35294117647058826,
+      "q95": 0.7647058823529411
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.9975,
+     "prob_early_stop_simulated": 0.0025,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 17.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 10.0,
+      "q05": 7.0,
+      "q95": 13.0
+     },
+     "observed_rate": {
+      "median": 0.5882352941176471,
+      "q05": 0.4117647058823529,
+      "q95": 0.7647058823529411
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.9985,
+     "prob_early_stop_simulated": 0.0015,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 17.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 11.0,
+      "q05": 8.0,
+      "q95": 14.0
+     },
+     "observed_rate": {
+      "median": 0.6470588235294118,
+      "q05": 0.47058823529411764,
+      "q95": 0.8235294117647058
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 1.0,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 17.0,
+      "q05": 17.0,
+      "q95": 17.0
+     },
+     "responders": {
+      "median": 12.0,
+      "q05": 9.0,
+      "q95": 15.0
+     },
+     "observed_rate": {
+      "median": 0.7058823529411765,
+      "q05": 0.5294117647058824,
+      "q95": 0.8823529411764706
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": false,
+   "verifier_note": null,
+   "evidence_prior": {
+    "status": "DESIGN_HYPOTHESIS",
+    "rate": {
+     "median": 0.35
+    },
+    "reason": "the endpoint 'immune response' has no evidence variable: the protocol's design rate is used"
+   },
+   "arm_status": [
+    "open"
+   ]
+  },
+  {
+   "decision_rule_id": "DR2",
+   "role": "secondary",
+   "arm": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod (Patients will receive five (5) days of low-dose cyclophosphamide prior to each vaccination\nwith TAPA-pulsed DCs to decrease Treg activity. TAPA-pulsed DCs will be administered\nat a fixed dose of up to 1 X 107 DCs following cyclophosphamide administration. DC\nvaccination schedule will be once every seven (7) days via intradermal (ID) injections for\na total of 3 vaccinations. Topical Imiquimod will also be administered once after the\nTAPA-pulsed DC vaccination, to optimize immune responses.)",
+   "arms": [
+    "ARM1"
+   ],
+   "cohort": "up to six (6) consecutive subjects",
+   "design_family": "single_stage",
+   "rule": {
+    "stages": [
+     {
+      "n": 6,
+      "stop_if_at_most": null,
+      "stop_if_events_at_least": 2
+     }
+    ],
+    "success_if_at_least": 5,
+    "p0": null,
+    "p1": null,
+    "alpha": null,
+    "beta": null
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": null,
+     "beta": null,
+     "early_termination": null
+    },
+    "exact": {},
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 0.9672261718750002,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 0.8857350000000002,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 0.7764842968749999,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.6553600000000002,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.5339355468749999,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.42017499999999963,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.31907992187499984,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.2332800000000001,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.16356742187499995,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.10937500000000003,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.069198046875,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.040960000000000024,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.022321796874999973,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.010935000000000002,
+     "prob_early_stop": 0.0,
+     "expected_n": 6.0
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.9765,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 5.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 1.0,
+      "q05": 0.8333333333333334,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.894,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 4.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 1.0,
+      "q05": 0.6666666666666666,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.778,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 3.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.8333333333333334,
+      "q05": 0.5,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.661,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 3.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.8333333333333334,
+      "q05": 0.5,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.5415,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 3.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.8333333333333334,
+      "q05": 0.5,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.4215,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.6666666666666666,
+      "q05": 0.3333333333333333,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.309,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.6666666666666666,
+      "q05": 0.3333333333333333,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.2445,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.6666666666666666,
+      "q05": 0.3333333333333333,
+      "q95": 0.8333333333333334
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.1695,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.16666666666666666,
+      "q95": 0.8333333333333334
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.1095,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.16666666666666666,
+      "q95": 0.8333333333333334
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.077,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.16666666666666666,
+      "q95": 0.8333333333333334
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.04,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 1.0,
+      "q95": 4.0
+     },
+     "observed_rate": {
+      "median": 0.3333333333333333,
+      "q05": 0.16666666666666666,
+      "q95": 0.6666666666666666
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.019,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 4.0
+     },
+     "observed_rate": {
+      "median": 0.3333333333333333,
+      "q05": 0.0,
+      "q95": 0.6666666666666666
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 0.011,
+     "prob_early_stop_simulated": 0.0,
+     "enrolled": {
+      "median": 6.0,
+      "q05": 6.0,
+      "q95": 6.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 4.0
+     },
+     "observed_rate": {
+      "median": 0.3333333333333333,
+      "q05": 0.0,
+      "q95": 0.6666666666666666
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": false,
+   "verifier_note": null,
+   "evidence_prior": {
+    "status": "NOT_APPLICABLE",
+    "reason": "a toxicity rule"
+   },
+   "arm_status": [
+    "open"
+   ]
+  }
+ ],
+ "unresolved_decision_rules": [],
+ "mode": "decision rules"
+}

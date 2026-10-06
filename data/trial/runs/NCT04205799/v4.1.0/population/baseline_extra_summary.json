@@ -1,0 +1,99 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT04205799\\v4.1.0\\population_base",
+  "family": "gynecologic",
+  "phase": null,
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.5228661619569444,
+     0.42697998117038816,
+     0.05015385687266764,
+     0.0,
+     0.0
+    ],
+    "trial_range_10_90": [
+     [
+      0.337,
+      0.229,
+      0.004,
+      0.0,
+      0.0
+     ],
+     [
+      0.742,
+      0.619,
+      0.11,
+      0.0,
+      0.0
+     ]
+    ],
+    "trials": 17,
+    "participants": 4043,
+    "source": "registry baseline ECOG of enrolled participants (gynecologic; 17 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 68.54817430503381,
+    "sd": 17.368360628800062,
+    "trials": 10,
+    "participants": 1331,
+    "source": "registry baseline weight of enrolled participants (gynecologic; 10 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 158.82355904211397,
+    "sd": 7.791118668572932,
+    "trials": 8,
+    "participants": 1211,
+    "source": "registry baseline height of enrolled participants (gynecologic; 8 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "patients previously treated or not with cabozantinib",
+    "variable": "var:patients_previously_treated_or_not_with_cabozantinib",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "bevacizumab pre-treated cohort",
+    "variable": "var:bevacizumab_pre_treated_cohort",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (all oncology; 3 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   },
+   {
+    "factor": "age (< 65 years, >= 65 years)",
+    "variable": "demographic:age",
+    "kind": "age",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  ]
+ }
+}

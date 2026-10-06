@@ -1,0 +1,139 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 52,
+ "facts": [
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 8,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening laboratory tests",
+   "time_origin": "enrollment",
+   "quote": "Laboratory tests to establish eligibility should be performed within 8 days prior to subject enrollment unless stated otherwise.",
+   "reason": "Eligibility laboratory testing must occur within 8 days before enrollment.",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "Laboratory tests to establish eligibility should be performed within 8 days prior to subject enrollment unless stated otherwise. • Hematological profile: CBC with differential and platelet count • Biochemical profile: albumin, alkaline",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering makes a recommendation mandatory and omits the stated exception."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening echocardiogram and diagnostic imaging",
+   "time_origin": "enrollment",
+   "quote": "Eligibility screening evaluations are to be conducted within 8 days prior to enrollment, with the exception of informed consent, echocardiogram and diagnostic imaging, which must be done within 28 days prior to enrollment.",
+   "reason": "Echocardiography and diagnostic imaging have a 28-day screening window.",
+   "fact_id": "SF02",
+   "issues": [
+    "model interval 28 differs from the quote's 8 days"
+   ],
+   "evidence": "Eligibility screening evaluations are to be conducted within 8 days prior to enrollment, with the exception of informed consent, echocardiogram and diagnostic imaging, which must be done within 28 days prior to enrollment. Base"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 56,
+   "later_interval_days": 84,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "tumor response imaging",
+   "time_origin": "first_dose",
+   "quote": "For the purposes of this study, patients should be re-evaluated for response every 2 cycles (8 weeks) or every 3 cycles for patients on study for 2 years or longer.",
+   "reason": "Response evaluation occurs every 2 cycles, changing to every 3 cycles for patients on study for 2 years or longer; the year threshold is not converted to days.",
+   "fact_id": "SF03",
+   "issues": [],
+   "evidence": "For the purposes of this study, patients should be re-evaluated for response every 2 cycles (8 weeks) or every 3 cycles for patients on study for 2 years or longer. Response and progression will be evaluated in this study using the original internatio",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "It omits the explicit two-year condition and replaces cycle-based timing with an unresolved day-based schedule."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 14,
+   "later_interval_days": 28,
+   "later_after_day": 56,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "CBC and serum chemistry",
+   "time_origin": "first_dose",
+   "quote": "Labs (CBC with differential, serum chemistries) will be performed every 2 weeks for the first 2 cycles of Part I and Part II, and then at the start of every cycle for the duration of treatment.",
+   "reason": "Blood tests occur every 14 days during the first 2 cycles and then at each 28-day cycle start.",
+   "fact_id": "SF04",
+   "issues": [],
+   "evidence": "he screening evaluations, the medical history, physical examination, laboratory evaluations, and EKG must be repeated prior to starting protocol therapy. Labs (CBC with differential, serum chemistries) will be performed every 2 weeks for the first 2 cycles of Part I and Part II, and then at the start of every cycle for the duration of treatment. Patients who have been on study for more than",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "It substitutes unsupported day-based timing for the specified first-two-cycles and subsequent-cycle schedule."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 84,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "CBC and serum chemistry",
+   "time_origin": "first_dose",
+   "quote": "every 3 cycles for patients on study for 2 years or longer",
+   "reason": "For this subgroup, the laboratory interval becomes every 3 cycles; the 2-year threshold is not converted to days.",
+   "fact_id": "SF05",
+   "issues": [],
+   "evidence": "arts at Cycle 1 when patients start treatment on Part II. b: BP monitoring by a health care provider should be performed every 2 weeks during cycle 1 of Part I and Part II and then at the beginning of subsequent cycles (every 3 cycles for patients on study for 2 years or longer). Patients should measure and record their blood pressure at home at least once per day for the duration of the stu",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The evidence schedules provider blood-pressure monitoring, not CBC and serum chemistry testing."
+   },
+   "status": "REVIEW_REQUIRED"
+  }
+ ]
+}

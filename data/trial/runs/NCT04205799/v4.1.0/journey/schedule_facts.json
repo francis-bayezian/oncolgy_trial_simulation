@@ -1,0 +1,233 @@
+{
+ "version": "schedule-facts-1.3.0",
+ "candidates": 12,
+ "facts": [
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening clinical evaluations",
+   "time_origin": "first_dose",
+   "quote": "within 28 days before cabozantinib initiation",
+   "reason": "Clinical screening evaluations must occur within 28 days before treatment initiation.",
+   "fact_id": "SF01",
+   "issues": [],
+   "evidence": "Before treatment start, the following evaluations will be performed within 28 days before cabozantinib initiation for eligible patients with signed informed consent:  Clinical assessment : complete physical examination including gynecologica",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering incorrectly applies the assessment to all patients instead of eligible patients with signed informed consent."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "screening_window",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": 14,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "screening laboratory tests",
+   "time_origin": "first_dose",
+   "quote": "Laboratory Assessments (within 14 days before cabozantinib initiation)",
+   "reason": "Screening laboratory assessments must occur within 14 days before treatment initiation.",
+   "fact_id": "SF02",
+   "issues": [],
+   "evidence": "tinib initiation for eligible patients with signed informed consent:  Clinical assessment : complete physical examination including gynecological examination, weight, height, ECOG, vital signs  Laboratory Assessments (within 14 days before cabozantinib initiation): - Hematology (CBC, platelets) - Serum biochemistry (Albumin, total alkaline phosphatase (ALP), alanine amino transferase (ALT)",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering incorrectly applies the laboratory assessments to all patients instead of eligible patients with signed informed consent."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": false,
+   "first_day": 15,
+   "interval_days": 3.0,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 3,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "hematology and serum biochemistry",
+   "time_origin": "cycle_day",
+   "quote": "Laboratory Assessments (may be done within 3 days before D15)",
+   "reason": "The D15 laboratory assessment is a one-time scheduled assessment with a stated three-day pre-D15 window.",
+   "interval_source": "parsed from the quote",
+   "fact_id": "SF03",
+   "issues": [],
+   "evidence": " Clinical assessment : complete physical examination including gynecological examination if clinically indicated, weight, ECOG, vital signs, adverse events, concomitant treatments)  Laboratory Assessments (may be done within 3 days before D15) - Hematology (CBC, platelets) - Serum biochemistry (Albumin, total alkaline phosphatase (ALP), alanine amino transferase (ALT), aspartate amino tra",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The evidence makes the assessment optional and places it before D15, not as a required assessment with a symmetric plus-or-minus window."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": false,
+   "first_day": 15,
+   "interval_days": 3.0,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 3,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "CT/MRI restaging",
+   "time_origin": "cycle_day",
+   "quote": "Radiological assessment (will use the same exams as baseline) may be done within 3 days before D15",
+   "reason": "The protocol specifies radiological assessment before D15.",
+   "interval_source": "parsed from the quote",
+   "fact_id": "SF04",
+   "issues": [
+    "interval 3.0 outside the plausible range 14-185 days for tumour_assessment"
+   ],
+   "evidence": "ine ratio (UPCR). When a UPCR exceeds 1 g/g, a repeat UPCR or a 24-hour urine protein and creatinine should be performed to confirm the result.  Radiological assessment (will use the same exams as baseline) may be done within 3 days before D15: - CT scan of the thorax, abdominal and pelvis using RECIST version 1.1. - Optional pelvis MRI can be used in addition of CT scan if a local recurre"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 28,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 3,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "hematology and serum biochemistry",
+   "time_origin": "cycle_day",
+   "quote": "rom cycle 2 (+/- 1 day):  Clinical assessment : complete physical examination including gynecological examination, weight, ECOG, vital signs, adverse events, concomitant treatments)  Laboratory Assessments (may be done within 3 days before D1)",
+   "reason": "Laboratory assessments are scheduled from cycle 2 at D1; the supplied cycle length is 28 days.",
+   "fact_id": "SF05",
+   "issues": [
+    "model interval 28 differs from the quote's 3 days",
+    "quote not found verbatim in the protocol text"
+   ],
+   "evidence": ""
+  },
+  {
+   "kind": "tumour_assessment",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 84.0,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": 7,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": true,
+   "assessment": "CT/MRI restaging",
+   "time_origin": "cycle_day",
+   "quote": "Additional exams at D1 of cycle 4 and every 3 cycles (D1C7, D1C10…) (within 7 days):  Radiological assessment (will use the same exams as baseline)",
+   "reason": "The protocol specifies radiological assessments at cycle 4 day 1 and every three cycles thereafter.",
+   "interval_source": "parsed from the quote",
+   "fact_id": "SF06",
+   "issues": [],
+   "evidence": "if a local recurrence could not be assessed by CT  Quality-of-life assessment using the self-questionnaires : - EORTC QLQ-C30 and QLQ-CX24  Blood samples for biological collection Additional exams at D1 of cycle 4 and every 3 cycles (D1C7, D1C10…) (within 7 days):  Radiological assessment (will use the same exams as baseline) - CT scan of the thorax, abdominal and pelvis using RECIST vers",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol specifies a cycle-based schedule beginning at D1 of cycle 4, not every 84 days, and the rendering also adds MRI."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "laboratory_assessment",
+   "recurring": false,
+   "first_day": null,
+   "interval_days": null,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": true,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "repeat proteinuria testing",
+   "time_origin": "unclear",
+   "quote": "When a UPCR exceeds 1 g/g, a repeat UPCR or a 24-hour urine protein and creatinine should be performed to confirm the result.",
+   "reason": "The protocol requires additional urine testing when the UPCR exceeds the stated threshold.",
+   "fact_id": "SF07",
+   "issues": [
+    "no number"
+   ],
+   "evidence": "ine ratio (UPCR). When a UPCR exceeds 1 g/g, a repeat UPCR or a 24-hour urine protein and creatinine should be performed to confirm the result.  Radiological assessment (will use the same exams as baseline) may be done within 3 days before D15: - CT scan of the thorax, abdominal and pelvis using RECIST version 1.1. - Optional pelvis MRI can be used in addition of CT scan if a local recurre"
+  },
+  {
+   "kind": "follow_up_visit",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": 91.3125,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "clinical follow-up assessment",
+   "time_origin": "end_of_treatment",
+   "quote": "will be followed-up every 3 months",
+   "reason": "This follow-up applies only to patients discontinuing treatment for a reason other than disease progression.",
+   "interval_source": "parsed from the quote",
+   "fact_id": "SF08",
+   "issues": [],
+   "evidence": "Patients who discontinue the treatment for another reason than disease progression will be followed-up every 3 months with:  Clinical assessment : complete physical examination including gynecological examination, weight, ECOG, vital signs, adverse events, concomitant treatme",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The rendering omits the non-progression discontinuation condition and replaces the stated three-month interval with an unsupported exact day count."
+   },
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "kind": "other",
+   "recurring": true,
+   "first_day": null,
+   "interval_days": null,
+   "later_interval_days": null,
+   "later_after_day": null,
+   "window_days": null,
+   "more_often_if_indicated": false,
+   "approximate": false,
+   "applies_to_all_patients": false,
+   "assessment": "ECG monitoring",
+   "time_origin": "unclear",
+   "quote": "Following reinitiation of study treatment, ECGs must be repeated weekly for 2 weeks, then every 2 weeks for 1 month, then according to the protocol-defined timepoints.",
+   "reason": "The ECG schedule applies after treatment reinitiation and changes after the initial two-week period.",
+   "fact_id": "SF09",
+   "issues": [],
+   "evidence": "< 500 msec and not increase of > 60 msec above baseline  Symptoms are determined to be unrelated to the QT interval prolongation Following reinitiation of study treatment, ECGs must be repeated weekly for 2 weeks, then every 2 weeks for 1 month, then according to the protocol-defined timepoints. Study treatment must be permanently discontinued if either of the following applies:  Cardiac"
+  }
+ ]
+}

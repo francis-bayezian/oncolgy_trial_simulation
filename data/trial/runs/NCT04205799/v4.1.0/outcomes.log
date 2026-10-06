@@ -1,0 +1,32 @@
+{
+ "control_arm_id": null,
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.037042537422360855,
+  "rate_per_year": 0.037746039937765714,
+  "source": "evidence",
+  "wording": "registry participant flow (gynecologic): left by subject decision, loss to follow-up or physician decision; 630 trials, 85355 participants: 7.3% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "design_alternatives": [],
+ "protocol_toxicities": 7,
+ "asset_ae_signature": {
+  "ARM1": "other_targeted_small_molecule",
+  "ARM2": "other_targeted_small_molecule"
+ },
+ "bindings_usable": 7,
+ "bindings": 12,
+ "model_calls": 0
+}

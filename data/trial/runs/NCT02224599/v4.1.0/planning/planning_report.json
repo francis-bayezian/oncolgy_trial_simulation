@@ -1,0 +1,466 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "KIROVAX-003",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc",
+  "cohorts": {
+   "cohort_accrual_historical_7.8_per_year.jsonl": "3aaaa87fc06bf429a7af8ca65d172b1831cef6fba59a358ab2c9cda902ec6369",
+   "recruitment_report.md": "49d97d3c7d79c0dfacbbee656feb66e448374a193f9584aba98c5c2fd2dafb71",
+   "recruitment_summary.json": "75b88a3d22b3ecf8837b18eabddd64e8b2106dfd860075d2ccf513eedaf80bae"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "c3a4c85a79577f22d9e55d2ddcaa49de1e54716b21b8e1490a3ba0fc278728a7",
+   "eligibility_summary.json": "126680eb03832491e6607e87eedbd009d9615f5d6176615fab47de1e23b6b920",
+   "feasibility_report.md": "779f62bd8595cd038f835b7e9ea54a4a490ba34a40389aa1884b2db3f62c369e"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.7704,
+   0.7704
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL005",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL009",
+   "EL010",
+   "EL011",
+   "EL012",
+   "EL013",
+   "EL014",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL019",
+   "EL021",
+   "EL022",
+   "EL024",
+   "EL025",
+   "EL026"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.2296,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 23,
+   "target": 17.0
+  }
+ },
+ "accrual": {
+  "target_patients": 17,
+  "target_source": "target_accrual",
+  "stated_accrual_durations_years": [],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_7.8_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 7.777361034177238,
+    "patients_per_month": 0.6481134195147699,
+    "enrolled": {
+     "median": 17.0,
+     "q10": 17.0,
+     "q25": 17.0,
+     "q75": 17.0,
+     "q90": 17.0
+    },
+    "enrollment_duration_years": {
+     "median": 2.008839346538749,
+     "q10": 1.4209076879110814,
+     "q25": 1.6874432418362257,
+     "q75": 2.38815476679377,
+     "q90": 2.7264409918761707
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.008,
+     "2y": 0.4922,
+     "3y": 0.952,
+     "5y": 1.0
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "NOT_STATED_AVERAGED",
+    "reason": "the protocol states no number of sites: the historical model averages over same-phase trials' site counts"
+   },
+   "sponsor_class": {
+    "status": "RESOLVED",
+    "value": "INDUSTRY",
+    "quote": "Kiromic, Inc",
+    "source": "protocol (quoted): company legal form"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE1+PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2018,
+    "enrolled": 17,
+    "disease_family": "mixed_solid_tumors",
+    "matched_disease": "Progressive and/or Refractory Solid Malignancies",
+    "condition": "Progressive and/or Refractory Solid Malignancies",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 1,
+    "sponsor_class": null
+   },
+   "site_count": "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase",
+   "patients_per_month": {
+    "median": 0.6554899998071912,
+    "q10": 0.13882150459109951,
+    "q25": 0.28747706288171254,
+    "q75": 1.471115167265003,
+    "q90": 3.323821673914989,
+    "percentiles": {
+     "p10": 0.13882150459109951,
+     "p30": 0.3418936285620767,
+     "p50": 0.6554899998071912,
+     "p70": 1.201354383877292,
+     "p90": 3.323821673914989
+    }
+   },
+   "patients_per_year": {
+    "median": 7.865879997686296,
+    "q10": 1.665858055093194,
+    "q25": 3.4497247545805503,
+    "q75": 17.653382007180035,
+    "q90": 39.88586008697987,
+    "percentiles": {
+     "p10": 1.665858055093194,
+     "p30": 4.102723542744921,
+     "p50": 7.865879997686296,
+     "p70": 14.416252606527502,
+     "p90": 39.88586008697987
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 2.1192228863434304,
+    "q10": 0.40156349442503364,
+    "q25": 0.9121064129765312,
+    "q75": 4.962742202398307,
+    "q90": 10.272668527184965,
+    "percentiles": {
+     "p10": 0.40156349442503364,
+     "p30": 1.1162875259137095,
+     "p50": 2.1192228863434304,
+     "p70": 4.055560798660697,
+     "p90": 10.272668527184965
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1y": 0.2715,
+    "2y": 0.481125,
+    "3y": 0.608625,
+    "5y": 0.752625
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE1+PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2018,
+    "arms": 1,
+    "disease_family": "mixed_solid_tumors"
+   },
+   "sponsor_class": "INDUSTRY (protocol (quoted): company legal form: 'Kiromic, Inc')",
+   "probabilities": {
+    "completed": 0.5737255230442433,
+    "terminated_accrual": 0.06459364669361142,
+    "terminated_other": 0.24669079385506748,
+    "withdrawn": 0.11499003640707793
+   },
+   "p_accrual_failure": 0.17958368310068934,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 17,
+  "evaluable_targets": [],
+  "decision_rules": [
+   {
+    "rule": "DR1",
+    "arm": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod (Patients will receive five (5) days of low-dose cyclophosphamide prior to each vaccination\nwith TAPA-pulsed DCs to decrease Treg activity. TAPA-pulsed DCs will be administered\nat a fixed dose of up to 1 X 107 DCs following cyclophosphamide administration. DC\nvaccination schedule will be once every seven (7) days via intradermal (ID) injections for\na total of 3 vaccinations. Topical Imiquimod will also be administered once after the\nTAPA-pulsed DC vaccination, to optimize immune responses.)",
+    "cohort": "total of 17 patients",
+    "maximum_n": 17,
+    "stage_1_n": 6,
+    "at": {
+     "p0": {
+      "true_rate": 0.05,
+      "expected_n": 8.913989203124999,
+      "p_early_stop": 0.735091890625
+     },
+     "p1": {
+      "true_rate": 0.35,
+      "expected_n": 16.170392203125,
+      "p_early_stop": 0.075418890625
+     }
+    }
+   },
+   {
+    "rule": "DR2",
+    "arm": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod (Patients will receive five (5) days of low-dose cyclophosphamide prior to each vaccination\nwith TAPA-pulsed DCs to decrease Treg activity. TAPA-pulsed DCs will be administered\nat a fixed dose of up to 1 X 107 DCs following cyclophosphamide administration. DC\nvaccination schedule will be once every seven (7) days via intradermal (ID) injections for\na total of 3 vaccinations. Topical Imiquimod will also be administered once after the\nTAPA-pulsed DC vaccination, to optimize immune responses.)",
+    "cohort": "up to six (6) consecutive subjects",
+    "maximum_n": 6,
+    "stage_1_n": null,
+    "at": {}
+   }
+  ]
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 2.1192228863434304,
+    "q10": 0.40156349442503364,
+    "q25": 0.9121064129765312,
+    "q75": 4.962742202398307,
+    "q90": 10.272668527184965,
+    "percentiles": {
+     "p10": 0.40156349442503364,
+     "p30": 1.1162875259137095,
+     "p50": 2.1192228863434304,
+     "p70": 4.055560798660697,
+     "p90": 10.272668527184965
+    }
+   },
+   "accrual_historical_7.8_per_year": {
+    "median": 2.008839346538749,
+    "q10": 1.4209076879110814,
+    "q25": 1.6874432418362257,
+    "q75": 2.38815476679377,
+    "q90": 2.7264409918761707
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 2.1767130308900797,
+     "q10": 0.4590536389716828,
+     "q25": 0.9695965575231803,
+     "q75": 5.020232346944956,
+     "q90": 10.330158671731615
+    },
+    "accrual_historical_7.8_per_year": {
+     "median": 2.066329491085398,
+     "q10": 1.4783978324577305,
+     "q25": 1.7449333863828749,
+     "q75": 2.4456449113404193,
+     "q90": 2.78393113642282
+    }
+   },
+   "assessment_lag_months": 0.69,
+   "source": "planned treatment: cycle length x maximum cycles (protocol)"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 7.11922288634343,
+     "q10": 5.401563494425034,
+     "q25": 5.912106412976531,
+     "q75": 9.962742202398307,
+     "q90": 15.272668527184965
+    },
+    "accrual_historical_7.8_per_year": {
+     "median": 7.008839346538749,
+     "q10": 6.420907687911082,
+     "q25": 6.687443241836226,
+     "q75": 7.38815476679377,
+     "q90": 7.726440991876171
+    }
+   },
+   "follow_up_years": 5.0,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.05415558869336486,
+    "source": "registry participant flow (mixed_solid_tumors): left by subject decision, loss to follow-up or physician decision; 27 trials, 3813 participants"
+   },
+   "adverse_event": {
+    "value": 0.11869002886270993,
+    "source": "registry participant flow (mixed_solid_tumors): left for an adverse event; 27 trials, 3813 participants"
+   },
+   "death": {
+    "value": 0.04160641074441262,
+    "source": "registry participant flow (mixed_solid_tumors): died during the study period; 27 trials, 3813 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1y": 0.2715,
+   "2y": 0.481125,
+   "3y": 0.608625,
+   "5y": 0.752625
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 2.12,
+   "q10": 0.4,
+   "q25": 0.91,
+   "q75": 4.96,
+   "q90": 10.27,
+   "percentiles": {
+    "p10": 0.40156349442503364,
+    "p30": 1.1162875259137095,
+    "p50": 2.1192228863434304,
+    "p70": 4.055560798660697,
+    "p90": 10.272668527184965
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_7.8_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.008,
+   "2y": 0.4922,
+   "3y": 0.952,
+   "5y": 1.0
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 7.77736 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 1.7 | p30 4.1 | p50 7.9 | p70 14.4 | p90 39.9"
+   },
+   "status": "plausible (protocol/historical median 0.99x)"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+Parameter,ARM1 Pemigatinib Plus Pembrolizumab (N=99),ARM2 Pemigatinib Alone (N=90),ARM3 Standard of Care (N=95),ARM4 Gemcitabine and Carboplatin (N=88)
+"Duration of treatment, days: mean (SD)",72.1 (18.7),72.5 (17.9),72.7 (16.6),72.8 (16.3)
+"Median (min, max)","84 (3, 84)","84 (7, 84)","84 (3, 84)","84 (3, 84)"
+"Total exposure, person-years",19.5,17.9,18.9,17.5
+Any duration (at least 1 dose),99 (100.0),90 (100.0),95 (100.0),88 (100.0)
+>= 1 month,92 (92.9),85 (94.4),91 (95.8),86 (97.7)
+>= 3 months,0 (0.0),0 (0.0),0 (0.0),0 (0.0)
+>= 6 months,0 (0.0),0 (0.0),0 (0.0),0 (0.0)
+>= 12 months,0 (0.0),0 (0.0),0 (0.0),0 (0.0)

@@ -1,0 +1,57 @@
+{
+ "control_arm_id": "ARM3",
+ "control_efs": {
+  "status": "RESOLVED",
+  "family": "exponential (evidence)",
+  "cure_fraction": 0.0,
+  "failure_rate_per_year": 2.3973770637498717,
+  "source": "evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol)",
+  "evidence": {
+   "status": "RESOLVED",
+   "variable": "progression_free_survival",
+   "family": "urothelial",
+   "subgroup": "PHASE2 trials",
+   "median_months": 3.4695277153061017,
+   "ci95": [
+    2.3789644127242147,
+    5.0600263303193245
+   ],
+   "single_trial_80": [
+    1.899749895018063,
+    6.336424915113746
+   ],
+   "studies": 5,
+   "arms": 8,
+   "patients": 197
+  },
+  "endpoint_variable": "progression_free_survival"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.03661909069721547,
+  "rate_per_year": 0.03730640094375821,
+  "source": "evidence",
+  "wording": "registry participant flow (urothelial, PHASE2): left by subject decision, loss to follow-up or physician decision; 132 trials, 7508 participants: 7.2% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": 372,
+  "min_followup_years": 0.0,
+  "population": null,
+  "wording": "event-driven analysis compiled from the stated full-information events and target accrual",
+  "excluded_share": null,
+  "event_target": 210,
+  "max_followup_years": 3.6666666666666665
+ },
+ "design_alternatives": [],
+ "protocol_toxicities": 4,
+ "asset_ae_signature": {
+  "ARM1": "pd1_pdl1_inhibitor",
+  "ARM2": "pd1_pdl1_inhibitor",
+  "ARM3": "antimetabolite+pd1_pdl1_inhibitor+platinum",
+  "ARM4": "antimetabolite+pd1_pdl1_inhibitor+platinum"
+ },
+ "bindings_usable": 5,
+ "bindings": 19,
+ "model_calls": 0
+}

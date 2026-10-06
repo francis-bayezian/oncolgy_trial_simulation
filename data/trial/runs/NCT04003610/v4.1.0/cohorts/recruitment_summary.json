@@ -1,0 +1,174 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "985c415b362efbcdf39b97cd01b49731dfdb4097bb5ee60bb3bb24cec4eeea7f",
+  "population": "70ee9b2df283bf7b71a7ece681c83e5cbb3c44ef5992d37b616b09bfd5e958a1",
+  "eligibility": "8feabc78100df4abf8c484174fc07ccfdd8aaefd2b12ce02794a2ae3e32cdc17"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 372,
+   "source": "target_accrual",
+   "evidence": "372 participants will needed to be randomized"
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_11.4_per_year",
+    "rate_per_year": 11.35264098457988,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 2.449504991515289,
+     "p30": 6.011277871231051,
+     "p50": 11.35264098457988,
+     "p70": 22.452916801345435,
+     "p90": 60.2431625610489
+    }
+   },
+   {
+    "rate_per_year": 124.0,
+    "evidence": "Assuming uniform accrual of the participants over a 36-month period",
+    "derived": "target 372 over 3 years",
+    "scenario": "accrual_124_per_year_derived"
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_11.4_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "Pemigatinib Plus Pembrolizumab",
+    "description": "Pemigatinib Plus Pembrolizumab"
+   },
+   {
+    "arm_id": "ARM2",
+    "label": "Pemigatinib Alone",
+    "description": "Pemigatinib Alone"
+   },
+   {
+    "arm_id": "ARM3",
+    "label": "Standard of Care",
+    "description": "Standard of Care"
+   },
+   {
+    "arm_id": "ARM4",
+    "label": "Gemcitabine and Carboplatin",
+    "description": "Gemcitabine and Carboplatin"
+   }
+  ],
+  "arm_status_note": "no arm is stated to be open in the compiled version: every arm not stated to be closed is assumed to enroll",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "using an IRT after the\nparticipant has completed screening",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": [
+   {
+    "stratum_id": "ST1",
+    "status": "REVIEW_REQUIRED",
+    "rendering": "(Carboplatin-eligible is one of ['Carboplatin-eligible'] AND PD-L1 CPS at least 10 AND LN-only disease is one of ['LN-only disease'])"
+   },
+   {
+    "stratum_id": "ST2",
+    "status": "REVIEW_REQUIRED",
+    "rendering": "(Carboplatin-eligible is one of ['Carboplatin-eligible'] AND PD-L1 CPS at least 10 AND disease is one of ['other metastatic disease'])"
+   },
+   {
+    "stratum_id": "ST3",
+    "status": "EXECUTABLE",
+    "rendering": "(Carboplatin-eligible is one of ['Carboplatin-eligible'] AND PD-L1 CPS is one of ['PD-L1 CPS < 10'] AND LN-only disease is one of ['LN-only disease'])"
+   },
+   {
+    "stratum_id": "ST4",
+    "status": "REVIEW_REQUIRED",
+    "rendering": "(Carboplatin-eligible versus not eligible is one of ['Carboplatin-eligible'] AND PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10 less than 10 AND LN-only disease versus other metastatic disease is one of ['other metastatic disease'])"
+   },
+   {
+    "stratum_id": "ST5",
+    "status": "REVIEW_REQUIRED",
+    "rendering": "(Carboplatin-eligible is one of ['Carboplatin-eligible'] AND PD-L1 CPS at least 10 AND LN-only disease is one of ['LN-only disease'])"
+   },
+   {
+    "stratum_id": "ST6",
+    "status": "EXECUTABLE",
+    "rendering": "(Carboplatin is one of ['not eligible'] AND PD-L1 CPS is one of ['PD-L1 CPS ≥ 10'] AND metastatic disease is one of ['other metastatic disease'])"
+   },
+   {
+    "stratum_id": "ST7",
+    "status": "REVIEW_REQUIRED",
+    "rendering": "(Carboplatin is one of ['not eligible'] AND PD-L1 CPS is one of ['PD-L1 CPS < 10'] AND metastatic disease is one of ['LN-only disease'])"
+   },
+   {
+    "stratum_id": "ST8",
+    "status": "EXECUTABLE",
+    "rendering": "(Carboplatin is one of ['not eligible'] AND PD-L1 CPS is one of ['PD-L1 CPS < 10'] AND metastatic disease is one of ['other metastatic disease'])"
+   }
+  ]
+ },
+ "summary": {
+  "pool": 7786,
+  "target": {
+   "patients": 372,
+   "source": "target_accrual",
+   "evidence": "372 participants will needed to be randomized"
+  },
+  "scenarios": {
+   "accrual_historical_11.4_per_year": {
+    "enrolled": 372,
+    "accrual_years": 33.99634944383434,
+    "arms": {
+     "ARM1": 99,
+     "ARM2": 90,
+     "ARM3": 95,
+     "ARM4": 88
+    },
+    "strata": {
+     "ST8": 45,
+     "ST3": 44,
+     "ST4": 53,
+     "ST7": 61,
+     "ST6": 44,
+     "ST1": 40,
+     "ST5": 52,
+     "ST2": 33
+    },
+    "sex": {
+     "male": 276,
+     "female": 96
+    },
+    "age_mean": 64.13069892473119
+   },
+   "accrual_124_per_year_derived": {
+    "enrolled": 372,
+    "accrual_years": 3.0493617107072724,
+    "arms": {
+     "ARM1": 104,
+     "ARM2": 87,
+     "ARM3": 87,
+     "ARM4": 94
+    },
+    "strata": {
+     "ST6": 45,
+     "ST1": 44,
+     "ST4": 55,
+     "ST8": 46,
+     "ST5": 43,
+     "ST2": 47,
+     "ST7": 52,
+     "ST3": 40
+    },
+    "sex": {
+     "male": 295,
+     "female": 77
+    },
+    "age_mean": 64.285
+   }
+  },
+  "headline_scenario": "accrual_historical_11.4_per_year"
+ }
+}

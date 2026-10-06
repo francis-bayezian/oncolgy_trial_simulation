@@ -1,0 +1,1765 @@
+{
+ "factors": [
+  {
+   "factor": "baseline PSA categories",
+   "source": "protocol subgroup (analysis section)",
+   "variable": "var:baseline_psa_categories",
+   "note": "baseline PSA categories",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "Higher than or equal to 100 ng/mL": 48,
+    "Higher than or equal to 20 ng/mL but less than 100 ng/mL": 34,
+    "Higher than or equal to 2 ng/mL but less than 20 ng/mL": 22
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "source": "FDA demographic",
+   "variable": "demographic:age",
+   "note": "",
+   "feasibility_driver": "protocol criteria",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "65-74 years": 30,
+    ">= 75 years": 12,
+    "< 65 years": 62
+   }
+  },
+  {
+   "factor": "Sex",
+   "source": "FDA demographic",
+   "variable": "demographic:sex",
+   "note": "",
+   "feasibility_driver": "protocol criteria",
+   "prevalence_source": null,
+   "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 3 trials; prognostic, A28))",
+   "levels": {
+    "male": 104
+   }
+  },
+  {
+   "factor": "Race",
+   "source": "FDA demographic",
+   "variable": "demographic:race",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "white": 84,
+    "asian": 12,
+    "black_or_african_american": 4,
+    "more_than_one_race": 2,
+    "unknown_or_not_reported": 2
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "source": "FDA demographic",
+   "variable": "demographic:ethnicity",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "not_hispanic_or_latino": 98,
+    "unknown_or_not_reported": 4,
+    "hispanic_or_latino": 2
+   }
+  },
+  {
+   "factor": "Region",
+   "source": "FDA demographic",
+   "variable": null,
+   "note": "not simulated: the recruitment model has no site country",
+   "feasibility_driver": null,
+   "prevalence_source": null,
+   "outcome_driver": null
+  },
+  {
+   "factor": "Ecog performance status",
+   "source": "baseline disease factor",
+   "variable": "var:ecog_performance_status",
+   "note": "",
+   "feasibility_driver": "patient mix",
+   "prevalence_source": null,
+   "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+   "levels": {
+    "0": 44,
+    "1": 56,
+    "2 or more": 4
+   }
+  }
+ ],
+ "rows": [
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 100 ng/mL",
+   "arm": "ARM1",
+   "n": 24,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 24
+   }
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 100 ng/mL",
+   "arm": "ARM2",
+   "n": 24,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 22,
+    "withdrawal (subject, loss to follow-up or physician decision)": 1,
+    "disease progression": 1
+   }
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 2 ng/mL but less than 20 ng/mL",
+   "arm": "ARM1",
+   "n": 11,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 11
+   }
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 2 ng/mL but less than 20 ng/mL",
+   "arm": "ARM2",
+   "n": 11,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 10,
+    "withdrawal (subject, loss to follow-up or physician decision)": 1
+   }
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 20 ng/mL but less than 100 ng/mL",
+   "arm": "ARM1",
+   "n": 17,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 17
+   }
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 20 ng/mL but less than 100 ng/mL",
+   "arm": "ARM2",
+   "n": 17,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 17
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "65-74 years",
+   "arm": "ARM1",
+   "n": 15,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 15
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "65-74 years",
+   "arm": "ARM2",
+   "n": 15,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 14,
+    "withdrawal (subject, loss to follow-up or physician decision)": 1
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "arm": "ARM1",
+   "n": 31,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 31
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "arm": "ARM2",
+   "n": 31,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 29,
+    "disease progression": 1,
+    "withdrawal (subject, loss to follow-up or physician decision)": 1
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": ">= 75 years",
+   "arm": "ARM1",
+   "n": 6,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 6
+   }
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": ">= 75 years",
+   "arm": "ARM2",
+   "n": 6,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 6
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "arm": "ARM1",
+   "n": 52,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 52
+   }
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "arm": "ARM2",
+   "n": 52,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 49,
+    "withdrawal (subject, loss to follow-up or physician decision)": 2,
+    "disease progression": 1
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "asian",
+   "arm": "ARM1",
+   "n": 6,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 6
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "asian",
+   "arm": "ARM2",
+   "n": 6,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 6
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "black_or_african_american",
+   "arm": "ARM1",
+   "n": 2,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 2
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "black_or_african_american",
+   "arm": "ARM2",
+   "n": 2,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 2
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "more_than_one_race",
+   "arm": "ARM1",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "more_than_one_race",
+   "arm": "ARM2",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM1",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM2",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "arm": "ARM1",
+   "n": 42,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 42
+   }
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "arm": "ARM2",
+   "n": 42,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 39,
+    "withdrawal (subject, loss to follow-up or physician decision)": 2,
+    "disease progression": 1
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "arm": "ARM1",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "arm": "ARM2",
+   "n": 1,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 1
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "arm": "ARM1",
+   "n": 49,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 49
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "arm": "ARM2",
+   "n": 49,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 46,
+    "withdrawal (subject, loss to follow-up or physician decision)": 2,
+    "disease progression": 1
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM1",
+   "n": 2,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 2
+   }
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM2",
+   "n": 2,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 2
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "arm": "ARM1",
+   "n": 22,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 22
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "arm": "ARM2",
+   "n": 22,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 20,
+    "withdrawal (subject, loss to follow-up or physician decision)": 1,
+    "disease progression": 1
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "arm": "ARM1",
+   "n": 28,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 28
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "arm": "ARM2",
+   "n": 28,
+   "small_n": false,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 27,
+    "withdrawal (subject, loss to follow-up or physician decision)": 1
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "2 or more",
+   "arm": "ARM1",
+   "n": 2,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 2
+   }
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "2 or more",
+   "arm": "ARM2",
+   "n": 2,
+   "small_n": true,
+   "efficacy_evaluable": 0,
+   "best_overall_response": {},
+   "objective_response": null,
+   "disease_control": null,
+   "PFS": null,
+   "OS": null,
+   "TTP": null,
+   "DOR": null,
+   "TTR": null,
+   "safety": {
+    "any_teae": 0,
+    "grade_3_plus": 0,
+    "sae": 0,
+    "ae_leading_to_discontinuation": 0,
+    "ae_leading_to_dose_modification": 0,
+    "deaths": 0
+   },
+   "disposition": {
+    "completed planned procedures": 2
+   }
+  }
+ ],
+ "comparisons": [
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 100 ng/mL",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 24,
+   "n_control": 24
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 2 ng/mL but less than 20 ng/mL",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 11,
+   "n_control": 11
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 20 ng/mL but less than 100 ng/mL",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 17,
+   "n_control": 17
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "65-74 years",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 15,
+   "n_control": 15
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 31,
+   "n_control": 31
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": ">= 75 years",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 6,
+   "n_control": 6
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 52,
+   "n_control": 52
+  },
+  {
+   "factor": "Race",
+   "level": "asian",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 6,
+   "n_control": 6
+  },
+  {
+   "factor": "Race",
+   "level": "black_or_african_american",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 2,
+   "n_control": 2
+  },
+  {
+   "factor": "Race",
+   "level": "more_than_one_race",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 1,
+   "n_control": 1
+  },
+  {
+   "factor": "Race",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 1,
+   "n_control": 1
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 42,
+   "n_control": 42
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 1,
+   "n_control": 1
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 49,
+   "n_control": 49
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 2,
+   "n_control": 2
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 22,
+   "n_control": 22
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 28,
+   "n_control": 28
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "2 or more",
+   "arm": "ARM2",
+   "control": "ARM1",
+   "n": 2,
+   "n_control": 2
+  }
+ ],
+ "feasibility": [
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 100 ng/mL",
+   "screened": 3389,
+   "eligible": 2688,
+   "eligible_share": 0.7932,
+   "enrolled": 48,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.033
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0313
+    },
+    {
+     "criterion": "EL012",
+     "text": "received salvage therapy for the current episode of BCR.",
+     "share_of_screened": 0.0298
+    }
+   ]
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 2 ng/mL but less than 20 ng/mL",
+   "screened": 3241,
+   "eligible": 2566,
+   "eligible_share": 0.7917,
+   "enrolled": 22,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.0324
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0321
+    },
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0305
+    }
+   ]
+  },
+  {
+   "factor": "baseline PSA categories",
+   "level": "Higher than or equal to 20 ng/mL but less than 100 ng/mL",
+   "screened": 3370,
+   "eligible": 2617,
+   "eligible_share": 0.7766,
+   "enrolled": 34,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0338
+    },
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0335
+    },
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0318
+    }
+   ]
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "65-74 years",
+   "screened": 3587,
+   "eligible": 2820,
+   "eligible_share": 0.7862,
+   "enrolled": 30,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.034
+    },
+    {
+     "criterion": "EL010",
+     "text": "Patients with known hypersensitivity to the active substance or to any",
+     "share_of_screened": 0.0312
+    },
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.0293
+    }
+   ]
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": "< 65 years",
+   "screened": 4303,
+   "eligible": 3380,
+   "eligible_share": 0.7855,
+   "enrolled": 62,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0356
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0321
+    },
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0307
+    }
+   ]
+  },
+  {
+   "factor": "Age (FDA standard age bands)",
+   "level": ">= 75 years",
+   "screened": 2110,
+   "eligible": 1671,
+   "eligible_share": 0.7919,
+   "enrolled": 12,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0336
+    },
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.0318
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0303
+    }
+   ]
+  },
+  {
+   "factor": "Sex",
+   "level": "female",
+   "screened": 1,
+   "eligible": 0,
+   "eligible_share": 0.0,
+   "enrolled": 0,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL001",
+     "text": "Male ≥18 years of age at Visit 1 (Screening).",
+     "share_of_screened": 1.0
+    }
+   ]
+  },
+  {
+   "factor": "Sex",
+   "level": "male",
+   "screened": 9999,
+   "eligible": 7871,
+   "eligible_share": 0.7872,
+   "enrolled": 104,
+   "driver": "protocol criteria",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0324
+    },
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0324
+    },
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0294
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "american_indian_or_alaska_native",
+   "screened": 67,
+   "eligible": 55,
+   "eligible_share": 0.8209,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0448
+    },
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0448
+    },
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.0299
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "asian",
+   "screened": 465,
+   "eligible": 378,
+   "eligible_share": 0.8129,
+   "enrolled": 12,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0409
+    },
+    {
+     "criterion": "EL010",
+     "text": "Patients with known hypersensitivity to the active substance or to any",
+     "share_of_screened": 0.0366
+    },
+    {
+     "criterion": "EL009",
+     "text": "4. Patients participating in an interventional clinical trial within 3",
+     "share_of_screened": 0.0301
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "black_or_african_american",
+   "screened": 696,
+   "eligible": 555,
+   "eligible_share": 0.7974,
+   "enrolled": 4,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0417
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.033
+    },
+    {
+     "criterion": "EL009",
+     "text": "4. Patients participating in an interventional clinical trial within 3",
+     "share_of_screened": 0.0316
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "more_than_one_race",
+   "screened": 44,
+   "eligible": 39,
+   "eligible_share": 0.8864,
+   "enrolled": 2,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.0682
+    },
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0227
+    },
+    {
+     "criterion": "EL010",
+     "text": "Patients with known hypersensitivity to the active substance or to any",
+     "share_of_screened": 0.0227
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "native_hawaiian_or_other_pacific_islander",
+   "screened": 18,
+   "eligible": 16,
+   "eligible_share": 0.8889,
+   "enrolled": 0,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0556
+    },
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0556
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "unknown_or_not_reported",
+   "screened": 271,
+   "eligible": 216,
+   "eligible_share": 0.797,
+   "enrolled": 2,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL010",
+     "text": "Patients with known hypersensitivity to the active substance or to any",
+     "share_of_screened": 0.0406
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0406
+    },
+    {
+     "criterion": "EL002",
+     "text": "Documented history of localized adenocarcinoma of the prostate",
+     "share_of_screened": 0.0332
+    }
+   ]
+  },
+  {
+   "factor": "Race",
+   "level": "white",
+   "screened": 8439,
+   "eligible": 6612,
+   "eligible_share": 0.7835,
+   "enrolled": 84,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0341
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0331
+    },
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.03
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "hispanic_or_latino",
+   "screened": 573,
+   "eligible": 464,
+   "eligible_share": 0.8098,
+   "enrolled": 2,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0366
+    },
+    {
+     "criterion": "EL009",
+     "text": "4. Patients participating in an interventional clinical trial within 3",
+     "share_of_screened": 0.0332
+    },
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.0314
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "not_hispanic_or_latino",
+   "screened": 9095,
+   "eligible": 7148,
+   "eligible_share": 0.7859,
+   "enrolled": 98,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0327
+    },
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0324
+    },
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0295
+    }
+   ]
+  },
+  {
+   "factor": "Ethnicity",
+   "level": "unknown_or_not_reported",
+   "screened": 332,
+   "eligible": 259,
+   "eligible_share": 0.7801,
+   "enrolled": 4,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0422
+    },
+    {
+     "criterion": "EL006",
+     "text": "any medical condition or circumstance (including receiving an IP) that",
+     "share_of_screened": 0.0361
+    },
+    {
+     "criterion": "EL010",
+     "text": "Patients with known hypersensitivity to the active substance or to any",
+     "share_of_screened": 0.0331
+    }
+   ]
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "0",
+   "screened": 5896,
+   "eligible": 4613,
+   "eligible_share": 0.7824,
+   "enrolled": 44,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0336
+    },
+    {
+     "criterion": "EL010",
+     "text": "Patients with known hypersensitivity to the active substance or to any",
+     "share_of_screened": 0.0314
+    },
+    {
+     "criterion": "EL012",
+     "text": "received salvage therapy for the current episode of BCR.",
+     "share_of_screened": 0.0304
+    }
+   ]
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "1",
+   "screened": 3886,
+   "eligible": 3083,
+   "eligible_share": 0.7934,
+   "enrolled": 56,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL003",
+     "text": "Low PSA BCR defined as PSA ≤0.5 ng/mL.",
+     "share_of_screened": 0.0358
+    },
+    {
+     "criterion": "EL009",
+     "text": "4. Patients participating in an interventional clinical trial within 3",
+     "share_of_screened": 0.0317
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0301
+    }
+   ]
+  },
+  {
+   "factor": "Ecog performance status",
+   "level": "2 or more",
+   "screened": 218,
+   "eligible": 175,
+   "eligible_share": 0.8028,
+   "enrolled": 4,
+   "driver": "patient mix",
+   "top_failing_criteria": [
+    {
+     "criterion": "EL012",
+     "text": "received salvage therapy for the current episode of BCR.",
+     "share_of_screened": 0.0505
+    },
+    {
+     "criterion": "EL011",
+     "text": "previously undergone a cystectomy or have renal failure or have other",
+     "share_of_screened": 0.0413
+    },
+    {
+     "criterion": "EL005",
+     "text": "Written informed consent obtained from the patient and ability for the",
+     "share_of_screened": 0.0321
+    }
+   ]
+  }
+ ]
+}

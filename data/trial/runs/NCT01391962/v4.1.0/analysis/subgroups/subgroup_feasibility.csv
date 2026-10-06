@@ -1,0 +1,18 @@
+Factor,Level,Screened,Eligible (%),Enrolled,Most frequent failing criteria (% of screened),Driver
+Age (ICH E11 paediatric bands),12-17 years,811,705 (87%),6,EL016 QTc <480 msec (with Bazett’s correction) (1%); EL042 pregnant women ... are excluded from thi (1%); EL019 Left ventricular ejection fraction (LVEF (1%),protocol criteria
+Age (ICH E11 paediatric bands),>= 18 years,9189,7870 (86%),64,EL041 HIV-positive patients on combination ant (1%); EL030 Patients must not have received prior tr (1%); EL037 Patients with any condition ... that imp (1%),protocol criteria
+Sex,female,4815,4131 (86%),27,EL019 Left ventricular ejection fraction (LVEF (1%); EL037 Patients with any condition ... that imp (1%); EL041 HIV-positive patients on combination ant (1%),protocol criteria
+Sex,male,5185,4444 (86%),43,EL034 Patients with a pre-existing thyroid abn (1%); EL041 HIV-positive patients on combination ant (1%); EL030 Patients must not have received prior tr (1%),protocol criteria
+Race,american_indian_or_alaska_native,64,54 (84%),0,EL030 Patients must not have received prior tr (3%); EL025 women of childbearing potential must hav (3%); EL019 Left ventricular ejection fraction (LVEF (2%),patient mix
+Race,asian,490,417 (85%),2,EL017 The following groups of patients are eli (1%); EL042 pregnant women ... are excluded from thi (1%); EL016 QTc <480 msec (with Bazett’s correction) (1%),patient mix
+Race,black_or_african_american,719,620 (86%),5,EL042 pregnant women ... are excluded from thi (1%); EL041 HIV-positive patients on combination ant (1%); EL037 Patients with any condition ... that imp (1%),patient mix
+Race,more_than_one_race,67,57 (85%),1,EL016 QTc <480 msec (with Bazett’s correction) (3%); EL038 Patients with any of the following condi (3%); EL036 Uncontrolled intercurrent illness includ (3%),patient mix
+Race,native_hawaiian_or_other_pacific_islander,26,25 (96%),0,EL014 Life expectancy of greater than 3 months (4%),patient mix
+Race,unknown_or_not_reported,377,319 (85%),2,EL032 Major surgery within 4 weeks prior to en (1%); EL016 QTc <480 msec (with Bazett’s correction) (1%); EL011 Patients with no prior therapy are eligi (1%),patient mix
+Race,white,8257,7083 (86%),60,EL041 HIV-positive patients on combination ant (1%); EL034 Patients with a pre-existing thyroid abn (1%); EL037 Patients with any condition ... that imp (1%),patient mix
+Ethnicity,hispanic_or_latino,738,630 (85%),6,EL042 pregnant women ... are excluded from thi (1%); EL029 Patients must be able to swallow whole t (1%); EL018 blood pressure (BP) no greater than 140  (1%),patient mix
+Ethnicity,not_hispanic_or_latino,8998,7711 (86%),64,EL034 Patients with a pre-existing thyroid abn (1%); EL041 HIV-positive patients on combination ant (1%); EL030 Patients must not have received prior tr (1%),patient mix
+Ethnicity,unknown_or_not_reported,264,234 (89%),0,"EL033 History of familial long QT syndrome, or (1%); EL017 The following groups of patients are eli (1%); EL019 Left ventricular ejection fraction (LVEF (1%)",patient mix
+ECOG performance status,0,3872,3314 (86%),26,EL017 The following groups of patients are eli (1%); EL032 Major surgery within 4 weeks prior to en (1%); EL030 Patients must not have received prior tr (1%),protocol criteria
+ECOG performance status,1,5499,4723 (86%),41,EL034 Patients with a pre-existing thyroid abn (1%); EL001 Patients must have histologically confir (1%); EL041 HIV-positive patients on combination ant (1%),protocol criteria
+ECOG performance status,2 or more,629,538 (86%),3,"EL011 Patients with no prior therapy are eligi (2%); EL033 History of familial long QT syndrome, or (1%); EL032 Major surgery within 4 weeks prior to en (1%)",protocol criteria

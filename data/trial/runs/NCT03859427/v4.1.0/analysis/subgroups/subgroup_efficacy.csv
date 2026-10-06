@@ -1,0 +1,83 @@
+Factor,Level,Arm,N enrolled,N efficacy-evaluable at cut-off,Small n,ORR % (95% CI),DCR % (95% CI),CR/PR/SD/PD/NE,TTR median mo,DOR median mo,PFS median mo (events/n),PFS 12 m %,OS median mo (events/n),OS 12 m %
+original ISS stage at study entry (stage 1 or 2 vs stage 3),stage 1 or 2,ARM1,159,159,,77% (69-83),93% (88-96),54/68/26/7/4,1.84,52.44,40.02 (128/159 ev),78.1,54.52 (118/159 ev),91.7
+original ISS stage at study entry (stage 1 or 2 vs stage 3),stage 1 or 2,ARM2,174,174,,82% (75-87),96% (92-98),45/97/25/5/2,1.84,44.11,38.64 (144/174 ev),78.7,56.02 (137/174 ev),93.6
+original ISS stage at study entry (stage 1 or 2 vs stage 3),stage 3,ARM1,63,63,,70% (57-81),89% (78-95),17/27/12/6/1,1.84,52.64,50.6 (53/63 ev),77.2,59.06 (49/63 ev),92.0
+original ISS stage at study entry (stage 1 or 2 vs stage 3),stage 3,ARM2,64,64,,77% (64-86),92% (83-97),24/25/10/3/2,1.84,48.47,46.92 (45/64 ev),89.8,57.08 (48/64 ev),96.7
+prior lenalidomide treatment (yes vs no),no,ARM1,100,100,,74% (64-82),93% (86-97),32/42/19/5/2,1.84,54.08,44.66 (84/100 ev),76.6,55.95 (78/100 ev),95.0
+prior lenalidomide treatment (yes vs no),no,ARM2,127,127,,80% (71-86),95% (90-98),34/67/20/4/2,1.84,47.46,45.0 (100/127 ev),84.3,58.12 (96/127 ev),97.6
+prior lenalidomide treatment (yes vs no),yes,ARM1,122,122,,75% (67-83),91% (84-95),39/53/19/8/3,1.84,49.24,39.56 (97/122 ev),78.9,54.53 (89/122 ev),89.1
+prior lenalidomide treatment (yes vs no),yes,ARM2,111,111,,81% (73-88),95% (89-98),35/55/15/4/2,1.84,41.07,38.64 (89/111 ev),78.4,52.33 (89/111 ev),90.9
+prior PI treatment (yes vs no),no,ARM1,111,111,,74% (65-82),95% (89-98),37/45/23/3/3,1.84,50.45,40.48 (86/111 ev),78.7,55.92 (81/111 ev),91.8
+prior PI treatment (yes vs no),no,ARM2,107,107,,78% (70-86),93% (87-97),33/51/16/5/2,1.84,48.47,42.91 (84/107 ev),80.4,56.22 (85/107 ev),98.1
+prior PI treatment (yes vs no),yes,ARM1,111,111,,76% (67-83),89% (82-94),34/50/15/10/2,1.84,52.69,43.24 (95/111 ev),76.9,54.68 (86/111 ev),91.8
+prior PI treatment (yes vs no),yes,ARM2,131,131,,82% (74-88),96% (91-99),36/71/19/3/2,1.84,42.38,40.25 (105/131 ev),82.4,56.02 (100/131 ev),91.5
+prior anti-CD38 exposure (yes vs no),no,ARM1,119,119,,76% (67-83),92% (85-96),41/49/19/8/2,1.84,50.45,40.48 (97/119 ev),77.9,52.98 (90/119 ev),90.6
+prior anti-CD38 exposure (yes vs no),no,ARM2,122,122,,77% (69-84),95% (90-98),34/60/22/3/3,1.84,47.8,39.34 (93/122 ev),80.6,57.78 (94/122 ev),92.4
+prior anti-CD38 exposure (yes vs no),yes,ARM1,103,103,,74% (64-82),92% (85-97),30/46/19/5/3,1.84,52.69,46.92 (84/103 ev),77.7,60.84 (77/103 ev),93.1
+prior anti-CD38 exposure (yes vs no),yes,ARM2,116,116,,84% (76-90),95% (89-98),35/62/13/5/1,1.84,42.38,41.4 (96/116 ev),82.4,54.77 (91/116 ev),96.6
+"prior bortezomib treatment (yes, no)",no,ARM1,71,71,,73% (61-83),92% (83-97),28/24/13/4/2,1.84,42.08,31.24 (58/71 ev),76.6,45.02 (60/71 ev),90.1
+"prior bortezomib treatment (yes, no)",no,ARM2,76,76,,72% (61-82),96% (89-99),16/39/18/2/1,1.84,47.3,37.8 (56/76 ev),82.9,56.22 (59/76 ev),97.3
+"prior bortezomib treatment (yes, no)",yes,ARM1,151,151,,76% (68-82),92% (87-96),43/71/25/9/3,1.84,52.84,46.88 (123/151 ev),78.5,61.18 (107/151 ev),92.6
+"prior bortezomib treatment (yes, no)",yes,ARM2,162,162,,84% (77-89),94% (90-97),53/83/17/6/3,1.84,44.52,41.4 (133/162 ev),80.9,56.02 (126/162 ev),93.2
+Age (protocol cut points),18-<65 years,ARM1,135,135,,73% (65-81),93% (87-96),43/56/26/7/3,1.84,52.84,46.0 (107/135 ev),80.9,55.92 (104/135 ev),92.5
+Age (protocol cut points),18-<65 years,ARM2,142,142,,79% (71-85),94% (89-98),38/74/22/5/3,1.84,39.84,39.87 (115/142 ev),81.6,55.34 (115/142 ev),93.7
+Age (protocol cut points),65-<75 years,ARM1,68,68,,76% (65-86),91% (82-97),23/29/10/4/2,1.84,45.08,39.56 (59/68 ev),76.0,54.53 (49/68 ev),89.4
+Age (protocol cut points),65-<75 years,ARM2,74,74,,80% (69-88),96% (89-99),21/38/12/3/0,1.84,51.28,46.36 (55/74 ev),80.2,58.47 (52/74 ev),94.5
+Age (protocol cut points),>= 75 years,ARM1,19,19,,79% (54-94),89% (67-99),5/10/2/2/0,1.84,54.11,26.68 (15/19 ev),63.2,55.95 (14/19 ev),94.7
+Age (protocol cut points),>= 75 years,ARM2,22,22,,91% (71-99),95% (77-100),10/10/1/0/1,1.84,38.22,40.06 (19/22 ev),85.7,48.18 (18/22 ev),100.0
+number of prior therapies (1 vs > 1; 1 vs 2 vs > 2),1,ARM1,98,98,,69% (59-78),92% (85-96),32/36/22/4/4,1.84,48.76,40.48 (76/98 ev),74.5,54.68 (70/98 ev),89.7
+number of prior therapies (1 vs > 1; 1 vs 2 vs > 2),1,ARM2,91,91,,82% (73-90),92% (85-97),36/39/9/5/2,1.84,47.8,46.54 (75/91 ev),84.0,50.31 (73/91 ev),93.3
+number of prior therapies (1 vs > 1; 1 vs 2 vs > 2),> 1,ARM1,124,124,,79% (71-86),92% (86-96),39/59/16/9/1,1.84,52.69,43.24 (105/124 ev),80.4,57.31 (97/124 ev),93.4
+number of prior therapies (1 vs > 1; 1 vs 2 vs > 2),> 1,ARM2,147,147,,79% (71-85),97% (92-99),33/83/26/3/2,1.84,39.56,39.56 (114/147 ev),79.9,59.54 (112/147 ev),95.2
+cytogenetic risk measured by FISH (high-risk vs standard risk),high-risk,ARM1,70,70,,73% (61-83),90% (80-96),23/28/12/5/2,1.84,58.87,54.68 (55/70 ev),79.7,69.59 (45/70 ev),91.3
+cytogenetic risk measured by FISH (high-risk vs standard risk),high-risk,ARM2,70,70,,79% (67-87),97% (90-100),14/41/13/2/0,1.84,43.16,38.64 (59/70 ev),74.4,49.64 (61/70 ev),97.1
+cytogenetic risk measured by FISH (high-risk vs standard risk),standard risk,ARM1,152,152,,76% (68-82),93% (87-96),48/67/26/8/3,1.84,45.08,38.64 (126/152 ev),77.0,50.61 (122/152 ev),92.0
+cytogenetic risk measured by FISH (high-risk vs standard risk),standard risk,ARM2,168,168,,81% (74-87),94% (89-97),55/81/22/6/4,1.84,45.08,41.4 (130/168 ev),84.5,58.12 (124/168 ev),93.3
+bortezomib refractory status (yes vs no),no,ARM1,109,109,,76% (67-84),93% (86-97),36/47/18/6/2,1.84,52.64,40.02 (91/109 ev),74.7,53.43 (87/109 ev),91.7
+bortezomib refractory status (yes vs no),no,ARM2,112,112,,80% (72-87),95% (89-98),36/54/16/3/3,1.84,44.52,42.91 (91/112 ev),82.3,54.77 (92/112 ev),93.7
+bortezomib refractory status (yes vs no),yes,ARM1,113,113,,73% (64-81),91% (84-96),35/48/20/7/3,1.84,52.44,43.92 (90/113 ev),80.9,59.06 (80/113 ev),91.9
+bortezomib refractory status (yes vs no),yes,ARM2,126,126,,80% (72-87),95% (90-98),33/68/19/5/1,1.84,44.7,40.25 (98/126 ev),80.8,58.12 (93/126 ev),95.2
+lenalidomide refractory status (yes vs no),no,ARM1,108,108,,76% (67-84),92% (85-96),38/44/17/6/3,1.84,45.04,39.56 (88/108 ev),73.4,54.48 (81/108 ev),87.8
+lenalidomide refractory status (yes vs no),no,ARM2,109,109,,78% (69-85),94% (88-98),31/54/18/4/2,1.84,44.52,40.48 (88/109 ev),78.7,55.62 (85/109 ev),92.5
+lenalidomide refractory status (yes vs no),yes,ARM1,114,114,,74% (65-81),92% (86-96),33/51/21/7/2,1.84,54.28,46.0 (93/114 ev),82.0,62.49 (86/114 ev),95.5
+lenalidomide refractory status (yes vs no),yes,ARM2,129,129,,82% (74-88),95% (90-98),38/68/17/4/2,1.84,47.46,41.4 (101/129 ev),83.9,56.53 (100/129 ev),96.1
+prior transplant (yes vs no),no,ARM1,93,93,,70% (60-79),90% (82-95),30/35/19/6/3,1.84,54.08,50.6 (74/93 ev),78.1,60.45 (67/93 ev),90.2
+prior transplant (yes vs no),no,ARM2,107,107,,87% (79-93),98% (93-100),37/56/12/2/0,1.84,44.11,41.4 (90/107 ev),82.6,56.61 (86/107 ev),93.4
+prior transplant (yes vs no),yes,ARM1,129,129,,78% (70-85),93% (87-97),41/60/19/7/2,1.84,45.08,39.56 (107/129 ev),77.7,53.24 (100/129 ev),92.9
+prior transplant (yes vs no),yes,ARM2,131,131,,75% (66-82),92% (86-96),32/66/23/6/4,1.84,45.08,40.25 (99/131 ev),80.6,55.34 (99/131 ev),95.4
+Randomisation stratum,original ISS stage at study entry (stage 1 or 2 vs stage 3),ARM1,46,46,,72% (57-84),89% (76-96),17/16/8/3/2,1.84,42.82,39.56 (36/46 ev),81.8,60.45 (38/46 ev),91.3
+Randomisation stratum,original ISS stage at study entry (stage 1 or 2 vs stage 3),ARM2,68,68,,82% (71-91),99% (92-100),19/37/11/0/1,1.84,39.56,38.64 (56/68 ev),87.7,55.34 (55/68 ev),98.5
+Randomisation stratum,prior PI treatment (yes vs no),ARM1,46,46,,70% (54-82),96% (85-99),10/22/12/2/0,1.84,32.44,26.68 (38/46 ev),71.6,49.69 (33/46 ev),95.5
+Randomisation stratum,prior PI treatment (yes vs no),ARM2,56,56,,82% (70-91),93% (83-98),13/33/6/4/0,1.84,49.54,46.92 (40/56 ev),79.6,65.04 (38/56 ev),92.7
+Randomisation stratum,prior anti-CD38 exposure (yes vs no),ARM1,70,70,,79% (67-87),96% (88-99),20/35/12/2/1,1.84,52.69,54.28 (55/70 ev),77.9,62.49 (50/70 ev),91.4
+Randomisation stratum,prior anti-CD38 exposure (yes vs no),ARM2,57,57,,79% (66-89),93% (83-98),17/28/8/3/1,1.84,48.47,43.44 (49/57 ev),80.3,56.61 (49/57 ev),94.7
+Randomisation stratum,prior lenalidomide treatment (yes vs no),ARM1,60,60,,77% (64-87),87% (75-94),24/22/6/6/2,1.84,55.47,49.08 (52/60 ev),79.7,55.92 (46/60 ev),89.8
+Randomisation stratum,prior lenalidomide treatment (yes vs no),ARM2,57,57,,77% (64-87),95% (85-99),20/24/10/1/2,1.84,47.8,37.72 (44/57 ev),77.4,54.44 (43/57 ev),90.9
+Sex,female,ARM1,95,95,,75% (65-83),91% (83-96),29/42/15/8/1,1.84,52.44,38.64 (77/95 ev),74.4,54.53 (72/95 ev),91.5
+Sex,female,ARM2,115,115,,85% (77-91),96% (90-99),36/62/12/2/3,1.84,38.41,40.06 (90/115 ev),84.3,49.18 (92/115 ev),94.7
+Sex,male,ARM1,127,127,,75% (66-82),93% (87-97),42/53/23/5/4,1.84,52.44,46.0 (104/127 ev),80.5,55.92 (95/127 ev),92.0
+Sex,male,ARM2,123,123,,76% (67-83),94% (89-98),33/60/23/6/1,1.84,49.68,41.4 (99/123 ev),79.0,60.46 (93/123 ev),94.2
+Race,american_indian_or_alaska_native,ARM1,2,2,yes,100% (16-100),100% (16-100),1/1/0/0/0,1.84,17.05,18.89 (2/2 ev),100.0,18.89 (2/2 ev),100.0
+Race,american_indian_or_alaska_native,ARM2,2,2,yes,100% (16-100),100% (16-100),1/1/0/0/0,1.84,7.36,9.2 (2/2 ev),50.0,25.17 (2/2 ev),100.0
+Race,asian,ARM1,18,18,,50% (26-74),72% (47-90),6/3/4/4/1,1.84,52.69,31.24 (16/18 ev),66.7,38.68 (14/18 ev),83.3
+Race,asian,ARM2,20,20,,80% (56-94),85% (62-97),5/11/1/1/2,1.84,53.36,55.2 (15/20 ev),88.5,54.44 (17/20 ev),100.0
+Race,black_or_african_american,ARM1,23,23,,65% (43-84),91% (72-99),5/10/6/2/0,1.84,41.4,38.64 (19/23 ev),77.6,49.08 (20/23 ev),100.0
+Race,black_or_african_american,ARM2,30,30,,73% (54-88),97% (83-100),6/16/7/1/0,1.84,22.63,24.47 (27/30 ev),75.7,38.51 (27/30 ev),90.0
+Race,more_than_one_race,ARM1,1,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,9.44 (1/1 ev),-
+Race,more_than_one_race,ARM2,3,3,yes,100% (29-100),100% (29-100),1/2/0/0/0,1.84,41.6,43.44 (2/3 ev),66.7,43.44 (2/3 ev),100.0
+Race,unknown_or_not_reported,ARM1,14,14,,86% (57-98),100% (77-100),7/5/2/0/0,1.84,51.59,53.43 (13/14 ev),78.6,55.92 (11/14 ev),92.9
+Race,unknown_or_not_reported,ARM2,5,5,yes,80% (28-99),100% (48-100),2/2/1/0/0,1.84,51.28,53.12 (4/5 ev),100.0,53.12 (4/5 ev),100.0
+Race,white,ARM1,164,164,,78% (71-84),94% (89-97),52/76/26/7/3,1.84,52.84,44.16 (131/164 ev),78.8,60.45 (119/164 ev),91.9
+Race,white,ARM2,178,178,,81% (74-86),96% (91-98),54/90/26/6/2,1.84,46.0,41.4 (139/178 ev),81.9,58.75 (133/178 ev),94.3
+Ethnicity,hispanic_or_latino,ARM1,10,10,,60% (26-88),100% (69-100),2/4/4/0/0,1.84,27.6,18.89 (9/10 ev),58.3,54.53 (7/10 ev),88.9
+Ethnicity,hispanic_or_latino,ARM2,9,9,yes,89% (52-100),89% (52-100),4/4/0/1/0,1.84,83.1,84.94 (6/9 ev),88.9,82.87 (7/9 ev),100.0
+Ethnicity,not_hispanic_or_latino,ARM1,208,208,,75% (69-81),91% (87-95),66/90/34/13/5,1.84,52.64,43.92 (168/208 ev),78.8,55.92 (156/208 ev),92.2
+Ethnicity,not_hispanic_or_latino,ARM2,222,222,,80% (74-85),95% (91-98),65/112/34/7/4,1.84,42.38,39.87 (177/222 ev),81.1,55.62 (173/222 ev),94.1
+Ethnicity,unknown_or_not_reported,ARM1,4,4,yes,100% (40-100),100% (40-100),3/1/0/0/0,1.84,12.29,14.13 (4/4 ev),75.0,14.13 (4/4 ev),75.0
+Ethnicity,unknown_or_not_reported,ARM2,7,7,yes,86% (42-100),100% (59-100),0/6/1/0/0,1.84,37.5,39.34 (6/7 ev),85.7,40.25 (5/7 ev),100.0
+Eastern Cooperative Oncology Group Performance Status (ECOG ,0,ARM1,88,88,,73% (62-82),93% (86-97),26/38/18/4/2,1.84,45.08,34.28 (72/88 ev),75.9,52.91 (66/88 ev),90.8
+Eastern Cooperative Oncology Group Performance Status (ECOG ,0,ARM2,104,104,,83% (74-89),93% (87-97),29/57/11/5/2,1.84,49.68,44.22 (79/104 ev),82.7,60.8 (80/104 ev),94.1
+Eastern Cooperative Oncology Group Performance Status (ECOG ,1,ARM1,105,105,,80% (71-87),92% (86-97),36/48/13/6/2,1.84,56.33,52.29 (85/105 ev),82.4,62.57 (79/105 ev),95.2
+Eastern Cooperative Oncology Group Performance Status (ECOG ,1,ARM2,107,107,,80% (72-87),97% (92-99),34/52/18/3/0,1.84,45.08,42.91 (90/107 ev),83.7,55.62 (85/107 ev),95.2
+Eastern Cooperative Oncology Group Performance Status (ECOG ,2 or more,ARM1,29,29,,62% (42-79),86% (68-96),9/9/7/3/1,1.84,47.24,40.02 (24/29 ev),66.8,40.02 (22/29 ev),81.9
+Eastern Cooperative Oncology Group Performance Status (ECOG ,2 or more,ARM2,27,27,,70% (50-86),93% (76-99),6/13/6/0/2,1.84,19.78,21.62 (20/27 ev),68.0,39.87 (20/27 ev),92.6

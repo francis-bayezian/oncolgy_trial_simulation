@@ -1,0 +1,912 @@
+{
+ "journey_version": "journey-1.1.0",
+ "seed": 20260929,
+ "horizon_days": 730,
+ "cohort_file": "cohort_accrual_historical_68.6_per_year.jsonl",
+ "inputs": {
+  "studyspec": "3c396a3eadb6a232eae3d1a03067dc1064f5d6d8c048e2096d32d7909fb40db9",
+  "schedule_facts": "schedule-facts-1.3.0"
+ },
+ "schedule": {
+  "cycle_length_days": {
+   "value": 28.0,
+   "evidence_level": "protocol",
+   "source": "treatment phase PH1",
+   "quote": "28 days"
+  },
+  "screening_window_days": {
+   "value": 28.0,
+   "evidence_level": "protocol",
+   "source": "assessment schedule: pre-treatment window",
+   "quote": "Scree\nninga\n(up to\n28 days\nbefore\nrand)"
+  },
+  "tumour_assessment_interval_days": {
+   "value": 28.0,
+   "evidence_level": "protocol",
+   "source": "tumour assessment interval: schedule fact SF06 (REVIEW_REQUIRED: used under the accept-review decision, flagged)",
+   "quote": "every 28 days as part of every myeloma disease assessment",
+   "time_origin": "cycle_day",
+   "status": "REVIEW_REQUIRED"
+  },
+  "lab_days_in_cycle": {
+   "value": [
+    1
+   ],
+   "evidence_level": "protocol",
+   "source": "laboratory rows of the assessment schedule",
+   "quote": "Hematology"
+  },
+  "follow_up_interval_days": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no follow-up visit interval stated"
+  },
+  "max_cycles": {
+   "value": 12,
+   "evidence_level": "protocol",
+   "source": "cycle count of PH1",
+   "quote": "up to\n12 cycles"
+  },
+  "agents": {
+   "carfilzomib": {
+    "entries": [
+     {
+      "intervention_id": "TX001",
+      "arms": [
+       "Arm 1 (once-weekly KRd 56 mg/m2)"
+      ],
+      "arm_ids": [
+       "ARM1"
+      ],
+      "arm_labels": [
+       "Once-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 20.0,
+        "unit": "mg/m2",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX001",
+       "quote": "The dose will be 20 mg/m2 on day 1 of the first cycle"
+      },
+      "route": "intravenous",
+      "dosing_days": {
+       "value": [
+        1
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "day 1"
+      },
+      "cycles": [
+       1
+      ]
+     },
+     {
+      "intervention_id": "TX002",
+      "arms": [
+       "Arm 1 (once-weekly KRd 56 mg/m2)"
+      ],
+      "arm_ids": [
+       "ARM1"
+      ],
+      "arm_labels": [
+       "Once-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 56.0,
+        "unit": "mg/m2",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX002",
+       "quote": "56 mg/m2 beginning with day 8 of cycle 1 and thereafter"
+      },
+      "route": "intravenous",
+      "dosing_days": {
+       "value": [
+        1,
+        8,
+        15
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "days 1, 8, and 15"
+      },
+      "cycles": null
+     },
+     {
+      "intervention_id": "TX003",
+      "arms": [
+       "Arm 2 (twice-weekly KRd 27 mg/m2)"
+      ],
+      "arm_ids": [
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Twice-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 20.0,
+        "unit": "mg/m2",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX003",
+       "quote": "Carfilzomib will be administered twice-weekly IV as a 10 ± 5 minute infusion using an infusion pump on days 1, 2, 8, 9, 15, and 16 of each 28-day cycle."
+      },
+      "route": "intravenous",
+      "dosing_days": {
+       "value": [
+        1,
+        2
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "days 1, 2"
+      },
+      "cycles": [
+       1
+      ]
+     },
+     {
+      "intervention_id": "TX004",
+      "arms": [
+       "Arm 2 (twice-weekly KRd 27 mg/m2)"
+      ],
+      "arm_ids": [
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Twice-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 27.0,
+        "unit": "mg/m2",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX004",
+       "quote": "Carfilzomib will be administered twice-weekly IV as a 10 minute ± 5 minute infusion using an infusion pump on days 1, 2, 8, 9, 15, and 16 of each 28-day cycle. The dose will be 20 mg/m2 on days 1 and 2 of the first cycle and 27 mg/m2 beginning with day 8 of cycle 1 and thereafter."
+      },
+      "route": "intravenous",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        8,
+        9,
+        15,
+        16
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "days 1, 2, 8, 9, 15, and 16"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX002",
+    "dose": {
+     "value": {
+      "value": 56.0,
+      "unit": "mg/m2",
+      "basis": "per_body_surface_area"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX002",
+     "quote": "56 mg/m2 beginning with day 8 of cycle 1 and thereafter"
+    },
+    "route": "intravenous",
+    "dosing_days": {
+     "value": [
+      1,
+      8,
+      15
+     ],
+     "evidence_level": "protocol",
+     "source": "listed dosing days",
+     "quote": "days 1, 8, and 15"
+    },
+    "arms": [
+     "Arm 1 (once-weekly KRd 56 mg/m2)",
+     "Arm 2 (twice-weekly KRd 27 mg/m2)"
+    ],
+    "arm_ids": [
+     "ARM1",
+     "ARM2"
+    ]
+   },
+   "lenalidomide": {
+    "entries": [
+     {
+      "intervention_id": "TX005",
+      "arms": [],
+      "arm_ids": [
+       "ARM1",
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Once-weekly",
+       "Twice-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 25.0,
+        "unit": "mg",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX005",
+       "quote": "In subjects with normal renal function, lenalidomide will be taken once-daily orally on\ndays 1 to 21 of each cycle at a dose of 25 mg."
+      },
+      "route": "oral",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "days 1 to 21"
+      },
+      "cycles": null
+     },
+     {
+      "intervention_id": "TX006",
+      "arms": [
+       "Arm 1 (once-weekly KRd 56 mg/m2)",
+       "Arm 2 (twice-weekly KRd 27 mg/m2)"
+      ],
+      "arm_ids": [
+       "ARM1",
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Once-weekly",
+       "Twice-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 25.0,
+        "unit": "mg",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX006",
+       "quote": "In subjects with normal renal function, lenalidomide will be taken once-daily orally on\ndays 1 to 21 of each cycle at a dose of 25 mg."
+      },
+      "route": "oral",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "days 1 to 21 of each cycle"
+      },
+      "cycles": null
+     },
+     {
+      "intervention_id": "TX007",
+      "arms": [],
+      "arm_ids": [
+       "ARM1",
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Once-weekly",
+       "Twice-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 25.0,
+        "unit": "mg",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX007",
+       "quote": "In subjects with normal renal function, lenalidomide will be taken once-daily orally on\ndays 1 to 21 of each cycle at a dose of 25 mg."
+      },
+      "route": "oral",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "days 1 to 21"
+      },
+      "cycles": null
+     },
+     {
+      "intervention_id": "TX008",
+      "arms": [],
+      "arm_ids": [
+       "ARM1",
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Once-weekly",
+       "Twice-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 25.0,
+        "unit": "mg",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX008",
+       "quote": "In subjects with normal renal function, lenalidomide will be taken once-daily orally on days 1 to 21 of each cycle at a dose of 25 mg."
+      },
+      "route": "oral",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "days 1 to 21"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX005",
+    "dose": {
+     "value": {
+      "value": 25.0,
+      "unit": "mg",
+      "basis": "fixed"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX005",
+     "quote": "In subjects with normal renal function, lenalidomide will be taken once-daily orally on\ndays 1 to 21 of each cycle at a dose of 25 mg."
+    },
+    "route": "oral",
+    "dosing_days": {
+     "value": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+     ],
+     "evidence_level": "protocol",
+     "source": "listed dosing days",
+     "quote": "days 1 to 21"
+    },
+    "arms": [],
+    "arm_ids": [
+     "ARM1",
+     "ARM2"
+    ]
+   },
+   "dexamethasone": {
+    "entries": [
+     {
+      "intervention_id": "TX009",
+      "arms": [
+       "Arm 1 (once-weekly KRd 56 mg/m2)"
+      ],
+      "arm_ids": [
+       "ARM1"
+      ],
+      "arm_labels": [
+       "Once-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 40.0,
+        "unit": "mg",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX009",
+       "quote": "Dexamethasone should be taken weekly orally or by IV infusion at a dose of 40 mg."
+      },
+      "route": "oral",
+      "dosing_days": {
+       "value": [
+        1,
+        8,
+        15,
+        22
+       ],
+       "evidence_level": "protocol",
+       "source": "weekly dosing",
+       "quote": "weekly"
+      },
+      "cycles": null
+     },
+     {
+      "intervention_id": "TX010",
+      "arms": [
+       "Arm 2 (twice-weekly KRd 27 mg/m2)"
+      ],
+      "arm_ids": [
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Twice-weekly"
+      ],
+      "dose": {
+       "value": {
+        "value": 40.0,
+        "unit": "mg",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX010",
+       "quote": "Dexamethasone should be taken weekly orally or by IV infusion at a dose of 40 mg."
+      },
+      "route": "oral",
+      "dosing_days": {
+       "value": [
+        1,
+        8,
+        15,
+        22
+       ],
+       "evidence_level": "protocol",
+       "source": "weekly dosing",
+       "quote": "weekly"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX009",
+    "dose": {
+     "value": {
+      "value": 40.0,
+      "unit": "mg",
+      "basis": "fixed"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX009",
+     "quote": "Dexamethasone should be taken weekly orally or by IV infusion at a dose of 40 mg."
+    },
+    "route": "oral",
+    "dosing_days": {
+     "value": [
+      1,
+      8,
+      15,
+      22
+     ],
+     "evidence_level": "protocol",
+     "source": "weekly dosing",
+     "quote": "weekly"
+    },
+    "arms": [
+     "Arm 1 (once-weekly KRd 56 mg/m2)",
+     "Arm 2 (twice-weekly KRd 27 mg/m2)"
+    ],
+    "arm_ids": [
+     "ARM1",
+     "ARM2"
+    ]
+   }
+  }
+ },
+ "dose_levels": {},
+ "progression": {
+  "ARM2": {
+   "value": {
+    "cure_fraction": 0.0,
+    "rate_per_year": 0.3162648732592906
+   },
+   "evidence_level": "protocol",
+   "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+   "assumption": "A7_progression_exponential"
+  },
+  "ARM1": {
+   "value": {
+    "cure_fraction": 0.0,
+    "rate_per_year": 0.3162648732592906
+   },
+   "evidence_level": "protocol",
+   "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+   "assumption": "A7_progression_exponential"
+  }
+ },
+ "withdrawal": {
+  "ARM2": {
+   "value": 0.0665911934427771,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left by subject decision, loss to follow-up or physician decision; 102 trials, 36525 participants",
+   "detail": {
+    "estimate": 0.0665911934427771,
+    "ci95": [
+     0.05763292970995327,
+     0.07682837716808158
+    ],
+    "single_trial_80": [
+     0.020977385997550294,
+     0.19194331460463493
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.02097831960198244,
+     "p30": 0.041788625062640555,
+     "p50": 0.0665911934427771,
+     "p70": 0.10450912535605363,
+     "p90": 0.19193626413427786
+    },
+    "tau_logit": 0.9352487261476615,
+    "groups": 211,
+    "trials": 102,
+    "participants": 36525
+   }
+  },
+  "ARM1": {
+   "value": 0.0665911934427771,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left by subject decision, loss to follow-up or physician decision; 102 trials, 36525 participants",
+   "detail": {
+    "estimate": 0.0665911934427771,
+    "ci95": [
+     0.05763292970995327,
+     0.07682837716808158
+    ],
+    "single_trial_80": [
+     0.020977385997550294,
+     0.19194331460463493
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.02097831960198244,
+     "p30": 0.041788625062640555,
+     "p50": 0.0665911934427771,
+     "p70": 0.10450912535605363,
+     "p90": 0.19193626413427786
+    },
+    "tau_logit": 0.9352487261476615,
+    "groups": 211,
+    "trials": 102,
+    "participants": 36525
+   }
+  }
+ },
+ "ae_discontinuation": {
+  "ARM2": {
+   "value": 0.04429694061299699,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left for an adverse event; 102 trials, 36525 participants",
+   "detail": {
+    "estimate": 0.04429694061299699,
+    "ci95": [
+     0.037522798029011616,
+     0.05222768391559619
+    ],
+    "single_trial_80": [
+     0.014459445795762495,
+     0.12772548200946165
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.014460065311599114,
+     "p30": 0.028134750245940265,
+     "p50": 0.04429694061299699,
+     "p70": 0.0690836329308396,
+     "p90": 0.1277206387157641
+    },
+    "tau_logit": 0.8932062858250234,
+    "groups": 211,
+    "trials": 102,
+    "participants": 36525
+   }
+  },
+  "ARM1": {
+   "value": 0.04429694061299699,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left for an adverse event; 102 trials, 36525 participants",
+   "detail": {
+    "estimate": 0.04429694061299699,
+    "ci95": [
+     0.037522798029011616,
+     0.05222768391559619
+    ],
+    "single_trial_80": [
+     0.014459445795762495,
+     0.12772548200946165
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.014460065311599114,
+     "p30": 0.028134750245940265,
+     "p50": 0.04429694061299699,
+     "p70": 0.0690836329308396,
+     "p90": 0.1277206387157641
+    },
+    "tau_logit": 0.8932062858250234,
+    "groups": 211,
+    "trials": 102,
+    "participants": 36525
+   }
+  }
+ },
+ "death": {
+  "ARM2": {
+   "value": 0.06223056094074519,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): died during the study period; 102 trials, 36525 participants",
+   "detail": {
+    "estimate": 0.06223056094074519,
+    "ci95": [
+     0.05047585624455852,
+     0.07650212493065235
+    ],
+    "single_trial_80": [
+     0.011211759445204642,
+     0.2797305025251335
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.011212499723610141,
+     "p30": 0.03120075835175944,
+     "p50": 0.06223056094074519,
+     "p70": 0.12028851970141698,
+     "p90": 0.2797170491174379
+    },
+    "tau_logit": 1.3739827826860882,
+    "groups": 211,
+    "trials": 102,
+    "participants": 36525
+   }
+  },
+  "ARM1": {
+   "value": 0.06223056094074519,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): died during the study period; 102 trials, 36525 participants",
+   "detail": {
+    "estimate": 0.06223056094074519,
+    "ci95": [
+     0.05047585624455852,
+     0.07650212493065235
+    ],
+    "single_trial_80": [
+     0.011211759445204642,
+     0.2797305025251335
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.011212499723610141,
+     "p30": 0.03120075835175944,
+     "p50": 0.06223056094074519,
+     "p70": 0.12028851970141698,
+     "p90": 0.2797170491174379
+    },
+    "tau_logit": 1.3739827826860882,
+    "groups": 211,
+    "trials": 102,
+    "participants": 36525
+   }
+  }
+ },
+ "assumptions": {
+  "A1_ae_onset": "an adverse event's onset day is uniform over the patient's reporting window (first dose to 30 days after the last dose): registries report cumulative incidence, not onset times",
+  "A2_ae_grade": "a serious adverse event is recorded at grade 3 (the lowest grade consistent with seriousness for most CTCAE terms); a non-serious event at grade 1 or 2 with equal probability; registries report seriousness, not grade",
+  "A3_ae_resolution": "a grade 1-2 event resolves by the next scheduled visit after onset; a grade 3 or higher event by the second: resolution is detected at visits",
+  "A4_relatedness": "adverse events generated by the safety model are treated as related to study treatment when a dose modification rule requires relatedness",
+  "A5_lab_value_in_grade": "during a laboratory-type adverse event, the laboratory value is drawn uniformly within that grade's CTCAE v5 range; outside events the baseline is carried forward",
+  "A6_withdrawal_timing": "a withdrawal (subject decision, loss to follow-up, physician decision) occurs at a uniformly distributed time over the patient's on-study period; its probability is from registry disposition",
+  "A7_progression_exponential": "when progression-free survival comes from a reported median only, progression times are exponential with that median",
+  "A8_resume_same_dose": "after a hold whose resume instruction the compiler could not type, treatment resumes at the current dose level",
+  "A9_supportive_care_given": "supportive care and prophylaxis are given as the protocol requires, so an adverse event that occurs is one that occurred despite them",
+  "A10_normal_baseline_labs": "laboratory values are within normal limits at baseline (patients met the protocol's organ function criteria); rules for patients abnormal at baseline are not applied",
+  "A11_grade3_clinically_significant": "an adverse event of grade 3 or higher is clinically significant where a rule requires it",
+  "A12_reference_limits": "laboratory reference limits (LLN: neutrophils 2.0, platelets 150, white cells 4.0 x10^9/L; hemoglobin 12.0 g/dL) are typical adult values; laboratories set their own",
+  "A13_screening_day": "the screening visit takes place at the start of the protocol's screening window",
+  "A14_ae_discontinuation": "beyond the protocol's own dose-modification rules, a patient stops treatment for an adverse event with the registry participant-flow probability, at a uniform time over planned treatment; a stop triggered by a protocol rule first takes precedence",
+  "A15_death_timing": "death in the study period has the registry participant-flow probability and occurs at a uniform time over the simulated horizon (registry flow periods span treatment and follow-up)",
+  "A16_unknown_criteria_calibrated": "eligibility criteria the generated patients cannot answer pass independently, with one probability chosen so that the eligible share matches the registry screen pass rate",
+  "A17_standard_3_plus_3": "when the protocol's escalation table cannot be compiled, the standard 3+3 table is simulated",
+  "A18_participation_years": "with no stated censoring rate, the registry study-period withdrawal share is spread over 2 years",
+  "A22_short_participation": "with no treatment cycles, participation ends after the last planned administration plus a 30-day reporting window, and the registry's whole-trial exit shares are scaled by that duration over a year",
+  "A23_cr_share": "when no complete-response input exists, complete responses are 15% of responses",
+  "A24_tumour_dynamics": "response depth is uniform within its category band, nadir is reached by the second assessment, progression is independent of response depth, and 35% of progressions are by a new lesion",
+  "A25_recist_defaults": "when the protocol compiles no response thresholds, RECIST 1.1 is used (PR 30% decrease, PD 20% and 5 mm increase)",
+  "A26_post_progression_survival": "death follows progression: post-progression survival is exponential with median equal to the arm's overall-survival input minus its progression median (at least 1 month; 12 months without an OS input); a patient who never progresses does not die of the disease within follow-up",
+  "A27_subgroup_prevalence_equal": "a protocol subgroup factor whose levels no registry baseline table (nor the protocol) reports is split equally across its stated levels",
+  "A28_prognostic_effects": "a subgroup effect from registry results by subgroup is prognostic: the same in every arm, multiplicative on the progression hazard and the response odds, independent across factors, and centred on the arm's patient mix so each arm's overall rate is unchanged",
+  "A21_day1_dosing": "an agent whose dosing days the protocol does not state is given on day 1 of each cycle",
+  "A20_assessment_lag": "with no stated time point or treatment length, the primary assessment is 6 months after entry",
+  "A19_unnamed_arm_is_comparator": "an arm that names no anticancer agent is the comparator: it receives the regimen of the arms without the investigational agent (the agent given in the most arms)"
+ },
+ "summary": {
+  "subjects": 460,
+  "traces": [
+   "S0316",
+   "S0313",
+   "S0169"
+  ],
+  "any_dose_hold": 419,
+  "any_dose_reduction": 0,
+  "discontinued_for_ae": 20,
+  "deaths": 26,
+  "deaths_on_treatment": 10,
+  "end_of_treatment_reasons": {
+   "completed planned treatment": 316,
+   "death": 10,
+   "withdrawal (subject, loss to follow-up or physician decision)": 28,
+   "disease progression": 86,
+   "adverse event (registry discontinuation rate)": 20
+  },
+  "median_rdi": 1.0,
+  "progression_detected": 92,
+  "adverse_events_after_reporting_window_dropped": 30,
+  "rules_undecidable": [
+   "DM010"
+  ],
+  "screening_funnel": {
+   "generated_patients": 10000,
+   "status_counts": {
+    "ELIGIBLE": 8128,
+    "UNDETERMINED": 0,
+    "INELIGIBLE": 1872
+   },
+   "not_ruled_out_share": 0.8128,
+   "undecidable_criteria": [
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034",
+    "EL035",
+    "EL039",
+    "EL040"
+   ],
+   "screen_pass_rate": {
+    "value": 0.8104026431768779,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (myeloma_and_plasma_cell; 12 trials, 2371 screened)",
+    "detail": {
+     "estimate": 0.8104026431768779,
+     "ci95": [
+      0.7686345767787867,
+      0.8461397544851209
+     ],
+     "single_trial_80": [
+      0.732286885733318,
+      0.8697783841035241
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.7322901928400358,
+      "p30": 0.7807399412471648,
+      "p50": 0.8104026431768779,
+      "p70": 0.8368907789591518,
+      "p90": 0.869776473399545
+     },
+     "tau_logit": 0.32369095300648587,
+     "groups": 12,
+     "trials": 12,
+     "participants": 2371
+    }
+   },
+   "target": 460.0,
+   "patients_to_screen": {
+    "estimate": 568,
+    "range_80": [
+     529,
+     629
+    ],
+    "basis": "target / registry pass rate (the range is for a single new trial)"
+   }
+  }
+ }
+}

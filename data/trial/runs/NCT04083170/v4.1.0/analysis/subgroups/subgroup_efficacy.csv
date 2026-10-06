@@ -1,0 +1,19 @@
+Factor,Level,Arm,N enrolled,N efficacy-evaluable at cut-off,Small n,ORR % (95% CI),DCR % (95% CI),CR/PR/SD/PD/NE,TTR median mo,DOR median mo,PFS median mo (events/n),PFS 12 m %,OS median mo (events/n),OS 12 m %
+Age (FDA standard age bands),< 65 years,ARM1,6,0,yes,-,-,-,-,-,-,-,-,-
+Age (FDA standard age bands),< 65 years,ARM2,4,0,yes,-,-,-,-,-,-,-,-,-
+Sex,female,ARM1,4,0,yes,-,-,-,-,-,-,-,-,-
+Sex,female,ARM2,1,0,yes,-,-,-,-,-,-,-,-,-
+Sex,male,ARM1,2,0,yes,-,-,-,-,-,-,-,-,-
+Sex,male,ARM2,3,0,yes,-,-,-,-,-,-,-,-,-
+Race,white,ARM1,6,0,yes,-,-,-,-,-,-,-,-,-
+Race,white,ARM2,4,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,hispanic_or_latino,ARM1,0,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,hispanic_or_latino,ARM2,1,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,not_hispanic_or_latino,ARM1,5,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,not_hispanic_or_latino,ARM2,3,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,unknown_or_not_reported,ARM1,1,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,unknown_or_not_reported,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Ecog performance status,0,ARM1,3,0,yes,-,-,-,-,-,-,-,-,-
+Ecog performance status,0,ARM2,4,0,yes,-,-,-,-,-,-,-,-,-
+Ecog performance status,1,ARM1,3,0,yes,-,-,-,-,-,-,-,-,-
+Ecog performance status,1,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-

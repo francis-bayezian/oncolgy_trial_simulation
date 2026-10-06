@@ -1,0 +1,12 @@
+{
+ "rules": [
+  {
+   "rule": "DR1",
+   "result": "simulated"
+  },
+  {
+   "rule": "DR2",
+   "result": "simulated"
+  }
+ ]
+}

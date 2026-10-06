@@ -1,0 +1,323 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "3fe2a7d61e826f5bbd3c1f072cc5049b1e52c5e1b0ea741be796c852dfba0ca5",
+  "population": "b869be76809a32ded53baac9b4be526d11b921aed3b3a37a9a75e65cdbe9193b"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7476,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2524
+  },
+  "eligible_share": 0.7476,
+  "proven_eligible_share": 0.7476,
+  "not_proven_ineligible_share": 0.7476,
+  "criteria": {
+   "evaluated": [
+    "EL001",
+    "EL002",
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL018",
+    "EL019",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL027",
+    "EL028",
+    "EL029"
+   ],
+   "procedural": [
+    "EL020"
+   ],
+   "permissive": [
+    "EL010"
+   ],
+   "informational": [
+    "EL003",
+    "EL004",
+    "EL011",
+    "EL017",
+    "EL026"
+   ],
+   "run_with_review_flag": [
+    "EL008",
+    "EL019",
+    "EL029"
+   ]
+  },
+  "per_criterion": {
+   "EL001": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((confirmed  diagnosis is one of ['Histologically'] OR confirmed  diagnosis is one of ['cytologically']) AND advanced  solid  tumor\nmalignancy is present AND ((not  responsive is one of ['not  responsive'] AND prior  standard  regimen at least 1 [qualifier: for  advanced\ndisease]) "
+   },
+   "EL002": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF expanded  cohort  portion  of  the  study is one of ['expanded  cohort  portion  of  the  study'] THEN (NSCLC is one of ['NSCLC'] AND ALK\ngenomic  alterations is present AND (((ALK  TKI-na  ve is one of ['ALK  TKI-na  ve'] OR known\nALK  1198  mutation is one of ['known\\nALK  11"
+   },
+   "EL005": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF (ALK\nTKI-na  ve is one of ['ALK\\nTKI-na  ve'] AND pathology  report  documenting  ALK  genomic  alterations is absent) THEN (fresh  tumor  biopsy is present AND ALK-positive is present [qualifier: using  an  FDA-approved  assay])]"
+   },
+   "EL006": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Eastern  Cooperative  Group  (ECOG)  Performance  Status  score is one of ['0', '1']"
+   },
+   "EL007": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Ability  to  swallow  and  retain  oral  medication is present"
+   },
+   "EL008": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Absolute neutrophil count (ANC) at least 1.5 {NOT EXECUTABLE} AND Platelets at least 100 {NOT EXECUTABLE} AND (Hemoglobin at least 9 g/dl OR hemoglobin at least 90 g/l) AND Total bilirubin at most 1.5 times the upper limit of normal (ULN) AND ((liver involvement is absent AND Alan"
+   },
+   "EL009": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF treated  CNS  metastases is present THEN (asymptomatic  with\nrespect  to  the  CNS  metastases is present AND escalating  doses  of  systemic\ncorticosteroids is absent [qualifier: stable  or  decreasing  low-dose  corticosteroids  are  allowed,  as  are\nstable  anticonvulsants]"
+   },
+   "EL012": {
+    "met": 5038,
+    "not_met": 0,
+    "unknown": 4962,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF Male is one of ['male'] THEN willing is one of ['willing to use adequate contraceptive measures']]"
+   },
+   "EL013": {
+    "met": 4962,
+    "not_met": 0,
+    "unknown": 5038,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF Female is one of ['female'] THEN (child-bearing  potential is none of ['child-bearing  potential'] OR (child-bearing  potential is one of ['child-bearing  potential'] AND agree  to  use  adequate  contraceptive  measures is present AND negative  serum  or  urine  pregnancy  tes"
+   },
+   "EL014": {
+    "met": 10000,
+    "not_met": 0,
+    "unknown": 0,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: years-of-age at least 18 year"
+   },
+   "EL015": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ([IF dose  escalation  portions  of  the  study is one of ['dose  escalation'] THEN disease is one of ['measurable', 'evaluable']] OR [IF expanded  cohort  portion  of  the  study is one of ['expanded  cohort'] THEN disease is one of ['measurable']])"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Willingness is present AND ability  to  comply is present)"
+   },
+   "EL018": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (cancer  therapy is one of ['chemotherapy'] [qualifier: currently  receiving  cancer  therapy] OR cancer  therapy is one of ['radiation  therapy'] [qualifier: currently  receiving  cancer  therapy] OR cancer  therapy is one of ['immunotherapy'] [qualifier: currently  receivi"
+   },
+   "EL019": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: ((Use  of  an  investigational  or  targeted  drug occurs within 21 day before study drug first dose (protocol wording: 'the  first  dose  of  X-396  (ensartinib)') [qualifier: whichever\nis  shorter] OR Use  of  an  investigational  or  targeted  drug occurs within 5 before "
+   },
+   "EL021": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Chemotherapy  regimens  with  delayed  toxicity occurs within 4 week before trial entry (protocol wording: 'trial  entry') [assessed: within  the  last  4  weeks] OR (Chemotherapy  regimens  with  delayed  toxicity occurs within 6 week before trial entry (protocol wording: "
+   },
+   "EL022": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Prior  stem  cell  transplant is present"
+   },
+   "EL023": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (known  allergy  or  delayed  hypersensitivity  reaction is one of ['drugs\\nchemically  related  to  X-396  (ensartinib)  (e.g.,  crizotinib)'] OR known  allergy  or  delayed  hypersensitivity  reaction is one of ['the  active  ingredient\\nof  X-396  (ensartinib)'] OR known "
+   },
+   "EL024": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: primary  CNS  tumors is present"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (CYP3A  substrates  with  narrow  therapeutic  indices is present OR Strong  CYP3A  inhibitors is present OR Strong  CYP3A  inducers is present)"
+   },
+   "EL027": {
+    "met": 4962,
+    "not_met": 0,
+    "unknown": 5038,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Females is one of ['female'] AND (pregnant is present OR breastfeeding is present))"
+   },
+   "EL028": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (active gastrointestinal (GI) disease is present OR other  condition is present [qualifier: interfere  significantly  with  the  absorption,  distribution,  metabolism,  or  excretion  of  X-396  (ensartinib)])"
+   },
+   "EL029": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (QTcF interval at least 450 ms OR other significant ECG abnormalities is present OR (Clinically  uncontrolled  hypertension is present [qualifier: e.g., blood pressure\n>160/100  mmHg] AND NOT isolated  elevated  readings  considered  to  not  be  indicative  of\nuncontrolled "
+   }
+  },
+  "decisive_exclusions": {
+   "EL029": 179,
+   "EL008": 159,
+   "EL016": 158,
+   "EL001": 158,
+   "EL025": 156,
+   "EL005": 155,
+   "EL023": 154,
+   "EL018": 152,
+   "EL019": 148,
+   "EL006": 147,
+   "EL022": 147,
+   "EL009": 145,
+   "EL007": 143,
+   "EL002": 141,
+   "EL021": 139,
+   "EL015": 137,
+   "EL024": 136,
+   "EL028": 134,
+   "EL027": 81,
+   "EL012": 77,
+   "EL013": 68
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL001": 10000,
+   "EL002": 10000,
+   "EL005": 10000,
+   "EL006": 10000,
+   "EL007": 10000,
+   "EL008": 10000,
+   "EL009": 10000,
+   "EL015": 10000,
+   "EL016": 10000,
+   "EL018": 10000,
+   "EL019": 10000,
+   "EL021": 10000,
+   "EL022": 10000,
+   "EL023": 10000,
+   "EL024": 10000,
+   "EL025": 10000,
+   "EL028": 10000,
+   "EL029": 10000,
+   "EL013": 5038,
+   "EL027": 5038,
+   "EL012": 4962
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.7238013978387278,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (lung; 41 trials, 20971 screened)",
+    "detail": {
+     "estimate": 0.7238013978387278,
+     "ci95": [
+      0.6520930983284803,
+      0.78558938457575
+     ],
+     "single_trial_80": [
+      0.4057268344457009,
+      0.909574672805792
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.40573909088080534,
+      "p30": 0.6018146041873844,
+      "p50": 0.7238013978387278,
+      "p70": 0.8196180672874567,
+      "p90": 0.9095704918100433
+     },
+     "tau_logit": 1.0354898436591933,
+     "groups": 41,
+     "trials": 41,
+     "participants": 20971
+    }
+   },
+   "target_eligible_share": 0.7238013978387278,
+   "share_excluded_by_decided_criteria": 0.0,
+   "residual_pass_needed": 0.7238013978387278,
+   "per_criterion_pass_probability": 0.9847255589559862,
+   "criteria": [
+    "EL001",
+    "EL002",
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL012",
+    "EL013",
+    "EL015",
+    "EL016",
+    "EL018",
+    "EL019",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL027",
+    "EL028",
+    "EL029"
+   ]
+  }
+ }
+}

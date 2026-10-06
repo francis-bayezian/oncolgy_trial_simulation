@@ -1,0 +1,745 @@
+{
+ "journey_version": "journey-1.1.0",
+ "seed": 20260929,
+ "horizon_days": 730,
+ "cohort_file": "cohort_accrual_historical_92.2_per_year.jsonl",
+ "inputs": {
+  "studyspec": "d488a0ad74e5a7b72d5af105f6da1669ac7c512420e371d7e51985e83a240340",
+  "schedule_facts": "schedule-facts-1.3.0"
+ },
+ "schedule": {
+  "cycle_length_days": {
+   "value": 28.0,
+   "evidence_level": "protocol",
+   "source": "treatment phase PH2",
+   "quote": "28 days"
+  },
+  "screening_window_days": {
+   "value": 7.0,
+   "evidence_level": "protocol",
+   "source": "screening window: schedule fact SF01 (REVIEW_REQUIRED: used under the accept-review decision, flagged)",
+   "quote": "All clinical and laboratory studies to determine eligibility must be performed within 7 days prior to enrollment",
+   "time_origin": "enrollment",
+   "status": "REVIEW_REQUIRED"
+  },
+  "tumour_assessment_interval_days": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no tumour assessment interval stated: progression is recorded at its true time"
+  },
+  "lab_days_in_cycle": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no in-cycle laboratory days in the assessment schedule"
+  },
+  "follow_up_interval_days": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no follow-up visit interval stated"
+  },
+  "max_cycles": {
+   "value": 6,
+   "evidence_level": "protocol",
+   "source": "cycle count of PH2",
+   "quote": "6 Cycles"
+  },
+  "agents": {
+   "vincristine": {
+    "entries": [
+     {
+      "intervention_id": "TX001",
+      "arms": [
+       "Regimen A"
+      ],
+      "arm_ids": [
+       "ARM1"
+      ],
+      "arm_labels": [
+       "REGIMEN A"
+      ],
+      "dose": {
+       "value": {
+        "value": 1.5,
+        "unit": "mg/m2/day",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX001",
+       "quote": "VinCRIStine: IV push over 1 minute (or infusion via minibag as per institution policy)\n1.5 mg/m2/day (maximum single dose 2 mg) once weekly Weeks 1-6 during radiation for\na total of 6 doses."
+      },
+      "route": "intravenous_push",
+      "dosing_days": {
+       "value": [
+        1,
+        8,
+        15,
+        22
+       ],
+       "evidence_level": "protocol",
+       "source": "weekly dosing",
+       "quote": "once weekly"
+      },
+      "cycles": null
+     },
+     {
+      "intervention_id": "TX002",
+      "arms": [
+       "Regimen B"
+      ],
+      "arm_ids": [
+       "ARM2"
+      ],
+      "arm_labels": [
+       "REGIMEN B"
+      ],
+      "dose": {
+       "value": {
+        "value": 1.5,
+        "unit": "mg/m2/day",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX002",
+       "quote": "VinCRIStine: IV push over 1 minute (or infusion via minibag as per institution policy)\n1.5 mg/m2/day (maximum single dose 2 mg) once weekly Weeks 1-6 during radiation for\na total of 6 doses. Vincristine should be started within the first week of starting radiation\ntherapy and given weekly thereafter. Administer prior to CARBOplatin."
+      },
+      "route": "intravenous_push",
+      "dosing_days": {
+       "value": [
+        1,
+        8,
+        15,
+        22
+       ],
+       "evidence_level": "protocol",
+       "source": "weekly dosing",
+       "quote": "once weekly"
+      },
+      "cycles": null
+     },
+     {
+      "intervention_id": "TX007",
+      "arms": [],
+      "arm_ids": [
+       "ARM1",
+       "ARM2",
+       "ARM3",
+       "ARM4"
+      ],
+      "arm_labels": [
+       "REGIMEN A",
+       "REGIMEN B",
+       "REGIMEN C",
+       "REGIMEN D"
+      ],
+      "dose": {
+       "value": {
+        "value": 1.5,
+        "unit": "mg/m2/day",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX007",
+       "quote": "VinCRIStine: IV push over 1 minute (or infusion via minibag as per institution policy)\n1.5 mg/m2/day (maximum single dose 2 mg) on Days 1 and 8."
+      },
+      "route": "intravenous_push",
+      "dosing_days": {
+       "value": [
+        1,
+        8
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "Days 1 and 8"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX001",
+    "dose": {
+     "value": {
+      "value": 1.5,
+      "unit": "mg/m2/day",
+      "basis": "per_body_surface_area"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX001",
+     "quote": "VinCRIStine: IV push over 1 minute (or infusion via minibag as per institution policy)\n1.5 mg/m2/day (maximum single dose 2 mg) once weekly Weeks 1-6 during radiation for\na total of 6 doses."
+    },
+    "route": "intravenous_push",
+    "dosing_days": {
+     "value": [
+      1,
+      8,
+      15,
+      22
+     ],
+     "evidence_level": "protocol",
+     "source": "weekly dosing",
+     "quote": "once weekly"
+    },
+    "arms": [],
+    "arm_ids": [
+     "ARM1",
+     "ARM2",
+     "ARM3",
+     "ARM4"
+    ]
+   },
+   "carboplatin": {
+    "entries": [
+     {
+      "intervention_id": "TX003",
+      "arms": [
+       "Regimen B"
+      ],
+      "arm_ids": [
+       "ARM2"
+      ],
+      "arm_labels": [
+       "REGIMEN B"
+      ],
+      "dose": {
+       "value": {
+        "value": 35.0,
+        "unit": "mg/m2/day",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX003",
+       "quote": "35 mg/m2/day given daily during radiation therapy for a total of 30 doses. The first dose of CARBOplatin should be administered on the first day of radiation therapy. CARBOplatin will be over 15 minutes 1-4 hours prior to radiation therapy."
+      },
+      "route": "intravenous",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+       ],
+       "evidence_level": "protocol",
+       "source": "daily dosing",
+       "quote": "daily during radiation therapy"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX003",
+    "dose": {
+     "value": {
+      "value": 35.0,
+      "unit": "mg/m2/day",
+      "basis": "per_body_surface_area"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX003",
+     "quote": "35 mg/m2/day given daily during radiation therapy for a total of 30 doses. The first dose of CARBOplatin should be administered on the first day of radiation therapy. CARBOplatin will be over 15 minutes 1-4 hours prior to radiation therapy."
+    },
+    "route": "intravenous",
+    "dosing_days": {
+     "value": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+     ],
+     "evidence_level": "protocol",
+     "source": "daily dosing",
+     "quote": "daily during radiation therapy"
+    },
+    "arms": [
+     "Regimen B"
+    ],
+    "arm_ids": [
+     "ARM2"
+    ]
+   },
+   "cisplatin": {
+    "entries": [
+     {
+      "intervention_id": "TX006",
+      "arms": [],
+      "arm_ids": [
+       "ARM1",
+       "ARM2",
+       "ARM3",
+       "ARM4"
+      ],
+      "arm_labels": [
+       "REGIMEN A",
+       "REGIMEN B",
+       "REGIMEN C",
+       "REGIMEN D"
+      ],
+      "dose": {
+       "value": {
+        "value": 75.0,
+        "unit": "mg/m2",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX006",
+       "quote": "CISplatin: IV over 6 hours\n75 mg/m2 on Day 1"
+      },
+      "route": "intravenous",
+      "dosing_days": {
+       "value": [
+        1
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "Day 1"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX006",
+    "dose": {
+     "value": {
+      "value": 75.0,
+      "unit": "mg/m2",
+      "basis": "per_body_surface_area"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX006",
+     "quote": "CISplatin: IV over 6 hours\n75 mg/m2 on Day 1"
+    },
+    "route": "intravenous",
+    "dosing_days": {
+     "value": [
+      1
+     ],
+     "evidence_level": "protocol",
+     "source": "listed dosing days",
+     "quote": "Day 1"
+    },
+    "arms": [],
+    "arm_ids": [
+     "ARM1",
+     "ARM2",
+     "ARM3",
+     "ARM4"
+    ]
+   },
+   "cyclophosphamide": {
+    "entries": [
+     {
+      "intervention_id": "TX008",
+      "arms": [],
+      "arm_ids": [
+       "ARM1",
+       "ARM2",
+       "ARM3",
+       "ARM4"
+      ],
+      "arm_labels": [
+       "REGIMEN A",
+       "REGIMEN B",
+       "REGIMEN C",
+       "REGIMEN D"
+      ],
+      "dose": {
+       "value": {
+        "value": 1000.0,
+        "unit": "mg/m2",
+        "basis": "per_body_surface_area"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX008",
+       "quote": "Cyclophosphamide: IV over 1 hour\n1000 mg/m2 on Day 2 and Day 3."
+      },
+      "route": "intravenous",
+      "dosing_days": {
+       "value": [
+        2,
+        3
+       ],
+       "evidence_level": "protocol",
+       "source": "listed dosing days",
+       "quote": "Day 2 and Day 3"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX008",
+    "dose": {
+     "value": {
+      "value": 1000.0,
+      "unit": "mg/m2",
+      "basis": "per_body_surface_area"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX008",
+     "quote": "Cyclophosphamide: IV over 1 hour\n1000 mg/m2 on Day 2 and Day 3."
+    },
+    "route": "intravenous",
+    "dosing_days": {
+     "value": [
+      2,
+      3
+     ],
+     "evidence_level": "protocol",
+     "source": "listed dosing days",
+     "quote": "Day 2 and Day 3"
+    },
+    "arms": [],
+    "arm_ids": [
+     "ARM1",
+     "ARM2",
+     "ARM3",
+     "ARM4"
+    ]
+   }
+  }
+ },
+ "dose_levels": {},
+ "progression": {
+  "ARM1": {
+   "value": {
+    "cure_fraction": 0.56,
+    "rate_per_year": 1.087375860742081
+   },
+   "evidence_level": "protocol",
+   "source": "locked outcome model control curve: cure_model"
+  },
+  "ARM2": {
+   "value": {
+    "cure_fraction": 0.56,
+    "rate_per_year": 1.087375860742081
+   },
+   "evidence_level": "protocol",
+   "source": "locked outcome model control curve: cure_model"
+  }
+ },
+ "withdrawal": {
+  "ARM1": {
+   "value": 0.0825282599314728,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (central_nervous_system): left by subject decision, loss to follow-up or physician decision; 608 trials, 40931 participants",
+   "detail": {
+    "estimate": 0.0825282599314728,
+    "ci95": [
+     0.07736071044075224,
+     0.08800806594765845
+    ],
+    "single_trial_80": [
+     0.03187758552628725,
+     0.19726026091150523
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.031878757668614366,
+     "p30": 0.056269242085565344,
+     "p50": 0.0825282599314728,
+     "p70": 0.11948994194560635,
+     "p90": 0.19725424687160342
+    },
+    "tau_logit": 0.7833358652515996,
+    "groups": 1430,
+    "trials": 608,
+    "participants": 40931
+   }
+  },
+  "ARM2": {
+   "value": 0.0825282599314728,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (central_nervous_system): left by subject decision, loss to follow-up or physician decision; 608 trials, 40931 participants",
+   "detail": {
+    "estimate": 0.0825282599314728,
+    "ci95": [
+     0.07736071044075224,
+     0.08800806594765845
+    ],
+    "single_trial_80": [
+     0.03187758552628725,
+     0.19726026091150523
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.031878757668614366,
+     "p30": 0.056269242085565344,
+     "p50": 0.0825282599314728,
+     "p70": 0.11948994194560635,
+     "p90": 0.19725424687160342
+    },
+    "tau_logit": 0.7833358652515996,
+    "groups": 1430,
+    "trials": 608,
+    "participants": 40931
+   }
+  }
+ },
+ "ae_discontinuation": {
+  "ARM1": {
+   "value": 0.06481324794344903,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (central_nervous_system): left for an adverse event; 608 trials, 40931 participants",
+   "detail": {
+    "estimate": 0.06481324794344903,
+    "ci95": [
+     0.06038268686940476,
+     0.06954483878292994
+    ],
+    "single_trial_80": [
+     0.024616099248150076,
+     0.15989064322827895
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.024617015910752476,
+     "p30": 0.043831396098552404,
+     "p50": 0.06481324794344903,
+     "p70": 0.09484274031494462,
+     "p90": 0.1598855150862308
+    },
+    "tau_logit": 0.7872863211311549,
+    "groups": 1430,
+    "trials": 608,
+    "participants": 40931
+   }
+  },
+  "ARM2": {
+   "value": 0.06481324794344903,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (central_nervous_system): left for an adverse event; 608 trials, 40931 participants",
+   "detail": {
+    "estimate": 0.06481324794344903,
+    "ci95": [
+     0.06038268686940476,
+     0.06954483878292994
+    ],
+    "single_trial_80": [
+     0.024616099248150076,
+     0.15989064322827895
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.024617015910752476,
+     "p30": 0.043831396098552404,
+     "p50": 0.06481324794344903,
+     "p70": 0.09484274031494462,
+     "p90": 0.1598855150862308
+    },
+    "tau_logit": 0.7872863211311549,
+    "groups": 1430,
+    "trials": 608,
+    "participants": 40931
+   }
+  }
+ },
+ "death": {
+  "ARM1": {
+   "value": 0.0546111573765087,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (central_nervous_system): died during the study period; 608 trials, 40931 participants",
+   "detail": {
+    "estimate": 0.0546111573765087,
+    "ci95": [
+     0.04915820183559242,
+     0.06063042105323077
+    ],
+    "single_trial_80": [
+     0.006836708755823357,
+     0.3264847142127559
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.006837254641173747,
+     "p30": 0.023619707952634107,
+     "p50": 0.0546111573765087,
+     "p70": 0.12121808243701292,
+     "p90": 0.3264670367173169
+    },
+    "tau_logit": 1.6588586012223798,
+    "groups": 1430,
+    "trials": 608,
+    "participants": 40931
+   }
+  },
+  "ARM2": {
+   "value": 0.0546111573765087,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (central_nervous_system): died during the study period; 608 trials, 40931 participants",
+   "detail": {
+    "estimate": 0.0546111573765087,
+    "ci95": [
+     0.04915820183559242,
+     0.06063042105323077
+    ],
+    "single_trial_80": [
+     0.006836708755823357,
+     0.3264847142127559
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.006837254641173747,
+     "p30": 0.023619707952634107,
+     "p50": 0.0546111573765087,
+     "p70": 0.12121808243701292,
+     "p90": 0.3264670367173169
+    },
+    "tau_logit": 1.6588586012223798,
+    "groups": 1430,
+    "trials": 608,
+    "participants": 40931
+   }
+  }
+ },
+ "assumptions": {
+  "A1_ae_onset": "an adverse event's onset day is uniform over the patient's reporting window (first dose to 30 days after the last dose): registries report cumulative incidence, not onset times",
+  "A2_ae_grade": "a serious adverse event is recorded at grade 3 (the lowest grade consistent with seriousness for most CTCAE terms); a non-serious event at grade 1 or 2 with equal probability; registries report seriousness, not grade",
+  "A3_ae_resolution": "a grade 1-2 event resolves by the next scheduled visit after onset; a grade 3 or higher event by the second: resolution is detected at visits",
+  "A4_relatedness": "adverse events generated by the safety model are treated as related to study treatment when a dose modification rule requires relatedness",
+  "A5_lab_value_in_grade": "during a laboratory-type adverse event, the laboratory value is drawn uniformly within that grade's CTCAE v5 range; outside events the baseline is carried forward",
+  "A6_withdrawal_timing": "a withdrawal (subject decision, loss to follow-up, physician decision) occurs at a uniformly distributed time over the patient's on-study period; its probability is from registry disposition",
+  "A7_progression_exponential": "when progression-free survival comes from a reported median only, progression times are exponential with that median",
+  "A8_resume_same_dose": "after a hold whose resume instruction the compiler could not type, treatment resumes at the current dose level",
+  "A9_supportive_care_given": "supportive care and prophylaxis are given as the protocol requires, so an adverse event that occurs is one that occurred despite them",
+  "A10_normal_baseline_labs": "laboratory values are within normal limits at baseline (patients met the protocol's organ function criteria); rules for patients abnormal at baseline are not applied",
+  "A11_grade3_clinically_significant": "an adverse event of grade 3 or higher is clinically significant where a rule requires it",
+  "A12_reference_limits": "laboratory reference limits (LLN: neutrophils 2.0, platelets 150, white cells 4.0 x10^9/L; hemoglobin 12.0 g/dL) are typical adult values; laboratories set their own",
+  "A13_screening_day": "the screening visit takes place at the start of the protocol's screening window",
+  "A14_ae_discontinuation": "beyond the protocol's own dose-modification rules, a patient stops treatment for an adverse event with the registry participant-flow probability, at a uniform time over planned treatment; a stop triggered by a protocol rule first takes precedence",
+  "A15_death_timing": "death in the study period has the registry participant-flow probability and occurs at a uniform time over the simulated horizon (registry flow periods span treatment and follow-up)",
+  "A16_unknown_criteria_calibrated": "eligibility criteria the generated patients cannot answer pass independently, with one probability chosen so that the eligible share matches the registry screen pass rate",
+  "A17_standard_3_plus_3": "when the protocol's escalation table cannot be compiled, the standard 3+3 table is simulated",
+  "A18_participation_years": "with no stated censoring rate, the registry study-period withdrawal share is spread over 2 years",
+  "A22_short_participation": "with no treatment cycles, participation ends after the last planned administration plus a 30-day reporting window, and the registry's whole-trial exit shares are scaled by that duration over a year",
+  "A23_cr_share": "when no complete-response input exists, complete responses are 15% of responses",
+  "A24_tumour_dynamics": "response depth is uniform within its category band, nadir is reached by the second assessment, progression is independent of response depth, and 35% of progressions are by a new lesion",
+  "A25_recist_defaults": "when the protocol compiles no response thresholds, RECIST 1.1 is used (PR 30% decrease, PD 20% and 5 mm increase)",
+  "A26_post_progression_survival": "death follows progression: post-progression survival is exponential with median equal to the arm's overall-survival input minus its progression median (at least 1 month; 12 months without an OS input); a patient who never progresses does not die of the disease within follow-up",
+  "A27_subgroup_prevalence_equal": "a protocol subgroup factor whose levels no registry baseline table (nor the protocol) reports is split equally across its stated levels",
+  "A28_prognostic_effects": "a subgroup effect from registry results by subgroup is prognostic: the same in every arm, multiplicative on the progression hazard and the response odds, independent across factors, and centred on the arm's patient mix so each arm's overall rate is unchanged",
+  "A21_day1_dosing": "an agent whose dosing days the protocol does not state is given on day 1 of each cycle",
+  "A20_assessment_lag": "with no stated time point or treatment length, the primary assessment is 6 months after entry",
+  "A19_unnamed_arm_is_comparator": "an arm that names no anticancer agent is the comparator: it receives the regimen of the arms without the investigational agent (the agent given in the most arms)"
+ },
+ "summary": {
+  "subjects": 400,
+  "traces": [
+   "S0209",
+   "S0165",
+   "S0333"
+  ],
+  "any_dose_hold": 0,
+  "any_dose_reduction": 255,
+  "discontinued_for_ae": 19,
+  "deaths": 26,
+  "deaths_on_treatment": 6,
+  "end_of_treatment_reasons": {
+   "completed planned treatment": 284,
+   "withdrawal (subject, loss to follow-up or physician decision)": 29,
+   "disease progression": 62,
+   "adverse event (registry discontinuation rate)": 19,
+   "death": 6
+  },
+  "median_rdi": 1.0,
+  "progression_detected": 62,
+  "adverse_events_after_reporting_window_dropped": 33,
+  "rules_undecidable": [
+   "DM007"
+  ],
+  "screening_funnel": {
+   "generated_patients": 10000,
+   "status_counts": {
+    "ELIGIBLE": 8734,
+    "UNDETERMINED": 0,
+    "INELIGIBLE": 1266
+   },
+   "not_ruled_out_share": 0.8734,
+   "undecidable_criteria": [
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL015",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL035",
+    "EL036",
+    "EL037",
+    "EL039",
+    "EL040",
+    "EL041"
+   ],
+   "screen_pass_rate": {
+    "value": 0.857672935164218,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (central_nervous_system; 14 trials, 5511 screened)",
+    "detail": {
+     "estimate": 0.857672935164218,
+     "ci95": [
+      0.6530649879747794,
+      0.9507176506788496
+     ],
+     "single_trial_80": [
+      0.25814418583266135,
+      0.9905085482124806
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.2581648255510682,
+      "p30": 0.6523156917824497,
+      "p50": 0.857672935164218,
+      "p70": 0.9508722920277818,
+      "p90": 0.9905075349442463
+     },
+     "tau_logit": 2.1444812663127144,
+     "groups": 14,
+     "trials": 14,
+     "participants": 5511
+    }
+   },
+   "target": 400.0,
+   "patients_to_screen": {
+    "estimate": 467,
+    "range_80": [
+     404,
+     1550
+    ],
+    "basis": "target / registry pass rate (the range is for a single new trial)"
+   }
+  }
+ }
+}

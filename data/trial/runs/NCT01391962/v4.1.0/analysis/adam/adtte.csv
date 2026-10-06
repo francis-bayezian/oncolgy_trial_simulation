@@ -1,0 +1,191 @@
+USUBJID,ARMCD,PARAMCD,AVAL,CNSR,EVNTDESC
+S0001,ARM2,PFS,112.0,0,progressive disease
+S0001,ARM2,TTP,112.0,0,progressive disease
+S0002,ARM2,PFS,18.5,0,death
+S0002,ARM2,TTP,0.0,1,censored at last adequate tumour assessment
+S0003,ARM2,PFS,329.6,0,death
+S0003,ARM2,TTP,280.0,1,censored at last adequate tumour assessment
+S0004,ARM2,PFS,488.5,0,death
+S0004,ARM2,TTP,448.0,1,censored at last adequate tumour assessment
+S0004,ARM2,DOR,376.5,0,death
+S0004,ARM2,TTR,112.0,0,first response
+S0005,ARM2,PFS,56.0,0,progressive disease
+S0005,ARM2,TTP,56.0,0,progressive disease
+S0006,ARM2,PFS,896.0,0,progressive disease
+S0006,ARM2,TTP,896.0,0,progressive disease
+S0007,ARM2,PFS,56.0,0,progressive disease
+S0007,ARM2,TTP,56.0,0,progressive disease
+S0008,ARM2,PFS,90.0,0,death
+S0008,ARM2,TTP,56.0,1,censored at last adequate tumour assessment
+S0008,ARM2,DOR,34.0,0,death
+S0008,ARM2,TTR,56.0,0,first response
+S0009,ARM2,PFS,54.2,0,death
+S0009,ARM2,TTP,0.0,1,censored at last adequate tumour assessment
+S0010,ARM2,PFS,56.0,0,progressive disease
+S0010,ARM2,TTP,56.0,0,progressive disease
+S0011,ARM2,PFS,560.0,0,progressive disease
+S0011,ARM2,TTP,560.0,0,progressive disease
+S0011,ARM2,DOR,504.0,0,progressive disease
+S0011,ARM2,TTR,56.0,0,first response
+S0012,ARM2,PFS,560.0,0,progressive disease
+S0012,ARM2,TTP,560.0,0,progressive disease
+S0012,ARM2,DOR,448.0,0,progressive disease
+S0012,ARM2,TTR,112.0,0,first response
+S0013,ARM2,PFS,781.5,0,death
+S0013,ARM2,TTP,728.0,1,censored at last adequate tumour assessment
+S0013,ARM2,DOR,725.5,0,death
+S0013,ARM2,TTR,56.0,0,first response
+S0014,ARM2,PFS,168.0,0,progressive disease
+S0014,ARM2,TTP,168.0,0,progressive disease
+S0014,ARM2,DOR,56.0,0,progressive disease
+S0014,ARM2,TTR,112.0,0,first response
+S0015,ARM2,PFS,112.0,0,progressive disease
+S0015,ARM2,TTP,112.0,0,progressive disease
+S0016,ARM2,PFS,336.0,0,progressive disease
+S0016,ARM2,TTP,336.0,0,progressive disease
+S0016,ARM2,DOR,224.0,0,progressive disease
+S0016,ARM2,TTR,112.0,0,first response
+S0017,ARM2,PFS,468.8,0,death
+S0017,ARM2,TTP,448.0,1,censored at last adequate tumour assessment
+S0018,ARM2,PFS,1680.0,0,progressive disease
+S0018,ARM2,TTP,1680.0,0,progressive disease
+S0019,ARM2,PFS,784.0,0,progressive disease
+S0019,ARM2,TTP,784.0,0,progressive disease
+S0020,ARM2,PFS,104.0,0,death
+S0020,ARM2,TTP,56.0,1,censored at last adequate tumour assessment
+S0020,ARM2,DOR,48.0,0,death
+S0020,ARM2,TTR,56.0,0,first response
+S0021,ARM2,PFS,1456.0,0,progressive disease
+S0021,ARM2,TTP,1456.0,0,progressive disease
+S0022,ARM2,PFS,56.0,0,progressive disease
+S0022,ARM2,TTP,56.0,0,progressive disease
+S0023,ARM2,PFS,2016.0,0,progressive disease
+S0023,ARM2,TTP,2016.0,0,progressive disease
+S0024,ARM2,PFS,112.0,0,progressive disease
+S0024,ARM2,TTP,112.0,0,progressive disease
+S0025,ARM2,PFS,56.0,0,progressive disease
+S0025,ARM2,TTP,56.0,0,progressive disease
+S0026,ARM2,PFS,767.0,0,death
+S0026,ARM2,TTP,728.0,1,censored at last adequate tumour assessment
+S0026,ARM2,DOR,711.0,0,death
+S0026,ARM2,TTR,56.0,0,first response
+S0027,ARM2,PFS,2184.0,0,progressive disease
+S0027,ARM2,TTP,2184.0,0,progressive disease
+S0028,ARM2,PFS,879.6,0,death
+S0028,ARM2,TTP,840.0,1,censored at last adequate tumour assessment
+S0028,ARM2,DOR,823.6,0,death
+S0028,ARM2,TTR,56.0,0,first response
+S0029,ARM2,PFS,168.0,0,progressive disease
+S0029,ARM2,TTP,168.0,0,progressive disease
+S0030,ARM2,PFS,336.0,0,progressive disease
+S0030,ARM2,TTP,336.0,0,progressive disease
+S0031,ARM2,PFS,224.0,1,censored at last adequate tumour assessment
+S0031,ARM2,TTP,224.0,1,censored at last adequate tumour assessment
+S0032,ARM2,PFS,1358.5,0,death
+S0032,ARM2,TTP,1344.0,1,censored at last adequate tumour assessment
+S0032,ARM2,DOR,1302.5,0,death
+S0032,ARM2,TTR,56.0,0,first response
+S0033,ARM2,PFS,2800.0,1,censored at last adequate tumour assessment
+S0033,ARM2,TTP,2800.0,1,censored at last adequate tumour assessment
+S0033,ARM2,DOR,2744.0,1,censored at last adequate tumour assessment
+S0033,ARM2,TTR,56.0,0,first response
+S0034,ARM2,PFS,1568.0,0,progressive disease
+S0034,ARM2,TTP,1568.0,0,progressive disease
+S0034,ARM2,DOR,1456.0,0,progressive disease
+S0034,ARM2,TTR,112.0,0,first response
+S0035,ARM2,PFS,1064.0,0,progressive disease
+S0035,ARM2,TTP,1064.0,0,progressive disease
+S0035,ARM2,DOR,1008.0,0,progressive disease
+S0035,ARM2,TTR,56.0,0,first response
+S0036,ARM2,PFS,1008.0,0,progressive disease
+S0036,ARM2,TTP,1008.0,0,progressive disease
+S0037,ARM2,PFS,168.0,0,progressive disease
+S0037,ARM2,TTP,168.0,0,progressive disease
+S0038,ARM2,PFS,112.0,0,progressive disease
+S0038,ARM2,TTP,112.0,0,progressive disease
+S0039,ARM2,PFS,1624.0,0,progressive disease
+S0039,ARM2,TTP,1624.0,0,progressive disease
+S0039,ARM2,DOR,1512.0,0,progressive disease
+S0039,ARM2,TTR,112.0,0,first response
+S0040,ARM2,PFS,112.0,0,progressive disease
+S0040,ARM2,TTP,112.0,0,progressive disease
+S0040,ARM2,DOR,56.0,0,progressive disease
+S0040,ARM2,TTR,56.0,0,first response
+S0041,ARM2,PFS,224.0,0,progressive disease
+S0041,ARM2,TTP,224.0,0,progressive disease
+S0042,ARM2,PFS,1456.0,0,progressive disease
+S0042,ARM2,TTP,1456.0,0,progressive disease
+S0042,ARM2,DOR,1344.0,0,progressive disease
+S0042,ARM2,TTR,112.0,0,first response
+S0043,ARM2,PFS,280.0,0,progressive disease
+S0043,ARM2,TTP,280.0,0,progressive disease
+S0044,ARM2,PFS,168.0,0,progressive disease
+S0044,ARM2,TTP,168.0,0,progressive disease
+S0045,ARM2,PFS,224.0,0,progressive disease
+S0045,ARM2,TTP,224.0,0,progressive disease
+S0046,ARM2,PFS,952.0,0,progressive disease
+S0046,ARM2,TTP,952.0,0,progressive disease
+S0047,ARM2,PFS,112.0,0,progressive disease
+S0047,ARM2,TTP,112.0,0,progressive disease
+S0047,ARM2,DOR,56.0,0,progressive disease
+S0047,ARM2,TTR,56.0,0,first response
+S0048,ARM2,PFS,168.0,0,progressive disease
+S0048,ARM2,TTP,168.0,0,progressive disease
+S0049,ARM2,PFS,112.0,0,progressive disease
+S0049,ARM2,TTP,112.0,0,progressive disease
+S0050,ARM2,PFS,1456.0,0,progressive disease
+S0050,ARM2,TTP,1456.0,0,progressive disease
+S0051,ARM2,PFS,896.0,0,progressive disease
+S0051,ARM2,TTP,896.0,0,progressive disease
+S0051,ARM2,DOR,840.0,0,progressive disease
+S0051,ARM2,TTR,56.0,0,first response
+S0052,ARM2,PFS,616.0,0,progressive disease
+S0052,ARM2,TTP,616.0,0,progressive disease
+S0053,ARM2,PFS,336.0,0,progressive disease
+S0053,ARM2,TTP,336.0,0,progressive disease
+S0054,ARM2,PFS,108.0,0,death
+S0054,ARM2,TTP,56.0,1,censored at last adequate tumour assessment
+S0055,ARM2,PFS,881.6,0,death
+S0055,ARM2,TTP,840.0,1,censored at last adequate tumour assessment
+S0055,ARM2,DOR,769.6,0,death
+S0055,ARM2,TTR,112.0,0,first response
+S0056,ARM2,PFS,56.0,0,progressive disease
+S0056,ARM2,TTP,56.0,0,progressive disease
+S0057,ARM2,PFS,112.0,0,progressive disease
+S0057,ARM2,TTP,112.0,0,progressive disease
+S0058,ARM2,PFS,112.0,0,progressive disease
+S0058,ARM2,TTP,112.0,0,progressive disease
+S0059,ARM2,PFS,56.0,0,progressive disease
+S0059,ARM2,TTP,56.0,0,progressive disease
+S0060,ARM2,PFS,728.0,0,progressive disease
+S0060,ARM2,TTP,728.0,0,progressive disease
+S0061,ARM2,PFS,2072.0,1,censored at last adequate tumour assessment
+S0061,ARM2,TTP,2072.0,1,censored at last adequate tumour assessment
+S0061,ARM2,DOR,2016.0,1,censored at last adequate tumour assessment
+S0061,ARM2,TTR,56.0,0,first response
+S0062,ARM2,PFS,112.0,0,progressive disease
+S0062,ARM2,TTP,112.0,0,progressive disease
+S0062,ARM2,DOR,56.0,0,progressive disease
+S0062,ARM2,TTR,56.0,0,first response
+S0063,ARM2,PFS,393.3,0,death
+S0063,ARM2,TTP,392.0,1,censored at last adequate tumour assessment
+S0063,ARM2,DOR,281.3,0,death
+S0063,ARM2,TTR,112.0,0,first response
+S0064,ARM2,PFS,896.0,0,progressive disease
+S0064,ARM2,TTP,896.0,0,progressive disease
+S0065,ARM2,PFS,952.0,0,progressive disease
+S0065,ARM2,TTP,952.0,0,progressive disease
+S0066,ARM2,PFS,56.0,0,progressive disease
+S0066,ARM2,TTP,56.0,0,progressive disease
+S0067,ARM2,PFS,195.7,0,death
+S0067,ARM2,TTP,168.0,1,censored at last adequate tumour assessment
+S0067,ARM2,DOR,83.7,0,death
+S0067,ARM2,TTR,112.0,0,first response
+S0068,ARM2,PFS,224.0,0,progressive disease
+S0068,ARM2,TTP,224.0,0,progressive disease
+S0069,ARM2,PFS,168.0,0,progressive disease
+S0069,ARM2,TTP,168.0,0,progressive disease
+S0069,ARM2,DOR,112.0,0,progressive disease
+S0069,ARM2,TTR,56.0,0,first response
+S0070,ARM2,PFS,840.0,0,progressive disease
+S0070,ARM2,TTP,840.0,0,progressive disease

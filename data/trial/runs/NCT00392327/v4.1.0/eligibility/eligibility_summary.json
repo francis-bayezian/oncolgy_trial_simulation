@@ -1,0 +1,253 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "d488a0ad74e5a7b72d5af105f6da1669ac7c512420e371d7e51985e83a240340",
+  "population": "17bc4b608e95604f9139a5e866c3fc2cdf42106975dd9fec548103579449390d"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 8734,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 1266
+  },
+  "eligible_share": 0.8734,
+  "proven_eligible_share": 0.8734,
+  "not_proven_ineligible_share": 0.8734,
+  "criteria": {
+   "evaluated": [
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL015",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL035",
+    "EL036",
+    "EL037",
+    "EL039",
+    "EL040",
+    "EL041"
+   ],
+   "procedural": [
+    "EL003",
+    "EL004",
+    "EL006",
+    "EL012",
+    "EL017",
+    "EL019",
+    "EL022"
+   ],
+   "permissive": [
+    "EL014",
+    "EL016",
+    "EL018",
+    "EL020",
+    "EL021"
+   ],
+   "informational": [
+    "EL001",
+    "EL002",
+    "EL005",
+    "EL007",
+    "EL013",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034",
+    "EL038",
+    "EL042",
+    "EL043"
+   ],
+   "run_with_review_flag": []
+  },
+  "per_criterion": {
+   "EL008": {
+    "met": 10000,
+    "not_met": 0,
+    "unknown": 0,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Age at least 3 and less than 22 year [assessed: at the time of diagnosis]"
+   },
+   "EL009": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (diagnosed is one of ['Newly diagnosed'] AND previously untreated is present AND ((M0 Medulloblastoma is one of ['M0 Medulloblastoma'] AND residual greater than 1.5 cm2) OR M+ Medulloblastoma is one of ['M+ Medulloblastoma'] OR diffusely anaplastic medulloblastoma is one of ['diffu"
+   },
+   "EL010": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: supratentorial PNET is one of ['supratentorial PNET']"
+   },
+   "EL011": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: M4 disease is one of ['M4 disease']"
+   },
+   "EL015": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF stereotactic biopsy is present [qualifier: only] THEN (pre-operative MRI occurs before surgery (protocol wording: 'pre-operative') OR post-operative MRI occurs after surgery (protocol wording: 'post-operative'))]"
+   },
+   "EL023": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF M1 is one of ['M1'] THEN (an intra-operative positive CSF is present [qualifier: via lumbar puncture at the end of the procedure] OR a positive lumbar CSF occurs more than 7 day after surgery (protocol wording: 'post-operatively') [assessed: > 7 days post-operatively])]"
+   },
+   "EL024": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (((patients greater than 16 year AND Karnofsky performance level at least 30) OR (patients at most 16 year AND Lansky performance scale at least 30)) AND life expectancy greater than 8 week)"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (previous chemotherapy is absent AND radiation therapy is absent)"
+   },
+   "EL035": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Creatinine clearance at least 70 ml/min/1.73m2 OR radioisotope GFR at least 70 ml/min/1.73m2 OR serum creatinine at most a threshold mg/dl looked up from a table: if (age at least 2 and less than 6 year AND sex is one of ['male']) then 0.8; if (age at least 2 and less than 6 year "
+   },
+   "EL036": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Total bilirubin less than 1.5 times upper limit of normal (ULN) for age AND [IF anti-seizure medications is present THEN (SGOT (AST) less than 5 times ULN OR SGPT (ALT) less than 5 times ULN) ELSE (SGOT (AST) less than 2.5 times upper limit of normal (ULN) for age OR SGPT (ALT) le"
+   },
+   "EL037": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (ANC greater than 1000 /ul AND Platelets greater than 100000 /ul [qualifier: untransfused] AND Hemoglobin greater than 8 g/dl [qualifier: may be transfused])"
+   },
+   "EL039": {
+    "met": 6075,
+    "not_met": 0,
+    "unknown": 3925,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF (Female is one of ['female'] AND menarchal status is one of ['post-menarchal']) THEN pregnancy test is one of ['negative']]"
+   },
+   "EL040": {
+    "met": 6075,
+    "not_met": 0,
+    "unknown": 3925,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF (female is one of ['female'] AND Lactating is one of ['Lactating']) THEN agree not to breast-feed is present [qualifier: while on this trial]]"
+   },
+   "EL041": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF (Males is one of ['male'] OR (females is one of ['female'] AND reproductive potential is one of ['reproductive potential'])) THEN agreed to use an effective contraceptive method is present]"
+   }
+  },
+  "decisive_exclusions": {
+   "EL023": 130,
+   "EL009": 130,
+   "EL035": 125,
+   "EL015": 124,
+   "EL024": 119,
+   "EL025": 113,
+   "EL010": 111,
+   "EL011": 111,
+   "EL041": 111,
+   "EL036": 106,
+   "EL037": 98,
+   "EL039": 41,
+   "EL040": 37
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL009": 10000,
+   "EL010": 10000,
+   "EL011": 10000,
+   "EL015": 10000,
+   "EL023": 10000,
+   "EL024": 10000,
+   "EL025": 10000,
+   "EL035": 10000,
+   "EL036": 10000,
+   "EL037": 10000,
+   "EL041": 10000,
+   "EL039": 3925,
+   "EL040": 3925
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.857672935164218,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (central_nervous_system; 14 trials, 5511 screened)",
+    "detail": {
+     "estimate": 0.857672935164218,
+     "ci95": [
+      0.6530649879747794,
+      0.9507176506788496
+     ],
+     "single_trial_80": [
+      0.25814418583266135,
+      0.9905085482124806
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.2581648255510682,
+      "p30": 0.6523156917824497,
+      "p50": 0.857672935164218,
+      "p70": 0.9508722920277818,
+      "p90": 0.9905075349442463
+     },
+     "tau_logit": 2.1444812663127144,
+     "groups": 14,
+     "trials": 14,
+     "participants": 5511
+    }
+   },
+   "target_eligible_share": 0.857672935164218,
+   "share_excluded_by_decided_criteria": 0.0,
+   "residual_pass_needed": 0.857672935164218,
+   "per_criterion_pass_probability": 0.9882592783316789,
+   "criteria": [
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL015",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL035",
+    "EL036",
+    "EL037",
+    "EL039",
+    "EL040",
+    "EL041"
+   ]
+  }
+ }
+}

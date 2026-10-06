@@ -1,0 +1,428 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "BED-PSMA-411",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "9f61263a2faad6d1d336cb0cd9a60c04b28f9239bfc4d7eba9c57d14230db8f5",
+  "cohorts": {
+   "cohort_accrual_historical_10.8_per_year.jsonl": "18cbb4edf41ea3da4c5052082bc088548c368051fb0337dd2d5cfa0f97b18a7f",
+   "recruitment_report.md": "52bf678ad91749522eed81320083c76990435851cd75b46a2c3861dd9ec0478d",
+   "recruitment_summary.json": "0c1d238a153bc4a71c95a73e3885b6844a018a18bfa8699a793dfa2be0b5c0d2"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "41722cfe7407cedea289131497d626cc38127b45a0cdd776b5f77841b8f6a227",
+   "eligibility_summary.json": "4b55bf4d233c6c5f0c748895ea2dd06e3e1f4065fa0e176e681ae7e5d39615d9",
+   "feasibility_report.md": "d9497e92aed2a3fe515ede00cd7ab9a8656ebc33442a656f47bcc82f089723e4"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.7871,
+   0.7871
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL002",
+   "EL003",
+   "EL005",
+   "EL006",
+   "EL009",
+   "EL010",
+   "EL011",
+   "EL012"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.2129,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (prostate; 23 trials, 7838 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 67,
+   "target": 52.0
+  }
+ },
+ "accrual": {
+  "target_patients": 52,
+  "target_source": "evaluable target (no stated accrual target)",
+  "stated_accrual_durations_years": [],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_10.8_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 10.803901902738522,
+    "patients_per_month": 0.9003251585615435,
+    "enrolled": {
+     "median": 52.0,
+     "q10": 52.0,
+     "q25": 52.0,
+     "q75": 52.0,
+     "q90": 52.0
+    },
+    "enrollment_duration_years": {
+     "median": 4.6933121924027095,
+     "q10": 3.8769691452504706,
+     "q25": 4.248223442934853,
+     "q75": 5.151794843514627,
+     "q90": 5.582323074546162
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.0,
+     "2y": 0.0,
+     "3y": 0.001,
+     "5y": 0.6726
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "RESOLVED",
+    "value": 10,
+    "quote": "10 centers",
+    "source": "protocol (quoted)"
+   },
+   "sponsor_class": {
+    "status": "NOT_STATED_AVERAGED",
+    "reason": "sponsor 'Blue Earth Diagnostics' has no company legal form or academic marker: the models average over sponsor classes"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE4",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2025,
+    "enrolled": 52,
+    "disease_family": "prostate",
+    "matched_disease": "prostate cancer",
+    "condition": "prostate cancer",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 2,
+    "sponsor_class": null
+   },
+   "site_count": "protocol (quoted): '10 centers'",
+   "patients_per_month": {
+    "median": 1.368790464775806,
+    "q10": 0.34730197359410536,
+    "q25": 0.6688054363462075,
+    "q75": 2.8697831291741545,
+    "q90": 5.4929340402812885,
+    "percentiles": {
+     "p10": 0.34730197359410536,
+     "p30": 0.7818191776953243,
+     "p50": 1.368790464775806,
+     "p70": 2.4510266060130155,
+     "p90": 5.4929340402812885
+    }
+   },
+   "patients_per_year": {
+    "median": 16.425485577309672,
+    "q10": 4.167623683129264,
+    "q25": 8.02566523615449,
+    "q75": 34.437397550089855,
+    "q90": 65.91520848337547,
+    "percentiles": {
+     "p10": 4.167623683129264,
+     "p30": 9.381830132343891,
+     "p50": 16.425485577309672,
+     "p70": 29.412319272156186,
+     "p90": 65.91520848337547
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 3.1225812768419656,
+    "q10": 0.7728396999285178,
+    "q25": 1.4748478712043922,
+    "q75": 6.456090866164226,
+    "q90": 12.556327467376203,
+    "percentiles": {
+     "p10": 0.7728396999285178,
+     "p30": 1.7425814026851116,
+     "p50": 3.1225812768419656,
+     "p70": 5.543603516739909,
+     "p90": 12.556327467376203
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1y": 0.14925,
+    "2y": 0.346,
+    "3y": 0.484625,
+    "5y": 0.6685
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE4",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2025,
+    "arms": 2,
+    "disease_family": "prostate"
+   },
+   "sponsor_class": "SPONSOR_CLASS_UNKNOWN: averaged over the sponsor classes of historical trials of the same phase",
+   "probabilities": {
+    "completed": 0.3331813490128197,
+    "terminated_accrual": 0.08337852966765434,
+    "terminated_other": 0.2296194820568117,
+    "withdrawn": 0.3538206392627141
+   },
+   "p_accrual_failure": 0.4371991689303685,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 52,
+  "evaluable_targets": [
+   52.0
+  ],
+  "decision_rules": []
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 3.1225812768419656,
+    "q10": 0.7728396999285178,
+    "q25": 1.4748478712043922,
+    "q75": 6.456090866164226,
+    "q90": 12.556327467376203,
+    "percentiles": {
+     "p10": 0.7728396999285178,
+     "p30": 1.7425814026851116,
+     "p50": 3.1225812768419656,
+     "p70": 5.543603516739909,
+     "p90": 12.556327467376203
+    }
+   },
+   "accrual_historical_10.8_per_year": {
+    "median": 4.6933121924027095,
+    "q10": 3.8769691452504706,
+    "q25": 4.248223442934853,
+    "q75": 5.151794843514627,
+    "q90": 5.582323074546162
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 3.6225812768419656,
+     "q10": 1.2728396999285176,
+     "q25": 1.9748478712043922,
+     "q75": 6.956090866164226,
+     "q90": 13.056327467376203
+    },
+    "accrual_historical_10.8_per_year": {
+     "median": 5.1933121924027095,
+     "q10": 4.37696914525047,
+     "q25": 4.748223442934853,
+     "q75": 5.651794843514627,
+     "q90": 6.082323074546162
+    }
+   },
+   "assessment_lag_months": 6.0,
+   "source": "assumption A20: primary assessment 6 months after entry"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 8.122581276841967,
+     "q10": 5.772839699928518,
+     "q25": 6.474847871204393,
+     "q75": 11.456090866164226,
+     "q90": 17.556327467376203
+    },
+    "accrual_historical_10.8_per_year": {
+     "median": 9.69331219240271,
+     "q10": 8.87696914525047,
+     "q25": 9.248223442934853,
+     "q75": 10.151794843514626,
+     "q90": 10.582323074546162
+    }
+   },
+   "follow_up_years": 5.0,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.0988880352526682,
+    "source": "registry participant flow (prostate, PHASE4): left by subject decision, loss to follow-up or physician decision; 14 trials, 1713 participants"
+   },
+   "adverse_event": {
+    "value": 0.05226104957464296,
+    "source": "registry participant flow (prostate, PHASE4): left for an adverse event; 14 trials, 1713 participants"
+   },
+   "death": {
+    "value": 0.03063307021499132,
+    "source": "registry participant flow (prostate, PHASE4): died during the study period; 14 trials, 1713 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1y": 0.14925,
+   "2y": 0.346,
+   "3y": 0.484625,
+   "5y": 0.6685
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 3.12,
+   "q10": 0.77,
+   "q25": 1.47,
+   "q75": 6.46,
+   "q90": 12.56,
+   "percentiles": {
+    "p10": 0.7728396999285178,
+    "p30": 1.7425814026851116,
+    "p50": 3.1225812768419656,
+    "p70": 5.543603516739909,
+    "p90": 12.556327467376203
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_10.8_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.0,
+   "2y": 0.0,
+   "3y": 0.001,
+   "5y": 0.6726
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 10.8039 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 4.2 | p30 9.4 | p50 16.4 | p70 29.4 | p90 65.9"
+   },
+   "status": "plausible (protocol/historical median 0.66x)"
+  }
+ ]
+}

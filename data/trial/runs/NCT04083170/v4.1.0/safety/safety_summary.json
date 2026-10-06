@@ -1,0 +1,15 @@
+{
+ "summary": {
+  "status": "RESOLVED",
+  "arms": {
+   "ARM1": {
+    "enrolled": 6,
+    "events": 42
+   },
+   "ARM2": {
+    "enrolled": 4,
+    "events": 42
+   }
+  }
+ }
+}

@@ -1,0 +1,570 @@
+{
+ "analysis_version": "analysis-results-1.1.0",
+ "seed": 20261006,
+ "inputs": {
+  "studyspec": "d488a0ad74e5a7b72d5af105f6da1669ac7c512420e371d7e51985e83a240340"
+ },
+ "efficacy_scope": {
+  "response": true,
+  "PFS": true,
+  "TTP": true,
+  "OS": false,
+  "any": true
+ },
+ "data_cutoff": {
+  "day": 1949.15,
+  "rule": "last enrolment + 1 years of follow-up",
+  "enrolled_by_cutoff": 400,
+  "planned": 400
+ },
+ "response_criteria": {
+  "pr": 65.0,
+  "pd": 40.0,
+  "pd_abs_mm": 0.0,
+  "deeper": [],
+  "confirm": false,
+  "source": "protocol response criteria (compiled thresholds)"
+ },
+ "assessment_interval_days": 56,
+ "follow_up_days": 1826,
+ "control_arm": "ARM1",
+ "latent_inputs": {
+  "ARM1": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.30358765470387106,
+    "unit": "proportion",
+    "level": "trials with overlapping drug classes",
+    "source": "evidence arms reporting objective_response_rate (3 studies)",
+    "ci95": [
+     0.21744966737914315,
+     0.40613840829571474
+    ]
+   },
+   "complete_response_share": {
+    "value": 0.32939415832815444,
+    "source": "evidence arms reporting complete_response (1 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 16.649011398757214,
+    "unit": "months",
+    "level": "trials with overlapping drug classes",
+    "source": "evidence medians of overall_survival (20 studies)",
+    "detail": {
+     "variable": "overall_survival",
+     "family": "central_nervous_system",
+     "subgroup": "trials with overlapping drug classes",
+     "median_months": 16.649011398757214,
+     "ci95": [
+      14.961648937171093,
+      18.52667321095143
+     ],
+     "single_trial_80": [
+      10.961786466141145,
+      25.286898391255207
+     ],
+     "studies": 20,
+     "arms": 48,
+     "patients": 6097
+    }
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.56,
+     "rate_per_year": 1.087375860742081
+    },
+    "evidence_level": "protocol",
+    "source": "locked outcome model control curve: cure_model"
+   },
+   "post_progression_survival_months": 8.999617599410893
+  },
+  "ARM2": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.30358765470387106,
+    "unit": "proportion",
+    "level": "trials with overlapping drug classes",
+    "source": "evidence arms reporting objective_response_rate (3 studies)",
+    "ci95": [
+     0.21744966737914315,
+     0.40613840829571474
+    ]
+   },
+   "complete_response_share": {
+    "value": 0.32939415832815444,
+    "source": "evidence arms reporting complete_response (1 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 16.649011398757214,
+    "unit": "months",
+    "level": "trials with overlapping drug classes",
+    "source": "evidence medians of overall_survival (20 studies)",
+    "detail": {
+     "variable": "overall_survival",
+     "family": "central_nervous_system",
+     "subgroup": "trials with overlapping drug classes",
+     "median_months": 16.649011398757214,
+     "ci95": [
+      14.961648937171093,
+      18.52667321095143
+     ],
+     "single_trial_80": [
+      10.961786466141145,
+      25.286898391255207
+     ],
+     "studies": 20,
+     "arms": 48,
+     "patients": 6097
+    }
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.56,
+     "rate_per_year": 1.087375860742081
+    },
+    "evidence_level": "protocol",
+    "source": "locked outcome model control curve: cure_model"
+   },
+   "post_progression_survival_months": 8.999617599410893
+  }
+ },
+ "efficacy": {
+  "ARM1": {
+   "n": 202,
+   "best_overall_response": {
+    "SD": 129,
+    "NE": 7,
+    "PR": 32,
+    "CR": 21,
+    "PD": 13
+   },
+   "objective_response": {
+    "responders": 53,
+    "rate": 0.2624,
+    "ci95_exact": [
+     0.2031338228919425,
+     0.32873593113413896
+    ]
+   },
+   "disease_control": {
+    "n": 182,
+    "rate": 0.901,
+    "ci95_exact": [
+     0.8512327392405251,
+     0.9384670474593059
+    ]
+   },
+   "PFS": {
+    "n": 202,
+    "events": 85,
+    "median_months": null,
+    "median_ci95_months": [
+     19.52,
+     null
+    ],
+    "landmark_percent": {
+     "6m": 77.4,
+     "12m": 68.7,
+     "24m": 56.6
+    }
+   },
+   "TTP": {
+    "n": 202,
+    "events": 65,
+    "median_months": null,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_percent": {
+     "6m": 81.6,
+     "12m": 73.0,
+     "24m": 65.3
+    }
+   },
+   "DOR": {
+    "n": 53,
+    "events": 11,
+    "median_months": null,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_percent": {
+     "6m": 92.5,
+     "12m": 88.2,
+     "24m": 83.6
+    }
+   },
+   "TTR": {
+    "n": 53,
+    "events": 53,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.68,
+     3.68
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  },
+  "ARM2": {
+   "n": 198,
+   "best_overall_response": {
+    "SD": 130,
+    "PD": 20,
+    "PR": 22,
+    "NE": 9,
+    "CR": 17
+   },
+   "objective_response": {
+    "responders": 39,
+    "rate": 0.197,
+    "ci95_exact": [
+     0.1439733394113767,
+     0.2592767358294108
+    ]
+   },
+   "disease_control": {
+    "n": 169,
+    "rate": 0.8535,
+    "ci95_exact": [
+     0.79647183652743,
+     0.8996645032760584
+    ]
+   },
+   "PFS": {
+    "n": 198,
+    "events": 85,
+    "median_months": null,
+    "median_ci95_months": [
+     21.43,
+     null
+    ],
+    "landmark_percent": {
+     "6m": 78.5,
+     "12m": 68.2,
+     "24m": 53.3
+    }
+   },
+   "TTP": {
+    "n": 198,
+    "events": 66,
+    "median_months": null,
+    "median_ci95_months": [
+     null,
+     null
+    ],
+    "landmark_percent": {
+     "6m": 80.6,
+     "12m": 71.4,
+     "24m": 62.0
+    }
+   },
+   "DOR": {
+    "n": 39,
+    "events": 14,
+    "median_months": null,
+    "median_ci95_months": [
+     20.24,
+     null
+    ],
+    "landmark_percent": {
+     "6m": 89.7,
+     "12m": 81.9,
+     "24m": 62.9
+    }
+   },
+   "TTR": {
+    "n": 39,
+    "events": 39,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     3.68,
+     3.68
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  }
+ },
+ "comparisons": {
+  "ORR ARM2 vs ARM1": {
+   "difference": -0.0654,
+   "ci95": [
+    -0.1476,
+    0.0168
+   ]
+  },
+  "PFS ARM2 vs ARM1": {
+   "hr": 0.993,
+   "ci95": [
+    0.731,
+    1.349
+   ],
+   "logrank_p_two_sided": 0.9637110929970372
+  }
+ },
+ "censoring": {
+  "PFS": {
+   "ARM1": {
+    "n": 202,
+    "events": 85,
+    "censored": 117,
+    "by_reason": {
+     "progressive disease": 65,
+     "death": 20,
+     "censored at last adequate tumour assessment": 117
+    }
+   },
+   "ARM2": {
+    "n": 198,
+    "events": 85,
+    "censored": 113,
+    "by_reason": {
+     "progressive disease": 66,
+     "death": 19,
+     "censored at last adequate tumour assessment": 113
+    }
+   }
+  },
+  "TTP": {
+   "ARM1": {
+    "n": 202,
+    "events": 65,
+    "censored": 137,
+    "by_reason": {
+     "progressive disease": 65,
+     "censored at last adequate tumour assessment": 137
+    }
+   },
+   "ARM2": {
+    "n": 198,
+    "events": 66,
+    "censored": 132,
+    "by_reason": {
+     "progressive disease": 66,
+     "censored at last adequate tumour assessment": 132
+    }
+   }
+  },
+  "DOR": {
+   "ARM1": {
+    "n": 53,
+    "events": 11,
+    "censored": 42,
+    "by_reason": {
+     "censored at last adequate tumour assessment": 42,
+     "progressive disease": 4,
+     "death": 7
+    }
+   },
+   "ARM2": {
+    "n": 39,
+    "events": 14,
+    "censored": 25,
+    "by_reason": {
+     "death": 9,
+     "censored at last adequate tumour assessment": 25,
+     "progressive disease": 5
+    }
+   }
+  },
+  "TTR": {
+   "ARM1": {
+    "n": 53,
+    "events": 53,
+    "censored": 0,
+    "by_reason": {
+     "first response": 53
+    }
+   },
+   "ARM2": {
+    "n": 39,
+    "events": 39,
+    "censored": 0,
+    "by_reason": {
+     "first response": 39
+    }
+   }
+  }
+ },
+ "safety_tables": [
+  "Table 2. Baseline demographic characteristics, safety population",
+  "Table 3. Patient screening and enrollment",
+  "Table 4. Patient disposition",
+  "Table 5. Duration of treatment exposure, safety population",
+  "Table 6. Overview of adverse events, safety population",
+  "Table 7. Deaths, safety population",
+  "Table 9. Patients with serious adverse events by system organ class and preferred term",
+  "Table 12. Patients with adverse events leading to treatment discontinuation by SOC and PT",
+  "Table 36. Patients with adverse events by system organ class and preferred term",
+  "Table 13. Patients with common adverse events occurring at >= 5% frequency",
+  "Table 54. Exposure-adjusted incidence rates",
+  "Patients with adverse events leading to dose interruption or reduction by SOC and PT",
+  "Patients with adverse events by maximum toxicity grade",
+  "Screen failures by eligibility criterion"
+ ],
+ "terms_without_soc": [
+  "allergic_rhinitis_disorder",
+  "depression_dominant",
+  "hemoglobin_normal_12_16_gm",
+  "rash_erythematous_macules_or_papules"
+ ],
+ "subgroups": {
+  "factors": [
+   {
+    "factor": "location",
+    "source": "protocol stratification factor",
+    "variable": "var:tumor_location",
+    "note": "location",
+    "feasibility_driver": "patient mix",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "Medulloblastoma": 275,
+     "not recorded": 125
+    }
+   },
+   {
+    "factor": "dissemination",
+    "source": "protocol stratification factor",
+    "variable": "var:dissemination_status",
+    "note": "dissemination",
+    "feasibility_driver": "patient mix",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "M0": 216,
+     "M+": 184
+    }
+   },
+   {
+    "factor": "Randomisation stratum",
+    "source": "protocol stratification (stratum)",
+    "variable": "stratum",
+    "note": "assigned at random: the stratification variables are not generated for patients",
+    "feasibility_driver": "patient mix",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "(3) M0 Diffusely Anaplastic Medulloblastoma": 88,
+     "(2) M+ Medulloblastoma": 221,
+     "(1) M0 Medulloblastoma with >1.5 cm2 residual": 91
+    }
+   },
+   {
+    "factor": "Age (ICH E11 paediatric bands)",
+    "source": "FDA demographic",
+    "variable": "demographic:age",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "12-17 years": 119,
+     "2-11 years": 278,
+     ">= 18 years": 3
+    }
+   },
+   {
+    "factor": "Sex",
+    "source": "FDA demographic",
+    "variable": "demographic:sex",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 3 trials; prognostic, A28))",
+    "levels": {
+     "male": 242,
+     "female": 158
+    }
+   },
+   {
+    "factor": "Race",
+    "source": "FDA demographic",
+    "variable": "demographic:race",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "white": 351,
+     "other": 8,
+     "asian": 12,
+     "black_or_african_american": 23,
+     "american_indian_or_alaska_native": 2,
+     "native_hawaiian_or_other_pacific_islander": 1,
+     "unknown_or_not_reported": 3
+    }
+   },
+   {
+    "factor": "Ethnicity",
+    "source": "FDA demographic",
+    "variable": "demographic:ethnicity",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "not_hispanic_or_latino": 354,
+     "hispanic_or_latino": 44,
+     "unknown_or_not_reported": 2
+    }
+   },
+   {
+    "factor": "Region",
+    "source": "FDA demographic",
+    "variable": null,
+    "note": "not simulated: the recruitment model has no site country",
+    "feasibility_driver": null,
+    "outcome_driver": null
+   },
+   {
+    "factor": "Residual",
+    "source": "baseline disease factor",
+    "variable": "umls:C0543478",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "< 1.5 cm2": 258,
+     ">= 1.5 cm2": 142
+    }
+   },
+   {
+    "factor": "Ecog performance status",
+    "source": "baseline disease factor",
+    "variable": "var:ecog_performance_status",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "1": 186,
+     "0": 157,
+     "2 or more": 57
+    }
+   }
+  ],
+  "files": {
+   "subgroup_efficacy": "subgroups/subgroup_efficacy.csv",
+   "subgroup_safety": "subgroups/subgroup_safety.csv",
+   "subgroup_comparisons": "subgroups/subgroup_comparisons.csv",
+   "subgroup_feasibility": "subgroups/subgroup_feasibility.csv",
+   "forest_pfs_ARM2": "subgroups/forest_pfs_ARM2.svg",
+   "forest_orr_ARM2": "subgroups/forest_orr_ARM2.svg"
+  }
+ },
+ "standards": [
+  "PharmaSUG 2018 DS06 (RECIST/Cheson/IMWG-type response derivation; SDTM TU/TR/RS; ADaM ADRS/ADTTE)",
+  "FDA CDER Standard Safety Tables and Figures Integrated Guide (Aug 2022): Tables 2-7, 9, 12, 13, 36, 54",
+  "results by subgroup: protocol stratification factors and analysis subgroups, FDA demographics, baseline disease factors"
+ ],
+ "not_produced": [
+  "FDA Medical Query tables (no machine-readable FMQ definitions)",
+  "laboratory and vital-sign tables (not simulated)",
+  "MedDRA coding (registry terms with their reported organ system are used)",
+  "results by region (the recruitment model has no site country)"
+ ]
+}

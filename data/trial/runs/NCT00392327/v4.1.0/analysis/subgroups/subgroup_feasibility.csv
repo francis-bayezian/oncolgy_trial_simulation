@@ -1,0 +1,25 @@
+Factor,Level,Screened,Eligible (%),Enrolled,Most frequent failing criteria (% of screened),Driver
+location,Medulloblastoma,7018,6128 (87%),275,EL009 Diagnosis (1%); EL023 Patients who are categorized as M1 (1%); EL024 Patients must have a Karnofsky performan (1%),patient mix
+location,not recorded,2982,2606 (87%),0,EL036 Adequate liver function defined as (1%); EL015 For patients who undergo stereotactic bi (1%); EL035 Adequate renal function defined as (1%),patient mix
+dissemination,M+,4966,4341 (87%),184,EL009 Diagnosis (1%); EL024 Patients must have a Karnofsky performan (1%); EL035 Adequate renal function defined as (1%),patient mix
+dissemination,M0,5034,4393 (87%),216,EL023 Patients who are categorized as M1 (1%); EL037 Adequate bone marrow function defined as (1%); EL025 No previous chemotherapy or radiation th (1%),patient mix
+Age (ICH E11 paediatric bands),12-17 years,3065,2678 (87%),119,EL015 For patients who undergo stereotactic bi (2%); EL010 enrollment of patients with supratentori (1%); EL023 Patients who are categorized as M1 (1%),protocol criteria
+Age (ICH E11 paediatric bands),2-11 years,6859,5987 (87%),278,EL009 Diagnosis (1%); EL023 Patients who are categorized as M1 (1%); EL035 Adequate renal function defined as (1%),protocol criteria
+Age (ICH E11 paediatric bands),>= 18 years,76,69 (91%),3,EL011 All patients with M4 disease are not eli (3%); EL023 Patients who are categorized as M1 (3%); EL025 No previous chemotherapy or radiation th (1%),protocol criteria
+Sex,female,3925,3377 (86%),158,EL023 Patients who are categorized as M1 (1%); EL009 Diagnosis (1%); EL025 No previous chemotherapy or radiation th (1%),protocol criteria
+Sex,male,6075,5357 (88%),242,EL035 Adequate renal function defined as (1%); EL015 For patients who undergo stereotactic bi (1%); EL009 Diagnosis (1%),protocol criteria
+Race,american_indian_or_alaska_native,94,80 (85%),2,EL025 No previous chemotherapy or radiation th (4%); EL015 For patients who undergo stereotactic bi (2%); EL010 enrollment of patients with supratentori (2%),patient mix
+Race,asian,320,288 (90%),12,EL024 Patients must have a Karnofsky performan (2%); EL015 For patients who undergo stereotactic bi (2%); EL009 Diagnosis (2%),patient mix
+Race,black_or_african_american,623,539 (87%),23,EL011 All patients with M4 disease are not eli (3%); EL036 Adequate liver function defined as (2%); EL009 Diagnosis (2%),patient mix
+Race,native_hawaiian_or_other_pacific_islander,70,62 (89%),1,EL036 Adequate liver function defined as (3%); EL025 No previous chemotherapy or radiation th (1%); EL023 Patients who are categorized as M1 (1%),patient mix
+Race,other,156,142 (91%),8,EL036 Adequate liver function defined as (2%); EL015 For patients who undergo stereotactic bi (1%); EL035 Adequate renal function defined as (1%),patient mix
+Race,unknown_or_not_reported,90,79 (88%),3,EL037 Adequate bone marrow function defined as (6%); EL035 Adequate renal function defined as (2%); EL023 Patients who are categorized as M1 (2%),patient mix
+Race,white,8647,7544 (87%),351,EL023 Patients who are categorized as M1 (1%); EL009 Diagnosis (1%); EL035 Adequate renal function defined as (1%),patient mix
+Ethnicity,hispanic_or_latino,1064,938 (88%),44,EL009 Diagnosis (2%); EL023 Patients who are categorized as M1 (2%); EL036 Adequate liver function defined as (1%),patient mix
+Ethnicity,not_hispanic_or_latino,8889,7754 (87%),354,EL035 Adequate renal function defined as (1%); EL015 For patients who undergo stereotactic bi (1%); EL023 Patients who are categorized as M1 (1%),patient mix
+Ethnicity,unknown_or_not_reported,47,42 (89%),2,EL025 No previous chemotherapy or radiation th (4%); EL039 Female patients who are post-menarchal m (2%); EL037 Adequate bone marrow function defined as (2%),patient mix
+Residual,< 1.5 cm2,6488,5662 (87%),258,EL035 Adequate renal function defined as (1%); EL024 Patients must have a Karnofsky performan (1%); EL023 Patients who are categorized as M1 (1%),protocol criteria
+Residual,>= 1.5 cm2,3512,3072 (87%),142,EL009 Diagnosis (2%); EL023 Patients who are categorized as M1 (1%); EL015 For patients who undergo stereotactic bi (1%),protocol criteria
+Ecog performance status,0,3916,3430 (88%),157,EL009 Diagnosis (1%); EL035 Adequate renal function defined as (1%); EL025 No previous chemotherapy or radiation th (1%),patient mix
+Ecog performance status,1,4710,4094 (87%),186,EL023 Patients who are categorized as M1 (1%); EL009 Diagnosis (1%); EL024 Patients must have a Karnofsky performan (1%),patient mix
+Ecog performance status,2 or more,1374,1210 (88%),57,EL024 Patients must have a Karnofsky performan (2%); EL015 For patients who undergo stereotactic bi (2%); EL035 Adequate renal function defined as (1%),patient mix

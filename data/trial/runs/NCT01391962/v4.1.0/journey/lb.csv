@@ -1,0 +1,478 @@
+USUBJID,LBTEST,LBORRES,LBDY,VISIT,BASIS
+S0001,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0001,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0001,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0001,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0001,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0001,AST,4.1 x ULN (grade 2),277,C10D25,assumption
+S0001,ALT,1.38 x ULN (grade 1),372,C14D8,assumption
+S0002,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0002,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0002,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0002,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0002,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0002,White blood cell count,3.85 10^9/L (grade 1),125,C5D13,assumption
+S0002,AST,1.46 x ULN (grade 1),213,C8D17,assumption
+S0003,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0003,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0003,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0003,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0003,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0003,AST,4.56 x ULN (grade 2),80,C3D24,assumption
+S0004,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0004,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0004,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0004,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0004,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0004,ALT,4.26 x ULN (grade 2),195,C7D27,assumption
+S0004,Creatinine,1.07 x ULN (grade 1),436,C16D16,assumption
+S0005,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0005,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0005,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0005,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0005,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0005,AST,1.98 x ULN (grade 1),52,C2D24,assumption
+S0005,ALT,4.9 x ULN (grade 2),242,C9D18,assumption
+S0006,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0006,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0006,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0006,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0006,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0006,Hemoglobin,8.59 g/dL (grade 2),46,C2D18,assumption
+S0006,AST,1.1 x ULN (grade 1),51,C2D23,assumption
+S0007,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0007,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0007,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0007,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0007,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0007,AST,1.78 x ULN (grade 1),238,C9D14,assumption
+S0008,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0008,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0008,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0008,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0008,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0008,AST,1.84 x ULN (grade 1),33,C2D5,assumption
+S0008,Total bilirubin,1.35 x ULN (grade 1),74,C3D18,assumption
+S0009,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0009,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0009,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0009,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0009,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0009,AST,4.5 x ULN (grade 2),131,C5D19,assumption
+S0009,White blood cell count,2.49 10^9/L (grade 2),418,C15D26,assumption
+S0010,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0010,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0010,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0010,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0010,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0010,Creatinine,1.19 x ULN (grade 1),34,C2D6,assumption
+S0011,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0011,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0011,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0011,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0011,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0011,AST,3.95 x ULN (grade 2),157,C6D17,assumption
+S0012,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0012,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0012,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0012,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0012,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0012,AST,4.56 x ULN (grade 2),303,C11D23,assumption
+S0013,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0013,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0013,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0013,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0013,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0013,White blood cell count,3.11 10^9/L (grade 1),104,C4D20,assumption
+S0013,AST,3.59 x ULN (grade 2),343,C13D7,assumption
+S0014,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0014,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0014,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0014,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0014,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0014,Creatinine,1.42 x ULN (grade 1),9,C1D9,assumption
+S0015,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0015,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0015,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0015,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0015,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0015,AST,4.9 x ULN (grade 2),300,C11D20,assumption
+S0015,Absolute neutrophil count,1.22 10^9/L (grade 2),456,C17D8,assumption
+S0015,White blood cell count,3.65 10^9/L (grade 1),674,C25D2,assumption
+S0016,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0016,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0016,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0016,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0016,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0017,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0017,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0017,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0017,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0017,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0017,Creatinine,2.76 x ULN (grade 2),602,C22D14,assumption
+S0017,AST,2.4 x ULN (grade 1),614,C22D26,assumption
+S0018,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0018,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0018,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0018,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0018,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0018,AST,1.5 x ULN (grade 1),137,C5D25,assumption
+S0018,Total bilirubin,1.36 x ULN (grade 1),333,C12D25,assumption
+S0018,Creatinine,2.59 x ULN (grade 2),627,C23D11,assumption
+S0019,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0019,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0019,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0019,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0019,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0019,ALT,3.92 x ULN (grade 2),66,C3D10,assumption
+S0019,AST,3.08 x ULN (grade 2),140,C5D28,assumption
+S0020,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0020,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0020,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0020,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0020,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0020,ALT,1.65 x ULN (grade 1),12,C1D12,assumption
+S0020,AST,2.48 x ULN (grade 1),34,C2D6,assumption
+S0021,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0021,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0021,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0021,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0021,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0021,White blood cell count,2.43 10^9/L (grade 2),51,C2D23,assumption
+S0021,AST,1.65 x ULN (grade 1),111,C4D27,assumption
+S0022,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0022,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0022,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0022,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0022,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0023,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0023,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0023,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0023,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0023,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0023,AST,3.48 x ULN (grade 2),129,C5D17,assumption
+S0023,Creatinine,1.04 x ULN (grade 1),399,C15D7,assumption
+S0023,ALT,1.8 x ULN (grade 1),690,C25D18,assumption
+S0024,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0024,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0024,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0024,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0024,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0024,AST,4.29 x ULN (grade 2),19,C1D19,assumption
+S0025,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0025,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0025,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0025,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0025,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0025,White blood cell count,2.16 10^9/L (grade 2),58,C3D2,assumption
+S0025,AST,2.26 x ULN (grade 1),82,C3D26,assumption
+S0026,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0026,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0026,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0026,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0026,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0026,White blood cell count,2.28 10^9/L (grade 2),7,C1D7,assumption
+S0026,Creatinine,1.68 x ULN (grade 2),197,C8D1,assumption
+S0026,ALT,4.6 x ULN (grade 2),612,C22D24,assumption
+S0027,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0027,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0027,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0027,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0027,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0027,Total bilirubin,1.98 x ULN (grade 2),183,C7D15,assumption
+S0027,ALT,4.24 x ULN (grade 2),289,C11D9,assumption
+S0027,White blood cell count,2.11 10^9/L (grade 2),416,C15D24,assumption
+S0027,Creatinine,2.59 x ULN (grade 2),706,C26D6,assumption
+S0027,AST,4.27 x ULN (grade 2),727,C26D27,assumption
+S0028,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0028,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0028,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0028,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0028,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0028,AST,4.2 x ULN (grade 2),306,C11D26,assumption
+S0029,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0029,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0029,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0029,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0029,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0029,AST,1.64 x ULN (grade 1),129,C5D17,assumption
+S0029,White blood cell count,3.33 10^9/L (grade 1),265,C10D13,assumption
+S0030,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0030,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0030,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0030,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0030,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0030,White blood cell count,2.55 10^9/L (grade 2),57,C3D1,assumption
+S0030,AST,1.08 x ULN (grade 1),356,C13D20,assumption
+S0030,Creatinine,1.81 x ULN (grade 2),455,C17D7,assumption
+S0031,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0031,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0031,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0031,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0031,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0031,Creatinine,1.38 x ULN (grade 1),123,C5D11,assumption
+S0031,AST,1.76 x ULN (grade 1),232,C9D8,assumption
+S0031,White blood cell count,3.17 10^9/L (grade 1),244,C9D20,assumption
+S0032,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0032,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0032,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0032,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0032,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0032,AST,1.37 x ULN (grade 1),78,C3D22,assumption
+S0032,White blood cell count,3.29 10^9/L (grade 1),363,C13D27,assumption
+S0033,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0033,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0033,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0033,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0033,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0033,Absolute neutrophil count,1.6 10^9/L (grade 1),36,C2D8,assumption
+S0033,ALT,2.56 x ULN (grade 1),88,C4D4,assumption
+S0033,White blood cell count,2.66 10^9/L (grade 2),114,C5D2,assumption
+S0033,AST,1.54 x ULN (grade 1),190,C7D22,assumption
+S0034,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0034,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0034,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0034,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0034,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0034,AST,4.26 x ULN (grade 2),108,C4D24,assumption
+S0034,ALT,2.93 x ULN (grade 1),370,C14D6,assumption
+S0035,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0035,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0035,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0035,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0035,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0035,Absolute neutrophil count,1.92 10^9/L (grade 1),116,C5D4,assumption
+S0035,Creatinine,1.38 x ULN (grade 1),127,C5D15,assumption
+S0036,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0036,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0036,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0036,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0036,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0036,AST,1.86 x ULN (grade 1),229,C9D5,assumption
+S0037,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0037,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0037,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0037,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0037,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0037,Creatinine,1.99 x ULN (grade 2),29,C2D1,assumption
+S0037,AST,1.12 x ULN (grade 1),79,C3D23,assumption
+S0037,ALT,4.36 x ULN (grade 2),86,C4D2,assumption
+S0038,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0038,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0038,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0038,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0038,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0038,Absolute neutrophil count,1.51 10^9/L (grade 1),10,C1D10,assumption
+S0038,ALT,4.5 x ULN (grade 2),27,C1D27,assumption
+S0038,AST,2.85 x ULN (grade 1),86,C4D2,assumption
+S0039,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0039,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0039,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0039,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0039,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0039,ALT,1.11 x ULN (grade 1),141,C6D1,assumption
+S0039,AST,1.31 x ULN (grade 1),385,C14D21,assumption
+S0040,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0040,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0040,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0040,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0040,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0040,Creatinine,1.36 x ULN (grade 1),95,C4D11,assumption
+S0040,White blood cell count,3.83 10^9/L (grade 1),115,C5D3,assumption
+S0040,AST,3.68 x ULN (grade 2),187,C7D19,assumption
+S0041,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0041,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0041,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0041,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0041,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0041,AST,4.54 x ULN (grade 2),23,C1D23,assumption
+S0042,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0042,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0042,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0042,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0042,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0042,Creatinine,2.72 x ULN (grade 2),98,C4D14,assumption
+S0042,White blood cell count,2.31 10^9/L (grade 2),135,C5D23,assumption
+S0042,AST,4.73 x ULN (grade 2),168,C6D28,assumption
+S0043,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0043,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0043,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0043,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0043,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0043,Creatinine,2.61 x ULN (grade 2),110,C4D26,assumption
+S0043,Total bilirubin,7.56 x ULN (grade 3),171,C7D3,assumption
+S0043,AST,3.62 x ULN (grade 2),356,C13D20,assumption
+S0044,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0044,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0044,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0044,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0044,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0044,AST,4.62 x ULN (grade 2),705,C26D5,assumption
+S0045,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0045,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0045,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0045,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0045,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0045,AST,3.61 x ULN (grade 2),77,C3D21,assumption
+S0046,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0046,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0046,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0046,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0046,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0046,AST,2.19 x ULN (grade 1),137,C5D25,assumption
+S0046,Total bilirubin,1.2 x ULN (grade 1),203,C8D7,assumption
+S0047,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0047,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0047,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0047,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0047,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0047,AST,3.37 x ULN (grade 2),11,C1D11,assumption
+S0047,Absolute neutrophil count,1.13 10^9/L (grade 2),30,C2D2,assumption
+S0048,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0048,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0048,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0048,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0048,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0048,AST,1.64 x ULN (grade 1),526,C19D22,assumption
+S0049,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0049,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0049,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0049,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0049,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0049,AST,4.55 x ULN (grade 2),22,C1D22,assumption
+S0050,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0050,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0050,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0050,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0050,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0050,AST,4.38 x ULN (grade 2),9,C1D9,assumption
+S0050,Creatinine,1.26 x ULN (grade 1),82,C3D26,assumption
+S0051,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0051,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0051,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0051,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0051,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0051,White blood cell count,2.73 10^9/L (grade 2),95,C4D11,assumption
+S0051,ALT,3.27 x ULN (grade 2),106,C4D22,assumption
+S0051,AST,1.91 x ULN (grade 1),351,C13D15,assumption
+S0052,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0052,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0052,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0052,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0052,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0052,AST,4.92 x ULN (grade 2),133,C5D21,assumption
+S0053,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0053,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0053,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0053,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0053,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0053,AST,2.29 x ULN (grade 1),80,C3D24,assumption
+S0054,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0054,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0054,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0054,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0054,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0054,AST,2.84 x ULN (grade 1),71,C3D15,assumption
+S0054,ALT,1.7 x ULN (grade 1),77,C3D21,assumption
+S0055,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0055,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0055,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0055,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0055,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0055,AST,1.88 x ULN (grade 1),215,C8D19,assumption
+S0056,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0056,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0056,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0056,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0056,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0056,AST,2.17 x ULN (grade 1),74,C3D18,assumption
+S0057,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0057,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0057,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0057,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0057,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0057,ALT,4.39 x ULN (grade 2),16,C1D16,assumption
+S0057,Absolute neutrophil count,1.1 10^9/L (grade 2),58,C3D2,assumption
+S0057,AST,2.33 x ULN (grade 1),83,C3D27,assumption
+S0058,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0058,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0058,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0058,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0058,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0058,AST,3.44 x ULN (grade 2),325,C12D17,assumption
+S0059,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0059,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0059,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0059,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0059,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0059,AST,4.61 x ULN (grade 2),28,C1D28,assumption
+S0059,ALT,4.19 x ULN (grade 2),121,C5D9,assumption
+S0060,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0060,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0060,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0060,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0060,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0060,Hemoglobin,8.8 g/dL (grade 2),41,C2D13,assumption
+S0061,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0061,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0061,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0061,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0061,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0061,AST,2.82 x ULN (grade 1),198,C8D2,assumption
+S0061,Creatinine,1.25 x ULN (grade 1),259,C10D7,assumption
+S0062,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0062,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0062,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0062,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0062,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0063,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0063,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0063,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0063,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0063,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0063,AST,1.41 x ULN (grade 1),416,C15D24,assumption
+S0063,Absolute neutrophil count,1.82 10^9/L (grade 1),421,C16D1,assumption
+S0064,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0064,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0064,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0064,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0064,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0064,Hemoglobin,8.29 g/dL (grade 2),234,C9D10,assumption
+S0065,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0065,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0065,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0065,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0065,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0065,AST,2.92 x ULN (grade 1),13,C1D13,assumption
+S0066,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0066,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0066,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0066,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0066,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0066,ALT,3.68 x ULN (grade 2),47,C2D19,assumption
+S0066,AST,1.76 x ULN (grade 1),231,C9D7,assumption
+S0067,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0067,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0067,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0067,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0067,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0067,AST,3.69 x ULN (grade 2),41,C2D13,assumption
+S0067,ALT,2.42 x ULN (grade 1),104,C4D20,assumption
+S0068,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0068,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0068,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0068,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0068,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0068,Creatinine,1.99 x ULN (grade 2),251,C9D27,assumption
+S0069,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0069,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0069,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0069,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0069,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0069,AST,2.16 x ULN (grade 1),251,C9D27,assumption
+S0070,Absolute neutrophil count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0070,Platelet count,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0070,Hemoglobin,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0070,ALT,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0070,Creatinine,within normal limits (value not simulated: no evidence),-8,SCREENING,assumption
+S0070,AST,3.79 x ULN (grade 2),3,C1D3,assumption

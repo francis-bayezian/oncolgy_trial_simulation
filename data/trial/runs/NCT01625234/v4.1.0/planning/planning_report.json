@@ -1,0 +1,440 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "X396-CLI-101",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "3fe2a7d61e826f5bbd3c1f072cc5049b1e52c5e1b0ea741be796c852dfba0ca5",
+  "cohorts": {
+   "cohort_accrual_historical_8.6_per_year.jsonl": "e1170f9603f0cba48f61041957f04d39627ee1fba0d64e1b279607c088c9ba63",
+   "recruitment_report.md": "8c2ab9254f4bea90776fa278664f712709424bb2817c81d85856da723a54c2fb",
+   "recruitment_summary.json": "e49b17eb362015b8400b791094c7412884ae4d27f3c691fa4b5fd236b5188271"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "f5bbbe3cc992fb82d9f8b8f4fcd1e1aa791cdfd89a735d37d4f7a8d0b6d756ab",
+   "eligibility_summary.json": "b1f4848d00dce19f84433862a8a2b8e92a102332fc9d8ade79de41a55b7b43af",
+   "feasibility_report.md": "653bf917c6e31c2866b21fa02d9666ecaf744ab6e26e0468b5f64178f1ce88c2"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.7476,
+   0.7476
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL001",
+   "EL002",
+   "EL005",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL009",
+   "EL015",
+   "EL016",
+   "EL018",
+   "EL019",
+   "EL021",
+   "EL022",
+   "EL023",
+   "EL024",
+   "EL025",
+   "EL028",
+   "EL029",
+   "EL013",
+   "EL027"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.2524,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (lung; 41 trials, 20971 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 255,
+   "target": 190.0
+  }
+ },
+ "accrual": {
+  "target_patients": 190,
+  "target_source": "target_accrual",
+  "stated_accrual_durations_years": [],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_8.6_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 8.616939006196532,
+    "patients_per_month": 0.7180782505163776,
+    "enrolled": {
+     "median": 190.0,
+     "q10": 190.0,
+     "q25": 190.0,
+     "q75": 190.0,
+     "q90": 190.0
+    },
+    "enrollment_duration_years": {
+     "median": 21.86540298268049,
+     "q10": 19.931905018324343,
+     "q25": 20.79352295007888,
+     "q75": 22.97599921101516,
+     "q90": 23.967526224814076
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.0,
+     "2y": 0.0,
+     "3y": 0.0,
+     "5y": 0.0
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "RESOLVED",
+    "value": 24,
+    "quote": "up to 24 sites",
+    "source": "protocol (quoted)"
+   },
+   "sponsor_class": {
+    "status": "RESOLVED",
+    "value": "INDUSTRY",
+    "quote": "Xcovery Holdings, Inc.",
+    "source": "protocol (quoted): company legal form"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE1+PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2012,
+    "enrolled": 190,
+    "disease_family": "lung",
+    "matched_disease": "Advanced Solid Tumors and Expansion Phase in Patients with ALK+ Non-Small Cell Lung Cancer",
+    "condition": "Advanced Solid Tumors and Expansion Phase in Patients with ALK+ Non-Small Cell Lung Cancer",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 8,
+    "sponsor_class": null
+   },
+   "site_count": "protocol (quoted): 'up to 24 sites'",
+   "patients_per_month": {
+    "median": 1.7407015672544794,
+    "q10": 0.4390472024735114,
+    "q25": 0.8610803892016876,
+    "q75": 3.6295050794117367,
+    "q90": 6.890824194506092,
+    "percentiles": {
+     "p10": 0.4390472024735114,
+     "p30": 0.9977707205538017,
+     "p50": 1.7407015672544794,
+     "p70": 3.068635271026811,
+     "p90": 6.890824194506092
+    }
+   },
+   "patients_per_year": {
+    "median": 20.888418807053753,
+    "q10": 5.268566429682137,
+    "q25": 10.332964670420251,
+    "q75": 43.55406095294084,
+    "q90": 82.68989033407311,
+    "percentiles": {
+     "p10": 5.268566429682137,
+     "p30": 11.973248646645619,
+     "p50": 20.888418807053753,
+     "p70": 36.82362325232174,
+     "p90": 82.68989033407311
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 9.051186391701425,
+    "q10": 2.3035108876755572,
+    "q25": 4.361369520532229,
+    "q75": 18.497658962156496,
+    "q90": 35.929778241715944,
+    "percentiles": {
+     "p10": 2.3035108876755572,
+     "p30": 5.135700953393769,
+     "p50": 9.051186391701425,
+     "p70": 15.796378479729853,
+     "p90": 35.929778241715944
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1y": 0.0195,
+    "2y": 0.07925,
+    "3y": 0.1505,
+    "5y": 0.292
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE1+PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2012,
+    "arms": 8,
+    "disease_family": "lung"
+   },
+   "sponsor_class": "INDUSTRY (protocol (quoted): company legal form: 'Xcovery Holdings, Inc.')",
+   "probabilities": {
+    "completed": 0.67712575305578,
+    "terminated_accrual": 0.042820891502028245,
+    "terminated_other": 0.2655561802027731,
+    "withdrawn": 0.014497175239418623
+   },
+   "p_accrual_failure": 0.05731806674144687,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 190,
+  "evaluable_targets": [],
+  "decision_rules": []
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 9.051186391701425,
+    "q10": 2.3035108876755572,
+    "q25": 4.361369520532229,
+    "q75": 18.497658962156496,
+    "q90": 35.929778241715944,
+    "percentiles": {
+     "p10": 2.3035108876755572,
+     "p30": 5.135700953393769,
+     "p50": 9.051186391701425,
+     "p70": 15.796378479729853,
+     "p90": 35.929778241715944
+    }
+   },
+   "accrual_historical_8.6_per_year": {
+    "median": 21.86540298268049,
+    "q10": 19.931905018324343,
+    "q25": 20.79352295007888,
+    "q75": 22.97599921101516,
+    "q90": 23.967526224814076
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 9.551186391701425,
+     "q10": 2.8035108876755572,
+     "q25": 4.861369520532229,
+     "q75": 18.997658962156496,
+     "q90": 36.429778241715944
+    },
+    "accrual_historical_8.6_per_year": {
+     "median": 22.36540298268049,
+     "q10": 20.431905018324343,
+     "q25": 21.29352295007888,
+     "q75": 23.47599921101516,
+     "q90": 24.467526224814076
+    }
+   },
+   "assessment_lag_months": 6.0,
+   "source": "assumption A20: primary assessment 6 months after entry"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 14.051186391701425,
+     "q10": 7.303510887675557,
+     "q25": 9.361369520532229,
+     "q75": 23.497658962156496,
+     "q90": 40.929778241715944
+    },
+    "accrual_historical_8.6_per_year": {
+     "median": 26.86540298268049,
+     "q10": 24.931905018324343,
+     "q25": 25.79352295007888,
+     "q75": 27.97599921101516,
+     "q90": 28.967526224814076
+    }
+   },
+   "follow_up_years": 5.0,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.07141058376491556,
+    "source": "registry participant flow (lung): left by subject decision, loss to follow-up or physician decision; 1306 trials, 222437 participants"
+   },
+   "adverse_event": {
+    "value": 0.056583357906702735,
+    "source": "registry participant flow (lung): left for an adverse event; 1306 trials, 222437 participants"
+   },
+   "death": {
+    "value": 0.0892889995548225,
+    "source": "registry participant flow (lung): died during the study period; 1306 trials, 222437 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1y": 0.0195,
+   "2y": 0.07925,
+   "3y": 0.1505,
+   "5y": 0.292
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 9.05,
+   "q10": 2.3,
+   "q25": 4.36,
+   "q75": 18.5,
+   "q90": 35.93,
+   "percentiles": {
+    "p10": 2.3035108876755572,
+    "p30": 5.135700953393769,
+    "p50": 9.051186391701425,
+    "p70": 15.796378479729853,
+    "p90": 35.929778241715944
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_8.6_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.0,
+   "2y": 0.0,
+   "3y": 0.0,
+   "5y": 0.0
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 8.61694 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 5.3 | p30 12.0 | p50 20.9 | p70 36.8 | p90 82.7"
+   },
+   "status": "plausible (protocol/historical median 0.41x)"
+  }
+ ]
+}

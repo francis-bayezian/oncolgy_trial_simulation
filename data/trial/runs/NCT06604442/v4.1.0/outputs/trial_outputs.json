@@ -1,0 +1,899 @@
+{
+ "outputs_version": "outputs-1.0.0",
+ "seed": 20260927,
+ "protocol_id": "BED-PSMA-411",
+ "cohort_file": "cohort_accrual_historical_10.8_per_year.jsonl",
+ "datasets": {
+  "adsl.csv": 104,
+  "adae.csv": 0,
+  "adtte.csv": 0
+ },
+ "tables": {
+  "participant_flow": {
+   "ARM1": {
+    "enrolled": 52
+   },
+   "ARM2": {
+    "enrolled": 52
+   }
+  },
+  "baseline_characteristics": {
+   "ARM1": {
+    "participants": 52,
+    "age_years": {
+     "mean": 63.1,
+     "sd": 11.0,
+     "median": 63.5,
+     "min": 40.0,
+     "max": 97.1
+    },
+    "sex_percent": {
+     "male": 100.0
+    },
+    "race_percent": {
+     "white": 80.8,
+     "asian": 11.5,
+     "black_or_african_american": 3.8,
+     "more_than_one_race": 1.9,
+     "unknown_or_not_reported": 1.9
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 94.2,
+     "unknown_or_not_reported": 3.8,
+     "hispanic_or_latino": 1.9
+    }
+   },
+   "ARM2": {
+    "participants": 52,
+    "age_years": {
+     "mean": 63.1,
+     "sd": 11.0,
+     "median": 63.5,
+     "min": 40.0,
+     "max": 97.1
+    },
+    "sex_percent": {
+     "male": 100.0
+    },
+    "race_percent": {
+     "white": 80.8,
+     "asian": 11.5,
+     "black_or_african_american": 3.8,
+     "more_than_one_race": 1.9,
+     "unknown_or_not_reported": 1.9
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 94.2,
+     "unknown_or_not_reported": 3.8,
+     "hispanic_or_latino": 1.9
+    }
+   },
+   "TOTAL": {
+    "participants": 104,
+    "age_years": {
+     "mean": 63.1,
+     "sd": 10.9,
+     "median": 63.5,
+     "min": 40.0,
+     "max": 97.1
+    },
+    "sex_percent": {
+     "male": 100.0
+    },
+    "race_percent": {
+     "white": 80.8,
+     "asian": 11.5,
+     "black_or_african_american": 3.8,
+     "more_than_one_race": 1.9,
+     "unknown_or_not_reported": 1.9
+    },
+    "ethnicity_percent": {
+     "not_hispanic_or_latino": 94.2,
+     "unknown_or_not_reported": 3.8,
+     "hispanic_or_latino": 1.9
+    }
+   }
+  },
+  "adverse_events": {
+   "ARM1": {
+    "participants": 52,
+    "any_serious_percent": 0.0,
+    "any_other_percent": 0.0,
+    "top_events": []
+   },
+   "ARM2": {
+    "participants": 52,
+    "any_serious_percent": 0.0,
+    "any_other_percent": 0.0,
+    "top_events": []
+   }
+  },
+  "adverse_event_dependence": {
+   "ARM2": {
+    "copula_rho": 0.0,
+    "fit": "no any-serious prior: independent events"
+   }
+  }
+ },
+ "feasibility": {
+  "screening": {
+   "eligible_share_bounds": [
+    0.7871,
+    0.7871
+   ],
+   "patients_to_screen_for_target": {
+    "at_least": 67,
+    "at_most": 67
+   },
+   "note": "the upper bound needs every unchecked criterion to be met; the lower bound counts only patients proven eligible. Narrowing them needs the variables the unchecked criteria use",
+   "unchecked_criteria": [
+    {
+     "criterion_id": "EL002",
+     "rendering": "ELIGIBLE ONLY IF: (Documented history of localized adenocarcinoma of the prostate is present AND prior curative intent treatment with RP is present AND BCR of p"
+    },
+    {
+     "criterion_id": "EL003",
+     "rendering": "ELIGIBLE ONLY IF: PSA at most 0.5 ng/ml"
+    },
+    {
+     "criterion_id": "EL005",
+     "rendering": "ELIGIBLE ONLY IF: (Written informed consent is present [qualifier: obtained from the patient] AND ability for the patient to comply\nwith the requirements of the"
+    },
+    {
+     "criterion_id": "EL006",
+     "rendering": "PROHIBITED: EXCLUDED IF: any medical condition or circumstance (including receiving an IP) that the investigator believes may compromise the data collected or l"
+    },
+    {
+     "criterion_id": "EL009",
+     "rendering": "PROHIBITED: EXCLUDED IF: (participating in an interventional clinical trial is present [assessed: within 30 days] AND having received\nan IP occurs within 5 biol"
+    },
+    {
+     "criterion_id": "EL010",
+     "rendering": "PROHIBITED: EXCLUDED IF: (hypersensitivity is one of ['the active substance'] [qualifier: known] OR hypersensitivity is one of ['any of the excipients of\\npiflu"
+    },
+    {
+     "criterion_id": "EL011",
+     "rendering": "PROHIBITED: EXCLUDED IF: (cystectomy is present [qualifier: previously undergone] OR renal failure is present OR other conditions that may significantly affect "
+    },
+    {
+     "criterion_id": "EL012",
+     "rendering": "PROHIBITED: EXCLUDED IF: salvage therapy for the current episode of BCR is present [qualifier: received]"
+    }
+   ],
+   "decisive_exclusions": {
+    "EL011": 324,
+    "EL003": 324,
+    "EL006": 294,
+    "EL005": 292,
+    "EL010": 289,
+    "EL009": 285,
+    "EL012": 280,
+    "EL002": 277,
+    "EL001": 1
+   }
+  },
+  "accrual": {
+   "historical_model": {
+    "status": "RESOLVED",
+    "patients_per_year": {
+     "median": 16.425485577309672,
+     "q10": 4.167623683129264,
+     "q25": 8.02566523615449,
+     "q75": 34.437397550089855,
+     "q90": 65.91520848337547,
+     "percentiles": {
+      "p10": 4.167623683129264,
+      "p30": 9.381830132343891,
+      "p50": 16.425485577309672,
+      "p70": 29.412319272156186,
+      "p90": 65.91520848337547
+     }
+    },
+    "enrollment_duration_years": {
+     "median": 3.1225812768419656,
+     "q10": 0.7728396999285178,
+     "q25": 1.4748478712043922,
+     "q75": 6.456090866164226,
+     "q90": 12.556327467376203,
+     "percentiles": {
+      "p10": 0.7728396999285178,
+      "p30": 1.7425814026851116,
+      "p50": 3.1225812768419656,
+      "p70": 5.543603516739909,
+      "p90": 12.556327467376203
+     }
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.14925,
+     "2y": 0.346,
+     "3y": 0.484625,
+     "5y": 0.6685
+    }
+   },
+   "protocol_scenarios": [
+    {
+     "scenario": "accrual_historical_10.8_per_year",
+     "source": "protocol (quoted)",
+     "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+     "patients_per_year": 10.803901902738522,
+     "patients_per_month": 0.9003251585615435,
+     "enrolled": {
+      "median": 52.0,
+      "q10": 52.0,
+      "q25": 52.0,
+      "q75": 52.0,
+      "q90": 52.0
+     },
+     "enrollment_duration_years": {
+      "median": 4.6933121924027095,
+      "q10": 3.8769691452504706,
+      "q25": 4.248223442934853,
+      "q75": 5.151794843514627,
+      "q90": 5.582323074546162
+     },
+     "p_enrollment_complete_by": {
+      "1y": 0.0,
+      "2y": 0.0,
+      "3y": 0.001,
+      "5y": 0.6726
+     },
+     "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+    }
+   ]
+  },
+  "sites_needed": {
+   "status": "RESOLVED",
+   "target": 52,
+   "by_accrual_period": {
+    "2y": {
+     "sites": ">200",
+     "p_complete_at_200": 0.793
+    },
+    "3y": {
+     "sites": 100,
+     "p_complete": 0.818
+    },
+    "5y": {
+     "sites": 30,
+     "p_complete": 0.822
+    }
+   },
+   "note": "sites as listed in registry records; the model's site effect is observational (trials that list more sites recruit faster)"
+  },
+  "trial_failure_risk": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE4",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2025,
+    "arms": 2,
+    "disease_family": "prostate"
+   },
+   "sponsor_class": "SPONSOR_CLASS_UNKNOWN: averaged over the sponsor classes of historical trials of the same phase",
+   "probabilities": {
+    "completed": 0.3331813490128197,
+    "terminated_accrual": 0.08337852966765434,
+    "terminated_other": 0.2296194820568117,
+    "withdrawn": 0.3538206392627141
+   },
+   "p_accrual_failure": 0.4371991689303685,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  },
+  "retention": {
+   "loss_to_follow_up": {
+    "status": "RESOLVED",
+    "annual_probability": 0.05073082597856793,
+    "rate_per_year": 0.05206288094709084,
+    "source": "evidence",
+    "wording": "registry participant flow (prostate, PHASE4): left by subject decision, loss to follow-up or physician decision; 14 trials, 1713 participants: 9.9% over the study, spread over 2 years (assumption A18)"
+   },
+   "off_study_limit": null
+  },
+  "decision_probabilities": {
+   "kind": "continuous",
+   "design": {
+    "effect": 10.0,
+    "sd": 25.152637136957445,
+    "sd_source": "derived from the protocol's power statement (80% power for 10 at n = 52, alpha 0.05 two-sided, rank test efficiency 3/pi)",
+    "n": 52,
+    "paired": true,
+    "rank_test": true
+   },
+   "success_curve": [
+    {
+     "true_effect": 0.0,
+     "p_success": 0.0485
+    },
+    {
+     "true_effect": 2.5,
+     "p_success": 0.1115
+    },
+    {
+     "true_effect": 5.0,
+     "p_success": 0.283
+    },
+    {
+     "true_effect": 7.5,
+     "p_success": 0.531
+    },
+    {
+     "true_effect": 10.0,
+     "p_success": 0.7875
+    },
+    {
+     "true_effect": 12.5,
+     "p_success": 0.9315
+    },
+    {
+     "true_effect": 15.0,
+     "p_success": 0.984
+    }
+   ],
+   "design_check": {
+    "stated_power": 0.8,
+    "simulated_power": 0.7875,
+    "consistent": "True"
+   }
+  },
+  "subgroups": {
+   "status": "NOT_APPLICABLE",
+   "reason": "the primary endpoint is not time-to-event: subgroup results are in the endpoint stage"
+  },
+  "subgroup_estimates": {
+   "context": {
+    "age_group": "adult",
+    "phase": "PHASE4"
+   },
+   "arms": {
+    "ARM1": {
+     "serious_adverse_event": {
+      "status": "RESOLVED",
+      "target": "serious_adverse_event",
+      "family": "prostate",
+      "headline_subgroup": "adult trials",
+      "headline": {
+       "estimate": 0.1901026735126865,
+       "ci50": [
+        0.17878935025449919,
+        0.20195582249350463
+       ],
+       "ci95": [
+        0.15869838760713026,
+        0.2260516591936805
+       ],
+       "between_study_tau_logit": 1.0781840007908152,
+       "single_trial_80": [
+        0.0552779093625373,
+        0.48496231206208235
+       ],
+       "single_trial_percentiles": {
+        "p10": 0.0552806510912069,
+        "p30": 0.11735075463393464,
+        "p50": 0.1901026735126865,
+        "p70": 0.29298596713680286,
+        "p90": 0.4849491989639977
+       },
+       "studies": 65,
+       "arms": 119,
+       "patients": 19241
+      },
+      "breakdown": {
+       "age group": {
+        "adult": {
+         "estimate": 0.1901026735126865,
+         "ci50": [
+          0.17878935025449919,
+          0.20195582249350463
+         ],
+         "ci95": [
+          0.15869838760713026,
+          0.2260516591936805
+         ],
+         "between_study_tau_logit": 1.0781840007908152,
+         "single_trial_80": [
+          0.0552779093625373,
+          0.48496231206208235
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.0552806510912069,
+          "p30": 0.11735075463393464,
+          "p50": 0.1901026735126865,
+          "p70": 0.29298596713680286,
+          "p90": 0.4849491989639977
+         },
+         "studies": 65,
+         "arms": 119,
+         "patients": 19241
+        },
+        "mixed": {
+         "estimate": 0.3366801603586969,
+         "ci50": [
+          0.29506265666762405,
+          0.3809951229865752
+         ],
+         "ci95": [
+          0.2247209953658912,
+          0.4705629786021069
+         ],
+         "between_study_tau_logit": 0.6127302821967221,
+         "single_trial_80": [
+          0.1758610984049416,
+          0.5469603945014908
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.17586584471040054,
+          "p30": 0.2625641351951836,
+          "p50": 0.3366801603586969,
+          "p70": 0.4198074135206001,
+          "p90": 0.5469522797804005
+         },
+         "studies": 3,
+         "arms": 5,
+         "patients": 1523
+        }
+       },
+       "phase": {
+        "PHASE2": {
+         "estimate": 0.22107344618340613,
+         "ci50": [
+          0.20504205505200696,
+          0.2379830323027754
+         ],
+         "ci95": [
+          0.1769175147567397,
+          0.2726000544899065
+         ],
+         "between_study_tau_logit": 0.8783615002379576,
+         "single_trial_80": [
+          0.08319500396264408,
+          0.47025116417565316
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.08319829094692253,
+          "p30": 0.15109996243232884,
+          "p50": 0.22107344618340613,
+          "p70": 0.31155839048792133,
+          "p90": 0.4702404288569585
+         },
+         "studies": 39,
+         "arms": 56,
+         "patients": 1911
+        },
+        "PHASE3": {
+         "estimate": 0.19093804326040809,
+         "ci50": [
+          0.17438393287826684,
+          0.2086664475025881
+         ],
+         "ci95": [
+          0.1460014792240666,
+          0.24572568561026037
+         ],
+         "between_study_tau_logit": 1.0535159285408051,
+         "single_trial_80": [
+          0.05676101442718365,
+          0.4806638853645478
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.0567637795039979,
+          "p30": 0.11887951490651243,
+          "p50": 0.19093804326040809,
+          "p70": 0.2921904732651283,
+          "p90": 0.48065099352322366
+         },
+         "studies": 20,
+         "arms": 43,
+         "patients": 18021
+        },
+        "PHASE1+PHASE2": {
+         "estimate": 0.18229586524215827,
+         "ci50": [
+          0.15605582915458507,
+          0.21184053581385398
+         ],
+         "ci95": [
+          0.11463249398623036,
+          0.27738550158466296
+         ],
+         "between_study_tau_logit": 0.9750320155945905,
+         "single_trial_80": [
+          0.0573237883234412,
+          0.44973734543514055
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.05732644148650977,
+          "p30": 0.11583816181488324,
+          "p50": 0.18229586524215827,
+          "p70": 0.27502142595673634,
+          "p90": 0.449725195191346
+         },
+         "studies": 8,
+         "arms": 23,
+         "patients": 667
+        },
+        "PHASE2+PHASE3": {
+         "estimate": 0.08572345710255723,
+         "ci50": [
+          0.07204061124786794,
+          0.10172024393097633
+         ],
+         "ci95": [
+          0.05139316663513249,
+          0.13961107794615354
+         ],
+         "between_study_tau_logit": 0.0,
+         "single_trial_80": [
+          0.061476457484726826,
+          0.1183280147956046
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.061477239518984476,
+          "p30": 0.07489940676745313,
+          "p50": 0.08572345710255723,
+          "p70": 0.0979461247163715,
+          "p90": 0.11832660075602772
+         },
+         "studies": 1,
+         "arms": 2,
+         "patients": 165
+        }
+       },
+       "drug classes": {
+        "not overlapping": {
+         "estimate": 0.1970120274184726,
+         "ci50": [
+          0.1860581310409185,
+          0.20844566457762742
+         ],
+         "ci95": [
+          0.1664945477859684,
+          0.2315691169284168
+         ],
+         "between_study_tau_logit": 1.0330836439050584,
+         "single_trial_80": [
+          0.06088888435533349,
+          0.4814418438671729
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06089176030965737,
+          "p30": 0.12459585608156601,
+          "p50": 0.1970120274184726,
+          "p70": 0.29722661977188075,
+          "p90": 0.4814292876652002
+         },
+         "studies": 68,
+         "arms": 124,
+         "patients": 20764
+        }
+       }
+      },
+      "protocol_subgroup": {
+       "definition": "adult trials in prostate with overlapping drug classes",
+       "studies": 0,
+       "attention": true,
+       "note": "the evidence holds too few trials like this protocol: the headline borrows from other subgroups"
+      },
+      "family_mixture_studies": 68
+     }
+    },
+    "ARM2": {
+     "serious_adverse_event": {
+      "status": "RESOLVED",
+      "target": "serious_adverse_event",
+      "family": "prostate",
+      "headline_subgroup": "adult trials",
+      "headline": {
+       "estimate": 0.1901026735126865,
+       "ci50": [
+        0.17878935025449919,
+        0.20195582249350463
+       ],
+       "ci95": [
+        0.15869838760713026,
+        0.2260516591936805
+       ],
+       "between_study_tau_logit": 1.0781840007908152,
+       "single_trial_80": [
+        0.0552779093625373,
+        0.48496231206208235
+       ],
+       "single_trial_percentiles": {
+        "p10": 0.0552806510912069,
+        "p30": 0.11735075463393464,
+        "p50": 0.1901026735126865,
+        "p70": 0.29298596713680286,
+        "p90": 0.4849491989639977
+       },
+       "studies": 65,
+       "arms": 119,
+       "patients": 19241
+      },
+      "breakdown": {
+       "age group": {
+        "adult": {
+         "estimate": 0.1901026735126865,
+         "ci50": [
+          0.17878935025449919,
+          0.20195582249350463
+         ],
+         "ci95": [
+          0.15869838760713026,
+          0.2260516591936805
+         ],
+         "between_study_tau_logit": 1.0781840007908152,
+         "single_trial_80": [
+          0.0552779093625373,
+          0.48496231206208235
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.0552806510912069,
+          "p30": 0.11735075463393464,
+          "p50": 0.1901026735126865,
+          "p70": 0.29298596713680286,
+          "p90": 0.4849491989639977
+         },
+         "studies": 65,
+         "arms": 119,
+         "patients": 19241
+        },
+        "mixed": {
+         "estimate": 0.3366801603586969,
+         "ci50": [
+          0.29506265666762405,
+          0.3809951229865752
+         ],
+         "ci95": [
+          0.2247209953658912,
+          0.4705629786021069
+         ],
+         "between_study_tau_logit": 0.6127302821967221,
+         "single_trial_80": [
+          0.1758610984049416,
+          0.5469603945014908
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.17586584471040054,
+          "p30": 0.2625641351951836,
+          "p50": 0.3366801603586969,
+          "p70": 0.4198074135206001,
+          "p90": 0.5469522797804005
+         },
+         "studies": 3,
+         "arms": 5,
+         "patients": 1523
+        }
+       },
+       "phase": {
+        "PHASE2": {
+         "estimate": 0.22107344618340613,
+         "ci50": [
+          0.20504205505200696,
+          0.2379830323027754
+         ],
+         "ci95": [
+          0.1769175147567397,
+          0.2726000544899065
+         ],
+         "between_study_tau_logit": 0.8783615002379576,
+         "single_trial_80": [
+          0.08319500396264408,
+          0.47025116417565316
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.08319829094692253,
+          "p30": 0.15109996243232884,
+          "p50": 0.22107344618340613,
+          "p70": 0.31155839048792133,
+          "p90": 0.4702404288569585
+         },
+         "studies": 39,
+         "arms": 56,
+         "patients": 1911
+        },
+        "PHASE3": {
+         "estimate": 0.19093804326040809,
+         "ci50": [
+          0.17438393287826684,
+          0.2086664475025881
+         ],
+         "ci95": [
+          0.1460014792240666,
+          0.24572568561026037
+         ],
+         "between_study_tau_logit": 1.0535159285408051,
+         "single_trial_80": [
+          0.05676101442718365,
+          0.4806638853645478
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.0567637795039979,
+          "p30": 0.11887951490651243,
+          "p50": 0.19093804326040809,
+          "p70": 0.2921904732651283,
+          "p90": 0.48065099352322366
+         },
+         "studies": 20,
+         "arms": 43,
+         "patients": 18021
+        },
+        "PHASE1+PHASE2": {
+         "estimate": 0.18229586524215827,
+         "ci50": [
+          0.15605582915458507,
+          0.21184053581385398
+         ],
+         "ci95": [
+          0.11463249398623036,
+          0.27738550158466296
+         ],
+         "between_study_tau_logit": 0.9750320155945905,
+         "single_trial_80": [
+          0.0573237883234412,
+          0.44973734543514055
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.05732644148650977,
+          "p30": 0.11583816181488324,
+          "p50": 0.18229586524215827,
+          "p70": 0.27502142595673634,
+          "p90": 0.449725195191346
+         },
+         "studies": 8,
+         "arms": 23,
+         "patients": 667
+        },
+        "PHASE2+PHASE3": {
+         "estimate": 0.08572345710255723,
+         "ci50": [
+          0.07204061124786794,
+          0.10172024393097633
+         ],
+         "ci95": [
+          0.05139316663513249,
+          0.13961107794615354
+         ],
+         "between_study_tau_logit": 0.0,
+         "single_trial_80": [
+          0.061476457484726826,
+          0.1183280147956046
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.061477239518984476,
+          "p30": 0.07489940676745313,
+          "p50": 0.08572345710255723,
+          "p70": 0.0979461247163715,
+          "p90": 0.11832660075602772
+         },
+         "studies": 1,
+         "arms": 2,
+         "patients": 165
+        }
+       },
+       "drug classes": {
+        "not overlapping": {
+         "estimate": 0.1970120274184726,
+         "ci50": [
+          0.1860581310409185,
+          0.20844566457762742
+         ],
+         "ci95": [
+          0.1664945477859684,
+          0.2315691169284168
+         ],
+         "between_study_tau_logit": 1.0330836439050584,
+         "single_trial_80": [
+          0.06088888435533349,
+          0.4814418438671729
+         ],
+         "single_trial_percentiles": {
+          "p10": 0.06089176030965737,
+          "p30": 0.12459585608156601,
+          "p50": 0.1970120274184726,
+          "p70": 0.29722661977188075,
+          "p90": 0.4814292876652002
+         },
+         "studies": 68,
+         "arms": 124,
+         "patients": 20764
+        }
+       }
+      },
+      "protocol_subgroup": {
+       "definition": "adult trials in prostate with overlapping drug classes",
+       "studies": 0,
+       "attention": true,
+       "note": "the evidence holds too few trials like this protocol: the headline borrows from other subgroups"
+      },
+      "family_mixture_studies": 68
+     }
+    }
+   },
+   "evidence": {
+    "evidence_table": {
+     "path": "data\\simulation_parameters_v1\\evidence_table.parquet",
+     "sha256": "11162d3dafdb88e99de4c19311ff5bf714674a86770c71e176706b05e8a5158e",
+     "verified_against": "simulation_parameters_v3 manifest"
+    },
+    "maps": {
+     "disease_families.json": "ebcbb7fe870ceee3f2595dd60d451fef70f85dbe9aba2eba3daf76886edd16ee",
+     "drug_classes.json": "b5453248218f22ed63b82565493cc532040578b59becc78fdd0a8d22b88583d2"
+    }
+   },
+   "note": "estimates are the random-effects average of the most similar subgroup of studies; the 95% confidence interval is for that average, the single-trial range for one new trial (held-out studies: median absolute error 0.16 for any serious event)"
+  }
+ }
+}

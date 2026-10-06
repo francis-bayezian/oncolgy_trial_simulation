@@ -1,0 +1,106 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT04003610\\v4.1.0\\population_base",
+  "family": "urothelial",
+  "phase": "PHASE2",
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.4582130008947848,
+     0.42470249868055826,
+     0.11708450042465693,
+     0.0,
+     0.0
+    ],
+    "trial_range_10_90": [
+     [
+      0.331,
+      0.321,
+      0.036,
+      0.0,
+      0.0
+     ],
+     [
+      0.615,
+      0.599,
+      0.273,
+      0.0,
+      0.0
+     ]
+    ],
+    "trials": 10,
+    "participants": 733,
+    "source": "registry baseline ECOG of enrolled participants (urothelial, PHASE2; 10 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 75.74317947841375,
+    "sd": 18.7644853295554,
+    "trials": 284,
+    "participants": 40952,
+    "source": "registry baseline weight of enrolled participants (all oncology; 284 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 167.10206402942504,
+    "sd": 10.915550440259919,
+    "trials": 199,
+    "participants": 26644,
+    "source": "registry baseline height of enrolled participants (all oncology; 199 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "Carboplatin-eligible versus not eligible",
+    "variable": "umls:C0079083",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "PD-L1 CPS \u2265 10 versus PD-L1 CPS < 10",
+    "variable": "var:pd_l1_cps_category",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 12 trials; prognostic, A28)"
+   },
+   {
+    "factor": "LN-only disease versus other metastatic disease",
+    "variable": "var:metastatic_disease_pattern",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   },
+   {
+    "factor": "age (< 65 years, >= 65 years)",
+    "variable": "demographic:age",
+    "kind": "age",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  ]
+ }
+}

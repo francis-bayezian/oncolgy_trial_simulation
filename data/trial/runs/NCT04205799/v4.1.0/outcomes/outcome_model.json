@@ -1,0 +1,1753 @@
+{
+ "outcomes_version": "outcomes-1.0.0",
+ "inputs": {
+  "studyspec": "0cc9e71cce40a2f7c144150475af7adc2485d80a8fbb3ce3efaa4dc7fa10bbab",
+  "facts": "a0e64479a8ff3d1b55f3baf12e91ca70962e1c9547eb5b199917bb24dd647a44"
+ },
+ "arms": [
+  {
+   "arm_id": "ARM1",
+   "label": "Cabozantinib",
+   "description": "Cabozantinib"
+  },
+  {
+   "arm_id": "ARM2",
+   "label": "BEVACIZUMAB",
+   "description": "PATIENTS UNDER BEVACIZUMAB"
+  }
+ ],
+ "control_arm_id": null,
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "effect": {
+  "grid_hr": [
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9,
+   0.95,
+   1.0,
+   1.1,
+   1.2,
+   1.3
+  ],
+  "design_alternatives": [],
+  "asset_prior": {
+   "status": "RESOLVED",
+   "comparisons": 2,
+   "mu_log_hr": 0.20674381219715898,
+   "se_mu": 0.21897877056154236,
+   "tau2": 0.07196187711261347,
+   "predictive_sd": 0.3462854011783605,
+   "hr_median": 1.229667505607934,
+   "hr_predictive_95": [
+    0.6237765249578874,
+    2.4240767548123467
+   ],
+   "note": "indirect evidence: adding a drug to a radiotherapy-containing regimen in other (adult) cancers; no comparison of the protocol's own experimental addition exists in the asset",
+   "comparisons_used": [
+    {
+     "fusion_id": "12fea832340e8a35",
+     "disease": "Prostate carcinoma",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "bicalutamide"
+     ],
+     "log_hr_add_on": 0.43072993086113065,
+     "se": 0.1617393155611274,
+     "hr_add_on": 1.5383800248805677
+    },
+    {
+     "fusion_id": "9e76aad9af19a22d",
+     "disease": "Malignant Head and Neck Neoplasm",
+     "endpoint": "progression_free_survival",
+     "added": [
+      "cetuximab"
+     ],
+     "log_hr_add_on": -0.0073395526232417265,
+     "se": 0.1477210612501004,
+     "hr_add_on": 0.9926873161180804
+    }
+   ],
+   "decision": "insufficient evidence: shown for reference, not used (user decision 2026-09-27)"
+  },
+  "definition": "S_experimental(t) = S_control(t) ** HR (proportional hazards on the whole EFS curve)"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.037042537422360855,
+  "rate_per_year": 0.037746039937765714,
+  "source": "evidence",
+  "wording": "registry participant flow (gynecologic): left by subject decision, loss to follow-up or physician decision; 630 trials, 85355 participants: 7.3% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "toxicities_protocol": [
+  {
+   "event": "thromboembolic events",
+   "grade": "grade 3 or higher",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.08,
+   "upper": null,
+   "fact_id": "F012"
+  },
+  {
+   "event": "gastrointestinal fistulas",
+   "grade": "grade 3 or higher",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.03,
+   "upper": null,
+   "fact_id": "F014"
+  },
+  {
+   "event": "fistulas",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.14545454545454545,
+   "upper": null,
+   "fact_id": "F016"
+  },
+  {
+   "event": "fistula",
+   "grade": "clinically significant or severe (ie, grade 3)",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.06,
+   "upper": null,
+   "fact_id": "F018"
+  },
+  {
+   "event": "fistula",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "rate": 0.22,
+   "upper": null,
+   "fact_id": "F020"
+  },
+  {
+   "event": "Diarrhea",
+   "grade": "G3 adverse event",
+   "applies_to": "one_arm",
+   "arm_id": "ARM1",
+   "rate": 0.11,
+   "upper": null,
+   "fact_id": "F023"
+  },
+  {
+   "event": "fistula",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM1",
+   "rate": 0.2631578947368421,
+   "upper": null,
+   "fact_id": "F031"
+  }
+ ],
+ "adverse_events_asset": {
+  "ARM1": {
+   "classes": [
+    "other_targeted_small_molecule"
+   ],
+   "unmapped": [],
+   "class_signature": "other_targeted_small_molecule",
+   "event_terms": 1203,
+   "missing_classes": [],
+   "extra_classes": [],
+   "events": [
+    {
+     "event": "fatigue",
+     "seriousness": "non_serious",
+     "rate": 0.4175264212056622,
+     "q025": 0.36192170104717863,
+     "q975": 0.4409499327828618
+    },
+    {
+     "event": "nausea",
+     "seriousness": "non_serious",
+     "rate": 0.39949672302030415,
+     "q025": 0.3195163935034159,
+     "q975": 0.44054497749423305
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "non_serious",
+     "rate": 0.3463160977186476,
+     "q025": 0.31821793714025415,
+     "q975": 0.43807428111658137
+    },
+    {
+     "event": "anemia",
+     "seriousness": "non_serious",
+     "rate": 0.2702608287425721,
+     "q025": 0.21464193134311882,
+     "q975": 0.35290865938109484
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "non_serious",
+     "rate": 0.21756236223545578,
+     "q025": 0.1936902779640262,
+     "q975": 0.28685179195929505
+    },
+    {
+     "event": "constipation",
+     "seriousness": "non_serious",
+     "rate": 0.20512065268688576,
+     "q025": 0.14870296682900436,
+     "q975": 0.22476913105535196
+    },
+    {
+     "event": "decrease_in_appetite",
+     "seriousness": "non_serious",
+     "rate": 0.1622233268485876,
+     "q025": 0.12019876305999855,
+     "q975": 0.2231691089901327
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "rate": 0.16162924004485152,
+     "q025": 0.11471034537206902,
+     "q975": 0.22131925655252796
+    },
+    {
+     "event": "coughing",
+     "seriousness": "non_serious",
+     "rate": 0.15940401836519943,
+     "q025": 0.12681355915104298,
+     "q975": 0.20251922911855627
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "non_serious",
+     "rate": 0.15934370609978252,
+     "q025": 0.12301010088118264,
+     "q975": 0.206729506925919
+    },
+    {
+     "event": "headache",
+     "seriousness": "non_serious",
+     "rate": 0.15841418771784033,
+     "q025": 0.1149434776960475,
+     "q975": 0.17234035797198666
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "non_serious",
+     "rate": 0.1562315897799046,
+     "q025": 0.1121191080540365,
+     "q975": 0.17199371921558732
+    },
+    {
+     "event": "fever",
+     "seriousness": "non_serious",
+     "rate": 0.1291473501376284,
+     "q025": 0.10966033674749477,
+     "q975": 0.17178413076171958
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "non_serious",
+     "rate": 0.124156176364667,
+     "q025": 0.08785282640855627,
+     "q975": 0.1713066030557196
+    },
+    {
+     "event": "peripheral_edema",
+     "seriousness": "non_serious",
+     "rate": 0.12276309136141711,
+     "q025": 0.10941243691475216,
+     "q975": 0.170743339895301
+    },
+    {
+     "event": "dizziness",
+     "seriousness": "non_serious",
+     "rate": 0.11691357629676993,
+     "q025": 0.08198090513791192,
+     "q975": 0.12951629500754921
+    },
+    {
+     "event": "hypokalemia",
+     "seriousness": "non_serious",
+     "rate": 0.11631003557688888,
+     "q025": 0.08241575080124126,
+     "q975": 0.15147026846285888
+    },
+    {
+     "event": "aspartate_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "rate": 0.11402699077526116,
+     "q025": 0.08154511978944279,
+     "q975": 0.13045538068456317
+    },
+    {
+     "event": "blood_bilirubin_increased",
+     "seriousness": "non_serious",
+     "rate": 0.09618239419499955,
+     "q025": 0.06455239571174383,
+     "q975": 0.16124859353233104
+    },
+    {
+     "event": "sleeplessness",
+     "seriousness": "non_serious",
+     "rate": 0.09366070953007896,
+     "q025": 0.081381116898511,
+     "q975": 0.1284905711096239
+    },
+    {
+     "event": "back_pain",
+     "seriousness": "non_serious",
+     "rate": 0.09215850785902567,
+     "q025": 0.08118509477471622,
+     "q975": 0.12833965008111256
+    },
+    {
+     "event": "arthralgia",
+     "seriousness": "non_serious",
+     "rate": 0.08857407804746184,
+     "q025": 0.0627035270980561,
+     "q975": 0.12353236789191425
+    },
+    {
+     "event": "alanine_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "rate": 0.08846756627062097,
+     "q025": 0.061441737491239955,
+     "q975": 0.1238049800132128
+    },
+    {
+     "event": "dysgeusia",
+     "seriousness": "non_serious",
+     "rate": 0.08772452520559189,
+     "q025": 0.061160922579489366,
+     "q975": 0.11266573669958758
+    },
+    {
+     "event": "stomatitis",
+     "seriousness": "non_serious",
+     "rate": 0.08722447493754827,
+     "q025": 0.05180590067662123,
+     "q975": 0.1270815301061912
+    },
+    {
+     "event": "alopecia",
+     "seriousness": "non_serious",
+     "rate": 0.08651031221126781,
+     "q025": 0.05183886718879717,
+     "q975": 0.12747566521623688
+    },
+    {
+     "event": "weight_loss",
+     "seriousness": "non_serious",
+     "rate": 0.08523092604635805,
+     "q025": 0.060159098221476304,
+     "q975": 0.09624815802672364
+    },
+    {
+     "event": "rash_erythematous_macules_or_papules",
+     "seriousness": "non_serious",
+     "rate": 0.08481629287882583,
+     "q025": 0.0598732468205332,
+     "q975": 0.09710722839002447
+    },
+    {
+     "event": "leukopenia",
+     "seriousness": "non_serious",
+     "rate": 0.08473936285048794,
+     "q025": 0.046936667696910746,
+     "q975": 0.12823163482880365
+    },
+    {
+     "event": "hypomagnesemia",
+     "seriousness": "non_serious",
+     "rate": 0.0835536844889252,
+     "q025": 0.05945144619267478,
+     "q975": 0.11294371549985627
+    },
+    {
+     "event": "hypocalcemia",
+     "seriousness": "non_serious",
+     "rate": 0.0833925572185707,
+     "q025": 0.0517556564416662,
+     "q975": 0.12153691779471516
+    },
+    {
+     "event": "hyponatremia",
+     "seriousness": "non_serious",
+     "rate": 0.07088334048239332,
+     "q025": 0.05941256321365643,
+     "q975": 0.09630688967361374
+    },
+    {
+     "event": "pain_in_limb",
+     "seriousness": "non_serious",
+     "rate": 0.06926541792571769,
+     "q025": 0.059377461096737354,
+     "q975": 0.09609606120608274
+    },
+    {
+     "event": "epistaxis",
+     "seriousness": "non_serious",
+     "rate": 0.06885644730491296,
+     "q025": 0.05924112622214296,
+     "q975": 0.09598269230356
+    },
+    {
+     "event": "hypophosphatemia",
+     "seriousness": "non_serious",
+     "rate": 0.06873712096845881,
+     "q025": 0.04717622731494558,
+     "q975": 0.11119550598136553
+    },
+    {
+     "event": "asthenia",
+     "seriousness": "non_serious",
+     "rate": 0.06684939793987371,
+     "q025": 0.045792501543691876,
+     "q975": 0.09533738986079981
+    },
+    {
+     "event": "neutrophil_count_decreased",
+     "seriousness": "non_serious",
+     "rate": 0.06674811179314469,
+     "q025": 0.04545689257664502,
+     "q975": 0.09581126630243075
+    },
+    {
+     "event": "dyspepsia",
+     "seriousness": "non_serious",
+     "rate": 0.06659174561389017,
+     "q025": 0.05938882816858859,
+     "q975": 0.0947874961205877
+    },
+    {
+     "event": "pruritus",
+     "seriousness": "non_serious",
+     "rate": 0.06624428573356062,
+     "q025": 0.05074380111060617,
+     "q975": 0.0944602429697895
+    },
+    {
+     "event": "upper_respiratory_infections",
+     "seriousness": "non_serious",
+     "rate": 0.06559251359049359,
+     "q025": 0.04957596441341591,
+     "q975": 0.09261716273926808
+    },
+    {
+     "event": "hyperglycemia",
+     "seriousness": "non_serious",
+     "rate": 0.06462302028043648,
+     "q025": 0.04421056003451516,
+     "q975": 0.09344278191269507
+    },
+    {
+     "event": "anxiety",
+     "seriousness": "non_serious",
+     "rate": 0.06417879865962058,
+     "q025": 0.044562801999035596,
+     "q975": 0.08405622381072017
+    },
+    {
+     "event": "hypertension_variable",
+     "seriousness": "non_serious",
+     "rate": 0.06322688103020829,
+     "q025": 0.04375515548745349,
+     "q975": 0.09102801996066663
+    },
+    {
+     "event": "dehydration",
+     "seriousness": "non_serious",
+     "rate": 0.0616404865873782,
+     "q025": 0.04365765593822128,
+     "q975": 0.07087690578815876
+    },
+    {
+     "event": "abdomen_distended",
+     "seriousness": "non_serious",
+     "rate": 0.06109915597583243,
+     "q025": 0.04365334466322957,
+     "q975": 0.07074028841115232
+    },
+    {
+     "event": "lipase_increased",
+     "seriousness": "non_serious",
+     "rate": 0.06026030220127904,
+     "q025": 0.03213791157260103,
+     "q975": 0.09367770259596044
+    },
+    {
+     "event": "urinary_tract_infection",
+     "seriousness": "non_serious",
+     "rate": 0.05977512061033352,
+     "q025": 0.043596755671827386,
+     "q975": 0.07080906456852483
+    },
+    {
+     "event": "hyperuricemia",
+     "seriousness": "non_serious",
+     "rate": 0.0591738759415637,
+     "q025": 0.033990226423917545,
+     "q975": 0.08876675166299086
+    },
+    {
+     "event": "depression_dominant",
+     "seriousness": "non_serious",
+     "rate": 0.05193697982944315,
+     "q025": 0.043451498692482306,
+     "q975": 0.07062489517706988
+    },
+    {
+     "event": "decreased_platelet_count",
+     "seriousness": "non_serious",
+     "rate": 0.05162655204319335,
+     "q025": 0.03280386739135545,
+     "q975": 0.08852282680149327
+    },
+    {
+     "event": "dry_skin",
+     "seriousness": "non_serious",
+     "rate": 0.05091290423104713,
+     "q025": 0.03765004295085475,
+     "q975": 0.07076234226862786
+    },
+    {
+     "event": "hypoalbuminemia",
+     "seriousness": "non_serious",
+     "rate": 0.05012315939928111,
+     "q025": 0.033700489070253865,
+     "q975": 0.07074569049729545
+    },
+    {
+     "event": "pneumonia",
+     "seriousness": "serious",
+     "rate": 0.06929379288895532,
+     "q025": 0.04597290199373358,
+     "q975": 0.11494064646149856
+    },
+    {
+     "event": "febrile_neutropenia",
+     "seriousness": "serious",
+     "rate": 0.06890916731233188,
+     "q025": 0.04510447642888762,
+     "q975": 0.11651588438497261
+    },
+    {
+     "event": "sepsis",
+     "seriousness": "serious",
+     "rate": 0.04439351464664281,
+     "q025": 0.025510984821654648,
+     "q975": 0.06975812714127361
+    },
+    {
+     "event": "anemia",
+     "seriousness": "serious",
+     "rate": 0.03511037401719463,
+     "q025": 0.02253812155404293,
+     "q975": 0.0647190372946079
+    },
+    {
+     "event": "fever",
+     "seriousness": "serious",
+     "rate": 0.03393614077512172,
+     "q025": 0.022828436145423847,
+     "q975": 0.05141616184314584
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "serious",
+     "rate": 0.03261265525917206,
+     "q025": 0.013945778693768361,
+     "q975": 0.0666218686980307
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "serious",
+     "rate": 0.025936915670347897,
+     "q025": 0.012152596492946437,
+     "q975": 0.06162664310815284
+    },
+    {
+     "event": "leukocytosis",
+     "seriousness": "serious",
+     "rate": 0.02582090895523437,
+     "q025": 0.012978349972285634,
+     "q975": 0.05093824150141221
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "serious",
+     "rate": 0.023665338852637302,
+     "q025": 0.012823121056019087,
+     "q975": 0.03666770134754607
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "serious",
+     "rate": 0.02317358562953897,
+     "q025": 0.012476149304840544,
+     "q975": 0.03626310670346501
+    },
+    {
+     "event": "acute_kidney_injury",
+     "seriousness": "serious",
+     "rate": 0.022667991168506013,
+     "q025": 0.011987031834279568,
+     "q975": 0.03776431062148315
+    },
+    {
+     "event": "fatigue",
+     "seriousness": "serious",
+     "rate": 0.019246657728764785,
+     "q025": 0.010275324558159899,
+     "q975": 0.03721851932378358
+    },
+    {
+     "event": "nausea",
+     "seriousness": "serious",
+     "rate": 0.01903067803887043,
+     "q025": 0.012183884638492654,
+     "q975": 0.034984422821767044
+    },
+    {
+     "event": "tumor_lysis_syndrome",
+     "seriousness": "serious",
+     "rate": 0.01885575534476002,
+     "q025": 0.011754295343428242,
+     "q975": 0.0371367703002685
+    },
+    {
+     "event": "leukopenia",
+     "seriousness": "serious",
+     "rate": 0.018264114487903757,
+     "q025": 0.004420784944536786,
+     "q975": 0.05060995797996423
+    },
+    {
+     "event": "hypotension",
+     "seriousness": "serious",
+     "rate": 0.01811113629118649,
+     "q025": 0.008944125036357355,
+     "q975": 0.03647889361491432
+    },
+    {
+     "event": "neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",
+     "seriousness": "serious",
+     "rate": 0.01753001383824497,
+     "q025": 0.004632554568779579,
+     "q975": 0.049322554561646546
+    },
+    {
+     "event": "respiratory_failure",
+     "seriousness": "serious",
+     "rate": 0.01742110065973784,
+     "q025": 0.00869008659620637,
+     "q975": 0.03573753653060063
+    },
+    {
+     "event": "gastrointestinal_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.01728588820661714,
+     "q025": 0.008560286962311078,
+     "q975": 0.03560847210916252
+    },
+    {
+     "event": "dehydration",
+     "seriousness": "serious",
+     "rate": 0.016984809011782676,
+     "q025": 0.008727210372344,
+     "q975": 0.03401201481207028
+    },
+    {
+     "event": "confusion",
+     "seriousness": "serious",
+     "rate": 0.016431085612223964,
+     "q025": 0.007336085452183419,
+     "q975": 0.034503881682904435
+    },
+    {
+     "event": "urinary_tract_infection",
+     "seriousness": "serious",
+     "rate": 0.014231789987620341,
+     "q025": 0.008450606995743237,
+     "q975": 0.0265539996916924
+    },
+    {
+     "event": "falls",
+     "seriousness": "serious",
+     "rate": 0.013790240648733479,
+     "q025": 0.004635933971751302,
+     "q975": 0.036498261873454646
+    },
+    {
+     "event": "stomatitis",
+     "seriousness": "serious",
+     "rate": 0.013682054993399835,
+     "q025": 0.0064238890581837455,
+     "q975": 0.03276978557950737
+    },
+    {
+     "event": "atrial_fibrillation",
+     "seriousness": "serious",
+     "rate": 0.013447302600677235,
+     "q025": 0.006812388434858446,
+     "q975": 0.026769928173330144
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "serious",
+     "rate": 0.013231843701147342,
+     "q025": 0.0070144566902420645,
+     "q975": 0.025626916620065117
+    },
+    {
+     "event": "clostridium_difficile_colitis",
+     "seriousness": "serious",
+     "rate": 0.013120874884069253,
+     "q025": 0.006079771969105398,
+     "q975": 0.03418786967033463
+    },
+    {
+     "event": "hypoxia",
+     "seriousness": "serious",
+     "rate": 0.012976894561617127,
+     "q025": 0.004890022645933893,
+     "q975": 0.03420067431313303
+    },
+    {
+     "event": "decrease_in_appetite",
+     "seriousness": "serious",
+     "rate": 0.012781985048389018,
+     "q025": 0.005002058023137345,
+     "q975": 0.03209005416767132
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "serious",
+     "rate": 0.012654718283053205,
+     "q025": 0.006777280663763687,
+     "q975": 0.01979140865648562
+    },
+    {
+     "event": "bacteremia",
+     "seriousness": "serious",
+     "rate": 0.012616756748616783,
+     "q025": 0.006110325626840084,
+     "q975": 0.02679984188237311
+    },
+    {
+     "event": "clostridium_difficile_infection",
+     "seriousness": "serious",
+     "rate": 0.012362393839777955,
+     "q025": 0.003775317065273962,
+     "q975": 0.035377800038768184
+    },
+    {
+     "event": "infection_w/_grade_3_or_4_neutropenia",
+     "seriousness": "serious",
+     "rate": 0.012256930519955482,
+     "q025": 0.0031787750341270293,
+     "q975": 0.036930647167153274
+    },
+    {
+     "event": "pancytopenia",
+     "seriousness": "serious",
+     "rate": 0.01223601046914735,
+     "q025": 0.0046396025159209,
+     "q975": 0.03173831114217206
+    },
+    {
+     "event": "disease_progression",
+     "seriousness": "serious",
+     "rate": 0.01215054410538878,
+     "q025": 0.004685309372618618,
+     "q975": 0.03163385041140673
+    },
+    {
+     "event": "lung_diseases",
+     "seriousness": "serious",
+     "rate": 0.011993046665382505,
+     "q025": 0.0032069227632218695,
+     "q975": 0.03579186913137362
+    },
+    {
+     "event": "pleural_effusion_disorder",
+     "seriousness": "serious",
+     "rate": 0.010276569383268305,
+     "q025": 0.004475368953878341,
+     "q975": 0.027569204791843036
+    },
+    {
+     "event": "hypotension_orthostatic",
+     "seriousness": "serious",
+     "rate": 0.010211863106370933,
+     "q025": 0.0033052696578111437,
+     "q975": 0.03653150004499649
+    },
+    {
+     "event": "blood_bilirubin_increased",
+     "seriousness": "serious",
+     "rate": 0.010123008461216708,
+     "q025": 0.004754803111202274,
+     "q975": 0.026279711791035713
+    },
+    {
+     "event": "lung_diseases_interstitial",
+     "seriousness": "serious",
+     "rate": 0.010085517794074277,
+     "q025": 0.0024528692949160034,
+     "q975": 0.036166259120174175
+    },
+    {
+     "event": "tumor_progression",
+     "seriousness": "serious",
+     "rate": 0.010029055103293473,
+     "q025": 0.0031824645534342683,
+     "q975": 0.034852895046757246
+    },
+    {
+     "event": "general_physical_health_deterioration",
+     "seriousness": "serious",
+     "rate": 0.010019028102030092,
+     "q025": 0.0031109443507717186,
+     "q975": 0.03559057739019417
+    }
+   ],
+   "note": "adult registry evidence at treatment-class level, extrapolated to this protocol's population"
+  },
+  "ARM2": {
+   "classes": [
+    "other_targeted_small_molecule"
+   ],
+   "unmapped": [],
+   "class_signature": "other_targeted_small_molecule",
+   "event_terms": 1203,
+   "missing_classes": [],
+   "extra_classes": [],
+   "events": [
+    {
+     "event": "fatigue",
+     "seriousness": "non_serious",
+     "rate": 0.4175264212056622,
+     "q025": 0.36192170104717863,
+     "q975": 0.4409499327828618
+    },
+    {
+     "event": "nausea",
+     "seriousness": "non_serious",
+     "rate": 0.39949672302030415,
+     "q025": 0.3195163935034159,
+     "q975": 0.44054497749423305
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "non_serious",
+     "rate": 0.3463160977186476,
+     "q025": 0.31821793714025415,
+     "q975": 0.43807428111658137
+    },
+    {
+     "event": "anemia",
+     "seriousness": "non_serious",
+     "rate": 0.2702608287425721,
+     "q025": 0.21464193134311882,
+     "q975": 0.35290865938109484
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "non_serious",
+     "rate": 0.21756236223545578,
+     "q025": 0.1936902779640262,
+     "q975": 0.28685179195929505
+    },
+    {
+     "event": "constipation",
+     "seriousness": "non_serious",
+     "rate": 0.20512065268688576,
+     "q025": 0.14870296682900436,
+     "q975": 0.22476913105535196
+    },
+    {
+     "event": "decrease_in_appetite",
+     "seriousness": "non_serious",
+     "rate": 0.1622233268485876,
+     "q025": 0.12019876305999855,
+     "q975": 0.2231691089901327
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "non_serious",
+     "rate": 0.16162924004485152,
+     "q025": 0.11471034537206902,
+     "q975": 0.22131925655252796
+    },
+    {
+     "event": "coughing",
+     "seriousness": "non_serious",
+     "rate": 0.15940401836519943,
+     "q025": 0.12681355915104298,
+     "q975": 0.20251922911855627
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "non_serious",
+     "rate": 0.15934370609978252,
+     "q025": 0.12301010088118264,
+     "q975": 0.206729506925919
+    },
+    {
+     "event": "headache",
+     "seriousness": "non_serious",
+     "rate": 0.15841418771784033,
+     "q025": 0.1149434776960475,
+     "q975": 0.17234035797198666
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "non_serious",
+     "rate": 0.1562315897799046,
+     "q025": 0.1121191080540365,
+     "q975": 0.17199371921558732
+    },
+    {
+     "event": "fever",
+     "seriousness": "non_serious",
+     "rate": 0.1291473501376284,
+     "q025": 0.10966033674749477,
+     "q975": 0.17178413076171958
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "non_serious",
+     "rate": 0.124156176364667,
+     "q025": 0.08785282640855627,
+     "q975": 0.1713066030557196
+    },
+    {
+     "event": "peripheral_edema",
+     "seriousness": "non_serious",
+     "rate": 0.12276309136141711,
+     "q025": 0.10941243691475216,
+     "q975": 0.170743339895301
+    },
+    {
+     "event": "dizziness",
+     "seriousness": "non_serious",
+     "rate": 0.11691357629676993,
+     "q025": 0.08198090513791192,
+     "q975": 0.12951629500754921
+    },
+    {
+     "event": "hypokalemia",
+     "seriousness": "non_serious",
+     "rate": 0.11631003557688888,
+     "q025": 0.08241575080124126,
+     "q975": 0.15147026846285888
+    },
+    {
+     "event": "aspartate_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "rate": 0.11402699077526116,
+     "q025": 0.08154511978944279,
+     "q975": 0.13045538068456317
+    },
+    {
+     "event": "blood_bilirubin_increased",
+     "seriousness": "non_serious",
+     "rate": 0.09618239419499955,
+     "q025": 0.06455239571174383,
+     "q975": 0.16124859353233104
+    },
+    {
+     "event": "sleeplessness",
+     "seriousness": "non_serious",
+     "rate": 0.09366070953007896,
+     "q025": 0.081381116898511,
+     "q975": 0.1284905711096239
+    },
+    {
+     "event": "back_pain",
+     "seriousness": "non_serious",
+     "rate": 0.09215850785902567,
+     "q025": 0.08118509477471622,
+     "q975": 0.12833965008111256
+    },
+    {
+     "event": "arthralgia",
+     "seriousness": "non_serious",
+     "rate": 0.08857407804746184,
+     "q025": 0.0627035270980561,
+     "q975": 0.12353236789191425
+    },
+    {
+     "event": "alanine_aminotransferase_increased",
+     "seriousness": "non_serious",
+     "rate": 0.08846756627062097,
+     "q025": 0.061441737491239955,
+     "q975": 0.1238049800132128
+    },
+    {
+     "event": "dysgeusia",
+     "seriousness": "non_serious",
+     "rate": 0.08772452520559189,
+     "q025": 0.061160922579489366,
+     "q975": 0.11266573669958758
+    },
+    {
+     "event": "stomatitis",
+     "seriousness": "non_serious",
+     "rate": 0.08722447493754827,
+     "q025": 0.05180590067662123,
+     "q975": 0.1270815301061912
+    },
+    {
+     "event": "alopecia",
+     "seriousness": "non_serious",
+     "rate": 0.08651031221126781,
+     "q025": 0.05183886718879717,
+     "q975": 0.12747566521623688
+    },
+    {
+     "event": "weight_loss",
+     "seriousness": "non_serious",
+     "rate": 0.08523092604635805,
+     "q025": 0.060159098221476304,
+     "q975": 0.09624815802672364
+    },
+    {
+     "event": "rash_erythematous_macules_or_papules",
+     "seriousness": "non_serious",
+     "rate": 0.08481629287882583,
+     "q025": 0.0598732468205332,
+     "q975": 0.09710722839002447
+    },
+    {
+     "event": "leukopenia",
+     "seriousness": "non_serious",
+     "rate": 0.08473936285048794,
+     "q025": 0.046936667696910746,
+     "q975": 0.12823163482880365
+    },
+    {
+     "event": "hypomagnesemia",
+     "seriousness": "non_serious",
+     "rate": 0.0835536844889252,
+     "q025": 0.05945144619267478,
+     "q975": 0.11294371549985627
+    },
+    {
+     "event": "hypocalcemia",
+     "seriousness": "non_serious",
+     "rate": 0.0833925572185707,
+     "q025": 0.0517556564416662,
+     "q975": 0.12153691779471516
+    },
+    {
+     "event": "hyponatremia",
+     "seriousness": "non_serious",
+     "rate": 0.07088334048239332,
+     "q025": 0.05941256321365643,
+     "q975": 0.09630688967361374
+    },
+    {
+     "event": "pain_in_limb",
+     "seriousness": "non_serious",
+     "rate": 0.06926541792571769,
+     "q025": 0.059377461096737354,
+     "q975": 0.09609606120608274
+    },
+    {
+     "event": "epistaxis",
+     "seriousness": "non_serious",
+     "rate": 0.06885644730491296,
+     "q025": 0.05924112622214296,
+     "q975": 0.09598269230356
+    },
+    {
+     "event": "hypophosphatemia",
+     "seriousness": "non_serious",
+     "rate": 0.06873712096845881,
+     "q025": 0.04717622731494558,
+     "q975": 0.11119550598136553
+    },
+    {
+     "event": "asthenia",
+     "seriousness": "non_serious",
+     "rate": 0.06684939793987371,
+     "q025": 0.045792501543691876,
+     "q975": 0.09533738986079981
+    },
+    {
+     "event": "neutrophil_count_decreased",
+     "seriousness": "non_serious",
+     "rate": 0.06674811179314469,
+     "q025": 0.04545689257664502,
+     "q975": 0.09581126630243075
+    },
+    {
+     "event": "dyspepsia",
+     "seriousness": "non_serious",
+     "rate": 0.06659174561389017,
+     "q025": 0.05938882816858859,
+     "q975": 0.0947874961205877
+    },
+    {
+     "event": "pruritus",
+     "seriousness": "non_serious",
+     "rate": 0.06624428573356062,
+     "q025": 0.05074380111060617,
+     "q975": 0.0944602429697895
+    },
+    {
+     "event": "upper_respiratory_infections",
+     "seriousness": "non_serious",
+     "rate": 0.06559251359049359,
+     "q025": 0.04957596441341591,
+     "q975": 0.09261716273926808
+    },
+    {
+     "event": "hyperglycemia",
+     "seriousness": "non_serious",
+     "rate": 0.06462302028043648,
+     "q025": 0.04421056003451516,
+     "q975": 0.09344278191269507
+    },
+    {
+     "event": "anxiety",
+     "seriousness": "non_serious",
+     "rate": 0.06417879865962058,
+     "q025": 0.044562801999035596,
+     "q975": 0.08405622381072017
+    },
+    {
+     "event": "hypertension_variable",
+     "seriousness": "non_serious",
+     "rate": 0.06322688103020829,
+     "q025": 0.04375515548745349,
+     "q975": 0.09102801996066663
+    },
+    {
+     "event": "dehydration",
+     "seriousness": "non_serious",
+     "rate": 0.0616404865873782,
+     "q025": 0.04365765593822128,
+     "q975": 0.07087690578815876
+    },
+    {
+     "event": "abdomen_distended",
+     "seriousness": "non_serious",
+     "rate": 0.06109915597583243,
+     "q025": 0.04365334466322957,
+     "q975": 0.07074028841115232
+    },
+    {
+     "event": "lipase_increased",
+     "seriousness": "non_serious",
+     "rate": 0.06026030220127904,
+     "q025": 0.03213791157260103,
+     "q975": 0.09367770259596044
+    },
+    {
+     "event": "urinary_tract_infection",
+     "seriousness": "non_serious",
+     "rate": 0.05977512061033352,
+     "q025": 0.043596755671827386,
+     "q975": 0.07080906456852483
+    },
+    {
+     "event": "hyperuricemia",
+     "seriousness": "non_serious",
+     "rate": 0.0591738759415637,
+     "q025": 0.033990226423917545,
+     "q975": 0.08876675166299086
+    },
+    {
+     "event": "depression_dominant",
+     "seriousness": "non_serious",
+     "rate": 0.05193697982944315,
+     "q025": 0.043451498692482306,
+     "q975": 0.07062489517706988
+    },
+    {
+     "event": "decreased_platelet_count",
+     "seriousness": "non_serious",
+     "rate": 0.05162655204319335,
+     "q025": 0.03280386739135545,
+     "q975": 0.08852282680149327
+    },
+    {
+     "event": "dry_skin",
+     "seriousness": "non_serious",
+     "rate": 0.05091290423104713,
+     "q025": 0.03765004295085475,
+     "q975": 0.07076234226862786
+    },
+    {
+     "event": "hypoalbuminemia",
+     "seriousness": "non_serious",
+     "rate": 0.05012315939928111,
+     "q025": 0.033700489070253865,
+     "q975": 0.07074569049729545
+    },
+    {
+     "event": "pneumonia",
+     "seriousness": "serious",
+     "rate": 0.06929379288895532,
+     "q025": 0.04597290199373358,
+     "q975": 0.11494064646149856
+    },
+    {
+     "event": "febrile_neutropenia",
+     "seriousness": "serious",
+     "rate": 0.06890916731233188,
+     "q025": 0.04510447642888762,
+     "q975": 0.11651588438497261
+    },
+    {
+     "event": "sepsis",
+     "seriousness": "serious",
+     "rate": 0.04439351464664281,
+     "q025": 0.025510984821654648,
+     "q975": 0.06975812714127361
+    },
+    {
+     "event": "anemia",
+     "seriousness": "serious",
+     "rate": 0.03511037401719463,
+     "q025": 0.02253812155404293,
+     "q975": 0.0647190372946079
+    },
+    {
+     "event": "fever",
+     "seriousness": "serious",
+     "rate": 0.03393614077512172,
+     "q025": 0.022828436145423847,
+     "q975": 0.05141616184314584
+    },
+    {
+     "event": "neutropenia",
+     "seriousness": "serious",
+     "rate": 0.03261265525917206,
+     "q025": 0.013945778693768361,
+     "q975": 0.0666218686980307
+    },
+    {
+     "event": "thrombocytopenia",
+     "seriousness": "serious",
+     "rate": 0.025936915670347897,
+     "q025": 0.012152596492946437,
+     "q975": 0.06162664310815284
+    },
+    {
+     "event": "leukocytosis",
+     "seriousness": "serious",
+     "rate": 0.02582090895523437,
+     "q025": 0.012978349972285634,
+     "q975": 0.05093824150141221
+    },
+    {
+     "event": "diarrhea",
+     "seriousness": "serious",
+     "rate": 0.023665338852637302,
+     "q025": 0.012823121056019087,
+     "q975": 0.03666770134754607
+    },
+    {
+     "event": "dyspnea",
+     "seriousness": "serious",
+     "rate": 0.02317358562953897,
+     "q025": 0.012476149304840544,
+     "q975": 0.03626310670346501
+    },
+    {
+     "event": "acute_kidney_injury",
+     "seriousness": "serious",
+     "rate": 0.022667991168506013,
+     "q025": 0.011987031834279568,
+     "q975": 0.03776431062148315
+    },
+    {
+     "event": "fatigue",
+     "seriousness": "serious",
+     "rate": 0.019246657728764785,
+     "q025": 0.010275324558159899,
+     "q975": 0.03721851932378358
+    },
+    {
+     "event": "nausea",
+     "seriousness": "serious",
+     "rate": 0.01903067803887043,
+     "q025": 0.012183884638492654,
+     "q975": 0.034984422821767044
+    },
+    {
+     "event": "tumor_lysis_syndrome",
+     "seriousness": "serious",
+     "rate": 0.01885575534476002,
+     "q025": 0.011754295343428242,
+     "q975": 0.0371367703002685
+    },
+    {
+     "event": "leukopenia",
+     "seriousness": "serious",
+     "rate": 0.018264114487903757,
+     "q025": 0.004420784944536786,
+     "q975": 0.05060995797996423
+    },
+    {
+     "event": "hypotension",
+     "seriousness": "serious",
+     "rate": 0.01811113629118649,
+     "q025": 0.008944125036357355,
+     "q975": 0.03647889361491432
+    },
+    {
+     "event": "neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",
+     "seriousness": "serious",
+     "rate": 0.01753001383824497,
+     "q025": 0.004632554568779579,
+     "q975": 0.049322554561646546
+    },
+    {
+     "event": "respiratory_failure",
+     "seriousness": "serious",
+     "rate": 0.01742110065973784,
+     "q025": 0.00869008659620637,
+     "q975": 0.03573753653060063
+    },
+    {
+     "event": "gastrointestinal_hemorrhage",
+     "seriousness": "serious",
+     "rate": 0.01728588820661714,
+     "q025": 0.008560286962311078,
+     "q975": 0.03560847210916252
+    },
+    {
+     "event": "dehydration",
+     "seriousness": "serious",
+     "rate": 0.016984809011782676,
+     "q025": 0.008727210372344,
+     "q975": 0.03401201481207028
+    },
+    {
+     "event": "confusion",
+     "seriousness": "serious",
+     "rate": 0.016431085612223964,
+     "q025": 0.007336085452183419,
+     "q975": 0.034503881682904435
+    },
+    {
+     "event": "urinary_tract_infection",
+     "seriousness": "serious",
+     "rate": 0.014231789987620341,
+     "q025": 0.008450606995743237,
+     "q975": 0.0265539996916924
+    },
+    {
+     "event": "falls",
+     "seriousness": "serious",
+     "rate": 0.013790240648733479,
+     "q025": 0.004635933971751302,
+     "q975": 0.036498261873454646
+    },
+    {
+     "event": "stomatitis",
+     "seriousness": "serious",
+     "rate": 0.013682054993399835,
+     "q025": 0.0064238890581837455,
+     "q975": 0.03276978557950737
+    },
+    {
+     "event": "atrial_fibrillation",
+     "seriousness": "serious",
+     "rate": 0.013447302600677235,
+     "q025": 0.006812388434858446,
+     "q975": 0.026769928173330144
+    },
+    {
+     "event": "vomiting",
+     "seriousness": "serious",
+     "rate": 0.013231843701147342,
+     "q025": 0.0070144566902420645,
+     "q975": 0.025626916620065117
+    },
+    {
+     "event": "clostridium_difficile_colitis",
+     "seriousness": "serious",
+     "rate": 0.013120874884069253,
+     "q025": 0.006079771969105398,
+     "q975": 0.03418786967033463
+    },
+    {
+     "event": "hypoxia",
+     "seriousness": "serious",
+     "rate": 0.012976894561617127,
+     "q025": 0.004890022645933893,
+     "q975": 0.03420067431313303
+    },
+    {
+     "event": "decrease_in_appetite",
+     "seriousness": "serious",
+     "rate": 0.012781985048389018,
+     "q025": 0.005002058023137345,
+     "q975": 0.03209005416767132
+    },
+    {
+     "event": "abdominal_pain",
+     "seriousness": "serious",
+     "rate": 0.012654718283053205,
+     "q025": 0.006777280663763687,
+     "q975": 0.01979140865648562
+    },
+    {
+     "event": "bacteremia",
+     "seriousness": "serious",
+     "rate": 0.012616756748616783,
+     "q025": 0.006110325626840084,
+     "q975": 0.02679984188237311
+    },
+    {
+     "event": "clostridium_difficile_infection",
+     "seriousness": "serious",
+     "rate": 0.012362393839777955,
+     "q025": 0.003775317065273962,
+     "q975": 0.035377800038768184
+    },
+    {
+     "event": "infection_w/_grade_3_or_4_neutropenia",
+     "seriousness": "serious",
+     "rate": 0.012256930519955482,
+     "q025": 0.0031787750341270293,
+     "q975": 0.036930647167153274
+    },
+    {
+     "event": "pancytopenia",
+     "seriousness": "serious",
+     "rate": 0.01223601046914735,
+     "q025": 0.0046396025159209,
+     "q975": 0.03173831114217206
+    },
+    {
+     "event": "disease_progression",
+     "seriousness": "serious",
+     "rate": 0.01215054410538878,
+     "q025": 0.004685309372618618,
+     "q975": 0.03163385041140673
+    },
+    {
+     "event": "lung_diseases",
+     "seriousness": "serious",
+     "rate": 0.011993046665382505,
+     "q025": 0.0032069227632218695,
+     "q975": 0.03579186913137362
+    },
+    {
+     "event": "pleural_effusion_disorder",
+     "seriousness": "serious",
+     "rate": 0.010276569383268305,
+     "q025": 0.004475368953878341,
+     "q975": 0.027569204791843036
+    },
+    {
+     "event": "hypotension_orthostatic",
+     "seriousness": "serious",
+     "rate": 0.010211863106370933,
+     "q025": 0.0033052696578111437,
+     "q975": 0.03653150004499649
+    },
+    {
+     "event": "blood_bilirubin_increased",
+     "seriousness": "serious",
+     "rate": 0.010123008461216708,
+     "q025": 0.004754803111202274,
+     "q975": 0.026279711791035713
+    },
+    {
+     "event": "lung_diseases_interstitial",
+     "seriousness": "serious",
+     "rate": 0.010085517794074277,
+     "q025": 0.0024528692949160034,
+     "q975": 0.036166259120174175
+    },
+    {
+     "event": "tumor_progression",
+     "seriousness": "serious",
+     "rate": 0.010029055103293473,
+     "q025": 0.0031824645534342683,
+     "q975": 0.034852895046757246
+    },
+    {
+     "event": "general_physical_health_deterioration",
+     "seriousness": "serious",
+     "rate": 0.010019028102030092,
+     "q025": 0.0031109443507717186,
+     "q975": 0.03559057739019417
+    }
+   ],
+   "note": "adult registry evidence at treatment-class level, extrapolated to this protocol's population"
+  }
+ },
+ "bindings": [
+  {
+   "role": "analysis_rule",
+   "ref": "SS4",
+   "value": 51.0,
+   "issues": [],
+   "evidence_text": "for a total of N=51 patients",
+   "fact_id": null,
+   "years": 3,
+   "population": "Patients",
+   "quote": "Patients will be evaluable for the efficacy analysis if they have a reported progression ≤3 months or a minimum follow-up of 3 months.",
+   "rendering": "the final analysis is conducted once 51 eligible and evaluable Patients have been enrolled and all have been followed for at least 3 year(s)",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol specifies a 3-month evaluability follow-up, not a 3-year follow-up, and does not establish this final-analysis trigger."
+   },
+   "semantic_status": "INCORRECT",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "analysis_exclusion",
+   "ref": "F051",
+   "value": 0.1,
+   "issues": [],
+   "evidence_text": "Assuming a 10% drop-out rate",
+   "fact_id": "F051",
+   "rendering": "the protocol expects a share of about 0.1 of enrolled patients to be excluded from the data set used for the primary objectives",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol uses 10% as a sample-size assumption and does not require that this proportion be excluded from the data set for both primary objectives."
+   },
+   "semantic_status": "INCORRECT",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "control_arm",
+   "arm_id": "ARM2",
+   "fact_id": null,
+   "issues": [],
+   "evidence_text": "Cabozantinib: Cabozantinib; BEVACIZUMAB: PATIENTS UNDER BEVACIZUMAB",
+   "rendering": "the protocol's control (reference) arm, the arm without the experimental addition, is 'BEVACIZUMAB' (PATIENTS UNDER BEVACIZUMAB)",
+   "verification": {
+    "votes": [
+     "INCORRECT",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "The protocol is single-arm, and bevacizumab identifies a pre-treated subgroup rather than a control arm."
+   },
+   "semantic_status": "INCORRECT",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "efs_model_family",
+   "family": "not_stated",
+   "quote": "",
+   "fact_id": null,
+   "issues": [
+    "the model-family quote is not in the protocol text"
+   ],
+   "rendering": "the protocol states that the reference group's EFS is represented by a not_stated: ''",
+   "verification": {
+    "votes": [
+     "NOT_A_RULE",
+     "NOT_A_RULE",
+     "NOT_A_RULE"
+    ],
+    "reviewer_note": "The supplied evidence does not state a reference-group EFS rule."
+   },
+   "semantic_status": "NOT_A_RULE",
+   "status": "REVIEW_REQUIRED"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F012",
+   "event": "thromboembolic events",
+   "grade": "grade 3 or higher",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F012 is the incidence of thromboembolic events (grade grade 3 or higher) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'thromboembolic events of grade 3 or higher'; level 'grade 3 or higher'; value 8% [read as proportion 0.08]; population 'primary stage IVB or recurrent/persistent disease'; treatment 'addition of bevacizumab to chemotherapy'; source historical_study (Tewari et al. 2014))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The 8% incidence of grade 3 or higher thromboembolic events is correctly assigned to the bevacizumab-plus-chemotherapy group in the cited study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F014",
+   "event": "gastrointestinal fistulas",
+   "grade": "grade 3 or higher",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F014 is the incidence of gastrointestinal fistulas (grade grade 3 or higher) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'gastrointestinal fistulas of grade 3 or higher'; level 'grade 3 or higher'; value 3% vs. 0% [read as proportion 0.03]; population 'Patients with primary stage IVB or recurrent/persistent disease, good PS (0 or 1) and measurable disease'; treatment 'Bevacizumab, as compared with chemotherapy alone'; source historical_study (GOG-240))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the reported grade 3-or-higher gastrointestinal fistula incidence to the cited bevacizumab-versus-chemotherapy comparison."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F016",
+   "event": "fistulas",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F016 is the incidence of fistulas (grade ) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'fistulas'; value 32 of 220 (15%) [read as proportion 0.1455]; population 'patients in the chemotherapy plus bevacizumab group had fistulas all of whom had had previous radiotherapy'; treatment 'chemotherapy plus bevacizumab group'; source historical_study (Tewari et al. 2017))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 32/220 (15%) fistula incidence to the historical chemotherapy-plus-bevacizumab group described in the protocol."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F018",
+   "event": "fistula",
+   "grade": "clinically significant or severe (ie, grade 3)",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F018 is the incidence of fistula (grade clinically significant or severe (ie, grade 3)) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'clinically significant or severe (ie, grade 3) fistula'; level 'clinically significant or severe (ie, grade 3)'; value 6% [read as proportion 0.06]; population 'patients'; treatment 'chemotherapy plus bevacizumab group'; source historical_study (Tewari et al. 2017))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering accurately binds the reported 6% grade 3 or clinically significant fistula incidence to the chemotherapy-plus-bevacizumab group in the cited study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F020",
+   "event": "fistula",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [],
+   "rendering": "fact F020 is the incidence of fistula (grade ) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'increase rate of fistula'; value 22% [read as proportion 0.22]; population '27 patients'; treatment 'bevacizumab'; source historical_study (Godoy-Ortiz et al., 2018))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The statement reports the 22% fistula rate among 27 patients in the cited bevacizumab real-life study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F023",
+   "event": "Diarrhea",
+   "grade": "G3 adverse event",
+   "applies_to": "one_arm",
+   "arm_id": "ARM1",
+   "issues": [],
+   "rendering": "fact F023 is the incidence of Diarrhea (grade G3 adverse event) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM1 (toxicity_rate: 'Diarrhea was the most common G3 adverse event'; level 'G3 adverse event'; value 11% [read as proportion 0.11]; population 'women with metastatic, persistent or recurrent cervical cancer'; treatment 'pazopanib'; source historical_study (Monk et al. 2010))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering correctly binds the 11% grade 3 diarrhea incidence to pazopanib in the cited historical study."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F031",
+   "event": "fistula",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM1",
+   "issues": [],
+   "rendering": "fact F031 is the incidence of fistula (grade ) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM1 (toxicity_rate: 'developed a fistula'; level 'previously received either chemo-radiation or radiation therapy'; value Five of 19 (26.3%) [read as proportion 0.2632]; at 'during or after sunitinib assumption'; population 'patients with unresectable, locally advanced or metastatic cervical cancer'; treatment 'sunitinib'; source historical_study (Mackay et al. 2010))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "FAITHFUL",
+     "FAITHFUL"
+    ],
+    "reviewer_note": "The rendering accurately binds the reported fistula incidence to the historical sunitinib-treated population and timing described in the protocol."
+   },
+   "semantic_status": "FAITHFUL",
+   "status": "USABLE"
+  },
+  {
+   "role": "toxicity_incidence",
+   "fact_id": "F046",
+   "event": "fistula formation",
+   "grade": "",
+   "applies_to": "one_arm",
+   "arm_id": "ARM2",
+   "issues": [
+    "fact is not a proportion"
+   ],
+   "rendering": "fact F046 is the incidence of fistula formation (grade ) observed or expected under this protocol's treatment or the treatment the protocol cites as the basis for its own, applied to ARM2 (toxicity_rate: 'fistula formation was noticed'; value approximately one quarter; population 'advanced cervical cancer patients'; treatment 'bevacizumab'; source published_literature (Godoy-Ortiz et al., 2018; Palavalli Parsons et al., 2017))",
+   "verification": {
+    "votes": [
+     "FAITHFUL",
+     "INCORRECT",
+     "INCORRECT"
+    ],
+    "reviewer_note": "This is a prior literature incidence under bevacizumab used as background for extrapolation, not the adverse-event incidence under the protocol's cabozantinib treatment."
+   },
+   "semantic_status": "INCORRECT",
+   "status": "REVIEW_REQUIRED"
+  }
+ ],
+ "assessment_timing": "EFS events are observed at their true time: detection at the next scheduled assessment is not applied",
+ "efs_origin": "enrollment (= randomization): the protocol does not state the EFS time origin (user decision 2026-09-27)"
+}

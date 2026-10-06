@@ -1,0 +1,18 @@
+Factor,Level,Screened,Eligible (%),Enrolled,Most frequent failing criteria (% of screened),Driver
+Age (FDA standard age bands),65-74 years,3,2 (67%),0,EL009 Other hematologic malignancy such as non (33%),protocol criteria
+Age (FDA standard age bands),< 65 years,9997,7707 (77%),10,EL008 Myelodysplasia (MDS) (2%); EL014 E.Cardiac function (2%); EL016 A.Uncontrolledviralorbacterialinfectiona (2%),protocol criteria
+Sex,female,4560,3527 (77%),5,EL014 E.Cardiac function (2%); EL008 Myelodysplasia (MDS) (2%); EL016 A.Uncontrolledviralorbacterialinfectiona (2%),patient mix
+Sex,male,5440,4182 (77%),5,EL011 B.Renal Function (2%); EL010 Performancestatus score (2%); EL006 AcuteLymphoblasticLeukemia (2%),patient mix
+Race,american_indian_or_alaska_native,57,48 (84%),0,EL001 Age Criteria (4%); EL014 E.Cardiac function (4%); EL013 DLCO corrected >50% normal (2%),patient mix
+Race,asian,959,755 (79%),0,EL014 E.Cardiac function (2%); EL011 B.Renal Function (2%); EL010 Performancestatus score (2%),patient mix
+Race,black_or_african_american,796,597 (75%),0,EL003 HIVCriteria (3%); EL018 C. Pregnant or breastfeeding (2%); EL020 E. extensiveradiation (2%),patient mix
+Race,more_than_one_race,92,74 (80%),0,EL018 C. Pregnant or breastfeeding (3%); EL001 Age Criteria (3%); EL007 Chronic myelogenous leukemia excluding r (2%),patient mix
+Race,native_hawaiian_or_other_pacific_islander,37,31 (84%),0,EL016 A.Uncontrolledviralorbacterialinfectiona (5%); EL013 DLCO corrected >50% normal (5%); EL007 Chronic myelogenous leukemia excluding r (3%),patient mix
+Race,unknown_or_not_reported,403,320 (79%),0,EL001 Age Criteria (2%); EL006 AcuteLymphoblasticLeukemia (2%); EL014 E.Cardiac function (2%),patient mix
+Race,white,7656,5884 (77%),10,EL008 Myelodysplasia (MDS) (2%); EL016 A.Uncontrolledviralorbacterialinfectiona (2%); EL015 Ability tounderstand and thewillingness  (2%),patient mix
+Ethnicity,hispanic_or_latino,675,537 (80%),1,EL003 HIVCriteria (2%); EL014 E.Cardiac function (2%); EL015 Ability tounderstand and thewillingness  (2%),patient mix
+Ethnicity,not_hispanic_or_latino,9014,6926 (77%),8,EL008 Myelodysplasia (MDS) (2%); EL014 E.Cardiac function (2%); EL001 Age Criteria (2%),patient mix
+Ethnicity,unknown_or_not_reported,311,246 (79%),1,EL010 Performancestatus score (2%); EL004 AcuteMyeloidLeukemia (2%); EL016 A.Uncontrolledviralorbacterialinfectiona (2%),patient mix
+Ecog performance status,0,4390,3383 (77%),7,EL014 E.Cardiac function (2%); EL016 A.Uncontrolledviralorbacterialinfectiona (2%); EL007 Chronic myelogenous leukemia excluding r (2%),patient mix
+Ecog performance status,1,4798,3695 (77%),3,EL008 Myelodysplasia (MDS) (2%); EL006 AcuteLymphoblasticLeukemia (2%); EL010 Performancestatus score (2%),patient mix
+Ecog performance status,2 or more,812,631 (78%),0,EL017 B.Active or recent (prior6 month)invasiv (3%); EL015 Ability tounderstand and thewillingness  (2%); EL018 C. Pregnant or breastfeeding (2%),patient mix

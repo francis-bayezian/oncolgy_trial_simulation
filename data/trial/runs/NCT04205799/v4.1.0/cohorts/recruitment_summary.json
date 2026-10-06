@@ -1,0 +1,103 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "0cc9e71cce40a2f7c144150475af7adc2485d80a8fbb3ce3efaa4dc7fa10bbab",
+  "population": "f13a19ad2386ca6251439fde08cdcd3c8699bac35fdf5325d306e7412df6da15",
+  "eligibility": "a52d14868324b215fcc6a0f8f0baceef5d893fd89f0e6b0e704cf187acbcbd69"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 57,
+   "source": "target_accrual",
+   "evidence": "The total sample size to be enrolled is 57 patients."
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_7.9_per_year",
+    "rate_per_year": 7.859343909384353,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 1.6859956924861867,
+     "p30": 4.110537411906619,
+     "p50": 7.859343909384353,
+     "p70": 15.375037570338831,
+     "p90": 41.02391990635864
+    }
+   },
+   {
+    "rate_per_year": 3.0,
+    "evidence": "The estimated accrual for this study is 3 patients a month.",
+    "scenario": "accrual_3_per_year"
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_7.9_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "Cabozantinib",
+    "description": "Cabozantinib"
+   },
+   {
+    "arm_id": "ARM2",
+    "label": "BEVACIZUMAB",
+    "description": "PATIENTS UNDER BEVACIZUMAB"
+   }
+  ],
+  "arm_status_note": "no arm is stated to be open in the compiled version: every arm not stated to be closed is assumed to enroll",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": []
+ },
+ "summary": {
+  "pool": 7713,
+  "target": {
+   "patients": 57,
+   "source": "target_accrual",
+   "evidence": "The total sample size to be enrolled is 57 patients."
+  },
+  "scenarios": {
+   "accrual_historical_7.9_per_year": {
+    "enrolled": 57,
+    "accrual_years": 8.841342329552338,
+    "arms": {
+     "ARM1": 29,
+     "ARM2": 28
+    },
+    "strata": {
+     "null": 57
+    },
+    "sex": {
+     "female": 57
+    },
+    "age_mean": 55.03859649122808
+   },
+   "accrual_3_per_year": {
+    "enrolled": 57,
+    "accrual_years": 20.74297715798164,
+    "arms": {
+     "ARM1": 26,
+     "ARM2": 31
+    },
+    "strata": {
+     "null": 57
+    },
+    "sex": {
+     "female": 56,
+     "male": 1
+    },
+    "age_mean": 55.86736842105263
+   }
+  },
+  "headline_scenario": "accrual_historical_7.9_per_year"
+ }
+}

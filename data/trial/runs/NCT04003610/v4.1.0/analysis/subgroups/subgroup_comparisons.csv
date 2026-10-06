@@ -1,0 +1,91 @@
+Factor,Level,Arm vs control,N / N control,ORR difference % (95% CI),PFS HR (95% CI),OS HR (95% CI)
+Carboplatin-eligible versus not eligible,not eligible,ARM1 vs ARM3,13 / 17,"50.0 (-19.3, 119.3)",0.135 (0.003-6.821),0.171 (0.01-2.967)
+Carboplatin-eligible versus not eligible,not eligible,ARM2 vs ARM3,12 / 17,"0.0 (0.0, 0.0)",20.086 (0.314-1284.067),0.085 (0.005-1.465)
+Carboplatin-eligible versus not eligible,not eligible,ARM4 vs ARM3,16 / 17,"0.0 (0.0, 0.0)",7.389 (0.147-372.412),0.171 (0.01-2.967)
+Carboplatin-eligible versus not eligible,not recorded,ARM1 vs ARM3,86 / 78,"2.3 (-47.7, 52.2)",0.739 (0.106-5.164),0.455 (0.027-7.555)
+Carboplatin-eligible versus not eligible,not recorded,ARM2 vs ARM3,78 / 78,"-8.3 (-60.2, 43.5)",0.686 (0.049-9.644),1.587 (0.158-15.925)
+Carboplatin-eligible versus not eligible,not recorded,ARM4 vs ARM3,72 / 78,"12.5 (-41.6, 66.6)",0.468 (0.055-3.97),0.167 (0.005-5.173)
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM1 vs ARM3,67 / 67,"22.2 (-4.9, 49.4)",0.249 (0.021-3.005),0.35 (0.039-3.134)
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM2 vs ARM3,65 / 67,"20.0 (-15.1, 55.1)",0.086 (0.005-1.37),0.544 (0.053-5.551)
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM4 vs ARM3,56 / 67,"37.5 (4.0, 71.0)",0.355 (0.033-3.851),0.218 (0.02-2.432)
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM1 vs ARM3,32 / 28,"0.0 (-84.9, 84.9)",0.565 (0.029-10.933),0.135 (0.003-6.821)
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM2 vs ARM3,25 / 28,"-50.0 (-119.3, 19.3)",5.166 (0.463-57.697),1.135 (0.102-12.672)
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM4 vs ARM3,32 / 28,"-50.0 (-119.3, 19.3)",7.389 (0.147-372.412),0.135 (0.003-6.821)
+LN-only disease versus other metastatic disease,LN-only disease,ARM1 vs ARM3,45 / 50,"60.0 (17.1, 102.9)",0.007 (0.0-0.905),0.022 (0.001-0.513)
+LN-only disease versus other metastatic disease,LN-only disease,ARM2 vs ARM3,45 / 50,"20.0 (-15.1, 55.1)",0.703 (0.041-12.174),0.118 (0.009-1.586)
+LN-only disease versus other metastatic disease,LN-only disease,ARM4 vs ARM3,45 / 50,"33.3 (-20.0, 86.7)",0.816 (0.038-17.438),0.043 (0.002-0.852)
+LN-only disease versus other metastatic disease,other metastatic disease,ARM1 vs ARM3,54 / 45,"-37.5 (-110.5, 35.5)",4.823 (0.376-61.861),1.029 (0.093-11.356)
+LN-only disease versus other metastatic disease,other metastatic disease,ARM2 vs ARM3,45 / 45,"-50.0 (-119.3, 19.3)",0.562 (0.031-10.034),20.086 (0.314-1284.067)
+LN-only disease versus other metastatic disease,other metastatic disease,ARM4 vs ARM3,43 / 45,"-16.7 (-95.6, 62.2)",0.675 (0.085-5.382),0.362 (0.017-7.73)
+Randomisation stratum,Carboplatin-eligible,ARM1 vs ARM3,8 / 8,-,-,-
+Randomisation stratum,Carboplatin-eligible,ARM2 vs ARM3,10 / 8,-,-,-
+Randomisation stratum,Carboplatin-eligible,ARM4 vs ARM3,7 / 8,-,-,-
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM1 vs ARM3,27 / 25,"42.9 (6.2, 79.5)",-,-
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM2 vs ARM3,25 / 25,"33.3 (-20.0, 86.7)",-,-
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM4 vs ARM3,28 / 25,"33.3 (-20.0, 86.7)",-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM1 vs ARM3,9 / 10,-,-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM2 vs ARM3,14 / 10,-,-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM4 vs ARM3,11 / 10,-,-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM1 vs ARM3,18 / 13,"0.0 (0.0, 0.0)",0.223 (0.003-14.265),-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM2 vs ARM3,13 / 13,"0.0 (0.0, 0.0)",0.135 (0.003-6.821),-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM4 vs ARM3,9 / 13,"0.0 (0.0, 0.0)",-,7.389 (0.147-372.412)
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM1 vs ARM3,22 / 28,"0.0 (0.0, 0.0)",-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM2 vs ARM3,18 / 28,"0.0 (0.0, 0.0)",-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM4 vs ARM3,24 / 28,"50.0 (-19.3, 119.3)",-,-
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM1 vs ARM3,15 / 11,"-16.7 (-104.1, 70.8)",4.482 (0.07-286.514),1.423 (0.082-24.659)
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM2 vs ARM3,10 / 11,"-50.0 (-119.3, 19.3)",4.482 (0.07-286.514),0.171 (0.01-2.967)
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM4 vs ARM3,9 / 11,"-50.0 (-119.3, 19.3)",7.389 (0.147-372.412),0.171 (0.01-2.967)
+Age (FDA standard age bands),65-74 years,ARM1 vs ARM3,33 / 24,"20.0 (-15.1, 55.1)",-,-
+Age (FDA standard age bands),65-74 years,ARM2 vs ARM3,24 / 24,"0.0 (0.0, 0.0)",-,-
+Age (FDA standard age bands),65-74 years,ARM4 vs ARM3,22 / 24,"50.0 (-19.3, 119.3)",-,-
+Age (FDA standard age bands),< 65 years,ARM1 vs ARM3,53 / 56,"-7.1 (-85.5, 71.2)",1.135 (0.102-12.672),0.153 (0.012-1.908)
+Age (FDA standard age bands),< 65 years,ARM2 vs ARM3,50 / 56,"-30.0 (-107.7, 47.7)",4.153 (0.194-88.745),0.563 (0.071-4.446)
+Age (FDA standard age bands),< 65 years,ARM4 vs ARM3,48 / 56,"-50.0 (-119.3, 19.3)",4.887 (0.274-87.308),0.085 (0.005-1.465)
+Age (FDA standard age bands),>= 75 years,ARM1 vs ARM3,13 / 15,"0.0 (0.0, 0.0)",-,-
+Age (FDA standard age bands),>= 75 years,ARM2 vs ARM3,16 / 15,"0.0 (0.0, 0.0)",0.085 (0.005-1.465),1.423 (0.082-24.659)
+Age (FDA standard age bands),>= 75 years,ARM4 vs ARM3,18 / 15,"66.7 (13.3, 120.0)",0.4 (0.031-5.221),0.815 (0.05-13.409)
+Sex,female,ARM1 vs ARM3,24 / 26,"33.3 (-20.0, 86.7)",-,0.05 (0.001-3.183)
+Sex,female,ARM2 vs ARM3,22 / 26,"0.0 (0.0, 0.0)",-,0.135 (0.003-6.821)
+Sex,female,ARM4 vs ARM3,24 / 26,"100.0 (100.0, 100.0)",-,0.135 (0.003-6.821)
+Sex,male,ARM1 vs ARM3,75 / 69,"10.0 (-35.1, 55.1)",0.603 (0.112-3.255),0.331 (0.037-2.975)
+Sex,male,ARM2 vs ARM3,68 / 69,"-5.7 (-49.3, 37.9)",0.761 (0.109-5.308),0.41 (0.049-3.445)
+Sex,male,ARM4 vs ARM3,64 / 69,"5.0 (-41.1, 51.1)",0.803 (0.136-4.758),0.151 (0.012-1.917)
+Race,american_indian_or_alaska_native,ARM1 vs ARM3,0 / 0,-,-,-
+Race,american_indian_or_alaska_native,ARM2 vs ARM3,0 / 0,-,-,-
+Race,american_indian_or_alaska_native,ARM4 vs ARM3,2 / 0,-,-,-
+Race,asian,ARM1 vs ARM3,5 / 3,-,-,-
+Race,asian,ARM2 vs ARM3,6 / 3,-,-,-
+Race,asian,ARM4 vs ARM3,12 / 3,-,-,-
+Race,black_or_african_american,ARM1 vs ARM3,8 / 8,"100.0 (100.0, 100.0)",-,-
+Race,black_or_african_american,ARM2 vs ARM3,4 / 8,"0.0 (0.0, 0.0)",-,-
+Race,black_or_african_american,ARM4 vs ARM3,8 / 8,"0.0 (0.0, 0.0)",-,-
+Race,more_than_one_race,ARM1 vs ARM3,0 / 0,-,-,-
+Race,more_than_one_race,ARM2 vs ARM3,0 / 0,-,-,-
+Race,more_than_one_race,ARM4 vs ARM3,1 / 0,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM1 vs ARM3,1 / 0,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM2 vs ARM3,0 / 0,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM4 vs ARM3,0 / 0,-,-,-
+Race,unknown_or_not_reported,ARM1 vs ARM3,6 / 1,-,-,-
+Race,unknown_or_not_reported,ARM2 vs ARM3,3 / 1,-,-,-
+Race,unknown_or_not_reported,ARM4 vs ARM3,4 / 1,-,-,-
+Race,white,ARM1 vs ARM3,79 / 83,"7.3 (-36.6, 51.1)",0.407 (0.066-2.512),0.124 (0.014-1.064)
+Race,white,ARM2 vs ARM3,77 / 83,"-3.3 (-49.4, 42.7)",0.923 (0.135-6.292),0.341 (0.054-2.164)
+Race,white,ARM4 vs ARM3,61 / 83,"30.0 (-23.2, 83.2)",0.552 (0.087-3.512),0.205 (0.026-1.619)
+Ethnicity,hispanic_or_latino,ARM1 vs ARM3,7 / 9,-,-,-
+Ethnicity,hispanic_or_latino,ARM2 vs ARM3,4 / 9,-,-,-
+Ethnicity,hispanic_or_latino,ARM4 vs ARM3,2 / 9,-,-,-
+Ethnicity,not_hispanic_or_latino,ARM1 vs ARM3,88 / 83,"16.7 (-23.3, 56.7)",0.479 (0.08-2.866),0.226 (0.033-1.572)
+Ethnicity,not_hispanic_or_latino,ARM2 vs ARM3,85 / 83,"-4.2 (-41.8, 33.4)",0.762 (0.111-5.221),0.503 (0.092-2.734)
+Ethnicity,not_hispanic_or_latino,ARM4 vs ARM3,83 / 83,"8.3 (-34.0, 50.6)",0.546 (0.09-3.3),0.153 (0.019-1.268)
+Ethnicity,unknown_or_not_reported,ARM1 vs ARM3,4 / 3,-,-,-
+Ethnicity,unknown_or_not_reported,ARM2 vs ARM3,1 / 3,-,-,-
+Ethnicity,unknown_or_not_reported,ARM4 vs ARM3,3 / 3,-,-,-
+ECOG performance status,0,ARM1 vs ARM3,41 / 48,"16.7 (-13.2, 46.5)",0.703 (0.041-12.174),0.002 (0.0-0.477)
+ECOG performance status,0,ARM2 vs ARM3,36 / 48,"0.0 (0.0, 0.0)",0.135 (0.003-6.821),0.135 (0.003-6.821)
+ECOG performance status,0,ARM4 vs ARM3,40 / 48,"25.0 (-17.4, 67.4)",0.866 (0.031-24.071),0.018 (0.0-1.693)
+ECOG performance status,1,ARM1 vs ARM3,46 / 36,"16.7 (-50.0, 83.4)",0.418 (0.045-3.858),1.388 (0.136-14.155)
+ECOG performance status,1,ARM2 vs ARM3,43 / 36,"-19.1 (-78.4, 40.3)",1.124 (0.111-11.404),0.876 (0.074-10.316)
+ECOG performance status,1,ARM4 vs ARM3,39 / 36,"16.7 (-55.8, 89.1)",0.479 (0.053-4.329),0.562 (0.031-10.034)
+ECOG performance status,2 or more,ARM1 vs ARM3,12 / 11,"0.0 (0.0, 0.0)",-,-
+ECOG performance status,2 or more,ARM2 vs ARM3,11 / 11,-,-,-
+ECOG performance status,2 or more,ARM4 vs ARM3,9 / 11,"0.0 (0.0, 0.0)",-,0.135 (0.003-6.821)

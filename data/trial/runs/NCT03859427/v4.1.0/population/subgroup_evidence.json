@@ -1,0 +1,526 @@
+{
+ "version": "subgroup-evidence-1.0.0",
+ "family": "myeloma_and_plasma_cell",
+ "phase": "PHASE3",
+ "factors": [
+  {
+   "key": "var:iss_stage_at_study_entry",
+   "text": "original ISS stage at study entry (stage 1 or 2 vs stage 3)",
+   "levels": [
+    "stage 1 or 2",
+    "stage 3"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "stage 1 or 2",
+     "stage 3"
+    ],
+    "p": [
+     0.7659,
+     0.2341
+    ],
+    "trial_range_10_90": [
+     [
+      0.64,
+      0.106
+     ],
+     [
+      0.894,
+      0.36
+     ]
+    ],
+    "trials": 7,
+    "participants": 906,
+    "measures": [
+     "Clinical stage [International staging system (ISS) category]",
+     "ISS Multiple Myeloma Stage",
+     "ISS Stage",
+     "ISS Staging"
+    ],
+    "source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 7 trials)"
+   },
+   "mix": {
+    "stage 1 or 2": 0.7614,
+    "stage 3": 0.2386
+   },
+   "effects": {
+    "reference_level": "stage 1 or 2",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:prior_lenalidomide_treatment",
+   "text": "prior lenalidomide treatment (yes vs no)",
+   "levels": [
+    "yes",
+    "no"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "yes",
+     "no"
+    ],
+    "p": [
+     0.4717,
+     0.5283
+    ],
+    "trial_range_10_90": [
+     [
+      0.168,
+      0.193
+     ],
+     [
+      0.807,
+      0.832
+     ]
+    ],
+    "trials": 4,
+    "participants": 826,
+    "measures": [
+     "Prior Lenalidomide",
+     "Prior Lenalidomide Exposure",
+     "Prior Lenalidomide therapy"
+    ],
+    "source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)"
+   },
+   "mix": {
+    "yes": 0.4685,
+    "no": 0.5315
+   },
+   "effects": {
+    "reference_level": "yes",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:prior_pi_treatment",
+   "text": "prior PI treatment (yes vs no)",
+   "levels": [
+    "yes",
+    "no"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "yes",
+     "no"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "yes": 0.5042,
+    "no": 0.4958
+   },
+   "effects": {
+    "reference_level": "yes",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:prior_anti_cd_exposure",
+   "text": "prior anti-CD38 exposure (yes vs no)",
+   "levels": [
+    "yes",
+    "no"
+   ],
+   "source": "protocol stratification factor",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "yes",
+     "no"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "yes": 0.494,
+    "no": 0.506
+   },
+   "effects": {
+    "reference_level": "yes",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:prior_bortezomib_treatment",
+   "text": "prior bortezomib treatment (yes, no)",
+   "levels": [
+    "yes",
+    "no"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "yes",
+     "no"
+    ],
+    "p": [
+     0.7192,
+     0.2808
+    ],
+    "trial_range_10_90": [
+     [
+      0.584,
+      0.122
+     ],
+     [
+      0.878,
+      0.416
+     ]
+    ],
+    "trials": 3,
+    "participants": 853,
+    "measures": [
+     "Prior Bortezomib Exposure",
+     "Prior Bortezomib Treatment"
+    ],
+    "source": "registry baseline tables of enrolled participants (all oncology; 3 trials)"
+   },
+   "mix": {
+    "yes": 0.7161,
+    "no": 0.2839
+   },
+   "effects": {
+    "reference_level": "yes",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:number_of_prior_therapies",
+   "text": "number of prior therapies (1 vs > 1; 1 vs 2 vs > 2)",
+   "levels": [
+    "1",
+    "> 1"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "1",
+     "> 1"
+    ],
+    "p": [
+     0.4199,
+     0.5801
+    ],
+    "trial_range_10_90": [
+     [
+      0.141,
+      0.197
+     ],
+     [
+      0.803,
+      0.859
+     ]
+    ],
+    "trials": 9,
+    "participants": 1033,
+    "measures": [
+     "Baseline Disease Characteristics and Prior Therapies",
+     "Lines of prior anticancer therapies",
+     "Number of Prior Anti-Myeloma Therapies",
+     "Number of Prior Lines of Systemic Therapies",
+     "Number of Prior Systemic Therapies"
+    ],
+    "source": "registry baseline tables of enrolled participants (all oncology; 9 trials)"
+   },
+   "mix": {
+    "1": 0.4228,
+    "> 1": 0.5772
+   },
+   "effects": {
+    "reference_level": "1",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:cytogenetic_risk_measured_by_fish",
+   "text": "cytogenetic risk measured by FISH (high-risk vs standard risk)",
+   "levels": [
+    "high-risk",
+    "standard risk"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "high-risk",
+     "standard risk"
+    ],
+    "p": [
+     0.3041,
+     0.6959
+    ],
+    "trial_range_10_90": [
+     [
+      0.206,
+      0.579
+     ],
+     [
+      0.421,
+      0.794
+     ]
+    ],
+    "trials": 4,
+    "participants": 634,
+    "measures": [
+     "Chromosomal abnormality (CA) risk by fluorescent in situ hybridization (FISH)",
+     "Cytogenetic risk group based on FISH at study entry",
+     "Cytogenetics/FISH at diagnosis",
+     "Risk Group as Determined by Fluorescent in situ Hybridization (FISH)"
+    ],
+    "source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)"
+   },
+   "mix": {
+    "high-risk": 0.3003,
+    "standard risk": 0.6997
+   },
+   "effects": {
+    "reference_level": "high-risk",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:bortezomib_refractory_status",
+   "text": "bortezomib refractory status (yes vs no)",
+   "levels": [
+    "yes",
+    "no"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "yes",
+     "no"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "yes": 0.5077,
+    "no": 0.4923
+   },
+   "effects": {
+    "reference_level": "yes",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:lenalidomide_refractory_status",
+   "text": "lenalidomide refractory status (yes vs no)",
+   "levels": [
+    "yes",
+    "no"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "yes",
+     "no"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "yes": 0.4829,
+    "no": 0.5171
+   },
+   "effects": {
+    "reference_level": "yes",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:prior_transplant",
+   "text": "prior transplant (yes vs no)",
+   "levels": [
+    "yes",
+    "no"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "yes",
+     "no"
+    ],
+    "p": [
+     0.5971,
+     0.4029
+    ],
+    "trial_range_10_90": [
+     [
+      0.298,
+      0.133
+     ],
+     [
+      0.867,
+      0.702
+     ]
+    ],
+    "trials": 4,
+    "participants": 343,
+    "measures": [
+     "Had a Prior Stem Cell Transplant",
+     "Prior Stem Cell Transplant",
+     "Prior Stem Cell Transplant for Myeloma",
+     "Prior Transplant"
+    ],
+    "source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)"
+   },
+   "mix": {
+    "yes": 0.5861,
+    "no": 0.4139
+   },
+   "effects": {
+    "reference_level": "yes",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:ecog_performance_status",
+   "text": "ECOG performance status (0, 1, 2 or more)",
+   "levels": [
+    "0",
+    "1",
+    "2 or more"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "0": 0.4127,
+    "1": 0.4669,
+    "2 or more": 0.1204
+   },
+   "effects": {
+    "reference_level": "0",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "demographic:sex",
+   "text": "sex (female, male)",
+   "levels": [
+    "female",
+    "male"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "female": 0.4332,
+    "male": 0.5668
+   },
+   "effects": {
+    "reference_level": "female",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "male": {
+      "log_effect": 0.0485,
+      "trials": 3,
+      "range_10_90": [
+       0.039,
+       0.24
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  },
+  {
+   "key": "demographic:age",
+   "text": "age (< 65 years, >= 65 years)",
+   "levels": [
+    "< 65 years",
+    ">= 65 years"
+   ],
+   "source": "baseline factor",
+   "kind": "age",
+   "mix": {
+    "< 65 years": 0.6124,
+    ">= 65 years": 0.3876
+   },
+   "effects": {
+    "reference_level": "< 65 years",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  }
+ ],
+ "assumptions": [
+  "A27_subgroup_prevalence_equal",
+  "A28_prognostic_effects"
+ ]
+}

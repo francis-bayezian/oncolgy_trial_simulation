@@ -1,0 +1,460 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "NCT01616875",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "a1b01e69016caaaea6f2842aada05174c861b2c6deacd18f0665988256f7b174",
+  "cohorts": {
+   "cohort_accrual_historical_8.4_per_year.jsonl": "2471d78c1a66f1005c528f25483d8884379b092492335fa217104d881fd74d7e",
+   "recruitment_report.md": "c9308d7f1d156e41de80fb231732fce9d4ad4a971ea5953c6de74514d13bb070",
+   "recruitment_summary.json": "5ae445ce55c86a5c593d3ef364f1cdcb8228765e86aa06854d08c84cc9fe2817"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "37a00df6d42b972b00b353367bccf08311af5c1f07da263f3c33cd3142918a0a",
+   "eligibility_summary.json": "f322b21f52404cd384eaa10e9d231ee617f15fd3da6e8ad5b4ef7b3945cc9c8f",
+   "feasibility_report.md": "a009e697889cf9bd2b8928da8cf110093b049d80be403c82743617ea1d2c7a4a"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.7698,
+   0.7698
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL002",
+   "EL003",
+   "EL004",
+   "EL005",
+   "EL010",
+   "EL013",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL019",
+   "EL020",
+   "EL021",
+   "EL022",
+   "EL023",
+   "EL025",
+   "EL027",
+   "EL028",
+   "EL029",
+   "EL030"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.2302,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 39,
+   "target": 30.0
+  }
+ },
+ "accrual": {
+  "target_patients": 30,
+  "target_source": "maximum_accrual",
+  "stated_accrual_durations_years": [],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_8.4_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 8.395492186523885,
+    "patients_per_month": 0.6996243488769904,
+    "enrolled": {
+     "median": 30.0,
+     "q10": 30.0,
+     "q25": 30.0,
+     "q75": 30.0,
+     "q90": 30.0
+    },
+    "enrollment_duration_years": {
+     "median": 3.4102477284154418,
+     "q10": 2.675389608891466,
+     "q25": 2.994521625138715,
+     "q75": 3.8573871501275594,
+     "q90": 4.282346954867696
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.0,
+     "2y": 0.004,
+     "3y": 0.2528,
+     "5y": 0.9874
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "NOT_STATED_AVERAGED",
+    "reason": "the protocol states no number of sites: the historical model averages over same-phase trials' site counts"
+   },
+   "sponsor_class": {
+    "status": "RESOLVED",
+    "value": "OTHER",
+    "quote": "University Hospitals Bristol and Weston NHS Foundation Trust",
+    "source": "protocol (quoted): academic, cooperative-group or public sponsor"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2017,
+    "enrolled": 30,
+    "disease_family": "urothelial",
+    "matched_disease": "Transitional Cell Carcinoma of the Urinary Bladder",
+    "condition": "Transitional Cell Carcinoma of the Urinary Bladder",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 1,
+    "sponsor_class": null
+   },
+   "site_count": "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase",
+   "patients_per_month": {
+    "median": 0.6153757097431183,
+    "q10": 0.13832264997546637,
+    "q25": 0.27703130565723505,
+    "q75": 1.4255963869015147,
+    "q90": 3.231631046593345,
+    "percentiles": {
+     "p10": 0.13832264997546637,
+     "p30": 0.33015934320675844,
+     "p50": 0.6153757097431183,
+     "p70": 1.1819878777421207,
+     "p90": 3.231631046593345
+    }
+   },
+   "patients_per_year": {
+    "median": 7.384508516917419,
+    "q10": 1.6598717997055965,
+    "q25": 3.324375667886821,
+    "q75": 17.107156642818175,
+    "q90": 38.77957255912014,
+    "percentiles": {
+     "p10": 1.6598717997055965,
+     "p30": 3.9619121184811013,
+     "p50": 7.384508516917419,
+     "p70": 14.183854532905448,
+     "p90": 38.77957255912014
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 3.9624603373367244,
+    "q10": 0.7523539338219157,
+    "q25": 1.6967075126606714,
+    "q75": 8.862146755068357,
+    "q90": 18.254984101964904,
+    "percentiles": {
+     "p10": 0.7523539338219157,
+     "p30": 2.0474940116612315,
+     "p50": 3.9624603373367244,
+     "p70": 7.4761141964757245,
+     "p90": 18.254984101964904
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1y": 0.146625,
+    "2y": 0.292875,
+    "3y": 0.4075,
+    "5y": 0.571625
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2017,
+    "arms": 1,
+    "disease_family": "urothelial"
+   },
+   "sponsor_class": "OTHER (protocol (quoted): academic, cooperative-group or public sponsor: 'University Hospitals Bristol and Weston NHS Foundation Trust')",
+   "probabilities": {
+    "completed": 0.5371641218216174,
+    "terminated_accrual": 0.1995811890340772,
+    "terminated_other": 0.1298612041212364,
+    "withdrawn": 0.13339348502306908
+   },
+   "p_accrual_failure": 0.3329746740571463,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 30,
+  "evaluable_targets": [
+   26.0
+  ],
+  "decision_rules": [
+   {
+    "rule": "DR1",
+    "arm": "Cabazitaxel 15 mg/m2 day 1 + cisplatin 70mg/ m2 day 1 (Four cycles of chemotherapy using a combination regimen\ncomprising:\nCabazitaxel 15 mg/m2 day 1 + cisplatin 70mg/ m2 day 1. The\ncombination treatment is prescribed every 21 days.)",
+    "cohort": "26 patients",
+    "maximum_n": 26,
+    "stage_1_n": 9,
+    "at": {
+     "p0": {
+      "true_rate": 0.35,
+      "expected_n": 25.64789748175586,
+      "p_early_stop": 0.020711912837890624
+     },
+     "p1": {
+      "true_rate": 0.6,
+      "expected_n": 25.995543552,
+      "p_early_stop": 0.00026214400000000023
+     }
+    }
+   }
+  ]
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 3.9624603373367244,
+    "q10": 0.7523539338219157,
+    "q25": 1.6967075126606714,
+    "q75": 8.862146755068357,
+    "q90": 18.254984101964904,
+    "percentiles": {
+     "p10": 0.7523539338219157,
+     "p30": 2.0474940116612315,
+     "p50": 3.9624603373367244,
+     "p70": 7.4761141964757245,
+     "p90": 18.254984101964904
+    }
+   },
+   "accrual_historical_8.4_per_year": {
+    "median": 3.4102477284154418,
+    "q10": 2.675389608891466,
+    "q25": 2.994521625138715,
+    "q75": 3.8573871501275594,
+    "q90": 4.282346954867696
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 4.192420915523321,
+     "q10": 0.9823145120085123,
+     "q25": 1.926668090847268,
+     "q75": 9.092107333254955,
+     "q90": 18.4849446801515
+    },
+    "accrual_historical_8.4_per_year": {
+     "median": 3.6402083066020383,
+     "q10": 2.9053501870780627,
+     "q25": 3.2244822033253113,
+     "q75": 4.087347728314156,
+     "q90": 4.512307533054292
+    }
+   },
+   "assessment_lag_months": 2.76,
+   "source": "planned treatment: cycle length x maximum cycles (protocol)"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 8.962460337336724,
+     "q10": 5.752353933821916,
+     "q25": 6.696707512660671,
+     "q75": 13.862146755068357,
+     "q90": 23.254984101964904
+    },
+    "accrual_historical_8.4_per_year": {
+     "median": 8.410247728415442,
+     "q10": 7.675389608891466,
+     "q25": 7.994521625138715,
+     "q75": 8.85738715012756,
+     "q90": 9.282346954867695
+    }
+   },
+   "follow_up_years": 5.0,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.07780155251715126,
+    "source": "registry participant flow (urothelial): left by subject decision, loss to follow-up or physician decision; 221 trials, 25195 participants"
+   },
+   "adverse_event": {
+    "value": 0.03983544942150905,
+    "source": "registry participant flow (urothelial): left for an adverse event; 221 trials, 25195 participants"
+   },
+   "death": {
+    "value": 0.07874692686992439,
+    "source": "registry participant flow (urothelial): died during the study period; 221 trials, 25195 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1y": 0.146625,
+   "2y": 0.292875,
+   "3y": 0.4075,
+   "5y": 0.571625
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 3.96,
+   "q10": 0.75,
+   "q25": 1.7,
+   "q75": 8.86,
+   "q90": 18.25,
+   "percentiles": {
+    "p10": 0.7523539338219157,
+    "p30": 2.0474940116612315,
+    "p50": 3.9624603373367244,
+    "p70": 7.4761141964757245,
+    "p90": 18.254984101964904
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_8.4_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.0,
+   "2y": 0.004,
+   "3y": 0.2528,
+   "5y": 0.9874
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 8.39549 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 1.7 | p30 4.0 | p50 7.4 | p70 14.2 | p90 38.8"
+   },
+   "status": "plausible (protocol/historical median 1.14x)"
+  }
+ ]
+}

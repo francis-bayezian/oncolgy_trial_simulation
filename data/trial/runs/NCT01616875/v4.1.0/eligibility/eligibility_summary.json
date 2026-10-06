@@ -1,0 +1,322 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "a1b01e69016caaaea6f2842aada05174c861b2c6deacd18f0665988256f7b174",
+  "population": "d3b6ce1fc5073e5de70695c60528efd44c5474a66898e01ad319b32bb2fc8bca"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7698,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2302
+  },
+  "eligible_share": 0.7698,
+  "proven_eligible_share": 0.7698,
+  "not_proven_ineligible_share": 0.7698,
+  "criteria": {
+   "evaluated": [
+    "EL001",
+    "EL002",
+    "EL003",
+    "EL004",
+    "EL005",
+    "EL010",
+    "EL012",
+    "EL013",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL025",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030"
+   ],
+   "procedural": [
+    "EL014",
+    "EL024",
+    "EL026"
+   ],
+   "permissive": [
+    "EL008"
+   ],
+   "informational": [
+    "EL006",
+    "EL007",
+    "EL009",
+    "EL011"
+   ],
+   "run_with_review_flag": [
+    "EL005",
+    "EL015",
+    "EL019"
+   ]
+  },
+  "per_criterion": {
+   "EL001": {
+    "met": 10000,
+    "not_met": 0,
+    "unknown": 0,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Age at least 18 year"
+   },
+   "EL002": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Histologically confirmed primary TCC of the urinary bladder is present"
+   },
+   "EL003": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (T2 to T4 disease is one of ['T2 to T4'] AND N0 is one of ['N0'] AND M0 is one of ['M0'] AND (CT imaging is present AND (biopsy is present OR transurethral\nresection is present)))"
+   },
+   "EL004": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ECOG Performance status is one of ['0', '1']"
+   },
+   "EL005": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (GFR at least 60 mls/min OR [IF baseline eGFR at least 50 and less than 60 mls/min THEN (EDTA result at least 60 mls/min OR (EDTA result at least 55 and less than 60 mls/min AND UNRESOLVED requirement: 'discuss with CI' {NOT EXECUTABLE}))])"
+   },
+   "EL010": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: EDTA result less than 55 mls/min"
+   },
+   "EL012": {
+    "met": 8968,
+    "not_met": 1032,
+    "unknown": 0,
+    "share_not_met_decided": 0.1032,
+    "rule": "PROHIBITED: EXCLUDED IF: ECOG Performance Status at least 2"
+   },
+   "EL013": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Lymph node involvement is present OR metastatic disease is present)"
+   },
+   "EL015": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (peripheral neuropathy is one of ['Active'] AND Grade at least 2)"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Active secondary cancers is present"
+   },
+   "EL017": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: severe hypersensitivity reaction at least 3 [qualifier: History of; to polysorbate 80 containing drugs]"
+   },
+   "EL018": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Other concurrent serious illness or medical conditions is present"
+   },
+   "EL019": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Neutrophils at most 1.5 [qualifier: at enrolment] {NOT EXECUTABLE} OR Haemoglobin at most 10 g/dl [qualifier: at enrolment] OR Platelets at most 100 [qualifier: at enrolment] {NOT EXECUTABLE} OR Total bilirubin greater than 1.5 times upper limit of normal (ULN) [qualifier: "
+   },
+   "EL020": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Electrocardiogram (ECG) evidence is one of ['uncontrolled cardiac arrhythmias', 'angina pectoris', 'hypertension'] OR history of congestive heart failure is present OR myocardial infarction occurs within 6 month before enrolment [assessed: within last 6 months])"
+   },
+   "EL021": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Uncontrolled diabetes mellitus is present"
+   },
+   "EL022": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Active uncontrolled gastro-oesophageal reflux disease (GORD) is present"
+   },
+   "EL023": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Active infection requiring systemic antibiotic or anti-fungal medication is present"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: strong inhibitors of cytochrome P450 3A4/5 is present [qualifier: Concurrent or planned treatment]"
+   },
+   "EL027": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: strong inducers of cytochrome P450 3A4/5 is present [qualifier: Concurrent or planned treatment]"
+   },
+   "EL028": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Contraindications to cisplatin is present"
+   },
+   "EL029": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (reproductive potential is present AND an accepted and effective method of contraception is absent [qualifier: not implementing])"
+   },
+   "EL030": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: yellow fever vaccine is present [qualifier: Concurrent]"
+   }
+  },
+  "decisive_exclusions": {
+   "EL012": 1032,
+   "EL021": 90,
+   "EL029": 88,
+   "EL020": 86,
+   "EL015": 85,
+   "EL013": 84,
+   "EL019": 80,
+   "EL003": 80,
+   "EL005": 79,
+   "EL018": 77,
+   "EL028": 76,
+   "EL023": 76,
+   "EL025": 74,
+   "EL010": 73,
+   "EL004": 72,
+   "EL027": 71,
+   "EL030": 71,
+   "EL016": 70,
+   "EL022": 68,
+   "EL002": 68,
+   "EL017": 68
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL002": 10000,
+   "EL003": 10000,
+   "EL004": 10000,
+   "EL005": 10000,
+   "EL010": 10000,
+   "EL013": 10000,
+   "EL015": 10000,
+   "EL016": 10000,
+   "EL017": 10000,
+   "EL018": 10000,
+   "EL019": 10000,
+   "EL020": 10000,
+   "EL021": 10000,
+   "EL022": 10000,
+   "EL023": 10000,
+   "EL025": 10000,
+   "EL027": 10000,
+   "EL028": 10000,
+   "EL029": 10000,
+   "EL030": 10000
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.7675797157385383,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened)",
+    "detail": {
+     "estimate": 0.7675797157385383,
+     "ci95": [
+      0.7516604195776948,
+      0.7827734506602645
+     ],
+     "single_trial_80": [
+      0.5176177549895294,
+      0.9104294529747281
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.5176283632374208,
+      "p30": 0.6758360275891045,
+      "p50": 0.7675797157385383,
+      "p70": 0.8395237839652355,
+      "p90": 0.9104259882989161
+     },
+     "tau_logit": 0.8760515738951,
+     "groups": 468,
+     "trials": 468,
+     "participants": 162721
+    }
+   },
+   "target_eligible_share": 0.7675797157385383,
+   "share_excluded_by_decided_criteria": 0.1032,
+   "residual_pass_needed": 0.8559095849002434,
+   "per_criterion_pass_probability": 0.992250655522419,
+   "criteria": [
+    "EL002",
+    "EL003",
+    "EL004",
+    "EL005",
+    "EL010",
+    "EL013",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL025",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030"
+   ]
+  }
+ }
+}

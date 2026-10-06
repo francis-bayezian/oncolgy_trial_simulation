@@ -1,0 +1,10 @@
+{
+ "status": "RESOLVED",
+ "reason": null,
+ "simulated_power_at_design_effect": 0.7875,
+ "design_check": {
+  "stated_power": 0.8,
+  "simulated_power": 0.7875,
+  "consistent": "True"
+ }
+}

@@ -1,0 +1,153 @@
+Factor,Level,Arm,N enrolled,N efficacy-evaluable at cut-off,Small n,ORR % (95% CI),DCR % (95% CI),CR/PR/SD/PD/NE,TTR median mo,DOR median mo,PFS median mo (events/n),PFS 12 m %,OS median mo (events/n),OS 12 m %
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM3,14,14,,50% (23-77),100% (77-100),1/6/7/0/0,1.84,21.67,7.36 (14/14 ev),50.0,-,-
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM4,16,16,,38% (15-65),94% (70-100),0/6/9/1/0,1.84,16.56,11.97 (16/16 ev),50.0,-,-
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM5,17,17,,47% (23-72),76% (50-93),0/8/5/3/1,3.68,7.36,9.2 (17/17 ev),35.3,-,-
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM8,10,10,,30% (7-65),70% (35-93),0/3/4/3/0,3.68,9.2,3.68 (10/10 ev),30.0,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM3,9,9,yes,44% (14-79),67% (30-93),0/4/2/1/2,3.68,3.68,3.68 (9/9 ev),22.2,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM4,13,13,,62% (32-86),85% (55-98),1/7/3/2/0,1.84,3.68,7.36 (12/13 ev),25.6,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM5,17,17,,47% (23-72),82% (57-96),1/7/6/3/0,3.68,5.37,5.52 (17/17 ev),23.5,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM8,4,4,yes,100% (40-100),100% (40-100),0/4/0/0/0,1.84,3.68,7.36 (4/4 ev),50.0,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM3,12,12,,33% (10-65),50% (21-79),0/4/2/4/2,1.84,1.84,3.68 (11/12 ev),27.3,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM4,8,8,yes,88% (47-100),100% (63-100),0/7/1/0/0,3.68,1.84,5.52 (8/8 ev),12.5,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM5,10,10,,20% (3-56),70% (35-93),0/2/5/3/0,1.84,5.52,4.16 (10/10 ev),20.0,-,-
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM8,7,7,yes,57% (18-90),71% (29-96),0/4/1/2/0,1.84,15.18,7.36 (7/7 ev),42.9,-,-
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM3,14,14,,36% (13-65),57% (29-82),0/5/3/6/0,1.84,3.68,3.68 (14/14 ev),14.3,-,-
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM4,19,19,,32% (13-57),53% (29-76),0/6/4/9/0,3.68,5.52,3.68 (19/19 ev),26.3,-,-
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM5,7,7,yes,29% (4-71),86% (42-100),0/2/4/1/0,1.84,5.52,7.36 (7/7 ev),28.6,-,-
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM8,13,13,,46% (19-75),85% (55-98),0/6/5/2/0,1.84,5.52,5.52 (13/13 ev),30.8,-,-
+tumor  type/population,Disease Population Group 1,ARM3,13,13,,38% (14-68),54% (25-81),0/5/2/4/2,1.84,18.4,3.68 (12/13 ev),33.3,-,-
+tumor  type/population,Disease Population Group 1,ARM4,19,19,,42% (20-66),74% (49-91),0/8/6/5/0,1.84,1.84,3.68 (19/19 ev),21.1,-,-
+tumor  type/population,Disease Population Group 1,ARM5,15,15,,60% (32-84),80% (52-96),0/9/3/3/0,1.84,7.36,7.36 (15/15 ev),13.3,-,-
+tumor  type/population,Disease Population Group 1,ARM8,8,8,yes,50% (16-84),62% (24-91),0/4/1/3/0,3.68,3.68,5.52 (8/8 ev),12.5,-,-
+tumor  type/population,Disease Population Group 2,ARM3,19,19,,53% (29-76),84% (60-97),1/9/6/2/1,1.84,3.68,5.52 (19/19 ev),31.6,-,-
+tumor  type/population,Disease Population Group 2,ARM4,20,20,,55% (32-77),90% (68-99),0/11/7/2/0,3.68,7.25,9.2 (20/20 ev),40.0,-,-
+tumor  type/population,Disease Population Group 2,ARM5,14,14,,21% (5-51),71% (42-92),0/3/7/3/1,3.68,5.37,4.16 (14/14 ev),21.4,-,-
+tumor  type/population,Disease Population Group 2,ARM8,15,15,,40% (16-68),80% (52-96),0/6/6/3/0,1.84,13.97,5.52 (15/15 ev),40.0,-,-
+tumor  type/population,Disease Population Group 3,ARM3,17,17,,29% (10-56),65% (38-86),0/5/6/5/1,1.84,3.68,3.68 (17/17 ev),23.5,-,-
+tumor  type/population,Disease Population Group 3,ARM4,17,17,,47% (23-72),71% (44-90),1/7/4/5/0,1.84,15.08,9.2 (16/17 ev),32.1,-,-
+tumor  type/population,Disease Population Group 3,ARM5,22,22,,36% (17-59),82% (60-95),1/7/10/4/0,1.84,5.52,9.2 (22/22 ev),40.9,-,-
+tumor  type/population,Disease Population Group 3,ARM8,11,11,,64% (31-89),91% (59-100),0/7/3/1/0,1.84,11.04,7.36 (11/11 ev),45.5,-,-
+prior  treatment  cohort,No,ARM3,21,21,,48% (26-70),76% (53-92),1/9/6/4/1,1.84,3.68,5.52 (21/21 ev),28.6,-,-
+prior  treatment  cohort,No,ARM4,29,29,,52% (33-71),83% (64-94),0/15/9/5/0,1.84,12.74,7.36 (28/29 ev),40.2,-,-
+prior  treatment  cohort,No,ARM5,17,17,,18% (4-43),71% (44-90),0/3/9/4/1,1.84,9.76,5.52 (17/17 ev),35.3,-,-
+prior  treatment  cohort,No,ARM8,22,22,,55% (32-76),82% (60-95),0/12/6/4/0,1.84,5.52,5.52 (22/22 ev),36.4,-,-
+prior  treatment  cohort,Yes,ARM3,28,28,,36% (19-56),64% (44-81),0/10/8/7/3,1.84,3.68,3.68 (27/28 ev),29.6,-,-
+prior  treatment  cohort,Yes,ARM4,27,27,,44% (25-65),74% (54-89),1/11/8/7/0,3.68,5.19,7.36 (27/27 ev),22.2,-,-
+prior  treatment  cohort,Yes,ARM5,34,34,,50% (32-68),82% (65-93),1/16/11/6/0,3.68,5.52,7.36 (34/34 ev),23.5,-,-
+prior  treatment  cohort,Yes,ARM8,12,12,,42% (15-72),75% (43-95),0/5/4/3/0,3.68,13.97,5.52 (12/12 ev),33.3,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM3,18,18,,44% (22-69),72% (47-90),1/7/5/4/1,3.68,18.4,4.93 (18/18 ev),38.9,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM4,15,15,,33% (12-62),73% (45-92),0/5/6/4/0,1.84,5.52,5.52 (15/15 ev),20.0,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM5,19,19,,42% (20-66),79% (54-94),0/8/7/4/0,3.68,5.52,7.36 (19/19 ev),31.6,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM8,9,9,yes,67% (30-93),89% (52-100),0/6/2/1/0,1.84,3.68,7.36 (9/9 ev),33.3,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM3,14,14,,50% (23-77),79% (49-95),0/7/4/1/2,1.84,3.68,5.52 (13/14 ev),30.8,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM4,13,13,,54% (25-81),85% (55-98),1/6/4/2/0,3.68,3.42,9.2 (12/13 ev),25.4,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM5,12,12,,50% (21-79),67% (35-90),1/5/2/3/1,3.68,3.68,5.29 (12/12 ev),25.0,-,-
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM8,9,9,yes,44% (14-79),89% (52-100),0/4/4/1/0,1.84,5.52,5.52 (9/9 ev),33.3,-,-
+genomic  alterations,bcr/abl translocation above detection limit,ARM3,10,10,,20% (3-56),50% (19-81),0/2/3/4/1,1.84,3.68,1.84 (10/10 ev),10.0,-,-
+genomic  alterations,bcr/abl translocation above detection limit,ARM4,13,13,,62% (32-86),85% (55-98),0/8/3/2/0,1.84,9.2,11.04 (13/13 ev),46.2,-,-
+genomic  alterations,bcr/abl translocation above detection limit,ARM5,14,14,,21% (5-51),79% (49-95),0/3/8/3/0,1.84,12.88,5.52 (14/14 ev),28.6,-,-
+genomic  alterations,bcr/abl translocation above detection limit,ARM8,8,8,yes,38% (9-76),62% (24-91),0/3/2/3/0,1.84,11.04,3.68 (8/8 ev),25.0,-,-
+genomic  alterations,t(4;11) translocation above detection limit,ARM3,7,7,yes,43% (10-82),71% (29-96),0/3/2/2/0,3.68,1.84,3.68 (7/7 ev),28.6,-,-
+genomic  alterations,t(4;11) translocation above detection limit,ARM4,15,15,,47% (21-73),73% (45-92),0/7/4/4/0,1.84,5.19,7.03 (15/15 ev),33.3,-,-
+genomic  alterations,t(4;11) translocation above detection limit,ARM5,6,6,yes,50% (12-88),100% (54-100),0/3/3/0/0,1.84,5.52,9.2 (6/6 ev),16.7,-,-
+genomic  alterations,t(4;11) translocation above detection limit,ARM8,8,8,yes,50% (16-84),75% (35-97),0/4/2/2/0,1.84,16.56,5.52 (8/8 ev),50.0,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM3,30,30,,40% (23-59),73% (54-88),1/11/10/7/1,1.84,3.68,5.52 (29/30 ev),34.5,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM4,30,30,,50% (31-69),80% (61-92),1/14/9/6/0,3.68,9.2,10.93 (30/30 ev),33.3,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM5,32,32,,41% (24-59),78% (60-91),1/12/12/6/1,3.68,5.52,7.36 (32/32 ev),18.8,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM8,23,23,,65% (43-84),83% (61-95),0/15/4/4/0,1.84,13.97,7.36 (23/23 ev),39.1,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM3,19,19,,42% (20-66),63% (38-84),0/8/4/4/3,1.84,3.68,3.68 (19/19 ev),21.1,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM4,26,26,,46% (27-67),77% (56-91),0/12/8/6/0,1.84,3.68,5.52 (25/26 ev),28.8,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM5,19,19,,37% (16-62),79% (54-94),0/7/8/4/0,1.84,21.08,9.05 (19/19 ev),42.1,-,-
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM8,11,11,,18% (2-52),73% (39-94),0/2/6/3/0,1.84,2.83,4.67 (11/11 ev),27.3,-,-
+ALK-positive,Negative,ARM3,26,26,,38% (20-59),65% (44-83),1/9/7/6/3,1.84,3.68,3.68 (25/26 ev),32.0,-,-
+ALK-positive,Negative,ARM4,28,28,,43% (24-63),82% (63-94),1/11/11/5/0,1.84,5.52,6.82 (27/28 ev),30.4,-,-
+ALK-positive,Negative,ARM5,23,23,,30% (13-53),78% (56-93),0/7/11/5/0,3.68,11.04,11.04 (23/23 ev),43.5,-,-
+ALK-positive,Negative,ARM8,20,20,,40% (19-64),70% (46-88),0/8/6/6/0,1.84,5.52,5.52 (20/20 ev),25.0,-,-
+ALK-positive,Positive,ARM3,23,23,,43% (23-66),74% (52-90),0/10/7/5/1,1.84,3.68,5.52 (23/23 ev),26.1,-,-
+ALK-positive,Positive,ARM4,28,28,,54% (34-72),75% (55-89),0/15/6/7/0,3.68,7.25,9.2 (28/28 ev),32.1,-,-
+ALK-positive,Positive,ARM5,28,28,,46% (28-66),79% (59-92),1/12/9/5/1,1.84,5.52,5.52 (28/28 ev),14.3,-,-
+ALK-positive,Positive,ARM8,14,14,,64% (35-87),93% (66-100),0/9/4/1/0,1.84,15.18,7.36 (14/14 ev),50.0,-,-
+ALK-negative,Negative,ARM3,19,19,,42% (20-66),68% (43-87),0/8/5/4/2,1.84,3.68,4.92 (19/19 ev),26.3,-,-
+ALK-negative,Negative,ARM4,21,21,,38% (18-62),76% (53-92),1/7/8/5/0,3.68,9.2,7.36 (21/21 ev),33.3,-,-
+ALK-negative,Negative,ARM5,22,22,,32% (14-55),73% (50-89),0/7/9/5/1,1.84,12.88,5.52 (22/22 ev),31.8,-,-
+ALK-negative,Negative,ARM8,19,19,,53% (29-76),79% (54-94),0/10/5/4/0,1.84,11.04,5.52 (19/19 ev),36.8,-,-
+ALK-negative,Positive,ARM3,30,30,,40% (23-59),70% (51-85),1/11/9/7/2,1.84,3.68,4.93 (29/30 ev),31.0,-,-
+ALK-negative,Positive,ARM4,35,35,,54% (37-71),80% (63-92),0/19/9/7/0,1.84,5.52,7.03 (34/35 ev),29.6,-,-
+ALK-negative,Positive,ARM5,29,29,,45% (26-64),83% (64-94),1/12/11/5/0,3.68,5.52,7.36 (29/29 ev),24.1,-,-
+ALK-negative,Positive,ARM8,15,15,,47% (21-73),80% (52-96),0/7/5/3/0,1.84,5.52,5.52 (15/15 ev),33.3,-,-
+central  testing  for  ALK  will  no  longer  be  required,No,ARM3,25,25,,40% (21-61),72% (51-88),0/10/8/6/1,1.84,3.68,5.38 (25/25 ev),24.0,-,-
+central  testing  for  ALK  will  no  longer  be  required,No,ARM4,26,26,,65% (44-83),85% (65-96),1/16/5/4/0,1.84,3.68,6.82 (26/26 ev),34.6,-,-
+central  testing  for  ALK  will  no  longer  be  required,No,ARM5,27,27,,37% (19-58),70% (50-86),0/10/9/7/1,3.68,3.68,5.52 (27/27 ev),29.6,-,-
+central  testing  for  ALK  will  no  longer  be  required,No,ARM8,13,13,,38% (14-68),69% (39-91),0/5/4/4/0,3.68,3.68,3.68 (13/13 ev),7.7,-,-
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM3,24,24,,42% (22-63),67% (45-84),1/9/6/5/3,1.84,3.68,4.92 (23/24 ev),34.8,-,-
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM4,30,30,,33% (17-53),73% (54-88),0/10/12/8/0,3.68,12.55,7.36 (29/30 ev),27.9,-,-
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM5,24,24,,42% (22-63),88% (68-97),1/9/11/3/0,1.84,7.36,9.2 (24/24 ev),25.0,-,-
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM8,21,21,,57% (34-78),86% (64-97),0/12/6/3/0,1.84,13.97,12.88 (21/21 ev),52.4,-,-
+Age (FDA standard age bands),65-74 years,ARM3,16,16,,38% (15-65),62% (35-85),1/5/4/4/2,3.68,3.68,4.92 (15/16 ev),26.7,-,-
+Age (FDA standard age bands),65-74 years,ARM4,10,10,,60% (26-88),90% (56-100),1/5/3/1/0,3.68,12.74,11.04 (9/10 ev),45.0,-,-
+Age (FDA standard age bands),65-74 years,ARM5,11,11,,27% (6-61),64% (31-89),0/3/4/3/1,1.84,12.88,3.68 (11/11 ev),27.3,-,-
+Age (FDA standard age bands),65-74 years,ARM8,6,6,yes,100% (54-100),100% (54-100),0/6/0/0/0,1.84,9.2,12.88 (6/6 ev),66.7,-,-
+Age (FDA standard age bands),< 65 years,ARM3,30,30,,37% (20-56),70% (51-85),0/11/10/7/2,1.84,18.4,3.68 (30/30 ev),33.3,-,-
+Age (FDA standard age bands),< 65 years,ARM4,40,40,,45% (29-62),78% (62-89),0/18/13/9/0,1.84,5.52,6.82 (40/40 ev),27.5,-,-
+Age (FDA standard age bands),< 65 years,ARM5,35,35,,43% (26-61),83% (66-93),1/14/14/6/0,3.68,5.52,9.05 (35/35 ev),28.6,-,-
+Age (FDA standard age bands),< 65 years,ARM8,27,27,,37% (19-58),74% (54-89),0/10/10/7/0,1.84,3.68,5.52 (27/27 ev),25.9,-,-
+Age (FDA standard age bands),>= 75 years,ARM3,3,3,yes,100% (29-100),100% (29-100),0/3/0/0/0,1.84,3.68,5.52 (3/3 ev),-,-,-
+Age (FDA standard age bands),>= 75 years,ARM4,6,6,yes,50% (12-88),67% (22-96),0/3/1/2/0,3.68,5.52,7.1 (6/6 ev),33.3,-,-
+Age (FDA standard age bands),>= 75 years,ARM5,5,5,yes,40% (5-85),80% (28-99),0/2/2/1/0,1.84,1.84,5.52 (5/5 ev),20.0,-,-
+Age (FDA standard age bands),>= 75 years,ARM8,1,1,yes,100% (2-100),100% (2-100),0/1/0/0/0,3.68,16.56,20.24 (1/1 ev),100.0,-,-
+Sex,female,ARM3,22,22,,50% (28-72),77% (55-92),1/10/6/1/4,3.68,21.67,7.36 (21/22 ev),42.9,-,-
+Sex,female,ARM4,28,28,,39% (22-59),75% (55-89),1/10/10/7/0,3.68,12.74,10.93 (28/28 ev),35.7,-,-
+Sex,female,ARM5,26,26,,31% (14-52),88% (70-98),1/7/15/3/0,3.68,7.36,9.2 (26/26 ev),38.5,-,-
+Sex,female,ARM8,16,16,,69% (41-89),100% (79-100),0/11/5/0/0,1.84,16.13,12.88 (16/16 ev),56.2,-,-
+Sex,male,ARM3,27,27,,33% (17-54),63% (42-81),0/9/8/10/0,1.84,3.68,3.68 (27/27 ev),18.5,-,-
+Sex,male,ARM4,28,28,,57% (37-76),82% (63-94),0/16/7/5/0,1.84,3.42,6.82 (27/28 ev),26.6,-,-
+Sex,male,ARM5,25,25,,48% (28-69),68% (46-85),0/12/5/7/1,1.84,5.37,5.52 (25/25 ev),16.0,-,-
+Sex,male,ARM8,18,18,,33% (13-59),61% (36-83),0/6/5/7/0,1.84,3.68,3.68 (18/18 ev),16.7,-,-
+Race,asian,ARM3,6,6,yes,50% (12-88),50% (12-88),0/3/0/2/1,1.84,22.08,23.51 (5/6 ev),60.0,-,-
+Race,asian,ARM4,7,7,yes,43% (10-82),71% (29-96),0/3/2/2/0,1.84,5.52,7.36 (7/7 ev),14.3,-,-
+Race,asian,ARM5,6,6,yes,67% (22-96),83% (36-100),0/4/1/1/0,1.84,5.52,7.36 (6/6 ev),16.7,-,-
+Race,asian,ARM8,5,5,yes,20% (1-72),80% (28-99),0/1/3/1/0,3.68,9.2,3.68 (5/5 ev),20.0,-,-
+Race,black_or_african_american,ARM3,3,3,yes,67% (9-99),100% (29-100),0/2/1/0/0,1.84,3.54,5.38 (3/3 ev),-,-,-
+Race,black_or_african_american,ARM4,7,7,yes,43% (10-82),71% (29-96),0/3/2/2/0,3.68,12.74,16.23 (7/7 ev),57.1,-,-
+Race,black_or_african_american,ARM5,4,4,yes,0% (0-60),75% (19-99),0/0/3/1/0,-,-,5.52 (4/4 ev),25.0,-,-
+Race,black_or_african_american,ARM8,3,3,yes,67% (9-99),67% (9-99),0/2/0/1/0,1.84,3.68,7.36 (3/3 ev),33.3,-,-
+Race,more_than_one_race,ARM3,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,more_than_one_race,ARM4,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,more_than_one_race,ARM5,1,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,15.51 (1/1 ev),100.0,-,-
+Race,more_than_one_race,ARM8,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM3,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM4,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM5,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM8,1,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,5.52 (1/1 ev),-,-,-
+Race,unknown_or_not_reported,ARM3,2,2,yes,0% (0-84),50% (1-99),0/0/1/0/1,-,-,0.99 (2/2 ev),50.0,-,-
+Race,unknown_or_not_reported,ARM4,1,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,1.84 (1/1 ev),-,-,-
+Race,unknown_or_not_reported,ARM5,4,4,yes,75% (19-99),100% (40-100),0/3/1/0/0,3.68,11.04,7.36 (4/4 ev),50.0,-,-
+Race,unknown_or_not_reported,ARM8,2,2,yes,0% (0-84),0% (0-84),0/0/0/2/0,-,-,1.84 (2/2 ev),-,-,-
+Race,white,ARM3,38,38,,39% (24-57),71% (54-85),1/14/12/9/2,1.84,3.68,4.92 (38/38 ev),26.3,-,-
+Race,white,ARM4,41,41,,51% (35-67),83% (68-93),1/20/13/7/0,3.68,5.19,7.1 (40/41 ev),30.4,-,-
+Race,white,ARM5,36,36,,36% (21-54),75% (58-88),1/12/14/8/1,1.84,5.52,5.52 (36/36 ev),25.0,-,-
+Race,white,ARM8,23,23,,61% (39-80),87% (66-97),0/14/6/3/0,1.84,13.97,7.36 (23/23 ev),43.5,-,-
+Ethnicity,hispanic_or_latino,ARM3,3,3,yes,33% (1-91),33% (1-91),0/1/0/1/1,3.68,3.68,1.84 (2/3 ev),-,-,-
+Ethnicity,hispanic_or_latino,ARM4,4,4,yes,25% (1-81),75% (19-99),0/1/2/1/0,3.68,16.56,7.36 (4/4 ev),25.0,-,-
+Ethnicity,hispanic_or_latino,ARM5,3,3,yes,33% (1-91),67% (9-99),0/1/1/1/0,1.84,65.62,20.24 (3/3 ev),66.7,-,-
+Ethnicity,hispanic_or_latino,ARM8,2,2,yes,100% (16-100),100% (16-100),0/2/0/0/0,1.84,3.68,7.36 (2/2 ev),50.0,-,-
+Ethnicity,not_hispanic_or_latino,ARM3,43,43,,42% (27-58),70% (54-83),0/18/12/10/3,1.84,3.68,4.92 (43/43 ev),27.9,-,-
+Ethnicity,not_hispanic_or_latino,ARM4,51,51,,49% (35-63),78% (65-89),1/24/15/11/0,1.84,5.52,7.1 (50/51 ev),30.3,-,-
+Ethnicity,not_hispanic_or_latino,ARM5,47,47,,38% (25-54),79% (64-89),1/17/19/9/1,3.68,5.52,7.36 (47/47 ev),25.5,-,-
+Ethnicity,not_hispanic_or_latino,ARM8,29,29,,48% (29-67),76% (56-90),0/14/8/7/0,1.84,9.2,5.52 (29/29 ev),34.5,-,-
+Ethnicity,unknown_or_not_reported,ARM3,3,3,yes,33% (1-91),100% (29-100),1/0/2/0/0,3.68,40.29,12.88 (3/3 ev),66.7,-,-
+Ethnicity,unknown_or_not_reported,ARM4,1,1,yes,100% (2-100),100% (2-100),0/1/0/0/0,3.68,12.74,16.42 (1/1 ev),100.0,-,-
+Ethnicity,unknown_or_not_reported,ARM5,1,1,yes,100% (2-100),100% (2-100),0/1/0/0/0,1.84,7.36,9.2 (1/1 ev),-,-,-
+Ethnicity,unknown_or_not_reported,ARM8,3,3,yes,33% (1-91),100% (29-100),0/1/2/0/0,3.68,19.52,7.36 (3/3 ev),33.3,-,-
+Ecog performance status,0,ARM3,16,16,,38% (15-65),62% (35-85),0/6/4/4/2,1.84,1.84,3.68 (15/16 ev),20.0,-,-
+Ecog performance status,0,ARM4,22,22,,50% (28-72),73% (50-89),0/11/5/6/0,3.68,7.25,7.36 (22/22 ev),27.3,-,-
+Ecog performance status,0,ARM5,15,15,,47% (21-73),93% (68-100),0/7/7/1/0,3.68,3.68,9.2 (15/15 ev),40.0,-,-
+Ecog performance status,0,ARM8,10,10,,40% (12-74),80% (44-97),0/4/4/2/0,1.84,2.83,4.67 (10/10 ev),20.0,-,-
+Ecog performance status,1,ARM3,24,24,,46% (26-67),75% (53-90),1/10/7/5/1,1.84,21.67,5.52 (24/24 ev),33.3,-,-
+Ecog performance status,1,ARM4,31,31,,45% (27-64),81% (63-93),1/13/11/6/0,1.84,3.14,6.82 (30/31 ev),30.4,-,-
+Ecog performance status,1,ARM5,31,31,,39% (22-58),74% (55-88),1/11/11/7/1,1.84,7.36,7.36 (31/31 ev),25.8,-,-
+Ecog performance status,1,ARM8,21,21,,52% (30-74),76% (53-92),0/11/5/5/0,1.84,11.04,7.36 (21/21 ev),38.1,-,-
+Ecog performance status,2 or more,ARM3,9,9,yes,33% (7-70),67% (30-93),0/3/3/2/1,3.68,3.68,7.36 (9/9 ev),33.3,-,-
+Ecog performance status,2 or more,ARM4,3,3,yes,67% (9-99),100% (29-100),0/2/1/0/0,1.84,3.68,12.88 (3/3 ev),66.7,-,-
+Ecog performance status,2 or more,ARM5,5,5,yes,20% (1-72),60% (15-95),0/1/2/2/0,3.68,5.37,3.65 (5/5 ev),-,-,-
+Ecog performance status,2 or more,ARM8,3,3,yes,67% (9-99),100% (29-100),0/2/1/0/0,1.84,9.2,12.88 (3/3 ev),66.7,-,-

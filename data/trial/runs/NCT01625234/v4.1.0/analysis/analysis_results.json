@@ -1,0 +1,1068 @@
+{
+ "analysis_version": "analysis-results-1.1.0",
+ "seed": 20261006,
+ "inputs": {
+  "studyspec": "3fe2a7d61e826f5bbd3c1f072cc5049b1e52c5e1b0ea741be796c852dfba0ca5"
+ },
+ "efficacy_scope": {
+  "response": true,
+  "PFS": true,
+  "TTP": true,
+  "OS": false,
+  "any": true
+ },
+ "data_cutoff": {
+  "day": 10333.45,
+  "rule": "last enrolment + 5 years (stated follow-up, else default)",
+  "enrolled_by_cutoff": 190,
+  "planned": 190
+ },
+ "response_criteria": {
+  "pr": 30.0,
+  "pd": 20.0,
+  "pd_abs_mm": 5.0,
+  "deeper": [],
+  "confirm": false,
+  "source": "protocol response criteria (compiled thresholds)"
+ },
+ "assessment_interval_days": 56,
+ "follow_up_days": 1826,
+ "control_arm": "ARM8",
+ "latent_inputs": {
+  "ARM3": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.6666666666666666,
+    "unit": "proportion",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F010 (X-396  (ensartinib), n = 12)",
+    "small_sample": true
+   },
+   "complete_response_share": {
+    "value": 0.06125895584939748,
+    "source": "evidence arms reporting complete_response (2 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 13.759371371525924,
+    "unit": "months",
+    "level": "adult trials",
+    "source": "evidence medians of overall_survival (78 studies)",
+    "detail": {
+     "variable": "overall_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 13.759371371525924,
+     "ci95": [
+      12.80133115239122,
+      14.78911046717225
+     ],
+     "single_trial_80": [
+      7.8744727524423235,
+      24.042282765007748
+     ],
+     "studies": 78,
+     "arms": 167,
+     "patients": 24825
+    }
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.0,
+     "rate_per_year": 1.6123084130227157
+    },
+    "evidence_level": "assumption",
+    "source": "evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential",
+    "assumption": "A7_progression_exponential",
+    "detail": {
+     "variable": "progression_free_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 5.158917549233278,
+     "ci95": [
+      4.7531360874225,
+      5.599341106645948
+     ],
+     "single_trial_80": [
+      2.7518746309245494,
+      9.671381821215242
+     ],
+     "studies": 67,
+     "arms": 162,
+     "patients": 21049
+    }
+   },
+   "post_progression_survival_months": 8.600453822292646
+  },
+  "ARM4": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.6666666666666666,
+    "unit": "proportion",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F010 (X-396  (ensartinib), n = 12)",
+    "small_sample": true
+   },
+   "complete_response_share": {
+    "value": 0.06125895584939748,
+    "source": "evidence arms reporting complete_response (2 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 13.759371371525924,
+    "unit": "months",
+    "level": "adult trials",
+    "source": "evidence medians of overall_survival (78 studies)",
+    "detail": {
+     "variable": "overall_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 13.759371371525924,
+     "ci95": [
+      12.80133115239122,
+      14.78911046717225
+     ],
+     "single_trial_80": [
+      7.8744727524423235,
+      24.042282765007748
+     ],
+     "studies": 78,
+     "arms": 167,
+     "patients": 24825
+    }
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.0,
+     "rate_per_year": 1.6123084130227157
+    },
+    "evidence_level": "assumption",
+    "source": "evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential",
+    "assumption": "A7_progression_exponential",
+    "detail": {
+     "variable": "progression_free_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 5.158917549233278,
+     "ci95": [
+      4.7531360874225,
+      5.599341106645948
+     ],
+     "single_trial_80": [
+      2.7518746309245494,
+      9.671381821215242
+     ],
+     "studies": 67,
+     "arms": 162,
+     "patients": 21049
+    }
+   },
+   "post_progression_survival_months": 8.600453822292646
+  },
+  "ARM5": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.6666666666666666,
+    "unit": "proportion",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F010 (X-396  (ensartinib), n = 12)",
+    "small_sample": true
+   },
+   "complete_response_share": {
+    "value": 0.06125895584939748,
+    "source": "evidence arms reporting complete_response (2 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 13.759371371525924,
+    "unit": "months",
+    "level": "adult trials",
+    "source": "evidence medians of overall_survival (78 studies)",
+    "detail": {
+     "variable": "overall_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 13.759371371525924,
+     "ci95": [
+      12.80133115239122,
+      14.78911046717225
+     ],
+     "single_trial_80": [
+      7.8744727524423235,
+      24.042282765007748
+     ],
+     "studies": 78,
+     "arms": 167,
+     "patients": 24825
+    }
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.0,
+     "rate_per_year": 1.6123084130227157
+    },
+    "evidence_level": "assumption",
+    "source": "evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential",
+    "assumption": "A7_progression_exponential",
+    "detail": {
+     "variable": "progression_free_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 5.158917549233278,
+     "ci95": [
+      4.7531360874225,
+      5.599341106645948
+     ],
+     "single_trial_80": [
+      2.7518746309245494,
+      9.671381821215242
+     ],
+     "studies": 67,
+     "arms": 162,
+     "patients": 21049
+    }
+   },
+   "post_progression_survival_months": 8.600453822292646
+  },
+  "ARM8": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.6666666666666666,
+    "unit": "proportion",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F010 (X-396  (ensartinib), n = 12)",
+    "small_sample": true
+   },
+   "complete_response_share": {
+    "value": 0.06125895584939748,
+    "source": "evidence arms reporting complete_response (2 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 13.759371371525924,
+    "unit": "months",
+    "level": "adult trials",
+    "source": "evidence medians of overall_survival (78 studies)",
+    "detail": {
+     "variable": "overall_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 13.759371371525924,
+     "ci95": [
+      12.80133115239122,
+      14.78911046717225
+     ],
+     "single_trial_80": [
+      7.8744727524423235,
+      24.042282765007748
+     ],
+     "studies": 78,
+     "arms": 167,
+     "patients": 24825
+    }
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.0,
+     "rate_per_year": 1.6123084130227157
+    },
+    "evidence_level": "assumption",
+    "source": "evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential",
+    "assumption": "A7_progression_exponential",
+    "detail": {
+     "variable": "progression_free_survival",
+     "family": "lung",
+     "subgroup": "adult trials",
+     "median_months": 5.158917549233278,
+     "ci95": [
+      4.7531360874225,
+      5.599341106645948
+     ],
+     "single_trial_80": [
+      2.7518746309245494,
+      9.671381821215242
+     ],
+     "studies": 67,
+     "arms": 162,
+     "patients": 21049
+    }
+   },
+   "post_progression_survival_months": 8.600453822292646
+  }
+ },
+ "efficacy": {
+  "ARM3": {
+   "n": 49,
+   "best_overall_response": {
+    "PR": 19,
+    "NE": 4,
+    "PD": 11,
+    "SD": 14,
+    "CR": 1
+   },
+   "objective_response": {
+    "responders": 20,
+    "rate": 0.4082,
+    "ci95_exact": [
+     0.26996706063129844,
+     0.5578706070573544
+    ]
+   },
+   "disease_control": {
+    "n": 34,
+    "rate": 0.6939,
+    "ci95_exact": [
+     0.5458475634947544,
+     0.8174805523541264
+    ]
+   },
+   "PFS": {
+    "n": 49,
+    "events": 48,
+    "median_months": 4.92,
+    "median_ci95_months": [
+     3.68,
+     7.36
+    ],
+    "landmark_percent": {
+     "6m": 37.5,
+     "12m": 29.2,
+     "24m": 10.4
+    }
+   },
+   "TTP": {
+    "n": 49,
+    "events": 36,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     3.68,
+     12.88
+    ],
+    "landmark_percent": {
+     "6m": 47.0,
+     "12m": 38.7,
+     "24m": 17.4
+    }
+   },
+   "DOR": {
+    "n": 20,
+    "events": 20,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     22.08
+    ],
+    "landmark_percent": {
+     "6m": 50.0,
+     "12m": 45.0,
+     "24m": 15.0
+    }
+   },
+   "TTR": {
+    "n": 20,
+    "events": 20,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     3.68
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  },
+  "ARM4": {
+   "n": 56,
+   "best_overall_response": {
+    "PR": 26,
+    "SD": 17,
+    "PD": 12,
+    "CR": 1
+   },
+   "objective_response": {
+    "responders": 27,
+    "rate": 0.4821,
+    "ci95_exact": [
+     0.3465548681692756,
+     0.6196841979349188
+    ]
+   },
+   "disease_control": {
+    "n": 44,
+    "rate": 0.7857,
+    "ci95_exact": [
+     0.6556045889136665,
+     0.8840778008800694
+    ]
+   },
+   "PFS": {
+    "n": 56,
+    "events": 55,
+    "median_months": 7.36,
+    "median_ci95_months": [
+     3.68,
+     11.04
+    ],
+    "landmark_percent": {
+     "6m": 56.9,
+     "12m": 31.2,
+     "24m": 9.2
+    }
+   },
+   "TTP": {
+    "n": 56,
+    "events": 43,
+    "median_months": 7.36,
+    "median_ci95_months": [
+     3.68,
+     12.88
+    ],
+    "landmark_percent": {
+     "6m": 56.5,
+     "12m": 37.8,
+     "24m": 21.7
+    }
+   },
+   "DOR": {
+    "n": 27,
+    "events": 26,
+    "median_months": 7.25,
+    "median_ci95_months": [
+     3.14,
+     15.08
+    ],
+    "landmark_percent": {
+     "6m": 50.2,
+     "12m": 42.4,
+     "24m": 11.6
+    }
+   },
+   "TTR": {
+    "n": 27,
+    "events": 27,
+    "median_months": 3.68,
+    "median_ci95_months": [
+     1.84,
+     3.68
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  },
+  "ARM5": {
+   "n": 51,
+   "best_overall_response": {
+    "PR": 19,
+    "PD": 10,
+    "SD": 20,
+    "NE": 1,
+    "CR": 1
+   },
+   "objective_response": {
+    "responders": 20,
+    "rate": 0.3922,
+    "ci95_exact": [
+     0.2584436352821828,
+     0.5388590104201924
+    ]
+   },
+   "disease_control": {
+    "n": 40,
+    "rate": 0.7843,
+    "ci95_exact": [
+     0.6467859364904809,
+     0.8871094002502565
+    ]
+   },
+   "PFS": {
+    "n": 51,
+    "events": 51,
+    "median_months": 7.36,
+    "median_ci95_months": [
+     3.68,
+     9.2
+    ],
+    "landmark_percent": {
+     "6m": 52.9,
+     "12m": 27.5,
+     "24m": 9.8
+    }
+   },
+   "TTP": {
+    "n": 51,
+    "events": 41,
+    "median_months": 7.36,
+    "median_ci95_months": [
+     5.52,
+     11.04
+    ],
+    "landmark_percent": {
+     "6m": 58.4,
+     "12m": 33.5,
+     "24m": 16.0
+    }
+   },
+   "DOR": {
+    "n": 20,
+    "events": 20,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     3.68,
+     11.04
+    ],
+    "landmark_percent": {
+     "6m": 45.0,
+     "12m": 25.0,
+     "24m": 15.0
+    }
+   },
+   "TTR": {
+    "n": 20,
+    "events": 20,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     3.68
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  },
+  "ARM8": {
+   "n": 34,
+   "best_overall_response": {
+    "PR": 17,
+    "SD": 10,
+    "PD": 7
+   },
+   "objective_response": {
+    "responders": 17,
+    "rate": 0.5,
+    "ci95_exact": [
+     0.32426927002132083,
+     0.6757307299786791
+    ]
+   },
+   "disease_control": {
+    "n": 27,
+    "rate": 0.7941,
+    "ci95_exact": [
+     0.6210222514603168,
+     0.912978694541873
+    ]
+   },
+   "PFS": {
+    "n": 34,
+    "events": 34,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     3.68,
+     12.88
+    ],
+    "landmark_percent": {
+     "6m": 47.1,
+     "12m": 35.3,
+     "24m": 5.9
+    }
+   },
+   "TTP": {
+    "n": 34,
+    "events": 26,
+    "median_months": 5.52,
+    "median_ci95_months": [
+     3.68,
+     12.88
+    ],
+    "landmark_percent": {
+     "6m": 49.1,
+     "12m": 36.8,
+     "24m": 19.7
+    }
+   },
+   "DOR": {
+    "n": 17,
+    "events": 17,
+    "median_months": 11.04,
+    "median_ci95_months": [
+     3.68,
+     16.56
+    ],
+    "landmark_percent": {
+     "6m": 58.8,
+     "12m": 47.1,
+     "24m": 0.0
+    }
+   },
+   "TTR": {
+    "n": 17,
+    "events": 17,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     3.68
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  }
+ },
+ "comparisons": {
+  "ORR ARM3 vs ARM8": {
+   "difference": -0.0918,
+   "ci95": [
+    -0.309,
+    0.1254
+   ]
+  },
+  "PFS ARM3 vs ARM8": {
+   "hr": 1.024,
+   "ci95": [
+    0.633,
+    1.657
+   ],
+   "logrank_p_two_sided": 0.9214987931966195
+  },
+  "ORR ARM4 vs ARM8": {
+   "difference": -0.0179,
+   "ci95": [
+    -0.2309,
+    0.1951
+   ]
+  },
+  "PFS ARM4 vs ARM8": {
+   "hr": 0.887,
+   "ci95": [
+    0.555,
+    1.418
+   ],
+   "logrank_p_two_sided": 0.6174606974405452
+  },
+  "ORR ARM5 vs ARM8": {
+   "difference": -0.1078,
+   "ci95": [
+    -0.3227,
+    0.1071
+   ]
+  },
+  "PFS ARM5 vs ARM8": {
+   "hr": 0.917,
+   "ci95": [
+    0.571,
+    1.474
+   ],
+   "logrank_p_two_sided": 0.7215017871107131
+  }
+ },
+ "censoring": {
+  "PFS": {
+   "ARM3": {
+    "n": 49,
+    "events": 48,
+    "censored": 1,
+    "by_reason": {
+     "death": 12,
+     "progressive disease": 36,
+     "censored at last adequate tumour assessment": 1
+    }
+   },
+   "ARM4": {
+    "n": 56,
+    "events": 55,
+    "censored": 1,
+    "by_reason": {
+     "progressive disease": 43,
+     "death": 12,
+     "censored at last adequate tumour assessment": 1
+    }
+   },
+   "ARM5": {
+    "n": 51,
+    "events": 51,
+    "censored": 0,
+    "by_reason": {
+     "progressive disease": 41,
+     "death": 10
+    }
+   },
+   "ARM8": {
+    "n": 34,
+    "events": 34,
+    "censored": 0,
+    "by_reason": {
+     "progressive disease": 26,
+     "death": 8
+    }
+   }
+  },
+  "TTP": {
+   "ARM3": {
+    "n": 49,
+    "events": 36,
+    "censored": 13,
+    "by_reason": {
+     "censored at last adequate tumour assessment": 13,
+     "progressive disease": 36
+    }
+   },
+   "ARM4": {
+    "n": 56,
+    "events": 43,
+    "censored": 13,
+    "by_reason": {
+     "progressive disease": 43,
+     "censored at last adequate tumour assessment": 13
+    }
+   },
+   "ARM5": {
+    "n": 51,
+    "events": 41,
+    "censored": 10,
+    "by_reason": {
+     "progressive disease": 41,
+     "censored at last adequate tumour assessment": 10
+    }
+   },
+   "ARM8": {
+    "n": 34,
+    "events": 26,
+    "censored": 8,
+    "by_reason": {
+     "progressive disease": 26,
+     "censored at last adequate tumour assessment": 8
+    }
+   }
+  },
+  "DOR": {
+   "ARM3": {
+    "n": 20,
+    "events": 20,
+    "censored": 0,
+    "by_reason": {
+     "death": 6,
+     "progressive disease": 14
+    }
+   },
+   "ARM4": {
+    "n": 27,
+    "events": 26,
+    "censored": 1,
+    "by_reason": {
+     "progressive disease": 15,
+     "death": 11,
+     "censored at last adequate tumour assessment": 1
+    }
+   },
+   "ARM5": {
+    "n": 20,
+    "events": 20,
+    "censored": 0,
+    "by_reason": {
+     "progressive disease": 14,
+     "death": 6
+    }
+   },
+   "ARM8": {
+    "n": 17,
+    "events": 17,
+    "censored": 0,
+    "by_reason": {
+     "progressive disease": 9,
+     "death": 8
+    }
+   }
+  },
+  "TTR": {
+   "ARM3": {
+    "n": 20,
+    "events": 20,
+    "censored": 0,
+    "by_reason": {
+     "first response": 20
+    }
+   },
+   "ARM4": {
+    "n": 27,
+    "events": 27,
+    "censored": 0,
+    "by_reason": {
+     "first response": 27
+    }
+   },
+   "ARM5": {
+    "n": 20,
+    "events": 20,
+    "censored": 0,
+    "by_reason": {
+     "first response": 20
+    }
+   },
+   "ARM8": {
+    "n": 17,
+    "events": 17,
+    "censored": 0,
+    "by_reason": {
+     "first response": 17
+    }
+   }
+  }
+ },
+ "safety_tables": [
+  "Table 2. Baseline demographic characteristics, safety population",
+  "Table 3. Patient screening and enrollment",
+  "Table 4. Patient disposition",
+  "Table 5. Duration of treatment exposure, safety population",
+  "Table 6. Overview of adverse events, safety population",
+  "Table 7. Deaths, safety population",
+  "Table 9. Patients with serious adverse events by system organ class and preferred term",
+  "Table 12. Patients with adverse events leading to treatment discontinuation by SOC and PT",
+  "Table 36. Patients with adverse events by system organ class and preferred term",
+  "Table 13. Patients with common adverse events occurring at >= 5% frequency",
+  "Table 54. Exposure-adjusted incidence rates",
+  "Patients with adverse events leading to dose interruption or reduction by SOC and PT",
+  "Patients with adverse events by maximum toxicity grade",
+  "Screen failures by eligibility criterion"
+ ],
+ "terms_without_soc": [
+  "decrease_in_appetite",
+  "drug-related AEs",
+  "pleural_effusion_disorder",
+  "rash_erythematous_macules_or_papules"
+ ],
+ "subgroups": {
+  "factors": [
+   {
+    "factor": "each  dose/expansion  cohort",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:each_dose_expansion_cohort",
+    "note": "each  dose/expansion  cohort",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "Panobinostat 10 mg/Everolimus 5 mg": 57,
+     "Panobinostat 20 mg/Everolimus 10 mg": 43,
+     "Panobinostat 30 mg/Everolimus 10 mg": 53,
+     "Panobinostat 20 mg/Everolimus 5 mg": 37
+    }
+   },
+   {
+    "factor": "tumor  type/population",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:tumor_type_population",
+    "note": "tumor  type/population",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "Disease Population Group 3": 67,
+     "Disease Population Group 1": 55,
+     "Disease Population Group 2": 68
+    }
+   },
+   {
+    "factor": "prior  treatment  cohort",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:prior_treatment_cohort",
+    "note": "prior  treatment  cohort",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 2 trials, fewer than 3)",
+    "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 5 trials; prognostic, A28))",
+    "levels": {
+     "Yes": 101,
+     "No": 89
+    }
+   },
+   {
+    "factor": "genomic  alterations",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:genomic_alterations",
+    "note": "genomic  alterations",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "Rearrangements of Ig / TCR genes only": 48,
+     "Rearrangements of Ig / TCR genes & translocations": 61,
+     "t(4;11) translocation above detection limit": 36,
+     "bcr/abl translocation above detection limit": 45
+    }
+   },
+   {
+    "factor": "presence  of  baseline  CNS  metastases  or  leptomeningeal  disease",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:presence_of_baseline_cns_metastases_or_leptomeningeal_diseas",
+    "note": "presence  of  baseline  CNS  metastases  or  leptomeningeal  disease",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "registry baseline tables of enrolled participants (all oncology; 4 trials)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "No": 115,
+     "Yes": 75
+    }
+   },
+   {
+    "factor": "ALK-positive",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:alk_positive",
+    "note": "ALK-positive",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "Negative": 97,
+     "Positive": 93
+    }
+   },
+   {
+    "factor": "ALK-negative",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:alk_negative",
+    "note": "ALK-negative",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "Positive": 109,
+     "Negative": 81
+    }
+   },
+   {
+    "factor": "central  testing  for  ALK  will  no  longer  be  required",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:central_testing_for_alk_will_no_longer_be_required",
+    "note": "central  testing  for  ALK  will  no  longer  be  required",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 2 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "No": 91,
+     "Yes": 99
+    }
+   },
+   {
+    "factor": "Age (FDA standard age bands)",
+    "source": "FDA demographic",
+    "variable": "demographic:age",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "< 65 years": 132,
+     ">= 75 years": 15,
+     "65-74 years": 43
+    }
+   },
+   {
+    "factor": "Sex",
+    "source": "FDA demographic",
+    "variable": "demographic:sex",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 3 trials; prognostic, A28))",
+    "levels": {
+     "female": 92,
+     "male": 98
+    }
+   },
+   {
+    "factor": "Race",
+    "source": "FDA demographic",
+    "variable": "demographic:race",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "unknown_or_not_reported": 9,
+     "black_or_african_american": 17,
+     "white": 138,
+     "asian": 24,
+     "more_than_one_race": 1,
+     "native_hawaiian_or_other_pacific_islander": 1
+    }
+   },
+   {
+    "factor": "Ethnicity",
+    "source": "FDA demographic",
+    "variable": "demographic:ethnicity",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "not_hispanic_or_latino": 170,
+     "unknown_or_not_reported": 8,
+     "hispanic_or_latino": 12
+    }
+   },
+   {
+    "factor": "Region",
+    "source": "FDA demographic",
+    "variable": null,
+    "note": "not simulated: the recruitment model has no site country",
+    "feasibility_driver": null,
+    "prevalence_source": null,
+    "outcome_driver": null
+   },
+   {
+    "factor": "Ecog performance status",
+    "source": "baseline disease factor",
+    "variable": "var:ecog_performance_status",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "1": 107,
+     "2 or more": 20,
+     "0": 63
+    }
+   },
+   {
+    "factor": "MET  status  as  confirmed  centrally",
+    "source": "protocol subgroup (analysis section)",
+    "variable": null,
+    "note": "no simulated patient variable carries this factor (the population stage does not generate it)",
+    "feasibility_driver": null,
+    "prevalence_source": null,
+    "outcome_driver": null
+   }
+  ],
+  "files": {
+   "subgroup_efficacy": "subgroups/subgroup_efficacy.csv",
+   "subgroup_safety": "subgroups/subgroup_safety.csv",
+   "subgroup_comparisons": "subgroups/subgroup_comparisons.csv",
+   "subgroup_feasibility": "subgroups/subgroup_feasibility.csv",
+   "forest_pfs_ARM3": "subgroups/forest_pfs_ARM3.svg",
+   "forest_pfs_ARM4": "subgroups/forest_pfs_ARM4.svg",
+   "forest_pfs_ARM5": "subgroups/forest_pfs_ARM5.svg",
+   "forest_orr_ARM3": "subgroups/forest_orr_ARM3.svg",
+   "forest_orr_ARM4": "subgroups/forest_orr_ARM4.svg",
+   "forest_orr_ARM5": "subgroups/forest_orr_ARM5.svg"
+  }
+ },
+ "standards": [
+  "PharmaSUG 2018 DS06 (RECIST/Cheson/IMWG-type response derivation; SDTM TU/TR/RS; ADaM ADRS/ADTTE)",
+  "FDA CDER Standard Safety Tables and Figures Integrated Guide (Aug 2022): Tables 2-7, 9, 12, 13, 36, 54",
+  "results by subgroup: protocol stratification factors and analysis subgroups, FDA demographics, baseline disease factors"
+ ],
+ "not_produced": [
+  "FDA Medical Query tables (no machine-readable FMQ definitions)",
+  "laboratory and vital-sign tables (not simulated)",
+  "MedDRA coding (registry terms with their reported organ system are used)",
+  "results by region (the recruitment model has no site country)"
+ ]
+}

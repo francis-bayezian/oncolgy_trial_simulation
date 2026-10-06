@@ -1,0 +1,680 @@
+USUBJID,AESEQ,AETERM,AESER,AETOXGR,AESTDY,AEENDY,AEACN,AERULE,ARMCD,TRTEMFL
+S0001,1,gastroesophageal_reflux_disease,N,2,36,37,no_modification,DM017,ARM2,Y
+S0001,2,gastrointestinal fistulas,N,2,54,55,discontinue_agent,DM006,ARM2,Y
+S0001,3,thrombocytopenia,N,1,63,64,NOT APPLICABLE,,ARM2,Y
+S0001,4,pain:_abdominal_pain_nos,N,2,78,79,NOT APPLICABLE,,ARM2,Y
+S0001,5,anemia,N,2,80,81,NOT APPLICABLE,,ARM2,Y
+S0002,1,hypertension_variable,N,1,9,10,no_modification,DM017,ARM1,Y
+S0002,2,thrombocytopenia,N,1,18,19,no_modification,DM012,ARM1,Y
+S0002,3,hypokalemia,N,1,22,23,no_modification,DM017,ARM1,Y
+S0002,4,anorexia,N,1,24,25,no_modification,DM017,ARM1,Y
+S0002,5,pruritus,N,2,26,27,no_modification,DM017,ARM1,Y
+S0002,6,fistula,N,1,34,35,no_modification,DM017,ARM1,Y
+S0002,7,anxiety,N,1,56,57,no_modification,DM017,ARM1,Y
+S0002,8,pelvic_pain,N,2,64,65,no_modification,DM017,ARM1,Y
+S0002,9,sensory_neuropathy,N,1,88,89,NOT APPLICABLE,,ARM1,Y
+S0002,10,diarrhea,N,2,93,94,NOT APPLICABLE,,ARM1,Y
+S0002,11,palmar_plantar_erythrodysesthesia_syndrome,N,1,107,108,NOT APPLICABLE,,ARM1,Y
+S0002,12,pain:_abdominal_pain_nos,N,2,113,114,NOT APPLICABLE,,ARM1,Y
+S0003,1,pain:_abdominal_pain_nos,N,1,3,4,no_modification,DM017,ARM2,Y
+S0003,2,hyponatremia,N,1,33,34,no_modification,DM017,ARM2,Y
+S0003,3,pruritus,N,1,101,102,no_modification,DM017,ARM2,Y
+S0003,4,depression_dominant,N,1,145,146,no_modification,DM017,ARM2,Y
+S0003,5,hyperglycemia,N,2,270,271,no_modification,DM017,ARM2,Y
+S0003,6,white_blood_cell_decreased,N,1,306,307,NOT APPLICABLE,,ARM2,Y
+S0004,1,constipation,N,2,1,2,no_modification,DM017,ARM1,Y
+S0004,2,pelvic_pain,N,1,5,6,no_modification,DM017,ARM1,Y
+S0004,3,arthralgia,N,2,14,15,no_modification,DM017,ARM1,Y
+S0004,4,back_pain,N,1,17,18,no_modification,DM017,ARM1,Y
+S0004,5,sensory_neuropathy,N,2,18,19,no_modification,DM017,ARM1,Y
+S0004,6,diarrhea,N,2,21,22,no_modification,DM017,ARM1,Y
+S0004,7,neutropenia,N,1,21,22,no_modification,DM008,ARM1,Y
+S0004,8,thromboembolic events,N,1,23,24,no_modification,DM017,ARM1,Y
+S0004,9,allergic_reaction,N,2,24,25,no_modification,DM017,ARM1,Y
+S0004,10,dyspnea,N,1,26,27,no_modification,DM017,ARM1,Y
+S0005,1,thrombocytopenia,N,1,5,6,no_modification,DM012,ARM2,Y
+S0005,2,pain_in_limb,N,2,8,9,no_modification,DM017,ARM2,Y
+S0005,3,palmar_plantar_erythrodysesthesia_syndrome,N,2,10,11,no_modification,DM017,ARM2,Y
+S0005,4,rash/desquamation,N,2,24,25,no_modification,DM017,ARM2,Y
+S0005,5,anemia,N,2,27,28,no_modification,DM014,ARM2,Y
+S0005,6,"neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",Y,3,31,33,hold,DM019,ARM2,Y
+S0005,7,dyspnea,N,2,33,34,no_modification,DM017,ARM2,Y
+S0005,8,hypertension_variable,N,1,37,38,no_modification,DM017,ARM2,Y
+S0005,9,alanine_aminotransferase_increased,N,2,37,38,no_modification,DM017,ARM2,Y
+S0005,10,fistula,N,2,47,48,discontinue_agent,DM006,ARM2,Y
+S0005,11,urinary_tract_infection,N,2,48,49,NOT APPLICABLE,,ARM2,Y
+S0005,12,acneiform_eruptions,N,1,49,50,NOT APPLICABLE,,ARM2,Y
+S0005,13,depression_dominant,N,1,54,55,NOT APPLICABLE,,ARM2,Y
+S0005,14,vaginal_discharge,N,1,69,70,NOT APPLICABLE,,ARM2,Y
+S0005,15,white_blood_cell_decreased,N,2,75,76,NOT APPLICABLE,,ARM2,Y
+S0006,1,thrombocytopenia,N,2,15,16,no_modification,DM012,ARM2,Y
+S0006,2,fistulas,N,1,24,25,no_modification,DM017,ARM2,Y
+S0006,3,depression_dominant,N,2,36,37,no_modification,DM017,ARM2,Y
+S0006,4,hyponatremia,N,2,42,43,no_modification,DM017,ARM2,Y
+S0006,5,diarrhea,N,1,47,48,no_modification,DM017,ARM2,Y
+S0006,6,creatinine_increased,N,2,47,48,no_modification,DM017,ARM2,Y
+S0006,7,pruritus,N,2,59,60,no_modification,DM017,ARM2,Y
+S0006,8,pain,N,1,74,75,no_modification,DM017,ARM2,Y
+S0006,9,anemia,N,1,81,82,no_modification,DM014,ARM2,Y
+S0006,10,arthralgia,N,2,81,82,no_modification,DM017,ARM2,Y
+S0006,11,anorexia,N,1,84,85,no_modification,DM017,ARM2,Y
+S0006,12,palmar_plantar_erythrodysesthesia_syndrome,N,2,85,86,no_modification,DM017,ARM2,Y
+S0006,13,back_pain,N,2,99,100,NOT APPLICABLE,,ARM2,Y
+S0006,14,pain:_abdominal_pain_nos,N,1,106,107,NOT APPLICABLE,,ARM2,Y
+S0007,1,nausea,N,1,3,4,no_modification,DM017,ARM2,Y
+S0007,2,hot_flushes,N,1,17,18,no_modification,DM017,ARM2,Y
+S0007,3,Diarrhea,N,2,28,29,no_modification,DM017,ARM2,Y
+S0007,4,palmar_plantar_erythrodysesthesia_syndrome,N,1,49,50,no_modification,DM017,ARM2,Y
+S0007,5,urinary_tract_infection,N,2,50,51,no_modification,DM017,ARM2,Y
+S0007,6,acneiform_eruptions,N,1,55,56,no_modification,DM017,ARM2,Y
+S0007,7,pain_in_limb,N,1,118,119,no_modification,DM017,ARM2,Y
+S0007,8,thrombocytopenia,N,1,121,122,no_modification,DM012,ARM2,Y
+S0007,9,vaginal_discharge,N,1,141,142,no_modification,DM017,ARM2,Y
+S0007,10,rash/desquamation,N,2,144,145,no_modification,DM017,ARM2,Y
+S0007,11,other serious adverse events (not individually predicted),Y,3,152,154,hold,DM019,ARM2,Y
+S0007,12,dyspnea,N,1,167,168,no_modification,DM017,ARM2,Y
+S0007,13,vomiting,N,2,190,191,NOT APPLICABLE,,ARM2,Y
+S0007,14,leukopenia,N,1,192,193,NOT APPLICABLE,,ARM2,Y
+S0008,1,allergic_reaction,N,2,16,17,no_modification,DM017,ARM1,Y
+S0008,2,arthralgia,N,1,19,20,no_modification,DM017,ARM1,Y
+S0008,3,nausea,N,2,32,33,no_modification,DM017,ARM1,Y
+S0008,4,pruritus,N,1,39,40,no_modification,DM017,ARM1,Y
+S0008,5,palmar_plantar_erythrodysesthesia_syndrome,N,2,44,45,no_modification,DM017,ARM1,Y
+S0008,6,neutrophil_count_decreased,N,1,45,46,no_modification,DM008,ARM1,Y
+S0008,7,white_blood_cell_decreased,N,2,46,47,NOT APPLICABLE,,ARM1,Y
+S0008,8,dysgeusia,N,1,46,47,no_modification,DM017,ARM1,Y
+S0008,9,hyperglycemia,N,2,46,47,no_modification,DM017,ARM1,Y
+S0008,10,pain:_abdominal_pain_nos,N,2,60,61,no_modification,DM017,ARM1,Y
+S0008,11,sensory_neuropathy,N,1,67,68,no_modification,DM017,ARM1,Y
+S0008,12,dyspepsia,N,1,84,85,no_modification,DM017,ARM1,Y
+S0008,13,fistula,N,1,84,85,no_modification,DM017,ARM1,Y
+S0008,14,hypomagnesemia,N,2,102,103,NOT APPLICABLE,,ARM1,Y
+S0009,1,hypertension_variable,N,2,35,36,no_modification,DM017,ARM1,Y
+S0009,2,thrombocytopenia,N,2,208,209,no_modification,DM012,ARM1,Y
+S0009,3,maculopapular_lesion,N,2,233,234,no_modification,DM017,ARM1,Y
+S0009,4,hyperglycemia,N,1,283,284,no_modification,DM017,ARM1,Y
+S0009,5,pain:_abdominal_pain_nos,N,2,297,298,no_modification,DM017,ARM1,Y
+S0009,6,diarrhea,N,2,325,326,no_modification,DM017,ARM1,Y
+S0009,7,arthralgia,N,1,376,377,no_modification,DM017,ARM1,Y
+S0009,8,creatinine_increased,N,2,376,377,no_modification,DM017,ARM1,Y
+S0009,9,pain,N,1,392,393,no_modification,DM017,ARM1,Y
+S0009,10,palmar_plantar_erythrodysesthesia_syndrome,N,2,499,500,no_modification,DM017,ARM1,Y
+S0009,11,constipation,N,2,573,574,no_modification,DM017,ARM1,Y
+S0010,1,arthralgia,N,2,2,3,no_modification,DM017,ARM1,Y
+S0010,2,white_blood_cell_decreased,N,2,25,26,NOT APPLICABLE,,ARM1,Y
+S0010,3,pain,N,2,63,64,no_modification,DM017,ARM1,Y
+S0010,4,depression_dominant,N,1,78,79,no_modification,DM017,ARM1,Y
+S0010,5,thromboembolic events,N,1,83,84,no_modification,DM017,ARM1,Y
+S0010,6,diarrhea,N,2,94,95,no_modification,DM017,ARM1,Y
+S0010,7,sensory_neuropathy,N,2,100,101,no_modification,DM017,ARM1,Y
+S0010,8,pelvic_pain,N,2,101,102,no_modification,DM017,ARM1,Y
+S0010,9,constipation,N,1,117,118,no_modification,DM017,ARM1,Y
+S0010,10,back_pain,N,1,122,123,no_modification,DM017,ARM1,Y
+S0010,11,pruritus,N,1,128,129,no_modification,DM017,ARM1,Y
+S0010,12,dyspnea,N,1,143,144,no_modification,DM017,ARM1,Y
+S0010,13,pain:_abdominal_pain_nos,N,1,157,158,no_modification,DM017,ARM1,Y
+S0010,14,fistula,N,2,162,163,discontinue_agent,DM006,ARM1,Y
+S0011,1,nausea,N,1,2,3,no_modification,DM017,ARM2,Y
+S0011,2,leukopenia,N,2,14,15,NOT APPLICABLE,,ARM2,Y
+S0011,3,dizziness,N,2,22,23,no_modification,DM017,ARM2,Y
+S0011,4,vomiting,N,1,32,33,no_modification,DM017,ARM2,Y
+S0011,5,anorexia,N,1,44,45,no_modification,DM017,ARM2,Y
+S0011,6,urinary_tract_infection,N,2,50,51,no_modification,DM017,ARM2,Y
+S0011,7,alanine_aminotransferase_increased,N,1,61,62,no_modification,DM017,ARM2,Y
+S0011,8,rash_erythematous_macules_or_papules,N,2,63,64,no_modification,DM017,ARM2,Y
+S0011,9,flatulence,N,2,69,70,no_modification,DM017,ARM2,Y
+S0011,10,rash/desquamation,N,1,71,72,no_modification,DM017,ARM2,Y
+S0011,11,dyspepsia,N,1,76,77,no_modification,DM017,ARM2,Y
+S0011,12,palmar_plantar_erythrodysesthesia_syndrome,N,2,81,82,no_modification,DM017,ARM2,Y
+S0011,13,dyspnea,N,2,82,83,no_modification,DM017,ARM2,Y
+S0011,14,sensory_neuropathy,N,2,96,97,NOT APPLICABLE,,ARM2,Y
+S0011,15,acneiform_eruptions,N,1,96,97,NOT APPLICABLE,,ARM2,Y
+S0011,16,pain_in_limb,N,1,103,104,NOT APPLICABLE,,ARM2,Y
+S0011,17,asthenia,N,2,115,116,NOT APPLICABLE,,ARM2,Y
+S0012,1,white_blood_cell_decreased,N,2,18,19,NOT APPLICABLE,,ARM1,Y
+S0012,2,thrombocytopenia,N,1,24,25,no_modification,DM012,ARM1,Y
+S0012,3,palmar_plantar_erythrodysesthesia_syndrome,N,1,45,46,no_modification,DM017,ARM1,Y
+S0012,4,hypertension_variable,N,1,53,54,no_modification,DM017,ARM1,Y
+S0012,5,dyspnea,N,2,55,56,no_modification,DM017,ARM1,Y
+S0012,6,anemia,N,2,87,88,no_modification,DM014,ARM1,Y
+S0012,7,pain_in_limb,N,2,92,93,no_modification,DM017,ARM1,Y
+S0012,8,acneiform_eruptions,N,1,95,96,no_modification,DM017,ARM1,Y
+S0012,9,anorexia,N,1,123,124,no_modification,DM017,ARM1,Y
+S0012,10,anxiety,N,1,137,138,no_modification,DM017,ARM1,Y
+S0012,11,asthenia,N,2,147,148,no_modification,DM017,ARM1,Y
+S0012,12,leukopenia,N,1,169,170,NOT APPLICABLE,,ARM1,Y
+S0012,13,epistaxis,N,2,169,170,no_modification,DM017,ARM1,Y
+S0012,14,depression_dominant,N,2,174,175,NOT APPLICABLE,,ARM1,Y
+S0012,15,rash/desquamation,N,1,178,179,NOT APPLICABLE,,ARM1,Y
+S0012,16,abdomen_distended,N,2,184,185,NOT APPLICABLE,,ARM1,Y
+S0013,1,epistaxis,N,1,12,13,no_modification,DM017,ARM1,Y
+S0013,2,pain:_abdominal_pain_nos,N,2,19,20,no_modification,DM017,ARM1,Y
+S0013,3,constipation,N,2,21,22,no_modification,DM017,ARM1,Y
+S0013,4,alanine_aminotransferase_increased,N,2,27,28,no_modification,DM017,ARM1,Y
+S0013,5,hypokalemia,N,2,31,32,no_modification,DM017,ARM1,Y
+S0013,6,sleeplessness,N,1,42,43,no_modification,DM017,ARM1,Y
+S0013,7,pain_in_limb,N,2,49,50,no_modification,DM017,ARM1,Y
+S0013,8,creatinine_increased,N,1,55,56,no_modification,DM017,ARM1,Y
+S0013,9,anemia,N,2,70,71,no_modification,DM014,ARM1,Y
+S0013,10,allergic_reaction,N,2,77,78,no_modification,DM017,ARM1,Y
+S0013,11,hypertension_variable,N,2,103,104,no_modification,DM017,ARM1,Y
+S0013,12,sensory_neuropathy,N,1,132,133,no_modification,DM017,ARM1,Y
+S0013,13,fistula,N,2,133,134,discontinue_agent,DM006,ARM1,Y
+S0013,14,pelvic_pain,N,1,142,143,NOT APPLICABLE,,ARM1,Y
+S0013,15,nausea,N,2,160,161,NOT APPLICABLE,,ARM1,Y
+S0014,1,palmar_plantar_erythrodysesthesia_syndrome,N,2,24,25,no_modification,DM017,ARM1,Y
+S0014,2,rash/desquamation,N,1,32,33,no_modification,DM017,ARM1,Y
+S0014,3,acneiform_eruptions,N,2,91,92,no_modification,DM017,ARM1,Y
+S0014,4,pain_in_limb,N,2,106,107,no_modification,DM017,ARM1,Y
+S0014,5,sensory_neuropathy,N,2,123,124,no_modification,DM017,ARM1,Y
+S0014,6,alanine_aminotransferase_increased,N,1,124,125,no_modification,DM017,ARM1,Y
+S0014,7,thrombocytopenia,N,2,158,159,no_modification,DM012,ARM1,Y
+S0014,8,urinary_tract_infection,N,1,180,181,NOT APPLICABLE,,ARM1,Y
+S0015,1,constipation,N,1,6,7,no_modification,DM017,ARM1,Y
+S0015,2,maculopapular_lesion,N,2,42,43,no_modification,DM017,ARM1,Y
+S0015,3,anemia,Y,3,53,55,no_modification,DM014,ARM1,Y
+S0015,4,back_pain,N,2,55,56,no_modification,DM017,ARM1,Y
+S0015,5,thrombocytopenia,N,2,58,59,no_modification,DM012,ARM1,Y
+S0015,6,hypomagnesemia,N,2,72,73,no_modification,DM017,ARM1,Y
+S0015,7,dyspnea,N,2,74,75,no_modification,DM017,ARM1,Y
+S0015,8,arthralgia,N,2,80,81,no_modification,DM017,ARM1,Y
+S0015,9,palmar_plantar_erythrodysesthesia_syndrome,N,2,87,88,NOT APPLICABLE,,ARM1,Y
+S0015,10,diarrhea,N,2,98,99,NOT APPLICABLE,,ARM1,Y
+S0016,1,fistula,N,2,1,2,discontinue_agent,DM006,ARM2,Y
+S0016,2,alanine_aminotransferase_increased,N,2,2,3,NOT APPLICABLE,,ARM2,Y
+S0016,3,thrombocytopenia,N,1,4,5,NOT APPLICABLE,,ARM2,Y
+S0016,4,leukopenia,N,2,14,15,NOT APPLICABLE,,ARM2,Y
+S0016,5,urinary_tract_infection,N,2,21,22,NOT APPLICABLE,,ARM2,Y
+S0016,6,rash/desquamation,N,2,22,23,NOT APPLICABLE,,ARM2,Y
+S0017,1,headache,N,1,4,5,no_modification,DM017,ARM1,Y
+S0017,2,acneiform_eruptions,N,1,4,5,no_modification,DM017,ARM1,Y
+S0017,3,anxiety,N,2,5,6,no_modification,DM017,ARM1,Y
+S0017,4,dizziness,N,2,19,20,no_modification,DM017,ARM1,Y
+S0017,5,urinary_tract_infection,N,2,26,27,no_modification,DM017,ARM1,Y
+S0017,6,dyspnea,N,2,35,36,no_modification,DM017,ARM1,Y
+S0017,7,hypertension_variable,N,1,42,43,no_modification,DM017,ARM1,Y
+S0017,8,sensory_neuropathy,N,2,52,53,no_modification,DM017,ARM1,Y
+S0017,9,dry_skin,N,1,93,94,no_modification,DM017,ARM1,Y
+S0017,10,thrombocytopenia,N,1,98,99,no_modification,DM012,ARM1,Y
+S0017,11,alanine_aminotransferase_increased,N,2,106,107,no_modification,DM017,ARM1,Y
+S0017,12,depression_dominant,N,1,113,114,no_modification,DM017,ARM1,Y
+S0017,13,palmar_plantar_erythrodysesthesia_syndrome,N,1,119,120,no_modification,DM017,ARM1,Y
+S0017,14,rash/desquamation,N,1,125,126,no_modification,DM017,ARM1,Y
+S0017,15,fistula,N,1,153,154,no_modification,DM017,ARM1,Y
+S0017,16,pain_in_limb,N,1,186,187,NOT APPLICABLE,,ARM1,Y
+S0017,17,constipation,N,2,188,189,NOT APPLICABLE,,ARM1,Y
+S0017,18,asthenia,N,1,193,194,NOT APPLICABLE,,ARM1,Y
+S0018,1,diarrhea,N,2,60,61,no_modification,DM017,ARM1,Y
+S0018,2,dysgeusia,N,1,63,64,no_modification,DM017,ARM1,Y
+S0018,3,fistulas,N,2,153,154,discontinue_agent,DM006,ARM1,Y
+S0018,4,pain_in_limb,N,1,182,183,NOT APPLICABLE,,ARM1,Y
+S0019,1,dysgeusia,N,1,18,19,no_modification,DM017,ARM2,Y
+S0019,2,allergic_reaction,N,1,20,21,no_modification,DM017,ARM2,Y
+S0019,3,hemoglobin_normal_12_16_gm,N,2,34,35,no_modification,DM017,ARM2,Y
+S0019,4,constipation,N,2,55,56,no_modification,DM017,ARM2,Y
+S0019,5,sleeplessness,N,2,55,56,no_modification,DM017,ARM2,Y
+S0019,6,vomiting,N,2,56,57,no_modification,DM017,ARM2,Y
+S0019,7,diarrhea,N,2,68,69,no_modification,DM017,ARM2,Y
+S0019,8,thrombocytopenia,N,1,92,93,NOT APPLICABLE,,ARM2,Y
+S0019,9,pain:_abdominal_pain_nos,N,1,107,108,NOT APPLICABLE,,ARM2,Y
+S0019,10,bone_pain,N,1,107,108,NOT APPLICABLE,,ARM2,Y
+S0019,11,hypomagnesemia,N,1,112,113,NOT APPLICABLE,,ARM2,Y
+S0020,1,pruritus,N,1,12,13,no_modification,DM017,ARM2,Y
+S0020,2,pain:_abdominal_pain_nos,N,1,13,14,no_modification,DM017,ARM2,Y
+S0020,3,alanine_aminotransferase_increased,N,1,21,22,no_modification,DM017,ARM2,Y
+S0020,4,arthralgia,N,2,24,25,no_modification,DM017,ARM2,Y
+S0020,5,palmar_plantar_erythrodysesthesia_syndrome,N,1,26,27,no_modification,DM017,ARM2,Y
+S0020,6,dysgeusia,N,1,37,38,no_modification,DM017,ARM2,Y
+S0020,7,diarrhea,N,2,66,67,no_modification,DM017,ARM2,Y
+S0020,8,hot_flushes,N,2,90,91,NOT APPLICABLE,,ARM2,Y
+S0020,9,hypertension_variable,N,1,92,93,NOT APPLICABLE,,ARM2,Y
+S0020,10,creatinine_increased,N,1,96,97,NOT APPLICABLE,,ARM2,Y
+S0020,11,pain,N,1,101,102,NOT APPLICABLE,,ARM2,Y
+S0020,12,sleeplessness,N,2,111,112,NOT APPLICABLE,,ARM2,Y
+S0020,13,sensory_neuropathy,N,2,111,112,NOT APPLICABLE,,ARM2,Y
+S0021,1,anemia,N,2,21,22,no_modification,DM014,ARM1,Y
+S0021,2,thromboembolic events,N,1,22,23,no_modification,DM017,ARM1,Y
+S0021,3,creatinine_increased,N,2,23,24,no_modification,DM017,ARM1,Y
+S0021,4,dysgeusia,N,1,25,26,no_modification,DM017,ARM1,Y
+S0021,5,palmar_plantar_erythrodysesthesia_syndrome,N,2,25,26,no_modification,DM017,ARM1,Y
+S0021,6,depression_dominant,N,2,53,54,no_modification,DM017,ARM1,Y
+S0021,7,hot_flushes,N,2,64,65,no_modification,DM017,ARM1,Y
+S0021,8,diarrhea,N,2,71,72,no_modification,DM017,ARM1,Y
+S0021,9,pain:_abdominal_pain_nos,N,2,78,79,no_modification,DM017,ARM1,Y
+S0021,10,allergic_reaction,N,1,85,86,no_modification,DM017,ARM1,Y
+S0021,11,thrombocytopenia,N,2,106,107,no_modification,DM012,ARM1,Y
+S0021,12,sensory_neuropathy,N,2,108,109,no_modification,DM017,ARM1,Y
+S0021,13,constipation,N,1,122,123,NOT APPLICABLE,,ARM1,Y
+S0021,14,pruritus,N,2,125,126,NOT APPLICABLE,,ARM1,Y
+S0021,15,pain,N,2,140,141,NOT APPLICABLE,,ARM1,Y
+S0022,1,allergic_reaction,N,2,18,19,no_modification,DM017,ARM2,Y
+S0022,2,sensory_neuropathy,N,2,27,28,no_modification,DM017,ARM2,Y
+S0022,3,constipation,N,2,33,34,no_modification,DM017,ARM2,Y
+S0022,4,fistulas,N,1,91,92,no_modification,DM017,ARM2,Y
+S0022,5,pain:_abdominal_pain_nos,N,2,332,333,no_modification,DM017,ARM2,Y
+S0022,6,pruritus,N,2,365,366,NOT APPLICABLE,,ARM2,Y
+S0023,1,hypertension_variable,N,1,2,3,no_modification,DM017,ARM2,Y
+S0023,2,white_blood_cell_decreased,N,2,14,15,NOT APPLICABLE,,ARM2,Y
+S0023,3,acneiform_eruptions,N,1,26,27,no_modification,DM017,ARM2,Y
+S0023,4,alanine_aminotransferase_increased,N,2,50,51,no_modification,DM017,ARM2,Y
+S0023,5,sensory_neuropathy,N,2,54,55,no_modification,DM017,ARM2,Y
+S0023,6,vomiting,N,2,65,66,no_modification,DM017,ARM2,Y
+S0023,7,arthralgia,N,1,98,99,no_modification,DM017,ARM2,Y
+S0023,8,sleeplessness,N,1,130,131,no_modification,DM017,ARM2,Y
+S0023,9,thrombocytopenia,N,1,135,136,no_modification,DM012,ARM2,Y
+S0023,10,palmar_plantar_erythrodysesthesia_syndrome,N,2,142,143,no_modification,DM017,ARM2,Y
+S0023,11,vaginal_discharge,N,1,145,146,no_modification,DM017,ARM2,Y
+S0023,12,rash/desquamation,N,2,146,147,no_modification,DM017,ARM2,Y
+S0023,13,depression_dominant,N,2,147,148,no_modification,DM017,ARM2,Y
+S0023,14,asthenia,N,2,168,169,no_modification,DM017,ARM2,Y
+S0023,15,pain_in_limb,N,2,193,194,NOT APPLICABLE,,ARM2,Y
+S0024,1,decrease_in_appetite,N,2,42,43,no_modification,DM017,ARM2,Y
+S0024,2,alanine_aminotransferase_increased,N,2,46,47,no_modification,DM017,ARM2,Y
+S0024,3,coughing,N,1,61,62,no_modification,DM017,ARM2,Y
+S0024,4,lymphocyte_count_decreased,N,2,89,90,no_modification,DM017,ARM2,Y
+S0024,5,rash/desquamation,N,2,129,130,no_modification,DM017,ARM2,Y
+S0024,6,palmar_plantar_erythrodysesthesia_syndrome,N,1,144,145,no_modification,DM017,ARM2,Y
+S0024,7,sleeplessness,N,1,154,155,no_modification,DM017,ARM2,Y
+S0024,8,hypertension_variable,N,2,178,179,no_modification,DM017,ARM2,Y
+S0024,9,white_blood_cell_decreased,N,2,251,252,NOT APPLICABLE,,ARM2,Y
+S0024,10,vomiting,N,2,263,264,no_modification,DM017,ARM2,Y
+S0024,11,thrombocytopenia,N,2,279,280,no_modification,DM012,ARM2,Y
+S0024,12,dyspnea,N,2,311,312,no_modification,DM017,ARM2,Y
+S0024,13,acneiform_eruptions,N,2,330,331,no_modification,DM017,ARM2,Y
+S0024,14,asthenia,N,2,354,355,NOT APPLICABLE,,ARM2,Y
+S0025,1,pruritus,N,2,4,5,no_modification,DM017,ARM2,Y
+S0025,2,diarrhea,N,1,6,7,no_modification,DM017,ARM2,Y
+S0025,3,coughing,N,1,11,12,no_modification,DM017,ARM2,Y
+S0025,4,back_pain,N,1,23,24,no_modification,DM017,ARM2,Y
+S0025,5,vomiting,N,1,25,26,no_modification,DM017,ARM2,Y
+S0025,6,pain:_abdominal_pain_nos,N,2,33,34,no_modification,DM017,ARM2,Y
+S0025,7,fistula,N,1,36,37,no_modification,DM017,ARM2,Y
+S0025,8,pelvic_pain,N,2,38,39,no_modification,DM017,ARM2,Y
+S0025,9,dyspnea,N,1,40,41,no_modification,DM017,ARM2,Y
+S0025,10,sensory_neuropathy,N,2,44,45,no_modification,DM017,ARM2,Y
+S0025,11,fistulas,N,1,65,66,no_modification,DM017,ARM2,Y
+S0025,12,anemia,N,1,127,128,no_modification,DM014,ARM2,Y
+S0025,13,constipation,N,2,133,134,no_modification,DM017,ARM2,Y
+S0025,14,maculopapular_lesion,N,1,171,172,NOT APPLICABLE,,ARM2,Y
+S0026,1,dyspnea,N,2,2,3,no_modification,DM017,ARM1,Y
+S0026,2,Diarrhea,N,1,38,39,no_modification,DM017,ARM1,Y
+S0026,3,palmar_plantar_erythrodysesthesia_syndrome,N,1,49,50,no_modification,DM017,ARM1,Y
+S0026,4,hypertension_variable,N,2,66,67,no_modification,DM017,ARM1,Y
+S0026,5,white_blood_cell_decreased,N,1,75,76,NOT APPLICABLE,,ARM1,Y
+S0026,6,asthenia,N,2,83,84,no_modification,DM017,ARM1,Y
+S0026,7,myalgia,N,1,131,132,no_modification,DM017,ARM1,Y
+S0026,8,dizziness,N,2,165,166,no_modification,DM017,ARM1,Y
+S0026,9,anemia,N,2,184,185,no_modification,DM014,ARM1,Y
+S0026,10,thrombocytopenia,N,2,189,190,no_modification,DM012,ARM1,Y
+S0026,11,vomiting,N,1,192,193,no_modification,DM017,ARM1,Y
+S0026,12,rash/desquamation,N,1,195,196,no_modification,DM017,ARM1,Y
+S0026,13,pain_in_limb,N,2,219,220,no_modification,DM017,ARM1,Y
+S0026,14,acneiform_eruptions,N,2,237,238,no_modification,DM017,ARM1,Y
+S0026,15,dry_skin,N,2,351,352,NOT APPLICABLE,,ARM1,Y
+S0027,1,nausea,N,2,64,65,no_modification,DM017,ARM2,Y
+S0027,2,hypertension_variable,N,1,100,101,no_modification,DM017,ARM2,Y
+S0027,3,anemia,N,1,138,139,no_modification,DM014,ARM2,Y
+S0027,4,urinary_tract_infection,N,1,180,181,no_modification,DM017,ARM2,Y
+S0027,5,fistulas,N,2,234,235,discontinue_agent,DM006,ARM2,Y
+S0028,1,hemoglobin_normal_12_16_gm,N,1,3,4,no_modification,DM017,ARM1,Y
+S0028,2,sensory_neuropathy,N,1,16,17,no_modification,DM017,ARM1,Y
+S0028,3,hypertension_variable,N,1,19,20,no_modification,DM017,ARM1,Y
+S0028,4,pain_in_limb,N,1,23,24,no_modification,DM017,ARM1,Y
+S0028,5,abdomen_distended,N,2,25,26,no_modification,DM017,ARM1,Y
+S0028,6,alanine_aminotransferase_increased,N,2,41,42,no_modification,DM017,ARM1,Y
+S0028,7,abdominal_pain,N,1,44,45,no_modification,DM017,ARM1,Y
+S0028,8,nausea,N,1,49,50,no_modification,DM017,ARM1,Y
+S0028,9,acneiform_eruptions,N,1,55,56,no_modification,DM017,ARM1,Y
+S0028,10,white_blood_cell_decreased,N,2,61,62,NOT APPLICABLE,,ARM1,Y
+S0028,11,palmar_plantar_erythrodysesthesia_syndrome,N,1,65,66,no_modification,DM017,ARM1,Y
+S0028,12,thrombocytopenia,N,2,66,67,no_modification,DM012,ARM1,Y
+S0028,13,fistula,N,1,77,78,no_modification,DM017,ARM1,Y
+S0028,14,vomiting,N,1,80,81,no_modification,DM017,ARM1,Y
+S0028,15,anemia,N,1,82,83,no_modification,DM014,ARM1,Y
+S0028,16,dyspnea,N,1,93,94,NOT APPLICABLE,,ARM1,Y
+S0028,17,rash/desquamation,N,2,109,110,NOT APPLICABLE,,ARM1,Y
+S0029,1,pain:_abdominal_pain_nos,N,1,36,37,no_modification,DM017,ARM1,Y
+S0029,2,arthralgia,N,1,77,78,no_modification,DM017,ARM1,Y
+S0029,3,maculopapular_lesion,N,2,78,79,no_modification,DM017,ARM1,Y
+S0029,4,coughing,N,1,197,198,no_modification,DM017,ARM1,Y
+S0029,5,constipation,N,1,237,238,no_modification,DM017,ARM1,Y
+S0029,6,sensory_neuropathy,N,1,266,267,no_modification,DM017,ARM1,Y
+S0029,7,dyspnea,N,2,280,281,no_modification,DM017,ARM1,Y
+S0029,8,abdominal_pain,N,1,305,306,no_modification,DM017,ARM1,Y
+S0029,9,vomiting,N,2,351,352,no_modification,DM017,ARM1,Y
+S0029,10,myalgia,N,1,363,364,no_modification,DM017,ARM1,Y
+S0029,11,anemia,N,2,379,380,no_modification,DM014,ARM1,Y
+S0029,12,dry_skin,N,1,399,400,no_modification,DM017,ARM1,Y
+S0029,13,pruritus,N,2,429,430,NOT APPLICABLE,,ARM1,Y
+S0029,14,dysgeusia,N,2,446,447,NOT APPLICABLE,,ARM1,Y
+S0030,1,dyspnea,N,2,6,7,no_modification,DM017,ARM1,Y
+S0030,2,anxiety,N,1,9,10,no_modification,DM017,ARM1,Y
+S0030,3,depression_dominant,N,2,11,12,no_modification,DM017,ARM1,Y
+S0030,4,dysgeusia,N,2,11,12,no_modification,DM017,ARM1,Y
+S0030,5,diarrhea,N,2,15,16,no_modification,DM017,ARM1,Y
+S0030,6,hypertension_variable,N,2,18,19,no_modification,DM017,ARM1,Y
+S0030,7,Diarrhea,N,2,22,23,no_modification,DM017,ARM1,Y
+S0030,8,rash/desquamation,N,2,31,32,no_modification,DM017,ARM1,Y
+S0030,9,asthenia,N,1,40,41,no_modification,DM017,ARM1,Y
+S0030,10,palmar_plantar_erythrodysesthesia_syndrome,N,2,66,67,no_modification,DM017,ARM1,Y
+S0030,11,vomiting,N,2,67,68,no_modification,DM017,ARM1,Y
+S0030,12,thrombocytopenia,N,1,83,84,no_modification,DM012,ARM1,Y
+S0030,13,dizziness,N,1,85,86,no_modification,DM017,ARM1,Y
+S0030,14,urinary_tract_infection,N,2,87,88,NOT APPLICABLE,,ARM1,Y
+S0030,15,alanine_aminotransferase_increased,N,1,95,96,NOT APPLICABLE,,ARM1,Y
+S0030,16,white_blood_cell_decreased,N,2,96,97,NOT APPLICABLE,,ARM1,Y
+S0030,17,hypokalemia,N,2,96,97,NOT APPLICABLE,,ARM1,Y
+S0030,18,constipation,N,1,102,103,NOT APPLICABLE,,ARM1,Y
+S0031,1,fistula,N,1,6,7,no_modification,DM017,ARM2,Y
+S0031,2,nausea,N,2,71,72,no_modification,DM017,ARM2,Y
+S0031,3,dysgeusia,N,1,144,145,no_modification,DM017,ARM2,Y
+S0031,4,vomiting,N,2,166,167,no_modification,DM017,ARM2,Y
+S0031,5,fistula,N,1,185,186,no_modification,DM017,ARM2,Y
+S0031,6,pain:_abdominal_pain_nos,N,1,233,234,no_modification,DM017,ARM2,Y
+S0031,7,coughing,N,1,245,246,no_modification,DM017,ARM2,Y
+S0031,8,thromboembolic events,N,1,249,250,no_modification,DM017,ARM2,Y
+S0031,9,pruritus,N,2,260,261,NOT APPLICABLE,,ARM2,Y
+S0031,10,pain,N,2,269,270,NOT APPLICABLE,,ARM2,Y
+S0031,11,thrombocytopenia,N,1,281,282,NOT APPLICABLE,,ARM2,Y
+S0032,1,fistula,N,2,6,7,discontinue_agent,DM006,ARM2,Y
+S0032,2,maculopapular_lesion,N,1,17,18,NOT APPLICABLE,,ARM2,Y
+S0033,1,constipation,N,2,2,3,no_modification,DM017,ARM1,Y
+S0033,2,alanine_aminotransferase_increased,N,2,3,4,no_modification,DM017,ARM1,Y
+S0033,3,fistulas,N,2,46,47,discontinue_agent,DM006,ARM1,Y
+S0033,4,pain_in_limb,N,2,52,53,NOT APPLICABLE,,ARM1,Y
+S0033,5,allergic_reaction,N,2,64,65,NOT APPLICABLE,,ARM1,Y
+S0034,1,pain:_abdominal_pain_nos,N,2,23,24,no_modification,DM017,ARM2,Y
+S0034,2,hot_flushes,N,2,28,29,no_modification,DM017,ARM2,Y
+S0034,3,arthralgia,N,2,42,43,no_modification,DM017,ARM2,Y
+S0034,4,creatinine_increased,N,2,53,54,no_modification,DM017,ARM2,Y
+S0034,5,fistula,N,2,69,70,discontinue_agent,DM006,ARM2,Y
+S0034,6,diarrhea,N,1,86,87,NOT APPLICABLE,,ARM2,Y
+S0034,7,dysgeusia,N,1,89,90,NOT APPLICABLE,,ARM2,Y
+S0034,8,sensory_neuropathy,N,1,90,91,NOT APPLICABLE,,ARM2,Y
+S0034,9,abdominal_pain,N,2,92,93,NOT APPLICABLE,,ARM2,Y
+S0034,10,coughing,N,1,92,93,NOT APPLICABLE,,ARM2,Y
+S0035,1,headache,N,2,23,24,no_modification,DM017,ARM1,Y
+S0035,2,weight_loss,N,2,23,24,no_modification,DM017,ARM1,Y
+S0035,3,alanine_aminotransferase_increased,N,1,33,34,no_modification,DM017,ARM1,Y
+S0035,4,asthenia,N,2,61,62,no_modification,DM017,ARM1,Y
+S0035,5,rash/desquamation,N,1,91,92,no_modification,DM017,ARM1,Y
+S0035,6,vomiting,N,2,104,105,no_modification,DM017,ARM1,Y
+S0035,7,hypertension_variable,N,1,110,111,no_modification,DM017,ARM1,Y
+S0035,8,anxiety,N,2,113,114,no_modification,DM017,ARM1,Y
+S0035,9,acneiform_eruptions,N,2,177,178,no_modification,DM017,ARM1,Y
+S0035,10,vaginal_discharge,N,1,180,181,no_modification,DM017,ARM1,Y
+S0035,11,depression_dominant,N,2,187,188,no_modification,DM017,ARM1,Y
+S0035,12,palmar_plantar_erythrodysesthesia_syndrome,N,1,206,207,no_modification,DM017,ARM1,Y
+S0035,13,constipation,N,2,214,215,no_modification,DM017,ARM1,Y
+S0035,14,anemia,N,2,225,226,no_modification,DM014,ARM1,Y
+S0035,15,dyspnea,N,2,249,250,no_modification,DM017,ARM1,Y
+S0035,16,sensory_neuropathy,N,2,257,258,NOT APPLICABLE,,ARM1,Y
+S0036,1,vaginal_discharge,N,2,38,39,no_modification,DM017,ARM2,Y
+S0036,2,alanine_aminotransferase_increased,N,1,47,48,no_modification,DM017,ARM2,Y
+S0036,3,acneiform_eruptions,N,2,55,56,no_modification,DM017,ARM2,Y
+S0036,4,fatigue,N,1,62,63,no_modification,DM017,ARM2,Y
+S0036,5,hypertension_variable,N,2,69,70,no_modification,DM017,ARM2,Y
+S0036,6,maculopapular_lesion,N,2,78,79,no_modification,DM017,ARM2,Y
+S0036,7,thrombocytopenia,N,1,93,94,no_modification,DM012,ARM2,Y
+S0036,8,white_blood_cell_decreased,N,2,110,111,NOT APPLICABLE,,ARM2,Y
+S0036,9,peripheral_edema,N,2,135,136,no_modification,DM017,ARM2,Y
+S0036,10,asthenia,N,1,184,185,no_modification,DM017,ARM2,Y
+S0036,11,urinary_tract_infection,N,2,239,240,no_modification,DM017,ARM2,Y
+S0036,12,dyspnea,N,1,250,251,no_modification,DM017,ARM2,Y
+S0036,13,rash/desquamation,N,2,253,254,no_modification,DM017,ARM2,Y
+S0036,14,leukopenia,N,1,257,258,NOT APPLICABLE,,ARM2,Y
+S0036,15,abdomen_distended,N,1,267,268,no_modification,DM017,ARM2,Y
+S0036,16,palmar_plantar_erythrodysesthesia_syndrome,N,2,268,269,no_modification,DM017,ARM2,Y
+S0037,1,alanine_aminotransferase_increased,N,2,21,22,no_modification,DM017,ARM2,Y
+S0037,2,leukopenia,N,1,52,53,NOT APPLICABLE,,ARM2,Y
+S0037,3,dyspnea,N,1,79,80,no_modification,DM017,ARM2,Y
+S0037,4,constipation,N,2,80,81,no_modification,DM017,ARM2,Y
+S0037,5,abdomen_distended,N,1,81,82,no_modification,DM017,ARM2,Y
+S0037,6,allergic_reaction,N,1,98,99,no_modification,DM017,ARM2,Y
+S0037,7,hypertension_variable,N,1,106,107,no_modification,DM017,ARM2,Y
+S0037,8,rash/desquamation,N,1,115,116,no_modification,DM017,ARM2,Y
+S0037,9,asthenia,N,2,120,121,no_modification,DM017,ARM2,Y
+S0037,10,thrombocytopenia,N,1,162,163,no_modification,DM012,ARM2,Y
+S0037,11,acneiform_eruptions,N,1,227,228,no_modification,DM017,ARM2,Y
+S0037,12,vomiting,N,2,249,250,no_modification,DM017,ARM2,Y
+S0037,13,maculopapular_lesion,N,2,252,253,no_modification,DM017,ARM2,Y
+S0037,14,palmar_plantar_erythrodysesthesia_syndrome,N,1,265,266,NOT APPLICABLE,,ARM2,Y
+S0038,1,fistula,N,2,21,22,discontinue_agent,DM006,ARM2,Y
+S0038,2,neutropenia,N,1,35,36,NOT APPLICABLE,,ARM2,Y
+S0039,1,depression_dominant,N,1,1,2,no_modification,DM017,ARM1,Y
+S0039,2,thrombocytopenia,N,1,3,4,no_modification,DM012,ARM1,Y
+S0039,3,alanine_aminotransferase_increased,N,1,11,12,no_modification,DM017,ARM1,Y
+S0039,4,asthenia,N,1,12,13,no_modification,DM017,ARM1,Y
+S0039,5,sleeplessness,N,2,16,17,no_modification,DM017,ARM1,Y
+S0039,6,pain:_abdominal_pain_nos,N,2,18,19,no_modification,DM017,ARM1,Y
+S0039,7,hypertension_variable,N,1,36,37,no_modification,DM017,ARM1,Y
+S0039,8,anxiety,N,1,55,56,no_modification,DM017,ARM1,Y
+S0039,9,headache,N,2,62,63,no_modification,DM017,ARM1,Y
+S0039,10,dyspnea,N,2,63,64,no_modification,DM017,ARM1,Y
+S0039,11,acneiform_eruptions,N,2,66,67,no_modification,DM017,ARM1,Y
+S0039,12,palmar_plantar_erythrodysesthesia_syndrome,N,1,70,71,no_modification,DM017,ARM1,Y
+S0039,13,back_pain,N,2,82,83,no_modification,DM017,ARM1,Y
+S0039,14,leukopenia,N,1,133,134,NOT APPLICABLE,,ARM1,Y
+S0039,15,white_blood_cell_decreased,N,1,135,136,NOT APPLICABLE,,ARM1,Y
+S0039,16,neutrophil_count_decreased,N,2,141,142,no_modification,DM008,ARM1,Y
+S0039,17,abdomen_distended,N,2,159,160,NOT APPLICABLE,,ARM1,Y
+S0039,18,rash/desquamation,N,2,165,166,NOT APPLICABLE,,ARM1,Y
+S0039,19,diarrhea,N,2,182,183,NOT APPLICABLE,,ARM1,Y
+S0040,1,leukopenia,N,1,42,43,NOT APPLICABLE,,ARM1,Y
+S0040,2,myalgia,N,2,48,49,no_modification,DM017,ARM1,Y
+S0040,3,rash/desquamation,N,1,48,49,no_modification,DM017,ARM1,Y
+S0040,4,thrombocytopenia,N,1,105,106,no_modification,DM012,ARM1,Y
+S0040,5,white_blood_cell_decreased,N,2,127,128,NOT APPLICABLE,,ARM1,Y
+S0040,6,palmar_plantar_erythrodysesthesia_syndrome,N,2,136,137,no_modification,DM017,ARM1,Y
+S0040,7,fistula,N,1,215,216,no_modification,DM017,ARM1,Y
+S0040,8,hemoglobin_normal_12_16_gm,N,1,257,258,no_modification,DM017,ARM1,Y
+S0040,9,asthenia,N,1,336,337,no_modification,DM017,ARM1,Y
+S0040,10,alanine_aminotransferase_increased,N,1,482,483,no_modification,DM017,ARM1,Y
+S0040,11,dyspnea,N,1,487,488,no_modification,DM017,ARM1,Y
+S0040,12,hypertension_variable,N,2,606,607,NOT APPLICABLE,,ARM1,Y
+S0041,1,palmar_plantar_erythrodysesthesia_syndrome,N,2,1,2,no_modification,DM017,ARM1,Y
+S0041,2,alanine_aminotransferase_increased,N,1,14,15,no_modification,DM017,ARM1,Y
+S0041,3,sensory_neuropathy,N,1,33,34,no_modification,DM017,ARM1,Y
+S0041,4,rash/desquamation,N,2,42,43,no_modification,DM017,ARM1,Y
+S0041,5,abdomen_distended,N,1,49,50,no_modification,DM017,ARM1,Y
+S0041,6,thrombocytopenia,N,2,52,53,no_modification,DM012,ARM1,Y
+S0041,7,headache,N,1,71,72,no_modification,DM017,ARM1,Y
+S0041,8,acneiform_eruptions,N,1,86,87,NOT APPLICABLE,,ARM1,Y
+S0041,9,anorexia,N,2,87,88,NOT APPLICABLE,,ARM1,Y
+S0041,10,urinary_tract_infection,N,2,93,94,NOT APPLICABLE,,ARM1,Y
+S0041,11,neutropenia,N,2,107,108,NOT APPLICABLE,,ARM1,Y
+S0042,1,abdomen_distended,N,2,4,5,no_modification,DM017,ARM1,Y
+S0042,2,acneiform_eruptions,N,2,16,17,no_modification,DM017,ARM1,Y
+S0042,3,palmar_plantar_erythrodysesthesia_syndrome,N,1,17,18,no_modification,DM017,ARM1,Y
+S0042,4,dyspnea,N,2,22,23,no_modification,DM017,ARM1,Y
+S0042,5,urinary_tract_infection,N,1,60,61,no_modification,DM017,ARM1,Y
+S0042,6,leukopenia,N,1,76,77,NOT APPLICABLE,,ARM1,Y
+S0042,7,hypertension_variable,N,2,125,126,no_modification,DM017,ARM1,Y
+S0042,8,rash/desquamation,N,1,188,189,NOT APPLICABLE,,ARM1,Y
+S0043,1,diarrhea,N,1,6,7,no_modification,DM017,ARM2,Y
+S0043,2,fistulas,N,2,6,7,discontinue_agent,DM006,ARM2,Y
+S0043,3,neutropenia,N,2,20,21,NOT APPLICABLE,,ARM2,Y
+S0044,1,pain:_abdominal_pain_nos,N,2,6,7,no_modification,DM017,ARM2,Y
+S0044,2,depression_dominant,N,1,16,17,no_modification,DM017,ARM2,Y
+S0044,3,thrombocytopenia,N,1,24,25,no_modification,DM012,ARM2,Y
+S0044,4,vomiting,N,2,55,56,no_modification,DM017,ARM2,Y
+S0044,5,stomatitis,N,1,58,59,no_modification,DM017,ARM2,Y
+S0044,6,pain_in_limb,N,1,60,61,no_modification,DM017,ARM2,Y
+S0044,7,coughing,N,2,66,67,no_modification,DM017,ARM2,Y
+S0044,8,nausea,N,1,115,116,no_modification,DM017,ARM2,Y
+S0044,9,constipation,N,2,123,124,no_modification,DM017,ARM2,Y
+S0044,10,pain,N,1,147,148,no_modification,DM017,ARM2,Y
+S0045,1,pruritus,N,1,2,3,no_modification,DM017,ARM1,Y
+S0045,2,pelvic_pain,N,2,3,4,no_modification,DM017,ARM1,Y
+S0045,3,vomiting,N,2,9,10,no_modification,DM017,ARM1,Y
+S0045,4,hyperglycemia,N,1,17,18,no_modification,DM017,ARM1,Y
+S0045,5,constipation,N,2,18,19,no_modification,DM017,ARM1,Y
+S0045,6,hypomagnesemia,N,1,19,20,no_modification,DM017,ARM1,Y
+S0045,7,allergic_reaction,N,1,33,34,no_modification,DM017,ARM1,Y
+S0045,8,sensory_neuropathy,N,1,48,49,no_modification,DM017,ARM1,Y
+S0045,9,diarrhea,N,2,50,51,no_modification,DM017,ARM1,Y
+S0045,10,pain:_abdominal_pain_nos,N,1,54,55,no_modification,DM017,ARM1,Y
+S0045,11,thrombocytopenia,N,1,63,64,no_modification,DM012,ARM1,Y
+S0045,12,anemia,N,2,65,66,no_modification,DM014,ARM1,Y
+S0045,13,nausea,N,2,85,86,no_modification,DM017,ARM1,Y
+S0046,1,rash/desquamation,N,2,52,53,no_modification,DM017,ARM1,Y
+S0046,2,hypertension_variable,N,1,62,63,no_modification,DM017,ARM1,Y
+S0046,3,dyspnea,N,1,69,70,no_modification,DM017,ARM1,Y
+S0046,4,alanine_aminotransferase_increased,N,1,93,94,no_modification,DM017,ARM1,Y
+S0046,5,palmar_plantar_erythrodysesthesia_syndrome,N,1,106,107,no_modification,DM017,ARM1,Y
+S0046,6,asthenia,N,2,173,174,no_modification,DM017,ARM1,Y
+S0046,7,sleeplessness,N,2,250,251,no_modification,DM017,ARM1,Y
+S0046,8,anorexia,N,1,256,257,no_modification,DM017,ARM1,Y
+S0046,9,dizziness,N,2,261,262,no_modification,DM017,ARM1,Y
+S0046,10,headache,N,2,281,282,no_modification,DM017,ARM1,Y
+S0046,11,lymphocyte_count_decreased,N,1,300,301,no_modification,DM017,ARM1,Y
+S0046,12,fistula,N,1,347,348,no_modification,DM017,ARM1,Y
+S0046,13,acneiform_eruptions,N,2,447,448,no_modification,DM017,ARM1,Y
+S0046,14,white_blood_cell_decreased,N,2,481,482,NOT APPLICABLE,,ARM1,Y
+S0046,15,abdomen_distended,N,2,497,498,no_modification,DM017,ARM1,Y
+S0046,16,thrombocytopenia,N,2,507,508,NOT APPLICABLE,,ARM1,Y
+S0047,1,fistula,N,1,32,33,no_modification,DM017,ARM2,Y
+S0047,2,pelvic_pain,N,2,73,74,no_modification,DM017,ARM2,Y
+S0047,3,depression_dominant,N,2,100,101,no_modification,DM017,ARM2,Y
+S0047,4,constipation,N,1,103,104,no_modification,DM017,ARM2,Y
+S0047,5,hot_flushes,N,2,187,188,no_modification,DM017,ARM2,Y
+S0047,6,pain:_abdominal_pain_nos,N,2,205,206,no_modification,DM017,ARM2,Y
+S0047,7,sensory_neuropathy,N,1,238,239,no_modification,DM017,ARM2,Y
+S0047,8,headache,N,1,373,374,no_modification,DM017,ARM2,Y
+S0047,9,diarrhea,N,1,389,390,no_modification,DM017,ARM2,Y
+S0047,10,pruritus,N,1,414,415,no_modification,DM017,ARM2,Y
+S0047,11,urinary_tract_infection,N,2,498,499,no_modification,DM017,ARM2,Y
+S0048,1,dyspnea,N,2,9,10,no_modification,DM017,ARM1,Y
+S0048,2,diarrhea,N,2,20,21,no_modification,DM017,ARM1,Y
+S0048,3,asthenia,N,2,62,63,no_modification,DM017,ARM1,Y
+S0048,4,constipation,N,2,67,68,no_modification,DM017,ARM1,Y
+S0048,5,palmar_plantar_erythrodysesthesia_syndrome,N,1,72,73,no_modification,DM017,ARM1,Y
+S0048,6,hypertension_variable,N,2,87,88,no_modification,DM017,ARM1,Y
+S0048,7,rash/desquamation,N,2,113,114,no_modification,DM017,ARM1,Y
+S0048,8,thrombocytopenia,N,2,139,140,no_modification,DM012,ARM1,Y
+S0048,9,acneiform_eruptions,N,2,172,173,NOT APPLICABLE,,ARM1,Y
+S0048,10,alopecia,N,1,189,190,NOT APPLICABLE,,ARM1,Y
+S0048,11,white_blood_cell_decreased,N,1,196,197,NOT APPLICABLE,,ARM1,Y
+S0048,12,alanine_aminotransferase_increased,N,1,198,199,NOT APPLICABLE,,ARM1,Y
+S0049,1,coughing,N,1,1,2,no_modification,DM017,ARM1,Y
+S0049,2,anemia,N,2,2,3,no_modification,DM014,ARM1,Y
+S0049,3,sleeplessness,N,1,48,49,no_modification,DM017,ARM1,Y
+S0049,4,sensory_neuropathy,N,1,69,70,no_modification,DM017,ARM1,Y
+S0049,5,arthralgia,N,2,69,70,no_modification,DM017,ARM1,Y
+S0049,6,pain:_abdominal_pain_nos,N,2,70,71,no_modification,DM017,ARM1,Y
+S0049,7,creatinine_increased,N,1,72,73,no_modification,DM017,ARM1,Y
+S0049,8,depression_dominant,N,2,77,78,no_modification,DM017,ARM1,Y
+S0049,9,nausea,N,2,112,113,no_modification,DM017,ARM1,Y
+S0049,10,weight_loss,N,2,114,115,no_modification,DM017,ARM1,Y
+S0049,11,diarrhea,N,2,121,122,no_modification,DM017,ARM1,Y
+S0049,12,thrombocytopenia,N,1,134,135,no_modification,DM012,ARM1,Y
+S0049,13,constipation,N,2,163,164,no_modification,DM017,ARM1,Y
+S0049,14,pelvic_pain,N,1,167,168,no_modification,DM017,ARM1,Y
+S0049,15,hypokalemia,N,2,173,174,NOT APPLICABLE,,ARM1,Y
+S0050,1,alanine_aminotransferase_increased,N,2,12,13,no_modification,DM017,ARM2,Y
+S0050,2,dyspnea,N,2,17,18,no_modification,DM017,ARM2,Y
+S0050,3,white_blood_cell_decreased,N,1,18,19,NOT APPLICABLE,,ARM2,Y
+S0050,4,asthenia,N,1,45,46,no_modification,DM017,ARM2,Y
+S0050,5,"neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",Y,3,45,47,hold,DM019,ARM2,Y
+S0050,6,anxiety,N,1,69,70,no_modification,DM017,ARM2,Y
+S0050,7,vomiting,N,1,74,75,no_modification,DM017,ARM2,Y
+S0050,8,hypertension_variable,N,1,90,91,no_modification,DM017,ARM2,Y
+S0050,9,rash_erythematous_macules_or_papules,N,1,94,95,no_modification,DM017,ARM2,Y
+S0050,10,abdomen_distended,N,1,95,96,no_modification,DM017,ARM2,Y
+S0050,11,rash/desquamation,N,2,104,105,no_modification,DM017,ARM2,Y
+S0050,12,acneiform_eruptions,N,1,112,113,no_modification,DM017,ARM2,Y
+S0050,13,anorexia,N,1,125,126,no_modification,DM017,ARM2,Y
+S0050,14,palmar_plantar_erythrodysesthesia_syndrome,N,2,138,139,no_modification,DM017,ARM2,Y
+S0050,15,urinary_tract_infection,Y,3,204,206,hold,DM019,ARM2,Y
+S0050,16,thrombocytopenia,N,2,240,241,no_modification,DM012,ARM2,Y
+S0050,17,sensory_neuropathy,N,1,252,253,no_modification,DM017,ARM2,Y
+S0050,18,weight_loss,N,1,277,278,NOT APPLICABLE,,ARM2,Y
+S0051,1,vaginal_discharge,N,2,54,55,no_modification,DM017,ARM2,Y
+S0051,2,hypertension_variable,N,1,55,56,no_modification,DM017,ARM2,Y
+S0051,3,white_blood_cell_decreased,N,2,86,87,NOT APPLICABLE,,ARM2,Y
+S0051,4,asthenia,N,1,93,94,no_modification,DM017,ARM2,Y
+S0051,5,sensory_neuropathy,N,2,105,106,no_modification,DM017,ARM2,Y
+S0051,6,diarrhea,N,2,136,137,no_modification,DM017,ARM2,Y
+S0051,7,palmar_plantar_erythrodysesthesia_syndrome,N,1,154,155,no_modification,DM017,ARM2,Y
+S0051,8,thrombocytopenia,N,1,156,157,no_modification,DM012,ARM2,Y
+S0051,9,anemia,N,2,163,164,no_modification,DM014,ARM2,Y
+S0051,10,vomiting,N,1,174,175,no_modification,DM017,ARM2,Y
+S0051,11,abdomen_distended,N,1,175,176,no_modification,DM017,ARM2,Y
+S0051,12,headache,N,2,274,275,no_modification,DM017,ARM2,Y
+S0051,13,alanine_aminotransferase_increased,N,1,315,316,no_modification,DM017,ARM2,Y
+S0051,14,acneiform_eruptions,N,1,365,366,NOT APPLICABLE,,ARM2,Y
+S0052,1,alanine_aminotransferase_increased,N,1,4,5,no_modification,DM017,ARM2,Y
+S0052,2,rash/desquamation,N,1,17,18,no_modification,DM017,ARM2,Y
+S0052,3,acneiform_eruptions,N,1,18,19,no_modification,DM017,ARM2,Y
+S0052,4,palmar_plantar_erythrodysesthesia_syndrome,N,1,25,26,no_modification,DM017,ARM2,Y
+S0052,5,urinary_tract_infection,N,1,28,29,no_modification,DM017,ARM2,Y
+S0052,6,thrombocytopenia,N,2,61,62,no_modification,DM012,ARM2,Y
+S0052,7,hypertension_variable,N,1,89,90,NOT APPLICABLE,,ARM2,Y
+S0052,8,abdominal_pain,N,2,90,91,NOT APPLICABLE,,ARM2,Y
+S0052,9,white_blood_cell_decreased,N,2,98,99,NOT APPLICABLE,,ARM2,Y
+S0052,10,asthenia,N,2,112,113,NOT APPLICABLE,,ARM2,Y
+S0052,11,dizziness,N,1,113,114,NOT APPLICABLE,,ARM2,Y
+S0053,1,constipation,N,2,26,27,no_modification,DM017,ARM1,Y
+S0053,2,palmar_plantar_erythrodysesthesia_syndrome,N,2,43,44,no_modification,DM017,ARM1,Y
+S0053,3,anemia,N,2,49,50,no_modification,DM014,ARM1,Y
+S0053,4,dyspepsia,N,1,65,66,no_modification,DM017,ARM1,Y
+S0053,5,allergic_reaction,N,2,70,71,no_modification,DM017,ARM1,Y
+S0053,6,thrombocytopenia,N,2,82,83,no_modification,DM012,ARM1,Y
+S0053,7,pelvic_pain,N,2,85,86,no_modification,DM017,ARM1,Y
+S0053,8,pain:_abdominal_pain_nos,N,1,89,90,NOT APPLICABLE,,ARM1,Y
+S0053,9,diarrhea,N,2,90,91,NOT APPLICABLE,,ARM1,Y
+S0054,1,hyponatremia,N,2,17,18,no_modification,DM017,ARM2,Y
+S0054,2,dysgeusia,N,2,23,24,no_modification,DM017,ARM2,Y
+S0054,3,anemia,N,2,26,27,no_modification,DM014,ARM2,Y
+S0054,4,diarrhea,N,2,34,35,no_modification,DM017,ARM2,Y
+S0054,5,hyperglycemia,N,2,40,41,no_modification,DM017,ARM2,Y
+S0054,6,palmar_plantar_erythrodysesthesia_syndrome,N,2,52,53,no_modification,DM017,ARM2,Y
+S0054,7,small_bowel_obstruction,Y,3,100,102,hold,DM019,ARM2,Y
+S0054,8,fistulas,N,2,120,121,discontinue_agent,DM006,ARM2,Y
+S0054,9,pruritus,N,2,128,129,NOT APPLICABLE,,ARM2,Y
+S0054,10,thrombocytopenia,N,1,129,130,NOT APPLICABLE,,ARM2,Y
+S0054,11,arthralgia,N,1,147,148,NOT APPLICABLE,,ARM2,Y
+S0054,12,constipation,N,2,149,150,NOT APPLICABLE,,ARM2,Y
+S0055,1,white_blood_cell_decreased,N,2,1,2,NOT APPLICABLE,,ARM1,Y
+S0055,2,arthralgia,N,2,9,10,no_modification,DM017,ARM1,Y
+S0055,3,constipation,N,2,23,24,no_modification,DM017,ARM1,Y
+S0055,4,hypertension_variable,N,1,42,43,no_modification,DM017,ARM1,Y
+S0055,5,dysgeusia,N,1,48,49,no_modification,DM017,ARM1,Y
+S0055,6,nausea,N,2,49,50,no_modification,DM017,ARM1,Y
+S0055,7,pain:_abdominal_pain_nos,N,2,50,51,no_modification,DM017,ARM1,Y
+S0055,8,pelvic_pain,N,1,56,57,no_modification,DM017,ARM1,Y
+S0055,9,headache,N,2,60,61,no_modification,DM017,ARM1,Y
+S0055,10,pruritus,N,1,61,62,no_modification,DM017,ARM1,Y
+S0055,11,stomatitis,N,2,69,70,no_modification,DM017,ARM1,Y
+S0055,12,depression_dominant,N,1,75,76,no_modification,DM017,ARM1,Y
+S0055,13,palmar_plantar_erythrodysesthesia_syndrome,N,1,105,106,no_modification,DM017,ARM1,Y
+S0055,14,thrombocytopenia,N,1,109,110,no_modification,DM012,ARM1,Y
+S0055,15,fistula,N,2,124,125,discontinue_agent,DM006,ARM1,Y
+S0055,16,myalgia,N,1,127,128,NOT APPLICABLE,,ARM1,Y
+S0056,1,thrombocytopenia,N,2,11,12,no_modification,DM012,ARM2,Y
+S0056,2,pain_in_limb,N,1,22,23,no_modification,DM017,ARM2,Y
+S0056,3,anemia,N,2,29,30,no_modification,DM014,ARM2,Y
+S0056,4,dyspnea,N,2,32,33,no_modification,DM017,ARM2,Y
+S0056,5,acneiform_eruptions,N,1,60,61,no_modification,DM017,ARM2,Y
+S0056,6,lymphocyte_count_decreased,N,2,79,80,no_modification,DM017,ARM2,Y
+S0056,7,abdomen_distended,N,1,124,125,no_modification,DM017,ARM2,Y
+S0056,8,maculopapular_lesion,N,2,125,126,no_modification,DM017,ARM2,Y
+S0056,9,dry_skin,N,1,138,139,no_modification,DM017,ARM2,Y
+S0056,10,vaginal_discharge,N,2,139,140,no_modification,DM017,ARM2,Y
+S0056,11,palmar_plantar_erythrodysesthesia_syndrome,N,1,164,165,no_modification,DM017,ARM2,Y
+S0056,12,alanine_aminotransferase_increased,N,2,166,167,no_modification,DM017,ARM2,Y
+S0056,13,hypertension_variable,N,2,185,186,NOT APPLICABLE,,ARM2,Y
+S0056,14,leukopenia,N,2,190,191,NOT APPLICABLE,,ARM2,Y
+S0057,1,diarrhea,N,1,3,4,no_modification,DM017,ARM1,Y
+S0057,2,hypokalemia,N,2,17,18,no_modification,DM017,ARM1,Y
+S0057,3,rash/desquamation,N,2,19,20,no_modification,DM017,ARM1,Y
+S0057,4,weight_loss,N,1,22,23,no_modification,DM017,ARM1,Y
+S0057,5,nausea,N,2,33,34,no_modification,DM017,ARM1,Y
+S0057,6,anemia,N,2,49,50,no_modification,DM014,ARM1,Y
+S0057,7,thrombocytopenia,N,1,62,63,no_modification,DM012,ARM1,Y
+S0057,8,palmar_plantar_erythrodysesthesia_syndrome,N,1,69,70,no_modification,DM017,ARM1,Y
+S0057,9,acneiform_eruptions,N,1,76,77,no_modification,DM017,ARM1,Y
+S0057,10,alanine_aminotransferase_increased,N,1,77,78,no_modification,DM017,ARM1,Y
+S0057,11,dyspnea,N,1,93,94,NOT APPLICABLE,,ARM1,Y
+S0057,12,white_blood_cell_decreased,N,2,101,102,NOT APPLICABLE,,ARM1,Y
+S0057,13,pain_in_limb,N,1,111,112,NOT APPLICABLE,,ARM1,Y

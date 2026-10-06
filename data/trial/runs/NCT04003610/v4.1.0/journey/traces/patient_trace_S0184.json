@@ -1,0 +1,669 @@
+{
+ "subject_id": "S0184",
+ "arm": "ARM1",
+ "agents": [
+  "pemigatinib",
+  "pembrolizumab"
+ ],
+ "baseline": {
+  "patient_id": "P006282",
+  "demographic:age": {
+   "value": 46.12,
+   "unit": "year"
+  },
+  "demographic:sex": "male",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:pd_l1_cps_category": "PD-L1 CPS < 10",
+  "var:ecog_performance_status": {
+   "value": 2,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 77.9,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 169.0,
+   "unit": "cm"
+  },
+  "var:metastatic_disease_pattern": "other metastatic disease"
+ },
+ "progression_day_latent": 35,
+ "progression_detected_day": 64,
+ "off_treatment": [
+  64,
+  "disease progression"
+ ],
+ "dose": {
+  "pemigatinib": {
+   "value": 18.0,
+   "unit": "mg",
+   "basis": "fixed"
+  },
+  "pembrolizumab": {
+   "value": 200.0,
+   "unit": "mg",
+   "basis": "fixed"
+  }
+ },
+ "reductions": {
+  "pemigatinib": 0,
+  "pembrolizumab": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "pemigatinib",
+   "planned_administrations": 21,
+   "administrations": 21,
+   "dose": "18 mg"
+  },
+  {
+   "cycle": 1,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "200 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "pemigatinib",
+   "planned_administrations": 21,
+   "administrations": 21,
+   "dose": "13.5 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 0,
+   "dose": "200 mg"
+  },
+  {
+   "cycle": 3,
+   "agent": "pemigatinib",
+   "planned_administrations": 21,
+   "administrations": 21,
+   "dose": "13.5 mg"
+  },
+  {
+   "cycle": 3,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "200 mg"
+  },
+  {
+   "cycle": 4,
+   "agent": "pemigatinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "13.5 mg"
+  },
+  {
+   "cycle": 4,
+   "agent": "pembrolizumab",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "200 mg"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "diarrhea",
+   "serious": false,
+   "grade": 2,
+   "onset": 8,
+   "source": "safety_v3:RESOLVED",
+   "end": 9,
+   "decisions": {
+    "pemigatinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM004",
+     "category": "Other Toxicities, including SRD/RPED",
+     "quote": "Continue pemigatinib treatment",
+     "undecidable": []
+    },
+    "pembrolizumab": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM026",
+     "category": "Diarrhea/Colitis",
+     "quote": "Withhold",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dizziness",
+   "serious": false,
+   "grade": 2,
+   "onset": 19,
+   "source": "safety_v3:RESOLVED",
+   "end": 20,
+   "decisions": {
+    "pemigatinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM004",
+     "category": "Other Toxicities, including SRD/RPED",
+     "quote": "Continue pemigatinib treatment",
+     "undecidable": []
+    },
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "palmar_plantar_erythrodysesthesia_syndrome",
+   "serious": false,
+   "grade": 1,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 23,
+   "decisions": {
+    "pemigatinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM004",
+     "category": "Other Toxicities, including SRD/RPED",
+     "quote": "Continue pemigatinib treatment",
+     "undecidable": []
+    },
+    "pembrolizumab": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM035",
+     "category": "Skin reactions",
+     "quote": "Withhold until adverse\nreaction recovers to\nGrade 0-1",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dyspnea",
+   "serious": false,
+   "grade": 1,
+   "onset": 42,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "pemigatinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM004",
+     "category": "Other Toxicities, including SRD/RPED",
+     "quote": "Continue pemigatinib treatment",
+     "undecidable": []
+    },
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "aspartate_aminotransferase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 44,
+   "source": "safety_v3:RESOLVED",
+   "end": 45,
+   "decisions": {
+    "pemigatinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM004",
+     "category": "Other Toxicities, including SRD/RPED",
+     "quote": "Continue pemigatinib treatment",
+     "undecidable": [
+      "DM003"
+     ]
+    },
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "diarrhea",
+   "serious": false,
+   "grade": 2,
+   "onset": 55,
+   "source": "protocol:F049",
+   "end": 56,
+   "decisions": {
+    "pemigatinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM004",
+     "category": "Other Toxicities, including SRD/RPED",
+     "quote": "Continue pemigatinib treatment",
+     "undecidable": []
+    },
+    "pembrolizumab": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM026",
+     "category": "Diarrhea/Colitis",
+     "quote": "Withhold",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "coughing",
+   "serious": false,
+   "grade": 2,
+   "onset": 60,
+   "source": "safety_v3:RESOLVED",
+   "end": 61,
+   "decisions": {
+    "pemigatinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM004",
+     "category": "Other Toxicities, including SRD/RPED",
+     "quote": "Continue pemigatinib treatment",
+     "undecidable": []
+    },
+    "pembrolizumab": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hemoglobin_normal_12_16_gm",
+   "serious": false,
+   "grade": 2,
+   "onset": 70,
+   "source": "safety_v3:RESOLVED",
+   "end": 71
+  },
+  {
+   "term": "hypertension_variable",
+   "serious": false,
+   "grade": 1,
+   "onset": 85,
+   "source": "safety_v3:RESOLVED",
+   "end": 127
+  },
+  {
+   "term": "anorexia",
+   "serious": false,
+   "grade": 1,
+   "onset": 86,
+   "source": "safety_v3:RESOLVED",
+   "end": 127
+  },
+  {
+   "term": "pain",
+   "serious": false,
+   "grade": 1,
+   "onset": 88,
+   "source": "safety_v3:RESOLVED",
+   "end": 127
+  },
+  {
+   "term": "anemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 92,
+   "source": "safety_v3:RESOLVED",
+   "end": 127
+  },
+  {
+   "term": "hypocalcemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 92,
+   "source": "safety_v3:RESOLVED",
+   "end": 127
+  }
+ ],
+ "events": [
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 46.12, male, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -35,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start pemigatinib",
+   "result": "18 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX007",
+   "quote": "Participants not reaching the target serum phosphate during Cycle 1 will increase the daily dose to 18 mg starting at Cycle 2"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start pembrolizumab",
+   "result": "200 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX003",
+   "quote": "pembrolizumab 200 mg Q3W IV up to 35 cycles"
+  },
+  {
+   "day": 8,
+   "visit": "C1D8",
+   "category": "adverse event",
+   "item": "diarrhea",
+   "result": "grade 2; resolves by day 9",
+   "consequence": "pemigatinib continued (DM004); pembrolizumab held until day 9 (DM026)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 19,
+   "visit": "C1D19",
+   "category": "adverse event",
+   "item": "dizziness",
+   "result": "grade 2; resolves by day 20",
+   "consequence": "pemigatinib continued (DM004)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "palmar_plantar_erythrodysesthesia_syndrome",
+   "result": "grade 1; resolves by day 23",
+   "consequence": "pemigatinib continued (DM004); pembrolizumab held until day 23 (DM035)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "C2D1",
+   "category": "treatment",
+   "item": "pembrolizumab",
+   "result": "0/1 planned administrations",
+   "consequence": "interrupted or discontinued",
+   "evidence_level": "protocol",
+   "source": "protocol dosing schedule and dose-modification rules"
+  },
+  {
+   "day": 42,
+   "visit": "C2D21",
+   "category": "adverse event",
+   "item": "dyspnea",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "pemigatinib continued (DM004)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 44,
+   "visit": "C3D2",
+   "category": "adverse event",
+   "item": "aspartate_aminotransferase_increased",
+   "result": "grade 1; resolves by day 45",
+   "consequence": "pemigatinib continued (DM004); undecidable: DM003",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 44,
+   "visit": "C3D2",
+   "category": "laboratory",
+   "item": "AST",
+   "result": "1.91 x ULN (grade 1)",
+   "consequence": "during aspartate_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for AST (1-3 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 55,
+   "visit": "C3D13",
+   "category": "adverse event",
+   "item": "diarrhea",
+   "result": "grade 2; resolves by day 56",
+   "consequence": "pemigatinib continued (DM004); pembrolizumab held until day 56 (DM026)",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F049; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 60,
+   "visit": "C3D18",
+   "category": "adverse event",
+   "item": "coughing",
+   "result": "grade 2; resolves by day 61",
+   "consequence": "pemigatinib continued (DM004)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 64,
+   "visit": "TA1",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "progressive disease",
+   "consequence": "progression detected: treatment ends",
+   "evidence_level": "evidence",
+   "source": "latent progression time: locked outcome model control curve: exponential (evidence) (evidence: reported control-arm medians of the most similar subgroup (not stated by the protocol)); detected at scheduled assessment"
+  },
+  {
+   "day": 64,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "disease progression",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 70,
+   "visit": "C4D7",
+   "category": "adverse event",
+   "item": "hemoglobin_normal_12_16_gm",
+   "result": "grade 2; resolves by day 71",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 85,
+   "visit": "TA2",
+   "category": "adverse event",
+   "item": "hypertension_variable",
+   "result": "grade 1; resolves by day 127",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 86,
+   "visit": "TA2",
+   "category": "adverse event",
+   "item": "anorexia",
+   "result": "grade 1; resolves by day 127",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 88,
+   "visit": "TA2",
+   "category": "adverse event",
+   "item": "pain",
+   "result": "grade 1; resolves by day 127",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 92,
+   "visit": "TA2",
+   "category": "adverse event",
+   "item": "anemia",
+   "result": "grade 2; resolves by day 127",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 92,
+   "visit": "TA2",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "8.01 g/dL (grade 2)",
+   "consequence": "during anemia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Hemoglobin (8-10 g/dL)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 92,
+   "visit": "TA2",
+   "category": "adverse event",
+   "item": "hypocalcemia",
+   "result": "grade 1; resolves by day 127",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 148,
+   "visit": "FU1",
+   "category": "follow-up",
+   "item": "follow-up visit",
+   "result": "attended",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "follow-up visits: schedule fact SF14 (REVIEW_REQUIRED: used under the accept-review decision, flagged)"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "subjects": 190,
+ "traces": [
+  "S0044",
+  "S0161",
+  "S0176"
+ ],
+ "any_dose_hold": 0,
+ "any_dose_reduction": 0,
+ "discontinued_for_ae": 4,
+ "deaths": 15,
+ "deaths_on_treatment": 7,
+ "end_of_treatment_reasons": {
+  "disease progression": 171,
+  "withdrawal (subject, loss to follow-up or physician decision)": 3,
+  "adverse event (registry discontinuation rate)": 4,
+  "death": 7,
+  "end of simulated follow-up": 5
+ },
+ "median_rdi": 1.0,
+ "progression_detected": 171,
+ "adverse_events_after_reporting_window_dropped": 13,
+ "rules_undecidable": [
+  "DM012",
+  "DM015",
+  "DM022"
+ ],
+ "screening_funnel": {
+  "generated_patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7476,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2524
+  },
+  "not_ruled_out_share": 0.7476,
+  "undecidable_criteria": [
+   "EL001",
+   "EL002",
+   "EL005",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL009",
+   "EL012",
+   "EL013",
+   "EL015",
+   "EL016",
+   "EL018",
+   "EL019",
+   "EL021",
+   "EL022",
+   "EL023",
+   "EL024",
+   "EL025",
+   "EL027",
+   "EL028",
+   "EL029"
+  ],
+  "screen_pass_rate": {
+   "value": 0.7238013978387278,
+   "evidence_level": "evidence",
+   "source": "registry recruitment details stating screened and enrolled counts (lung; 41 trials, 20971 screened)",
+   "detail": {
+    "estimate": 0.7238013978387278,
+    "ci95": [
+     0.6520930983284803,
+     0.78558938457575
+    ],
+    "single_trial_80": [
+     0.4057268344457009,
+     0.909574672805792
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.40573909088080534,
+     "p30": 0.6018146041873844,
+     "p50": 0.7238013978387278,
+     "p70": 0.8196180672874567,
+     "p90": 0.9095704918100433
+    },
+    "tau_logit": 1.0354898436591933,
+    "groups": 41,
+    "trials": 41,
+    "participants": 20971
+   }
+  },
+  "target": 190.0,
+  "patients_to_screen": {
+   "estimate": 263,
+   "range_80": [
+    209,
+    469
+   ],
+   "basis": "target / registry pass rate (the range is for a single new trial)"
+  }
+ }
+}

@@ -1,0 +1,275 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "f192952225bdae1956f0c7055dc3d3ae3c804dd43a5b387194f2eef7910902ef"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "Regimen A",
+   "started": 6,
+   "end_of_treatment": {
+    "completed planned procedures": 6
+   },
+   "deaths": 0
+  },
+  "ARM2": {
+   "arm": "RegimenB",
+   "started": 4,
+   "end_of_treatment": {
+    "completed planned procedures": 4
+   },
+   "deaths": 0
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "graftfailure/rejection",
+   "role": "primary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "CTCAE Version 5.0 Grade≥3 infusion toxicity",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 6,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 3,
+     "any_grade3_ae": 3,
+     "stopped_for_ae": 0
+    },
+    "ARM2": {
+     "patients": 4,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 0,
+     "any_grade3_ae": 0,
+     "stopped_for_ae": 0
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Neutrophil recovery",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 6,
+     "events": 6,
+     "km_median_months": 3.7,
+     "median_ci95_months": [
+      1.3,
+      6.43
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 2.780111640606649,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 3.592438458074416,
+      "p30": 3.592438458074416,
+      "p50": 3.704337890968442,
+      "p70": 3.8107140095340375,
+      "p90": 3.8107140095340375
+     }
+    },
+    "ARM2": {
+     "patients": 4,
+     "events": 4,
+     "km_median_months": 4.4,
+     "median_ci95_months": [
+      1.29,
+      9.18
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 2.780111640606649,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 1.6473231056437074,
+      "p30": 4.396403822954175,
+      "p50": 4.396403822954175,
+      "p70": 4.912321440975226,
+      "p90": 4.912321440975226
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "plateletengraftment",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 6,
+     "events": 6,
+     "km_median_months": 5.38,
+     "median_ci95_months": [
+      1.75,
+      8.66
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 2.780111640606649,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 4.134688771105592,
+      "p30": 4.134688771105592,
+      "p50": 5.376736080584347,
+      "p70": 7.236908370523439,
+      "p90": 7.236908370523439
+     }
+    },
+    "ARM2": {
+     "patients": 4,
+     "events": 4,
+     "km_median_months": 1.29,
+     "median_ci95_months": [
+      0.35,
+      2.5
+     ],
+     "survival_percent": {
+      "12m": null,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 2.780111640606649,
+      "unit": "months",
+      "level": "journey progression rate",
+      "source": "taken from the simulated patients' event times (no reported median for this endpoint)"
+     },
+     "predictive_median_months": {
+      "p10": 0.8898702253983781,
+      "p30": 1.2879172435120787,
+      "p50": 1.2879172435120787,
+      "p70": 1.5364884440195061,
+      "p90": 1.5364884440195061
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Severe (grades III-IV) acute graft-versus-host disease (GVHD)",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Chronic GVHD",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Non-relapsemortality",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Immune monitoring",
+   "role": "substudy",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "assessment of HIV reservoir in blood and tissues",
+   "role": "substudy",
+   "class": "not_simulated",
+   "variable": "other_measure",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "other_measure",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "generate biomarkers of successful immune reconstitution and HIV reservoir decay",
+   "role": "substudy",
+   "class": "not_simulated",
+   "variable": "biomarker_or_immunology",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "biomarker_or_immunology",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 2,
+  "proportion": 0,
+  "continuous": 0,
+  "safety": 1,
+  "not_simulated": 7
+ }
+}

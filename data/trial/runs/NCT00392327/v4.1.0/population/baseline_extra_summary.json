@@ -1,0 +1,106 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT00392327\\v4.1.0\\population_base",
+  "family": "central_nervous_system",
+  "phase": null,
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.38795299613713935,
+     0.473076610800396,
+     0.13897039306246467,
+     0.0,
+     0.0
+    ],
+    "trial_range_10_90": [
+     [
+      0.245,
+      0.36,
+      0.066,
+      0.0,
+      0.0
+     ],
+     [
+      0.563,
+      0.579,
+      0.197,
+      0.0,
+      0.0
+     ]
+    ],
+    "trials": 7,
+    "participants": 210,
+    "source": "registry baseline ECOG of enrolled participants (central_nervous_system; 7 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 61.10269230769231,
+    "sd": 31.692249186512463,
+    "trials": 9,
+    "participants": 338,
+    "source": "registry baseline weight of enrolled participants (central_nervous_system; 9 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 154.90647239263805,
+    "sd": 24.40956407651886,
+    "trials": 8,
+    "participants": 326,
+    "source": "registry baseline height of enrolled participants (central_nervous_system; 8 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "location",
+    "variable": "var:tumor_location",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "dissemination",
+    "variable": "var:dissemination_status",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 0 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor"
+   },
+   {
+    "factor": "medulloblastoma and PNET patients",
+    "variable": "var:tumor_location",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no levels"
+   },
+   {
+    "factor": "medulloblastoma patients only",
+    "variable": "var:tumor_location",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no levels"
+   },
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  ]
+ }
+}

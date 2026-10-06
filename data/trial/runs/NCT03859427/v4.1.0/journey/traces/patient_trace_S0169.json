@@ -1,0 +1,2748 @@
+{
+ "subject_id": "S0169",
+ "arm": "ARM1",
+ "agents": [
+  "carfilzomib",
+  "lenalidomide",
+  "dexamethasone"
+ ],
+ "baseline": {
+  "patient_id": "P008505",
+  "demographic:age": {
+   "value": 62.53,
+   "unit": "year"
+  },
+  "demographic:sex": "male",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 1,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 56.0,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 165.8,
+   "unit": "cm"
+  },
+  "var:iss_stage_at_study_entry": "stage 1 or 2",
+  "var:prior_lenalidomide_treatment": "no",
+  "var:prior_pi_treatment": "yes",
+  "var:prior_anti_cd_exposure": "yes",
+  "var:prior_bortezomib_treatment": "no",
+  "var:number_of_prior_therapies": "1",
+  "var:cytogenetic_risk_measured_by_fish": "standard risk",
+  "var:bortezomib_refractory_status": "no",
+  "var:lenalidomide_refractory_status": "no",
+  "var:prior_transplant": "no"
+ },
+ "progression_day_latent": 202,
+ "progression_detected_day": null,
+ "off_treatment": [
+  45,
+  "withdrawal (subject, loss to follow-up or physician decision)"
+ ],
+ "dose": {
+  "carfilzomib": {
+   "value": 56.0,
+   "unit": "mg/m2",
+   "basis": "per_body_surface_area"
+  },
+  "lenalidomide": {
+   "value": 25.0,
+   "unit": "mg",
+   "basis": "fixed"
+  },
+  "dexamethasone": {
+   "value": 40.0,
+   "unit": "mg",
+   "basis": "fixed"
+  }
+ },
+ "reductions": {
+  "carfilzomib": 0,
+  "lenalidomide": 0,
+  "dexamethasone": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "carfilzomib",
+   "planned_administrations": 3,
+   "administrations": 3,
+   "dose": "20 mg/m2 then 56 mg/m2"
+  },
+  {
+   "cycle": 1,
+   "agent": "lenalidomide",
+   "planned_administrations": 21,
+   "administrations": 21,
+   "dose": "25 mg"
+  },
+  {
+   "cycle": 1,
+   "agent": "dexamethasone",
+   "planned_administrations": 4,
+   "administrations": 4,
+   "dose": "40 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "carfilzomib",
+   "planned_administrations": 3,
+   "administrations": 1,
+   "dose": "56 mg/m2"
+  },
+  {
+   "cycle": 2,
+   "agent": "lenalidomide",
+   "planned_administrations": 17,
+   "administrations": 17,
+   "dose": "25 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "dexamethasone",
+   "planned_administrations": 3,
+   "administrations": 3,
+   "dose": "40 mg"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "abdominal_pain",
+   "serious": false,
+   "grade": 1,
+   "onset": 3,
+   "source": "safety_v3:RESOLVED",
+   "end": 4,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neuralgia",
+   "serious": false,
+   "grade": 2,
+   "onset": 3,
+   "source": "safety_v3:RESOLVED",
+   "end": 4,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypertension_variable",
+   "serious": false,
+   "grade": 2,
+   "onset": 4,
+   "source": "safety_v3:RESOLVED",
+   "end": 5,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM034",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolution to normal or baseline",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "lower_respiratory_tract_infection",
+   "serious": false,
+   "grade": 2,
+   "onset": 5,
+   "source": "safety_v3:RESOLVED",
+   "end": 6,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "potassium,_serum-low_(hypokalemia)",
+   "serious": false,
+   "grade": 1,
+   "onset": 6,
+   "source": "safety_v3:RESOLVED",
+   "end": 7,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dyspepsia",
+   "serious": false,
+   "grade": 2,
+   "onset": 7,
+   "source": "safety_v3:RESOLVED",
+   "end": 8,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "sensory_neuropathy",
+   "serious": false,
+   "grade": 1,
+   "onset": 9,
+   "source": "safety_v3:RESOLVED",
+   "end": 10,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fever",
+   "serious": false,
+   "grade": 1,
+   "onset": 9,
+   "source": "safety_v3:RESOLVED",
+   "end": 10,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "weight_loss",
+   "serious": false,
+   "grade": 2,
+   "onset": 10,
+   "source": "safety_v3:RESOLVED",
+   "end": 11,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "upper_respiratory_infections",
+   "serious": true,
+   "grade": 3,
+   "onset": 11,
+   "source": "safety_v3:RESOLVED",
+   "end": 13,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM028",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "sleeplessness",
+   "serious": false,
+   "grade": 2,
+   "onset": 12,
+   "source": "safety_v3:RESOLVED",
+   "end": 13,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "asthenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 12,
+   "source": "safety_v3:RESOLVED",
+   "end": 13,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "rash/desquamation",
+   "serious": false,
+   "grade": 2,
+   "onset": 12,
+   "source": "safety_v3:RESOLVED",
+   "end": 13,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "falls",
+   "serious": false,
+   "grade": 2,
+   "onset": 13,
+   "source": "safety_v3:RESOLVED",
+   "end": 14,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "diarrhea",
+   "serious": false,
+   "grade": 1,
+   "onset": 14,
+   "source": "safety_v3:RESOLVED",
+   "end": 15,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "peripheral_nervous_system_diseases",
+   "serious": false,
+   "grade": 1,
+   "onset": 14,
+   "source": "safety_v3:RESOLVED",
+   "end": 15,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "vomiting",
+   "serious": false,
+   "grade": 2,
+   "onset": 15,
+   "source": "safety_v3:RESOLVED",
+   "end": 16,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "non_cardiac_chest_pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 16,
+   "source": "safety_v3:RESOLVED",
+   "end": 17,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neutropenia",
+   "serious": false,
+   "grade": 1,
+   "onset": 17,
+   "source": "safety_v3:RESOLVED",
+   "end": 18,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "decreased_platelet_count",
+   "serious": false,
+   "grade": 2,
+   "onset": 18,
+   "source": "safety_v3:RESOLVED",
+   "end": 19,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM011",
+     "category": "Hematologic toxicity",
+     "quote": "hold",
+     "undecidable": [
+      "DM010"
+     ]
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "upper_respiratory_infections",
+   "serious": false,
+   "grade": 1,
+   "onset": 20,
+   "source": "safety_v3:RESOLVED",
+   "end": 21,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "leukopenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 29,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "cataract",
+   "serious": false,
+   "grade": 2,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 29,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "accidental_overdose",
+   "serious": true,
+   "grade": 3,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 30,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dyspnea",
+   "serious": true,
+   "grade": 3,
+   "onset": 22,
+   "source": "safety_v3:RESOLVED",
+   "end": 30,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM032",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolution to grade 1 or baseline",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dizziness",
+   "serious": false,
+   "grade": 2,
+   "onset": 26,
+   "source": "safety_v3:RESOLVED",
+   "end": 29,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "platelets",
+   "serious": false,
+   "grade": 1,
+   "onset": 26,
+   "source": "safety_v3:RESOLVED",
+   "end": 29,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM011",
+     "category": "Hematologic toxicity",
+     "quote": "hold",
+     "undecidable": [
+      "DM010"
+     ]
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "edema:_limb",
+   "serious": false,
+   "grade": 1,
+   "onset": 26,
+   "source": "safety_v3:RESOLVED",
+   "end": 29,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hyperglycemia",
+   "serious": true,
+   "grade": 3,
+   "onset": 27,
+   "source": "safety_v3:RESOLVED",
+   "end": 30,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypoalbuminemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 29,
+   "source": "safety_v3:RESOLVED",
+   "end": 30,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dyspnea",
+   "serious": false,
+   "grade": 2,
+   "onset": 30,
+   "source": "safety_v3:RESOLVED",
+   "end": 31,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM032",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolution to grade 1 or baseline",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "anorexia",
+   "serious": false,
+   "grade": 1,
+   "onset": 31,
+   "source": "safety_v3:RESOLVED",
+   "end": 32,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neuropathy-sensory",
+   "serious": false,
+   "grade": 2,
+   "onset": 32,
+   "source": "safety_v3:RESOLVED",
+   "end": 33,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM030",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolved to ≤ grade 2 without pain",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "pneumonia",
+   "serious": false,
+   "grade": 2,
+   "onset": 33,
+   "source": "safety_v3:RESOLVED",
+   "end": 34,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "thrombosis/thrombus/embolism",
+   "serious": true,
+   "grade": 3,
+   "onset": 33,
+   "source": "safety_v3:RESOLVED",
+   "end": 35,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypertension adverse events",
+   "serious": false,
+   "grade": 2,
+   "onset": 34,
+   "source": "protocol:F116",
+   "end": 35,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM034",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolution to normal or baseline",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "influenza",
+   "serious": false,
+   "grade": 2,
+   "onset": 35,
+   "source": "safety_v3:RESOLVED",
+   "end": 36,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypercholesterolemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 36,
+   "source": "safety_v3:RESOLVED",
+   "end": 37,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypotension",
+   "serious": true,
+   "grade": 3,
+   "onset": 36,
+   "source": "safety_v3:RESOLVED",
+   "end": 38,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypertension",
+   "serious": false,
+   "grade": 2,
+   "onset": 36,
+   "source": "protocol:F120",
+   "end": 37,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM034",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolution to normal or baseline",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "gastroenteritis",
+   "serious": false,
+   "grade": 1,
+   "onset": 37,
+   "source": "safety_v3:RESOLVED",
+   "end": 38,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "respiratory_tract_infections",
+   "serious": true,
+   "grade": 3,
+   "onset": 38,
+   "source": "safety_v3:RESOLVED",
+   "end": 40,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM028",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neuropathy-motor",
+   "serious": false,
+   "grade": 2,
+   "onset": 39,
+   "source": "safety_v3:RESOLVED",
+   "end": 40,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM030",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolved to ≤ grade 2 without pain",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "kidney_failure_acute",
+   "serious": true,
+   "grade": 3,
+   "onset": 39,
+   "source": "safety_v3:RESOLVED",
+   "end": 41,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "kidney_failure",
+   "serious": true,
+   "grade": 3,
+   "onset": 39,
+   "source": "safety_v3:RESOLVED",
+   "end": 41,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fatigue",
+   "serious": false,
+   "grade": 2,
+   "onset": 41,
+   "source": "safety_v3:RESOLVED",
+   "end": 42,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dry_skin",
+   "serious": false,
+   "grade": 2,
+   "onset": 41,
+   "source": "safety_v3:RESOLVED",
+   "end": 42,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "bronchitis",
+   "serious": true,
+   "grade": 3,
+   "onset": 41,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "decrease_in_appetite",
+   "serious": false,
+   "grade": 2,
+   "onset": 42,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "respiratory_tract_infections",
+   "serious": false,
+   "grade": 1,
+   "onset": 42,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "carfilzomib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neuropathy:_sensory",
+   "serious": false,
+   "grade": 2,
+   "onset": 42,
+   "source": "safety_v3:RESOLVED",
+   "end": 43,
+   "decisions": {
+    "carfilzomib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": "other",
+     "rule_id": "DM030",
+     "category": "Other Nonhematologic Toxicities",
+     "quote": "Hold carfilzomib until resolved to ≤ grade 2 without pain",
+     "undecidable": []
+    },
+    "lenalidomide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "dexamethasone": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "rash_erythematous_macules_or_papules",
+   "serious": false,
+   "grade": 2,
+   "onset": 46,
+   "source": "safety_v3:RESOLVED",
+   "end": 47
+  },
+  {
+   "term": "hyponatremia",
+   "serious": false,
+   "grade": 2,
+   "onset": 46,
+   "source": "safety_v3:RESOLVED",
+   "end": 47
+  },
+  {
+   "term": "lower_respiratory_tract_infection",
+   "serious": true,
+   "grade": 3,
+   "onset": 46,
+   "source": "safety_v3:RESOLVED",
+   "end": 48
+  },
+  {
+   "term": "pneumonia",
+   "serious": true,
+   "grade": 3,
+   "onset": 48,
+   "source": "safety_v3:RESOLVED",
+   "end": 50
+  },
+  {
+   "term": "constipation",
+   "serious": false,
+   "grade": 1,
+   "onset": 49,
+   "source": "safety_v3:RESOLVED",
+   "end": 50
+  },
+  {
+   "term": "spasm",
+   "serious": false,
+   "grade": 2,
+   "onset": 49,
+   "source": "safety_v3:RESOLVED",
+   "end": 50
+  },
+  {
+   "term": "hypokalemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 50,
+   "source": "safety_v3:RESOLVED",
+   "end": 57
+  },
+  {
+   "term": "hyperglycemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 51,
+   "source": "safety_v3:RESOLVED",
+   "end": 57
+  },
+  {
+   "term": "thrombocytopenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 52,
+   "source": "safety_v3:RESOLVED",
+   "end": 57
+  },
+  {
+   "term": "thrombocytopenia",
+   "serious": true,
+   "grade": 3,
+   "onset": 52,
+   "source": "safety_v3:RESOLVED",
+   "end": 58
+  },
+  {
+   "term": "hypertriglyceridemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 53,
+   "source": "safety_v3:RESOLVED",
+   "end": 57
+  },
+  {
+   "term": "pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 54,
+   "source": "safety_v3:RESOLVED",
+   "end": 57
+  },
+  {
+   "term": "dehydration",
+   "serious": true,
+   "grade": 3,
+   "onset": 55,
+   "source": "safety_v3:RESOLVED",
+   "end": 58
+  },
+  {
+   "term": "headache",
+   "serious": false,
+   "grade": 2,
+   "onset": 60,
+   "source": "safety_v3:RESOLVED",
+   "end": 61
+  },
+  {
+   "term": "peripheral_edema",
+   "serious": false,
+   "grade": 2,
+   "onset": 63,
+   "source": "safety_v3:RESOLVED",
+   "end": 64
+  },
+  {
+   "term": "hypocalcemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 63,
+   "source": "safety_v3:RESOLVED",
+   "end": 64
+  },
+  {
+   "term": "coughing",
+   "serious": false,
+   "grade": 2,
+   "onset": 64,
+   "source": "safety_v3:RESOLVED",
+   "end": 65
+  },
+  {
+   "term": "neuropathic_pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 65,
+   "source": "safety_v3:RESOLVED",
+   "end": 66
+  },
+  {
+   "term": "neutrophil_count_decreased",
+   "serious": false,
+   "grade": 2,
+   "onset": 68,
+   "source": "safety_v3:RESOLVED",
+   "end": 69
+  },
+  {
+   "term": "pulmonary_embolism",
+   "serious": true,
+   "grade": 3,
+   "onset": 68,
+   "source": "safety_v3:RESOLVED",
+   "end": 70
+  },
+  {
+   "term": "pain_in_limb",
+   "serious": false,
+   "grade": 1,
+   "onset": 69,
+   "source": "safety_v3:RESOLVED",
+   "end": 70
+  },
+  {
+   "term": "hypertension",
+   "serious": false,
+   "grade": 1,
+   "onset": 71,
+   "source": "protocol:F118",
+   "end": 72
+  },
+  {
+   "term": "back_pain",
+   "serious": false,
+   "grade": 1,
+   "onset": 72,
+   "source": "safety_v3:RESOLVED",
+   "end": 73
+  },
+  {
+   "term": "thrombosis/thrombus/embolism",
+   "serious": false,
+   "grade": 1,
+   "onset": 72,
+   "source": "safety_v3:RESOLVED",
+   "end": 73
+  },
+  {
+   "term": "bone_pain",
+   "serious": false,
+   "grade": 1,
+   "onset": 72,
+   "source": "safety_v3:RESOLVED",
+   "end": 73
+  },
+  {
+   "term": "anemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 73,
+   "source": "safety_v3:RESOLVED",
+   "end": 74
+  },
+  {
+   "term": "nasopharyngitis",
+   "serious": false,
+   "grade": 2,
+   "onset": 73,
+   "source": "safety_v3:RESOLVED",
+   "end": 74
+  }
+ ],
+ "events": [
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 62.53, male, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start carfilzomib",
+   "result": "20 mg/m2",
+   "consequence": "first dose; then 56 mg/m2 (the protocol's target dose)",
+   "evidence_level": "protocol",
+   "source": "intervention TX001",
+   "quote": "The dose will be 20 mg/m2 on day 1 of the first cycle"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start lenalidomide",
+   "result": "25 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX005",
+   "quote": "In subjects with normal renal function, lenalidomide will be taken once-daily orally on\ndays 1 to 21 of each cycle at a dose of 25 mg."
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start dexamethasone",
+   "result": "40 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX009",
+   "quote": "Dexamethasone should be taken weekly orally or by IV infusion at a dose of 40 mg."
+  },
+  {
+   "day": 3,
+   "visit": "C1D3",
+   "category": "adverse event",
+   "item": "abdominal_pain",
+   "result": "grade 1; resolves by day 4",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 3,
+   "visit": "C1D3",
+   "category": "adverse event",
+   "item": "neuralgia",
+   "result": "grade 2; resolves by day 4",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 4,
+   "visit": "C1D4",
+   "category": "adverse event",
+   "item": "hypertension_variable",
+   "result": "grade 2; resolves by day 5",
+   "consequence": "carfilzomib held until day 5 (DM034)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 5,
+   "visit": "C1D5",
+   "category": "adverse event",
+   "item": "lower_respiratory_tract_infection",
+   "result": "grade 2; resolves by day 6",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 6,
+   "visit": "C1D6",
+   "category": "adverse event",
+   "item": "potassium,_serum-low_(hypokalemia)",
+   "result": "grade 1; resolves by day 7",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 7,
+   "visit": "C1D7",
+   "category": "adverse event",
+   "item": "dyspepsia",
+   "result": "grade 2; resolves by day 8",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 9,
+   "visit": "C1D9",
+   "category": "adverse event",
+   "item": "sensory_neuropathy",
+   "result": "grade 1; resolves by day 10",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 9,
+   "visit": "C1D9",
+   "category": "adverse event",
+   "item": "fever",
+   "result": "grade 1; resolves by day 10",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 10,
+   "visit": "C1D10",
+   "category": "adverse event",
+   "item": "weight_loss",
+   "result": "grade 2; resolves by day 11",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 11,
+   "visit": "C1D11",
+   "category": "adverse event",
+   "item": "upper_respiratory_infections",
+   "result": "grade 3 serious; resolves by day 13",
+   "consequence": "carfilzomib held until day 13 (DM028)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 12,
+   "visit": "C1D12",
+   "category": "adverse event",
+   "item": "sleeplessness",
+   "result": "grade 2; resolves by day 13",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 12,
+   "visit": "C1D12",
+   "category": "adverse event",
+   "item": "asthenia",
+   "result": "grade 2; resolves by day 13",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 12,
+   "visit": "C1D12",
+   "category": "adverse event",
+   "item": "rash/desquamation",
+   "result": "grade 2; resolves by day 13",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 13,
+   "visit": "C1D13",
+   "category": "adverse event",
+   "item": "falls",
+   "result": "grade 2; resolves by day 14",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 14,
+   "visit": "C1D14",
+   "category": "adverse event",
+   "item": "diarrhea",
+   "result": "grade 1; resolves by day 15",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 14,
+   "visit": "C1D14",
+   "category": "adverse event",
+   "item": "peripheral_nervous_system_diseases",
+   "result": "grade 1; resolves by day 15",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 15,
+   "visit": "C1D15",
+   "category": "adverse event",
+   "item": "vomiting",
+   "result": "grade 2; resolves by day 16",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 16,
+   "visit": "C1D16",
+   "category": "adverse event",
+   "item": "non_cardiac_chest_pain",
+   "result": "grade 2; resolves by day 17",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 17,
+   "visit": "C1D17",
+   "category": "adverse event",
+   "item": "neutropenia",
+   "result": "grade 1; resolves by day 18",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 17,
+   "visit": "C1D17",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "1.94 10^9/L (grade 1)",
+   "consequence": "during neutropenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Absolute neutrophil count (1.5-2 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 18,
+   "visit": "C1D18",
+   "category": "adverse event",
+   "item": "decreased_platelet_count",
+   "result": "grade 2; resolves by day 19",
+   "consequence": "carfilzomib held until day 19 (DM011); undecidable: DM010",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 20,
+   "visit": "C1D20",
+   "category": "adverse event",
+   "item": "upper_respiratory_infections",
+   "result": "grade 1; resolves by day 21",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "C1D22",
+   "category": "adverse event",
+   "item": "leukopenia",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "C1D22",
+   "category": "laboratory",
+   "item": "White blood cell count",
+   "result": "2.41 10^9/L (grade 2)",
+   "consequence": "during leukopenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for White blood cell count (2-3 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 22,
+   "visit": "C1D22",
+   "category": "adverse event",
+   "item": "cataract",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "C1D22",
+   "category": "adverse event",
+   "item": "accidental_overdose",
+   "result": "grade 3 serious; resolves by day 30",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "C1D22",
+   "category": "adverse event",
+   "item": "dyspnea",
+   "result": "grade 3 serious; resolves by day 30",
+   "consequence": "carfilzomib held until day 30 (DM032)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 26,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "dizziness",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 26,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "platelets",
+   "result": "grade 1; resolves by day 29",
+   "consequence": "carfilzomib held until day 29 (DM011); undecidable: DM010",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 26,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "edema:_limb",
+   "result": "grade 1; resolves by day 29",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 27,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "hyperglycemia",
+   "result": "grade 3 serious; resolves by day 30",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 29,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "hypoalbuminemia",
+   "result": "grade 2; resolves by day 30",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 29,
+   "visit": "C2D1",
+   "category": "treatment",
+   "item": "carfilzomib",
+   "result": "1/3 planned administrations",
+   "consequence": "interrupted or discontinued",
+   "evidence_level": "protocol",
+   "source": "protocol dosing schedule and dose-modification rules"
+  },
+  {
+   "day": 29,
+   "visit": "TA1",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 30,
+   "visit": "C2D2",
+   "category": "adverse event",
+   "item": "dyspnea",
+   "result": "grade 2; resolves by day 31",
+   "consequence": "carfilzomib held until day 31 (DM032)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 31,
+   "visit": "C2D3",
+   "category": "adverse event",
+   "item": "anorexia",
+   "result": "grade 1; resolves by day 32",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 32,
+   "visit": "C2D4",
+   "category": "adverse event",
+   "item": "neuropathy-sensory",
+   "result": "grade 2; resolves by day 33",
+   "consequence": "carfilzomib held until day 33 (DM030)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 33,
+   "visit": "C2D5",
+   "category": "adverse event",
+   "item": "pneumonia",
+   "result": "grade 2; resolves by day 34",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 33,
+   "visit": "C2D5",
+   "category": "adverse event",
+   "item": "thrombosis/thrombus/embolism",
+   "result": "grade 3 serious; resolves by day 35",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 34,
+   "visit": "C2D6",
+   "category": "adverse event",
+   "item": "hypertension adverse events",
+   "result": "grade 2; resolves by day 35",
+   "consequence": "carfilzomib held until day 35 (DM034)",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F116; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 35,
+   "visit": "C2D7",
+   "category": "adverse event",
+   "item": "influenza",
+   "result": "grade 2; resolves by day 36",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 36,
+   "visit": "C2D8",
+   "category": "adverse event",
+   "item": "hypercholesterolemia",
+   "result": "grade 1; resolves by day 37",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 36,
+   "visit": "C2D8",
+   "category": "adverse event",
+   "item": "hypotension",
+   "result": "grade 3 serious; resolves by day 38",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 36,
+   "visit": "C2D8",
+   "category": "adverse event",
+   "item": "hypertension",
+   "result": "grade 2; resolves by day 37",
+   "consequence": "carfilzomib held until day 37 (DM034)",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F120; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 37,
+   "visit": "C2D9",
+   "category": "adverse event",
+   "item": "gastroenteritis",
+   "result": "grade 1; resolves by day 38",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 38,
+   "visit": "C2D10",
+   "category": "adverse event",
+   "item": "respiratory_tract_infections",
+   "result": "grade 3 serious; resolves by day 40",
+   "consequence": "carfilzomib held until day 40 (DM028)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 39,
+   "visit": "C2D11",
+   "category": "adverse event",
+   "item": "neuropathy-motor",
+   "result": "grade 2; resolves by day 40",
+   "consequence": "carfilzomib held until day 40 (DM030)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 39,
+   "visit": "C2D11",
+   "category": "adverse event",
+   "item": "kidney_failure_acute",
+   "result": "grade 3 serious; resolves by day 41",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 39,
+   "visit": "C2D11",
+   "category": "adverse event",
+   "item": "kidney_failure",
+   "result": "grade 3 serious; resolves by day 41",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 41,
+   "visit": "C2D13",
+   "category": "adverse event",
+   "item": "fatigue",
+   "result": "grade 2; resolves by day 42",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 41,
+   "visit": "C2D13",
+   "category": "adverse event",
+   "item": "dry_skin",
+   "result": "grade 2; resolves by day 42",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 41,
+   "visit": "C2D13",
+   "category": "adverse event",
+   "item": "bronchitis",
+   "result": "grade 3 serious; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 42,
+   "visit": "C2D14",
+   "category": "adverse event",
+   "item": "decrease_in_appetite",
+   "result": "grade 2; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 42,
+   "visit": "C2D14",
+   "category": "adverse event",
+   "item": "respiratory_tract_infections",
+   "result": "grade 1; resolves by day 43",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 42,
+   "visit": "C2D14",
+   "category": "adverse event",
+   "item": "neuropathy:_sensory",
+   "result": "grade 2; resolves by day 43",
+   "consequence": "carfilzomib held until day 43 (DM030)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 45,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "withdrawal (subject, loss to follow-up or physician decision)",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left by subject decision, loss to follow-up or physician decision; 102 trials, 36525 participants"
+  },
+  {
+   "day": 46,
+   "visit": "C2D18",
+   "category": "adverse event",
+   "item": "rash_erythematous_macules_or_papules",
+   "result": "grade 2; resolves by day 47",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 46,
+   "visit": "C2D18",
+   "category": "adverse event",
+   "item": "hyponatremia",
+   "result": "grade 2; resolves by day 47",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 46,
+   "visit": "C2D18",
+   "category": "adverse event",
+   "item": "lower_respiratory_tract_infection",
+   "result": "grade 3 serious; resolves by day 48",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 48,
+   "visit": "C2D20",
+   "category": "adverse event",
+   "item": "pneumonia",
+   "result": "grade 3 serious; resolves by day 50",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 49,
+   "visit": "C2D21",
+   "category": "adverse event",
+   "item": "constipation",
+   "result": "grade 1; resolves by day 50",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 49,
+   "visit": "C2D21",
+   "category": "adverse event",
+   "item": "spasm",
+   "result": "grade 2; resolves by day 50",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 50,
+   "visit": "C2D22",
+   "category": "adverse event",
+   "item": "hypokalemia",
+   "result": "grade 2; resolves by day 57",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 51,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "hyperglycemia",
+   "result": "grade 1; resolves by day 57",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 52,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "thrombocytopenia",
+   "result": "grade 2; resolves by day 57",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 52,
+   "visit": "C3D1",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "53.17 10^9/L (grade 2)",
+   "consequence": "during thrombocytopenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Platelet count (50-75 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 52,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "thrombocytopenia",
+   "result": "grade 3 serious; resolves by day 58",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 52,
+   "visit": "C3D1",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "42.5 10^9/L (grade 3)",
+   "consequence": "during thrombocytopenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 3 range for Platelet count (25-50 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 53,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "hypertriglyceridemia",
+   "result": "grade 2; resolves by day 57",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 54,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "pain",
+   "result": "grade 2; resolves by day 57",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 55,
+   "visit": "C3D1",
+   "category": "adverse event",
+   "item": "dehydration",
+   "result": "grade 3 serious; resolves by day 58",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 60,
+   "visit": "C3D4",
+   "category": "adverse event",
+   "item": "headache",
+   "result": "grade 2; resolves by day 61",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 63,
+   "visit": "C3D7",
+   "category": "adverse event",
+   "item": "peripheral_edema",
+   "result": "grade 2; resolves by day 64",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 63,
+   "visit": "C3D7",
+   "category": "adverse event",
+   "item": "hypocalcemia",
+   "result": "grade 1; resolves by day 64",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 64,
+   "visit": "C3D8",
+   "category": "adverse event",
+   "item": "coughing",
+   "result": "grade 2; resolves by day 65",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 65,
+   "visit": "C3D9",
+   "category": "adverse event",
+   "item": "neuropathic_pain",
+   "result": "grade 2; resolves by day 66",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 68,
+   "visit": "C3D12",
+   "category": "adverse event",
+   "item": "neutrophil_count_decreased",
+   "result": "grade 2; resolves by day 69",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 68,
+   "visit": "C3D12",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "1.26 10^9/L (grade 2)",
+   "consequence": "during neutrophil_count_decreased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Absolute neutrophil count (1-1.5 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 68,
+   "visit": "C3D12",
+   "category": "adverse event",
+   "item": "pulmonary_embolism",
+   "result": "grade 3 serious; resolves by day 70",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 69,
+   "visit": "C3D13",
+   "category": "adverse event",
+   "item": "pain_in_limb",
+   "result": "grade 1; resolves by day 70",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 71,
+   "visit": "C3D15",
+   "category": "adverse event",
+   "item": "hypertension",
+   "result": "grade 1; resolves by day 72",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F118; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 72,
+   "visit": "C3D16",
+   "category": "adverse event",
+   "item": "back_pain",
+   "result": "grade 1; resolves by day 73",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 72,
+   "visit": "C3D16",
+   "category": "adverse event",
+   "item": "thrombosis/thrombus/embolism",
+   "result": "grade 1; resolves by day 73",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 72,
+   "visit": "C3D16",
+   "category": "adverse event",
+   "item": "bone_pain",
+   "result": "grade 1; resolves by day 73",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 73,
+   "visit": "C3D17",
+   "category": "adverse event",
+   "item": "anemia",
+   "result": "grade 2; resolves by day 74",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 73,
+   "visit": "C3D17",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "9.89 g/dL (grade 2)",
+   "consequence": "during anemia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Hemoglobin (8-10 g/dL)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 73,
+   "visit": "C3D17",
+   "category": "adverse event",
+   "item": "nasopharyngitis",
+   "result": "grade 2; resolves by day 74",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  }
+ ]
+}

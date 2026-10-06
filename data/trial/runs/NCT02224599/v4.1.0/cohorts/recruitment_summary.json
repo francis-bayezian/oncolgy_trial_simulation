@@ -1,0 +1,77 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc",
+  "population": "f4302933a8fae0cfdf3645d4777cead61f8e480839be4be9d36220c38348d121",
+  "eligibility": "c3a4c85a79577f22d9e55d2ddcaa49de1e54716b21b8e1490a3ba0fc278728a7"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 17,
+   "source": "target_accrual",
+   "evidence": "Up to seventeen (17) patients may be enrolled for evaluation of immune efficacy (Phase II stage)."
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_7.8_per_year",
+    "rate_per_year": 7.777361034177238,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 1.6937601252278063,
+     "p30": 4.101764470339824,
+     "p50": 7.777361034177238,
+     "p70": 14.764094324959935,
+     "p90": 37.42018914208211
+    }
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_7.8_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM1",
+    "label": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associated Peptide\nAntigen-Pulsed Dendritic Cell Therapy and Imiquimod",
+    "description": "Patients will receive five (5) days of low-dose cyclophosphamide prior to each vaccination with TAPA-pulsed DCs to decrease Treg activity. TAPA-pulsed DCs will be administered at a fixed dose of up to 1 X 107 DCs following cyclophosphamide administration. DC vaccination schedule will be once every seven (7) days via intradermal (ID) injections for a total of 3 vaccinations. Topical Imiquimod will also be administered once after the TAPA-pulsed DC vaccination, to optimize immune responses."
+   }
+  ],
+  "arm_status_note": "arms stated as open",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": []
+ },
+ "summary": {
+  "pool": 7704,
+  "target": {
+   "patients": 17,
+   "source": "target_accrual",
+   "evidence": "Up to seventeen (17) patients may be enrolled for evaluation of immune efficacy (Phase II stage)."
+  },
+  "scenarios": {
+   "accrual_historical_7.8_per_year": {
+    "enrolled": 17,
+    "accrual_years": 2.731019691078397,
+    "arms": {
+     "ARM1": 17
+    },
+    "strata": {
+     "null": 17
+    },
+    "sex": {
+     "female": 7,
+     "male": 10
+    },
+    "age_mean": 61.66529411764706
+   }
+  },
+  "headline_scenario": "accrual_historical_7.8_per_year"
+ }
+}

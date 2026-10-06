@@ -1,0 +1,311 @@
+{
+ "subject_id": "S0006",
+ "arm": "ARM2",
+ "agents": [
+  "intrathecal_therapy",
+  "intrathecal_methotrexate"
+ ],
+ "baseline": {
+  "patient_id": "P005701",
+  "demographic:age": {
+   "value": 60.69,
+   "unit": "year"
+  },
+  "demographic:sex": "female",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 0,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 79.8,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 162.3,
+   "unit": "cm"
+  }
+ },
+ "progression_day_latent": 50,
+ "progression_detected_day": null,
+ "off_treatment": [
+  1,
+  "completed planned procedures"
+ ],
+ "dose": {
+  "intrathecal_therapy": null,
+  "intrathecal_methotrexate": null
+ },
+ "reductions": {
+  "intrathecal_therapy": 0,
+  "intrathecal_methotrexate": 0
+ },
+ "exposure": [],
+ "adverse_events": [
+  {
+   "term": "diarrhea",
+   "serious": false,
+   "grade": 1,
+   "onset": 3,
+   "source": "safety_v3:PARTIAL",
+   "end": 10
+  },
+  {
+   "term": "blood_bilirubin_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 9,
+   "source": "safety_v3:PARTIAL",
+   "end": 16
+  },
+  {
+   "term": "hyperphosphatemia_disorder",
+   "serious": false,
+   "grade": 1,
+   "onset": 13,
+   "source": "safety_v3:PARTIAL",
+   "end": 20
+  },
+  {
+   "term": "epistaxis",
+   "serious": false,
+   "grade": 2,
+   "onset": 14,
+   "source": "safety_v3:PARTIAL",
+   "end": 21
+  },
+  {
+   "term": "rash_erythematous_macules_or_papules",
+   "serious": false,
+   "grade": 1,
+   "onset": 16,
+   "source": "safety_v3:PARTIAL",
+   "end": 23
+  },
+  {
+   "term": "nausea",
+   "serious": false,
+   "grade": 2,
+   "onset": 22,
+   "source": "safety_v3:PARTIAL",
+   "end": 29
+  },
+  {
+   "term": "febrile_neutropenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 22,
+   "source": "safety_v3:PARTIAL",
+   "end": 29
+  }
+ ],
+ "events": [
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 60.69, female, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start intrathecal_therapy",
+   "result": "dose not compiled",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX004",
+   "quote": null
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start intrathecal_methotrexate",
+   "result": "dose not compiled",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX012",
+   "quote": null
+  },
+  {
+   "day": 1,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "completed planned procedures",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 3,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "diarrhea",
+   "result": "grade 1; resolves by day 10",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 9,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "blood_bilirubin_increased",
+   "result": "grade 1; resolves by day 16",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 9,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "Total bilirubin",
+   "result": "1.11 x ULN (grade 1)",
+   "consequence": "during blood_bilirubin_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Total bilirubin (1-1.5 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 13,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "hyperphosphatemia_disorder",
+   "result": "grade 1; resolves by day 20",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 14,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "epistaxis",
+   "result": "grade 2; resolves by day 21",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 16,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "rash_erythematous_macules_or_papules",
+   "result": "grade 1; resolves by day 23",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "nausea",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "febrile_neutropenia",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 22,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "1.36 10^9/L (grade 2)",
+   "consequence": "during febrile_neutropenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Absolute neutrophil count (1-1.5 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  }
+ ]
+}

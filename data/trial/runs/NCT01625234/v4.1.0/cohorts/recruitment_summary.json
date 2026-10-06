@@ -1,0 +1,95 @@
+{
+ "recruitment_version": "recruitment-1.0.0",
+ "seed": 20260927,
+ "inputs": {
+  "studyspec": "3fe2a7d61e826f5bbd3c1f072cc5049b1e52c5e1b0ea741be796c852dfba0ca5",
+  "population": "b869be76809a32ded53baac9b4be526d11b921aed3b3a37a9a75e65cdbe9193b",
+  "eligibility": "f5bbbe3cc992fb82d9f8b8f4fcd1e1aa791cdfd89a735d37d4f7a8d0b6d756ab"
+ },
+ "accrual_plan": {
+  "target": {
+   "patients": 190,
+   "source": "target_accrual",
+   "evidence": "This  trial  will  enroll  up  to  190  patients"
+  },
+  "scenarios": [
+   {
+    "scenario": "accrual_historical_8.6_per_year",
+    "rate_per_year": 8.616939006196532,
+    "headline": true,
+    "evidence": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "percentiles": {
+     "p10": 1.8686757666488454,
+     "p30": 4.551531534361549,
+     "p50": 8.616939006196532,
+     "p70": 16.15916143947687,
+     "p90": 41.397455773731494
+    }
+   }
+  ],
+  "excluded_rates": [],
+  "headline_scenario": "accrual_historical_8.6_per_year",
+  "design": {
+   "within_patient": null
+  }
+ },
+ "randomization": {
+  "arms": [
+   {
+    "arm_id": "ARM3",
+    "label": "ALK  TKI-na  ve",
+    "description": "Up to 25 patients who are ALK TKI-na ve."
+   },
+   {
+    "arm_id": "ARM4",
+    "label": "prior  crizotinib  and  have  not  received  other  ALK  TKIs",
+    "description": "Up to 40 patients who have progressed on prior crizotinib and have not received other ALK TKIs."
+   },
+   {
+    "arm_id": "ARM5",
+    "label": "one  or  more  2nd  generation  ALK  TKIs",
+    "description": "Up to 50 patients who have progressed on one or more 2nd generation ALK TKIs"
+   },
+   {
+    "arm_id": "ARM8",
+    "label": "known  ALK  1198  mutation",
+    "description": "up to 20 patients with a known ALK 1198 mutation, regardless of prior therapy, will be allowed to enroll."
+   }
+  ],
+  "arm_status_note": "arms stated as open",
+  "ratio": null,
+  "ratio_derivation": "NOT_STATED",
+  "method_text": "",
+  "balancing": "not stated: independent allocation at the ratio",
+  "strata": []
+ },
+ "summary": {
+  "pool": 7476,
+  "target": {
+   "patients": 190,
+   "source": "target_accrual",
+   "evidence": "This  trial  will  enroll  up  to  190  patients"
+  },
+  "scenarios": {
+   "accrual_historical_8.6_per_year": {
+    "enrolled": 190,
+    "accrual_years": 23.2915077802106,
+    "arms": {
+     "ARM3": 49,
+     "ARM4": 56,
+     "ARM5": 51,
+     "ARM8": 34
+    },
+    "strata": {
+     "null": 190
+    },
+    "sex": {
+     "female": 92,
+     "male": 98
+    },
+    "age_mean": 60.3337894736842
+   }
+  },
+  "headline_scenario": "accrual_historical_8.6_per_year"
+ }
+}

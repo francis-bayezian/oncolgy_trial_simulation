@@ -1,0 +1,1193 @@
+{
+ "subject_id": "S0051",
+ "arm": "ARM2",
+ "agents": [
+  "sunitinib"
+ ],
+ "baseline": {
+  "patient_id": "P000397",
+  "demographic:age": {
+   "value": 26.81,
+   "unit": "year"
+  },
+  "demographic:sex": "female",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 1,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 108.9,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 170.6,
+   "unit": "cm"
+  }
+ },
+ "progression_day_latent": 1070,
+ "progression_detected_day": null,
+ "off_treatment": [
+  730,
+  "end of simulated follow-up"
+ ],
+ "dose": {
+  "sunitinib": {
+   "value": 37.5,
+   "unit": "mg",
+   "basis": "fixed"
+  }
+ },
+ "reductions": {
+  "sunitinib": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 3,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 4,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 27,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 5,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 6,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 7,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 8,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 9,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 10,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 11,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 12,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 13,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 27,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 14,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 15,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 16,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 17,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 18,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 19,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 20,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 21,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 22,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 23,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 24,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 25,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 26,
+   "agent": "sunitinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "37.5 mg"
+  },
+  {
+   "cycle": 27,
+   "agent": "sunitinib",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "37.5 mg"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "hypertension",
+   "serious": false,
+   "grade": 1,
+   "onset": 3,
+   "source": "protocol:F114",
+   "end": 4,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "weight_loss",
+   "serious": false,
+   "grade": 2,
+   "onset": 38,
+   "source": "safety_v3:RESOLVED",
+   "end": 39,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "white_blood_cell_decreased",
+   "serious": false,
+   "grade": 2,
+   "onset": 95,
+   "source": "safety_v3:RESOLVED",
+   "end": 96,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "alanine_aminotransferase_increased",
+   "serious": false,
+   "grade": 2,
+   "onset": 106,
+   "source": "safety_v3:RESOLVED",
+   "end": 107,
+   "decisions": {
+    "sunitinib": {
+     "action": "delay_cycle",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM037",
+     "category": "AST and/or ALT elevation (SGOT, SGPT)",
+     "quote": "Sunitinib should be dose delayed",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "palmar_plantar_erythrodysesthesia_syndrome",
+   "serious": false,
+   "grade": 1,
+   "onset": 110,
+   "source": "safety_v3:RESOLVED",
+   "end": 111,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM034",
+     "category": "Hand-foot syndrome",
+     "quote": "Maintain dose",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "skin discoloration",
+   "serious": false,
+   "grade": 1,
+   "onset": 116,
+   "source": "protocol:F138",
+   "end": 117,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "lymphocyte_count_decreased",
+   "serious": false,
+   "grade": 1,
+   "onset": 175,
+   "source": "safety_v3:RESOLVED",
+   "end": 176,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hoarseness",
+   "serious": false,
+   "grade": 2,
+   "onset": 183,
+   "source": "safety_v3:RESOLVED",
+   "end": 184,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fever",
+   "serious": false,
+   "grade": 2,
+   "onset": 200,
+   "source": "safety_v3:RESOLVED",
+   "end": 201,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM026",
+     "category": "Fever or flu-like symptoms",
+     "quote": "Maintain dose",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "left ventricular systolic dysfunction",
+   "serious": false,
+   "grade": 2,
+   "onset": 216,
+   "source": "protocol:F154",
+   "end": 217,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "abdominal_pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 220,
+   "source": "safety_v3:RESOLVED",
+   "end": 221,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "maculopapular_lesion",
+   "serious": false,
+   "grade": 2,
+   "onset": 261,
+   "source": "safety_v3:RESOLVED",
+   "end": 262,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "aspartate_aminotransferase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 351,
+   "source": "safety_v3:RESOLVED",
+   "end": 352,
+   "decisions": {
+    "sunitinib": {
+     "action": "delay_cycle",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM037",
+     "category": "AST and/or ALT elevation (SGOT, SGPT)",
+     "quote": "Sunitinib should be dose delayed",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "proteinuria",
+   "serious": false,
+   "grade": 1,
+   "onset": 367,
+   "source": "safety_v3:RESOLVED",
+   "end": 368,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "lipase",
+   "serious": false,
+   "grade": 2,
+   "onset": 416,
+   "source": "safety_v3:RESOLVED",
+   "end": 417,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypocalcemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 457,
+   "source": "safety_v3:RESOLVED",
+   "end": 458,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypokalemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 535,
+   "source": "safety_v3:RESOLVED",
+   "end": 536,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "flatulence",
+   "serious": false,
+   "grade": 1,
+   "onset": 592,
+   "source": "safety_v3:RESOLVED",
+   "end": 593,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "pain",
+   "serious": false,
+   "grade": 1,
+   "onset": 604,
+   "source": "safety_v3:RESOLVED",
+   "end": 605,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "decreased_platelet_count",
+   "serious": false,
+   "grade": 1,
+   "onset": 655,
+   "source": "safety_v3:RESOLVED",
+   "end": 656,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM023",
+     "category": "Thrombocytopenia",
+     "quote": "Maintain dose",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "rash/desquamation",
+   "serious": false,
+   "grade": 2,
+   "onset": 655,
+   "source": "safety_v3:RESOLVED",
+   "end": 656,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "voice_disturbance",
+   "serious": false,
+   "grade": 1,
+   "onset": 656,
+   "source": "safety_v3:RESOLVED",
+   "end": 657,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "upper_respiratory_infections",
+   "serious": false,
+   "grade": 2,
+   "onset": 675,
+   "source": "safety_v3:RESOLVED",
+   "end": 676,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hand-foot syndrome",
+   "serious": false,
+   "grade": 1,
+   "onset": 717,
+   "source": "protocol:F117",
+   "end": 718,
+   "decisions": {
+    "sunitinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM034",
+     "category": "Hand-foot syndrome",
+     "quote": "Maintain dose",
+     "undecidable": []
+    }
+   }
+  }
+ ],
+ "events": [
+  {
+   "day": -8,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -8,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 26.81, female, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -8,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -8,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -8,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -8,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -8,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start sunitinib",
+   "result": "37.5 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX002",
+   "quote": "During Part II, patients will receive the other agent, cediranib (30 mg) or sunitinib (37.5 mg), orally, once a day, in 28-day cycles."
+  },
+  {
+   "day": 3,
+   "visit": "C1D3",
+   "category": "adverse event",
+   "item": "hypertension",
+   "result": "grade 1; resolves by day 4",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F114; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 38,
+   "visit": "C2D10",
+   "category": "adverse event",
+   "item": "weight_loss",
+   "result": "grade 2; resolves by day 39",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 57,
+   "visit": "TA1",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 85,
+   "visit": "C4D1",
+   "category": "treatment",
+   "item": "sunitinib",
+   "result": "27/28 planned administrations",
+   "consequence": "interrupted or discontinued",
+   "evidence_level": "protocol",
+   "source": "protocol dosing schedule and dose-modification rules"
+  },
+  {
+   "day": 95,
+   "visit": "C4D11",
+   "category": "adverse event",
+   "item": "white_blood_cell_decreased",
+   "result": "grade 2; resolves by day 96",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 95,
+   "visit": "C4D11",
+   "category": "laboratory",
+   "item": "White blood cell count",
+   "result": "2.73 10^9/L (grade 2)",
+   "consequence": "during white_blood_cell_decreased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for White blood cell count (2-3 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 106,
+   "visit": "C4D22",
+   "category": "adverse event",
+   "item": "alanine_aminotransferase_increased",
+   "result": "grade 2; resolves by day 107",
+   "consequence": "sunitinib held until day 107 (DM037)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 106,
+   "visit": "C4D22",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "3.27 x ULN (grade 2)",
+   "consequence": "during alanine_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for ALT (3-5 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 110,
+   "visit": "C4D26",
+   "category": "adverse event",
+   "item": "palmar_plantar_erythrodysesthesia_syndrome",
+   "result": "grade 1; resolves by day 111",
+   "consequence": "sunitinib continued (DM034)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 113,
+   "visit": "TA2",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 116,
+   "visit": "C5D4",
+   "category": "adverse event",
+   "item": "skin discoloration",
+   "result": "grade 1; resolves by day 117",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F138; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 169,
+   "visit": "TA3",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 175,
+   "visit": "C7D7",
+   "category": "adverse event",
+   "item": "lymphocyte_count_decreased",
+   "result": "grade 1; resolves by day 176",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 183,
+   "visit": "C7D15",
+   "category": "adverse event",
+   "item": "hoarseness",
+   "result": "grade 2; resolves by day 184",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 200,
+   "visit": "C8D4",
+   "category": "adverse event",
+   "item": "fever",
+   "result": "grade 2; resolves by day 201",
+   "consequence": "sunitinib continued (DM026)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 216,
+   "visit": "C8D20",
+   "category": "adverse event",
+   "item": "left ventricular systolic dysfunction",
+   "result": "grade 2; resolves by day 217",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F154; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 220,
+   "visit": "C8D24",
+   "category": "adverse event",
+   "item": "abdominal_pain",
+   "result": "grade 2; resolves by day 221",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 225,
+   "visit": "TA4",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 261,
+   "visit": "C10D9",
+   "category": "adverse event",
+   "item": "maculopapular_lesion",
+   "result": "grade 2; resolves by day 262",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 281,
+   "visit": "TA5",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 337,
+   "visit": "C13D1",
+   "category": "treatment",
+   "item": "sunitinib",
+   "result": "27/28 planned administrations",
+   "consequence": "interrupted or discontinued",
+   "evidence_level": "protocol",
+   "source": "protocol dosing schedule and dose-modification rules"
+  },
+  {
+   "day": 337,
+   "visit": "TA6",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 351,
+   "visit": "C13D15",
+   "category": "adverse event",
+   "item": "aspartate_aminotransferase_increased",
+   "result": "grade 1; resolves by day 352",
+   "consequence": "sunitinib held until day 352 (DM037)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 351,
+   "visit": "C13D15",
+   "category": "laboratory",
+   "item": "AST",
+   "result": "1.91 x ULN (grade 1)",
+   "consequence": "during aspartate_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for AST (1-3 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 367,
+   "visit": "C14D3",
+   "category": "adverse event",
+   "item": "proteinuria",
+   "result": "grade 1; resolves by day 368",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 393,
+   "visit": "TA7",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 416,
+   "visit": "C15D24",
+   "category": "adverse event",
+   "item": "lipase",
+   "result": "grade 2; resolves by day 417",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 449,
+   "visit": "TA8",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 457,
+   "visit": "C17D9",
+   "category": "adverse event",
+   "item": "hypocalcemia",
+   "result": "grade 1; resolves by day 458",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 505,
+   "visit": "TA9",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 535,
+   "visit": "C20D3",
+   "category": "adverse event",
+   "item": "hypokalemia",
+   "result": "grade 1; resolves by day 536",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 561,
+   "visit": "TA10",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 592,
+   "visit": "C22D4",
+   "category": "adverse event",
+   "item": "flatulence",
+   "result": "grade 1; resolves by day 593",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 604,
+   "visit": "C22D16",
+   "category": "adverse event",
+   "item": "pain",
+   "result": "grade 1; resolves by day 605",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 617,
+   "visit": "TA11",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 655,
+   "visit": "C24D11",
+   "category": "adverse event",
+   "item": "decreased_platelet_count",
+   "result": "grade 1; resolves by day 656",
+   "consequence": "sunitinib continued (DM023)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 655,
+   "visit": "C24D11",
+   "category": "adverse event",
+   "item": "rash/desquamation",
+   "result": "grade 2; resolves by day 656",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 656,
+   "visit": "C24D12",
+   "category": "adverse event",
+   "item": "voice_disturbance",
+   "result": "grade 1; resolves by day 657",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 673,
+   "visit": "TA12",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 675,
+   "visit": "C25D3",
+   "category": "adverse event",
+   "item": "upper_respiratory_infections",
+   "result": "grade 2; resolves by day 676",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 717,
+   "visit": "C26D17",
+   "category": "adverse event",
+   "item": "hand-foot syndrome",
+   "result": "grade 1; resolves by day 718",
+   "consequence": "sunitinib continued (DM034)",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F117; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 729,
+   "visit": "TA13",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "protocol",
+   "source": "latent progression time: protocol-cited median progression-free survival 11 months for sunitinib (fact F112), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 730,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "end of simulated follow-up",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  }
+ ]
+}

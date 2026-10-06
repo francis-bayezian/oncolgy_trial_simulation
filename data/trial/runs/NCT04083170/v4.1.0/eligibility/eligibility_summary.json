@@ -1,0 +1,284 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "f192952225bdae1956f0c7055dc3d3ae3c804dd43a5b387194f2eef7910902ef",
+  "population": "73f8974d67b1899a2c5206787ca9156a6fc7837f34c5ba5df445b9c3ffed6153"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7709,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2291
+  },
+  "eligible_share": 0.7709,
+  "proven_eligible_share": 0.7709,
+  "not_proven_ineligible_share": 0.7709,
+  "criteria": {
+   "evaluated": [
+    "EL001",
+    "EL003",
+    "EL004",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL020",
+    "EL021"
+   ],
+   "procedural": [
+    "EL002",
+    "EL019",
+    "EL022",
+    "EL024"
+   ],
+   "permissive": [
+    "EL005"
+   ],
+   "informational": [
+    "EL023",
+    "EL025",
+    "EL026",
+    "EL027"
+   ],
+   "run_with_review_flag": [
+    "EL006",
+    "EL011",
+    "EL013"
+   ]
+  },
+  "per_criterion": {
+   "EL001": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Age Criteria at least 6 month AND Age Criteria at most 65 year)"
+   },
+   "EL003": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Viral load less than 5000 copies/mlplasma [qualifier: on cART]"
+   },
+   "EL004": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (AcuteMyeloidLeukemia is one of ['AcuteMyeloidLeukemia'] AND (High risk CR1 is one of ['High risk CR1'] OR cycles to obtain CR at least 2 cycles OR erythroblastic is one of ['erythroblastic'] OR megakaryocytic leukemia is one of ['megakaryocytic leukemia'] OR CR2 is one of ['≥ CR2'"
+   },
+   "EL006": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (AcuteLymphoblasticLeukemia is one of ['AcuteLymphoblasticLeukemia'] AND (remission status is one of ['High risk CR1'] OR cycle greater than 1 cycle [qualifier: to obtain CR] OR remission status is one of ['CR2']) AND (hematologic recovery is present AND blasts less than 5 % [quali"
+   },
+   "EL007": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Chronic myelogenous leukemia is one of ['Chronic myelogenous leukemia'] AND NOT refractory blast crisis is one of ['refractory blast crisis'] AND [IF first chronic phase (CP1) is one of ['first chronic phase (CP1)'] THEN (imatinibmesylate is one of ['failed'] OR imatinibmesylate i"
+   },
+   "EL008": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Myelodysplasia (MDS) is one of ['IPSS Int-2', 'High risk', 'RAEB', 'RAEBt', 'refractory anemia with severe pancytopenia', 'high-risk cytogenetics'] AND Blasts less than 10 % [qualifier: by a representative bone marrow aspirate\nmorphology])"
+   },
+   "EL009": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Other hematologic malignancy such as non-Hodgkin lymphomas is one of ['Other hematologic malignancy such as non-Hodgkin lymphomas'] AND ((Fred Hutch site is one of ['Fred Hutch site'] AND auto-transplant protocols is present) OR (Participating centers is one of ['Participating cen"
+   },
+   "EL010": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((age at least 16 year AND Karnofsky at least 70 %) OR (age less than 16 year AND Lansky at least 50 %))"
+   },
+   "EL011": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF age less than 18 year THEN Calculated creatinine clearance greater than 60 ml/min ELSE (Calculated creatinine clearance greater than 60 ml AND serum creatinine at most 2 mg/dl)]"
+   },
+   "EL012": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Totalserumbilirubin less than 3 mg/dl AND transaminases less than 3 times the upperlimit of normal)"
+   },
+   "EL013": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (DLCO corrected greater than 50 normal OR [IF (UNRESOLVED requirement: 'pediatric patients' {NOT EXECUTABLE} AND DLCO is absent) THEN pulmonaryfunction is one of ['adequatepulmonaryfunction']])"
+   },
+   "EL014": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Left ventricular ejection fraction greater than 45 % OR Shortening fraction greater than 26 %)"
+   },
+   "EL015": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Ability tounderstand is present AND willingness to sign a written informed consent document is present AND (consent signer is one of ['adult subject'] OR consent signer is one of ['parent/legalguardian of minor subject']))"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Uncontrolledviralorbacterialinfection is present [assessed: atthetimeofstudyenrollment]"
+   },
+   "EL017": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: ((active invasive fungal infection is present OR invasive fungal infection occurs within 6 month before study enrollment [assessed: prior6 month]) AND ID consult and approval is absent)"
+   },
+   "EL018": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Pregnant is present OR breastfeeding is present)"
+   },
+   "EL020": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: extensiveradiation is present"
+   },
+   "EL021": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: CNS leukemic involvement not clearing with intrathecal chemotherapy is present"
+   }
+  },
+  "decisive_exclusions": {
+   "EL008": 164,
+   "EL014": 156,
+   "EL016": 154,
+   "EL015": 152,
+   "EL001": 151,
+   "EL010": 150,
+   "EL017": 147,
+   "EL007": 145,
+   "EL020": 143,
+   "EL013": 143,
+   "EL018": 142,
+   "EL003": 140,
+   "EL009": 137,
+   "EL004": 137,
+   "EL006": 135,
+   "EL011": 133,
+   "EL021": 130,
+   "EL012": 122
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL001": 10000,
+   "EL003": 10000,
+   "EL004": 10000,
+   "EL006": 10000,
+   "EL007": 10000,
+   "EL008": 10000,
+   "EL009": 10000,
+   "EL010": 10000,
+   "EL011": 10000,
+   "EL012": 10000,
+   "EL013": 10000,
+   "EL014": 10000,
+   "EL015": 10000,
+   "EL016": 10000,
+   "EL017": 10000,
+   "EL018": 10000,
+   "EL020": 10000,
+   "EL021": 10000
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.7675797157385383,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened)",
+    "detail": {
+     "estimate": 0.7675797157385383,
+     "ci95": [
+      0.7516604195776948,
+      0.7827734506602645
+     ],
+     "single_trial_80": [
+      0.5176177549895294,
+      0.9104294529747281
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.5176283632374208,
+      "p30": 0.6758360275891045,
+      "p50": 0.7675797157385383,
+      "p70": 0.8395237839652355,
+      "p90": 0.9104259882989161
+     },
+     "tau_logit": 0.8760515738951,
+     "groups": 468,
+     "trials": 468,
+     "participants": 162721
+    }
+   },
+   "target_eligible_share": 0.7675797157385383,
+   "share_excluded_by_decided_criteria": 0.0,
+   "residual_pass_needed": 0.7675797157385383,
+   "per_criterion_pass_probability": 0.9854122835770355,
+   "criteria": [
+    "EL001",
+    "EL003",
+    "EL004",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL020",
+    "EL021"
+   ]
+  }
+ }
+}

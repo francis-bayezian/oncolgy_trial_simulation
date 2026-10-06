@@ -1,0 +1,15 @@
+Factor,Level,Arm,N,Any TEAE,Grade >= 3,SAE,AE -> discontinuation,AE -> dose modification,Deaths,Disposition
+Age (ICH E11 paediatric bands),12-17 years,ARM2,6,6 (100%),1 (17%),1 (17%),0 (0%),5 (83%),0 (0%),"disease progression: 4; withdrawal (subject, loss to follow-up or physician decision): 1; end of simulated follow-up: 1"
+Age (ICH E11 paediatric bands),>= 18 years,ARM2,64,64 (100%),24 (38%),24 (38%),6 (9%),50 (78%),3 (5%),disease progression: 42; end of simulated follow-up: 12; adverse event (all agents discontinued): 3
+Sex,female,ARM2,27,27 (100%),9 (33%),9 (33%),3 (11%),22 (81%),1 (4%),"disease progression: 16; end of simulated follow-up: 5; withdrawal (subject, loss to follow-up or physician decision): 2"
+Sex,male,ARM2,43,43 (100%),16 (37%),16 (37%),3 (7%),33 (77%),2 (5%),disease progression: 30; end of simulated follow-up: 8; adverse event (all agents discontinued): 2
+Race,asian,ARM2,2,2 (100%),2 (100%),2 (100%),0 (0%),2 (100%),0 (0%),disease progression: 2
+Race,black_or_african_american,ARM2,5,5 (100%),2 (40%),2 (40%),0 (0%),3 (60%),1 (20%),"disease progression: 3; death: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,more_than_one_race,ARM2,1,1 (100%),0 (0%),0 (0%),0 (0%),1 (100%),0 (0%),disease progression: 1
+Race,unknown_or_not_reported,ARM2,2,2 (100%),0 (0%),0 (0%),0 (0%),2 (100%),0 (0%),disease progression: 2
+Race,white,ARM2,60,60 (100%),21 (35%),21 (35%),6 (10%),47 (78%),2 (3%),disease progression: 38; end of simulated follow-up: 13; adverse event (all agents discontinued): 3
+Ethnicity,hispanic_or_latino,ARM2,6,6 (100%),3 (50%),3 (50%),1 (17%),3 (50%),0 (0%),disease progression: 5; adverse event (all agents discontinued): 1
+Ethnicity,not_hispanic_or_latino,ARM2,64,64 (100%),22 (34%),22 (34%),5 (8%),52 (81%),3 (5%),disease progression: 41; end of simulated follow-up: 13; death: 3
+ECOG performance status,0,ARM2,26,26 (100%),8 (31%),8 (31%),2 (8%),19 (73%),1 (4%),disease progression: 19; end of simulated follow-up: 3; death: 1
+ECOG performance status,1,ARM2,41,41 (100%),15 (37%),15 (37%),4 (10%),35 (85%),2 (5%),disease progression: 24; end of simulated follow-up: 10; adverse event (all agents discontinued): 2
+ECOG performance status,2 or more,ARM2,3,3 (100%),2 (67%),2 (67%),0 (0%),1 (33%),0 (0%),disease progression: 3

@@ -1,0 +1,56 @@
+{
+ "mode": "decision rules",
+ "unresolved_decision_rules": [
+  "DR2",
+  "DR3"
+ ],
+ "rules": [
+  {
+   "rule": "DR1",
+   "arm": "cediranib (30 mg) (cediranib (30 mg))",
+   "cohort": "For patients who are not newly diagnosed",
+   "cited": [],
+   "p_interest_at_p0": 0.09072035752948679,
+   "p_interest_at_p1": 0.9031018140757374
+  },
+  {
+   "rule": "DR2",
+   "arm": "sunitinib malate (37.5 mg) (sunitinib malate (37.5 mg))",
+   "cohort": "For patients who are not newly diagnosed",
+   "cited": [],
+   "p_interest_at_p0": 0.09072035752948679,
+   "p_interest_at_p1": 0.9031018140757374
+  },
+  {
+   "rule": "DR3",
+   "arm": "cediranib (30 mg) (cediranib (30 mg))",
+   "cohort": "newly diagnosed ASPS cohort",
+   "cited": [
+    {
+     "fact_id": "F079",
+     "rate": 0.5714285714285714,
+     "prob_of_interest": 0.9525321349482204,
+     "cited_count": 4.0,
+     "cited_n": 7.0,
+     "true_rate_90_from_cited_count": [
+      0.2808180590669212,
+      0.8253931809031305
+     ],
+     "small_sample": true,
+     "prob_of_interest_over_cited_uncertainty": 0.8548629679728407
+    }
+   ],
+   "p_interest_at_p0": 0.06814651978406248,
+   "p_interest_at_p1": 0.8038829379782815
+  },
+  {
+   "rule": "DR4",
+   "arm": "sunitinib malate (37.5 mg) (sunitinib malate (37.5 mg))",
+   "cohort": "newly diagnosed ASPS cohort",
+   "cited": [],
+   "p_interest_at_p0": 0.06814651978406248,
+   "p_interest_at_p1": 0.8038829379782815
+  }
+ ],
+ "model_calls": 0
+}

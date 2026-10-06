@@ -1,0 +1,697 @@
+{
+ "analysis_version": "analysis-results-1.1.0",
+ "seed": 20261006,
+ "inputs": {
+  "studyspec": "3c396a3eadb6a232eae3d1a03067dc1064f5d6d8c048e2096d32d7909fb40db9"
+ },
+ "efficacy_scope": {
+  "response": true,
+  "PFS": true,
+  "TTP": true,
+  "OS": true,
+  "any": true
+ },
+ "data_cutoff": {
+  "day": 4278.45,
+  "rule": "last enrolment + 5 years (stated follow-up, else default)",
+  "enrolled_by_cutoff": 460,
+  "planned": 460
+ },
+ "response_criteria": {
+  "pr": 50.0,
+  "pd": 25.0,
+  "pd_abs_mm": 0.0,
+  "deeper": [
+   [
+    90.0,
+    "VGPR"
+   ]
+  ],
+  "confirm": true,
+  "source": "protocol response criteria (compiled thresholds)"
+ },
+ "assessment_interval_days": 28,
+ "follow_up_days": 1826,
+ "control_arm": "ARM2",
+ "latent_inputs": {
+  "ARM1": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.871,
+    "unit": "proportion",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F020 (KRd)",
+    "small_sample": false
+   },
+   "complete_response_share": {
+    "value": 0.3800077692157158,
+    "source": "evidence arms reporting complete_response (4 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 48.3,
+    "unit": "months",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F023 (KRd)"
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.0,
+     "rate_per_year": 0.3162648732592906
+    },
+    "evidence_level": "protocol",
+    "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+    "assumption": "A7_progression_exponential"
+   },
+   "post_progression_survival_months": 21.999999999999996
+  },
+  "ARM2": {
+   "response": {
+    "status": "RESOLVED",
+    "value": 0.871,
+    "unit": "proportion",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F028 (KRd 27 mg/m2 twice-weekly)",
+    "small_sample": false
+   },
+   "complete_response_share": {
+    "value": 0.3800077692157158,
+    "source": "evidence arms reporting complete_response (4 studies)"
+   },
+   "overall_survival": {
+    "status": "RESOLVED",
+    "value": 48.3,
+    "unit": "months",
+    "level": "protocol-cited, same regimen",
+    "source": "protocol fact F023 (KRd)"
+   },
+   "progression": {
+    "value": {
+     "cure_fraction": 0.0,
+     "rate_per_year": 0.3162648732592906
+    },
+    "evidence_level": "protocol",
+    "source": "protocol-cited median progression-free survival 26.3 months for KRd (fact F027), exponential",
+    "assumption": "A7_progression_exponential"
+   },
+   "post_progression_survival_months": 21.999999999999996
+  }
+ },
+ "efficacy": {
+  "ARM1": {
+   "n": 222,
+   "best_overall_response": {
+    "CR": 71,
+    "PD": 13,
+    "PR": 95,
+    "NE": 5,
+    "SD": 38
+   },
+   "objective_response": {
+    "responders": 166,
+    "rate": 0.7477,
+    "ci95_exact": [
+     0.6852783359345989,
+     0.8034718638449407
+    ]
+   },
+   "disease_control": {
+    "n": 204,
+    "rate": 0.9189,
+    "ci95_exact": [
+     0.874883389910047,
+     0.9512389441683573
+    ]
+   },
+   "PFS": {
+    "n": 222,
+    "events": 181,
+    "median_months": 41.4,
+    "median_ci95_months": [
+     29.44,
+     53.43
+    ],
+    "landmark_percent": {
+     "6m": 83.9,
+     "12m": 77.9,
+     "24m": 62.1
+    }
+   },
+   "OS": {
+    "n": 222,
+    "events": 167,
+    "median_months": 55.92,
+    "median_ci95_months": [
+     49.69,
+     62.5
+    ],
+    "landmark_percent": {
+     "6m": 96.8,
+     "12m": 91.8,
+     "24m": 75.6
+    }
+   },
+   "TTP": {
+    "n": 222,
+    "events": 105,
+    "median_months": 68.07,
+    "median_ci95_months": [
+     54.28,
+     85.55
+    ],
+    "landmark_percent": {
+     "6m": 85.6,
+     "12m": 80.4,
+     "24m": 72.1
+    }
+   },
+   "DOR": {
+    "n": 166,
+    "events": 132,
+    "median_months": 52.44,
+    "median_ci95_months": [
+     41.4,
+     57.03
+    ],
+    "landmark_percent": {
+     "6m": 89.7,
+     "12m": 87.1,
+     "24m": 70.7
+    }
+   },
+   "TTR": {
+    "n": 166,
+    "events": 166,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     1.84
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  },
+  "ARM2": {
+   "n": 238,
+   "best_overall_response": {
+    "PR": 122,
+    "PD": 8,
+    "CR": 69,
+    "SD": 35,
+    "NE": 4
+   },
+   "objective_response": {
+    "responders": 191,
+    "rate": 0.8025,
+    "ci95_exact": [
+     0.7461939336442398,
+     0.8511425202710464
+    ]
+   },
+   "disease_control": {
+    "n": 226,
+    "rate": 0.9496,
+    "ci95_exact": [
+     0.9135830259218114,
+     0.973679112108251
+    ]
+   },
+   "PFS": {
+    "n": 238,
+    "events": 189,
+    "median_months": 40.48,
+    "median_ci95_months": [
+     35.36,
+     47.84
+    ],
+    "landmark_percent": {
+     "6m": 90.0,
+     "12m": 81.5,
+     "24m": 64.5
+    }
+   },
+   "OS": {
+    "n": 238,
+    "events": 185,
+    "median_months": 56.22,
+    "median_ci95_months": [
+     49.14,
+     60.91
+    ],
+    "landmark_percent": {
+     "6m": 97.5,
+     "12m": 94.5,
+     "24m": 81.6
+    }
+   },
+   "TTP": {
+    "n": 238,
+    "events": 92,
+    "median_months": 80.95,
+    "median_ci95_months": [
+     55.2,
+     null
+    ],
+    "landmark_percent": {
+     "6m": 92.2,
+     "12m": 85.2,
+     "24m": 73.9
+    }
+   },
+   "DOR": {
+    "n": 191,
+    "events": 152,
+    "median_months": 44.7,
+    "median_ci95_months": [
+     37.72,
+     51.28
+    ],
+    "landmark_percent": {
+     "6m": 92.5,
+     "12m": 84.9,
+     "24m": 70.2
+    }
+   },
+   "TTR": {
+    "n": 191,
+    "events": 191,
+    "median_months": 1.84,
+    "median_ci95_months": [
+     1.84,
+     1.84
+    ],
+    "landmark_percent": {
+     "6m": 0.0,
+     "12m": 0.0,
+     "24m": 0.0
+    }
+   }
+  }
+ },
+ "comparisons": {
+  "ORR ARM1 vs ARM2": {
+   "difference": -0.0548,
+   "ci95": [
+    -0.1311,
+    0.0215
+   ]
+  },
+  "PFS ARM1 vs ARM2": {
+   "hr": 1.047,
+   "ci95": [
+    0.853,
+    1.285
+   ],
+   "logrank_p_two_sided": 0.663251355832158
+  },
+  "OS ARM1 vs ARM2": {
+   "hr": 1.006,
+   "ci95": [
+    0.816,
+    1.24
+   ],
+   "logrank_p_two_sided": 0.9565017880977362
+  }
+ },
+ "censoring": {
+  "PFS": {
+   "ARM1": {
+    "n": 222,
+    "events": 181,
+    "censored": 41,
+    "by_reason": {
+     "death": 76,
+     "progressive disease": 105,
+     "censored at last adequate tumour assessment": 41
+    }
+   },
+   "ARM2": {
+    "n": 238,
+    "events": 189,
+    "censored": 49,
+    "by_reason": {
+     "death": 97,
+     "progressive disease": 92,
+     "censored at last adequate tumour assessment": 49
+    }
+   }
+  },
+  "OS": {
+   "ARM1": {
+    "n": 222,
+    "events": 167,
+    "censored": 55,
+    "by_reason": {
+     "death": 167,
+     "censored at last contact": 55
+    }
+   },
+   "ARM2": {
+    "n": 238,
+    "events": 185,
+    "censored": 53,
+    "by_reason": {
+     "death": 185,
+     "censored at last contact": 53
+    }
+   }
+  },
+  "TTP": {
+   "ARM1": {
+    "n": 222,
+    "events": 105,
+    "censored": 117,
+    "by_reason": {
+     "censored at last adequate tumour assessment": 117,
+     "progressive disease": 105
+    }
+   },
+   "ARM2": {
+    "n": 238,
+    "events": 92,
+    "censored": 146,
+    "by_reason": {
+     "censored at last adequate tumour assessment": 146,
+     "progressive disease": 92
+    }
+   }
+  },
+  "DOR": {
+   "ARM1": {
+    "n": 166,
+    "events": 132,
+    "censored": 34,
+    "by_reason": {
+     "death": 72,
+     "progressive disease": 60,
+     "censored at last adequate tumour assessment": 34
+    }
+   },
+   "ARM2": {
+    "n": 191,
+    "events": 152,
+    "censored": 39,
+    "by_reason": {
+     "death": 95,
+     "progressive disease": 57,
+     "censored at last adequate tumour assessment": 39
+    }
+   }
+  },
+  "TTR": {
+   "ARM1": {
+    "n": 166,
+    "events": 166,
+    "censored": 0,
+    "by_reason": {
+     "first response": 166
+    }
+   },
+   "ARM2": {
+    "n": 191,
+    "events": 191,
+    "censored": 0,
+    "by_reason": {
+     "first response": 191
+    }
+   }
+  }
+ },
+ "safety_tables": [
+  "Table 2. Baseline demographic characteristics, safety population",
+  "Table 3. Patient screening and enrollment",
+  "Table 4. Patient disposition",
+  "Table 5. Duration of treatment exposure, safety population",
+  "Table 6. Overview of adverse events, safety population",
+  "Table 7. Deaths, safety population",
+  "Table 9. Patients with serious adverse events by system organ class and preferred term",
+  "Table 12. Patients with adverse events leading to treatment discontinuation by SOC and PT",
+  "Table 36. Patients with adverse events by system organ class and preferred term",
+  "Table 13. Patients with common adverse events occurring at >= 5% frequency",
+  "Table 54. Exposure-adjusted incidence rates",
+  "Patients with adverse events leading to dose interruption or reduction by SOC and PT",
+  "Patients with adverse events by maximum toxicity grade",
+  "Screen failures by eligibility criterion"
+ ],
+ "terms_without_soc": [
+  "cardiac_failure_secondary_to_chest_deformity",
+  "decrease_in_appetite",
+  "hemoglobin_normal_12_16_gm",
+  "infectious_lung_disorder",
+  "peripheral_nervous_system_diseases",
+  "rash_erythematous_macules_or_papules"
+ ],
+ "subgroups": {
+  "factors": [
+   {
+    "factor": "original ISS stage at study entry (stage 1 or 2 vs stage 3)",
+    "source": "protocol stratification factor",
+    "variable": "var:iss_stage_at_study_entry",
+    "note": "original ISS stage at study entry (stage 1 or 2 vs stage 3)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 7 trials)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "stage 1 or 2": 333,
+     "stage 3": 127
+    }
+   },
+   {
+    "factor": "prior lenalidomide treatment (yes vs no)",
+    "source": "protocol stratification factor",
+    "variable": "var:prior_lenalidomide_treatment",
+    "note": "prior lenalidomide treatment (yes vs no)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "no": 227,
+     "yes": 233
+    }
+   },
+   {
+    "factor": "prior PI treatment (yes vs no)",
+    "source": "protocol stratification factor",
+    "variable": "var:prior_pi_treatment",
+    "note": "prior PI treatment (yes vs no)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "no": 218,
+     "yes": 242
+    }
+   },
+   {
+    "factor": "prior anti-CD38 exposure (yes vs no)",
+    "source": "protocol stratification factor",
+    "variable": "var:prior_anti_cd_exposure",
+    "note": "prior anti-CD38 exposure (yes vs no)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "no": 241,
+     "yes": 219
+    }
+   },
+   {
+    "factor": "prior bortezomib treatment (yes, no)",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:prior_bortezomib_treatment",
+    "note": "prior bortezomib treatment (yes, no)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "registry baseline tables of enrolled participants (all oncology; 3 trials)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "yes": 313,
+     "no": 147
+    }
+   },
+   {
+    "factor": "Age (protocol cut points)",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "demographic:age",
+    "note": "age (< 65, ≥ 65; 18 to < 65, 65 to < 75, ≥ 75)",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "65-<75 years": 142,
+     "18-<65 years": 277,
+     ">= 75 years": 41
+    }
+   },
+   {
+    "factor": "number of prior therapies (1 vs > 1; 1 vs 2 vs > 2)",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:number_of_prior_therapies",
+    "note": "number of prior therapies (1 vs > 1; 1 vs 2 vs > 2)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "registry baseline tables of enrolled participants (all oncology; 9 trials)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "> 1": 271,
+     "1": 189
+    }
+   },
+   {
+    "factor": "cytogenetic risk measured by FISH (high-risk vs standard risk)",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:cytogenetic_risk_measured_by_fish",
+    "note": "cytogenetic risk measured by FISH (high-risk vs standard risk)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "standard risk": 320,
+     "high-risk": 140
+    }
+   },
+   {
+    "factor": "bortezomib refractory status (yes vs no)",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:bortezomib_refractory_status",
+    "note": "bortezomib refractory status (yes vs no)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "yes": 239,
+     "no": 221
+    }
+   },
+   {
+    "factor": "lenalidomide refractory status (yes vs no)",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:lenalidomide_refractory_status",
+    "note": "lenalidomide refractory status (yes vs no)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "yes": 243,
+     "no": 217
+    }
+   },
+   {
+    "factor": "prior transplant (yes vs no)",
+    "source": "protocol subgroup (analysis section)",
+    "variable": "var:prior_transplant",
+    "note": "prior transplant (yes vs no)",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)",
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "yes": 260,
+     "no": 200
+    }
+   },
+   {
+    "factor": "Randomisation stratum",
+    "source": "protocol stratification (stratum)",
+    "variable": "stratum",
+    "note": "assigned at random: the stratification variables are not generated for patients",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "original ISS stage at study entry (stage 1 or 2 vs stage 3)": 114,
+     "prior PI treatment (yes vs no)": 102,
+     "prior lenalidomide treatment (yes vs no)": 117,
+     "prior anti-CD38 exposure (yes vs no)": 127
+    }
+   },
+   {
+    "factor": "Sex",
+    "source": "FDA demographic",
+    "variable": "demographic:sex",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "evidence-driven (registry results reported by this subgroup (up to 3 trials; prognostic, A28))",
+    "levels": {
+     "male": 250,
+     "female": 210
+    }
+   },
+   {
+    "factor": "Race",
+    "source": "FDA demographic",
+    "variable": "demographic:race",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "white": 342,
+     "black_or_african_american": 53,
+     "asian": 38,
+     "american_indian_or_alaska_native": 4,
+     "unknown_or_not_reported": 19,
+     "more_than_one_race": 4
+    }
+   },
+   {
+    "factor": "Ethnicity",
+    "source": "FDA demographic",
+    "variable": "demographic:ethnicity",
+    "note": "",
+    "feasibility_driver": "patient mix",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "not_hispanic_or_latino": 430,
+     "hispanic_or_latino": 19,
+     "unknown_or_not_reported": 11
+    }
+   },
+   {
+    "factor": "Region",
+    "source": "FDA demographic",
+    "variable": null,
+    "note": "not simulated: the recruitment model has no site country",
+    "feasibility_driver": null,
+    "prevalence_source": null,
+    "outcome_driver": null
+   },
+   {
+    "factor": "Eastern Cooperative Oncology Group Performance Status (ECOG ",
+    "source": "baseline disease factor",
+    "variable": "var:ecog_performance_status",
+    "note": "",
+    "feasibility_driver": "protocol criteria",
+    "prevalence_source": null,
+    "outcome_driver": "mix only: the outcome model applies no effect of this factor, so its levels differ only by chance",
+    "levels": {
+     "1": 212,
+     "0": 192,
+     "2 or more": 56
+    }
+   }
+  ],
+  "files": {
+   "subgroup_efficacy": "subgroups/subgroup_efficacy.csv",
+   "subgroup_safety": "subgroups/subgroup_safety.csv",
+   "subgroup_comparisons": "subgroups/subgroup_comparisons.csv",
+   "subgroup_feasibility": "subgroups/subgroup_feasibility.csv",
+   "forest_pfs_ARM1": "subgroups/forest_pfs_ARM1.svg",
+   "forest_os_ARM1": "subgroups/forest_os_ARM1.svg",
+   "forest_orr_ARM1": "subgroups/forest_orr_ARM1.svg"
+  }
+ },
+ "standards": [
+  "PharmaSUG 2018 DS06 (RECIST/Cheson/IMWG-type response derivation; SDTM TU/TR/RS; ADaM ADRS/ADTTE)",
+  "FDA CDER Standard Safety Tables and Figures Integrated Guide (Aug 2022): Tables 2-7, 9, 12, 13, 36, 54",
+  "results by subgroup: protocol stratification factors and analysis subgroups, FDA demographics, baseline disease factors"
+ ],
+ "not_produced": [
+  "FDA Medical Query tables (no machine-readable FMQ definitions)",
+  "laboratory and vital-sign tables (not simulated)",
+  "MedDRA coding (registry terms with their reported organ system are used)",
+  "results by region (the recruitment model has no site country)"
+ ]
+}

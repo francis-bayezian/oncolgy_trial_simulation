@@ -1,0 +1,287 @@
+{
+ "endpoints_version": "endpoints-1.0.0",
+ "seed": 20261005,
+ "inputs": {
+  "studyspec": "a1b01e69016caaaea6f2842aada05174c861b2c6deacd18f0665988256f7b174"
+ },
+ "participant_flow": {
+  "ARM1": {
+   "arm": "Cabazitaxel 15 mg/m2 day 1 + cisplatin 70mg/ m2 day 1",
+   "started": 30,
+   "end_of_treatment": {
+    "completed planned treatment": 21,
+    "adverse event (registry discontinuation rate)": 1,
+    "disease progression": 8
+   },
+   "deaths": 3
+  }
+ },
+ "endpoints": [
+  {
+   "endpoint": "overall response rate",
+   "role": "primary",
+   "class": "proportion",
+   "variable": "objective_response_rate",
+   "by_arm": {
+    "ARM1": {
+     "patients": 30,
+     "responders": 8,
+     "rate": 0.2667,
+     "ci95": [
+      0.12279480987235479,
+      0.4588936513947512
+     ],
+     "predictive_rate": {
+      "p10": 0.19666666666666674,
+      "p30": 0.26666666666666666,
+      "p50": 0.3,
+      "p70": 0.3333333333333333,
+      "p90": 0.4
+     },
+     "input": {
+      "status": "RESOLVED",
+      "value": 0.28443603810108503,
+      "unit": "proportion",
+      "level": "adult trials",
+      "source": "evidence arms reporting objective_response_rate (3 studies)",
+      "ci95": [
+       0.22093990078199768,
+       0.35779952050044556
+      ]
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Progression free survival",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "progression_free_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 30,
+     "events": 30,
+     "km_median_months": 3.96,
+     "median_ci95_months": [
+      2.43,
+      4.96
+     ],
+     "survival_percent": {
+      "12m": 6.7,
+      "24m": null,
+      "36m": null,
+      "60m": null
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "level": "journey progression model",
+      "source": "evidence median progression-free survival 3.8 months (adult trials, 6 studies), exponential",
+      "value": 3.8250212982657796,
+      "cure_fraction": 0.0
+     },
+     "predictive_median_months": {
+      "p10": 2.798944275414564,
+      "p30": 3.8882317658847048,
+      "p50": 3.960771814611074,
+      "p70": 5.293296599365075,
+      "p90": 5.436150391416137
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Duration of response",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "duration_of_response",
+   "by_arm": {
+    "ARM1": {
+     "patients": 30,
+     "events": 26,
+     "km_median_months": 14.62,
+     "median_ci95_months": [
+      10.87,
+      23.44
+     ],
+     "survival_percent": {
+      "12m": 56.7,
+      "24m": 26.7,
+      "36m": 20.0,
+      "60m": 13.3
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 13.945124278210143,
+      "unit": "months",
+      "level": "disease family mixture (weak)",
+      "source": "evidence medians of duration_of_response (2 studies)",
+      "detail": {
+       "variable": "duration_of_response",
+       "family": "urothelial",
+       "subgroup": "whole disease family",
+       "median_months": 13.945124278210143,
+       "ci95": [
+        5.750842664380006,
+        33.81530368396738
+       ],
+       "single_trial_80": [
+        3.125125355668349,
+        62.22678100960102
+       ],
+       "studies": 2,
+       "arms": 6,
+       "patients": 279
+      }
+     },
+     "predictive_median_months": {
+      "p10": 9.960132713557051,
+      "p30": 12.016046327174976,
+      "p50": 14.619904326877986,
+      "p70": 14.840708991282401,
+      "p90": 19.145137236909374
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Overall survival",
+   "role": "secondary",
+   "class": "time_to_event",
+   "variable": "overall_survival",
+   "by_arm": {
+    "ARM1": {
+     "patients": 30,
+     "events": 29,
+     "km_median_months": 13.39,
+     "median_ci95_months": [
+      8.13,
+      16.84
+     ],
+     "survival_percent": {
+      "12m": 53.3,
+      "24m": 23.3,
+      "36m": 6.7,
+      "60m": 3.3
+     },
+     "follow_up_years": 5.0,
+     "input": {
+      "status": "RESOLVED",
+      "value": 11.91866825006305,
+      "unit": "months",
+      "level": "adult trials",
+      "source": "evidence medians of overall_survival (6 studies)",
+      "detail": {
+       "variable": "overall_survival",
+       "family": "urothelial",
+       "subgroup": "adult trials",
+       "median_months": 11.91866825006305,
+       "ci95": [
+        8.997773367859052,
+        15.787756264510332
+       ],
+       "single_trial_80": [
+        7.422945867710325,
+        19.13723410984257
+       ],
+       "studies": 6,
+       "arms": 9,
+       "patients": 671
+      }
+     },
+     "predictive_median_months": {
+      "p10": 8.256381701918919,
+      "p30": 13.315198550671886,
+      "p50": 13.394358443054301,
+      "p70": 13.887834742985536,
+      "p90": 19.079661311728117
+     }
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Acute toxicity (defined by CTCAE v4.03) after each cycle",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 30,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 11,
+     "any_grade3_ae": 11,
+     "stopped_for_ae": 1
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "number of SAEs",
+   "role": "safety",
+   "class": "safety",
+   "variable": null,
+   "by_arm": {
+    "ARM1": {
+     "patients": 30,
+     "input": {
+      "status": "RESOLVED",
+      "level": "safety stage",
+      "source": "simulated adverse events (safety stage)",
+      "value": null
+     },
+     "any_serious_ae": 11,
+     "any_grade3_ae": 11,
+     "stopped_for_ae": 1
+    }
+   },
+   "status": "SIMULATED"
+  },
+  {
+   "endpoint": "Quality of Life",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "patient_reported_outcome",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "patient_reported_outcome",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Quality adjusted life years assessed by EQ-5D",
+   "role": "secondary",
+   "class": "not_simulated",
+   "variable": "patient_reported_outcome",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "patient_reported_outcome",
+   "reason": "the generated patients carry no such measurement"
+  },
+  {
+   "endpoint": "Qualitative data",
+   "role": "exploratory",
+   "class": "not_simulated",
+   "variable": "qualitative_or_feasibility",
+   "by_arm": {},
+   "status": "NOT_SIMULATED",
+   "kind": "qualitative_or_feasibility",
+   "reason": "the generated patients carry no such measurement"
+  }
+ ],
+ "counts": {
+  "time_to_event": 3,
+  "proportion": 1,
+  "continuous": 0,
+  "safety": 2,
+  "not_simulated": 3
+ }
+}

@@ -1,0 +1,2095 @@
+USUBJID,ARMCD,PARAMCD,AVAL,CNSR,EVNTDESC
+S0003,ARM1,PFS,509.0,0,death
+S0003,ARM1,OS,509.0,0,death
+S0003,ARM1,TTP,504.0,1,censored at last adequate tumour assessment
+S0003,ARM1,DOR,453.0,0,death
+S0003,ARM1,TTR,56.0,0,first response
+S0005,ARM1,PFS,28.0,0,progressive disease
+S0005,ARM1,OS,29.4,0,death
+S0005,ARM1,TTP,28.0,0,progressive disease
+S0006,ARM1,PFS,728.0,0,progressive disease
+S0006,ARM1,OS,779.0,0,death
+S0006,ARM1,TTP,728.0,0,progressive disease
+S0006,ARM1,DOR,672.0,0,progressive disease
+S0006,ARM1,TTR,56.0,0,first response
+S0007,ARM1,PFS,950.8,0,death
+S0007,ARM1,OS,950.8,0,death
+S0007,ARM1,TTP,924.0,1,censored at last adequate tumour assessment
+S0007,ARM1,DOR,894.8,0,death
+S0007,ARM1,TTR,56.0,0,first response
+S0008,ARM1,PFS,140.0,0,progressive disease
+S0008,ARM1,OS,2615.4,0,death
+S0008,ARM1,TTP,140.0,0,progressive disease
+S0008,ARM1,DOR,84.0,0,progressive disease
+S0008,ARM1,TTR,56.0,0,first response
+S0012,ARM1,PFS,2621.6,0,death
+S0012,ARM1,OS,2621.6,0,death
+S0012,ARM1,TTP,2604.0,1,censored at last adequate tumour assessment
+S0012,ARM1,DOR,2565.6,0,death
+S0012,ARM1,TTR,56.0,0,first response
+S0013,ARM1,PFS,4045.1,0,death
+S0013,ARM1,OS,4045.1,0,death
+S0013,ARM1,TTP,4032.0,1,censored at last adequate tumour assessment
+S0013,ARM1,DOR,3989.1,0,death
+S0013,ARM1,TTR,56.0,0,first response
+S0014,ARM1,PFS,6.0,0,death
+S0014,ARM1,OS,6.0,0,death
+S0014,ARM1,TTP,0.0,1,censored at last adequate tumour assessment
+S0015,ARM1,PFS,28.0,0,progressive disease
+S0015,ARM1,OS,79.7,0,death
+S0015,ARM1,TTP,28.0,0,progressive disease
+S0016,ARM1,PFS,140.0,0,progressive disease
+S0016,ARM1,OS,1160.2,0,death
+S0016,ARM1,TTP,140.0,0,progressive disease
+S0016,ARM1,DOR,84.0,0,progressive disease
+S0016,ARM1,TTR,56.0,0,first response
+S0018,ARM1,PFS,3101.6,0,death
+S0018,ARM1,OS,3101.6,0,death
+S0018,ARM1,TTP,3080.0,1,censored at last adequate tumour assessment
+S0018,ARM1,DOR,3045.6,0,death
+S0018,ARM1,TTR,56.0,0,first response
+S0019,ARM1,PFS,1770.6,0,death
+S0019,ARM1,OS,1770.6,0,death
+S0019,ARM1,TTP,1764.0,1,censored at last adequate tumour assessment
+S0019,ARM1,DOR,1714.6,0,death
+S0019,ARM1,TTR,56.0,0,first response
+S0023,ARM1,PFS,1359.4,0,death
+S0023,ARM1,OS,1359.4,0,death
+S0023,ARM1,TTP,1344.0,1,censored at last adequate tumour assessment
+S0023,ARM1,DOR,1303.4,0,death
+S0023,ARM1,TTR,56.0,0,first response
+S0027,ARM1,PFS,2181.1,0,death
+S0027,ARM1,OS,2181.1,0,death
+S0027,ARM1,TTP,2156.0,1,censored at last adequate tumour assessment
+S0027,ARM1,DOR,2125.1,0,death
+S0027,ARM1,TTR,56.0,0,first response
+S0028,ARM1,PFS,575.0,0,death
+S0028,ARM1,OS,575.0,0,death
+S0028,ARM1,TTP,560.0,1,censored at last adequate tumour assessment
+S0028,ARM1,DOR,519.0,0,death
+S0028,ARM1,TTR,56.0,0,first response
+S0029,ARM1,PFS,812.0,0,progressive disease
+S0029,ARM1,OS,1304.6,0,death
+S0029,ARM1,TTP,812.0,0,progressive disease
+S0029,ARM1,DOR,756.0,0,progressive disease
+S0029,ARM1,TTR,56.0,0,first response
+S0030,ARM1,PFS,1112.1,0,death
+S0030,ARM1,OS,1112.1,0,death
+S0030,ARM1,TTP,1092.0,1,censored at last adequate tumour assessment
+S0030,ARM1,DOR,1056.1,0,death
+S0030,ARM1,TTR,56.0,0,first response
+S0034,ARM1,PFS,3976.0,0,progressive disease
+S0034,ARM1,OS,4096.1,1,censored at last contact
+S0034,ARM1,TTP,3976.0,0,progressive disease
+S0038,ARM1,PFS,2423.8,0,death
+S0038,ARM1,OS,2423.8,0,death
+S0038,ARM1,TTP,2408.0,1,censored at last adequate tumour assessment
+S0038,ARM1,DOR,2367.8,0,death
+S0038,ARM1,TTR,56.0,0,first response
+S0039,ARM1,PFS,2565.7,0,death
+S0039,ARM1,OS,2565.7,0,death
+S0039,ARM1,TTP,2548.0,1,censored at last adequate tumour assessment
+S0039,ARM1,DOR,2509.7,0,death
+S0039,ARM1,TTR,56.0,0,first response
+S0041,ARM1,PFS,610.5,0,death
+S0041,ARM1,OS,610.5,0,death
+S0041,ARM1,TTP,588.0,1,censored at last adequate tumour assessment
+S0041,ARM1,DOR,554.5,0,death
+S0041,ARM1,TTR,56.0,0,first response
+S0044,ARM1,PFS,4032.0,1,censored at last adequate tumour assessment
+S0044,ARM1,OS,4038.9,1,censored at last contact
+S0044,ARM1,TTP,4032.0,1,censored at last adequate tumour assessment
+S0044,ARM1,DOR,3976.0,1,censored at last adequate tumour assessment
+S0044,ARM1,TTR,56.0,0,first response
+S0047,ARM1,PFS,140.0,0,progressive disease
+S0047,ARM1,OS,1986.0,0,death
+S0047,ARM1,TTP,140.0,0,progressive disease
+S0047,ARM1,DOR,84.0,0,progressive disease
+S0047,ARM1,TTR,56.0,0,first response
+S0048,ARM1,PFS,448.0,0,progressive disease
+S0048,ARM1,OS,952.3,0,death
+S0048,ARM1,TTP,448.0,0,progressive disease
+S0048,ARM1,DOR,392.0,0,progressive disease
+S0048,ARM1,TTR,56.0,0,first response
+S0049,ARM1,PFS,1426.8,0,death
+S0049,ARM1,OS,1426.8,0,death
+S0049,ARM1,TTP,1400.0,1,censored at last adequate tumour assessment
+S0049,ARM1,DOR,1370.8,0,death
+S0049,ARM1,TTR,56.0,0,first response
+S0050,ARM1,PFS,28.0,0,progressive disease
+S0050,ARM1,OS,385.8,0,death
+S0050,ARM1,TTP,28.0,0,progressive disease
+S0053,ARM1,PFS,280.0,1,censored at last adequate tumour assessment
+S0053,ARM1,OS,289.0,1,censored at last contact
+S0053,ARM1,TTP,280.0,1,censored at last adequate tumour assessment
+S0053,ARM1,DOR,224.0,1,censored at last adequate tumour assessment
+S0053,ARM1,TTR,56.0,0,first response
+S0056,ARM1,PFS,296.0,0,death
+S0056,ARM1,OS,296.0,0,death
+S0056,ARM1,TTP,280.0,1,censored at last adequate tumour assessment
+S0058,ARM1,PFS,56.0,1,censored at last adequate tumour assessment
+S0058,ARM1,OS,1194.6,0,death
+S0058,ARM1,TTP,56.0,1,censored at last adequate tumour assessment
+S0058,ARM1,DOR,28.0,1,censored at last adequate tumour assessment
+S0058,ARM1,TTR,28.0,0,first response
+S0063,ARM1,PFS,2828.0,0,progressive disease
+S0063,ARM1,OS,3164.3,0,death
+S0063,ARM1,TTP,2828.0,0,progressive disease
+S0063,ARM1,DOR,2772.0,0,progressive disease
+S0063,ARM1,TTR,56.0,0,first response
+S0064,ARM1,PFS,1708.0,0,progressive disease
+S0064,ARM1,OS,2575.4,0,death
+S0064,ARM1,TTP,1708.0,0,progressive disease
+S0064,ARM1,DOR,1652.0,0,progressive disease
+S0064,ARM1,TTR,56.0,0,first response
+S0065,ARM1,PFS,3696.0,0,progressive disease
+S0065,ARM1,OS,3937.0,1,censored at last contact
+S0065,ARM1,TTP,3696.0,0,progressive disease
+S0065,ARM1,DOR,3640.0,0,progressive disease
+S0065,ARM1,TTR,56.0,0,first response
+S0073,ARM1,PFS,3696.0,0,progressive disease
+S0073,ARM1,OS,3897.8,1,censored at last contact
+S0073,ARM1,TTP,3696.0,0,progressive disease
+S0073,ARM1,DOR,3640.0,0,progressive disease
+S0073,ARM1,TTR,56.0,0,first response
+S0075,ARM1,PFS,2548.0,0,progressive disease
+S0075,ARM1,OS,3470.7,0,death
+S0075,ARM1,TTP,2548.0,0,progressive disease
+S0075,ARM1,DOR,2492.0,0,progressive disease
+S0075,ARM1,TTR,56.0,0,first response
+S0078,ARM1,PFS,2614.8,0,death
+S0078,ARM1,OS,2614.8,0,death
+S0078,ARM1,TTP,2604.0,1,censored at last adequate tumour assessment
+S0078,ARM1,DOR,2558.8,0,death
+S0078,ARM1,TTR,56.0,0,first response
+S0079,ARM1,PFS,420.0,0,progressive disease
+S0079,ARM1,OS,1851.7,0,death
+S0079,ARM1,TTP,420.0,0,progressive disease
+S0080,ARM1,PFS,170.0,0,death
+S0080,ARM1,OS,170.0,0,death
+S0080,ARM1,TTP,168.0,1,censored at last adequate tumour assessment
+S0080,ARM1,DOR,114.0,0,death
+S0080,ARM1,TTR,56.0,0,first response
+S0083,ARM1,PFS,0.0,1,censored at last adequate tumour assessment
+S0083,ARM1,OS,287.2,0,death
+S0083,ARM1,TTP,0.0,1,censored at last adequate tumour assessment
+S0084,ARM1,PFS,448.0,0,progressive disease
+S0084,ARM1,OS,733.7,0,death
+S0084,ARM1,TTP,448.0,0,progressive disease
+S0086,ARM1,PFS,196.0,1,censored at last adequate tumour assessment
+S0086,ARM1,OS,1972.3,0,death
+S0086,ARM1,TTP,196.0,1,censored at last adequate tumour assessment
+S0086,ARM1,DOR,140.0,1,censored at last adequate tumour assessment
+S0086,ARM1,TTR,56.0,0,first response
+S0088,ARM1,PFS,2660.0,0,progressive disease
+S0088,ARM1,OS,2761.6,0,death
+S0088,ARM1,TTP,2660.0,0,progressive disease
+S0088,ARM1,DOR,2604.0,0,progressive disease
+S0088,ARM1,TTR,56.0,0,first response
+S0092,ARM1,PFS,3239.7,0,death
+S0092,ARM1,OS,3239.7,0,death
+S0092,ARM1,TTP,3220.0,1,censored at last adequate tumour assessment
+S0092,ARM1,DOR,3183.7,0,death
+S0092,ARM1,TTR,56.0,0,first response
+S0096,ARM1,PFS,168.0,0,progressive disease
+S0096,ARM1,OS,286.4,0,death
+S0096,ARM1,TTP,168.0,0,progressive disease
+S0096,ARM1,DOR,112.0,0,progressive disease
+S0096,ARM1,TTR,56.0,0,first response
+S0097,ARM1,PFS,1176.0,0,progressive disease
+S0097,ARM1,OS,3734.9,0,death
+S0097,ARM1,TTP,1176.0,0,progressive disease
+S0100,ARM1,PFS,1400.0,0,progressive disease
+S0100,ARM1,OS,1564.7,0,death
+S0100,ARM1,TTP,1400.0,0,progressive disease
+S0103,ARM1,PFS,2414.7,0,death
+S0103,ARM1,OS,2414.7,0,death
+S0103,ARM1,TTP,2408.0,1,censored at last adequate tumour assessment
+S0103,ARM1,DOR,2358.7,0,death
+S0103,ARM1,TTR,56.0,0,first response
+S0105,ARM1,PFS,1904.4,0,death
+S0105,ARM1,OS,1904.4,0,death
+S0105,ARM1,TTP,1904.0,1,censored at last adequate tumour assessment
+S0105,ARM1,DOR,1848.4,0,death
+S0105,ARM1,TTR,56.0,0,first response
+S0108,ARM1,PFS,812.0,0,progressive disease
+S0108,ARM1,OS,1512.5,0,death
+S0108,ARM1,TTP,812.0,0,progressive disease
+S0108,ARM1,DOR,756.0,0,progressive disease
+S0108,ARM1,TTR,56.0,0,first response
+S0111,ARM1,PFS,140.0,0,progressive disease
+S0111,ARM1,OS,191.1,0,death
+S0111,ARM1,TTP,140.0,0,progressive disease
+S0111,ARM1,DOR,84.0,0,progressive disease
+S0111,ARM1,TTR,56.0,0,first response
+S0113,ARM1,PFS,1540.0,0,progressive disease
+S0113,ARM1,OS,1797.6,0,death
+S0113,ARM1,TTP,1540.0,0,progressive disease
+S0113,ARM1,DOR,1484.0,0,progressive disease
+S0113,ARM1,TTR,56.0,0,first response
+S0115,ARM1,PFS,1204.0,0,progressive disease
+S0115,ARM1,OS,1590.7,0,death
+S0115,ARM1,TTP,1204.0,0,progressive disease
+S0116,ARM1,PFS,1336.9,0,death
+S0116,ARM1,OS,1336.9,0,death
+S0116,ARM1,TTP,1316.0,1,censored at last adequate tumour assessment
+S0116,ARM1,DOR,1280.9,0,death
+S0116,ARM1,TTR,56.0,0,first response
+S0117,ARM1,PFS,3345.0,0,death
+S0117,ARM1,OS,3345.0,0,death
+S0117,ARM1,TTP,3332.0,1,censored at last adequate tumour assessment
+S0117,ARM1,DOR,3289.0,0,death
+S0117,ARM1,TTR,56.0,0,first response
+S0120,ARM1,PFS,1848.0,0,progressive disease
+S0120,ARM1,OS,2004.0,0,death
+S0120,ARM1,TTP,1848.0,0,progressive disease
+S0120,ARM1,DOR,1792.0,0,progressive disease
+S0120,ARM1,TTR,56.0,0,first response
+S0121,ARM1,PFS,56.0,0,progressive disease
+S0121,ARM1,OS,417.5,0,death
+S0121,ARM1,TTP,56.0,0,progressive disease
+S0123,ARM1,PFS,1658.3,0,death
+S0123,ARM1,OS,1658.3,0,death
+S0123,ARM1,TTP,1652.0,1,censored at last adequate tumour assessment
+S0123,ARM1,DOR,1602.3,0,death
+S0123,ARM1,TTR,56.0,0,first response
+S0124,ARM1,PFS,168.0,0,progressive disease
+S0124,ARM1,OS,495.3,0,death
+S0124,ARM1,TTP,168.0,0,progressive disease
+S0126,ARM1,PFS,491.1,0,death
+S0126,ARM1,OS,491.1,0,death
+S0126,ARM1,TTP,476.0,1,censored at last adequate tumour assessment
+S0126,ARM1,DOR,435.1,0,death
+S0126,ARM1,TTR,56.0,0,first response
+S0127,ARM1,PFS,1862.1,0,death
+S0127,ARM1,OS,1862.1,0,death
+S0127,ARM1,TTP,1848.0,1,censored at last adequate tumour assessment
+S0127,ARM1,DOR,1806.1,0,death
+S0127,ARM1,TTR,56.0,0,first response
+S0128,ARM1,PFS,952.0,0,progressive disease
+S0128,ARM1,OS,3578.2,1,censored at last contact
+S0128,ARM1,TTP,952.0,0,progressive disease
+S0128,ARM1,DOR,896.0,0,progressive disease
+S0128,ARM1,TTR,56.0,0,first response
+S0129,ARM1,PFS,771.6,0,death
+S0129,ARM1,OS,771.6,0,death
+S0129,ARM1,TTP,756.0,1,censored at last adequate tumour assessment
+S0129,ARM1,DOR,715.6,0,death
+S0129,ARM1,TTR,56.0,0,first response
+S0131,ARM1,PFS,725.0,0,death
+S0131,ARM1,OS,725.0,0,death
+S0131,ARM1,TTP,700.0,1,censored at last adequate tumour assessment
+S0131,ARM1,DOR,669.0,0,death
+S0131,ARM1,TTR,56.0,0,first response
+S0133,ARM1,PFS,2509.9,0,death
+S0133,ARM1,OS,2509.9,0,death
+S0133,ARM1,TTP,2492.0,1,censored at last adequate tumour assessment
+S0133,ARM1,DOR,2453.9,0,death
+S0133,ARM1,TTR,56.0,0,first response
+S0134,ARM1,PFS,1176.0,0,progressive disease
+S0134,ARM1,OS,1203.5,0,death
+S0134,ARM1,TTP,1176.0,0,progressive disease
+S0136,ARM1,PFS,1112.3,0,death
+S0136,ARM1,OS,1112.3,0,death
+S0136,ARM1,TTP,1092.0,1,censored at last adequate tumour assessment
+S0136,ARM1,DOR,1056.3,0,death
+S0136,ARM1,TTR,56.0,0,first response
+S0137,ARM1,PFS,2203.1,0,death
+S0137,ARM1,OS,2203.1,0,death
+S0137,ARM1,TTP,2184.0,1,censored at last adequate tumour assessment
+S0137,ARM1,DOR,2147.1,0,death
+S0137,ARM1,TTR,56.0,0,first response
+S0138,ARM1,PFS,2604.0,0,progressive disease
+S0138,ARM1,OS,3253.4,0,death
+S0138,ARM1,TTP,2604.0,0,progressive disease
+S0138,ARM1,DOR,2548.0,0,progressive disease
+S0138,ARM1,TTR,56.0,0,first response
+S0141,ARM1,PFS,644.0,0,progressive disease
+S0141,ARM1,OS,1624.5,0,death
+S0141,ARM1,TTP,644.0,0,progressive disease
+S0141,ARM1,DOR,588.0,0,progressive disease
+S0141,ARM1,TTR,56.0,0,first response
+S0143,ARM1,PFS,1255.2,0,death
+S0143,ARM1,OS,1255.2,0,death
+S0143,ARM1,TTP,1232.0,1,censored at last adequate tumour assessment
+S0143,ARM1,DOR,1199.2,0,death
+S0143,ARM1,TTR,56.0,0,first response
+S0144,ARM1,PFS,661.6,0,death
+S0144,ARM1,OS,661.6,0,death
+S0144,ARM1,TTP,644.0,1,censored at last adequate tumour assessment
+S0144,ARM1,DOR,605.6,0,death
+S0144,ARM1,TTR,56.0,0,first response
+S0149,ARM1,PFS,644.0,0,progressive disease
+S0149,ARM1,OS,965.6,0,death
+S0149,ARM1,TTP,644.0,0,progressive disease
+S0149,ARM1,DOR,588.0,0,progressive disease
+S0149,ARM1,TTR,56.0,0,first response
+S0151,ARM1,PFS,2556.7,0,death
+S0151,ARM1,OS,2556.7,0,death
+S0151,ARM1,TTP,2548.0,1,censored at last adequate tumour assessment
+S0151,ARM1,DOR,2500.7,0,death
+S0151,ARM1,TTR,56.0,0,first response
+S0152,ARM1,PFS,2520.0,0,progressive disease
+S0152,ARM1,OS,3459.5,1,censored at last contact
+S0152,ARM1,TTP,2520.0,0,progressive disease
+S0152,ARM1,DOR,2464.0,0,progressive disease
+S0152,ARM1,TTR,56.0,0,first response
+S0153,ARM1,PFS,140.0,0,progressive disease
+S0153,ARM1,OS,560.0,0,death
+S0153,ARM1,TTP,140.0,0,progressive disease
+S0156,ARM1,PFS,252.0,1,censored at last adequate tumour assessment
+S0156,ARM1,OS,261.0,1,censored at last contact
+S0156,ARM1,TTP,252.0,1,censored at last adequate tumour assessment
+S0156,ARM1,DOR,196.0,1,censored at last adequate tumour assessment
+S0156,ARM1,TTR,56.0,0,first response
+S0157,ARM1,PFS,148.6,0,death
+S0157,ARM1,OS,148.6,0,death
+S0157,ARM1,TTP,140.0,1,censored at last adequate tumour assessment
+S0157,ARM1,DOR,92.6,0,death
+S0157,ARM1,TTR,56.0,0,first response
+S0158,ARM1,PFS,196.0,0,progressive disease
+S0158,ARM1,OS,448.1,0,death
+S0158,ARM1,TTP,196.0,0,progressive disease
+S0159,ARM1,PFS,812.1,0,death
+S0159,ARM1,OS,812.1,0,death
+S0159,ARM1,TTP,812.0,1,censored at last adequate tumour assessment
+S0159,ARM1,DOR,756.1,0,death
+S0159,ARM1,TTR,56.0,0,first response
+S0162,ARM1,PFS,2604.0,0,progressive disease
+S0162,ARM1,OS,3397.8,1,censored at last contact
+S0162,ARM1,TTP,2604.0,0,progressive disease
+S0162,ARM1,DOR,2548.0,0,progressive disease
+S0162,ARM1,TTR,56.0,0,first response
+S0163,ARM1,PFS,2800.0,0,progressive disease
+S0163,ARM1,OS,3334.3,0,death
+S0163,ARM1,TTP,2800.0,0,progressive disease
+S0163,ARM1,DOR,2744.0,0,progressive disease
+S0163,ARM1,TTR,56.0,0,first response
+S0166,ARM1,PFS,1792.0,0,progressive disease
+S0166,ARM1,OS,2118.1,0,death
+S0166,ARM1,TTP,1792.0,0,progressive disease
+S0166,ARM1,DOR,1736.0,0,progressive disease
+S0166,ARM1,TTR,56.0,0,first response
+S0168,ARM1,PFS,2048.8,0,death
+S0168,ARM1,OS,2048.8,0,death
+S0168,ARM1,TTP,2044.0,1,censored at last adequate tumour assessment
+S0168,ARM1,DOR,1992.8,0,death
+S0168,ARM1,TTR,56.0,0,first response
+S0169,ARM1,PFS,28.0,1,censored at last adequate tumour assessment
+S0169,ARM1,OS,1540.4,0,death
+S0169,ARM1,TTP,28.0,1,censored at last adequate tumour assessment
+S0170,ARM1,PFS,1820.5,0,death
+S0170,ARM1,OS,1820.5,0,death
+S0170,ARM1,TTP,1820.0,1,censored at last adequate tumour assessment
+S0170,ARM1,DOR,1764.5,0,death
+S0170,ARM1,TTR,56.0,0,first response
+S0172,ARM1,PFS,1218.0,0,death
+S0172,ARM1,OS,1218.0,0,death
+S0172,ARM1,TTP,1204.0,1,censored at last adequate tumour assessment
+S0172,ARM1,DOR,1162.0,0,death
+S0172,ARM1,TTR,56.0,0,first response
+S0173,ARM1,PFS,420.0,0,progressive disease
+S0173,ARM1,OS,3089.2,0,death
+S0173,ARM1,TTP,420.0,0,progressive disease
+S0174,ARM1,PFS,1652.0,0,progressive disease
+S0174,ARM1,OS,3341.3,1,censored at last contact
+S0174,ARM1,TTP,1652.0,0,progressive disease
+S0174,ARM1,DOR,1596.0,0,progressive disease
+S0174,ARM1,TTR,56.0,0,first response
+S0175,ARM1,PFS,3304.0,1,censored at last adequate tumour assessment
+S0175,ARM1,OS,3331.6,1,censored at last contact
+S0175,ARM1,TTP,3304.0,1,censored at last adequate tumour assessment
+S0175,ARM1,DOR,3248.0,1,censored at last adequate tumour assessment
+S0175,ARM1,TTR,56.0,0,first response
+S0179,ARM1,PFS,112.0,0,progressive disease
+S0179,ARM1,OS,654.5,0,death
+S0179,ARM1,TTP,112.0,0,progressive disease
+S0180,ARM1,PFS,2072.0,0,progressive disease
+S0180,ARM1,OS,2108.5,0,death
+S0180,ARM1,TTP,2072.0,0,progressive disease
+S0180,ARM1,DOR,2016.0,0,progressive disease
+S0180,ARM1,TTR,56.0,0,first response
+S0181,ARM1,PFS,1652.0,0,progressive disease
+S0181,ARM1,OS,3270.8,1,censored at last contact
+S0181,ARM1,TTP,1652.0,0,progressive disease
+S0181,ARM1,DOR,1596.0,0,progressive disease
+S0181,ARM1,TTR,56.0,0,first response
+S0185,ARM1,PFS,3248.0,1,censored at last adequate tumour assessment
+S0185,ARM1,OS,3251.4,1,censored at last contact
+S0185,ARM1,TTP,3248.0,1,censored at last adequate tumour assessment
+S0185,ARM1,DOR,3192.0,1,censored at last adequate tumour assessment
+S0185,ARM1,TTR,56.0,0,first response
+S0193,ARM1,PFS,1839.9,0,death
+S0193,ARM1,OS,1839.9,0,death
+S0193,ARM1,TTP,1820.0,1,censored at last adequate tumour assessment
+S0193,ARM1,DOR,1783.9,0,death
+S0193,ARM1,TTR,56.0,0,first response
+S0194,ARM1,PFS,1428.0,0,progressive disease
+S0194,ARM1,OS,1610.5,0,death
+S0194,ARM1,TTP,1428.0,0,progressive disease
+S0194,ARM1,DOR,1372.0,0,progressive disease
+S0194,ARM1,TTR,56.0,0,first response
+S0199,ARM1,PFS,1842.3,0,death
+S0199,ARM1,OS,1842.3,0,death
+S0199,ARM1,TTP,1820.0,1,censored at last adequate tumour assessment
+S0199,ARM1,DOR,1786.3,0,death
+S0199,ARM1,TTR,56.0,0,first response
+S0201,ARM1,PFS,476.0,0,progressive disease
+S0201,ARM1,OS,479.8,0,death
+S0201,ARM1,TTP,476.0,0,progressive disease
+S0201,ARM1,DOR,420.0,0,progressive disease
+S0201,ARM1,TTR,56.0,0,first response
+S0202,ARM1,PFS,1872.0,0,death
+S0202,ARM1,OS,1872.0,0,death
+S0202,ARM1,TTP,1848.0,1,censored at last adequate tumour assessment
+S0202,ARM1,DOR,1816.0,0,death
+S0202,ARM1,TTR,56.0,0,first response
+S0208,ARM1,PFS,420.0,0,progressive disease
+S0208,ARM1,OS,1059.1,0,death
+S0208,ARM1,TTP,420.0,0,progressive disease
+S0209,ARM1,PFS,1703.1,0,death
+S0209,ARM1,OS,1703.1,0,death
+S0209,ARM1,TTP,1680.0,1,censored at last adequate tumour assessment
+S0209,ARM1,DOR,1647.1,0,death
+S0209,ARM1,TTR,56.0,0,first response
+S0210,ARM1,PFS,812.0,0,progressive disease
+S0210,ARM1,OS,2238.4,0,death
+S0210,ARM1,TTP,812.0,0,progressive disease
+S0210,ARM1,DOR,756.0,0,progressive disease
+S0210,ARM1,TTR,56.0,0,first response
+S0211,ARM1,PFS,420.0,0,progressive disease
+S0211,ARM1,OS,1478.6,0,death
+S0211,ARM1,TTP,420.0,0,progressive disease
+S0211,ARM1,DOR,364.0,0,progressive disease
+S0211,ARM1,TTR,56.0,0,first response
+S0212,ARM1,PFS,1554.6,0,death
+S0212,ARM1,OS,1554.6,0,death
+S0212,ARM1,TTP,1540.0,1,censored at last adequate tumour assessment
+S0212,ARM1,DOR,1498.6,0,death
+S0212,ARM1,TTR,56.0,0,first response
+S0216,ARM1,PFS,1316.0,0,progressive disease
+S0216,ARM1,OS,1917.5,0,death
+S0216,ARM1,TTP,1316.0,0,progressive disease
+S0216,ARM1,DOR,1260.0,0,progressive disease
+S0216,ARM1,TTR,56.0,0,first response
+S0217,ARM1,PFS,3080.0,1,censored at last adequate tumour assessment
+S0217,ARM1,OS,3086.4,1,censored at last contact
+S0217,ARM1,TTP,3080.0,1,censored at last adequate tumour assessment
+S0217,ARM1,DOR,3024.0,1,censored at last adequate tumour assessment
+S0217,ARM1,TTR,56.0,0,first response
+S0219,ARM1,PFS,1744.3,0,death
+S0219,ARM1,OS,1744.3,0,death
+S0219,ARM1,TTP,1736.0,1,censored at last adequate tumour assessment
+S0219,ARM1,DOR,1688.3,0,death
+S0219,ARM1,TTR,56.0,0,first response
+S0220,ARM1,PFS,3052.0,1,censored at last adequate tumour assessment
+S0220,ARM1,OS,3066.5,1,censored at last contact
+S0220,ARM1,TTP,3052.0,1,censored at last adequate tumour assessment
+S0220,ARM1,DOR,2996.0,1,censored at last adequate tumour assessment
+S0220,ARM1,TTR,56.0,0,first response
+S0221,ARM1,PFS,3052.0,1,censored at last adequate tumour assessment
+S0221,ARM1,OS,3062.1,1,censored at last contact
+S0221,ARM1,TTP,3052.0,1,censored at last adequate tumour assessment
+S0221,ARM1,DOR,2996.0,1,censored at last adequate tumour assessment
+S0221,ARM1,TTR,56.0,0,first response
+S0225,ARM1,PFS,2446.1,0,death
+S0225,ARM1,OS,2446.1,0,death
+S0225,ARM1,TTP,2436.0,1,censored at last adequate tumour assessment
+S0225,ARM1,DOR,2390.1,0,death
+S0225,ARM1,TTR,56.0,0,first response
+S0227,ARM1,PFS,532.0,0,progressive disease
+S0227,ARM1,OS,537.8,0,death
+S0227,ARM1,TTP,532.0,0,progressive disease
+S0228,ARM1,PFS,3024.0,1,censored at last adequate tumour assessment
+S0228,ARM1,OS,3046.8,1,censored at last contact
+S0228,ARM1,TTP,3024.0,1,censored at last adequate tumour assessment
+S0228,ARM1,DOR,2968.0,1,censored at last adequate tumour assessment
+S0228,ARM1,TTR,56.0,0,first response
+S0229,ARM1,PFS,224.0,0,progressive disease
+S0229,ARM1,OS,229.4,0,death
+S0229,ARM1,TTP,224.0,0,progressive disease
+S0229,ARM1,DOR,168.0,0,progressive disease
+S0229,ARM1,TTR,56.0,0,first response
+S0239,ARM1,PFS,28.0,0,progressive disease
+S0239,ARM1,OS,109.0,0,death
+S0239,ARM1,TTP,28.0,0,progressive disease
+S0240,ARM1,PFS,1736.0,0,progressive disease
+S0240,ARM1,OS,2980.8,1,censored at last contact
+S0240,ARM1,TTP,1736.0,0,progressive disease
+S0240,ARM1,DOR,1680.0,0,progressive disease
+S0240,ARM1,TTR,56.0,0,first response
+S0241,ARM1,PFS,2352.7,0,death
+S0241,ARM1,OS,2352.7,0,death
+S0241,ARM1,TTP,2352.0,1,censored at last adequate tumour assessment
+S0241,ARM1,DOR,2296.7,0,death
+S0241,ARM1,TTR,56.0,0,first response
+S0242,ARM1,PFS,1540.0,0,progressive disease
+S0242,ARM1,OS,2639.3,0,death
+S0242,ARM1,TTP,1540.0,0,progressive disease
+S0247,ARM1,PFS,224.0,0,progressive disease
+S0247,ARM1,OS,795.6,0,death
+S0247,ARM1,TTP,224.0,0,progressive disease
+S0247,ARM1,DOR,168.0,0,progressive disease
+S0247,ARM1,TTR,56.0,0,first response
+S0251,ARM1,PFS,2912.0,1,censored at last adequate tumour assessment
+S0251,ARM1,OS,2919.6,1,censored at last contact
+S0251,ARM1,TTP,2912.0,1,censored at last adequate tumour assessment
+S0252,ARM1,PFS,2350.1,0,death
+S0252,ARM1,OS,2350.1,0,death
+S0252,ARM1,TTP,2324.0,1,censored at last adequate tumour assessment
+S0252,ARM1,DOR,2294.1,0,death
+S0252,ARM1,TTR,56.0,0,first response
+S0254,ARM1,PFS,1344.0,0,progressive disease
+S0254,ARM1,OS,2910.5,1,censored at last contact
+S0254,ARM1,TTP,1344.0,0,progressive disease
+S0254,ARM1,DOR,1288.0,0,progressive disease
+S0254,ARM1,TTR,56.0,0,first response
+S0260,ARM1,PFS,1232.0,0,progressive disease
+S0260,ARM1,OS,2274.7,0,death
+S0260,ARM1,TTP,1232.0,0,progressive disease
+S0262,ARM1,PFS,1820.0,0,progressive disease
+S0262,ARM1,OS,2010.2,0,death
+S0262,ARM1,TTP,1820.0,0,progressive disease
+S0262,ARM1,DOR,1764.0,0,progressive disease
+S0262,ARM1,TTR,56.0,0,first response
+S0263,ARM1,PFS,2856.0,1,censored at last adequate tumour assessment
+S0263,ARM1,OS,2871.1,1,censored at last contact
+S0263,ARM1,TTP,2856.0,1,censored at last adequate tumour assessment
+S0263,ARM1,DOR,2800.0,1,censored at last adequate tumour assessment
+S0263,ARM1,TTR,56.0,0,first response
+S0264,ARM1,PFS,1702.2,0,death
+S0264,ARM1,OS,1702.2,0,death
+S0264,ARM1,TTP,1680.0,1,censored at last adequate tumour assessment
+S0264,ARM1,DOR,1646.2,0,death
+S0264,ARM1,TTR,56.0,0,first response
+S0265,ARM1,PFS,2828.0,1,censored at last adequate tumour assessment
+S0265,ARM1,OS,2841.8,1,censored at last contact
+S0265,ARM1,TTP,2828.0,1,censored at last adequate tumour assessment
+S0265,ARM1,DOR,2772.0,1,censored at last adequate tumour assessment
+S0265,ARM1,TTR,56.0,0,first response
+S0266,ARM1,PFS,1902.2,0,death
+S0266,ARM1,OS,1902.2,0,death
+S0266,ARM1,TTP,1876.0,1,censored at last adequate tumour assessment
+S0266,ARM1,DOR,1846.2,0,death
+S0266,ARM1,TTR,56.0,0,first response
+S0268,ARM1,PFS,2800.0,1,censored at last adequate tumour assessment
+S0268,ARM1,OS,2825.9,1,censored at last contact
+S0268,ARM1,TTP,2800.0,1,censored at last adequate tumour assessment
+S0268,ARM1,DOR,2744.0,1,censored at last adequate tumour assessment
+S0268,ARM1,TTR,56.0,0,first response
+S0271,ARM1,PFS,2800.0,1,censored at last adequate tumour assessment
+S0271,ARM1,OS,2809.0,1,censored at last contact
+S0271,ARM1,TTP,2800.0,1,censored at last adequate tumour assessment
+S0271,ARM1,DOR,2744.0,1,censored at last adequate tumour assessment
+S0271,ARM1,TTR,56.0,0,first response
+S0273,ARM1,PFS,168.0,0,progressive disease
+S0273,ARM1,OS,245.2,0,death
+S0273,ARM1,TTP,168.0,0,progressive disease
+S0273,ARM1,DOR,112.0,0,progressive disease
+S0273,ARM1,TTR,56.0,0,first response
+S0283,ARM1,PFS,1680.0,0,progressive disease
+S0283,ARM1,OS,1901.9,0,death
+S0283,ARM1,TTP,1680.0,0,progressive disease
+S0286,ARM1,PFS,2427.0,0,death
+S0286,ARM1,OS,2427.0,0,death
+S0286,ARM1,TTP,2408.0,1,censored at last adequate tumour assessment
+S0286,ARM1,DOR,2371.0,0,death
+S0286,ARM1,TTR,56.0,0,first response
+S0288,ARM1,PFS,252.0,1,censored at last adequate tumour assessment
+S0288,ARM1,OS,274.0,1,censored at last contact
+S0288,ARM1,TTP,252.0,1,censored at last adequate tumour assessment
+S0288,ARM1,DOR,196.0,1,censored at last adequate tumour assessment
+S0288,ARM1,TTR,56.0,0,first response
+S0289,ARM1,PFS,112.0,0,progressive disease
+S0289,ARM1,OS,633.7,0,death
+S0289,ARM1,TTP,112.0,0,progressive disease
+S0289,ARM1,DOR,56.0,0,progressive disease
+S0289,ARM1,TTR,56.0,0,first response
+S0290,ARM1,PFS,224.0,1,censored at last adequate tumour assessment
+S0290,ARM1,OS,245.0,1,censored at last contact
+S0290,ARM1,TTP,224.0,1,censored at last adequate tumour assessment
+S0290,ARM1,DOR,168.0,1,censored at last adequate tumour assessment
+S0290,ARM1,TTR,56.0,0,first response
+S0291,ARM1,PFS,224.0,0,progressive disease
+S0291,ARM1,OS,1612.5,0,death
+S0291,ARM1,TTP,224.0,0,progressive disease
+S0291,ARM1,DOR,168.0,0,progressive disease
+S0291,ARM1,TTR,56.0,0,first response
+S0292,ARM1,PFS,2688.0,1,censored at last adequate tumour assessment
+S0292,ARM1,OS,2706.5,1,censored at last contact
+S0292,ARM1,TTP,2688.0,1,censored at last adequate tumour assessment
+S0292,ARM1,DOR,2632.0,1,censored at last adequate tumour assessment
+S0292,ARM1,TTR,56.0,0,first response
+S0293,ARM1,PFS,896.0,0,progressive disease
+S0293,ARM1,OS,938.6,0,death
+S0293,ARM1,TTP,896.0,0,progressive disease
+S0293,ARM1,DOR,840.0,0,progressive disease
+S0293,ARM1,TTR,56.0,0,first response
+S0297,ARM1,PFS,28.0,0,progressive disease
+S0297,ARM1,OS,2281.1,0,death
+S0297,ARM1,TTP,28.0,0,progressive disease
+S0303,ARM1,PFS,112.0,0,progressive disease
+S0303,ARM1,OS,893.2,0,death
+S0303,ARM1,TTP,112.0,0,progressive disease
+S0303,ARM1,DOR,56.0,0,progressive disease
+S0303,ARM1,TTR,56.0,0,first response
+S0304,ARM1,PFS,2660.0,1,censored at last adequate tumour assessment
+S0304,ARM1,OS,2677.1,1,censored at last contact
+S0304,ARM1,TTP,2660.0,1,censored at last adequate tumour assessment
+S0304,ARM1,DOR,2604.0,1,censored at last adequate tumour assessment
+S0304,ARM1,TTR,56.0,0,first response
+S0306,ARM1,PFS,606.4,0,death
+S0306,ARM1,OS,606.4,0,death
+S0306,ARM1,TTP,588.0,1,censored at last adequate tumour assessment
+S0306,ARM1,DOR,550.4,0,death
+S0306,ARM1,TTR,56.0,0,first response
+S0310,ARM1,PFS,504.0,0,progressive disease
+S0310,ARM1,OS,606.0,0,death
+S0310,ARM1,TTP,504.0,0,progressive disease
+S0310,ARM1,DOR,448.0,0,progressive disease
+S0310,ARM1,TTR,56.0,0,first response
+S0311,ARM1,PFS,2280.2,0,death
+S0311,ARM1,OS,2280.2,0,death
+S0311,ARM1,TTP,2268.0,1,censored at last adequate tumour assessment
+S0311,ARM1,DOR,2224.2,0,death
+S0311,ARM1,TTR,56.0,0,first response
+S0312,ARM1,PFS,1042.6,0,death
+S0312,ARM1,OS,1042.6,0,death
+S0312,ARM1,TTP,1036.0,1,censored at last adequate tumour assessment
+S0312,ARM1,DOR,986.6,0,death
+S0312,ARM1,TTR,56.0,0,first response
+S0313,ARM1,PFS,702.2,0,death
+S0313,ARM1,OS,702.2,0,death
+S0313,ARM1,TTP,700.0,1,censored at last adequate tumour assessment
+S0313,ARM1,DOR,646.2,0,death
+S0313,ARM1,TTR,56.0,0,first response
+S0315,ARM1,PFS,2044.0,0,progressive disease
+S0315,ARM1,OS,2634.8,1,censored at last contact
+S0315,ARM1,TTP,2044.0,0,progressive disease
+S0316,ARM1,PFS,196.0,0,progressive disease
+S0316,ARM1,OS,507.2,0,death
+S0316,ARM1,TTP,196.0,0,progressive disease
+S0316,ARM1,DOR,140.0,0,progressive disease
+S0316,ARM1,TTR,56.0,0,first response
+S0318,ARM1,PFS,1043.3,0,death
+S0318,ARM1,OS,1043.3,0,death
+S0318,ARM1,TTP,1036.0,1,censored at last adequate tumour assessment
+S0318,ARM1,DOR,987.3,0,death
+S0318,ARM1,TTR,56.0,0,first response
+S0319,ARM1,PFS,504.4,0,death
+S0319,ARM1,OS,504.4,0,death
+S0319,ARM1,TTP,504.0,1,censored at last adequate tumour assessment
+S0319,ARM1,DOR,448.4,0,death
+S0319,ARM1,TTR,56.0,0,first response
+S0323,ARM1,PFS,2548.0,1,censored at last adequate tumour assessment
+S0323,ARM1,OS,2572.4,1,censored at last contact
+S0323,ARM1,TTP,2548.0,1,censored at last adequate tumour assessment
+S0323,ARM1,DOR,2492.0,1,censored at last adequate tumour assessment
+S0323,ARM1,TTR,56.0,0,first response
+S0324,ARM1,PFS,56.0,1,censored at last adequate tumour assessment
+S0324,ARM1,OS,2289.0,0,death
+S0324,ARM1,TTP,56.0,1,censored at last adequate tumour assessment
+S0327,ARM1,PFS,492.0,0,death
+S0327,ARM1,OS,492.0,0,death
+S0327,ARM1,TTP,476.0,1,censored at last adequate tumour assessment
+S0328,ARM1,PFS,1493.8,0,death
+S0328,ARM1,OS,1493.8,0,death
+S0328,ARM1,TTP,1484.0,1,censored at last adequate tumour assessment
+S0328,ARM1,DOR,1437.8,0,death
+S0328,ARM1,TTR,56.0,0,first response
+S0334,ARM1,PFS,2492.0,1,censored at last adequate tumour assessment
+S0334,ARM1,OS,2503.8,1,censored at last contact
+S0334,ARM1,TTP,2492.0,1,censored at last adequate tumour assessment
+S0334,ARM1,DOR,2436.0,1,censored at last adequate tumour assessment
+S0334,ARM1,TTR,56.0,0,first response
+S0335,ARM1,PFS,560.0,0,progressive disease
+S0335,ARM1,OS,1620.5,0,death
+S0335,ARM1,TTP,560.0,0,progressive disease
+S0335,ARM1,DOR,504.0,0,progressive disease
+S0335,ARM1,TTR,56.0,0,first response
+S0336,ARM1,PFS,1568.0,0,progressive disease
+S0336,ARM1,OS,2502.1,1,censored at last contact
+S0336,ARM1,TTP,1568.0,0,progressive disease
+S0336,ARM1,DOR,1512.0,0,progressive disease
+S0336,ARM1,TTR,56.0,0,first response
+S0337,ARM1,PFS,2464.0,1,censored at last adequate tumour assessment
+S0337,ARM1,OS,2464.6,1,censored at last contact
+S0337,ARM1,TTP,2464.0,1,censored at last adequate tumour assessment
+S0337,ARM1,DOR,2408.0,1,censored at last adequate tumour assessment
+S0337,ARM1,TTR,56.0,0,first response
+S0339,ARM1,PFS,517.0,0,death
+S0339,ARM1,OS,517.0,0,death
+S0339,ARM1,TTP,504.0,1,censored at last adequate tumour assessment
+S0339,ARM1,DOR,461.0,0,death
+S0339,ARM1,TTR,56.0,0,first response
+S0342,ARM1,PFS,2296.0,0,progressive disease
+S0342,ARM1,OS,2433.8,1,censored at last contact
+S0342,ARM1,TTP,2296.0,0,progressive disease
+S0345,ARM1,PFS,1626.4,0,death
+S0345,ARM1,OS,1626.4,0,death
+S0345,ARM1,TTP,1624.0,1,censored at last adequate tumour assessment
+S0345,ARM1,DOR,1570.4,0,death
+S0345,ARM1,TTR,56.0,0,first response
+S0346,ARM1,PFS,196.0,0,progressive disease
+S0346,ARM1,OS,1405.2,0,death
+S0346,ARM1,TTP,196.0,0,progressive disease
+S0348,ARM1,PFS,2296.9,0,death
+S0348,ARM1,OS,2296.9,0,death
+S0348,ARM1,TTP,2296.0,1,censored at last adequate tumour assessment
+S0348,ARM1,DOR,2240.9,0,death
+S0348,ARM1,TTR,56.0,0,first response
+S0350,ARM1,PFS,420.0,0,progressive disease
+S0350,ARM1,OS,529.3,0,death
+S0350,ARM1,TTP,420.0,0,progressive disease
+S0350,ARM1,DOR,364.0,0,progressive disease
+S0350,ARM1,TTR,56.0,0,first response
+S0351,ARM1,PFS,817.7,0,death
+S0351,ARM1,OS,817.7,0,death
+S0351,ARM1,TTP,812.0,1,censored at last adequate tumour assessment
+S0351,ARM1,DOR,761.7,0,death
+S0351,ARM1,TTR,56.0,0,first response
+S0353,ARM1,PFS,698.3,0,death
+S0353,ARM1,OS,698.3,0,death
+S0353,ARM1,TTP,672.0,1,censored at last adequate tumour assessment
+S0353,ARM1,DOR,642.3,0,death
+S0353,ARM1,TTR,56.0,0,first response
+S0355,ARM1,PFS,422.0,0,death
+S0355,ARM1,OS,422.0,0,death
+S0355,ARM1,TTP,420.0,1,censored at last adequate tumour assessment
+S0355,ARM1,DOR,366.0,0,death
+S0355,ARM1,TTR,56.0,0,first response
+S0358,ARM1,PFS,84.0,0,progressive disease
+S0358,ARM1,OS,1406.2,0,death
+S0358,ARM1,TTP,84.0,0,progressive disease
+S0360,ARM1,PFS,840.0,0,progressive disease
+S0360,ARM1,OS,2333.3,1,censored at last contact
+S0360,ARM1,TTP,840.0,0,progressive disease
+S0360,ARM1,DOR,784.0,0,progressive disease
+S0360,ARM1,TTR,56.0,0,first response
+S0361,ARM1,PFS,2156.0,0,progressive disease
+S0361,ARM1,OS,2199.0,0,death
+S0361,ARM1,TTP,2156.0,0,progressive disease
+S0363,ARM1,PFS,1204.0,0,progressive disease
+S0363,ARM1,OS,1419.6,0,death
+S0363,ARM1,TTP,1204.0,0,progressive disease
+S0363,ARM1,DOR,1148.0,0,progressive disease
+S0363,ARM1,TTR,56.0,0,first response
+S0365,ARM1,PFS,1868.7,0,death
+S0365,ARM1,OS,1868.7,0,death
+S0365,ARM1,TTP,1848.0,1,censored at last adequate tumour assessment
+S0365,ARM1,DOR,1812.7,0,death
+S0365,ARM1,TTR,56.0,0,first response
+S0366,ARM1,PFS,1932.0,0,progressive disease
+S0366,ARM1,OS,2314.6,1,censored at last contact
+S0366,ARM1,TTP,1932.0,0,progressive disease
+S0369,ARM1,PFS,56.0,0,progressive disease
+S0369,ARM1,OS,280.0,0,death
+S0369,ARM1,TTP,56.0,0,progressive disease
+S0370,ARM1,PFS,224.0,0,progressive disease
+S0370,ARM1,OS,834.6,0,death
+S0370,ARM1,TTP,224.0,0,progressive disease
+S0372,ARM1,PFS,2268.0,1,censored at last adequate tumour assessment
+S0372,ARM1,OS,2275.8,1,censored at last contact
+S0372,ARM1,TTP,2268.0,1,censored at last adequate tumour assessment
+S0372,ARM1,DOR,2212.0,1,censored at last adequate tumour assessment
+S0372,ARM1,TTR,56.0,0,first response
+S0373,ARM1,PFS,430.0,0,death
+S0373,ARM1,OS,430.0,0,death
+S0373,ARM1,TTP,420.0,1,censored at last adequate tumour assessment
+S0373,ARM1,DOR,374.0,0,death
+S0373,ARM1,TTR,56.0,0,first response
+S0374,ARM1,PFS,2268.0,1,censored at last adequate tumour assessment
+S0374,ARM1,OS,2269.2,1,censored at last contact
+S0374,ARM1,TTP,2268.0,1,censored at last adequate tumour assessment
+S0374,ARM1,DOR,2212.0,1,censored at last adequate tumour assessment
+S0374,ARM1,TTR,56.0,0,first response
+S0377,ARM1,PFS,1591.6,0,death
+S0377,ARM1,OS,1591.6,0,death
+S0377,ARM1,TTP,1568.0,1,censored at last adequate tumour assessment
+S0377,ARM1,DOR,1535.6,0,death
+S0377,ARM1,TTR,56.0,0,first response
+S0379,ARM1,PFS,560.0,0,progressive disease
+S0379,ARM1,OS,991.3,0,death
+S0379,ARM1,TTP,560.0,0,progressive disease
+S0379,ARM1,DOR,504.0,0,progressive disease
+S0379,ARM1,TTR,56.0,0,first response
+S0380,ARM1,PFS,1750.2,0,death
+S0380,ARM1,OS,1750.2,0,death
+S0380,ARM1,TTP,1736.0,1,censored at last adequate tumour assessment
+S0380,ARM1,DOR,1694.2,0,death
+S0380,ARM1,TTR,56.0,0,first response
+S0382,ARM1,PFS,840.0,0,progressive disease
+S0382,ARM1,OS,2235.5,1,censored at last contact
+S0382,ARM1,TTP,840.0,0,progressive disease
+S0382,ARM1,DOR,784.0,0,progressive disease
+S0382,ARM1,TTR,56.0,0,first response
+S0384,ARM1,PFS,28.0,1,censored at last adequate tumour assessment
+S0384,ARM1,OS,55.0,1,censored at last contact
+S0384,ARM1,TTP,28.0,1,censored at last adequate tumour assessment
+S0385,ARM1,PFS,56.0,0,progressive disease
+S0385,ARM1,OS,1177.4,0,death
+S0385,ARM1,TTP,56.0,0,progressive disease
+S0386,ARM1,PFS,252.0,0,progressive disease
+S0386,ARM1,OS,2221.0,1,censored at last contact
+S0386,ARM1,TTP,252.0,0,progressive disease
+S0388,ARM1,PFS,28.0,0,progressive disease
+S0388,ARM1,OS,285.4,0,death
+S0388,ARM1,TTP,28.0,0,progressive disease
+S0392,ARM1,PFS,112.0,0,progressive disease
+S0392,ARM1,OS,575.4,0,death
+S0392,ARM1,TTP,112.0,0,progressive disease
+S0392,ARM1,DOR,56.0,0,progressive disease
+S0392,ARM1,TTR,56.0,0,first response
+S0393,ARM1,PFS,28.0,0,progressive disease
+S0393,ARM1,OS,1269.5,0,death
+S0393,ARM1,TTP,28.0,0,progressive disease
+S0394,ARM1,PFS,560.0,0,progressive disease
+S0394,ARM1,OS,650.5,0,death
+S0394,ARM1,TTP,560.0,0,progressive disease
+S0394,ARM1,DOR,504.0,0,progressive disease
+S0394,ARM1,TTR,56.0,0,first response
+S0395,ARM1,PFS,280.0,1,censored at last adequate tumour assessment
+S0395,ARM1,OS,291.0,1,censored at last contact
+S0395,ARM1,TTP,280.0,1,censored at last adequate tumour assessment
+S0395,ARM1,DOR,224.0,1,censored at last adequate tumour assessment
+S0395,ARM1,TTR,56.0,0,first response
+S0398,ARM1,PFS,1792.0,0,progressive disease
+S0398,ARM1,OS,2122.0,1,censored at last contact
+S0398,ARM1,TTP,1792.0,0,progressive disease
+S0400,ARM1,PFS,84.0,0,progressive disease
+S0400,ARM1,OS,606.4,0,death
+S0400,ARM1,TTP,84.0,0,progressive disease
+S0401,ARM1,PFS,2100.0,1,censored at last adequate tumour assessment
+S0401,ARM1,OS,2109.4,1,censored at last contact
+S0401,ARM1,TTP,2100.0,1,censored at last adequate tumour assessment
+S0401,ARM1,DOR,2044.0,1,censored at last adequate tumour assessment
+S0401,ARM1,TTR,56.0,0,first response
+S0405,ARM1,PFS,12.0,0,death
+S0405,ARM1,OS,12.0,0,death
+S0405,ARM1,TTP,0.0,1,censored at last adequate tumour assessment
+S0406,ARM1,PFS,2072.0,1,censored at last adequate tumour assessment
+S0406,ARM1,OS,2088.2,1,censored at last contact
+S0406,ARM1,TTP,2072.0,1,censored at last adequate tumour assessment
+S0408,ARM1,PFS,84.0,0,progressive disease
+S0408,ARM1,OS,2078.4,1,censored at last contact
+S0408,ARM1,TTP,84.0,0,progressive disease
+S0410,ARM1,PFS,1659.6,0,death
+S0410,ARM1,OS,1659.6,0,death
+S0410,ARM1,TTP,1652.0,1,censored at last adequate tumour assessment
+S0410,ARM1,DOR,1603.6,0,death
+S0410,ARM1,TTR,56.0,0,first response
+S0411,ARM1,PFS,2072.0,1,censored at last adequate tumour assessment
+S0411,ARM1,OS,2072.6,1,censored at last contact
+S0411,ARM1,TTP,2072.0,1,censored at last adequate tumour assessment
+S0411,ARM1,DOR,2016.0,1,censored at last adequate tumour assessment
+S0411,ARM1,TTR,56.0,0,first response
+S0412,ARM1,PFS,666.0,0,death
+S0412,ARM1,OS,666.0,0,death
+S0412,ARM1,TTP,644.0,1,censored at last adequate tumour assessment
+S0412,ARM1,DOR,610.0,0,death
+S0412,ARM1,TTR,56.0,0,first response
+S0417,ARM1,PFS,2044.0,1,censored at last adequate tumour assessment
+S0417,ARM1,OS,2059.8,1,censored at last contact
+S0417,ARM1,TTP,2044.0,1,censored at last adequate tumour assessment
+S0417,ARM1,DOR,1988.0,1,censored at last adequate tumour assessment
+S0417,ARM1,TTR,56.0,0,first response
+S0419,ARM1,PFS,784.0,0,progressive disease
+S0419,ARM1,OS,849.7,0,death
+S0419,ARM1,TTP,784.0,0,progressive disease
+S0419,ARM1,DOR,728.0,0,progressive disease
+S0419,ARM1,TTR,56.0,0,first response
+S0420,ARM1,PFS,2044.0,1,censored at last adequate tumour assessment
+S0420,ARM1,OS,2051.1,1,censored at last contact
+S0420,ARM1,TTP,2044.0,1,censored at last adequate tumour assessment
+S0420,ARM1,DOR,1988.0,1,censored at last adequate tumour assessment
+S0420,ARM1,TTR,56.0,0,first response
+S0421,ARM1,PFS,2016.0,1,censored at last adequate tumour assessment
+S0421,ARM1,OS,2037.2,1,censored at last contact
+S0421,ARM1,TTP,2016.0,1,censored at last adequate tumour assessment
+S0422,ARM1,PFS,1232.0,0,progressive disease
+S0422,ARM1,OS,1987.0,0,death
+S0422,ARM1,TTP,1232.0,0,progressive disease
+S0422,ARM1,DOR,1176.0,0,progressive disease
+S0422,ARM1,TTR,56.0,0,first response
+S0425,ARM1,PFS,56.0,0,progressive disease
+S0425,ARM1,OS,549.4,0,death
+S0425,ARM1,TTP,56.0,0,progressive disease
+S0426,ARM1,PFS,1260.0,0,progressive disease
+S0426,ARM1,OS,1289.5,0,death
+S0426,ARM1,TTP,1260.0,0,progressive disease
+S0426,ARM1,DOR,1204.0,0,progressive disease
+S0426,ARM1,TTR,56.0,0,first response
+S0427,ARM1,PFS,168.0,0,progressive disease
+S0427,ARM1,OS,1370.3,0,death
+S0427,ARM1,TTP,168.0,0,progressive disease
+S0427,ARM1,DOR,112.0,0,progressive disease
+S0427,ARM1,TTR,56.0,0,first response
+S0429,ARM1,PFS,1960.0,1,censored at last adequate tumour assessment
+S0429,ARM1,OS,1965.6,1,censored at last contact
+S0429,ARM1,TTP,1960.0,1,censored at last adequate tumour assessment
+S0429,ARM1,DOR,1904.0,1,censored at last adequate tumour assessment
+S0429,ARM1,TTR,56.0,0,first response
+S0434,ARM1,PFS,84.0,0,progressive disease
+S0434,ARM1,OS,1101.5,0,death
+S0434,ARM1,TTP,84.0,0,progressive disease
+S0435,ARM1,PFS,1664.3,0,death
+S0435,ARM1,OS,1664.3,0,death
+S0435,ARM1,TTP,1652.0,1,censored at last adequate tumour assessment
+S0435,ARM1,DOR,1608.3,0,death
+S0435,ARM1,TTR,56.0,0,first response
+S0440,ARM1,PFS,28.0,0,progressive disease
+S0440,ARM1,OS,894.0,0,death
+S0440,ARM1,TTP,28.0,0,progressive disease
+S0441,ARM1,PFS,1876.0,1,censored at last adequate tumour assessment
+S0441,ARM1,OS,1896.1,1,censored at last contact
+S0441,ARM1,TTP,1876.0,1,censored at last adequate tumour assessment
+S0441,ARM1,DOR,1820.0,1,censored at last adequate tumour assessment
+S0441,ARM1,TTR,56.0,0,first response
+S0444,ARM1,PFS,433.0,0,death
+S0444,ARM1,OS,433.0,0,death
+S0444,ARM1,TTP,420.0,1,censored at last adequate tumour assessment
+S0444,ARM1,DOR,377.0,0,death
+S0444,ARM1,TTR,56.0,0,first response
+S0445,ARM1,PFS,1876.0,1,censored at last adequate tumour assessment
+S0445,ARM1,OS,1887.5,1,censored at last contact
+S0445,ARM1,TTP,1876.0,1,censored at last adequate tumour assessment
+S0445,ARM1,DOR,1820.0,1,censored at last adequate tumour assessment
+S0445,ARM1,TTR,56.0,0,first response
+S0447,ARM1,PFS,1876.0,1,censored at last adequate tumour assessment
+S0447,ARM1,OS,1884.3,1,censored at last contact
+S0447,ARM1,TTP,1876.0,1,censored at last adequate tumour assessment
+S0447,ARM1,DOR,1820.0,1,censored at last adequate tumour assessment
+S0447,ARM1,TTR,56.0,0,first response
+S0449,ARM1,PFS,224.0,0,progressive disease
+S0449,ARM1,OS,1659.7,0,death
+S0449,ARM1,TTP,224.0,0,progressive disease
+S0449,ARM1,DOR,168.0,0,progressive disease
+S0449,ARM1,TTR,56.0,0,first response
+S0450,ARM1,PFS,280.0,0,progressive disease
+S0450,ARM1,OS,341.0,0,death
+S0450,ARM1,TTP,280.0,0,progressive disease
+S0451,ARM1,PFS,56.0,0,progressive disease
+S0451,ARM1,OS,297.4,0,death
+S0451,ARM1,TTP,56.0,0,progressive disease
+S0452,ARM1,PFS,338.0,0,death
+S0452,ARM1,OS,338.0,0,death
+S0452,ARM1,TTP,336.0,1,censored at last adequate tumour assessment
+S0452,ARM1,DOR,282.0,0,death
+S0452,ARM1,TTR,56.0,0,first response
+S0453,ARM1,PFS,377.4,0,death
+S0453,ARM1,OS,377.4,0,death
+S0453,ARM1,TTP,364.0,1,censored at last adequate tumour assessment
+S0453,ARM1,DOR,321.4,0,death
+S0453,ARM1,TTR,56.0,0,first response
+S0454,ARM1,PFS,896.0,0,progressive disease
+S0454,ARM1,OS,1250.8,0,death
+S0454,ARM1,TTP,896.0,0,progressive disease
+S0454,ARM1,DOR,840.0,0,progressive disease
+S0454,ARM1,TTR,56.0,0,first response
+S0455,ARM1,PFS,364.0,0,progressive disease
+S0455,ARM1,OS,622.2,0,death
+S0455,ARM1,TTP,364.0,0,progressive disease
+S0457,ARM1,PFS,1820.0,1,censored at last adequate tumour assessment
+S0457,ARM1,OS,1839.3,1,censored at last contact
+S0457,ARM1,TTP,1820.0,1,censored at last adequate tumour assessment
+S0457,ARM1,DOR,1764.0,1,censored at last adequate tumour assessment
+S0457,ARM1,TTR,56.0,0,first response
+S0460,ARM1,PFS,84.0,0,progressive disease
+S0460,ARM1,OS,536.0,0,death
+S0460,ARM1,TTP,84.0,0,progressive disease
+S0001,ARM2,PFS,720.6,0,death
+S0001,ARM2,OS,720.6,0,death
+S0001,ARM2,TTP,700.0,1,censored at last adequate tumour assessment
+S0001,ARM2,DOR,664.6,0,death
+S0001,ARM2,TTR,56.0,0,first response
+S0002,ARM2,PFS,28.0,0,progressive disease
+S0002,ARM2,OS,176.9,0,death
+S0002,ARM2,TTP,28.0,0,progressive disease
+S0004,ARM2,PFS,328.0,0,death
+S0004,ARM2,OS,328.0,0,death
+S0004,ARM2,TTP,308.0,1,censored at last adequate tumour assessment
+S0004,ARM2,DOR,272.0,0,death
+S0004,ARM2,TTR,56.0,0,first response
+S0009,ARM2,PFS,658.1,0,death
+S0009,ARM2,OS,658.1,0,death
+S0009,ARM2,TTP,644.0,1,censored at last adequate tumour assessment
+S0009,ARM2,DOR,602.1,0,death
+S0009,ARM2,TTR,56.0,0,first response
+S0010,ARM2,PFS,2324.0,0,progressive disease
+S0010,ARM2,OS,4217.9,1,censored at last contact
+S0010,ARM2,TTP,2324.0,0,progressive disease
+S0010,ARM2,DOR,2268.0,0,progressive disease
+S0010,ARM2,TTR,56.0,0,first response
+S0011,ARM2,PFS,2119.8,0,death
+S0011,ARM2,OS,2119.8,0,death
+S0011,ARM2,TTP,2100.0,1,censored at last adequate tumour assessment
+S0011,ARM2,DOR,2063.8,0,death
+S0011,ARM2,TTR,56.0,0,first response
+S0017,ARM2,PFS,1711.2,0,death
+S0017,ARM2,OS,1711.2,0,death
+S0017,ARM2,TTP,1708.0,1,censored at last adequate tumour assessment
+S0017,ARM2,DOR,1655.2,0,death
+S0017,ARM2,TTR,56.0,0,first response
+S0020,ARM2,PFS,1398.5,0,death
+S0020,ARM2,OS,1398.5,0,death
+S0020,ARM2,TTP,1372.0,1,censored at last adequate tumour assessment
+S0020,ARM2,DOR,1342.5,0,death
+S0020,ARM2,TTR,56.0,0,first response
+S0021,ARM2,PFS,224.0,0,progressive disease
+S0021,ARM2,OS,2142.3,0,death
+S0021,ARM2,TTP,224.0,0,progressive disease
+S0021,ARM2,DOR,168.0,0,progressive disease
+S0021,ARM2,TTR,56.0,0,first response
+S0022,ARM2,PFS,1667.1,0,death
+S0022,ARM2,OS,1667.1,0,death
+S0022,ARM2,TTP,1652.0,1,censored at last adequate tumour assessment
+S0022,ARM2,DOR,1611.1,0,death
+S0022,ARM2,TTR,56.0,0,first response
+S0024,ARM2,PFS,585.8,0,death
+S0024,ARM2,OS,585.8,0,death
+S0024,ARM2,TTP,560.0,1,censored at last adequate tumour assessment
+S0024,ARM2,DOR,529.8,0,death
+S0024,ARM2,TTR,56.0,0,first response
+S0025,ARM2,PFS,4144.0,1,censored at last adequate tumour assessment
+S0025,ARM2,OS,4153.4,1,censored at last contact
+S0025,ARM2,TTP,4144.0,1,censored at last adequate tumour assessment
+S0025,ARM2,DOR,4088.0,1,censored at last adequate tumour assessment
+S0025,ARM2,TTR,56.0,0,first response
+S0026,ARM2,PFS,4144.0,1,censored at last adequate tumour assessment
+S0026,ARM2,OS,4152.6,1,censored at last contact
+S0026,ARM2,TTP,4144.0,1,censored at last adequate tumour assessment
+S0026,ARM2,DOR,4088.0,1,censored at last adequate tumour assessment
+S0026,ARM2,TTR,56.0,0,first response
+S0031,ARM2,PFS,896.0,0,progressive disease
+S0031,ARM2,OS,3534.1,0,death
+S0031,ARM2,TTP,896.0,0,progressive disease
+S0031,ARM2,DOR,840.0,0,progressive disease
+S0031,ARM2,TTR,56.0,0,first response
+S0032,ARM2,PFS,1568.0,0,progressive disease
+S0032,ARM2,OS,1980.3,0,death
+S0032,ARM2,TTP,1568.0,0,progressive disease
+S0033,ARM2,PFS,2537.0,0,death
+S0033,ARM2,OS,2537.0,0,death
+S0033,ARM2,TTP,2520.0,1,censored at last adequate tumour assessment
+S0033,ARM2,DOR,2481.0,0,death
+S0033,ARM2,TTR,56.0,0,first response
+S0035,ARM2,PFS,1568.0,0,progressive disease
+S0035,ARM2,OS,2032.3,0,death
+S0035,ARM2,TTP,1568.0,0,progressive disease
+S0035,ARM2,DOR,1512.0,0,progressive disease
+S0035,ARM2,TTR,56.0,0,first response
+S0036,ARM2,PFS,728.0,0,progressive disease
+S0036,ARM2,OS,4094.1,1,censored at last contact
+S0036,ARM2,TTP,728.0,0,progressive disease
+S0036,ARM2,DOR,672.0,0,progressive disease
+S0036,ARM2,TTR,56.0,0,first response
+S0037,ARM2,PFS,4088.0,1,censored at last adequate tumour assessment
+S0037,ARM2,OS,4088.0,1,censored at last contact
+S0037,ARM2,TTP,4088.0,1,censored at last adequate tumour assessment
+S0037,ARM2,DOR,4032.0,1,censored at last adequate tumour assessment
+S0037,ARM2,TTR,56.0,0,first response
+S0040,ARM2,PFS,56.0,1,censored at last adequate tumour assessment
+S0040,ARM2,OS,579.2,0,death
+S0040,ARM2,TTP,56.0,1,censored at last adequate tumour assessment
+S0042,ARM2,PFS,448.0,0,progressive disease
+S0042,ARM2,OS,1022.2,0,death
+S0042,ARM2,TTP,448.0,0,progressive disease
+S0042,ARM2,DOR,392.0,0,progressive disease
+S0042,ARM2,TTR,56.0,0,first response
+S0043,ARM2,PFS,84.0,0,progressive disease
+S0043,ARM2,OS,2244.1,0,death
+S0043,ARM2,TTP,84.0,0,progressive disease
+S0045,ARM2,PFS,515.0,0,death
+S0045,ARM2,OS,515.0,0,death
+S0045,ARM2,TTP,504.0,1,censored at last adequate tumour assessment
+S0045,ARM2,DOR,459.0,0,death
+S0045,ARM2,TTR,56.0,0,first response
+S0046,ARM2,PFS,2456.2,0,death
+S0046,ARM2,OS,2456.2,0,death
+S0046,ARM2,TTP,2436.0,1,censored at last adequate tumour assessment
+S0046,ARM2,DOR,2400.2,0,death
+S0046,ARM2,TTR,56.0,0,first response
+S0051,ARM2,PFS,588.0,0,progressive disease
+S0051,ARM2,OS,970.2,0,death
+S0051,ARM2,TTP,588.0,0,progressive disease
+S0051,ARM2,DOR,532.0,0,progressive disease
+S0051,ARM2,TTR,56.0,0,first response
+S0052,ARM2,PFS,2616.8,0,death
+S0052,ARM2,OS,2616.8,0,death
+S0052,ARM2,TTP,2604.0,1,censored at last adequate tumour assessment
+S0052,ARM2,DOR,2560.8,0,death
+S0052,ARM2,TTR,56.0,0,first response
+S0054,ARM2,PFS,222.7,0,death
+S0054,ARM2,OS,222.7,0,death
+S0054,ARM2,TTP,196.0,1,censored at last adequate tumour assessment
+S0054,ARM2,DOR,166.7,0,death
+S0054,ARM2,TTR,56.0,0,first response
+S0055,ARM2,PFS,56.0,0,progressive disease
+S0055,ARM2,OS,699.8,0,death
+S0055,ARM2,TTP,56.0,0,progressive disease
+S0057,ARM2,PFS,3948.0,1,censored at last adequate tumour assessment
+S0057,ARM2,OS,3957.5,1,censored at last contact
+S0057,ARM2,TTP,3948.0,1,censored at last adequate tumour assessment
+S0057,ARM2,DOR,3892.0,1,censored at last adequate tumour assessment
+S0057,ARM2,TTR,56.0,0,first response
+S0059,ARM2,PFS,1204.0,0,progressive disease
+S0059,ARM2,OS,1208.9,0,death
+S0059,ARM2,TTP,1204.0,0,progressive disease
+S0059,ARM2,DOR,1148.0,0,progressive disease
+S0059,ARM2,TTR,56.0,0,first response
+S0060,ARM2,PFS,532.0,0,progressive disease
+S0060,ARM2,OS,1496.9,0,death
+S0060,ARM2,TTP,532.0,0,progressive disease
+S0060,ARM2,DOR,476.0,0,progressive disease
+S0060,ARM2,TTR,56.0,0,first response
+S0061,ARM2,PFS,28.0,0,progressive disease
+S0061,ARM2,OS,3050.9,0,death
+S0061,ARM2,TTP,28.0,0,progressive disease
+S0062,ARM2,PFS,588.0,0,progressive disease
+S0062,ARM2,OS,1010.3,0,death
+S0062,ARM2,TTP,588.0,0,progressive disease
+S0066,ARM2,PFS,2318.6,0,death
+S0066,ARM2,OS,2318.6,0,death
+S0066,ARM2,TTP,2296.0,1,censored at last adequate tumour assessment
+S0066,ARM2,DOR,2262.6,0,death
+S0066,ARM2,TTR,56.0,0,first response
+S0067,ARM2,PFS,743.4,0,death
+S0067,ARM2,OS,743.4,0,death
+S0067,ARM2,TTP,728.0,1,censored at last adequate tumour assessment
+S0067,ARM2,DOR,687.4,0,death
+S0067,ARM2,TTR,56.0,0,first response
+S0068,ARM2,PFS,2296.4,0,death
+S0068,ARM2,OS,2296.4,0,death
+S0068,ARM2,TTP,2296.0,1,censored at last adequate tumour assessment
+S0068,ARM2,DOR,2240.4,0,death
+S0068,ARM2,TTR,56.0,0,first response
+S0069,ARM2,PFS,489.8,0,death
+S0069,ARM2,OS,489.8,0,death
+S0069,ARM2,TTP,476.0,1,censored at last adequate tumour assessment
+S0069,ARM2,DOR,433.8,0,death
+S0069,ARM2,TTR,56.0,0,first response
+S0070,ARM2,PFS,0.0,1,censored at last adequate tumour assessment
+S0070,ARM2,OS,332.3,0,death
+S0070,ARM2,TTP,0.0,1,censored at last adequate tumour assessment
+S0071,ARM2,PFS,543.0,0,death
+S0071,ARM2,OS,543.0,0,death
+S0071,ARM2,TTP,532.0,1,censored at last adequate tumour assessment
+S0071,ARM2,DOR,487.0,0,death
+S0071,ARM2,TTR,56.0,0,first response
+S0072,ARM2,PFS,2259.1,0,death
+S0072,ARM2,OS,2259.1,0,death
+S0072,ARM2,TTP,2240.0,1,censored at last adequate tumour assessment
+S0072,ARM2,DOR,2203.1,0,death
+S0072,ARM2,TTR,56.0,0,first response
+S0074,ARM2,PFS,3696.0,0,progressive disease
+S0074,ARM2,OS,3890.8,1,censored at last contact
+S0074,ARM2,TTP,3696.0,0,progressive disease
+S0074,ARM2,DOR,3640.0,0,progressive disease
+S0074,ARM2,TTR,56.0,0,first response
+S0076,ARM2,PFS,1456.0,0,progressive disease
+S0076,ARM2,OS,1769.0,0,death
+S0076,ARM2,TTP,1456.0,0,progressive disease
+S0076,ARM2,DOR,1400.0,0,progressive disease
+S0076,ARM2,TTR,56.0,0,first response
+S0077,ARM2,PFS,1092.0,0,progressive disease
+S0077,ARM2,OS,2546.5,0,death
+S0077,ARM2,TTP,1092.0,0,progressive disease
+S0077,ARM2,DOR,1036.0,0,progressive disease
+S0077,ARM2,TTR,56.0,0,first response
+S0081,ARM2,PFS,1150.4,0,death
+S0081,ARM2,OS,1150.4,0,death
+S0081,ARM2,TTP,1148.0,1,censored at last adequate tumour assessment
+S0081,ARM2,DOR,1094.4,0,death
+S0081,ARM2,TTR,56.0,0,first response
+S0082,ARM2,PFS,3829.4,0,death
+S0082,ARM2,OS,3829.4,0,death
+S0082,ARM2,TTP,3808.0,1,censored at last adequate tumour assessment
+S0082,ARM2,DOR,3773.4,0,death
+S0082,ARM2,TTR,56.0,0,first response
+S0085,ARM2,PFS,649.6,0,death
+S0085,ARM2,OS,649.6,0,death
+S0085,ARM2,TTP,644.0,1,censored at last adequate tumour assessment
+S0085,ARM2,DOR,593.6,0,death
+S0085,ARM2,TTR,56.0,0,first response
+S0087,ARM2,PFS,196.0,1,censored at last adequate tumour assessment
+S0087,ARM2,OS,1424.7,0,death
+S0087,ARM2,TTP,196.0,1,censored at last adequate tumour assessment
+S0087,ARM2,DOR,140.0,1,censored at last adequate tumour assessment
+S0087,ARM2,TTR,56.0,0,first response
+S0089,ARM2,PFS,275.6,0,death
+S0089,ARM2,OS,275.6,0,death
+S0089,ARM2,TTP,252.0,1,censored at last adequate tumour assessment
+S0089,ARM2,DOR,219.6,0,death
+S0089,ARM2,TTR,56.0,0,first response
+S0090,ARM2,PFS,1176.0,0,progressive disease
+S0090,ARM2,OS,2969.4,0,death
+S0090,ARM2,TTP,1176.0,0,progressive disease
+S0090,ARM2,DOR,1120.0,0,progressive disease
+S0090,ARM2,TTR,56.0,0,first response
+S0091,ARM2,PFS,1596.0,0,progressive disease
+S0091,ARM2,OS,1723.0,0,death
+S0091,ARM2,TTP,1596.0,0,progressive disease
+S0091,ARM2,DOR,1540.0,0,progressive disease
+S0091,ARM2,TTR,56.0,0,first response
+S0093,ARM2,PFS,280.0,0,progressive disease
+S0093,ARM2,OS,766.0,0,death
+S0093,ARM2,TTP,280.0,0,progressive disease
+S0093,ARM2,DOR,224.0,0,progressive disease
+S0093,ARM2,TTR,56.0,0,first response
+S0094,ARM2,PFS,616.0,0,progressive disease
+S0094,ARM2,OS,1527.6,0,death
+S0094,ARM2,TTP,616.0,0,progressive disease
+S0095,ARM2,PFS,2751.3,0,death
+S0095,ARM2,OS,2751.3,0,death
+S0095,ARM2,TTP,2744.0,1,censored at last adequate tumour assessment
+S0095,ARM2,DOR,2695.3,0,death
+S0095,ARM2,TTR,56.0,0,first response
+S0098,ARM2,PFS,112.0,1,censored at last adequate tumour assessment
+S0098,ARM2,OS,1223.5,0,death
+S0098,ARM2,TTP,112.0,1,censored at last adequate tumour assessment
+S0098,ARM2,DOR,56.0,1,censored at last adequate tumour assessment
+S0098,ARM2,TTR,56.0,0,first response
+S0099,ARM2,PFS,841.6,0,death
+S0099,ARM2,OS,841.6,0,death
+S0099,ARM2,TTP,840.0,1,censored at last adequate tumour assessment
+S0099,ARM2,DOR,785.6,0,death
+S0099,ARM2,TTR,56.0,0,first response
+S0101,ARM2,PFS,840.0,0,progressive disease
+S0101,ARM2,OS,1141.1,0,death
+S0101,ARM2,TTP,840.0,0,progressive disease
+S0101,ARM2,DOR,784.0,0,progressive disease
+S0101,ARM2,TTR,56.0,0,first response
+S0102,ARM2,PFS,28.0,1,censored at last adequate tumour assessment
+S0102,ARM2,OS,892.2,0,death
+S0102,ARM2,TTP,28.0,1,censored at last adequate tumour assessment
+S0104,ARM2,PFS,1792.0,0,progressive disease
+S0104,ARM2,OS,2455.2,0,death
+S0104,ARM2,TTP,1792.0,0,progressive disease
+S0104,ARM2,DOR,1736.0,0,progressive disease
+S0104,ARM2,TTR,56.0,0,first response
+S0106,ARM2,PFS,1876.0,0,progressive disease
+S0106,ARM2,OS,1947.0,0,death
+S0106,ARM2,TTP,1876.0,0,progressive disease
+S0106,ARM2,DOR,1820.0,0,progressive disease
+S0106,ARM2,TTR,56.0,0,first response
+S0107,ARM2,PFS,532.0,0,progressive disease
+S0107,ARM2,OS,1225.0,0,death
+S0107,ARM2,TTP,532.0,0,progressive disease
+S0109,ARM2,PFS,1197.4,0,death
+S0109,ARM2,OS,1197.4,0,death
+S0109,ARM2,TTP,1176.0,1,censored at last adequate tumour assessment
+S0109,ARM2,DOR,1141.4,0,death
+S0109,ARM2,TTR,56.0,0,first response
+S0110,ARM2,PFS,364.0,0,progressive disease
+S0110,ARM2,OS,2671.6,0,death
+S0110,ARM2,TTP,364.0,0,progressive disease
+S0112,ARM2,PFS,2372.5,0,death
+S0112,ARM2,OS,2372.5,0,death
+S0112,ARM2,TTP,2352.0,1,censored at last adequate tumour assessment
+S0112,ARM2,DOR,2316.5,0,death
+S0112,ARM2,TTR,56.0,0,first response
+S0114,ARM2,PFS,3514.2,0,death
+S0114,ARM2,OS,3514.2,0,death
+S0114,ARM2,TTP,3500.0,1,censored at last adequate tumour assessment
+S0114,ARM2,DOR,3458.2,0,death
+S0114,ARM2,TTR,56.0,0,first response
+S0118,ARM2,PFS,140.0,0,progressive disease
+S0118,ARM2,OS,1758.8,0,death
+S0118,ARM2,TTP,140.0,0,progressive disease
+S0118,ARM2,DOR,84.0,0,progressive disease
+S0118,ARM2,TTR,56.0,0,first response
+S0119,ARM2,PFS,2935.8,0,death
+S0119,ARM2,OS,2935.8,0,death
+S0119,ARM2,TTP,2912.0,1,censored at last adequate tumour assessment
+S0119,ARM2,DOR,2879.8,0,death
+S0119,ARM2,TTR,56.0,0,first response
+S0122,ARM2,PFS,532.0,0,progressive disease
+S0122,ARM2,OS,1431.0,0,death
+S0122,ARM2,TTP,532.0,0,progressive disease
+S0125,ARM2,PFS,1510.9,0,death
+S0125,ARM2,OS,1510.9,0,death
+S0125,ARM2,TTP,1484.0,1,censored at last adequate tumour assessment
+S0125,ARM2,DOR,1454.9,0,death
+S0125,ARM2,TTR,56.0,0,first response
+S0130,ARM2,PFS,1540.0,0,progressive disease
+S0130,ARM2,OS,2146.4,0,death
+S0130,ARM2,TTP,1540.0,0,progressive disease
+S0132,ARM2,PFS,56.0,0,progressive disease
+S0132,ARM2,OS,874.5,0,death
+S0132,ARM2,TTP,56.0,0,progressive disease
+S0135,ARM2,PFS,3500.0,1,censored at last adequate tumour assessment
+S0135,ARM2,OS,3523.6,1,censored at last contact
+S0135,ARM2,TTP,3500.0,1,censored at last adequate tumour assessment
+S0135,ARM2,DOR,3444.0,1,censored at last adequate tumour assessment
+S0135,ARM2,TTR,56.0,0,first response
+S0139,ARM2,PFS,1064.0,0,progressive disease
+S0139,ARM2,OS,1079.1,0,death
+S0139,ARM2,TTP,1064.0,0,progressive disease
+S0139,ARM2,DOR,1008.0,0,progressive disease
+S0139,ARM2,TTR,56.0,0,first response
+S0140,ARM2,PFS,3445.4,0,death
+S0140,ARM2,OS,3445.4,0,death
+S0140,ARM2,TTP,3444.0,1,censored at last adequate tumour assessment
+S0140,ARM2,DOR,3389.4,0,death
+S0140,ARM2,TTR,56.0,0,first response
+S0142,ARM2,PFS,630.7,0,death
+S0142,ARM2,OS,630.7,0,death
+S0142,ARM2,TTP,616.0,1,censored at last adequate tumour assessment
+S0142,ARM2,DOR,574.7,0,death
+S0142,ARM2,TTR,56.0,0,first response
+S0145,ARM2,PFS,2328.0,0,death
+S0145,ARM2,OS,2328.0,0,death
+S0145,ARM2,TTP,2324.0,1,censored at last adequate tumour assessment
+S0145,ARM2,DOR,2272.0,0,death
+S0145,ARM2,TTR,56.0,0,first response
+S0146,ARM2,PFS,2096.3,0,death
+S0146,ARM2,OS,2096.3,0,death
+S0146,ARM2,TTP,2072.0,1,censored at last adequate tumour assessment
+S0146,ARM2,DOR,2040.3,0,death
+S0146,ARM2,TTR,56.0,0,first response
+S0147,ARM2,PFS,2298.5,0,death
+S0147,ARM2,OS,2298.5,0,death
+S0147,ARM2,TTP,2296.0,1,censored at last adequate tumour assessment
+S0147,ARM2,DOR,2242.5,0,death
+S0147,ARM2,TTR,56.0,0,first response
+S0148,ARM2,PFS,744.7,0,death
+S0148,ARM2,OS,744.7,0,death
+S0148,ARM2,TTP,728.0,1,censored at last adequate tumour assessment
+S0148,ARM2,DOR,688.7,0,death
+S0148,ARM2,TTR,56.0,0,first response
+S0150,ARM2,PFS,364.0,0,progressive disease
+S0150,ARM2,OS,553.4,0,death
+S0150,ARM2,TTP,364.0,0,progressive disease
+S0150,ARM2,DOR,308.0,0,progressive disease
+S0150,ARM2,TTR,56.0,0,first response
+S0154,ARM2,PFS,3444.0,1,censored at last adequate tumour assessment
+S0154,ARM2,OS,3455.8,1,censored at last contact
+S0154,ARM2,TTP,3444.0,1,censored at last adequate tumour assessment
+S0154,ARM2,DOR,3388.0,1,censored at last adequate tumour assessment
+S0154,ARM2,TTR,56.0,0,first response
+S0155,ARM2,PFS,336.0,0,progressive disease
+S0155,ARM2,OS,1692.9,0,death
+S0155,ARM2,TTP,336.0,0,progressive disease
+S0160,ARM2,PFS,28.0,0,progressive disease
+S0160,ARM2,OS,1322.9,0,death
+S0160,ARM2,TTP,28.0,0,progressive disease
+S0161,ARM2,PFS,168.0,1,censored at last adequate tumour assessment
+S0161,ARM2,OS,2085.9,0,death
+S0161,ARM2,TTP,168.0,1,censored at last adequate tumour assessment
+S0161,ARM2,DOR,112.0,1,censored at last adequate tumour assessment
+S0161,ARM2,TTR,56.0,0,first response
+S0164,ARM2,PFS,843.5,0,death
+S0164,ARM2,OS,843.5,0,death
+S0164,ARM2,TTP,840.0,1,censored at last adequate tumour assessment
+S0164,ARM2,DOR,787.5,0,death
+S0164,ARM2,TTR,56.0,0,first response
+S0165,ARM2,PFS,1495.8,0,death
+S0165,ARM2,OS,1495.8,0,death
+S0165,ARM2,TTP,1484.0,1,censored at last adequate tumour assessment
+S0165,ARM2,DOR,1439.8,0,death
+S0165,ARM2,TTR,56.0,0,first response
+S0167,ARM2,PFS,1076.2,0,death
+S0167,ARM2,OS,1076.2,0,death
+S0167,ARM2,TTP,1064.0,1,censored at last adequate tumour assessment
+S0167,ARM2,DOR,1020.2,0,death
+S0167,ARM2,TTR,56.0,0,first response
+S0171,ARM2,PFS,411.0,0,death
+S0171,ARM2,OS,411.0,0,death
+S0171,ARM2,TTP,392.0,1,censored at last adequate tumour assessment
+S0171,ARM2,DOR,355.0,0,death
+S0171,ARM2,TTR,56.0,0,first response
+S0176,ARM2,PFS,1114.9,0,death
+S0176,ARM2,OS,1114.9,0,death
+S0176,ARM2,TTP,1092.0,1,censored at last adequate tumour assessment
+S0176,ARM2,DOR,1058.9,0,death
+S0176,ARM2,TTR,56.0,0,first response
+S0177,ARM2,PFS,1508.6,0,death
+S0177,ARM2,OS,1508.6,0,death
+S0177,ARM2,TTP,1484.0,1,censored at last adequate tumour assessment
+S0177,ARM2,DOR,1452.6,0,death
+S0177,ARM2,TTR,56.0,0,first response
+S0178,ARM2,PFS,1737.5,0,death
+S0178,ARM2,OS,1737.5,0,death
+S0178,ARM2,TTP,1736.0,1,censored at last adequate tumour assessment
+S0178,ARM2,DOR,1681.5,0,death
+S0178,ARM2,TTR,56.0,0,first response
+S0182,ARM2,PFS,56.0,0,progressive disease
+S0182,ARM2,OS,429.5,0,death
+S0182,ARM2,TTP,56.0,0,progressive disease
+S0183,ARM2,PFS,1322.3,0,death
+S0183,ARM2,OS,1322.3,0,death
+S0183,ARM2,TTP,1316.0,1,censored at last adequate tumour assessment
+S0183,ARM2,DOR,1266.3,0,death
+S0183,ARM2,TTR,56.0,0,first response
+S0184,ARM2,PFS,280.0,0,progressive disease
+S0184,ARM2,OS,1592.7,0,death
+S0184,ARM2,TTP,280.0,0,progressive disease
+S0186,ARM2,PFS,140.0,0,progressive disease
+S0186,ARM2,OS,1842.7,0,death
+S0186,ARM2,TTP,140.0,0,progressive disease
+S0186,ARM2,DOR,84.0,0,progressive disease
+S0186,ARM2,TTR,56.0,0,first response
+S0187,ARM2,PFS,1853.9,0,death
+S0187,ARM2,OS,1853.9,0,death
+S0187,ARM2,TTP,1848.0,1,censored at last adequate tumour assessment
+S0187,ARM2,DOR,1797.9,0,death
+S0187,ARM2,TTR,56.0,0,first response
+S0188,ARM2,PFS,3220.0,1,censored at last adequate tumour assessment
+S0188,ARM2,OS,3222.1,1,censored at last contact
+S0188,ARM2,TTP,3220.0,1,censored at last adequate tumour assessment
+S0188,ARM2,DOR,3164.0,1,censored at last adequate tumour assessment
+S0188,ARM2,TTR,56.0,0,first response
+S0189,ARM2,PFS,1213.6,0,death
+S0189,ARM2,OS,1213.6,0,death
+S0189,ARM2,TTP,1204.0,1,censored at last adequate tumour assessment
+S0189,ARM2,DOR,1157.6,0,death
+S0189,ARM2,TTR,56.0,0,first response
+S0190,ARM2,PFS,272.3,0,death
+S0190,ARM2,OS,272.3,0,death
+S0190,ARM2,TTP,252.0,1,censored at last adequate tumour assessment
+S0190,ARM2,DOR,216.3,0,death
+S0190,ARM2,TTR,56.0,0,first response
+S0191,ARM2,PFS,812.0,0,progressive disease
+S0191,ARM2,OS,1048.3,0,death
+S0191,ARM2,TTP,812.0,0,progressive disease
+S0191,ARM2,DOR,756.0,0,progressive disease
+S0191,ARM2,TTR,56.0,0,first response
+S0192,ARM2,PFS,2567.0,0,death
+S0192,ARM2,OS,2567.0,0,death
+S0192,ARM2,TTP,2548.0,1,censored at last adequate tumour assessment
+S0192,ARM2,DOR,2511.0,0,death
+S0192,ARM2,TTR,56.0,0,first response
+S0195,ARM2,PFS,2240.0,0,progressive disease
+S0195,ARM2,OS,3177.9,1,censored at last contact
+S0195,ARM2,TTP,2240.0,0,progressive disease
+S0196,ARM2,PFS,3164.0,1,censored at last adequate tumour assessment
+S0196,ARM2,OS,3177.5,1,censored at last contact
+S0196,ARM2,TTP,3164.0,1,censored at last adequate tumour assessment
+S0196,ARM2,DOR,3108.0,1,censored at last adequate tumour assessment
+S0196,ARM2,TTR,56.0,0,first response
+S0197,ARM2,PFS,1680.0,0,progressive disease
+S0197,ARM2,OS,2555.9,0,death
+S0197,ARM2,TTP,1680.0,0,progressive disease
+S0197,ARM2,DOR,1624.0,0,progressive disease
+S0197,ARM2,TTR,56.0,0,first response
+S0198,ARM2,PFS,3164.0,1,censored at last adequate tumour assessment
+S0198,ARM2,OS,3173.9,1,censored at last contact
+S0198,ARM2,TTP,3164.0,1,censored at last adequate tumour assessment
+S0198,ARM2,DOR,3108.0,1,censored at last adequate tumour assessment
+S0198,ARM2,TTR,56.0,0,first response
+S0200,ARM2,PFS,1268.5,0,death
+S0200,ARM2,OS,1268.5,0,death
+S0200,ARM2,TTP,1260.0,1,censored at last adequate tumour assessment
+S0200,ARM2,DOR,1212.5,0,death
+S0200,ARM2,TTR,56.0,0,first response
+S0203,ARM2,PFS,2305.0,0,death
+S0203,ARM2,OS,2305.0,0,death
+S0203,ARM2,TTP,2296.0,1,censored at last adequate tumour assessment
+S0203,ARM2,DOR,2249.0,0,death
+S0203,ARM2,TTR,56.0,0,first response
+S0204,ARM2,PFS,2464.0,0,progressive disease
+S0204,ARM2,OS,2697.1,0,death
+S0204,ARM2,TTP,2464.0,0,progressive disease
+S0205,ARM2,PFS,3136.0,1,censored at last adequate tumour assessment
+S0205,ARM2,OS,3143.3,1,censored at last contact
+S0205,ARM2,TTP,3136.0,1,censored at last adequate tumour assessment
+S0205,ARM2,DOR,3080.0,1,censored at last adequate tumour assessment
+S0205,ARM2,TTR,56.0,0,first response
+S0206,ARM2,PFS,3136.0,1,censored at last adequate tumour assessment
+S0206,ARM2,OS,3136.8,1,censored at last contact
+S0206,ARM2,TTP,3136.0,1,censored at last adequate tumour assessment
+S0206,ARM2,DOR,3080.0,1,censored at last adequate tumour assessment
+S0206,ARM2,TTR,56.0,0,first response
+S0207,ARM2,PFS,967.6,0,death
+S0207,ARM2,OS,967.6,0,death
+S0207,ARM2,TTP,952.0,1,censored at last adequate tumour assessment
+S0207,ARM2,DOR,911.6,0,death
+S0207,ARM2,TTR,56.0,0,first response
+S0213,ARM2,PFS,518.4,0,death
+S0213,ARM2,OS,518.4,0,death
+S0213,ARM2,TTP,504.0,1,censored at last adequate tumour assessment
+S0213,ARM2,DOR,462.4,0,death
+S0213,ARM2,TTR,56.0,0,first response
+S0214,ARM2,PFS,374.0,0,death
+S0214,ARM2,OS,374.0,0,death
+S0214,ARM2,TTP,364.0,1,censored at last adequate tumour assessment
+S0215,ARM2,PFS,3080.0,1,censored at last adequate tumour assessment
+S0215,ARM2,OS,3091.5,1,censored at last contact
+S0215,ARM2,TTP,3080.0,1,censored at last adequate tumour assessment
+S0215,ARM2,DOR,3024.0,1,censored at last adequate tumour assessment
+S0215,ARM2,TTR,56.0,0,first response
+S0218,ARM2,PFS,2408.0,0,progressive disease
+S0218,ARM2,OS,2817.5,0,death
+S0218,ARM2,TTP,2408.0,0,progressive disease
+S0218,ARM2,DOR,2352.0,0,progressive disease
+S0218,ARM2,TTR,56.0,0,first response
+S0222,ARM2,PFS,1840.4,0,death
+S0222,ARM2,OS,1840.4,0,death
+S0222,ARM2,TTP,1820.0,1,censored at last adequate tumour assessment
+S0222,ARM2,DOR,1784.4,0,death
+S0222,ARM2,TTR,56.0,0,first response
+S0223,ARM2,PFS,392.0,0,progressive disease
+S0223,ARM2,OS,1466.5,0,death
+S0223,ARM2,TTP,392.0,0,progressive disease
+S0223,ARM2,DOR,336.0,0,progressive disease
+S0223,ARM2,TTR,56.0,0,first response
+S0224,ARM2,PFS,1346.0,0,death
+S0224,ARM2,OS,1346.0,0,death
+S0224,ARM2,TTP,1344.0,1,censored at last adequate tumour assessment
+S0224,ARM2,DOR,1290.0,0,death
+S0224,ARM2,TTR,56.0,0,first response
+S0226,ARM2,PFS,308.0,0,progressive disease
+S0226,ARM2,OS,521.8,0,death
+S0226,ARM2,TTP,308.0,0,progressive disease
+S0230,ARM2,PFS,560.0,0,progressive disease
+S0230,ARM2,OS,3032.0,1,censored at last contact
+S0230,ARM2,TTP,560.0,0,progressive disease
+S0230,ARM2,DOR,504.0,0,progressive disease
+S0230,ARM2,TTR,56.0,0,first response
+S0231,ARM2,PFS,308.0,0,progressive disease
+S0231,ARM2,OS,859.4,0,death
+S0231,ARM2,TTP,308.0,0,progressive disease
+S0231,ARM2,DOR,252.0,0,progressive disease
+S0231,ARM2,TTR,56.0,0,first response
+S0232,ARM2,PFS,252.0,0,progressive disease
+S0232,ARM2,OS,1172.1,0,death
+S0232,ARM2,TTP,252.0,0,progressive disease
+S0233,ARM2,PFS,2996.0,1,censored at last adequate tumour assessment
+S0233,ARM2,OS,3017.0,1,censored at last contact
+S0233,ARM2,TTP,2996.0,1,censored at last adequate tumour assessment
+S0233,ARM2,DOR,2940.0,1,censored at last adequate tumour assessment
+S0233,ARM2,TTR,56.0,0,first response
+S0234,ARM2,PFS,1219.2,0,death
+S0234,ARM2,OS,1219.2,0,death
+S0234,ARM2,TTP,1204.0,1,censored at last adequate tumour assessment
+S0234,ARM2,DOR,1163.2,0,death
+S0234,ARM2,TTR,56.0,0,first response
+S0235,ARM2,PFS,2075.2,0,death
+S0235,ARM2,OS,2075.2,0,death
+S0235,ARM2,TTP,2072.0,1,censored at last adequate tumour assessment
+S0235,ARM2,DOR,2019.2,0,death
+S0235,ARM2,TTR,56.0,0,first response
+S0236,ARM2,PFS,1616.8,0,death
+S0236,ARM2,OS,1616.8,0,death
+S0236,ARM2,TTP,1596.0,1,censored at last adequate tumour assessment
+S0236,ARM2,DOR,1560.8,0,death
+S0236,ARM2,TTR,56.0,0,first response
+S0237,ARM2,PFS,2996.0,1,censored at last adequate tumour assessment
+S0237,ARM2,OS,2996.9,1,censored at last contact
+S0237,ARM2,TTP,2996.0,1,censored at last adequate tumour assessment
+S0237,ARM2,DOR,2940.0,1,censored at last adequate tumour assessment
+S0237,ARM2,TTR,56.0,0,first response
+S0238,ARM2,PFS,1500.7,0,death
+S0238,ARM2,OS,1500.7,0,death
+S0238,ARM2,TTP,1484.0,1,censored at last adequate tumour assessment
+S0238,ARM2,DOR,1444.7,0,death
+S0238,ARM2,TTR,56.0,0,first response
+S0243,ARM2,PFS,2940.0,1,censored at last adequate tumour assessment
+S0243,ARM2,OS,2967.9,1,censored at last contact
+S0243,ARM2,TTP,2940.0,1,censored at last adequate tumour assessment
+S0243,ARM2,DOR,2884.0,1,censored at last adequate tumour assessment
+S0243,ARM2,TTR,56.0,0,first response
+S0244,ARM2,PFS,1788.1,0,death
+S0244,ARM2,OS,1788.1,0,death
+S0244,ARM2,TTP,1764.0,1,censored at last adequate tumour assessment
+S0244,ARM2,DOR,1732.1,0,death
+S0244,ARM2,TTR,56.0,0,first response
+S0245,ARM2,PFS,1732.7,0,death
+S0245,ARM2,OS,1732.7,0,death
+S0245,ARM2,TTP,1708.0,1,censored at last adequate tumour assessment
+S0245,ARM2,DOR,1676.7,0,death
+S0245,ARM2,TTR,56.0,0,first response
+S0246,ARM2,PFS,2940.0,1,censored at last adequate tumour assessment
+S0246,ARM2,OS,2942.0,1,censored at last contact
+S0246,ARM2,TTP,2940.0,1,censored at last adequate tumour assessment
+S0246,ARM2,DOR,2884.0,1,censored at last adequate tumour assessment
+S0246,ARM2,TTR,56.0,0,first response
+S0248,ARM2,PFS,144.0,0,death
+S0248,ARM2,OS,144.0,0,death
+S0248,ARM2,TTP,140.0,1,censored at last adequate tumour assessment
+S0248,ARM2,DOR,88.0,0,death
+S0248,ARM2,TTR,56.0,0,first response
+S0249,ARM2,PFS,562.2,0,death
+S0249,ARM2,OS,562.2,0,death
+S0249,ARM2,TTP,560.0,1,censored at last adequate tumour assessment
+S0249,ARM2,DOR,506.2,0,death
+S0249,ARM2,TTR,56.0,0,first response
+S0250,ARM2,PFS,2016.0,0,progressive disease
+S0250,ARM2,OS,2919.8,1,censored at last contact
+S0250,ARM2,TTP,2016.0,0,progressive disease
+S0250,ARM2,DOR,1960.0,0,progressive disease
+S0250,ARM2,TTR,56.0,0,first response
+S0253,ARM2,PFS,1232.0,0,progressive disease
+S0253,ARM2,OS,1947.5,0,death
+S0253,ARM2,TTP,1232.0,0,progressive disease
+S0253,ARM2,DOR,1176.0,0,progressive disease
+S0253,ARM2,TTR,56.0,0,first response
+S0255,ARM2,PFS,2884.0,1,censored at last adequate tumour assessment
+S0255,ARM2,OS,2909.8,1,censored at last contact
+S0255,ARM2,TTP,2884.0,1,censored at last adequate tumour assessment
+S0255,ARM2,DOR,2828.0,1,censored at last adequate tumour assessment
+S0255,ARM2,TTR,56.0,0,first response
+S0256,ARM2,PFS,588.0,0,progressive disease
+S0256,ARM2,OS,2895.6,1,censored at last contact
+S0256,ARM2,TTP,588.0,0,progressive disease
+S0256,ARM2,DOR,532.0,0,progressive disease
+S0256,ARM2,TTR,56.0,0,first response
+S0257,ARM2,PFS,1006.6,0,death
+S0257,ARM2,OS,1006.6,0,death
+S0257,ARM2,TTP,980.0,1,censored at last adequate tumour assessment
+S0257,ARM2,DOR,950.6,0,death
+S0257,ARM2,TTR,56.0,0,first response
+S0258,ARM2,PFS,2398.3,0,death
+S0258,ARM2,OS,2398.3,0,death
+S0258,ARM2,TTP,2380.0,1,censored at last adequate tumour assessment
+S0258,ARM2,DOR,2342.3,0,death
+S0258,ARM2,TTR,56.0,0,first response
+S0259,ARM2,PFS,616.0,0,progressive disease
+S0259,ARM2,OS,984.7,0,death
+S0259,ARM2,TTP,616.0,0,progressive disease
+S0261,ARM2,PFS,536.9,0,death
+S0261,ARM2,OS,536.9,0,death
+S0261,ARM2,TTP,532.0,1,censored at last adequate tumour assessment
+S0261,ARM2,DOR,480.9,0,death
+S0261,ARM2,TTR,56.0,0,first response
+S0267,ARM2,PFS,2585.4,0,death
+S0267,ARM2,OS,2585.4,0,death
+S0267,ARM2,TTP,2576.0,1,censored at last adequate tumour assessment
+S0267,ARM2,DOR,2529.4,0,death
+S0267,ARM2,TTR,56.0,0,first response
+S0269,ARM2,PFS,308.0,0,progressive disease
+S0269,ARM2,OS,954.3,0,death
+S0269,ARM2,TTP,308.0,0,progressive disease
+S0269,ARM2,DOR,252.0,0,progressive disease
+S0269,ARM2,TTR,56.0,0,first response
+S0270,ARM2,PFS,1260.0,0,progressive disease
+S0270,ARM2,OS,2396.6,0,death
+S0270,ARM2,TTP,1260.0,0,progressive disease
+S0270,ARM2,DOR,1204.0,0,progressive disease
+S0270,ARM2,TTR,56.0,0,first response
+S0272,ARM2,PFS,476.0,0,progressive disease
+S0272,ARM2,OS,926.2,0,death
+S0272,ARM2,TTP,476.0,0,progressive disease
+S0274,ARM2,PFS,2772.0,1,censored at last adequate tumour assessment
+S0274,ARM2,OS,2792.5,1,censored at last contact
+S0274,ARM2,TTP,2772.0,1,censored at last adequate tumour assessment
+S0274,ARM2,DOR,2716.0,1,censored at last adequate tumour assessment
+S0274,ARM2,TTR,56.0,0,first response
+S0275,ARM2,PFS,1974.4,0,death
+S0275,ARM2,OS,1974.4,0,death
+S0275,ARM2,TTP,1960.0,1,censored at last adequate tumour assessment
+S0275,ARM2,DOR,1918.4,0,death
+S0275,ARM2,TTR,56.0,0,first response
+S0276,ARM2,PFS,812.0,0,progressive disease
+S0276,ARM2,OS,2593.7,0,death
+S0276,ARM2,TTP,812.0,0,progressive disease
+S0277,ARM2,PFS,196.0,0,progressive disease
+S0277,ARM2,OS,583.0,0,death
+S0277,ARM2,TTP,196.0,0,progressive disease
+S0277,ARM2,DOR,140.0,0,progressive disease
+S0277,ARM2,TTR,56.0,0,first response
+S0278,ARM2,PFS,1316.0,0,progressive disease
+S0278,ARM2,OS,2020.7,0,death
+S0278,ARM2,TTP,1316.0,0,progressive disease
+S0279,ARM2,PFS,140.0,1,censored at last adequate tumour assessment
+S0279,ARM2,OS,2522.3,0,death
+S0279,ARM2,TTP,140.0,1,censored at last adequate tumour assessment
+S0279,ARM2,DOR,84.0,1,censored at last adequate tumour assessment
+S0279,ARM2,TTR,56.0,0,first response
+S0280,ARM2,PFS,2313.4,0,death
+S0280,ARM2,OS,2313.4,0,death
+S0280,ARM2,TTP,2296.0,1,censored at last adequate tumour assessment
+S0280,ARM2,DOR,2257.4,0,death
+S0280,ARM2,TTR,56.0,0,first response
+S0281,ARM2,PFS,2655.8,0,death
+S0281,ARM2,OS,2655.8,0,death
+S0281,ARM2,TTP,2632.0,1,censored at last adequate tumour assessment
+S0281,ARM2,DOR,2599.8,0,death
+S0281,ARM2,TTR,56.0,0,first response
+S0282,ARM2,PFS,2744.0,1,censored at last adequate tumour assessment
+S0282,ARM2,OS,2768.9,1,censored at last contact
+S0282,ARM2,TTP,2744.0,1,censored at last adequate tumour assessment
+S0282,ARM2,DOR,2688.0,1,censored at last adequate tumour assessment
+S0282,ARM2,TTR,56.0,0,first response
+S0284,ARM2,PFS,2744.0,1,censored at last adequate tumour assessment
+S0284,ARM2,OS,2754.9,1,censored at last contact
+S0284,ARM2,TTP,2744.0,1,censored at last adequate tumour assessment
+S0284,ARM2,DOR,2688.0,1,censored at last adequate tumour assessment
+S0284,ARM2,TTR,56.0,0,first response
+S0285,ARM2,PFS,168.0,0,progressive disease
+S0285,ARM2,OS,501.3,0,death
+S0285,ARM2,TTP,168.0,0,progressive disease
+S0285,ARM2,DOR,112.0,0,progressive disease
+S0285,ARM2,TTR,56.0,0,first response
+S0287,ARM2,PFS,890.0,0,death
+S0287,ARM2,OS,890.0,0,death
+S0287,ARM2,TTP,868.0,1,censored at last adequate tumour assessment
+S0287,ARM2,DOR,834.0,0,death
+S0287,ARM2,TTR,56.0,0,first response
+S0294,ARM2,PFS,2107.8,0,death
+S0294,ARM2,OS,2107.8,0,death
+S0294,ARM2,TTP,2100.0,1,censored at last adequate tumour assessment
+S0294,ARM2,DOR,2051.8,0,death
+S0294,ARM2,TTR,56.0,0,first response
+S0295,ARM2,PFS,420.0,0,progressive disease
+S0295,ARM2,OS,2235.6,0,death
+S0295,ARM2,TTP,420.0,0,progressive disease
+S0295,ARM2,DOR,364.0,0,progressive disease
+S0295,ARM2,TTR,56.0,0,first response
+S0296,ARM2,PFS,84.0,0,progressive disease
+S0296,ARM2,OS,2118.8,0,death
+S0296,ARM2,TTP,84.0,0,progressive disease
+S0298,ARM2,PFS,1369.6,0,death
+S0298,ARM2,OS,1369.6,0,death
+S0298,ARM2,TTP,1344.0,1,censored at last adequate tumour assessment
+S0298,ARM2,DOR,1313.6,0,death
+S0298,ARM2,TTR,56.0,0,first response
+S0299,ARM2,PFS,2660.0,1,censored at last adequate tumour assessment
+S0299,ARM2,OS,2687.2,1,censored at last contact
+S0299,ARM2,TTP,2660.0,1,censored at last adequate tumour assessment
+S0300,ARM2,PFS,1684.5,0,death
+S0300,ARM2,OS,1684.5,0,death
+S0300,ARM2,TTP,1680.0,1,censored at last adequate tumour assessment
+S0300,ARM2,DOR,1628.5,0,death
+S0300,ARM2,TTR,56.0,0,first response
+S0301,ARM2,PFS,2660.0,1,censored at last adequate tumour assessment
+S0301,ARM2,OS,2681.4,1,censored at last contact
+S0301,ARM2,TTP,2660.0,1,censored at last adequate tumour assessment
+S0301,ARM2,DOR,2604.0,1,censored at last adequate tumour assessment
+S0301,ARM2,TTR,56.0,0,first response
+S0302,ARM2,PFS,728.0,0,progressive disease
+S0302,ARM2,OS,957.1,0,death
+S0302,ARM2,TTP,728.0,0,progressive disease
+S0302,ARM2,DOR,672.0,0,progressive disease
+S0302,ARM2,TTR,56.0,0,first response
+S0305,ARM2,PFS,2131.6,0,death
+S0305,ARM2,OS,2131.6,0,death
+S0305,ARM2,TTP,2128.0,1,censored at last adequate tumour assessment
+S0305,ARM2,DOR,2075.6,0,death
+S0305,ARM2,TTR,56.0,0,first response
+S0307,ARM2,PFS,893.1,0,death
+S0307,ARM2,OS,893.1,0,death
+S0307,ARM2,TTP,868.0,1,censored at last adequate tumour assessment
+S0307,ARM2,DOR,837.1,0,death
+S0307,ARM2,TTR,56.0,0,first response
+S0308,ARM2,PFS,56.0,1,censored at last adequate tumour assessment
+S0308,ARM2,OS,1656.9,0,death
+S0308,ARM2,TTP,56.0,1,censored at last adequate tumour assessment
+S0309,ARM2,PFS,112.0,0,progressive disease
+S0309,ARM2,OS,400.7,0,death
+S0309,ARM2,TTP,112.0,0,progressive disease
+S0309,ARM2,DOR,56.0,0,progressive disease
+S0309,ARM2,TTR,56.0,0,first response
+S0314,ARM2,PFS,1531.3,0,death
+S0314,ARM2,OS,1531.3,0,death
+S0314,ARM2,TTP,1512.0,1,censored at last adequate tumour assessment
+S0314,ARM2,DOR,1475.3,0,death
+S0314,ARM2,TTR,56.0,0,first response
+S0317,ARM2,PFS,113.0,0,death
+S0317,ARM2,OS,113.0,0,death
+S0317,ARM2,TTP,112.0,1,censored at last adequate tumour assessment
+S0317,ARM2,DOR,57.0,0,death
+S0317,ARM2,TTR,56.0,0,first response
+S0320,ARM2,PFS,56.0,1,censored at last adequate tumour assessment
+S0320,ARM2,OS,82.0,1,censored at last contact
+S0320,ARM2,TTP,56.0,1,censored at last adequate tumour assessment
+S0321,ARM2,PFS,1652.0,0,progressive disease
+S0321,ARM2,OS,2590.3,1,censored at last contact
+S0321,ARM2,TTP,1652.0,0,progressive disease
+S0321,ARM2,DOR,1596.0,0,progressive disease
+S0321,ARM2,TTR,56.0,0,first response
+S0322,ARM2,PFS,1652.0,0,progressive disease
+S0322,ARM2,OS,2258.8,0,death
+S0322,ARM2,TTP,1652.0,0,progressive disease
+S0325,ARM2,PFS,2548.0,1,censored at last adequate tumour assessment
+S0325,ARM2,OS,2564.8,1,censored at last contact
+S0325,ARM2,TTP,2548.0,1,censored at last adequate tumour assessment
+S0325,ARM2,DOR,2492.0,1,censored at last adequate tumour assessment
+S0325,ARM2,TTR,56.0,0,first response
+S0326,ARM2,PFS,28.0,1,censored at last adequate tumour assessment
+S0326,ARM2,OS,1574.9,0,death
+S0326,ARM2,TTP,28.0,1,censored at last adequate tumour assessment
+S0329,ARM2,PFS,2520.0,1,censored at last adequate tumour assessment
+S0329,ARM2,OS,2538.9,1,censored at last contact
+S0329,ARM2,TTP,2520.0,1,censored at last adequate tumour assessment
+S0330,ARM2,PFS,1411.0,0,death
+S0330,ARM2,OS,1411.0,0,death
+S0330,ARM2,TTP,1400.0,1,censored at last adequate tumour assessment
+S0330,ARM2,DOR,1355.0,0,death
+S0330,ARM2,TTR,56.0,0,first response
+S0331,ARM2,PFS,2520.0,1,censored at last adequate tumour assessment
+S0331,ARM2,OS,2520.9,1,censored at last contact
+S0331,ARM2,TTP,2520.0,1,censored at last adequate tumour assessment
+S0331,ARM2,DOR,2464.0,1,censored at last adequate tumour assessment
+S0331,ARM2,TTR,56.0,0,first response
+S0332,ARM2,PFS,2492.0,1,censored at last adequate tumour assessment
+S0332,ARM2,OS,2513.6,1,censored at last contact
+S0332,ARM2,TTP,2492.0,1,censored at last adequate tumour assessment
+S0332,ARM2,DOR,2436.0,1,censored at last adequate tumour assessment
+S0332,ARM2,TTR,56.0,0,first response
+S0333,ARM2,PFS,1225.2,0,death
+S0333,ARM2,OS,1225.2,0,death
+S0333,ARM2,TTP,1204.0,1,censored at last adequate tumour assessment
+S0333,ARM2,DOR,1169.2,0,death
+S0333,ARM2,TTR,56.0,0,first response
+S0338,ARM2,PFS,966.4,0,death
+S0338,ARM2,OS,966.4,0,death
+S0338,ARM2,TTP,952.0,1,censored at last adequate tumour assessment
+S0338,ARM2,DOR,910.4,0,death
+S0338,ARM2,TTR,56.0,0,first response
+S0340,ARM2,PFS,1428.0,0,progressive disease
+S0340,ARM2,OS,2437.5,1,censored at last contact
+S0340,ARM2,TTP,1428.0,0,progressive disease
+S0340,ARM2,DOR,1372.0,0,progressive disease
+S0340,ARM2,TTR,56.0,0,first response
+S0341,ARM2,PFS,1812.3,0,death
+S0341,ARM2,OS,1812.3,0,death
+S0341,ARM2,TTP,1792.0,1,censored at last adequate tumour assessment
+S0341,ARM2,DOR,1756.3,0,death
+S0341,ARM2,TTR,56.0,0,first response
+S0343,ARM2,PFS,124.0,0,death
+S0343,ARM2,OS,124.0,0,death
+S0343,ARM2,TTP,112.0,1,censored at last adequate tumour assessment
+S0343,ARM2,DOR,68.0,0,death
+S0343,ARM2,TTR,56.0,0,first response
+S0344,ARM2,PFS,2408.0,1,censored at last adequate tumour assessment
+S0344,ARM2,OS,2428.4,1,censored at last contact
+S0344,ARM2,TTP,2408.0,1,censored at last adequate tumour assessment
+S0344,ARM2,DOR,2352.0,1,censored at last adequate tumour assessment
+S0344,ARM2,TTR,56.0,0,first response
+S0347,ARM2,PFS,2123.7,0,death
+S0347,ARM2,OS,2123.7,0,death
+S0347,ARM2,TTP,2100.0,1,censored at last adequate tumour assessment
+S0347,ARM2,DOR,2067.7,0,death
+S0347,ARM2,TTR,56.0,0,first response
+S0349,ARM2,PFS,28.0,1,censored at last adequate tumour assessment
+S0349,ARM2,OS,48.0,1,censored at last contact
+S0349,ARM2,TTP,28.0,1,censored at last adequate tumour assessment
+S0352,ARM2,PFS,112.0,0,progressive disease
+S0352,ARM2,OS,1143.5,0,death
+S0352,ARM2,TTP,112.0,0,progressive disease
+S0354,ARM2,PFS,1176.0,0,progressive disease
+S0354,ARM2,OS,1325.0,0,death
+S0354,ARM2,TTP,1176.0,0,progressive disease
+S0354,ARM2,DOR,1120.0,0,progressive disease
+S0354,ARM2,TTR,56.0,0,first response
+S0356,ARM2,PFS,2352.0,1,censored at last adequate tumour assessment
+S0356,ARM2,OS,2375.0,1,censored at last contact
+S0356,ARM2,TTP,2352.0,1,censored at last adequate tumour assessment
+S0356,ARM2,DOR,2296.0,1,censored at last adequate tumour assessment
+S0356,ARM2,TTR,56.0,0,first response
+S0357,ARM2,PFS,1075.6,0,death
+S0357,ARM2,OS,1075.6,0,death
+S0357,ARM2,TTP,1064.0,1,censored at last adequate tumour assessment
+S0357,ARM2,DOR,1019.6,0,death
+S0357,ARM2,TTR,56.0,0,first response
+S0359,ARM2,PFS,252.0,1,censored at last adequate tumour assessment
+S0359,ARM2,OS,278.0,1,censored at last contact
+S0359,ARM2,TTP,252.0,1,censored at last adequate tumour assessment
+S0359,ARM2,DOR,196.0,1,censored at last adequate tumour assessment
+S0359,ARM2,TTR,56.0,0,first response
+S0362,ARM2,PFS,2146.6,0,death
+S0362,ARM2,OS,2146.6,0,death
+S0362,ARM2,TTP,2128.0,1,censored at last adequate tumour assessment
+S0362,ARM2,DOR,2090.6,0,death
+S0362,ARM2,TTR,56.0,0,first response
+S0364,ARM2,PFS,1779.6,0,death
+S0364,ARM2,OS,1779.6,0,death
+S0364,ARM2,TTP,1764.0,1,censored at last adequate tumour assessment
+S0364,ARM2,DOR,1723.6,0,death
+S0364,ARM2,TTR,56.0,0,first response
+S0367,ARM2,PFS,560.0,0,progressive disease
+S0367,ARM2,OS,1161.3,0,death
+S0367,ARM2,TTP,560.0,0,progressive disease
+S0367,ARM2,DOR,504.0,0,progressive disease
+S0367,ARM2,TTR,56.0,0,first response
+S0368,ARM2,PFS,280.0,0,progressive disease
+S0368,ARM2,OS,426.8,0,death
+S0368,ARM2,TTP,280.0,0,progressive disease
+S0368,ARM2,DOR,224.0,0,progressive disease
+S0368,ARM2,TTR,56.0,0,first response
+S0371,ARM2,PFS,56.0,0,progressive disease
+S0371,ARM2,OS,599.8,0,death
+S0371,ARM2,TTP,56.0,0,progressive disease
+S0375,ARM2,PFS,160.0,0,death
+S0375,ARM2,OS,160.0,0,death
+S0375,ARM2,TTP,140.0,1,censored at last adequate tumour assessment
+S0375,ARM2,DOR,104.0,0,death
+S0375,ARM2,TTR,56.0,0,first response
+S0376,ARM2,PFS,196.0,0,progressive disease
+S0376,ARM2,OS,901.6,0,death
+S0376,ARM2,TTP,196.0,0,progressive disease
+S0376,ARM2,DOR,140.0,0,progressive disease
+S0376,ARM2,TTR,56.0,0,first response
+S0378,ARM2,PFS,700.0,0,progressive disease
+S0378,ARM2,OS,1393.2,0,death
+S0378,ARM2,TTP,700.0,0,progressive disease
+S0381,ARM2,PFS,1306.2,0,death
+S0381,ARM2,OS,1306.2,0,death
+S0381,ARM2,TTP,1288.0,1,censored at last adequate tumour assessment
+S0381,ARM2,DOR,1250.2,0,death
+S0381,ARM2,TTR,56.0,0,first response
+S0383,ARM2,PFS,56.0,0,progressive disease
+S0383,ARM2,OS,360.8,0,death
+S0383,ARM2,TTP,56.0,0,progressive disease
+S0387,ARM2,PFS,2212.0,1,censored at last adequate tumour assessment
+S0387,ARM2,OS,2220.1,1,censored at last contact
+S0387,ARM2,TTP,2212.0,1,censored at last adequate tumour assessment
+S0387,ARM2,DOR,2156.0,1,censored at last adequate tumour assessment
+S0387,ARM2,TTR,56.0,0,first response
+S0389,ARM2,PFS,868.0,0,progressive disease
+S0389,ARM2,OS,1396.6,0,death
+S0389,ARM2,TTP,868.0,0,progressive disease
+S0390,ARM2,PFS,1148.0,0,progressive disease
+S0390,ARM2,OS,1720.7,0,death
+S0390,ARM2,TTP,1148.0,0,progressive disease
+S0391,ARM2,PFS,308.0,0,progressive disease
+S0391,ARM2,OS,1705.0,0,death
+S0391,ARM2,TTP,308.0,0,progressive disease
+S0391,ARM2,DOR,252.0,0,progressive disease
+S0391,ARM2,TTR,56.0,0,first response
+S0396,ARM2,PFS,1563.9,0,death
+S0396,ARM2,OS,1563.9,0,death
+S0396,ARM2,TTP,1540.0,1,censored at last adequate tumour assessment
+S0396,ARM2,DOR,1507.9,0,death
+S0396,ARM2,TTR,56.0,0,first response
+S0397,ARM2,PFS,2016.0,0,progressive disease
+S0397,ARM2,OS,2146.5,1,censored at last contact
+S0397,ARM2,TTP,2016.0,0,progressive disease
+S0399,ARM2,PFS,1154.2,0,death
+S0399,ARM2,OS,1154.2,0,death
+S0399,ARM2,TTP,1148.0,1,censored at last adequate tumour assessment
+S0399,ARM2,DOR,1098.2,0,death
+S0399,ARM2,TTR,56.0,0,first response
+S0402,ARM2,PFS,1092.0,0,progressive disease
+S0402,ARM2,OS,1747.4,0,death
+S0402,ARM2,TTP,1092.0,0,progressive disease
+S0402,ARM2,DOR,1036.0,0,progressive disease
+S0402,ARM2,TTR,56.0,0,first response
+S0403,ARM2,PFS,84.0,1,censored at last adequate tumour assessment
+S0403,ARM2,OS,107.0,1,censored at last contact
+S0403,ARM2,TTP,84.0,1,censored at last adequate tumour assessment
+S0403,ARM2,DOR,28.0,1,censored at last adequate tumour assessment
+S0403,ARM2,TTR,56.0,0,first response
+S0404,ARM2,PFS,1416.6,0,death
+S0404,ARM2,OS,1416.6,0,death
+S0404,ARM2,TTP,1400.0,1,censored at last adequate tumour assessment
+S0404,ARM2,DOR,1360.6,0,death
+S0404,ARM2,TTR,56.0,0,first response
+S0407,ARM2,PFS,644.0,0,progressive disease
+S0407,ARM2,OS,1979.8,0,death
+S0407,ARM2,TTP,644.0,0,progressive disease
+S0407,ARM2,DOR,588.0,0,progressive disease
+S0407,ARM2,TTR,56.0,0,first response
+S0409,ARM2,PFS,1071.0,0,death
+S0409,ARM2,OS,1071.0,0,death
+S0409,ARM2,TTP,1064.0,1,censored at last adequate tumour assessment
+S0409,ARM2,DOR,1015.0,0,death
+S0409,ARM2,TTR,56.0,0,first response
+S0413,ARM2,PFS,504.0,0,progressive disease
+S0413,ARM2,OS,548.4,0,death
+S0413,ARM2,TTP,504.0,0,progressive disease
+S0413,ARM2,DOR,448.0,0,progressive disease
+S0413,ARM2,TTR,56.0,0,first response
+S0414,ARM2,PFS,1568.0,0,progressive disease
+S0414,ARM2,OS,2068.1,1,censored at last contact
+S0414,ARM2,TTP,1568.0,0,progressive disease
+S0414,ARM2,DOR,1512.0,0,progressive disease
+S0414,ARM2,TTR,56.0,0,first response
+S0415,ARM2,PFS,392.0,0,progressive disease
+S0415,ARM2,OS,2063.5,1,censored at last contact
+S0415,ARM2,TTP,392.0,0,progressive disease
+S0415,ARM2,DOR,336.0,0,progressive disease
+S0415,ARM2,TTR,56.0,0,first response
+S0416,ARM2,PFS,74.0,0,death
+S0416,ARM2,OS,74.0,0,death
+S0416,ARM2,TTP,56.0,1,censored at last adequate tumour assessment
+S0418,ARM2,PFS,2044.0,1,censored at last adequate tumour assessment
+S0418,ARM2,OS,2052.8,1,censored at last contact
+S0418,ARM2,TTP,2044.0,1,censored at last adequate tumour assessment
+S0418,ARM2,DOR,1988.0,1,censored at last adequate tumour assessment
+S0418,ARM2,TTR,56.0,0,first response
+S0423,ARM2,PFS,448.0,0,progressive disease
+S0423,ARM2,OS,681.0,0,death
+S0423,ARM2,TTP,448.0,0,progressive disease
+S0424,ARM2,PFS,84.0,0,progressive disease
+S0424,ARM2,OS,691.1,0,death
+S0424,ARM2,TTP,84.0,0,progressive disease
+S0428,ARM2,PFS,112.0,0,progressive disease
+S0428,ARM2,OS,1060.6,0,death
+S0428,ARM2,TTP,112.0,0,progressive disease
+S0428,ARM2,DOR,56.0,0,progressive disease
+S0428,ARM2,TTR,56.0,0,first response
+S0430,ARM2,PFS,1932.0,1,censored at last adequate tumour assessment
+S0430,ARM2,OS,1959.2,1,censored at last contact
+S0430,ARM2,TTP,1932.0,1,censored at last adequate tumour assessment
+S0430,ARM2,DOR,1876.0,1,censored at last adequate tumour assessment
+S0430,ARM2,TTR,56.0,0,first response
+S0431,ARM2,PFS,336.0,0,progressive disease
+S0431,ARM2,OS,497.0,0,death
+S0431,ARM2,TTP,336.0,0,progressive disease
+S0431,ARM2,DOR,280.0,0,progressive disease
+S0431,ARM2,TTR,56.0,0,first response
+S0432,ARM2,PFS,1260.0,0,progressive disease
+S0432,ARM2,OS,1957.5,1,censored at last contact
+S0432,ARM2,TTP,1260.0,0,progressive disease
+S0432,ARM2,DOR,1204.0,0,progressive disease
+S0432,ARM2,TTR,56.0,0,first response
+S0433,ARM2,PFS,1088.4,0,death
+S0433,ARM2,OS,1088.4,0,death
+S0433,ARM2,TTP,1064.0,1,censored at last adequate tumour assessment
+S0433,ARM2,DOR,1032.4,0,death
+S0433,ARM2,TTR,56.0,0,first response
+S0436,ARM2,PFS,476.0,0,progressive disease
+S0436,ARM2,OS,704.9,0,death
+S0436,ARM2,TTP,476.0,0,progressive disease
+S0436,ARM2,DOR,420.0,0,progressive disease
+S0436,ARM2,TTR,56.0,0,first response
+S0437,ARM2,PFS,1428.0,0,progressive disease
+S0437,ARM2,OS,1927.2,1,censored at last contact
+S0437,ARM2,TTP,1428.0,0,progressive disease
+S0437,ARM2,DOR,1372.0,0,progressive disease
+S0437,ARM2,TTR,56.0,0,first response
+S0438,ARM2,PFS,224.0,1,censored at last adequate tumour assessment
+S0438,ARM2,OS,1850.6,0,death
+S0438,ARM2,TTP,224.0,1,censored at last adequate tumour assessment
+S0438,ARM2,DOR,168.0,1,censored at last adequate tumour assessment
+S0438,ARM2,TTR,56.0,0,first response
+S0439,ARM2,PFS,616.0,0,progressive disease
+S0439,ARM2,OS,908.5,0,death
+S0439,ARM2,TTP,616.0,0,progressive disease
+S0439,ARM2,DOR,560.0,0,progressive disease
+S0439,ARM2,TTR,56.0,0,first response
+S0442,ARM2,PFS,1876.0,1,censored at last adequate tumour assessment
+S0442,ARM2,OS,1891.0,1,censored at last contact
+S0442,ARM2,TTP,1876.0,1,censored at last adequate tumour assessment
+S0442,ARM2,DOR,1820.0,1,censored at last adequate tumour assessment
+S0442,ARM2,TTR,56.0,0,first response
+S0443,ARM2,PFS,641.9,0,death
+S0443,ARM2,OS,641.9,0,death
+S0443,ARM2,TTP,616.0,1,censored at last adequate tumour assessment
+S0443,ARM2,DOR,585.9,0,death
+S0443,ARM2,TTR,56.0,0,first response
+S0446,ARM2,PFS,618.0,0,death
+S0446,ARM2,OS,618.0,0,death
+S0446,ARM2,TTP,616.0,1,censored at last adequate tumour assessment
+S0446,ARM2,DOR,562.0,0,death
+S0446,ARM2,TTR,56.0,0,first response
+S0448,ARM2,PFS,140.0,0,progressive disease
+S0448,ARM2,OS,275.8,0,death
+S0448,ARM2,TTP,140.0,0,progressive disease
+S0448,ARM2,DOR,84.0,0,progressive disease
+S0448,ARM2,TTR,56.0,0,first response
+S0456,ARM2,PFS,1820.0,1,censored at last adequate tumour assessment
+S0456,ARM2,OS,1840.4,1,censored at last contact
+S0456,ARM2,TTP,1820.0,1,censored at last adequate tumour assessment
+S0456,ARM2,DOR,1764.0,1,censored at last adequate tumour assessment
+S0456,ARM2,TTR,56.0,0,first response
+S0458,ARM2,PFS,1820.0,1,censored at last adequate tumour assessment
+S0458,ARM2,OS,1835.3,1,censored at last contact
+S0458,ARM2,TTP,1820.0,1,censored at last adequate tumour assessment
+S0459,ARM2,PFS,1820.0,1,censored at last adequate tumour assessment
+S0459,ARM2,OS,1835.1,1,censored at last contact
+S0459,ARM2,TTP,1820.0,1,censored at last adequate tumour assessment
+S0459,ARM2,DOR,1764.0,1,censored at last adequate tumour assessment
+S0459,ARM2,TTR,56.0,0,first response

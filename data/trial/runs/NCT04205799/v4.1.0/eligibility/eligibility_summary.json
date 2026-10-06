@@ -1,0 +1,392 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "0cc9e71cce40a2f7c144150475af7adc2485d80a8fbb3ce3efaa4dc7fa10bbab",
+  "population": "f13a19ad2386ca6251439fde08cdcd3c8699bac35fdf5325d306e7412df6da15"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7713,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2287
+  },
+  "eligible_share": 0.7713,
+  "proven_eligible_share": 0.7713,
+  "not_proven_ineligible_share": 0.7713,
+  "criteria": {
+   "evaluated": [
+    "EL001",
+    "EL002",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL016",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL032",
+    "EL033",
+    "EL035",
+    "EL036",
+    "EL038",
+    "EL039"
+   ],
+   "procedural": [
+    "EL010",
+    "EL024",
+    "EL031"
+   ],
+   "permissive": [
+    "EL003",
+    "EL005",
+    "EL006",
+    "EL015"
+   ],
+   "informational": [
+    "EL004",
+    "EL017",
+    "EL034",
+    "EL037"
+   ],
+   "run_with_review_flag": [
+    "EL001",
+    "EL011"
+   ]
+  },
+  "per_criterion": {
+   "EL001": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF Female is one of ['female'] THEN age None 18 year {NOT EXECUTABLE}]"
+   },
+   "EL002": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Histologically confirmed is present AND cervix carcinoma is one of ['cervix carcinoma'] AND (recurrent unresectable is one of ['recurrent unresectable'] OR persistent is one of ['persistent'] OR metastatic is one of ['metastatic']) AND (histology is one of ['squamous cell'] OR his"
+   },
+   "EL007": {
+    "met": 10000,
+    "not_met": 0,
+    "unknown": 0,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ECOG performance status at least 0 and at most 2"
+   },
+   "EL008": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Measurable disease per RECIST 1.1 is present"
+   },
+   "EL009": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (((clinical toxicities is one of ['baseline'] OR clinical toxicities at most 1 times CTCAE v.5.0 (Common Terminology Criteria\nfor Adverse Events, version 5.0)) AND (any prior treatments is one of ['chemotherapy'] [qualifier: related to] OR any prior treatments is one of ['pelvis ra"
+   },
+   "EL011": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (laboratory tests occurs within 7 day before inclusion [assessed: within 7 days before inclusion] AND ((Absolute neutrophil count (ANC) at least 1000 /mm3 OR Absolute neutrophil count (ANC) at least 1 gi/l) AND (Platelets at least 100000 /mm3 OR Platelets at least 100 gi/l) AND (He"
+   },
+   "EL012": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Left-ventricular ejection fraction at least 50 %"
+   },
+   "EL013": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: affiliated to an appropriate social security system is present"
+   },
+   "EL014": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF childbearing potential is one of ['childbearing potential'] THEN (pregnant is absent [assessed: at screening] AND pregnant is absent [assessed: during treatment by Cabozantinib])]"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF (Sexually active is one of ['Sexually active'] AND fertile is one of ['fertile']) THEN subjects and their partners must agree to use medically accepted barrier methods of contraception is present [assessed: during the study and 4 months after the last dose of study treatment] ["
+   },
+   "EL018": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Clinically significant gastrointestinal abnormalities that may increase the risk for\ngastrointestinal bleeding and/or fistula is present"
+   },
+   "EL019": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: lesions on baseline pelvic MRI is one of ['lesions on baseline pelvic MRI which may major the risk of abdominal and/or pelvic fistula/perforation']"
+   },
+   "EL020": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Clinically significant gastrointestinal abnormalities that may affect absorption of investigational\nproduct is present OR gastrointestinal abnormality is one of ['malabsorption syndrome', 'major resection of the stomach\\nor small bowel'])"
+   },
+   "EL021": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Previously identified allergy or hypersensitivity to components of the study treatment formulations is present OR rare hereditary problems of galactose intolerance is one of ['rare hereditary problems of galactose intolerance'] OR the Lapp lactase deficiency is one of ['the"
+   },
+   "EL022": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Cardiac angioplasty or stenting is one of ['Cardiac angioplasty or stenting'] [assessed: within the past 6 months] OR myocardial infarction is one of ['myocardial infarction'] [assessed: within the past 6 months] OR unstable angina is one of ['unstable angina'] [assessed: w"
+   },
+   "EL023": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Corrected QT interval (QTc) calculated by the Fridericia formula greater than 500 msec [assessed: within 28 days before inclusion]"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: average of these three consecutive results for QTcF at most 500 msec"
+   },
+   "EL026": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: ((systolic blood pressure (SBP) greater than 150 mmhg OR diastolic blood pressure (DBP) greater than 100 mmhg) AND despite an optimal treatment is one of ['despite an optimal treatment'])"
+   },
+   "EL027": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (cerebrovascular accident including transient ischemic attack (TIA) is present [assessed: within the past 6 months] [qualifier: History of] OR symptomatic pulmonary embolism is present [assessed: within the past 6 months] [qualifier: History of] OR untreated deep venous thro"
+   },
+   "EL028": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((DVT is one of ['recent DVT'] AND treated with therapeutic anti-coagulating agents at least 4 week) OR (pulmonary embolism is one of ['asymptomatic pulmonary embolism'] AND treated with therapeutic anti-coagulating agents at least 4 week))"
+   },
+   "EL029": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Major surgery or trauma occurs within 28 day before first investigational product dose (protocol wording: 'first dose of investigational product') [assessed: within 28 days prior to first dose of investigational product] OR (non-healing wound is one of ['non-healing wound']"
+   },
+   "EL030": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (active bleeding is present OR pathologic conditions that carry high risk of bleeding is present OR coagulopathy is present OR tumor involving major vessels is present)"
+   },
+   "EL032": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "EXCLUDED IF: ((brain metastases is present OR epidural disease is present) AND NOT ((radiotherapy is present [qualifier: adequately treated with] OR surgery (including radiosurgery) is present [qualifier: adequately treated with]) AND stable occurs at least 3 month before inclusion [assessed: for at"
+   },
+   "EL033": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (neurologically asymptomatic is one of ['neurologically asymptomatic'] [assessed: at the time of inclusion] AND corticosteroid treatment is absent [assessed: at the time of inclusion])"
+   },
+   "EL035": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (second primary cancer is present AND NOT (adequately treated non-melanoma skin cancer is one of ['adequately treated non-melanoma skin cancer'] OR other solid tumors curatively treated with no evidence of disease is one of ['other solid tumors curatively treated with no evi"
+   },
+   "EL036": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "EXCLUDED IF: (condition potentially hampering compliance with the study protocol and follow-up schedule is one of ['psychological'] OR condition potentially hampering compliance with the study protocol and follow-up schedule is one of ['familial'] OR condition potentially hampering compliance with t"
+   },
+   "EL038": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Concurrent participation in any therapeutic clinical trial is present [assessed: Concurrent]"
+   },
+   "EL039": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (deprived of liberty is present OR placed under the authority of a tutor is present)"
+   }
+  },
+  "decisive_exclusions": {
+   "EL011": 111,
+   "EL030": 109,
+   "EL012": 107,
+   "EL023": 105,
+   "EL026": 105,
+   "EL018": 104,
+   "EL029": 102,
+   "EL009": 101,
+   "EL033": 101,
+   "EL019": 101,
+   "EL038": 99,
+   "EL013": 98,
+   "EL028": 97,
+   "EL022": 96,
+   "EL016": 94,
+   "EL036": 93,
+   "EL008": 92,
+   "EL032": 92,
+   "EL025": 91,
+   "EL035": 91,
+   "EL020": 89,
+   "EL002": 88,
+   "EL021": 85,
+   "EL039": 85,
+   "EL027": 84,
+   "EL014": 83,
+   "EL001": 79
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL001": 10000,
+   "EL002": 10000,
+   "EL008": 10000,
+   "EL009": 10000,
+   "EL011": 10000,
+   "EL012": 10000,
+   "EL013": 10000,
+   "EL014": 10000,
+   "EL016": 10000,
+   "EL018": 10000,
+   "EL019": 10000,
+   "EL020": 10000,
+   "EL021": 10000,
+   "EL022": 10000,
+   "EL023": 10000,
+   "EL025": 10000,
+   "EL026": 10000,
+   "EL027": 10000,
+   "EL028": 10000,
+   "EL029": 10000,
+   "EL030": 10000,
+   "EL032": 10000,
+   "EL033": 10000,
+   "EL035": 10000,
+   "EL036": 10000,
+   "EL038": 10000,
+   "EL039": 10000
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.7707550985161489,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (gynecologic; 32 trials, 10296 screened)",
+    "detail": {
+     "estimate": 0.7707550985161489,
+     "ci95": [
+      0.7138113333547431,
+      0.819237823647475
+     ],
+     "single_trial_80": [
+      0.5454692007975063,
+      0.9040258399451788
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.5454788536548562,
+      "p30": 0.6880560123296077,
+      "p50": 0.7707550985161489,
+      "p70": 0.8367323023419315,
+      "p90": 0.9040224619027316
+     },
+     "tau_logit": 0.7892683131050512,
+     "groups": 32,
+     "trials": 32,
+     "participants": 10296
+    }
+   },
+   "target_eligible_share": 0.7707550985161489,
+   "share_excluded_by_decided_criteria": 0.0,
+   "residual_pass_needed": 0.7707550985161489,
+   "per_criterion_pass_probability": 0.9904024790538041,
+   "criteria": [
+    "EL001",
+    "EL002",
+    "EL008",
+    "EL009",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL016",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL032",
+    "EL033",
+    "EL035",
+    "EL036",
+    "EL038",
+    "EL039"
+   ]
+  }
+ }
+}

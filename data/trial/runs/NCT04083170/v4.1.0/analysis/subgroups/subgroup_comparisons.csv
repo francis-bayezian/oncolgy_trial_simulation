@@ -1,0 +1,10 @@
+Factor,Level,Arm vs control,N / N control,ORR difference % (95% CI),PFS HR (95% CI),OS HR (95% CI)
+Age (FDA standard age bands),< 65 years,ARM1 vs ARM2,6 / 4,-,-,-
+Sex,female,ARM1 vs ARM2,4 / 1,-,-,-
+Sex,male,ARM1 vs ARM2,2 / 3,-,-,-
+Race,white,ARM1 vs ARM2,6 / 4,-,-,-
+Ethnicity,hispanic_or_latino,ARM1 vs ARM2,0 / 1,-,-,-
+Ethnicity,not_hispanic_or_latino,ARM1 vs ARM2,5 / 3,-,-,-
+Ethnicity,unknown_or_not_reported,ARM1 vs ARM2,1 / 0,-,-,-
+Ecog performance status,0,ARM1 vs ARM2,3 / 4,-,-,-
+Ecog performance status,1,ARM1 vs ARM2,3 / 0,-,-,-

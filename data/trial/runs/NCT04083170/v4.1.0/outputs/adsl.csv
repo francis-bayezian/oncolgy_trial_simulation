@@ -1,0 +1,11 @@
+USUBJID,PATIENT_ID,ARM,ARM_LABEL,STRATUM,AGE,SEX,RACE,ETHNIC,ENROLLMENT_DAY,UNCHECKED_CRITERIA
+S0001,P000435,ARM1,Regimen A,,43.39,female,white,not_hispanic_or_latino,13.326624660538954,0
+S0002,P007174,ARM1,Regimen A,,59.49,male,white,not_hispanic_or_latino,58.05304044061208,0
+S0003,P007750,ARM1,Regimen A,,40.05,female,white,not_hispanic_or_latino,103.44719540245165,0
+S0004,P000830,ARM2,RegimenB,,60.99,male,white,not_hispanic_or_latino,122.83308857211891,0
+S0005,P000621,ARM1,Regimen A,,63.24,male,white,not_hispanic_or_latino,347.8563276408376,0
+S0006,P005701,ARM2,RegimenB,,60.69,female,white,not_hispanic_or_latino,426.03203969489,0
+S0007,P002046,ARM1,Regimen A,,43.65,female,white,unknown_or_not_reported,535.7699434957508,0
+S0008,P005287,ARM2,RegimenB,,50.35,male,white,not_hispanic_or_latino,561.3977341031973,0
+S0009,P007677,ARM1,Regimen A,,49.21,female,white,not_hispanic_or_latino,608.3401774941949,0
+S0010,P000274,ARM2,RegimenB,,46.04,male,white,hispanic_or_latino,647.4953797221609,0

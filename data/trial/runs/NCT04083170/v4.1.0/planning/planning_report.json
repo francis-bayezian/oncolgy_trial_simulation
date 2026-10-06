@@ -1,0 +1,469 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "1004070",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "f192952225bdae1956f0c7055dc3d3ae3c804dd43a5b387194f2eef7910902ef",
+  "cohorts": {
+   "cohort_accrual_historical_8.3_per_year.jsonl": "e4ffc5469da835578e9e20a22b0dce4e0c536506902a1fa8541c8c1d5fc8b0dc",
+   "recruitment_report.md": "c747dcc2c4e98c452d356037a9527eeba505d5330aa8fef7a043582fadad1591",
+   "recruitment_summary.json": "538c5b1f4f8ac7e73a02c686f6f5a24ca475b22875dd3bff139c21f9e1d92184"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "885f22fd5e444a598daf668d0fd2ecb8d8d4c8756459fb226d4978e3bacafbb0",
+   "eligibility_summary.json": "93a111df2e5a0aec92545eaa1a9bda36d079e39603d9ff8cb343c5738feb250d",
+   "feasibility_report.md": "97153d8f43b8fdb62527d7816e6a8155e0fedf62195d1987e5b0130052502584"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.7709,
+   0.7709
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL001",
+   "EL003",
+   "EL004",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL009",
+   "EL010",
+   "EL011",
+   "EL012",
+   "EL013",
+   "EL014",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL020",
+   "EL021"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.2291,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 13,
+   "target": 10.0
+  }
+ },
+ "accrual": {
+  "target_patients": 10,
+  "target_source": "target_accrual",
+  "stated_accrual_durations_years": [],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_8.3_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 8.319776915306083,
+    "patients_per_month": 0.6933147429421735,
+    "enrolled": {
+     "median": 10.0,
+     "q10": 10.0,
+     "q25": 10.0,
+     "q75": 10.0,
+     "q90": 10.0
+    },
+    "enrollment_duration_years": {
+     "median": 1.042072831020918,
+     "q10": 0.640966210360742,
+     "q25": 0.8088403917558841,
+     "q75": 1.304687747191993,
+     "q90": 1.5704123574750322
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.4548,
+     "2y": 0.9838,
+     "3y": 1.0,
+     "5y": 1.0
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "NOT_STATED_AVERAGED",
+    "reason": "the protocol states no number of sites: the historical model averages over same-phase trials' site counts"
+   },
+   "sponsor_class": {
+    "status": "RESOLVED",
+    "value": "OTHER",
+    "quote": "Fred Hutchinson Cancer Center",
+    "source": "protocol (quoted): academic, cooperative-group or public sponsor"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2022,
+    "enrolled": 10,
+    "disease_family": "mixed_hematologic",
+    "matched_disease": "HIV and hematological malignancies",
+    "condition": "HIV and hematological malignancies",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 2,
+    "sponsor_class": null
+   },
+   "site_count": "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase",
+   "patients_per_month": {
+    "median": 0.5987516054714582,
+    "q10": 0.13210480896101637,
+    "q25": 0.26345350694495917,
+    "q75": 1.4308929462242066,
+    "q90": 3.2198795826165036,
+    "percentiles": {
+     "p10": 0.13210480896101637,
+     "p30": 0.3137797364365655,
+     "p50": 0.5987516054714582,
+     "p70": 1.172775821324837,
+     "p90": 3.2198795826165036
+    }
+   },
+   "patients_per_year": {
+    "median": 7.185019265657498,
+    "q10": 1.5852577075321965,
+    "q25": 3.1614420833395096,
+    "q75": 17.17071535469048,
+    "q90": 38.638554991398046,
+    "percentiles": {
+     "p10": 1.5852577075321965,
+     "p30": 3.7653568372387856,
+     "p50": 7.185019265657498,
+     "p70": 14.073309855898042,
+     "p90": 38.638554991398046
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 1.3119681304543325,
+    "q10": 0.23410620253715886,
+    "q25": 0.5446080433440783,
+    "q75": 3.113014248157577,
+    "q90": 6.4436236048899875,
+    "percentiles": {
+     "p10": 0.23410620253715886,
+     "p30": 0.6706111989132225,
+     "p50": 1.3119681304543325,
+     "p70": 2.58917327129319,
+     "p90": 6.4436236048899875
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1y": 0.4135,
+    "2y": 0.623875,
+    "3y": 0.739375,
+    "5y": 0.85825
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": false,
+    "pediatric": false,
+    "start_year": 2022,
+    "arms": 2,
+    "disease_family": "mixed_hematologic"
+   },
+   "sponsor_class": "OTHER (protocol (quoted): academic, cooperative-group or public sponsor: 'Fred Hutchinson Cancer Center')",
+   "probabilities": {
+    "completed": 0.5431721666291173,
+    "terminated_accrual": 0.12171578609248883,
+    "terminated_other": 0.14009872270892212,
+    "withdrawn": 0.19501332456947176
+   },
+   "p_accrual_failure": 0.3167291106619606,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 10,
+  "evaluable_targets": [],
+  "decision_rules": [
+   {
+    "rule": "DR1",
+    "arm": "Regimen A (High dose consisting of 1320 cGy TBI plus fludarabine plus\ncyclophosphamidefollowedbyunmanipulatedcordblood anddilanubicel)",
+    "cohort": "A total of 10 patients will be enrolled in this protocol.",
+    "maximum_n": 9,
+    "stage_1_n": 8,
+    "at": {}
+   },
+   {
+    "rule": "DR2",
+    "arm": "RegimenB (Intermediatedoseconsistingof400cGyTBIplusFludarabineplus\ncyclophosphamide plus thiotepa followed by unmanipulated cord blood and\ndilanubicel)",
+    "cohort": "A total of 10 patients will be enrolled in this protocol.",
+    "maximum_n": 9,
+    "stage_1_n": 8,
+    "at": {}
+   },
+   {
+    "rule": "DR3",
+    "arm": "Regimen A (High dose consisting of 1320 cGy TBI plus fludarabine plus\ncyclophosphamidefollowedbyunmanipulatedcordblood anddilanubicel)",
+    "cohort": "A total of 10 patients will be enrolled in this protocol.",
+    "maximum_n": 10,
+    "stage_1_n": 5,
+    "at": {}
+   },
+   {
+    "rule": "DR4",
+    "arm": "RegimenB (Intermediatedoseconsistingof400cGyTBIplusFludarabineplus\ncyclophosphamide plus thiotepa followed by unmanipulated cord blood and\ndilanubicel)",
+    "cohort": "A total of 10 patients will be enrolled in this protocol.",
+    "maximum_n": 10,
+    "stage_1_n": 5,
+    "at": {}
+   }
+  ]
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 1.3119681304543325,
+    "q10": 0.23410620253715886,
+    "q25": 0.5446080433440783,
+    "q75": 3.113014248157577,
+    "q90": 6.4436236048899875,
+    "percentiles": {
+     "p10": 0.23410620253715886,
+     "p30": 0.6706111989132225,
+     "p50": 1.3119681304543325,
+     "p70": 2.58917327129319,
+     "p90": 6.4436236048899875
+    }
+   },
+   "accrual_historical_8.3_per_year": {
+    "median": 1.042072831020918,
+    "q10": 0.640966210360742,
+    "q25": 0.8088403917558841,
+    "q75": 1.304687747191993,
+    "q90": 1.5704123574750322
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 1.8119681304543325,
+     "q10": 0.7341062025371589,
+     "q25": 1.0446080433440783,
+     "q75": 3.613014248157577,
+     "q90": 6.9436236048899875
+    },
+    "accrual_historical_8.3_per_year": {
+     "median": 1.542072831020918,
+     "q10": 1.1409662103607419,
+     "q25": 1.3088403917558842,
+     "q75": 1.804687747191993,
+     "q90": 2.070412357475032
+    }
+   },
+   "assessment_lag_months": 6.0,
+   "source": "assumption A20: primary assessment 6 months after entry"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 6.311968130454332,
+     "q10": 5.234106202537159,
+     "q25": 5.544608043344079,
+     "q75": 8.113014248157576,
+     "q90": 11.443623604889988
+    },
+    "accrual_historical_8.3_per_year": {
+     "median": 6.042072831020918,
+     "q10": 5.640966210360742,
+     "q25": 5.808840391755884,
+     "q75": 6.304687747191993,
+     "q90": 6.570412357475032
+    }
+   },
+   "follow_up_years": 5.0,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.08703911544480288,
+    "source": "registry participant flow (mixed_hematologic): left by subject decision, loss to follow-up or physician decision; 143 trials, 25248 participants"
+   },
+   "adverse_event": {
+    "value": 0.04312915843294131,
+    "source": "registry participant flow (mixed_hematologic): left for an adverse event; 143 trials, 25248 participants"
+   },
+   "death": {
+    "value": 0.08742948015703968,
+    "source": "registry participant flow (mixed_hematologic): died during the study period; 143 trials, 25248 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1y": 0.4135,
+   "2y": 0.623875,
+   "3y": 0.739375,
+   "5y": 0.85825
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 1.31,
+   "q10": 0.23,
+   "q25": 0.54,
+   "q75": 3.11,
+   "q90": 6.44,
+   "percentiles": {
+    "p10": 0.23410620253715886,
+    "p30": 0.6706111989132225,
+    "p50": 1.3119681304543325,
+    "p70": 2.58917327129319,
+    "p90": 6.4436236048899875
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_8.3_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.4548,
+   "2y": 0.9838,
+   "3y": 1.0,
+   "5y": 1.0
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 8.31978 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 1.6 | p30 3.8 | p50 7.2 | p70 14.1 | p90 38.6"
+   },
+   "status": "plausible (protocol/historical median 1.16x)"
+  }
+ ]
+}

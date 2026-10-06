@@ -1,0 +1,600 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "NCT01391962",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "e210f25280f43b9023f3df75394eaef47b6e179921b73f6cf3f6001146969a9e",
+  "cohorts": {
+   "cohort_accrual_14_per_year.jsonl": "8e4507de158fb1dbb70a4ba8e19ccb899731e70094d339ee104a1dbf92370a8f",
+   "cohort_accrual_historical_11.8_per_year.jsonl": "a306ffdaddf56396c961a05d60902db3c37a6fa413372210bf5d88527594b969",
+   "recruitment_report.md": "4a047558679b1d63404f6cd0e23ee4eb1c0a258893451346967af14cfea5f529",
+   "recruitment_summary.json": "01cdf76688034cc161671fac08c255728908ba3d0213e873b64d344844708c66"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "18e7a37c4b6be78d9ee155de946f4e2db6dcc6e391330a97eecba982fa075ad5",
+   "eligibility_summary.json": "56cb47bdd89b5380c9f22bfb60dacf418106bd30100943ed6a4893f3621ae4e9",
+   "feasibility_report.md": "5c183fde9429dd976fd8a762a0e7bd036a01bdcebef2c31c5aff58158af15b40"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.8575,
+   0.8575
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL001",
+   "EL004",
+   "EL011",
+   "EL014",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL019",
+   "EL025",
+   "EL026",
+   "EL029",
+   "EL030",
+   "EL031",
+   "EL032",
+   "EL033",
+   "EL034",
+   "EL036",
+   "EL037",
+   "EL038"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.1425,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (sarcoma; 6 trials, 548 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 82,
+   "target": 70.0
+  }
+ },
+ "accrual": {
+  "target_patients": 70,
+  "target_source": "maximum_accrual",
+  "stated_accrual_durations_years": [],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_11.8_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 11.826691524095411,
+    "patients_per_month": 0.9855576270079509,
+    "enrolled": {
+     "median": 70.0,
+     "q10": 70.0,
+     "q25": 70.0,
+     "q75": 70.0,
+     "q90": 70.0
+    },
+    "enrollment_duration_years": {
+     "median": 5.805669643644609,
+     "q10": 4.957301083418858,
+     "q25": 5.3485406318322015,
+     "q75": 6.286247655696173,
+     "q90": 6.742681766543664
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.0,
+     "2y": 0.0,
+     "3y": 0.0,
+     "5y": 0.1136
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   },
+   {
+    "scenario": "accrual_14_per_year",
+    "source": "protocol (quoted)",
+    "wording": "With an anticipated accrual of 14-16 patients per year",
+    "patients_per_year": 14.0,
+    "patients_per_month": 1.1666666666666667,
+    "enrolled": {
+     "median": 70.0,
+     "q10": 70.0,
+     "q25": 70.0,
+     "q75": 70.0,
+     "q90": 70.0
+    },
+    "enrollment_duration_years": {
+     "median": 4.897306918345925,
+     "q10": 4.167792734460241,
+     "q25": 4.514234597959437,
+     "q75": 5.311803817257143,
+     "q90": 5.699718293348316
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.0,
+     "2y": 0.0,
+     "3y": 0.0,
+     "5y": 0.5662
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "NOT_STATED_AVERAGED",
+    "reason": "the protocol states no number of sites: the historical model averages over same-phase trials' site counts"
+   },
+   "sponsor_class": {
+    "status": "RESOLVED",
+    "value": "OTHER",
+    "quote": "National Cancer Institute",
+    "source": "protocol (quoted): academic, cooperative-group or public sponsor"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2019,
+    "enrolled": 70,
+    "disease_family": "sarcoma",
+    "matched_disease": "Alveolar soft part sarcoma (ASPS)",
+    "condition": "Alveolar soft part sarcoma (ASPS)",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 2,
+    "sponsor_class": null
+   },
+   "site_count": "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase",
+   "patients_per_month": {
+    "median": 0.8947613688471293,
+    "q10": 0.18413918738357551,
+    "q25": 0.3836807570314435,
+    "q75": 2.106285332337994,
+    "q90": 4.9407386549025505,
+    "percentiles": {
+     "p10": 0.18413918738357551,
+     "p30": 0.4584715502869218,
+     "p50": 0.8947613688471293,
+     "p70": 1.7413982582712553,
+     "p90": 4.9407386549025505
+    }
+   },
+   "patients_per_year": {
+    "median": 10.737136426165552,
+    "q10": 2.209670248602906,
+    "q25": 4.604169084377322,
+    "q75": 25.275423988055934,
+    "q90": 59.28886385883061,
+    "percentiles": {
+     "p10": 2.209670248602906,
+     "p30": 5.501658603443062,
+     "p50": 10.737136426165552,
+     "p70": 20.896779099255063,
+     "p90": 59.28886385883061
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 6.544395951651493,
+    "q10": 1.1913279390386584,
+    "q25": 2.735328316904138,
+    "q75": 15.073334129233254,
+    "q90": 31.620271902283925,
+    "percentiles": {
+     "p10": 1.1913279390386584,
+     "p30": 3.2976961781789695,
+     "p50": 6.544395951651493,
+     "p70": 12.666631792916295,
+     "p90": 31.620271902283925
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1y": 0.08225,
+    "2y": 0.18125,
+    "3y": 0.274375,
+    "5y": 0.41825
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE2",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2019,
+    "arms": 2,
+    "disease_family": "sarcoma"
+   },
+   "sponsor_class": "OTHER (protocol (quoted): academic, cooperative-group or public sponsor: 'National Cancer Institute')",
+   "probabilities": {
+    "completed": 0.6132155023926039,
+    "terminated_accrual": 0.12413743317349145,
+    "terminated_other": 0.11762821635031528,
+    "withdrawn": 0.14501884808358936
+   },
+   "p_accrual_failure": 0.2691562812570808,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 70,
+  "evaluable_targets": [
+   10.0,
+   22.0,
+   22.0,
+   8.0,
+   11.0
+  ],
+  "decision_rules": [
+   {
+    "rule": "DR1",
+    "arm": "cediranib (30 mg) (cediranib (30 mg))",
+    "cohort": "For patients who are not newly diagnosed:",
+    "maximum_n": 22,
+    "stage_1_n": 10,
+    "at": {
+     "p0": {
+      "true_rate": 0.15,
+      "expected_n": 15.46840211481367,
+      "p_early_stop": 0.5442998237655273
+     },
+     "p1": {
+      "true_rate": 0.4,
+      "expected_n": 21.443711180799998,
+      "p_early_stop": 0.046357401599999994
+     }
+    }
+   },
+   {
+    "rule": "DR2",
+    "arm": "sunitinib malate (37.5 mg) (sunitinib malate (37.5 mg))",
+    "cohort": "For patients who are not newly diagnosed:",
+    "maximum_n": 22,
+    "stage_1_n": 10,
+    "at": {
+     "p0": {
+      "true_rate": 0.15,
+      "expected_n": 15.46840211481367,
+      "p_early_stop": 0.5442998237655273
+     },
+     "p1": {
+      "true_rate": 0.4,
+      "expected_n": 21.443711180799998,
+      "p_early_stop": 0.046357401599999994
+     }
+    }
+   },
+   {
+    "rule": "DR3",
+    "arm": "cediranib (30 mg) (cediranib (30 mg))",
+    "cohort": "newly diagnosed ASPS cohort",
+    "maximum_n": 11,
+    "stage_1_n": 8,
+    "at": {
+     "p0": {
+      "true_rate": 0.15,
+      "expected_n": 9.028450907070313,
+      "p_early_stop": 0.6571830309765624
+     },
+     "p1": {
+      "true_rate": 0.45,
+      "expected_n": 10.810456813320313,
+      "p_early_stop": 0.06318106222656253
+     },
+     "cited F079": {
+      "true_rate": 0.5714285714285714,
+      "expected_n": 10.96016601440362,
+      "p_early_stop": 0.013277995198793515
+     }
+    }
+   },
+   {
+    "rule": "DR4",
+    "arm": "sunitinib malate (37.5 mg) (sunitinib malate (37.5 mg))",
+    "cohort": "newly diagnosed ASPS cohort",
+    "maximum_n": 11,
+    "stage_1_n": 8,
+    "at": {
+     "p0": {
+      "true_rate": 0.15,
+      "expected_n": 9.028450907070313,
+      "p_early_stop": 0.6571830309765624
+     },
+     "p1": {
+      "true_rate": 0.45,
+      "expected_n": 10.810456813320313,
+      "p_early_stop": 0.06318106222656253
+     }
+    }
+   }
+  ]
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 6.544395951651493,
+    "q10": 1.1913279390386584,
+    "q25": 2.735328316904138,
+    "q75": 15.073334129233254,
+    "q90": 31.620271902283925,
+    "percentiles": {
+     "p10": 1.1913279390386584,
+     "p30": 3.2976961781789695,
+     "p50": 6.544395951651493,
+     "p70": 12.666631792916295,
+     "p90": 31.620271902283925
+    }
+   },
+   "accrual_historical_11.8_per_year": {
+    "median": 5.805669643644609,
+    "q10": 4.957301083418858,
+    "q25": 5.3485406318322015,
+    "q75": 6.286247655696173,
+    "q90": 6.742681766543664
+   },
+   "accrual_14_per_year": {
+    "median": 4.897306918345925,
+    "q10": 4.167792734460241,
+    "q25": 4.514234597959437,
+    "q75": 5.311803817257143,
+    "q90": 5.699718293348316
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 7.044395951651493,
+     "q10": 1.6913279390386584,
+     "q25": 3.235328316904138,
+     "q75": 15.573334129233254,
+     "q90": 32.120271902283925
+    },
+    "accrual_historical_11.8_per_year": {
+     "median": 6.305669643644609,
+     "q10": 5.457301083418858,
+     "q25": 5.8485406318322015,
+     "q75": 6.786247655696173,
+     "q90": 7.242681766543664
+    },
+    "accrual_14_per_year": {
+     "median": 5.397306918345925,
+     "q10": 4.667792734460241,
+     "q25": 5.014234597959437,
+     "q75": 5.811803817257143,
+     "q90": 6.199718293348316
+    }
+   },
+   "assessment_lag_months": 6.0,
+   "source": "assumption A20: primary assessment 6 months after entry"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 11.544395951651493,
+     "q10": 6.191327939038659,
+     "q25": 7.735328316904138,
+     "q75": 20.073334129233253,
+     "q90": 36.620271902283925
+    },
+    "accrual_historical_11.8_per_year": {
+     "median": 10.80566964364461,
+     "q10": 9.957301083418859,
+     "q25": 10.3485406318322,
+     "q75": 11.286247655696172,
+     "q90": 11.742681766543665
+    },
+    "accrual_14_per_year": {
+     "median": 9.897306918345926,
+     "q10": 9.16779273446024,
+     "q25": 9.514234597959437,
+     "q75": 10.311803817257143,
+     "q90": 10.699718293348315
+    }
+   },
+   "follow_up_years": 5.0,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.08729603612247909,
+    "source": "registry participant flow (sarcoma): left by subject decision, loss to follow-up or physician decision; 403 trials, 28713 participants"
+   },
+   "adverse_event": {
+    "value": 0.07135913240864586,
+    "source": "registry participant flow (sarcoma): left for an adverse event; 403 trials, 28713 participants"
+   },
+   "death": {
+    "value": 0.050657218140646734,
+    "source": "registry participant flow (sarcoma): died during the study period; 403 trials, 28713 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1y": 0.08225,
+   "2y": 0.18125,
+   "3y": 0.274375,
+   "5y": 0.41825
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 6.54,
+   "q10": 1.19,
+   "q25": 2.74,
+   "q75": 15.07,
+   "q90": 31.62,
+   "percentiles": {
+    "p10": 1.1913279390386584,
+    "p30": 3.2976961781789695,
+    "p50": 6.544395951651493,
+    "p70": 12.666631792916295,
+    "p90": 31.620271902283925
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_11.8_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.0,
+   "2y": 0.0,
+   "3y": 0.0,
+   "5y": 0.1136
+  },
+  "p_enrollment_complete_by (accrual_14_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.0,
+   "2y": 0.0,
+   "3y": 0.0,
+   "5y": 0.5662
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 11.8267 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 2.2 | p30 5.5 | p50 10.7 | p70 20.9 | p90 59.3"
+   },
+   "status": "plausible (protocol/historical median 1.10x)"
+  },
+  {
+   "assumption": "accrual 14 patients/year",
+   "protocol": "With an anticipated accrual of 14-16 patients per year",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 2.2 | p30 5.5 | p50 10.7 | p70 20.9 | p90 59.3"
+   },
+   "status": "plausible (protocol/historical median 1.30x)"
+  },
+  {
+   "assumption": "response rate 57% cited for cediranib (30 mg) (cediranib (30 mg))",
+   "protocol": "F079",
+   "evidence_estimate": {
+    "status": "CITED_COUNT",
+    "reason": "4/7: true rate 90% 28%-83%"
+   },
+   "status": "small sample: a conditional scenario, not a prediction"
+  }
+ ]
+}

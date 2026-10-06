@@ -1,0 +1,242 @@
+{
+ "scenarios": {
+  "accrual_35_per_year": [
+   [
+    0.4892,
+    0.966
+   ],
+   [
+    0.5,
+    0.961
+   ],
+   [
+    0.5428,
+    0.917
+   ],
+   [
+    0.5472,
+    0.874
+   ],
+   [
+    0.55,
+    0.894
+   ],
+   [
+    0.5907,
+    0.842
+   ],
+   [
+    0.6,
+    0.814
+   ],
+   [
+    0.65,
+    0.7
+   ],
+   [
+    0.7,
+    0.568
+   ],
+   [
+    0.75,
+    0.434
+   ],
+   [
+    0.8,
+    0.328
+   ],
+   [
+    0.85,
+    0.187
+   ],
+   [
+    0.9,
+    0.137
+   ],
+   [
+    0.95,
+    0.077
+   ],
+   [
+    1.0,
+    0.059
+   ],
+   [
+    1.1,
+    0.022
+   ],
+   [
+    1.2,
+    0.003
+   ],
+   [
+    1.3,
+    0.0
+   ]
+  ],
+  "accrual_60_per_year": [
+   [
+    0.4892,
+    0.96
+   ],
+   [
+    0.5,
+    0.956
+   ],
+   [
+    0.5428,
+    0.885
+   ],
+   [
+    0.5472,
+    0.899
+   ],
+   [
+    0.55,
+    0.902
+   ],
+   [
+    0.5907,
+    0.808
+   ],
+   [
+    0.6,
+    0.813
+   ],
+   [
+    0.65,
+    0.677
+   ],
+   [
+    0.7,
+    0.551
+   ],
+   [
+    0.75,
+    0.433
+   ],
+   [
+    0.8,
+    0.295
+   ],
+   [
+    0.85,
+    0.229
+   ],
+   [
+    0.9,
+    0.122
+   ],
+   [
+    0.95,
+    0.086
+   ],
+   [
+    1.0,
+    0.06
+   ],
+   [
+    1.1,
+    0.019
+   ],
+   [
+    1.2,
+    0.001
+   ],
+   [
+    1.3,
+    0.002
+   ]
+  ]
+ },
+ "design_checks": [
+  {
+   "scenario": "accrual_35_per_year",
+   "check": "type I error at HR 1",
+   "simulated": 0.059,
+   "mc_se": 0.007451107300260815,
+   "expected": 0.05,
+   "consistent": true
+  },
+  {
+   "scenario": "accrual_35_per_year",
+   "check": "power at design alternative HR 0.591 (15% increase in long-term EFS (56% to 71%, RFR=0.591))",
+   "simulated": 0.842,
+   "mc_se": 0.011534123287012326,
+   "protocol_claims_at_least": 0.8,
+   "comparable": true,
+   "consistent": true
+  },
+  {
+   "scenario": "accrual_35_per_year",
+   "check": "power at design alternative HR 0.543 (17% increase (56% to 73%, RFR=0.543))",
+   "simulated": 0.917,
+   "mc_se": 0.008724161850859943,
+   "protocol_claims_at_least": 0.9,
+   "comparable": true,
+   "consistent": true
+  },
+  {
+   "scenario": "accrual_35_per_year",
+   "check": "power at design alternative HR 0.547 (14% increase in long-term EFS (65% to 79%, RFR=0.547))",
+   "simulated": 0.874,
+   "mc_se": 0.010493998284733994,
+   "protocol_claims_at_least": 0.8,
+   "comparable": false,
+   "note": "the protocol computed this power for a control long-term EFS of 65%; the simulated control is 56%, so the claim is not comparable"
+  },
+  {
+   "scenario": "accrual_35_per_year",
+   "check": "power at design alternative HR 0.489 (16% increase (65% to 81%, RFR=0.489))",
+   "simulated": 0.966,
+   "mc_se": 0.005730968504537434,
+   "protocol_claims_at_least": 0.9,
+   "comparable": false,
+   "note": "the protocol computed this power for a control long-term EFS of 65%; the simulated control is 56%, so the claim is not comparable"
+  },
+  {
+   "scenario": "accrual_60_per_year",
+   "check": "type I error at HR 1",
+   "simulated": 0.06,
+   "mc_se": 0.007509993342207435,
+   "expected": 0.05,
+   "consistent": true
+  },
+  {
+   "scenario": "accrual_60_per_year",
+   "check": "power at design alternative HR 0.591 (15% increase in long-term EFS (56% to 71%, RFR=0.591))",
+   "simulated": 0.808,
+   "mc_se": 0.01245536029185828,
+   "protocol_claims_at_least": 0.8,
+   "comparable": true,
+   "consistent": true
+  },
+  {
+   "scenario": "accrual_60_per_year",
+   "check": "power at design alternative HR 0.543 (17% increase (56% to 73%, RFR=0.543))",
+   "simulated": 0.885,
+   "mc_se": 0.010088359628799917,
+   "protocol_claims_at_least": 0.9,
+   "comparable": true,
+   "consistent": true
+  },
+  {
+   "scenario": "accrual_60_per_year",
+   "check": "power at design alternative HR 0.547 (14% increase in long-term EFS (65% to 79%, RFR=0.547))",
+   "simulated": 0.899,
+   "mc_se": 0.009528850927577784,
+   "protocol_claims_at_least": 0.8,
+   "comparable": false,
+   "note": "the protocol computed this power for a control long-term EFS of 65%; the simulated control is 56%, so the claim is not comparable"
+  },
+  {
+   "scenario": "accrual_60_per_year",
+   "check": "power at design alternative HR 0.489 (16% increase (65% to 81%, RFR=0.489))",
+   "simulated": 0.96,
+   "mc_se": 0.00619677335393187,
+   "protocol_claims_at_least": 0.9,
+   "comparable": false,
+   "note": "the protocol computed this power for a control long-term EFS of 65%; the simulated control is 56%, so the claim is not comparable"
+  }
+ ]
+}

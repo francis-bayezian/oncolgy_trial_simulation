@@ -1,0 +1,588 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "985c415b362efbcdf39b97cd01b49731dfdb4097bb5ee60bb3bb24cec4eeea7f",
+  "population": "70ee9b2df283bf7b71a7ece681c83e5cbb3c44ef5992d37b616b09bfd5e958a1"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7786,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2214
+  },
+  "eligible_share": 0.7786,
+  "proven_eligible_share": 0.7786,
+  "not_proven_ineligible_share": 0.7786,
+  "criteria": {
+   "evaluated": [
+    "EL003",
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL015",
+    "EL016",
+    "EL019",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL035",
+    "EL036",
+    "EL038",
+    "EL039",
+    "EL040",
+    "EL041",
+    "EL042",
+    "EL043",
+    "EL044",
+    "EL045",
+    "EL048",
+    "EL049",
+    "EL050",
+    "EL051",
+    "EL052",
+    "EL053",
+    "EL054",
+    "EL055",
+    "EL056"
+   ],
+   "procedural": [
+    "EL014",
+    "EL020",
+    "EL034",
+    "EL037",
+    "EL046",
+    "EL047"
+   ],
+   "permissive": [
+    "EL017",
+    "EL018"
+   ],
+   "informational": [
+    "EL001",
+    "EL002",
+    "EL004",
+    "EL057",
+    "EL058",
+    "EL059"
+   ],
+   "run_with_review_flag": [
+    "EL003",
+    "EL005",
+    "EL009",
+    "EL015",
+    "EL028",
+    "EL029",
+    "EL032",
+    "EL042"
+   ]
+  },
+  "per_criterion": {
+   "EL003": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Male or female is one of ['male', 'female'] AND aged None 18 year [assessed: at the time of signing the informed consent] {NOT EXECUTABLE} AND [IF (legal age status is one of ['legally minor'] AND from Japan is one of ['Japan']) THEN written parental or legal guardian's consent is"
+   },
+   "EL005": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Histologically documented is present AND (UC is one of ['metastatic'] OR UC is one of ['unresectable']) AND primary site is one of ['bladder', 'ureters', 'upper tract', 'renal pelvis', 'urethra', 'urachus'] AND [IF (histologies is one of ['transitional cell'] OR histologies is one"
+   },
+   "EL006": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((histologies is one of ['transitional cell'] OR histologies is one of ['mixed transitional cell']) AND urothelial component at least 50 %)"
+   },
+   "EL007": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: non-UC of the urinary tract is present"
+   },
+   "EL008": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: measurable target lesion at least 1 times RECIST v1.1 [qualifier: as assessed by the local site investigator/radiologist]"
+   },
+   "EL009": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((Creatinine clearance at least 60 and at most 30 ml/min [qualifier: measured by the Cockcroft-Gault\nformula or 24-hour urine] {NOT EXECUTABLE} OR ECOG performance status is one of ['2'] [assessed: within 7 days prior to randomization] OR audiometric hearing loss at least 2 grade ["
+   },
+   "EL010": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (FGFR3 mutation is present [qualifier: known] OR fgfr3 rearrangement is present [qualifier: known])"
+   },
+   "EL011": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: gene amplifications only is present"
+   },
+   "EL012": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (laboratory test result of PD-L1 is present [assessed: at screening] [qualifier: Local or central] AND [IF local result is absent THEN (formalin-fixed, paraffin-embedded tissue blocks is present [qualifier: sent to the sponsor's central laboratory] OR slides is present [qualifier: "
+   },
+   "EL013": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (prior systemic chemotherapy for metastatic or unresectable UC is absent OR (Adjuvant platinum-based chemotherapy is one of ['Adjuvant platinum-based chemotherapy'] [qualifier: following radical cystectomy] AND recurrence occurs more than 12 month after prior therapy completion (pr"
+   },
+   "EL015": {
+    "met": 10000,
+    "not_met": 0,
+    "unknown": 0,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ECOG performance status at least 0 and at most 2"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF NOT participant country is one of ['Japan'] THEN ((Male is one of ['male'] AND agree to take appropriate precautions to avoid fathering children is present [assessed: from screening through\n120 days after the last dose of pemigatinib and/or pembrolizumab or 180 days after\nthe l"
+   },
+   "EL019": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Prior receipt of a selective FGFR inhibitor is present [qualifier: for any indication or reason]"
+   },
+   "EL021": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: anticancer medications or investigational drugs for unresectable and/or metastatic disease is present [qualifier: not including adjuvant/neo-adjuvant treatment with platinum-containing chemotherapy completed ≥ 12 months prior to the start of treatment for this study]"
+   },
+   "EL022": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Concurrent anticancer therapy is present [qualifier: except for treatment allowed per protocol]"
+   },
+   "EL023": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: disease that is suitable for local therapy administered with curative intent is present"
+   },
+   "EL024": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (neuroendocrine component is present [qualifier: any] OR small cell component is present [qualifier: any])"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (clinically significant corneal is present [qualifier: Current evidence of; as confirmed by ophthalmologic examination] OR retinal disorder is present [qualifier: Current evidence of; as confirmed by ophthalmologic examination])"
+   },
+   "EL026": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (prior radiotherapy to a metastatic site occurs within 3 week before study treatment start (protocol wording: 'first dose') [assessed: within 3 weeks of] AND (NOT palliative radiotherapy to bone lesions occurs at least 2 week before study treatment start (protocol wording: '"
+   },
+   "EL027": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (CNS metastases is present AND NOT (local therapy (eg, whole brain\nradiation therapy, surgery, radiosurgery) is COMPLETED AND use of corticosteroids is DISCONTINUED [assessed: for at least 4 weeks before starting treatment in this study] [qualifier: for\nthis indication] AND "
+   },
+   "EL028": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Known additional malignancy is present AND (is progressing is present OR active treatment occurs within 3 year before study entry (protocol wording: 'study\\nentry')) AND NOT ((basal cell carcinoma of the skin, squamous cell carcinoma of the\nskin, or carcinoma in situ is one"
+   },
+   "EL029": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Platelets at most a threshold looked up from a table: if laboratory parameter is one of ['Platelets'] then 100000 [assessed: at screening] [qualifier: transfusion allowed with 2-week washout period] OR Hemoglobin at most a threshold g/dl looked up from a table: if laborator"
+   },
+   "EL030": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (calcium and phosphate hemostasis disorder is present [qualifier: History of] OR (systemic mineral imbalance is present AND ectopic calcification of soft tissues is present AND NOT (commonly observed calcifications is present [qualifier: in soft tissues such as the skin, kid"
+   },
+   "EL031": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: swallow and retain oral medication is absent [qualifier: Inability to]"
+   },
+   "EL032": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (cardiac disease is one of ['Clinically significant', 'uncontrolled'] OR unstable angina is present OR acute\nmyocardial infarction occurs within 6 month before study treatment day one (protocol wording: 'Day 1 of study treatment administration') {NOT EXECUTABLE} OR New York "
+   },
+   "EL033": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: screening QTcF interval greater than 480 ms [assessed: at screening]"
+   },
+   "EL035": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (HBV is present [qualifier: known history; HBsAg reactive] OR active HCV is present [qualifier: HCV RNA [qualitative] is detected])"
+   },
+   "EL036": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: HIV infection is present [qualifier: Known]"
+   },
+   "EL038": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (hypersensitivity is one of ['pemigatinib', 'excipients of pemigatinib'] [qualifier: Known] OR severe reaction is one of ['pemigatinib', 'excipients of pemigatinib'] [qualifier: Known])"
+   },
+   "EL039": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (to comply with the dose schedule and study evaluations is one of ['Inability'] [qualifier: in the opinion of the investigator] OR to comply with the dose schedule and study evaluations is one of ['unlikeliness'] [qualifier: in the opinion of the investigator])"
+   },
+   "EL040": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: recovery from toxicity and/or complications from a major surgery is absent [assessed: before starting therapy] [qualifier: Inadequate]"
+   },
+   "EL041": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (pregnant is present [qualifier: Women who are] OR breastfeeding is present [qualifier: Women who are])"
+   },
+   "EL042": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: UNRESOLVED requirement: \"Any condition that would, in the investigator's judgment, interfere with full participation in the study, including administration of study treatment and attending required study visits; pose a significant risk to the participant; or interfere with i"
+   },
+   "EL043": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (comprehend the ICF is absent [qualifier: participant (or parent, guardian, or legally authorized representative)] OR sign the ICF is absent [qualifier: unwillingness to])"
+   },
+   "EL044": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (History of autoimmune disease that has required systemic treatment in past 2 years is present [assessed: in past 2 years] [qualifier: ie, with use of disease modifying agents, corticosteroids, or immunosuppressive drugs] AND NOT (Replacement therapy is present [qualifier: i"
+   },
+   "EL045": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: ((noninfectious) pneumonitis that required steroids is present [qualifier: history of] OR current pneumonitis is present OR evidence of interstitial lung disease is present)"
+   },
+   "EL048": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: hypersensitivity to monoclonal antibodies is present [qualifier: and/or any of their excipients]"
+   },
+   "EL049": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (severe hypersensitivity at least 3 grade AND (hypersensitivity is one of ['carboplatin'] OR hypersensitivity is one of ['gemcitabine'] OR hypersensitivity is one of ['any of their excipients']))"
+   },
+   "EL050": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: psychiatric or substance abuse disorder is present [qualifier: known; would interfere with the participant’s ability to cooperate with the requirements of the study]"
+   },
+   "EL051": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: allogenic tissue/solid organ transplant is present"
+   },
+   "EL052": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: active tuberculosis is present [qualifier: known history of]"
+   },
+   "EL053": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: receiving hemodialysis is present"
+   },
+   "EL054": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (immunodeficiency is present OR (receiving systemic steroid therapy occurs within 7 day before randomization [assessed: within 7 days prior to randomization] AND dose greater than 10 mgdailyofprednisoneequivalent) OR any other form of\nimmunosuppressive therapy occurs within "
+   },
+   "EL055": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: hypovitaminosis D requiring supraphysiologic doses is present [qualifier: History of; to replenish the deficiency]"
+   },
+   "EL056": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: contraindication to pembrolizumab, gemcitabine, or carboplatin is present [qualifier: as per each package insert or SmPC]"
+   }
+  },
+  "decisive_exclusions": {
+   "EL039": 73,
+   "EL019": 72,
+   "EL043": 72,
+   "EL031": 68,
+   "EL027": 66,
+   "EL054": 65,
+   "EL022": 65,
+   "EL011": 64,
+   "EL032": 63,
+   "EL051": 63,
+   "EL033": 63,
+   "EL052": 62,
+   "EL028": 62,
+   "EL003": 61,
+   "EL030": 61,
+   "EL044": 61,
+   "EL053": 60,
+   "EL016": 58,
+   "EL050": 58,
+   "EL025": 58,
+   "EL010": 57,
+   "EL005": 57,
+   "EL038": 57,
+   "EL008": 57,
+   "EL009": 56,
+   "EL055": 55,
+   "EL006": 54,
+   "EL013": 54,
+   "EL041": 54,
+   "EL024": 52,
+   "EL035": 52,
+   "EL042": 52,
+   "EL026": 51,
+   "EL049": 51,
+   "EL023": 50,
+   "EL045": 50,
+   "EL048": 49,
+   "EL036": 48,
+   "EL012": 48,
+   "EL029": 48,
+   "EL040": 46,
+   "EL007": 45,
+   "EL056": 43,
+   "EL021": 42
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL003": 10000,
+   "EL005": 10000,
+   "EL006": 10000,
+   "EL007": 10000,
+   "EL008": 10000,
+   "EL009": 10000,
+   "EL010": 10000,
+   "EL011": 10000,
+   "EL012": 10000,
+   "EL013": 10000,
+   "EL016": 10000,
+   "EL019": 10000,
+   "EL021": 10000,
+   "EL022": 10000,
+   "EL023": 10000,
+   "EL024": 10000,
+   "EL025": 10000,
+   "EL026": 10000,
+   "EL027": 10000,
+   "EL028": 10000,
+   "EL029": 10000,
+   "EL030": 10000,
+   "EL031": 10000,
+   "EL032": 10000,
+   "EL033": 10000,
+   "EL035": 10000,
+   "EL036": 10000,
+   "EL038": 10000,
+   "EL039": 10000,
+   "EL040": 10000,
+   "EL041": 10000,
+   "EL042": 10000,
+   "EL043": 10000,
+   "EL044": 10000,
+   "EL045": 10000,
+   "EL048": 10000,
+   "EL049": 10000,
+   "EL050": 10000,
+   "EL051": 10000,
+   "EL052": 10000,
+   "EL053": 10000,
+   "EL054": 10000,
+   "EL055": 10000,
+   "EL056": 10000
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.7727210680983106,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (all oncology, PHASE2; 185 trials, 26902 screened)",
+    "detail": {
+     "estimate": 0.7727210680983106,
+     "ci95": [
+      0.7458066356322376,
+      0.7975592852162824
+     ],
+     "single_trial_80": [
+      0.5096749498755703,
+      0.9174940417220255
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.509686141946514,
+      "p30": 0.6767446638999839,
+      "p50": 0.7727210680983106,
+      "p70": 0.8466583338706396,
+      "p90": 0.9174906514858165
+     },
+     "tau_logit": 0.9215911052325251,
+     "groups": 185,
+     "trials": 185,
+     "participants": 26902
+    }
+   },
+   "target_eligible_share": 0.7727210680983106,
+   "share_excluded_by_decided_criteria": 0.0,
+   "residual_pass_needed": 0.7727210680983106,
+   "per_criterion_pass_probability": 0.9941572009568389,
+   "criteria": [
+    "EL003",
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL016",
+    "EL019",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL024",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL035",
+    "EL036",
+    "EL038",
+    "EL039",
+    "EL040",
+    "EL041",
+    "EL042",
+    "EL043",
+    "EL044",
+    "EL045",
+    "EL048",
+    "EL049",
+    "EL050",
+    "EL051",
+    "EL052",
+    "EL053",
+    "EL054",
+    "EL055",
+    "EL056"
+   ]
+  }
+ }
+}

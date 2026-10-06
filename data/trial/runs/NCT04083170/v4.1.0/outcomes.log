@@ -1,0 +1,32 @@
+{
+ "control_arm_id": null,
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.04451013372448731,
+  "rate_per_year": 0.04553112103516903,
+  "source": "evidence",
+  "wording": "registry participant flow (mixed_hematologic): left by subject decision, loss to follow-up or physician decision; 143 trials, 25248 participants: 8.7% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "design_alternatives": [],
+ "protocol_toxicities": 0,
+ "asset_ae_signature": {
+  "ARM1": "radiotherapy_or_radiopharmaceutical",
+  "ARM2": "radiotherapy_or_radiopharmaceutical"
+ },
+ "bindings_usable": 0,
+ "bindings": 2,
+ "model_calls": 0
+}

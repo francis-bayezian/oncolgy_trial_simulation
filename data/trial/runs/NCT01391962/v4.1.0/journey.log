@@ -1,0 +1,98 @@
+{
+ "subjects": 70,
+ "traces": [
+  "S0027",
+  "S0051",
+  "S0001"
+ ],
+ "any_dose_hold": 55,
+ "any_dose_reduction": 0,
+ "discontinued_for_ae": 6,
+ "deaths": 3,
+ "deaths_on_treatment": 3,
+ "end_of_treatment_reasons": {
+  "disease progression": 46,
+  "adverse event (all agents discontinued)": 3,
+  "death": 3,
+  "end of simulated follow-up": 13,
+  "adverse event (registry discontinuation rate)": 3,
+  "withdrawal (subject, loss to follow-up or physician decision)": 2
+ },
+ "median_rdi": 0.997,
+ "progression_detected": 46,
+ "adverse_events_after_reporting_window_dropped": 48,
+ "rules_undecidable": [],
+ "screening_funnel": {
+  "generated_patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 8575,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 1425
+  },
+  "not_ruled_out_share": 0.8575,
+  "undecidable_criteria": [
+   "EL001",
+   "EL004",
+   "EL011",
+   "EL012",
+   "EL014",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL019",
+   "EL025",
+   "EL026",
+   "EL029",
+   "EL030",
+   "EL031",
+   "EL032",
+   "EL033",
+   "EL034",
+   "EL036",
+   "EL037",
+   "EL038",
+   "EL039",
+   "EL040",
+   "EL041",
+   "EL042",
+   "EL043"
+  ],
+  "screen_pass_rate": {
+   "value": 0.8522535045629653,
+   "evidence_level": "evidence",
+   "source": "registry recruitment details stating screened and enrolled counts (sarcoma; 6 trials, 548 screened)",
+   "detail": {
+    "estimate": 0.8522535045629653,
+    "ci95": [
+     0.7778592679468123,
+     0.9047830883568544
+    ],
+    "single_trial_80": [
+     0.7364525396402701,
+     0.9225251197007027
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.7364578558948517,
+     "p30": 0.8108933405220878,
+     "p50": 0.8522535045629653,
+     "p70": 0.8858411590596622,
+     "p90": 0.9225231619872564
+    },
+    "tau_logit": 0.5049359393932489,
+    "groups": 6,
+    "trials": 6,
+    "participants": 548
+   }
+  },
+  "target": 70.0,
+  "patients_to_screen": {
+   "estimate": 83,
+   "range_80": [
+    76,
+    96
+   ],
+   "basis": "target / registry pass rate (the range is for a single new trial)"
+  }
+ }
+}

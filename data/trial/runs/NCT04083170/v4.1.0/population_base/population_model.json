@@ -1,0 +1,149 @@
+{
+ "population_version": "population-1.0.0",
+ "seed": 20260927,
+ "n": 10000,
+ "inputs": {
+  "studyspec": "f192952225bdae1956f0c7055dc3d3ae3c804dd43a5b387194f2eef7910902ef",
+  "facts": "d3ebdeef987a14e913821ee6367a6c679bd78ac2ae50bf11bad33860b5ac093d",
+  "simulation_parameters": "simulation_parameters_v3"
+ },
+ "model": {
+  "demographic:age": {
+   "source": "simulation_parameters_v3",
+   "type": "age",
+   "eligibility_years": [
+    0.5,
+    65.0
+   ],
+   "retrieval": {
+    "matched_path": [
+     "MIXED",
+     "mixed_hematologic"
+    ],
+    "matched_level": "disease_family",
+    "missing_levels": [
+     "disease",
+     "setting"
+    ],
+    "extrapolation_level": 2,
+    "support": {
+     "direct_studies": 0,
+     "direct_N": 0,
+     "borrowed_parent_studies": 3,
+     "effective_information": 0.6562680947247076,
+     "effective_information_unit": "patient-equivalent N (outcome variance / posterior variance of the context parameter)"
+    }
+   },
+   "age_class_mixture": [
+    {
+     "age_class": "MIXED",
+     "weight": 1.0
+    }
+   ]
+  },
+  "demographic:sex": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "female": 0.45500574586031733,
+    "male": 0.5449942541396826
+   }
+  },
+  "demographic:race": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "white": 0.7667205831235431,
+    "asian": 0.09750058242592766,
+    "unknown_or_not_reported": 0.03892031921169832,
+    "black_or_african_american": 0.08072672701951035,
+    "american_indian_or_alaska_native": 0.005609996422134674,
+    "more_than_one_race": 0.006357127941106218,
+    "native_hawaiian_or_other_pacific_islander": 0.004164663856079704
+   }
+  },
+  "demographic:ethnicity": {
+   "source": "simulation_parameters_v3",
+   "type": "categorical",
+   "probabilities": {
+    "not_hispanic_or_latino": 0.9012187381190819,
+    "hispanic_or_latino": 0.06737288642607185,
+    "unknown_or_not_reported": 0.03140837545484621
+   }
+  },
+  "_unresolved": [
+   "umls:C0002594",
+   "umls:C0010802",
+   "umls:C0011900",
+   "umls:C0023462",
+   "umls:C0023473",
+   "umls:C0026985",
+   "umls:C0178539",
+   "umls:C0231921",
+   "umls:C0368761",
+   "umls:C0376545",
+   "umls:C0376705",
+   "umls:C0428772",
+   "umls:C0549206",
+   "umls:C0600061",
+   "umls:C0699749",
+   "umls:C0939537",
+   "umls:C1273101",
+   "umls:C1278039",
+   "umls:C1335957",
+   "umls:C1517030",
+   "umls:C1623040",
+   "umls:C1868112",
+   "umls:C1879321",
+   "var:active_invasive_fungal_infection",
+   "var:adequate_marrow_biopsy_specimens",
+   "var:auto_transplant_protocol",
+   "var:calculated_creatinine_clearance",
+   "var:circulating_blasts",
+   "var:cns_leukemic_involvement_not_clearing",
+   "var:completed_cycles",
+   "var:consent_signer",
+   "var:cycles_to_obtain_cr",
+   "var:disease_status",
+   "var:dlco",
+   "var:dlco_corrected",
+   "var:hematologic_recovery",
+   "var:id_consult_and_approval",
+   "var:karnofsky_score",
+   "var:lansky_score",
+   "var:lead_principal_investigator_discussion",
+   "var:leukemia_subtype",
+   "var:marrow_blasts",
+   "var:peripheral_blood_count_recovery",
+   "var:remission_by_flow_cytometry",
+   "var:remission_status",
+   "var:study_site",
+   "var:uncontrolled_viral_or_bacterial_infection",
+   "var:willingness_to_sign_informed_consent"
+  ]
+ },
+ "bindings": [],
+ "summary": {
+  "patients": 10000,
+  "age_mean": 53.269265999999995,
+  "age_range": [
+   2.53,
+   65.0
+  ],
+  "share_known": {
+   "demographic:age": 1.0,
+   "demographic:sex": 1.0,
+   "demographic:race": 1.0,
+   "demographic:ethnicity": 1.0
+  },
+  "unresolved_variables": 48,
+  "bindings": 0,
+  "usable_bindings": 0,
+  "sources": {
+   "demographic:age": "simulation_parameters_v3",
+   "demographic:sex": "simulation_parameters_v3",
+   "demographic:race": "simulation_parameters_v3",
+   "demographic:ethnicity": "simulation_parameters_v3"
+  }
+ }
+}

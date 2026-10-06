@@ -1,0 +1,635 @@
+{
+ "subject_id": "S0005",
+ "arm": "ARM2",
+ "agents": [
+  "cabozantinib"
+ ],
+ "baseline": {
+  "patient_id": "P000947",
+  "demographic:age": {
+   "value": 37.43,
+   "unit": "year"
+  },
+  "demographic:sex": "female",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 0,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 76.0,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 161.5,
+   "unit": "cm"
+  },
+  "var:patients_previously_treated_or_not_with_cabozantinib": "Previously treated",
+  "var:bevacizumab_pre_treated_cohort": "Prior bevacizumab untreated"
+ },
+ "progression_day_latent": 28,
+ "progression_detected_day": null,
+ "off_treatment": [
+  47,
+  "adverse event (all agents discontinued)"
+ ],
+ "dose": {
+  "cabozantinib": {
+   "value": 60.0,
+   "unit": "mg",
+   "basis": "fixed"
+  }
+ },
+ "reductions": {
+  "cabozantinib": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "cabozantinib",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "60 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "cabozantinib",
+   "planned_administrations": 19,
+   "administrations": 16,
+   "dose": "60 mg"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "thrombocytopenia",
+   "serious": false,
+   "grade": 1,
+   "onset": 5,
+   "source": "safety_v3:RESOLVED",
+   "end": 6,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM012",
+     "category": "THROMBOCYTOPENIA",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "pain_in_limb",
+   "serious": false,
+   "grade": 2,
+   "onset": 8,
+   "source": "safety_v3:RESOLVED",
+   "end": 9,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM017",
+     "category": "Non-hematologic adverse event",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "palmar_plantar_erythrodysesthesia_syndrome",
+   "serious": false,
+   "grade": 2,
+   "onset": 10,
+   "source": "safety_v3:RESOLVED",
+   "end": 11,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM017",
+     "category": "Non-hematologic adverse event",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "rash/desquamation",
+   "serious": false,
+   "grade": 2,
+   "onset": 24,
+   "source": "safety_v3:RESOLVED",
+   "end": 25,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM017",
+     "category": "Non-hematologic adverse event",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "anemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 27,
+   "source": "safety_v3:RESOLVED",
+   "end": 28,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "ANEMIA",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",
+   "serious": true,
+   "grade": 3,
+   "onset": 31,
+   "source": "safety_v3:RESOLVED",
+   "end": 33,
+   "decisions": {
+    "cabozantinib": {
+     "action": "hold",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM019",
+     "category": "Non-hematologic adverse event",
+     "quote": "Interrupt study treatment until recovery to ≤ Grade 1 or baseline",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dyspnea",
+   "serious": false,
+   "grade": 2,
+   "onset": 33,
+   "source": "safety_v3:RESOLVED",
+   "end": 34,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM017",
+     "category": "Non-hematologic adverse event",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypertension_variable",
+   "serious": false,
+   "grade": 1,
+   "onset": 37,
+   "source": "safety_v3:RESOLVED",
+   "end": 38,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM017",
+     "category": "Non-hematologic adverse event",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": [
+      "DM026"
+     ]
+    }
+   }
+  },
+  {
+   "term": "alanine_aminotransferase_increased",
+   "serious": false,
+   "grade": 2,
+   "onset": 37,
+   "source": "safety_v3:RESOLVED",
+   "end": 38,
+   "decisions": {
+    "cabozantinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM017",
+     "category": "Non-hematologic adverse event",
+     "quote": "Continue cabozantinib at the current dose level",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fistula",
+   "serious": false,
+   "grade": 2,
+   "onset": 47,
+   "source": "protocol:F031",
+   "end": 48,
+   "decisions": {
+    "cabozantinib": {
+     "action": "discontinue_agent",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM006",
+     "category": "Fistula/perforation",
+     "quote": "Permanently discontinue cabozantinib",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "urinary_tract_infection",
+   "serious": false,
+   "grade": 2,
+   "onset": 48,
+   "source": "safety_v3:RESOLVED",
+   "end": 49
+  },
+  {
+   "term": "acneiform_eruptions",
+   "serious": false,
+   "grade": 1,
+   "onset": 49,
+   "source": "safety_v3:RESOLVED",
+   "end": 50
+  },
+  {
+   "term": "depression_dominant",
+   "serious": false,
+   "grade": 1,
+   "onset": 54,
+   "source": "safety_v3:RESOLVED",
+   "end": 55
+  },
+  {
+   "term": "vaginal_discharge",
+   "serious": false,
+   "grade": 1,
+   "onset": 69,
+   "source": "safety_v3:RESOLVED",
+   "end": 70
+  },
+  {
+   "term": "white_blood_cell_decreased",
+   "serious": false,
+   "grade": 2,
+   "onset": 75,
+   "source": "safety_v3:RESOLVED",
+   "end": 76
+  }
+ ],
+ "events": [
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 37.43, female, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start cabozantinib",
+   "result": "60 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX001",
+   "quote": "Cabozantinib will be administered at the daily dose of 60 mg given orally in a 4-week cycle."
+  },
+  {
+   "day": 5,
+   "visit": "C1D5",
+   "category": "adverse event",
+   "item": "thrombocytopenia",
+   "result": "grade 1; resolves by day 6",
+   "consequence": "cabozantinib continued (DM012)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 5,
+   "visit": "C1D5",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "76.54 10^9/L (grade 1)",
+   "consequence": "during thrombocytopenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Platelet count (75-150 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 8,
+   "visit": "C1D8",
+   "category": "adverse event",
+   "item": "pain_in_limb",
+   "result": "grade 2; resolves by day 9",
+   "consequence": "cabozantinib continued (DM017)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 10,
+   "visit": "C1D10",
+   "category": "adverse event",
+   "item": "palmar_plantar_erythrodysesthesia_syndrome",
+   "result": "grade 2; resolves by day 11",
+   "consequence": "cabozantinib continued (DM017)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 24,
+   "visit": "C1D24",
+   "category": "adverse event",
+   "item": "rash/desquamation",
+   "result": "grade 2; resolves by day 25",
+   "consequence": "cabozantinib continued (DM017)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 27,
+   "visit": "C1D27",
+   "category": "adverse event",
+   "item": "anemia",
+   "result": "grade 2; resolves by day 28",
+   "consequence": "cabozantinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 27,
+   "visit": "C1D27",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "8.9 g/dL (grade 2)",
+   "consequence": "during anemia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Hemoglobin (8-10 g/dL)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 29,
+   "visit": "C2D1",
+   "category": "treatment",
+   "item": "cabozantinib",
+   "result": "16/19 planned administrations",
+   "consequence": "interrupted or discontinued",
+   "evidence_level": "protocol",
+   "source": "protocol dosing schedule and dose-modification rules"
+  },
+  {
+   "day": 31,
+   "visit": "C2D3",
+   "category": "adverse event",
+   "item": "neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)_-_other,_specify",
+   "result": "grade 3 serious; resolves by day 33",
+   "consequence": "cabozantinib held until day 33 (DM019)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 33,
+   "visit": "C2D5",
+   "category": "adverse event",
+   "item": "dyspnea",
+   "result": "grade 2; resolves by day 34",
+   "consequence": "cabozantinib continued (DM017)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 37,
+   "visit": "C2D9",
+   "category": "adverse event",
+   "item": "hypertension_variable",
+   "result": "grade 1; resolves by day 38",
+   "consequence": "cabozantinib continued (DM017); undecidable: DM026",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 37,
+   "visit": "C2D9",
+   "category": "adverse event",
+   "item": "alanine_aminotransferase_increased",
+   "result": "grade 2; resolves by day 38",
+   "consequence": "cabozantinib continued (DM017)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 37,
+   "visit": "C2D9",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "4.27 x ULN (grade 2)",
+   "consequence": "during alanine_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for ALT (3-5 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 47,
+   "visit": "C2D19",
+   "category": "adverse event",
+   "item": "fistula",
+   "result": "grade 2; resolves by day 48",
+   "consequence": "cabozantinib discontinued (DM006)",
+   "evidence_level": "parameter",
+   "source": "occurrence: protocol:F031; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 47,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "adverse event (all agents discontinued)",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 48,
+   "visit": "C2D20",
+   "category": "adverse event",
+   "item": "urinary_tract_infection",
+   "result": "grade 2; resolves by day 49",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 49,
+   "visit": "C2D21",
+   "category": "adverse event",
+   "item": "acneiform_eruptions",
+   "result": "grade 1; resolves by day 50",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 54,
+   "visit": "C2D26",
+   "category": "adverse event",
+   "item": "depression_dominant",
+   "result": "grade 1; resolves by day 55",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 69,
+   "visit": "C3D13",
+   "category": "adverse event",
+   "item": "vaginal_discharge",
+   "result": "grade 1; resolves by day 70",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 75,
+   "visit": "C3D19",
+   "category": "adverse event",
+   "item": "white_blood_cell_decreased",
+   "result": "grade 2; resolves by day 76",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 75,
+   "visit": "C3D19",
+   "category": "laboratory",
+   "item": "White blood cell count",
+   "result": "2.23 10^9/L (grade 2)",
+   "consequence": "during white_blood_cell_decreased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for White blood cell count (2-3 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  }
+ ]
+}

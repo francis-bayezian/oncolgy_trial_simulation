@@ -1,0 +1,105 @@
+USUBJID,ARMCD,PARAMCD,AVAL,CNSR,EVNTDESC
+S0001,ARM1,PFS,56.0,0,progressive disease
+S0001,ARM1,OS,135.0,0,death
+S0001,ARM1,TTP,56.0,0,progressive disease
+S0002,ARM1,PFS,9.3,0,death
+S0002,ARM1,OS,9.3,0,death
+S0002,ARM1,TTP,0.0,1,censored at last adequate tumour assessment
+S0003,ARM1,PFS,112.0,0,progressive disease
+S0003,ARM1,OS,129.0,0,death
+S0003,ARM1,TTP,112.0,0,progressive disease
+S0004,ARM1,PFS,112.0,0,progressive disease
+S0004,ARM1,OS,207.0,0,death
+S0004,ARM1,TTP,112.0,0,progressive disease
+S0004,ARM1,DOR,56.0,0,progressive disease
+S0004,ARM1,TTR,56.0,0,first response
+S0005,ARM1,PFS,56.0,0,progressive disease
+S0005,ARM1,OS,932.5,0,death
+S0005,ARM1,TTP,56.0,0,progressive disease
+S0006,ARM1,PFS,336.0,0,progressive disease
+S0006,ARM1,OS,528.9,0,death
+S0006,ARM1,TTP,336.0,0,progressive disease
+S0006,ARM1,DOR,224.0,0,progressive disease
+S0006,ARM1,TTR,112.0,0,first response
+S0007,ARM1,PFS,56.0,0,progressive disease
+S0007,ARM1,OS,1460.8,0,death
+S0007,ARM1,TTP,56.0,0,progressive disease
+S0008,ARM1,PFS,112.0,0,progressive disease
+S0008,ARM1,OS,703.7,0,death
+S0008,ARM1,TTP,112.0,0,progressive disease
+S0009,ARM1,PFS,56.0,0,progressive disease
+S0009,ARM1,OS,399.5,0,death
+S0009,ARM1,TTP,56.0,0,progressive disease
+S0010,ARM1,PFS,224.0,0,progressive disease
+S0010,ARM1,OS,860.1,0,death
+S0010,ARM1,TTP,224.0,0,progressive disease
+S0010,ARM1,DOR,112.0,0,progressive disease
+S0010,ARM1,TTR,112.0,0,first response
+S0011,ARM1,PFS,224.0,0,progressive disease
+S0011,ARM1,OS,355.7,0,death
+S0011,ARM1,TTP,224.0,0,progressive disease
+S0012,ARM1,PFS,112.0,0,progressive disease
+S0012,ARM1,OS,363.0,0,death
+S0012,ARM1,TTP,112.0,0,progressive disease
+S0013,ARM1,PFS,56.0,0,progressive disease
+S0013,ARM1,OS,737.3,0,death
+S0013,ARM1,TTP,56.0,0,progressive disease
+S0014,ARM1,PFS,56.0,0,progressive disease
+S0014,ARM1,OS,173.0,0,death
+S0014,ARM1,TTP,56.0,0,progressive disease
+S0015,ARM1,PFS,168.0,0,progressive disease
+S0015,ARM1,OS,311.9,0,death
+S0015,ARM1,TTP,168.0,0,progressive disease
+S0016,ARM1,PFS,159.5,0,death
+S0016,ARM1,OS,159.5,0,death
+S0016,ARM1,TTP,112.0,1,censored at last adequate tumour assessment
+S0016,ARM1,DOR,47.5,0,death
+S0016,ARM1,TTR,112.0,0,first response
+S0017,ARM1,PFS,616.0,0,progressive disease
+S0017,ARM1,OS,1087.0,0,death
+S0017,ARM1,TTP,616.0,0,progressive disease
+S0018,ARM1,PFS,280.0,0,progressive disease
+S0018,ARM1,OS,471.5,0,death
+S0018,ARM1,TTP,280.0,0,progressive disease
+S0019,ARM1,PFS,388.7,0,death
+S0019,ARM1,OS,388.7,0,death
+S0019,ARM1,TTP,336.0,1,censored at last adequate tumour assessment
+S0019,ARM1,DOR,276.7,0,death
+S0019,ARM1,TTR,112.0,0,first response
+S0020,ARM1,PFS,92.3,0,death
+S0020,ARM1,OS,92.3,0,death
+S0020,ARM1,TTP,56.0,1,censored at last adequate tumour assessment
+S0021,ARM1,PFS,504.0,0,progressive disease
+S0021,ARM1,OS,985.2,0,death
+S0021,ARM1,TTP,504.0,0,progressive disease
+S0022,ARM1,PFS,56.0,0,progressive disease
+S0022,ARM1,OS,700.2,0,death
+S0022,ARM1,TTP,56.0,0,progressive disease
+S0023,ARM1,PFS,112.0,0,progressive disease
+S0023,ARM1,OS,238.0,0,death
+S0023,ARM1,TTP,112.0,0,progressive disease
+S0024,ARM1,PFS,112.0,0,progressive disease
+S0024,ARM1,OS,364.9,0,death
+S0024,ARM1,TTP,112.0,0,progressive disease
+S0024,ARM1,DOR,56.0,0,progressive disease
+S0024,ARM1,TTR,56.0,0,first response
+S0025,ARM1,PFS,1075.9,0,death
+S0025,ARM1,OS,1075.9,0,death
+S0025,ARM1,TTP,1064.0,1,censored at last adequate tumour assessment
+S0025,ARM1,DOR,963.9,0,death
+S0025,ARM1,TTR,112.0,0,first response
+S0026,ARM1,PFS,104.0,0,death
+S0026,ARM1,OS,104.0,0,death
+S0026,ARM1,TTP,56.0,1,censored at last adequate tumour assessment
+S0027,ARM1,PFS,336.0,0,progressive disease
+S0027,ARM1,OS,1280.5,0,death
+S0027,ARM1,TTP,336.0,0,progressive disease
+S0028,ARM1,PFS,112.0,0,progressive disease
+S0028,ARM1,OS,651.0,0,death
+S0028,ARM1,TTP,112.0,0,progressive disease
+S0029,ARM1,PFS,168.0,0,progressive disease
+S0029,ARM1,OS,284.0,0,death
+S0029,ARM1,TTP,168.0,0,progressive disease
+S0030,ARM1,PFS,448.0,0,progressive disease
+S0030,ARM1,OS,543.6,0,death
+S0030,ARM1,TTP,448.0,0,progressive disease

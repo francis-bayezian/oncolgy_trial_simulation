@@ -1,0 +1,780 @@
+USUBJID,RSTEST,RSORRES,RSDY,VISIT
+S0001,overall response,no progression (response category not simulated),57,TA1
+S0001,overall response,no progression (response category not simulated),113,TA2
+S0001,overall response,no progression (response category not simulated),169,TA3
+S0001,overall response,progressive disease,225,TA4
+S0002,overall response,progressive disease,57,TA1
+S0003,overall response,no progression (response category not simulated),57,TA1
+S0003,overall response,no progression (response category not simulated),113,TA2
+S0003,overall response,no progression (response category not simulated),169,TA3
+S0003,overall response,no progression (response category not simulated),225,TA4
+S0003,overall response,no progression (response category not simulated),281,TA5
+S0003,overall response,progressive disease,337,TA6
+S0004,overall response,no progression (response category not simulated),57,TA1
+S0004,overall response,no progression (response category not simulated),113,TA2
+S0004,overall response,no progression (response category not simulated),169,TA3
+S0004,overall response,no progression (response category not simulated),225,TA4
+S0004,overall response,progressive disease,281,TA5
+S0005,overall response,no progression (response category not simulated),57,TA1
+S0005,overall response,progressive disease,113,TA2
+S0006,overall response,no progression (response category not simulated),57,TA1
+S0006,overall response,no progression (response category not simulated),113,TA2
+S0006,overall response,no progression (response category not simulated),169,TA3
+S0006,overall response,no progression (response category not simulated),225,TA4
+S0006,overall response,progressive disease,281,TA5
+S0007,overall response,no progression (response category not simulated),57,TA1
+S0007,overall response,no progression (response category not simulated),113,TA2
+S0007,overall response,no progression (response category not simulated),169,TA3
+S0007,overall response,no progression (response category not simulated),225,TA4
+S0007,overall response,progressive disease,281,TA5
+S0008,overall response,no progression (response category not simulated),57,TA1
+S0008,overall response,no progression (response category not simulated),113,TA2
+S0008,overall response,no progression (response category not simulated),169,TA3
+S0008,overall response,no progression (response category not simulated),225,TA4
+S0008,overall response,no progression (response category not simulated),281,TA5
+S0008,overall response,no progression (response category not simulated),337,TA6
+S0008,overall response,progressive disease,393,TA7
+S0009,overall response,no progression (response category not simulated),57,TA1
+S0009,overall response,no progression (response category not simulated),113,TA2
+S0009,overall response,progressive disease,169,TA3
+S0010,overall response,no progression (response category not simulated),57,TA1
+S0010,overall response,no progression (response category not simulated),113,TA2
+S0010,overall response,no progression (response category not simulated),169,TA3
+S0010,overall response,no progression (response category not simulated),225,TA4
+S0010,overall response,progressive disease,281,TA5
+S0011,overall response,no progression (response category not simulated),57,TA1
+S0011,overall response,progressive disease,113,TA2
+S0012,overall response,no progression (response category not simulated),57,TA1
+S0012,overall response,no progression (response category not simulated),113,TA2
+S0012,overall response,no progression (response category not simulated),169,TA3
+S0012,overall response,progressive disease,225,TA4
+S0013,overall response,no progression (response category not simulated),57,TA1
+S0013,overall response,no progression (response category not simulated),113,TA2
+S0013,overall response,no progression (response category not simulated),169,TA3
+S0013,overall response,no progression (response category not simulated),225,TA4
+S0013,overall response,no progression (response category not simulated),281,TA5
+S0013,overall response,no progression (response category not simulated),337,TA6
+S0013,overall response,no progression (response category not simulated),393,TA7
+S0013,overall response,no progression (response category not simulated),449,TA8
+S0013,overall response,no progression (response category not simulated),505,TA9
+S0013,overall response,no progression (response category not simulated),561,TA10
+S0013,overall response,no progression (response category not simulated),617,TA11
+S0013,overall response,no progression (response category not simulated),673,TA12
+S0013,overall response,progressive disease,729,TA13
+S0014,overall response,no progression (response category not simulated),57,TA1
+S0014,overall response,no progression (response category not simulated),113,TA2
+S0014,overall response,no progression (response category not simulated),169,TA3
+S0014,overall response,no progression (response category not simulated),225,TA4
+S0014,overall response,no progression (response category not simulated),281,TA5
+S0014,overall response,no progression (response category not simulated),337,TA6
+S0014,overall response,no progression (response category not simulated),393,TA7
+S0014,overall response,no progression (response category not simulated),449,TA8
+S0014,overall response,no progression (response category not simulated),505,TA9
+S0014,overall response,no progression (response category not simulated),561,TA10
+S0014,overall response,no progression (response category not simulated),617,TA11
+S0014,overall response,no progression (response category not simulated),673,TA12
+S0014,overall response,progressive disease,729,TA13
+S0015,overall response,no progression (response category not simulated),57,TA1
+S0015,overall response,no progression (response category not simulated),113,TA2
+S0015,overall response,progressive disease,169,TA3
+S0016,overall response,no progression (response category not simulated),57,TA1
+S0016,overall response,progressive disease,113,TA2
+S0017,overall response,no progression (response category not simulated),57,TA1
+S0017,overall response,no progression (response category not simulated),113,TA2
+S0017,overall response,no progression (response category not simulated),169,TA3
+S0017,overall response,no progression (response category not simulated),225,TA4
+S0017,overall response,no progression (response category not simulated),281,TA5
+S0017,overall response,progressive disease,337,TA6
+S0018,overall response,no progression (response category not simulated),57,TA1
+S0018,overall response,no progression (response category not simulated),113,TA2
+S0018,overall response,no progression (response category not simulated),169,TA3
+S0018,overall response,progressive disease,225,TA4
+S0019,overall response,no progression (response category not simulated),57,TA1
+S0019,overall response,no progression (response category not simulated),113,TA2
+S0019,overall response,progressive disease,169,TA3
+S0020,overall response,progressive disease,57,TA1
+S0021,overall response,no progression (response category not simulated),57,TA1
+S0021,overall response,progressive disease,113,TA2
+S0022,overall response,progressive disease,57,TA1
+S0023,overall response,no progression (response category not simulated),57,TA1
+S0023,overall response,no progression (response category not simulated),113,TA2
+S0023,overall response,no progression (response category not simulated),169,TA3
+S0023,overall response,no progression (response category not simulated),225,TA4
+S0023,overall response,no progression (response category not simulated),281,TA5
+S0023,overall response,no progression (response category not simulated),337,TA6
+S0023,overall response,no progression (response category not simulated),393,TA7
+S0023,overall response,no progression (response category not simulated),449,TA8
+S0023,overall response,no progression (response category not simulated),505,TA9
+S0023,overall response,progressive disease,561,TA10
+S0024,overall response,no progression (response category not simulated),57,TA1
+S0024,overall response,no progression (response category not simulated),113,TA2
+S0024,overall response,progressive disease,169,TA3
+S0025,overall response,no progression (response category not simulated),57,TA1
+S0025,overall response,no progression (response category not simulated),113,TA2
+S0026,overall response,no progression (response category not simulated),57,TA1
+S0027,overall response,progressive disease,57,TA1
+S0028,overall response,no progression (response category not simulated),57,TA1
+S0028,overall response,no progression (response category not simulated),113,TA2
+S0028,overall response,no progression (response category not simulated),169,TA3
+S0028,overall response,no progression (response category not simulated),225,TA4
+S0028,overall response,no progression (response category not simulated),281,TA5
+S0028,overall response,no progression (response category not simulated),337,TA6
+S0028,overall response,no progression (response category not simulated),393,TA7
+S0028,overall response,no progression (response category not simulated),449,TA8
+S0028,overall response,no progression (response category not simulated),505,TA9
+S0028,overall response,no progression (response category not simulated),561,TA10
+S0028,overall response,progressive disease,617,TA11
+S0029,overall response,no progression (response category not simulated),57,TA1
+S0029,overall response,progressive disease,113,TA2
+S0030,overall response,no progression (response category not simulated),57,TA1
+S0030,overall response,no progression (response category not simulated),113,TA2
+S0030,overall response,progressive disease,169,TA3
+S0031,overall response,no progression (response category not simulated),57,TA1
+S0031,overall response,progressive disease,113,TA2
+S0032,overall response,no progression (response category not simulated),57,TA1
+S0032,overall response,progressive disease,113,TA2
+S0033,overall response,no progression (response category not simulated),57,TA1
+S0033,overall response,no progression (response category not simulated),113,TA2
+S0033,overall response,no progression (response category not simulated),169,TA3
+S0033,overall response,no progression (response category not simulated),225,TA4
+S0033,overall response,no progression (response category not simulated),281,TA5
+S0033,overall response,no progression (response category not simulated),337,TA6
+S0033,overall response,progressive disease,393,TA7
+S0034,overall response,no progression (response category not simulated),57,TA1
+S0035,overall response,no progression (response category not simulated),57,TA1
+S0035,overall response,no progression (response category not simulated),113,TA2
+S0035,overall response,progressive disease,169,TA3
+S0036,overall response,no progression (response category not simulated),57,TA1
+S0036,overall response,no progression (response category not simulated),113,TA2
+S0036,overall response,no progression (response category not simulated),169,TA3
+S0036,overall response,progressive disease,225,TA4
+S0037,overall response,no progression (response category not simulated),57,TA1
+S0037,overall response,no progression (response category not simulated),113,TA2
+S0037,overall response,no progression (response category not simulated),169,TA3
+S0037,overall response,no progression (response category not simulated),225,TA4
+S0037,overall response,progressive disease,281,TA5
+S0038,overall response,progressive disease,57,TA1
+S0039,overall response,no progression (response category not simulated),57,TA1
+S0039,overall response,no progression (response category not simulated),113,TA2
+S0039,overall response,no progression (response category not simulated),169,TA3
+S0039,overall response,no progression (response category not simulated),225,TA4
+S0039,overall response,no progression (response category not simulated),281,TA5
+S0039,overall response,no progression (response category not simulated),337,TA6
+S0039,overall response,no progression (response category not simulated),393,TA7
+S0039,overall response,no progression (response category not simulated),449,TA8
+S0039,overall response,no progression (response category not simulated),505,TA9
+S0039,overall response,progressive disease,561,TA10
+S0040,overall response,no progression (response category not simulated),57,TA1
+S0040,overall response,no progression (response category not simulated),113,TA2
+S0040,overall response,no progression (response category not simulated),169,TA3
+S0040,overall response,no progression (response category not simulated),225,TA4
+S0040,overall response,no progression (response category not simulated),281,TA5
+S0040,overall response,no progression (response category not simulated),337,TA6
+S0040,overall response,no progression (response category not simulated),393,TA7
+S0040,overall response,no progression (response category not simulated),449,TA8
+S0040,overall response,no progression (response category not simulated),505,TA9
+S0040,overall response,no progression (response category not simulated),561,TA10
+S0040,overall response,no progression (response category not simulated),617,TA11
+S0040,overall response,no progression (response category not simulated),673,TA12
+S0040,overall response,progressive disease,729,TA13
+S0041,overall response,progressive disease,57,TA1
+S0042,overall response,no progression (response category not simulated),57,TA1
+S0042,overall response,progressive disease,113,TA2
+S0043,overall response,no progression (response category not simulated),57,TA1
+S0043,overall response,no progression (response category not simulated),113,TA2
+S0043,overall response,no progression (response category not simulated),169,TA3
+S0043,overall response,progressive disease,225,TA4
+S0044,overall response,no progression (response category not simulated),57,TA1
+S0044,overall response,no progression (response category not simulated),113,TA2
+S0044,overall response,no progression (response category not simulated),169,TA3
+S0044,overall response,no progression (response category not simulated),225,TA4
+S0044,overall response,no progression (response category not simulated),281,TA5
+S0044,overall response,no progression (response category not simulated),337,TA6
+S0044,overall response,progressive disease,393,TA7
+S0045,overall response,no progression (response category not simulated),57,TA1
+S0045,overall response,no progression (response category not simulated),113,TA2
+S0045,overall response,progressive disease,169,TA3
+S0046,overall response,no progression (response category not simulated),57,TA1
+S0046,overall response,no progression (response category not simulated),113,TA2
+S0046,overall response,no progression (response category not simulated),169,TA3
+S0046,overall response,no progression (response category not simulated),225,TA4
+S0046,overall response,no progression (response category not simulated),281,TA5
+S0046,overall response,progressive disease,337,TA6
+S0047,overall response,progressive disease,57,TA1
+S0048,overall response,no progression (response category not simulated),57,TA1
+S0048,overall response,no progression (response category not simulated),113,TA2
+S0048,overall response,no progression (response category not simulated),169,TA3
+S0048,overall response,no progression (response category not simulated),225,TA4
+S0048,overall response,progressive disease,281,TA5
+S0049,overall response,no progression (response category not simulated),57,TA1
+S0049,overall response,no progression (response category not simulated),113,TA2
+S0049,overall response,no progression (response category not simulated),169,TA3
+S0049,overall response,no progression (response category not simulated),225,TA4
+S0049,overall response,no progression (response category not simulated),281,TA5
+S0049,overall response,no progression (response category not simulated),337,TA6
+S0049,overall response,no progression (response category not simulated),393,TA7
+S0050,overall response,no progression (response category not simulated),57,TA1
+S0050,overall response,no progression (response category not simulated),113,TA2
+S0050,overall response,progressive disease,169,TA3
+S0051,overall response,progressive disease,57,TA1
+S0052,overall response,no progression (response category not simulated),57,TA1
+S0052,overall response,no progression (response category not simulated),113,TA2
+S0052,overall response,no progression (response category not simulated),169,TA3
+S0052,overall response,no progression (response category not simulated),225,TA4
+S0052,overall response,no progression (response category not simulated),281,TA5
+S0053,overall response,progressive disease,57,TA1
+S0055,overall response,no progression (response category not simulated),57,TA1
+S0055,overall response,no progression (response category not simulated),113,TA2
+S0055,overall response,no progression (response category not simulated),169,TA3
+S0055,overall response,no progression (response category not simulated),225,TA4
+S0055,overall response,no progression (response category not simulated),281,TA5
+S0055,overall response,no progression (response category not simulated),337,TA6
+S0055,overall response,no progression (response category not simulated),393,TA7
+S0055,overall response,no progression (response category not simulated),449,TA8
+S0055,overall response,no progression (response category not simulated),505,TA9
+S0055,overall response,progressive disease,561,TA10
+S0056,overall response,no progression (response category not simulated),57,TA1
+S0056,overall response,no progression (response category not simulated),113,TA2
+S0056,overall response,no progression (response category not simulated),169,TA3
+S0056,overall response,no progression (response category not simulated),225,TA4
+S0056,overall response,no progression (response category not simulated),281,TA5
+S0056,overall response,no progression (response category not simulated),337,TA6
+S0056,overall response,no progression (response category not simulated),393,TA7
+S0056,overall response,no progression (response category not simulated),449,TA8
+S0056,overall response,no progression (response category not simulated),505,TA9
+S0056,overall response,no progression (response category not simulated),561,TA10
+S0056,overall response,no progression (response category not simulated),617,TA11
+S0056,overall response,no progression (response category not simulated),673,TA12
+S0056,overall response,no progression (response category not simulated),729,TA13
+S0057,overall response,no progression (response category not simulated),57,TA1
+S0057,overall response,no progression (response category not simulated),113,TA2
+S0057,overall response,progressive disease,169,TA3
+S0058,overall response,progressive disease,57,TA1
+S0059,overall response,no progression (response category not simulated),57,TA1
+S0059,overall response,no progression (response category not simulated),113,TA2
+S0059,overall response,no progression (response category not simulated),169,TA3
+S0059,overall response,no progression (response category not simulated),225,TA4
+S0059,overall response,progressive disease,281,TA5
+S0060,overall response,no progression (response category not simulated),57,TA1
+S0060,overall response,no progression (response category not simulated),113,TA2
+S0060,overall response,no progression (response category not simulated),169,TA3
+S0060,overall response,no progression (response category not simulated),225,TA4
+S0060,overall response,no progression (response category not simulated),281,TA5
+S0060,overall response,progressive disease,337,TA6
+S0061,overall response,no progression (response category not simulated),57,TA1
+S0061,overall response,progressive disease,113,TA2
+S0062,overall response,no progression (response category not simulated),57,TA1
+S0062,overall response,no progression (response category not simulated),113,TA2
+S0062,overall response,no progression (response category not simulated),169,TA3
+S0062,overall response,no progression (response category not simulated),225,TA4
+S0062,overall response,progressive disease,281,TA5
+S0063,overall response,no progression (response category not simulated),57,TA1
+S0063,overall response,no progression (response category not simulated),113,TA2
+S0063,overall response,no progression (response category not simulated),169,TA3
+S0063,overall response,no progression (response category not simulated),225,TA4
+S0063,overall response,no progression (response category not simulated),281,TA5
+S0063,overall response,no progression (response category not simulated),337,TA6
+S0063,overall response,no progression (response category not simulated),393,TA7
+S0063,overall response,no progression (response category not simulated),449,TA8
+S0063,overall response,no progression (response category not simulated),505,TA9
+S0063,overall response,no progression (response category not simulated),561,TA10
+S0063,overall response,no progression (response category not simulated),617,TA11
+S0063,overall response,no progression (response category not simulated),673,TA12
+S0063,overall response,no progression (response category not simulated),729,TA13
+S0064,overall response,progressive disease,57,TA1
+S0065,overall response,no progression (response category not simulated),57,TA1
+S0065,overall response,no progression (response category not simulated),113,TA2
+S0065,overall response,progressive disease,169,TA3
+S0066,overall response,progressive disease,57,TA1
+S0067,overall response,no progression (response category not simulated),57,TA1
+S0067,overall response,no progression (response category not simulated),113,TA2
+S0067,overall response,no progression (response category not simulated),169,TA3
+S0067,overall response,no progression (response category not simulated),225,TA4
+S0067,overall response,no progression (response category not simulated),281,TA5
+S0067,overall response,no progression (response category not simulated),337,TA6
+S0067,overall response,no progression (response category not simulated),393,TA7
+S0067,overall response,no progression (response category not simulated),449,TA8
+S0067,overall response,progressive disease,505,TA9
+S0068,overall response,progressive disease,57,TA1
+S0069,overall response,no progression (response category not simulated),57,TA1
+S0069,overall response,no progression (response category not simulated),113,TA2
+S0069,overall response,no progression (response category not simulated),169,TA3
+S0069,overall response,no progression (response category not simulated),225,TA4
+S0069,overall response,no progression (response category not simulated),281,TA5
+S0069,overall response,no progression (response category not simulated),337,TA6
+S0069,overall response,no progression (response category not simulated),393,TA7
+S0069,overall response,no progression (response category not simulated),449,TA8
+S0069,overall response,no progression (response category not simulated),505,TA9
+S0069,overall response,progressive disease,561,TA10
+S0070,overall response,no progression (response category not simulated),57,TA1
+S0071,overall response,progressive disease,57,TA1
+S0072,overall response,no progression (response category not simulated),57,TA1
+S0072,overall response,no progression (response category not simulated),113,TA2
+S0072,overall response,no progression (response category not simulated),169,TA3
+S0072,overall response,no progression (response category not simulated),225,TA4
+S0072,overall response,no progression (response category not simulated),281,TA5
+S0072,overall response,no progression (response category not simulated),337,TA6
+S0072,overall response,no progression (response category not simulated),393,TA7
+S0072,overall response,no progression (response category not simulated),449,TA8
+S0072,overall response,no progression (response category not simulated),505,TA9
+S0072,overall response,no progression (response category not simulated),561,TA10
+S0072,overall response,no progression (response category not simulated),617,TA11
+S0072,overall response,no progression (response category not simulated),673,TA12
+S0072,overall response,progressive disease,729,TA13
+S0073,overall response,no progression (response category not simulated),57,TA1
+S0073,overall response,no progression (response category not simulated),113,TA2
+S0073,overall response,no progression (response category not simulated),169,TA3
+S0073,overall response,progressive disease,225,TA4
+S0074,overall response,no progression (response category not simulated),57,TA1
+S0074,overall response,no progression (response category not simulated),113,TA2
+S0074,overall response,no progression (response category not simulated),169,TA3
+S0074,overall response,no progression (response category not simulated),225,TA4
+S0074,overall response,no progression (response category not simulated),281,TA5
+S0074,overall response,no progression (response category not simulated),337,TA6
+S0074,overall response,progressive disease,393,TA7
+S0075,overall response,no progression (response category not simulated),57,TA1
+S0075,overall response,progressive disease,113,TA2
+S0076,overall response,no progression (response category not simulated),57,TA1
+S0076,overall response,no progression (response category not simulated),113,TA2
+S0076,overall response,no progression (response category not simulated),169,TA3
+S0076,overall response,no progression (response category not simulated),225,TA4
+S0076,overall response,no progression (response category not simulated),281,TA5
+S0076,overall response,no progression (response category not simulated),337,TA6
+S0076,overall response,progressive disease,393,TA7
+S0077,overall response,progressive disease,57,TA1
+S0078,overall response,no progression (response category not simulated),57,TA1
+S0078,overall response,no progression (response category not simulated),113,TA2
+S0078,overall response,no progression (response category not simulated),169,TA3
+S0078,overall response,no progression (response category not simulated),225,TA4
+S0078,overall response,no progression (response category not simulated),281,TA5
+S0078,overall response,no progression (response category not simulated),337,TA6
+S0078,overall response,no progression (response category not simulated),393,TA7
+S0078,overall response,no progression (response category not simulated),449,TA8
+S0078,overall response,progressive disease,505,TA9
+S0079,overall response,no progression (response category not simulated),57,TA1
+S0079,overall response,no progression (response category not simulated),113,TA2
+S0079,overall response,progressive disease,169,TA3
+S0080,overall response,no progression (response category not simulated),57,TA1
+S0080,overall response,no progression (response category not simulated),113,TA2
+S0080,overall response,no progression (response category not simulated),169,TA3
+S0080,overall response,progressive disease,225,TA4
+S0081,overall response,progressive disease,57,TA1
+S0082,overall response,no progression (response category not simulated),57,TA1
+S0082,overall response,no progression (response category not simulated),113,TA2
+S0082,overall response,progressive disease,169,TA3
+S0083,overall response,no progression (response category not simulated),57,TA1
+S0083,overall response,no progression (response category not simulated),113,TA2
+S0083,overall response,no progression (response category not simulated),169,TA3
+S0083,overall response,no progression (response category not simulated),225,TA4
+S0083,overall response,no progression (response category not simulated),281,TA5
+S0083,overall response,no progression (response category not simulated),337,TA6
+S0083,overall response,no progression (response category not simulated),393,TA7
+S0083,overall response,progressive disease,449,TA8
+S0084,overall response,no progression (response category not simulated),57,TA1
+S0084,overall response,no progression (response category not simulated),113,TA2
+S0084,overall response,no progression (response category not simulated),169,TA3
+S0084,overall response,no progression (response category not simulated),225,TA4
+S0084,overall response,no progression (response category not simulated),281,TA5
+S0084,overall response,no progression (response category not simulated),337,TA6
+S0084,overall response,no progression (response category not simulated),393,TA7
+S0084,overall response,progressive disease,449,TA8
+S0085,overall response,no progression (response category not simulated),57,TA1
+S0085,overall response,no progression (response category not simulated),113,TA2
+S0085,overall response,no progression (response category not simulated),169,TA3
+S0085,overall response,progressive disease,225,TA4
+S0086,overall response,progressive disease,57,TA1
+S0087,overall response,progressive disease,57,TA1
+S0088,overall response,no progression (response category not simulated),57,TA1
+S0088,overall response,no progression (response category not simulated),113,TA2
+S0088,overall response,no progression (response category not simulated),169,TA3
+S0088,overall response,no progression (response category not simulated),225,TA4
+S0088,overall response,no progression (response category not simulated),281,TA5
+S0088,overall response,no progression (response category not simulated),337,TA6
+S0088,overall response,no progression (response category not simulated),393,TA7
+S0088,overall response,progressive disease,449,TA8
+S0089,overall response,no progression (response category not simulated),57,TA1
+S0089,overall response,progressive disease,113,TA2
+S0090,overall response,no progression (response category not simulated),57,TA1
+S0090,overall response,no progression (response category not simulated),113,TA2
+S0090,overall response,no progression (response category not simulated),169,TA3
+S0090,overall response,no progression (response category not simulated),225,TA4
+S0090,overall response,no progression (response category not simulated),281,TA5
+S0090,overall response,progressive disease,337,TA6
+S0091,overall response,no progression (response category not simulated),57,TA1
+S0091,overall response,no progression (response category not simulated),113,TA2
+S0091,overall response,no progression (response category not simulated),169,TA3
+S0091,overall response,no progression (response category not simulated),225,TA4
+S0091,overall response,no progression (response category not simulated),281,TA5
+S0091,overall response,no progression (response category not simulated),337,TA6
+S0091,overall response,no progression (response category not simulated),393,TA7
+S0091,overall response,progressive disease,449,TA8
+S0092,overall response,no progression (response category not simulated),57,TA1
+S0092,overall response,progressive disease,113,TA2
+S0093,overall response,no progression (response category not simulated),57,TA1
+S0093,overall response,no progression (response category not simulated),113,TA2
+S0093,overall response,progressive disease,169,TA3
+S0094,overall response,progressive disease,57,TA1
+S0095,overall response,progressive disease,57,TA1
+S0096,overall response,no progression (response category not simulated),57,TA1
+S0097,overall response,no progression (response category not simulated),57,TA1
+S0097,overall response,no progression (response category not simulated),113,TA2
+S0097,overall response,no progression (response category not simulated),169,TA3
+S0097,overall response,no progression (response category not simulated),225,TA4
+S0097,overall response,progressive disease,281,TA5
+S0098,overall response,progressive disease,57,TA1
+S0099,overall response,no progression (response category not simulated),57,TA1
+S0099,overall response,no progression (response category not simulated),113,TA2
+S0099,overall response,no progression (response category not simulated),169,TA3
+S0099,overall response,no progression (response category not simulated),225,TA4
+S0099,overall response,no progression (response category not simulated),281,TA5
+S0099,overall response,no progression (response category not simulated),337,TA6
+S0099,overall response,progressive disease,393,TA7
+S0100,overall response,progressive disease,57,TA1
+S0101,overall response,progressive disease,57,TA1
+S0102,overall response,no progression (response category not simulated),57,TA1
+S0102,overall response,no progression (response category not simulated),113,TA2
+S0102,overall response,progressive disease,169,TA3
+S0103,overall response,no progression (response category not simulated),57,TA1
+S0103,overall response,progressive disease,113,TA2
+S0104,overall response,no progression (response category not simulated),57,TA1
+S0104,overall response,no progression (response category not simulated),113,TA2
+S0104,overall response,progressive disease,169,TA3
+S0105,overall response,no progression (response category not simulated),57,TA1
+S0105,overall response,progressive disease,113,TA2
+S0106,overall response,no progression (response category not simulated),57,TA1
+S0106,overall response,progressive disease,113,TA2
+S0107,overall response,no progression (response category not simulated),57,TA1
+S0107,overall response,no progression (response category not simulated),113,TA2
+S0107,overall response,no progression (response category not simulated),169,TA3
+S0107,overall response,no progression (response category not simulated),225,TA4
+S0107,overall response,progressive disease,281,TA5
+S0108,overall response,no progression (response category not simulated),57,TA1
+S0108,overall response,no progression (response category not simulated),113,TA2
+S0108,overall response,no progression (response category not simulated),169,TA3
+S0108,overall response,no progression (response category not simulated),225,TA4
+S0108,overall response,progressive disease,281,TA5
+S0109,overall response,no progression (response category not simulated),57,TA1
+S0109,overall response,no progression (response category not simulated),113,TA2
+S0109,overall response,no progression (response category not simulated),169,TA3
+S0109,overall response,no progression (response category not simulated),225,TA4
+S0109,overall response,no progression (response category not simulated),281,TA5
+S0109,overall response,no progression (response category not simulated),337,TA6
+S0109,overall response,no progression (response category not simulated),393,TA7
+S0109,overall response,progressive disease,449,TA8
+S0111,overall response,no progression (response category not simulated),57,TA1
+S0111,overall response,no progression (response category not simulated),113,TA2
+S0111,overall response,no progression (response category not simulated),169,TA3
+S0111,overall response,no progression (response category not simulated),225,TA4
+S0111,overall response,progressive disease,281,TA5
+S0112,overall response,no progression (response category not simulated),57,TA1
+S0112,overall response,no progression (response category not simulated),113,TA2
+S0112,overall response,no progression (response category not simulated),169,TA3
+S0112,overall response,no progression (response category not simulated),225,TA4
+S0112,overall response,no progression (response category not simulated),281,TA5
+S0112,overall response,no progression (response category not simulated),337,TA6
+S0112,overall response,no progression (response category not simulated),393,TA7
+S0112,overall response,no progression (response category not simulated),449,TA8
+S0112,overall response,no progression (response category not simulated),505,TA9
+S0112,overall response,progressive disease,561,TA10
+S0113,overall response,no progression (response category not simulated),57,TA1
+S0113,overall response,no progression (response category not simulated),113,TA2
+S0113,overall response,no progression (response category not simulated),169,TA3
+S0113,overall response,no progression (response category not simulated),225,TA4
+S0113,overall response,progressive disease,281,TA5
+S0114,overall response,progressive disease,57,TA1
+S0115,overall response,progressive disease,57,TA1
+S0116,overall response,no progression (response category not simulated),57,TA1
+S0116,overall response,no progression (response category not simulated),113,TA2
+S0116,overall response,no progression (response category not simulated),169,TA3
+S0116,overall response,no progression (response category not simulated),225,TA4
+S0116,overall response,progressive disease,281,TA5
+S0117,overall response,progressive disease,57,TA1
+S0118,overall response,progressive disease,57,TA1
+S0119,overall response,no progression (response category not simulated),57,TA1
+S0119,overall response,no progression (response category not simulated),113,TA2
+S0119,overall response,progressive disease,169,TA3
+S0120,overall response,no progression (response category not simulated),57,TA1
+S0120,overall response,no progression (response category not simulated),113,TA2
+S0120,overall response,no progression (response category not simulated),169,TA3
+S0120,overall response,progressive disease,225,TA4
+S0121,overall response,no progression (response category not simulated),57,TA1
+S0121,overall response,no progression (response category not simulated),113,TA2
+S0121,overall response,no progression (response category not simulated),169,TA3
+S0121,overall response,progressive disease,225,TA4
+S0122,overall response,no progression (response category not simulated),57,TA1
+S0122,overall response,no progression (response category not simulated),113,TA2
+S0122,overall response,no progression (response category not simulated),169,TA3
+S0122,overall response,no progression (response category not simulated),225,TA4
+S0122,overall response,no progression (response category not simulated),281,TA5
+S0122,overall response,no progression (response category not simulated),337,TA6
+S0122,overall response,progressive disease,393,TA7
+S0123,overall response,progressive disease,57,TA1
+S0124,overall response,no progression (response category not simulated),57,TA1
+S0124,overall response,no progression (response category not simulated),113,TA2
+S0124,overall response,progressive disease,169,TA3
+S0125,overall response,progressive disease,57,TA1
+S0126,overall response,progressive disease,57,TA1
+S0127,overall response,progressive disease,57,TA1
+S0128,overall response,no progression (response category not simulated),57,TA1
+S0128,overall response,progressive disease,113,TA2
+S0130,overall response,no progression (response category not simulated),57,TA1
+S0130,overall response,no progression (response category not simulated),113,TA2
+S0130,overall response,progressive disease,169,TA3
+S0131,overall response,no progression (response category not simulated),57,TA1
+S0131,overall response,no progression (response category not simulated),113,TA2
+S0131,overall response,no progression (response category not simulated),169,TA3
+S0131,overall response,no progression (response category not simulated),225,TA4
+S0131,overall response,no progression (response category not simulated),281,TA5
+S0131,overall response,no progression (response category not simulated),337,TA6
+S0131,overall response,no progression (response category not simulated),393,TA7
+S0131,overall response,no progression (response category not simulated),449,TA8
+S0131,overall response,no progression (response category not simulated),505,TA9
+S0131,overall response,no progression (response category not simulated),561,TA10
+S0131,overall response,no progression (response category not simulated),617,TA11
+S0131,overall response,no progression (response category not simulated),673,TA12
+S0132,overall response,no progression (response category not simulated),57,TA1
+S0132,overall response,progressive disease,113,TA2
+S0133,overall response,no progression (response category not simulated),57,TA1
+S0133,overall response,no progression (response category not simulated),113,TA2
+S0133,overall response,no progression (response category not simulated),169,TA3
+S0133,overall response,no progression (response category not simulated),225,TA4
+S0133,overall response,no progression (response category not simulated),281,TA5
+S0133,overall response,no progression (response category not simulated),337,TA6
+S0133,overall response,no progression (response category not simulated),393,TA7
+S0133,overall response,progressive disease,449,TA8
+S0134,overall response,no progression (response category not simulated),57,TA1
+S0134,overall response,no progression (response category not simulated),113,TA2
+S0134,overall response,no progression (response category not simulated),169,TA3
+S0134,overall response,progressive disease,225,TA4
+S0135,overall response,no progression (response category not simulated),57,TA1
+S0135,overall response,no progression (response category not simulated),113,TA2
+S0135,overall response,no progression (response category not simulated),169,TA3
+S0135,overall response,progressive disease,225,TA4
+S0136,overall response,no progression (response category not simulated),57,TA1
+S0136,overall response,no progression (response category not simulated),113,TA2
+S0136,overall response,no progression (response category not simulated),169,TA3
+S0136,overall response,no progression (response category not simulated),225,TA4
+S0136,overall response,no progression (response category not simulated),281,TA5
+S0137,overall response,no progression (response category not simulated),57,TA1
+S0137,overall response,progressive disease,113,TA2
+S0138,overall response,no progression (response category not simulated),57,TA1
+S0138,overall response,progressive disease,113,TA2
+S0139,overall response,no progression (response category not simulated),57,TA1
+S0139,overall response,no progression (response category not simulated),113,TA2
+S0139,overall response,no progression (response category not simulated),169,TA3
+S0139,overall response,no progression (response category not simulated),225,TA4
+S0139,overall response,no progression (response category not simulated),281,TA5
+S0139,overall response,no progression (response category not simulated),337,TA6
+S0139,overall response,no progression (response category not simulated),393,TA7
+S0139,overall response,no progression (response category not simulated),449,TA8
+S0139,overall response,no progression (response category not simulated),505,TA9
+S0139,overall response,no progression (response category not simulated),561,TA10
+S0139,overall response,no progression (response category not simulated),617,TA11
+S0139,overall response,no progression (response category not simulated),673,TA12
+S0139,overall response,no progression (response category not simulated),729,TA13
+S0140,overall response,no progression (response category not simulated),57,TA1
+S0140,overall response,no progression (response category not simulated),113,TA2
+S0140,overall response,no progression (response category not simulated),169,TA3
+S0140,overall response,progressive disease,225,TA4
+S0141,overall response,no progression (response category not simulated),57,TA1
+S0141,overall response,no progression (response category not simulated),113,TA2
+S0141,overall response,no progression (response category not simulated),169,TA3
+S0141,overall response,no progression (response category not simulated),225,TA4
+S0141,overall response,no progression (response category not simulated),281,TA5
+S0141,overall response,no progression (response category not simulated),337,TA6
+S0141,overall response,no progression (response category not simulated),393,TA7
+S0141,overall response,no progression (response category not simulated),449,TA8
+S0141,overall response,no progression (response category not simulated),505,TA9
+S0141,overall response,no progression (response category not simulated),561,TA10
+S0141,overall response,no progression (response category not simulated),617,TA11
+S0141,overall response,no progression (response category not simulated),673,TA12
+S0141,overall response,no progression (response category not simulated),729,TA13
+S0142,overall response,no progression (response category not simulated),57,TA1
+S0142,overall response,progressive disease,113,TA2
+S0143,overall response,no progression (response category not simulated),57,TA1
+S0143,overall response,no progression (response category not simulated),113,TA2
+S0143,overall response,no progression (response category not simulated),169,TA3
+S0143,overall response,no progression (response category not simulated),225,TA4
+S0143,overall response,no progression (response category not simulated),281,TA5
+S0143,overall response,no progression (response category not simulated),337,TA6
+S0143,overall response,progressive disease,393,TA7
+S0145,overall response,no progression (response category not simulated),57,TA1
+S0145,overall response,no progression (response category not simulated),113,TA2
+S0145,overall response,progressive disease,169,TA3
+S0146,overall response,progressive disease,57,TA1
+S0147,overall response,no progression (response category not simulated),57,TA1
+S0147,overall response,progressive disease,113,TA2
+S0148,overall response,progressive disease,57,TA1
+S0149,overall response,no progression (response category not simulated),57,TA1
+S0149,overall response,no progression (response category not simulated),113,TA2
+S0149,overall response,no progression (response category not simulated),169,TA3
+S0149,overall response,progressive disease,225,TA4
+S0150,overall response,no progression (response category not simulated),57,TA1
+S0150,overall response,no progression (response category not simulated),113,TA2
+S0150,overall response,no progression (response category not simulated),169,TA3
+S0150,overall response,no progression (response category not simulated),225,TA4
+S0150,overall response,no progression (response category not simulated),281,TA5
+S0150,overall response,no progression (response category not simulated),337,TA6
+S0150,overall response,progressive disease,393,TA7
+S0151,overall response,no progression (response category not simulated),57,TA1
+S0151,overall response,progressive disease,113,TA2
+S0152,overall response,no progression (response category not simulated),57,TA1
+S0152,overall response,no progression (response category not simulated),113,TA2
+S0152,overall response,no progression (response category not simulated),169,TA3
+S0152,overall response,progressive disease,225,TA4
+S0153,overall response,progressive disease,57,TA1
+S0154,overall response,progressive disease,57,TA1
+S0155,overall response,no progression (response category not simulated),57,TA1
+S0155,overall response,no progression (response category not simulated),113,TA2
+S0155,overall response,no progression (response category not simulated),169,TA3
+S0155,overall response,no progression (response category not simulated),225,TA4
+S0155,overall response,no progression (response category not simulated),281,TA5
+S0155,overall response,no progression (response category not simulated),337,TA6
+S0155,overall response,progressive disease,393,TA7
+S0156,overall response,no progression (response category not simulated),57,TA1
+S0156,overall response,no progression (response category not simulated),113,TA2
+S0156,overall response,no progression (response category not simulated),169,TA3
+S0156,overall response,no progression (response category not simulated),225,TA4
+S0156,overall response,no progression (response category not simulated),281,TA5
+S0156,overall response,no progression (response category not simulated),337,TA6
+S0156,overall response,no progression (response category not simulated),393,TA7
+S0156,overall response,no progression (response category not simulated),449,TA8
+S0156,overall response,no progression (response category not simulated),505,TA9
+S0156,overall response,no progression (response category not simulated),561,TA10
+S0156,overall response,no progression (response category not simulated),617,TA11
+S0156,overall response,no progression (response category not simulated),673,TA12
+S0156,overall response,no progression (response category not simulated),729,TA13
+S0157,overall response,progressive disease,57,TA1
+S0158,overall response,no progression (response category not simulated),57,TA1
+S0158,overall response,no progression (response category not simulated),113,TA2
+S0158,overall response,progressive disease,169,TA3
+S0159,overall response,no progression (response category not simulated),57,TA1
+S0159,overall response,no progression (response category not simulated),113,TA2
+S0159,overall response,progressive disease,169,TA3
+S0160,overall response,no progression (response category not simulated),57,TA1
+S0160,overall response,no progression (response category not simulated),113,TA2
+S0160,overall response,no progression (response category not simulated),169,TA3
+S0160,overall response,no progression (response category not simulated),225,TA4
+S0160,overall response,progressive disease,281,TA5
+S0161,overall response,no progression (response category not simulated),57,TA1
+S0161,overall response,no progression (response category not simulated),113,TA2
+S0161,overall response,no progression (response category not simulated),169,TA3
+S0161,overall response,no progression (response category not simulated),225,TA4
+S0161,overall response,no progression (response category not simulated),281,TA5
+S0161,overall response,progressive disease,337,TA6
+S0162,overall response,progressive disease,57,TA1
+S0163,overall response,progressive disease,57,TA1
+S0164,overall response,progressive disease,57,TA1
+S0165,overall response,no progression (response category not simulated),57,TA1
+S0165,overall response,no progression (response category not simulated),113,TA2
+S0165,overall response,no progression (response category not simulated),169,TA3
+S0165,overall response,no progression (response category not simulated),225,TA4
+S0165,overall response,progressive disease,281,TA5
+S0166,overall response,no progression (response category not simulated),57,TA1
+S0166,overall response,no progression (response category not simulated),113,TA2
+S0166,overall response,progressive disease,169,TA3
+S0167,overall response,no progression (response category not simulated),57,TA1
+S0167,overall response,no progression (response category not simulated),113,TA2
+S0167,overall response,progressive disease,169,TA3
+S0168,overall response,no progression (response category not simulated),57,TA1
+S0168,overall response,no progression (response category not simulated),113,TA2
+S0168,overall response,no progression (response category not simulated),169,TA3
+S0168,overall response,no progression (response category not simulated),225,TA4
+S0168,overall response,no progression (response category not simulated),281,TA5
+S0168,overall response,no progression (response category not simulated),337,TA6
+S0168,overall response,no progression (response category not simulated),393,TA7
+S0168,overall response,no progression (response category not simulated),449,TA8
+S0168,overall response,no progression (response category not simulated),505,TA9
+S0168,overall response,progressive disease,561,TA10
+S0169,overall response,no progression (response category not simulated),57,TA1
+S0169,overall response,progressive disease,113,TA2
+S0170,overall response,progressive disease,57,TA1
+S0171,overall response,progressive disease,57,TA1
+S0172,overall response,no progression (response category not simulated),57,TA1
+S0172,overall response,no progression (response category not simulated),113,TA2
+S0172,overall response,no progression (response category not simulated),169,TA3
+S0172,overall response,no progression (response category not simulated),225,TA4
+S0172,overall response,no progression (response category not simulated),281,TA5
+S0172,overall response,no progression (response category not simulated),337,TA6
+S0172,overall response,no progression (response category not simulated),393,TA7
+S0172,overall response,no progression (response category not simulated),449,TA8
+S0172,overall response,no progression (response category not simulated),505,TA9
+S0172,overall response,no progression (response category not simulated),561,TA10
+S0172,overall response,progressive disease,617,TA11
+S0173,overall response,no progression (response category not simulated),57,TA1
+S0173,overall response,no progression (response category not simulated),113,TA2
+S0173,overall response,no progression (response category not simulated),169,TA3
+S0173,overall response,no progression (response category not simulated),225,TA4
+S0173,overall response,progressive disease,281,TA5
+S0174,overall response,no progression (response category not simulated),57,TA1
+S0174,overall response,no progression (response category not simulated),113,TA2
+S0174,overall response,no progression (response category not simulated),169,TA3
+S0174,overall response,no progression (response category not simulated),225,TA4
+S0174,overall response,no progression (response category not simulated),281,TA5
+S0174,overall response,progressive disease,337,TA6
+S0175,overall response,progressive disease,57,TA1
+S0176,overall response,no progression (response category not simulated),57,TA1
+S0176,overall response,no progression (response category not simulated),113,TA2
+S0176,overall response,no progression (response category not simulated),169,TA3
+S0176,overall response,no progression (response category not simulated),225,TA4
+S0176,overall response,no progression (response category not simulated),281,TA5
+S0176,overall response,no progression (response category not simulated),337,TA6
+S0176,overall response,no progression (response category not simulated),393,TA7
+S0176,overall response,no progression (response category not simulated),449,TA8
+S0176,overall response,no progression (response category not simulated),505,TA9
+S0176,overall response,no progression (response category not simulated),561,TA10
+S0176,overall response,no progression (response category not simulated),617,TA11
+S0176,overall response,progressive disease,673,TA12
+S0177,overall response,no progression (response category not simulated),57,TA1
+S0177,overall response,no progression (response category not simulated),113,TA2
+S0177,overall response,no progression (response category not simulated),169,TA3
+S0177,overall response,no progression (response category not simulated),225,TA4
+S0177,overall response,no progression (response category not simulated),281,TA5
+S0177,overall response,no progression (response category not simulated),337,TA6
+S0177,overall response,progressive disease,393,TA7
+S0178,overall response,progressive disease,57,TA1
+S0179,overall response,no progression (response category not simulated),57,TA1
+S0179,overall response,no progression (response category not simulated),113,TA2
+S0179,overall response,progressive disease,169,TA3
+S0180,overall response,no progression (response category not simulated),57,TA1
+S0180,overall response,no progression (response category not simulated),113,TA2
+S0180,overall response,no progression (response category not simulated),169,TA3
+S0181,overall response,no progression (response category not simulated),57,TA1
+S0181,overall response,no progression (response category not simulated),113,TA2
+S0181,overall response,no progression (response category not simulated),169,TA3
+S0181,overall response,no progression (response category not simulated),225,TA4
+S0181,overall response,no progression (response category not simulated),281,TA5
+S0181,overall response,no progression (response category not simulated),337,TA6
+S0181,overall response,progressive disease,393,TA7
+S0182,overall response,progressive disease,57,TA1
+S0183,overall response,progressive disease,57,TA1
+S0184,overall response,no progression (response category not simulated),57,TA1
+S0184,overall response,progressive disease,113,TA2
+S0185,overall response,no progression (response category not simulated),57,TA1
+S0185,overall response,no progression (response category not simulated),113,TA2
+S0185,overall response,no progression (response category not simulated),169,TA3
+S0185,overall response,no progression (response category not simulated),225,TA4
+S0185,overall response,no progression (response category not simulated),281,TA5
+S0185,overall response,no progression (response category not simulated),337,TA6
+S0185,overall response,progressive disease,393,TA7
+S0186,overall response,no progression (response category not simulated),57,TA1
+S0186,overall response,no progression (response category not simulated),113,TA2
+S0186,overall response,no progression (response category not simulated),169,TA3
+S0186,overall response,progressive disease,225,TA4
+S0187,overall response,no progression (response category not simulated),57,TA1
+S0187,overall response,no progression (response category not simulated),113,TA2
+S0187,overall response,no progression (response category not simulated),169,TA3
+S0187,overall response,no progression (response category not simulated),225,TA4
+S0187,overall response,progressive disease,281,TA5
+S0188,overall response,no progression (response category not simulated),57,TA1
+S0188,overall response,progressive disease,113,TA2
+S0189,overall response,no progression (response category not simulated),57,TA1
+S0189,overall response,no progression (response category not simulated),113,TA2
+S0189,overall response,progressive disease,169,TA3
+S0190,overall response,no progression (response category not simulated),57,TA1
+S0190,overall response,no progression (response category not simulated),113,TA2
+S0190,overall response,no progression (response category not simulated),169,TA3
+S0190,overall response,no progression (response category not simulated),225,TA4
+S0190,overall response,no progression (response category not simulated),281,TA5
+S0190,overall response,no progression (response category not simulated),337,TA6
+S0190,overall response,progressive disease,393,TA7

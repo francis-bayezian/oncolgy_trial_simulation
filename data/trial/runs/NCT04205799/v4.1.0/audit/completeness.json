@@ -1,0 +1,49 @@
+{
+ "summary": {
+  "study": "NCT04205799",
+  "version": "4.1.0",
+  "complete": true,
+  "problems": 0,
+  "stages": {
+   "studyspec": "LOCKED",
+   "protocol_facts": "LOCKED",
+   "population": "LOCKED",
+   "eligibility": "LOCKED",
+   "cohorts": "LOCKED",
+   "outcomes": "LOCKED",
+   "results": "LOCKED",
+   "planning": "LOCKED",
+   "safety": "LOCKED",
+   "outputs": "LOCKED",
+   "journey": "LOCKED",
+   "endpoints": "LOCKED",
+   "analysis": "LOCKED"
+  },
+  "endpoint_classes": {
+   "time_to_event": 3,
+   "proportion": 2,
+   "continuous": 0,
+   "safety": 4,
+   "not_simulated": 2
+  },
+  "studyspec_items_run_with_review_flag": 53
+ },
+ "problems": [],
+ "studyspec_flags": {
+  "arms:unclear": 2,
+  "eligibility:REVIEW_REQUIRED": 4,
+  "eligibility:OPTIONAL_POLICY": 3,
+  "eligibility:NON_EXECUTABLE_INFORMATIONAL": 4,
+  "treatment_phases:REVIEW_REQUIRED": 1,
+  "interventions:REVIEW_REQUIRED": 5,
+  "dose_modifications:REVIEW_REQUIRED": 20,
+  "dose_modifications:OPTIONAL_POLICY": 1,
+  "endpoints:UNRESOLVED_IN_SOURCE": 3,
+  "endpoints:REVIEW_REQUIRED": 2,
+  "analyses:REVIEW_REQUIRED": 12,
+  "interim_analyses:REVIEW_REQUIRED": 4,
+  "interim_analyses:NON_EXECUTABLE_INFORMATIONAL": 1,
+  "decision_rules:REVIEW_REQUIRED": 5,
+  "resolutions:NOT_STATED": 4
+ }
+}

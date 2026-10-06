@@ -1,0 +1,951 @@
+{
+ "subject_id": "S0176",
+ "arm": "ARM3",
+ "agents": [
+  "ensartinib"
+ ],
+ "baseline": {
+  "patient_id": "P009153",
+  "demographic:age": {
+   "value": 62.13,
+   "unit": "year"
+  },
+  "demographic:sex": "male",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 1,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 75.0,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 162.9,
+   "unit": "cm"
+  },
+  "var:each_dose_expansion_cohort": "Panobinostat 20 mg/Everolimus 5 mg",
+  "var:tumor_type_population": "Disease Population Group 1",
+  "var:prior_treatment_cohort": "Yes",
+  "var:genomic_alterations": "Rearrangements of Ig / TCR genes only",
+  "var:presence_of_baseline_cns_metastases_or_leptomeningeal_diseas": "No",
+  "var:alk_positive": "Negative",
+  "var:alk_negative": "Positive",
+  "var:central_testing_for_alk_will_no_longer_be_required": "No"
+ },
+ "progression_day_latent": 652,
+ "progression_detected_day": 673,
+ "off_treatment": [
+  673,
+  "disease progression"
+ ],
+ "dose": {
+  "ensartinib": {
+   "value": 225.0,
+   "unit": "mg",
+   "basis": "fixed"
+  }
+ },
+ "reductions": {
+  "ensartinib": 0
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 2,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 3,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 4,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 5,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 6,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 7,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 8,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 9,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 10,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 11,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 12,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 13,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 14,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 15,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 16,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 17,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 18,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 19,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 20,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 21,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 22,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 23,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 24,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  },
+  {
+   "cycle": 25,
+   "agent": "ensartinib",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "225 mg"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "hypocalcemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 18,
+   "source": "safety_v3:RESOLVED",
+   "end": 29,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "creatinine_renal_clearance_decreased",
+   "serious": false,
+   "grade": 2,
+   "onset": 25,
+   "source": "safety_v3:RESOLVED",
+   "end": 29,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hemoptysis",
+   "serious": false,
+   "grade": 1,
+   "onset": 106,
+   "source": "safety_v3:RESOLVED",
+   "end": 113,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fever",
+   "serious": false,
+   "grade": 1,
+   "onset": 125,
+   "source": "safety_v3:RESOLVED",
+   "end": 141,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "abdomen_distended",
+   "serious": false,
+   "grade": 2,
+   "onset": 135,
+   "source": "safety_v3:RESOLVED",
+   "end": 141,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "chest_pain",
+   "serious": false,
+   "grade": 1,
+   "onset": 292,
+   "source": "safety_v3:RESOLVED",
+   "end": 309,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "decreased_platelet_count",
+   "serious": false,
+   "grade": 1,
+   "onset": 300,
+   "source": "safety_v3:RESOLVED",
+   "end": 309,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "blood_alkaline_phosphatase_increased",
+   "serious": false,
+   "grade": 2,
+   "onset": 367,
+   "source": "safety_v3:RESOLVED",
+   "end": 393,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fatigue",
+   "serious": false,
+   "grade": 2,
+   "onset": 415,
+   "source": "safety_v3:RESOLVED",
+   "end": 421,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "anemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 548,
+   "source": "safety_v3:RESOLVED",
+   "end": 561,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "constipation",
+   "serious": false,
+   "grade": 2,
+   "onset": 561,
+   "source": "safety_v3:RESOLVED",
+   "end": 589,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "pruritus",
+   "serious": false,
+   "grade": 2,
+   "onset": 580,
+   "source": "safety_v3:RESOLVED",
+   "end": 589,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "amylase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 634,
+   "source": "safety_v3:RESOLVED",
+   "end": 645,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "lipase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 673,
+   "source": "safety_v3:RESOLVED",
+   "end": 701,
+   "decisions": {
+    "ensartinib": {
+     "action": "no_modification",
+     "value": null,
+     "unit": null,
+     "percent": null,
+     "resume": null,
+     "rule_id": "DM014",
+     "category": "Grade  0,  1,  or  2",
+     "quote": "None",
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "edema",
+   "serious": false,
+   "grade": 2,
+   "onset": 691,
+   "source": "safety_v3:RESOLVED",
+   "end": 701
+  }
+ ],
+ "events": [
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 62.13, male, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -28,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start ensartinib",
+   "result": "225 mg",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX007",
+   "quote": "225  mg  once  daily  is  the  recommended  Phase  2  dose  (RP2D)"
+  },
+  {
+   "day": 18,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "hypocalcemia",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 25,
+   "visit": "C2D1",
+   "category": "adverse event",
+   "item": "creatinine_renal_clearance_decreased",
+   "result": "grade 2; resolves by day 29",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 57,
+   "visit": "TA1",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 106,
+   "visit": "C5D1",
+   "category": "adverse event",
+   "item": "hemoptysis",
+   "result": "grade 1; resolves by day 113",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 113,
+   "visit": "TA2",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 125,
+   "visit": "C6D1",
+   "category": "adverse event",
+   "item": "fever",
+   "result": "grade 1; resolves by day 141",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 135,
+   "visit": "C6D1",
+   "category": "adverse event",
+   "item": "abdomen_distended",
+   "result": "grade 2; resolves by day 141",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 169,
+   "visit": "TA3",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 225,
+   "visit": "TA4",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 281,
+   "visit": "TA5",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 292,
+   "visit": "C12D1",
+   "category": "adverse event",
+   "item": "chest_pain",
+   "result": "grade 1; resolves by day 309",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 300,
+   "visit": "C12D1",
+   "category": "adverse event",
+   "item": "decreased_platelet_count",
+   "result": "grade 1; resolves by day 309",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 337,
+   "visit": "TA6",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 367,
+   "visit": "C15D1",
+   "category": "adverse event",
+   "item": "blood_alkaline_phosphatase_increased",
+   "result": "grade 2; resolves by day 393",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 393,
+   "visit": "TA7",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 415,
+   "visit": "C16D1",
+   "category": "adverse event",
+   "item": "fatigue",
+   "result": "grade 2; resolves by day 421",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 449,
+   "visit": "TA8",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 505,
+   "visit": "TA9",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 548,
+   "visit": "C21D1",
+   "category": "adverse event",
+   "item": "anemia",
+   "result": "grade 1; resolves by day 561",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 548,
+   "visit": "C21D1",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "11.56 g/dL (grade 1)",
+   "consequence": "during anemia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Hemoglobin (10-12 g/dL)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 561,
+   "visit": "C21D1",
+   "category": "adverse event",
+   "item": "constipation",
+   "result": "grade 2; resolves by day 589",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 561,
+   "visit": "TA10",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 580,
+   "visit": "C22D1",
+   "category": "adverse event",
+   "item": "pruritus",
+   "result": "grade 2; resolves by day 589",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 617,
+   "visit": "TA11",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "no progression (response category not simulated)",
+   "consequence": "continue",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 634,
+   "visit": "C24D1",
+   "category": "adverse event",
+   "item": "amylase_increased",
+   "result": "grade 1; resolves by day 645",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 673,
+   "visit": "C25D1",
+   "category": "adverse event",
+   "item": "lipase_increased",
+   "result": "grade 1; resolves by day 701",
+   "consequence": "ensartinib continued (DM014)",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 673,
+   "visit": "TA12",
+   "category": "tumour assessment",
+   "item": "RECIST / protocol response criteria",
+   "result": "progressive disease",
+   "consequence": "progression detected: treatment ends",
+   "evidence_level": "assumption",
+   "source": "latent progression time: evidence median progression-free survival 5.2 months (adult trials, 67 studies), exponential; detected at scheduled assessment",
+   "assumption": "A7_progression_exponential"
+  },
+  {
+   "day": 673,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "disease progression",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 691,
+   "visit": "C26D1",
+   "category": "adverse event",
+   "item": "edema",
+   "result": "grade 2; resolves by day 701",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 703,
+   "visit": "FU1",
+   "category": "follow-up",
+   "item": "follow-up visit",
+   "result": "attended",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "follow-up visits: schedule fact SF09 (REVIEW_REQUIRED: used under the accept-review decision, flagged)"
+  }
+ ]
+}

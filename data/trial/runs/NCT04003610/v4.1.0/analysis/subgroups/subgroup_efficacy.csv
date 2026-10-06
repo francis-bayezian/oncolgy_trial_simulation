@@ -1,0 +1,121 @@
+Factor,Level,Arm,N enrolled,N efficacy-evaluable at cut-off,Small n,ORR % (95% CI),DCR % (95% CI),CR/PR/SD/PD/NE,TTR median mo,DOR median mo,PFS median mo (events/n),PFS 12 m %,OS median mo (events/n),OS 12 m %
+Carboplatin-eligible versus not eligible,not eligible,ARM1,13,2,yes,50% (1-99),50% (1-99),0/1/0/0/1,2.07,-,NR (0/2 ev),100.0,NR (0/2 ev),100.0
+Carboplatin-eligible versus not eligible,not eligible,ARM2,12,2,yes,0% (0-84),0% (0-84),0/0/0/2/0,-,-,2.07 (2/2 ev),-,14.46 (2/2 ev),100.0
+Carboplatin-eligible versus not eligible,not eligible,ARM3,17,2,yes,0% (0-84),50% (1-99),0/0/1/0/1,-,-,4.14 (1/2 ev),-,7.29 (2/2 ev),-
+Carboplatin-eligible versus not eligible,not eligible,ARM4,16,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.07 (1/1 ev),-,NR (0/1 ev),100.0
+Carboplatin-eligible versus not eligible,not recorded,ARM1,86,11,,27% (6-61),45% (17-77),3/0/2/4/2,4.14,17.61,10.35 (7/11 ev),27.8,20.86 (5/11 ev),72.9
+Carboplatin-eligible versus not eligible,not recorded,ARM2,78,6,yes,17% (0-64),100% (54-100),1/0/5/0/0,4.14,-,6.21 (3/6 ev),-,13.05 (3/6 ev),75.0
+Carboplatin-eligible versus not eligible,not recorded,ARM3,78,4,yes,25% (1-81),25% (1-81),1/0/0/1/2,4.14,11.22,2.07 (2/4 ev),50.0,15.36 (1/4 ev),100.0
+Carboplatin-eligible versus not eligible,not recorded,ARM4,72,8,yes,38% (9-76),75% (35-97),1/2/3/2/0,2.07,31.76,4.14 (6/8 ev),37.5,30.3 (4/8 ev),83.3
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM1,67,9,yes,22% (3-60),44% (14-79),2/0/2/3/2,4.14,7.59,10.35 (5/9 ev),19.0,16.81 (4/9 ev),66.7
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM2,65,5,yes,20% (1-72),80% (28-99),1/0/3/1/0,4.14,-,NR (2/5 ev),-,16.11 (2/5 ev),66.7
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM3,67,4,yes,0% (0-60),25% (1-81),0/0/1/1/2,-,-,2.07 (2/4 ev),-,11.61 (2/4 ev),33.3
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,PD-L1 CPS < 10,ARM4,56,8,yes,38% (9-76),62% (24-91),1/2/2/3/0,2.07,31.76,4.14 (6/8 ev),37.5,33.83 (3/8 ev),83.3
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM1,32,4,yes,50% (7-93),50% (7-93),1/1/0/1/1,2.07,17.61,21.75 (2/4 ev),66.7,21.75 (1/4 ev),100.0
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM2,25,3,yes,0% (0-71),67% (9-99),0/0/2/1/0,-,-,4.14 (3/3 ev),-,14.46 (3/3 ev),100.0
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM3,28,2,yes,50% (1-99),50% (1-99),1/0/0/0/1,4.14,11.22,15.36 (1/2 ev),100.0,15.36 (1/2 ev),100.0
+PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10,not recorded,ARM4,32,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,4.14 (1/1 ev),-,30.3 (1/1 ev),100.0
+LN-only disease versus other metastatic disease,LN-only disease,ARM1,45,5,yes,60% (15-95),100% (48-100),2/1/2/0/0,4.14,17.61,21.75 (2/5 ev),75.0,21.75 (2/5 ev),100.0
+LN-only disease versus other metastatic disease,LN-only disease,ARM2,45,5,yes,20% (1-72),60% (15-95),1/0/2/2/0,4.14,-,4.14 (4/5 ev),20.0,14.46 (4/5 ev),75.0
+LN-only disease versus other metastatic disease,LN-only disease,ARM3,50,4,yes,0% (0-60),25% (1-81),0/0/1/0/3,-,-,4.14 (1/4 ev),-,7.29 (2/4 ev),-
+LN-only disease versus other metastatic disease,LN-only disease,ARM4,45,3,yes,33% (1-91),67% (9-99),0/1/1/1/0,2.07,31.76,4.14 (3/3 ev),33.3,30.3 (2/3 ev),100.0
+LN-only disease versus other metastatic disease,other metastatic disease,ARM1,54,8,yes,12% (0-53),12% (0-53),1/0/0/4/3,4.14,7.59,2.07 (5/8 ev),-,20.86 (3/8 ev),53.3
+LN-only disease versus other metastatic disease,other metastatic disease,ARM2,45,3,yes,0% (0-71),100% (29-100),0/0/3/0/0,-,-,6.21 (1/3 ev),-,13.05 (1/3 ev),100.0
+LN-only disease versus other metastatic disease,other metastatic disease,ARM3,45,2,yes,50% (1-99),50% (1-99),1/0/0/1/0,4.14,11.22,2.07 (2/2 ev),50.0,15.36 (1/2 ev),100.0
+LN-only disease versus other metastatic disease,other metastatic disease,ARM4,43,6,yes,33% (4-78),67% (22-96),1/1/2/2/0,2.07,2.07,4.14 (4/6 ev),33.3,18.1 (2/6 ev),75.0
+Randomisation stratum,Carboplatin-eligible,ARM1,8,0,yes,-,-,-,-,-,-,-,-,-
+Randomisation stratum,Carboplatin-eligible,ARM2,10,0,yes,-,-,-,-,-,-,-,-,-
+Randomisation stratum,Carboplatin-eligible,ARM3,8,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,4.14 (1/1 ev),-,7.29 (1/1 ev),-
+Randomisation stratum,Carboplatin-eligible,ARM4,7,0,yes,-,-,-,-,-,-,-,-,-
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM1,27,7,yes,43% (10-82),57% (18-90),3/0/1/1/2,4.14,17.61,11.73 (4/7 ev),40.0,16.81 (3/7 ev),75.0
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM2,25,3,yes,33% (1-91),67% (9-99),1/0/1/1/0,4.14,-,4.14 (2/3 ev),-,14.46 (2/3 ev),100.0
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM3,25,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Randomisation stratum,Carboplatin-eligible versus not eligible; PD-L1 CPS ≥ 10 versus PD-L1 CPS < 10; ,ARM4,28,3,yes,33% (1-91),67% (9-99),1/0/1/1/0,4.14,-,NR (1/3 ev),66.7,18.1 (1/3 ev),100.0
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM1,9,0,yes,-,-,-,-,-,-,-,-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM2,14,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,6.21 (1/1 ev),-,10.26 (1/1 ev),-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM3,10,0,yes,-,-,-,-,-,-,-,-,-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; LN-only disease,ARM4,11,2,yes,50% (1-99),50% (1-99),0/1/0/1/0,2.07,31.76,2.07 (2/2 ev),50.0,33.83 (1/2 ev),100.0
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM1,18,2,yes,0% (0-84),50% (1-99),0/0/1/1/0,-,-,2.07 (1/2 ev),50.0,20.86 (1/2 ev),100.0
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM2,13,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM3,13,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.07 (1/1 ev),-,NR (0/1 ev),100.0
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS < 10; other metastatic disease,ARM4,9,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.07 (1/1 ev),-,5.55 (1/1 ev),-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM1,22,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.07 (1/1 ev),-,NR (0/1 ev),100.0
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM2,18,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,6.21 (1/1 ev),-,13.05 (1/1 ev),100.0
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM3,28,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Randomisation stratum,Carboplatin-eligible; PD-L1 CPS ≥ 10; LN-only disease,ARM4,24,2,yes,50% (1-99),100% (16-100),0/1/1/0/0,2.07,2.07,4.14 (2/2 ev),-,NR (0/2 ev),100.0
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM1,15,3,yes,33% (1-91),33% (1-91),0/1/0/1/1,2.07,-,2.07 (1/3 ev),50.0,4.72 (1/3 ev),50.0
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM2,10,2,yes,0% (0-84),50% (1-99),0/0/1/1/0,-,-,2.07 (1/2 ev),-,16.11 (1/2 ev),100.0
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM3,11,2,yes,50% (1-99),50% (1-99),1/0/0/0/1,4.14,11.22,15.36 (1/2 ev),100.0,11.61 (2/2 ev),50.0
+Randomisation stratum,not eligible; PD-L1 CPS < 10; other metastatic disease,ARM4,9,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,4.14 (1/1 ev),-,30.3 (1/1 ev),100.0
+Age (FDA standard age bands),65-74 years,ARM1,33,5,yes,20% (1-72),60% (15-95),1/0/2/2/0,4.14,17.61,10.35 (4/5 ev),30.0,16.81 (3/5 ev),75.0
+Age (FDA standard age bands),65-74 years,ARM2,24,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,4.14 (1/1 ev),-,20.3 (1/1 ev),100.0
+Age (FDA standard age bands),65-74 years,ARM3,24,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Age (FDA standard age bands),65-74 years,ARM4,22,2,yes,50% (1-99),100% (16-100),0/1/1/0/0,2.07,31.76,4.14 (2/2 ev),50.0,30.3 (2/2 ev),100.0
+Age (FDA standard age bands),< 65 years,ARM1,53,7,yes,43% (10-82),43% (10-82),2/1/0/2/2,4.14,-,11.73 (3/7 ev),40.0,20.86 (2/7 ev),75.0
+Age (FDA standard age bands),< 65 years,ARM2,50,5,yes,20% (1-72),60% (15-95),1/0/2/2/0,4.14,-,6.21 (3/5 ev),-,14.46 (3/5 ev),100.0
+Age (FDA standard age bands),< 65 years,ARM3,56,2,yes,50% (1-99),50% (1-99),1/0/0/0/1,4.14,11.22,15.36 (1/2 ev),100.0,11.61 (2/2 ev),50.0
+Age (FDA standard age bands),< 65 years,ARM4,48,4,yes,0% (0-60),50% (7-93),0/0/2/2/0,-,-,2.07 (3/4 ev),25.0,18.1 (1/4 ev),100.0
+Age (FDA standard age bands),>= 75 years,ARM1,13,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Age (FDA standard age bands),>= 75 years,ARM2,16,2,yes,0% (0-84),100% (16-100),0/0/2/0/0,-,-,6.21 (1/2 ev),-,10.26 (1/2 ev),-
+Age (FDA standard age bands),>= 75 years,ARM3,15,3,yes,0% (0-71),33% (1-91),0/0/1/1/1,-,-,2.07 (2/3 ev),-,7.29 (1/3 ev),50.0
+Age (FDA standard age bands),>= 75 years,ARM4,18,3,yes,67% (9-99),67% (9-99),1/1/0/1/0,2.07,2.07,4.14 (2/3 ev),33.3,NR (1/3 ev),66.7
+Sex,female,ARM1,24,3,yes,33% (1-91),67% (9-99),0/1/1/1/0,2.07,-,NR (1/3 ev),66.7,20.86 (1/3 ev),100.0
+Sex,female,ARM2,22,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,6.21 (1/1 ev),-,13.05 (1/1 ev),100.0
+Sex,female,ARM3,26,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,11.61 (1/1 ev),-
+Sex,female,ARM4,24,1,yes,100% (2-100),100% (2-100),1/0/0/0/0,4.14,-,NR (0/1 ev),100.0,NR (0/1 ev),100.0
+Sex,male,ARM1,75,10,,30% (7-65),40% (12-74),3/0/1/3/3,4.14,17.61,10.35 (6/10 ev),28.6,21.75 (4/10 ev),68.6
+Sex,male,ARM2,68,7,yes,14% (0-58),71% (29-96),1/0/4/2/0,4.14,-,6.21 (4/7 ev),-,16.11 (4/7 ev),80.0
+Sex,male,ARM3,69,5,yes,20% (1-72),40% (5-85),1/0/1/1/2,4.14,11.22,4.14 (3/5 ev),33.3,15.36 (2/5 ev),66.7
+Sex,male,ARM4,64,8,yes,25% (3-65),62% (24-91),0/2/3/3/0,2.07,2.07,4.14 (7/8 ev),25.0,30.3 (4/8 ev),83.3
+Race,american_indian_or_alaska_native,ARM1,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,american_indian_or_alaska_native,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,american_indian_or_alaska_native,ARM3,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,american_indian_or_alaska_native,ARM4,2,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.07 (1/1 ev),-,NR (0/1 ev),100.0
+Race,asian,ARM1,5,0,yes,-,-,-,-,-,-,-,-,-
+Race,asian,ARM2,6,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,6.21 (1/1 ev),-,10.26 (1/1 ev),-
+Race,asian,ARM3,3,0,yes,-,-,-,-,-,-,-,-,-
+Race,asian,ARM4,12,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,4.14 (1/1 ev),-,30.3 (1/1 ev),100.0
+Race,black_or_african_american,ARM1,8,1,yes,100% (2-100),100% (2-100),1/0/0/0/0,4.14,7.59,11.73 (1/1 ev),-,11.73 (1/1 ev),-
+Race,black_or_african_american,ARM2,4,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Race,black_or_african_american,ARM3,8,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Race,black_or_african_american,ARM4,8,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+Race,more_than_one_race,ARM1,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,more_than_one_race,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,more_than_one_race,ARM3,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,more_than_one_race,ARM4,1,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM1,1,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM3,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,native_hawaiian_or_other_pacific_islander,ARM4,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,unknown_or_not_reported,ARM1,6,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.07 (1/1 ev),-,NR (0/1 ev),-
+Race,unknown_or_not_reported,ARM2,3,0,yes,-,-,-,-,-,-,-,-,-
+Race,unknown_or_not_reported,ARM3,1,0,yes,-,-,-,-,-,-,-,-,-
+Race,unknown_or_not_reported,ARM4,4,0,yes,-,-,-,-,-,-,-,-,-
+Race,white,ARM1,79,11,,27% (6-61),45% (17-77),2/1/2/3/3,4.14,17.61,10.35 (5/11 ev),46.9,21.75 (4/11 ev),85.7
+Race,white,ARM2,77,6,yes,17% (0-64),67% (22-96),1/0/3/2/0,4.14,-,4.14 (4/6 ev),-,14.46 (4/6 ev),100.0
+Race,white,ARM3,83,5,yes,20% (1-72),40% (5-85),1/0/1/1/2,4.14,11.22,4.14 (3/5 ev),33.3,11.61 (3/5 ev),50.0
+Race,white,ARM4,61,6,yes,50% (12-88),67% (22-96),1/2/1/2/0,2.07,31.76,4.14 (5/6 ev),33.3,33.83 (3/6 ev),80.0
+Ethnicity,hispanic_or_latino,ARM1,7,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,10.35 (1/1 ev),-,16.81 (1/1 ev),100.0
+Ethnicity,hispanic_or_latino,ARM2,4,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,hispanic_or_latino,ARM3,9,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,hispanic_or_latino,ARM4,2,1,yes,100% (2-100),100% (2-100),0/1/0/0/0,2.07,2.07,4.14 (1/1 ev),-,NR (0/1 ev),100.0
+Ethnicity,not_hispanic_or_latino,ARM1,88,12,,33% (10-65),42% (15-72),3/1/1/4/3,4.14,17.61,11.73 (6/12 ev),41.7,21.75 (4/12 ev),72.9
+Ethnicity,not_hispanic_or_latino,ARM2,85,8,yes,12% (0-53),75% (35-97),1/0/5/2/0,4.14,-,6.21 (5/8 ev),-,14.46 (5/8 ev),83.3
+Ethnicity,not_hispanic_or_latino,ARM3,83,6,yes,17% (0-64),33% (4-78),1/0/1/1/3,4.14,11.22,4.14 (3/6 ev),33.3,11.61 (3/6 ev),50.0
+Ethnicity,not_hispanic_or_latino,ARM4,83,8,yes,25% (3-65),62% (24-91),1/1/3/3/0,2.07,31.76,4.14 (6/8 ev),37.5,30.3 (4/8 ev),83.3
+Ethnicity,unknown_or_not_reported,ARM1,4,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,unknown_or_not_reported,ARM2,1,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,unknown_or_not_reported,ARM3,3,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,unknown_or_not_reported,ARM4,3,0,yes,-,-,-,-,-,-,-,-,-
+ECOG performance status,0,ARM1,41,6,yes,17% (0-64),33% (4-78),1/0/1/3/1,4.14,-,2.07 (4/6 ev),20.0,20.86 (2/6 ev),100.0
+ECOG performance status,0,ARM2,36,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,6.21 (1/1 ev),-,10.26 (1/1 ev),-
+ECOG performance status,0,ARM3,48,2,yes,0% (0-84),50% (1-99),0/0/1/0/1,-,-,4.14 (1/2 ev),-,7.29 (1/2 ev),-
+ECOG performance status,0,ARM4,40,4,yes,25% (1-81),75% (19-99),1/0/2/1/0,4.14,-,4.14 (3/4 ev),25.0,30.3 (1/4 ev),100.0
+ECOG performance status,1,ARM1,46,6,yes,50% (12-88),67% (22-96),2/1/1/1/1,4.14,17.61,21.75 (3/6 ev),53.3,11.73 (3/6 ev),50.0
+ECOG performance status,1,ARM2,43,7,yes,14% (0-58),71% (29-96),1/0/4/2/0,4.14,-,6.21 (4/7 ev),-,14.46 (4/7 ev),100.0
+ECOG performance status,1,ARM3,36,3,yes,33% (1-91),33% (1-91),1/0/0/1/1,4.14,11.22,2.07 (2/3 ev),50.0,15.36 (1/3 ev),100.0
+ECOG performance status,1,ARM4,39,4,yes,50% (7-93),75% (19-99),0/2/1/1/0,2.07,2.07,4.14 (3/4 ev),50.0,33.83 (2/4 ev),66.7
+ECOG performance status,2 or more,ARM1,12,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,NR (0/1 ev),-
+ECOG performance status,2 or more,ARM2,11,0,yes,-,-,-,-,-,-,-,-,-
+ECOG performance status,2 or more,ARM3,11,1,yes,0% (0-98),0% (0-98),0/0/0/0/1,-,-,NR (0/1 ev),-,11.61 (1/1 ev),-
+ECOG performance status,2 or more,ARM4,9,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.07 (1/1 ev),-,18.1 (1/1 ev),100.0

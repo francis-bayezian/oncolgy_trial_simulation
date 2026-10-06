@@ -1,0 +1,393 @@
+{
+ "eligibility_version": "eligibility-2.0.0",
+ "inputs": {
+  "studyspec": "25226e178b33231f0c71febfd0a0bf0201ba2cb7a51f259590c792b0b362a3dc",
+  "population": "f4302933a8fae0cfdf3645d4777cead61f8e480839be4be9d36220c38348d121"
+ },
+ "summary": {
+  "patients": 10000,
+  "status_counts": {
+   "ELIGIBLE": 7704,
+   "UNDETERMINED": 0,
+   "INELIGIBLE": 2296
+  },
+  "eligible_share": 0.7704,
+  "proven_eligible_share": 0.7704,
+  "not_proven_ineligible_share": 0.7704,
+  "criteria": {
+   "evaluated": [
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL021",
+    "EL022",
+    "EL024",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034"
+   ],
+   "procedural": [
+    "EL001",
+    "EL020",
+    "EL023",
+    "EL036",
+    "EL037"
+   ],
+   "permissive": [
+    "EL038"
+   ],
+   "informational": [
+    "EL002",
+    "EL003",
+    "EL004",
+    "EL035"
+   ],
+   "run_with_review_flag": [
+    "EL034"
+   ]
+  },
+  "per_criterion": {
+   "EL005": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Ability to provide informed consent. is one of ['Ability to provide informed consent.']"
+   },
+   "EL006": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (histologically proven is present AND (progressive SM is one of ['progressive'] OR refractory SM is one of ['refractory']) AND conventional salvage therapy occurs at least 3 week before study vaccination [assessed: completed at least 3 weeks prior to study vaccination])"
+   },
+   "EL007": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((Expression at least 1 [qualifier: in neoplastic cells] AND TAPAs is one of ['Sp17', 'AKAP-4', 'Ropporin', 'PTTG-1', 'Span-xb', 'Her-2/neu', 'HM1.24', 'NY-ESO-1', 'MAGE-1'] AND RT-\nPCR and/or immunocytochemistry, Western blotting or ELISA is one of ['RT-\\nPCR', 'immunocytochemistr"
+   },
+   "EL008": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: measurable or evaluable disease is one of ['measurable', 'evaluable']"
+   },
+   "EL009": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: active infectious process is present"
+   },
+   "EL010": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (history of HIV is present OR active Hepatitis A, B, or C is one of ['Hepatitis A', 'B', 'C'])"
+   },
+   "EL011": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: ELIGIBLE ONLY IF: active immunosuppressive therapy is absent"
+   },
+   "EL012": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((systemic cytotoxic is DISCONTINUED [assessed: at least three (3) weeks prior to vaccination] OR radiation therapy is DISCONTINUED [assessed: at least three (3) weeks prior to vaccination]) AND toxicities from previous therapies at most 1 grade)"
+   },
+   "EL013": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: any known allergy to CYP and/or Imiquimod is present"
+   },
+   "EL014": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: ((willing to provide is present AND whole blood at least 250 and at most 500 ml [qualifier: obtained by phlebotomy]) OR consent to leukapheresis for DC generation is present)"
+   },
+   "EL015": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (creatinine at most 2 mg/dl AND bilirubin at most 2 mg/dl AND AST at most 4 times upper limit of normal range AND ALT at most 4 times upper limit of normal range)"
+   },
+   "EL016": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (Platelets at least 60000 /mm3 AND lymphocytes at least 1000 mm3 AND neutrophils at least 750 /mm3 AND hemoglobin at least 9 g/dl)"
+   },
+   "EL017": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Karnofsky performance status at least 70 %"
+   },
+   "EL018": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: Expected survival at least 6 month"
+   },
+   "EL019": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: [IF (reproductive capacity is present AND wishing to participate in this study is present) THEN (one or more types of birth control is present [assessed: during the entire\nstudy and for 3 months after completing the study] [qualifier: using, or agree to use,] OR one of these birth "
+   },
+   "EL021": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: confirmed progressive and/or refractory SM using standard RECIST criteria is absent"
+   },
+   "EL022": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "EXCLUDED IF: measurable or evaluable disease is absent"
+   },
+   "EL024": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Active immunosuppressive therapy is present [qualifier: for any other condition] OR (non-physiologic systemic steroids is present [qualifier: for any other condition] AND NOT steroids is one of ['topical', 'intraocular', 'inhaled', 'intranasal']))"
+   },
+   "EL025": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Persistent fever greater than 24 hour [qualifier: documented by repeated measurement] OR (active, uncontrolled infection is one of ['active, uncontrolled infection'] AND active, uncontrolled infection occurs within 4 week after enrollment [assessed: within 4 weeks of enroll"
+   },
+   "EL026": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Active ischemic heart disease is present OR history of myocardial infarction within six months is present)"
+   },
+   "EL027": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Active autoimmune disease is present [qualifier: including, but not limited to, Systemic Lupus Erythematosus (SLE), Multiple Sclerosis (MS), Ankylosing Spondylitis (AS), Inflammatory Bowel Disease (IBD), and Rheumatoid Arthritis (RA)]"
+   },
+   "EL028": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Pregnancy is present OR breast feeding is present)"
+   },
+   "EL029": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (Active second invasive malignancy is present AND NOT basal cell carcinoma of the skin is present)"
+   },
+   "EL030": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: Life expectancy less than 6 month"
+   },
+   "EL031": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: contraindications to known allergies to CYP and/or Imiquimod is present"
+   },
+   "EL032": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: received organ transplants is present"
+   },
+   "EL033": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "PROHIBITED: EXCLUDED IF: (psychological conditions preventing follow up or compliance is present [qualifier: prevent adequate follow-up or compliance with the study protocol] OR geographic conditions is present [qualifier: prevent adequate follow-up or compliance with the study protocol])"
+   },
+   "EL034": {
+    "met": 0,
+    "not_met": 0,
+    "unknown": 10000,
+    "share_not_met_decided": 0.0,
+    "rule": "ELIGIBLE ONLY IF: (UNRESOLVED requirement: 'adult patients' {NOT EXECUTABLE} AND (SM is one of ['progressive'] [qualifier: confirmed] OR SM is one of ['refractory'] [qualifier: confirmed]) AND available, potentially curative therapeutic option is absent)"
+   }
+  },
+  "decisive_exclusions": {
+   "EL034": 107,
+   "EL019": 107,
+   "EL026": 104,
+   "EL024": 103,
+   "EL015": 102,
+   "EL006": 101,
+   "EL008": 101,
+   "EL017": 99,
+   "EL029": 97,
+   "EL033": 97,
+   "EL030": 96,
+   "EL009": 96,
+   "EL021": 96,
+   "EL010": 95,
+   "EL022": 94,
+   "EL014": 94,
+   "EL013": 94,
+   "EL027": 93,
+   "EL032": 92,
+   "EL011": 88,
+   "EL025": 87,
+   "EL005": 85,
+   "EL007": 82,
+   "EL031": 82,
+   "EL028": 80,
+   "EL016": 79,
+   "EL012": 79,
+   "EL018": 78
+  },
+  "plausibility_warnings": [],
+  "criteria_resolved_by_calibration": {
+   "EL005": 10000,
+   "EL006": 10000,
+   "EL007": 10000,
+   "EL008": 10000,
+   "EL009": 10000,
+   "EL010": 10000,
+   "EL011": 10000,
+   "EL012": 10000,
+   "EL013": 10000,
+   "EL014": 10000,
+   "EL015": 10000,
+   "EL016": 10000,
+   "EL017": 10000,
+   "EL018": 10000,
+   "EL019": 10000,
+   "EL021": 10000,
+   "EL022": 10000,
+   "EL024": 10000,
+   "EL025": 10000,
+   "EL026": 10000,
+   "EL027": 10000,
+   "EL028": 10000,
+   "EL029": 10000,
+   "EL030": 10000,
+   "EL031": 10000,
+   "EL032": 10000,
+   "EL033": 10000,
+   "EL034": 10000
+  },
+  "unknown_resolution": {
+   "status": "RESOLVED",
+   "assumption": "A16_unknown_criteria_calibrated",
+   "screen_pass_rate": {
+    "value": 0.7675797157385383,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (all oncology; 468 trials, 162721 screened)",
+    "detail": {
+     "estimate": 0.7675797157385383,
+     "ci95": [
+      0.7516604195776948,
+      0.7827734506602645
+     ],
+     "single_trial_80": [
+      0.5176177549895294,
+      0.9104294529747281
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.5176283632374208,
+      "p30": 0.6758360275891045,
+      "p50": 0.7675797157385383,
+      "p70": 0.8395237839652355,
+      "p90": 0.9104259882989161
+     },
+     "tau_logit": 0.8760515738951,
+     "groups": 468,
+     "trials": 468,
+     "participants": 162721
+    }
+   },
+   "target_eligible_share": 0.7675797157385383,
+   "share_excluded_by_decided_criteria": 0.0,
+   "residual_pass_needed": 0.7675797157385383,
+   "per_criterion_pass_probability": 0.9905975909494922,
+   "criteria": [
+    "EL005",
+    "EL006",
+    "EL007",
+    "EL008",
+    "EL009",
+    "EL010",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL015",
+    "EL016",
+    "EL017",
+    "EL018",
+    "EL019",
+    "EL021",
+    "EL022",
+    "EL024",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL031",
+    "EL032",
+    "EL033",
+    "EL034"
+   ]
+  }
+ }
+}

@@ -1,0 +1,1688 @@
+{
+ "binary_version": "binary-1.0.0",
+ "seed": 20260927,
+ "replicates": 2000,
+ "inputs": {
+  "studyspec": "f192952225bdae1956f0c7055dc3d3ae3c804dd43a5b387194f2eef7910902ef",
+  "facts": "d3ebdeef987a14e913821ee6367a6c679bd78ac2ae50bf11bad33860b5ac093d"
+ },
+ "truth": "each arm's true response rate p is unknown: results are given for a grid of p (exact) and at rates the protocol cites",
+ "cited_rate_bindings": [],
+ "rules": [
+  {
+   "decision_rule_id": "DR1",
+   "role": "primary",
+   "arm": "Regimen A (High dose consisting of 1320 cGy TBI plus fludarabine plus\ncyclophosphamidefollowedbyunmanipulatedcordblood anddilanubicel)",
+   "arms": [
+    "ARM1"
+   ],
+   "cohort": "A total of 10 patients will be enrolled in this protocol.",
+   "design_family": "other",
+   "rule": {
+    "stages": [
+     {
+      "n": 8,
+      "stop_if_at_most": 6,
+      "stop_if_events_at_least": 2
+     },
+     {
+      "n": 9,
+      "stop_if_at_most": null,
+      "stop_if_events_at_least": 3
+     }
+    ],
+    "success_if_at_least": 7,
+    "p0": null,
+    "p1": null,
+    "alpha": null,
+    "beta": null
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": null,
+     "beta": null,
+     "early_termination": null
+    },
+    "exact": {},
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 0.9427553497265626,
+     "prob_early_stop": 0.057244650273437586,
+     "expected_n": 8.942755349726562
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 0.8131047300000003,
+     "prob_early_stop": 0.1868952699999998,
+     "expected_n": 8.81310473
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 0.6571830309765627,
+     "prob_early_stop": 0.3428169690234375,
+     "expected_n": 8.657183030976562
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.5033164800000003,
+     "prob_early_stop": 0.4966835199999997,
+     "expected_n": 8.50331648
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.36708068847656267,
+     "prob_early_stop": 0.6329193115234375,
+     "expected_n": 8.367080688476562
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.2552983300000002,
+     "prob_early_stop": 0.7447016700000002,
+     "expected_n": 8.255298329999999
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.16912686222656242,
+     "prob_early_stop": 0.8308731377734375,
+     "expected_n": 8.169126862226562
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.10637568,
+     "prob_early_stop": 0.89362432,
+     "expected_n": 8.10637568
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.06318106222656253,
+     "prob_early_stop": 0.9368189377734375,
+     "expected_n": 8.063181062226562
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.035156249999999986,
+     "prob_early_stop": 0.96484375,
+     "expected_n": 8.03515625
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.018122968476562456,
+     "prob_early_stop": 0.9818770315234375,
+     "expected_n": 8.018122968476563
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.008519680000000007,
+     "prob_early_stop": 0.99148032,
+     "expected_n": 8.00851968
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.0035708309765625024,
+     "prob_early_stop": 0.9964291690234375,
+     "expected_n": 8.003570830976562
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.0012903300000000012,
+     "prob_early_stop": 0.99870967,
+     "expected_n": 8.00129033
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.9405,
+     "prob_early_stop_simulated": 0.0595,
+     "enrolled": {
+      "median": 9.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 6.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 1.0,
+      "q05": 0.75,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.811,
+     "prob_early_stop_simulated": 0.189,
+     "enrolled": {
+      "median": 9.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 6.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.8888888888888888,
+      "q05": 0.75,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.665,
+     "prob_early_stop_simulated": 0.335,
+     "enrolled": {
+      "median": 9.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 5.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.8888888888888888,
+      "q05": 0.625,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.51,
+     "prob_early_stop_simulated": 0.49,
+     "enrolled": {
+      "median": 9.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 7.0,
+      "q05": 4.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.7777777777777778,
+      "q05": 0.5,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.3585,
+     "prob_early_stop_simulated": 0.6415,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 4.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.75,
+      "q05": 0.5,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.24,
+     "prob_early_stop_simulated": 0.76,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 3.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.75,
+      "q05": 0.375,
+      "q95": 0.8888888888888888
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.1765,
+     "prob_early_stop_simulated": 0.8235,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 3.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.625,
+      "q05": 0.375,
+      "q95": 0.8888888888888888
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.115,
+     "prob_early_stop_simulated": 0.885,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 2.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.625,
+      "q05": 0.25,
+      "q95": 0.8888888888888888
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.0575,
+     "prob_early_stop_simulated": 0.9425,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.25,
+      "q95": 0.7777777777777778
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.036,
+     "prob_early_stop_simulated": 0.964,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.25,
+      "q95": 0.75
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.015,
+     "prob_early_stop_simulated": 0.985,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 1.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.125,
+      "q95": 0.75
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.0045,
+     "prob_early_stop_simulated": 0.9955,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.375,
+      "q05": 0.125,
+      "q95": 0.625
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.0045,
+     "prob_early_stop_simulated": 0.9955,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.375,
+      "q05": 0.125,
+      "q95": 0.625
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 0.002,
+     "prob_early_stop_simulated": 0.998,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.25,
+      "q05": 0.0,
+      "q95": 0.625
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": true,
+   "verifier_note": "The rendering incorrectly creates a separate Regimen A arm and treats 2/3-8 as an 8-patient stage checked only at its end, whereas the protocol states one 10-patient study with the stopping boundary applying at any time from 3 through 8 patients, followed by 3/9.",
+   "evidence_prior": {
+    "status": "NOT_APPLICABLE",
+    "reason": "a toxicity rule"
+   },
+   "arm_status": [
+    "open"
+   ]
+  },
+  {
+   "decision_rule_id": "DR2",
+   "role": "primary",
+   "arm": "RegimenB (Intermediatedoseconsistingof400cGyTBIplusFludarabineplus\ncyclophosphamide plus thiotepa followed by unmanipulated cord blood and\ndilanubicel)",
+   "arms": [
+    "ARM2"
+   ],
+   "cohort": "A total of 10 patients will be enrolled in this protocol.",
+   "design_family": "other",
+   "rule": {
+    "stages": [
+     {
+      "n": 8,
+      "stop_if_at_most": 6,
+      "stop_if_events_at_least": 2
+     },
+     {
+      "n": 9,
+      "stop_if_at_most": null,
+      "stop_if_events_at_least": 3
+     }
+    ],
+    "success_if_at_least": 7,
+    "p0": null,
+    "p1": null,
+    "alpha": null,
+    "beta": null
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": null,
+     "beta": null,
+     "early_termination": null
+    },
+    "exact": {},
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 0.9427553497265626,
+     "prob_early_stop": 0.057244650273437586,
+     "expected_n": 8.942755349726562
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 0.8131047300000003,
+     "prob_early_stop": 0.1868952699999998,
+     "expected_n": 8.81310473
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 0.6571830309765627,
+     "prob_early_stop": 0.3428169690234375,
+     "expected_n": 8.657183030976562
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.5033164800000003,
+     "prob_early_stop": 0.4966835199999997,
+     "expected_n": 8.50331648
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.36708068847656267,
+     "prob_early_stop": 0.6329193115234375,
+     "expected_n": 8.367080688476562
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.2552983300000002,
+     "prob_early_stop": 0.7447016700000002,
+     "expected_n": 8.255298329999999
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.16912686222656242,
+     "prob_early_stop": 0.8308731377734375,
+     "expected_n": 8.169126862226562
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.10637568,
+     "prob_early_stop": 0.89362432,
+     "expected_n": 8.10637568
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.06318106222656253,
+     "prob_early_stop": 0.9368189377734375,
+     "expected_n": 8.063181062226562
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.035156249999999986,
+     "prob_early_stop": 0.96484375,
+     "expected_n": 8.03515625
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.018122968476562456,
+     "prob_early_stop": 0.9818770315234375,
+     "expected_n": 8.018122968476563
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.008519680000000007,
+     "prob_early_stop": 0.99148032,
+     "expected_n": 8.00851968
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.0035708309765625024,
+     "prob_early_stop": 0.9964291690234375,
+     "expected_n": 8.003570830976562
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.0012903300000000012,
+     "prob_early_stop": 0.99870967,
+     "expected_n": 8.00129033
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.9385,
+     "prob_early_stop_simulated": 0.0615,
+     "enrolled": {
+      "median": 9.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 6.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 1.0,
+      "q05": 0.75,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.817,
+     "prob_early_stop_simulated": 0.183,
+     "enrolled": {
+      "median": 9.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 6.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.8888888888888888,
+      "q05": 0.75,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.675,
+     "prob_early_stop_simulated": 0.325,
+     "enrolled": {
+      "median": 9.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 5.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.8888888888888888,
+      "q05": 0.625,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.497,
+     "prob_early_stop_simulated": 0.503,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 5.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.75,
+      "q05": 0.625,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.3675,
+     "prob_early_stop_simulated": 0.6325,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 4.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.75,
+      "q05": 0.5,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.26,
+     "prob_early_stop_simulated": 0.74,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 4.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.75,
+      "q05": 0.5,
+      "q95": 0.8888888888888888
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.159,
+     "prob_early_stop_simulated": 0.841,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 3.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.625,
+      "q05": 0.375,
+      "q95": 0.8888888888888888
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.1115,
+     "prob_early_stop_simulated": 0.8885,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 5.0,
+      "q05": 2.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.625,
+      "q05": 0.25,
+      "q95": 0.8888888888888888
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.0675,
+     "prob_early_stop_simulated": 0.9325,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 9.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.25,
+      "q95": 0.7777777777777778
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.026,
+     "prob_early_stop_simulated": 0.974,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 2.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.25,
+      "q95": 0.75
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.014,
+     "prob_early_stop_simulated": 0.986,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 4.0,
+      "q05": 1.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.125,
+      "q95": 0.75
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.0095,
+     "prob_early_stop_simulated": 0.9905,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.375,
+      "q05": 0.125,
+      "q95": 0.625
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.0045,
+     "prob_early_stop_simulated": 0.9955,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.375,
+      "q05": 0.125,
+      "q95": 0.625
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 0.0015,
+     "prob_early_stop_simulated": 0.9985,
+     "enrolled": {
+      "median": 8.0,
+      "q05": 8.0,
+      "q95": 8.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 5.0
+     },
+     "observed_rate": {
+      "median": 0.25,
+      "q05": 0.0,
+      "q95": 0.625
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": true,
+   "verifier_note": "The protocol states a single toxicity stopping boundary, not a Regimen B-specific two-stage rule with eight patients in stage 1 and a separate stage-2 transition.",
+   "evidence_prior": {
+    "status": "NOT_APPLICABLE",
+    "reason": "a toxicity rule"
+   },
+   "arm_status": [
+    "open"
+   ]
+  },
+  {
+   "decision_rule_id": "DR3",
+   "role": "primary",
+   "arm": "Regimen A (High dose consisting of 1320 cGy TBI plus fludarabine plus\ncyclophosphamidefollowedbyunmanipulatedcordblood anddilanubicel)",
+   "arms": [
+    "ARM1"
+   ],
+   "cohort": "A total of 10 patients will be enrolled in this protocol.",
+   "design_family": "other",
+   "rule": {
+    "stages": [
+     {
+      "n": 5,
+      "stop_if_at_most": 3,
+      "stop_if_events_at_least": 2
+     },
+     {
+      "n": 10,
+      "stop_if_at_most": null,
+      "stop_if_events_at_least": 3
+     }
+    ],
+    "success_if_at_least": 8,
+    "p0": null,
+    "p1": null,
+    "alpha": null,
+    "beta": null
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": null,
+     "beta": null,
+     "early_termination": null
+    },
+    "exact": {},
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 0.9719109318384768,
+     "prob_early_stop": 0.02259250000000004,
+     "expected_n": 9.8870375
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 0.8867624526000002,
+     "prob_early_stop": 0.08145999999999995,
+     "expected_n": 9.592699999999999
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 0.7588861122337887,
+     "prob_early_stop": 0.16479000000000002,
+     "expected_n": 9.17605
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.6106906624000001,
+     "prob_early_stop": 0.2627199999999999,
+     "expected_n": 8.6864
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.463022232055664,
+     "prob_early_stop": 0.3671875,
+     "expected_n": 8.1640625
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.33089957739999987,
+     "prob_early_stop": 0.4717800000000001,
+     "expected_n": 7.6411
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.22257340180410165,
+     "prob_early_stop": 0.5715849999999999,
+     "expected_n": 7.142075
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.14041589760000003,
+     "prob_early_stop": 0.6630400000000001,
+     "expected_n": 6.684799999999999
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.08260352972910154,
+     "prob_early_stop": 0.7437824999999999,
+     "expected_n": 6.2810875
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.04492187499999999,
+     "prob_early_stop": 0.8125,
+     "expected_n": 5.9375
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.022305263830664047,
+     "prob_early_stop": 0.8687800000000001,
+     "expected_n": 5.6560999999999995
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.0099352576,
+     "prob_early_stop": 0.91296,
+     "expected_n": 5.4352
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.0038698478587890603,
+     "prob_early_stop": 0.9459775,
+     "expected_n": 5.2701125
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.0012688973999999994,
+     "prob_early_stop": 0.96922,
+     "expected_n": 5.1539
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.979,
+     "prob_early_stop_simulated": 0.0145,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 10.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 10.0,
+      "q05": 8.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 1.0,
+      "q05": 0.8,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.8905,
+     "prob_early_stop_simulated": 0.08,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 3.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.9,
+      "q05": 0.6,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.758,
+     "prob_early_stop_simulated": 0.173,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 3.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.9,
+      "q05": 0.6,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.6075,
+     "prob_early_stop_simulated": 0.269,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 2.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.8,
+      "q05": 0.4,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.4465,
+     "prob_early_stop_simulated": 0.3745,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 7.0,
+      "q05": 2.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.7,
+      "q05": 0.4,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.351,
+     "prob_early_stop_simulated": 0.457,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 2.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.4,
+      "q95": 0.9
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.219,
+     "prob_early_stop_simulated": 0.572,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.2,
+      "q95": 0.9
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.1525,
+     "prob_early_stop_simulated": 0.6605,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.2,
+      "q95": 0.9
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.076,
+     "prob_early_stop_simulated": 0.74,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.2,
+      "q95": 0.8
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.0355,
+     "prob_early_stop_simulated": 0.8215,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 1.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.4,
+      "q05": 0.2,
+      "q95": 0.7
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.0225,
+     "prob_early_stop_simulated": 0.867,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 1.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.4,
+      "q05": 0.2,
+      "q95": 0.7
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.013,
+     "prob_early_stop_simulated": 0.9095,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.4,
+      "q05": 0.0,
+      "q95": 0.6
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.0015,
+     "prob_early_stop_simulated": 0.951,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 5.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 3.0
+     },
+     "observed_rate": {
+      "median": 0.4,
+      "q05": 0.0,
+      "q95": 0.6
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 0.0015,
+     "prob_early_stop_simulated": 0.971,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 5.0
+     },
+     "responders": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 3.0
+     },
+     "observed_rate": {
+      "median": 0.2,
+      "q05": 0.0,
+      "q95": 0.6
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": true,
+   "verifier_note": "The protocol does not assign this rule to Regimen A or separate arms, and 3/6-10 means the stopping threshold applies at total sample sizes from 6 through 10 rather than only at 10; DLT is also not the stated event.",
+   "evidence_prior": {
+    "status": "NOT_APPLICABLE",
+    "reason": "a toxicity rule"
+   },
+   "arm_status": [
+    "open"
+   ]
+  },
+  {
+   "decision_rule_id": "DR4",
+   "role": "primary",
+   "arm": "RegimenB (Intermediatedoseconsistingof400cGyTBIplusFludarabineplus\ncyclophosphamide plus thiotepa followed by unmanipulated cord blood and\ndilanubicel)",
+   "arms": [
+    "ARM2"
+   ],
+   "cohort": "A total of 10 patients will be enrolled in this protocol.",
+   "design_family": "two_stage_other",
+   "rule": {
+    "stages": [
+     {
+      "n": 5,
+      "stop_if_at_most": 3,
+      "stop_if_events_at_least": 2
+     },
+     {
+      "n": 10,
+      "stop_if_at_most": null,
+      "stop_if_events_at_least": 3
+     }
+    ],
+    "success_if_at_least": 8,
+    "p0": null,
+    "p1": null,
+    "alpha": null,
+    "beta": null
+   },
+   "design_checks": {
+    "stated": {
+     "alpha": null,
+     "beta": null,
+     "early_termination": null
+    },
+    "exact": {},
+    "consistent": true
+   },
+   "exact_curve": [
+    {
+     "p": 0.05,
+     "prob_of_interest": 0.9719109318384768,
+     "prob_early_stop": 0.02259250000000004,
+     "expected_n": 9.8870375
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest": 0.8867624526000002,
+     "prob_early_stop": 0.08145999999999995,
+     "expected_n": 9.592699999999999
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest": 0.7588861122337887,
+     "prob_early_stop": 0.16479000000000002,
+     "expected_n": 9.17605
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest": 0.6106906624000001,
+     "prob_early_stop": 0.2627199999999999,
+     "expected_n": 8.6864
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest": 0.463022232055664,
+     "prob_early_stop": 0.3671875,
+     "expected_n": 8.1640625
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest": 0.33089957739999987,
+     "prob_early_stop": 0.4717800000000001,
+     "expected_n": 7.6411
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest": 0.22257340180410165,
+     "prob_early_stop": 0.5715849999999999,
+     "expected_n": 7.142075
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest": 0.14041589760000003,
+     "prob_early_stop": 0.6630400000000001,
+     "expected_n": 6.684799999999999
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest": 0.08260352972910154,
+     "prob_early_stop": 0.7437824999999999,
+     "expected_n": 6.2810875
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest": 0.04492187499999999,
+     "prob_early_stop": 0.8125,
+     "expected_n": 5.9375
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest": 0.022305263830664047,
+     "prob_early_stop": 0.8687800000000001,
+     "expected_n": 5.6560999999999995
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest": 0.0099352576,
+     "prob_early_stop": 0.91296,
+     "expected_n": 5.4352
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest": 0.0038698478587890603,
+     "prob_early_stop": 0.9459775,
+     "expected_n": 5.2701125
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest": 0.0012688973999999994,
+     "prob_early_stop": 0.96922,
+     "expected_n": 5.1539
+    }
+   ],
+   "simulated": [
+    {
+     "p": 0.05,
+     "prob_of_interest_simulated": 0.9645,
+     "prob_early_stop_simulated": 0.0285,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 10.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 10.0,
+      "q05": 8.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 1.0,
+      "q05": 0.8,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.1,
+     "prob_of_interest_simulated": 0.886,
+     "prob_early_stop_simulated": 0.082,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 3.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.9,
+      "q05": 0.6,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.15,
+     "prob_of_interest_simulated": 0.7605,
+     "prob_early_stop_simulated": 0.159,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 9.0,
+      "q05": 3.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.9,
+      "q05": 0.6,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.2,
+     "prob_of_interest_simulated": 0.604,
+     "prob_early_stop_simulated": 0.264,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 8.0,
+      "q05": 2.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.8,
+      "q05": 0.4,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.25,
+     "prob_of_interest_simulated": 0.4815,
+     "prob_early_stop_simulated": 0.355,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 7.0,
+      "q05": 2.0,
+      "q95": 10.0
+     },
+     "observed_rate": {
+      "median": 0.7,
+      "q05": 0.4,
+      "q95": 1.0
+     }
+    },
+    {
+     "p": 0.3,
+     "prob_of_interest_simulated": 0.329,
+     "prob_early_stop_simulated": 0.482,
+     "enrolled": {
+      "median": 10.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 6.0,
+      "q05": 2.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.4,
+      "q95": 0.9
+     }
+    },
+    {
+     "p": 0.35,
+     "prob_of_interest_simulated": 0.223,
+     "prob_early_stop_simulated": 0.5675,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 9.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.2,
+      "q95": 0.9
+     }
+    },
+    {
+     "p": 0.4,
+     "prob_of_interest_simulated": 0.143,
+     "prob_early_stop_simulated": 0.6465,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.2,
+      "q95": 0.8
+     }
+    },
+    {
+     "p": 0.45,
+     "prob_of_interest_simulated": 0.0845,
+     "prob_early_stop_simulated": 0.7435,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 8.0
+     },
+     "observed_rate": {
+      "median": 0.6,
+      "q05": 0.2,
+      "q95": 0.8
+     }
+    },
+    {
+     "p": 0.5,
+     "prob_of_interest_simulated": 0.044,
+     "prob_early_stop_simulated": 0.804,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 3.0,
+      "q05": 1.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.5,
+      "q05": 0.2,
+      "q95": 0.7
+     }
+    },
+    {
+     "p": 0.55,
+     "prob_of_interest_simulated": 0.0205,
+     "prob_early_stop_simulated": 0.874,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 7.0
+     },
+     "observed_rate": {
+      "median": 0.4,
+      "q05": 0.0,
+      "q95": 0.7
+     }
+    },
+    {
+     "p": 0.6,
+     "prob_of_interest_simulated": 0.009,
+     "prob_early_stop_simulated": 0.925,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 6.0
+     },
+     "observed_rate": {
+      "median": 0.4,
+      "q05": 0.0,
+      "q95": 0.6
+     }
+    },
+    {
+     "p": 0.65,
+     "prob_of_interest_simulated": 0.005,
+     "prob_early_stop_simulated": 0.949,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 10.0
+     },
+     "responders": {
+      "median": 2.0,
+      "q05": 0.0,
+      "q95": 4.0
+     },
+     "observed_rate": {
+      "median": 0.4,
+      "q05": 0.0,
+      "q95": 0.6
+     }
+    },
+    {
+     "p": 0.7,
+     "prob_of_interest_simulated": 0.002,
+     "prob_early_stop_simulated": 0.969,
+     "enrolled": {
+      "median": 5.0,
+      "q05": 5.0,
+      "q95": 5.0
+     },
+     "responders": {
+      "median": 1.0,
+      "q05": 0.0,
+      "q95": 3.0
+     },
+     "observed_rate": {
+      "median": 0.2,
+      "q05": 0.0,
+      "q95": 0.6
+     }
+    }
+   ],
+   "cited_evidence": [],
+   "descriptive": false,
+   "run_despite_review": true,
+   "verifier_note": "The rendering says the arm or study stops automatically, whereas the protocol requires suspension followed by DSMB review and a recommendation about termination or continuation.",
+   "evidence_prior": {
+    "status": "NOT_APPLICABLE",
+    "reason": "a toxicity rule"
+   },
+   "arm_status": [
+    "open"
+   ]
+  }
+ ],
+ "unresolved_decision_rules": [
+  "DR1",
+  "DR2",
+  "DR3",
+  "DR4"
+ ],
+ "mode": "decision rules"
+}

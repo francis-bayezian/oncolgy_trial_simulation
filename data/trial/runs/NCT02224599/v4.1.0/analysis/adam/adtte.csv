@@ -1,0 +1,5 @@
+USUBJID,ARMCD,PARAMCD,AVAL,CNSR,EVNTDESC
+S0003,ARM1,DOR,56.0,0,progressive disease
+S0003,ARM1,TTR,56.0,0,first response
+S0008,ARM1,DOR,56.0,0,progressive disease
+S0008,ARM1,TTR,56.0,0,first response

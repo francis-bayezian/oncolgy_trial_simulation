@@ -1,0 +1,368 @@
+{
+ "subject_id": "S0003",
+ "arm": "ARM1",
+ "agents": [
+  "intrathecal_therapy",
+  "intrathecal_methotrexate"
+ ],
+ "baseline": {
+  "patient_id": "P007750",
+  "demographic:age": {
+   "value": 40.05,
+   "unit": "year"
+  },
+  "demographic:sex": "female",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "var:ecog_performance_status": {
+   "value": 0,
+   "unit": null
+  },
+  "var:weight": {
+   "value": 75.1,
+   "unit": "kg"
+  },
+  "var:height": {
+   "value": 171.6,
+   "unit": "cm"
+  }
+ },
+ "progression_day_latent": 154,
+ "progression_detected_day": null,
+ "off_treatment": [
+  1,
+  "completed planned procedures"
+ ],
+ "dose": {
+  "intrathecal_therapy": null,
+  "intrathecal_methotrexate": null
+ },
+ "reductions": {
+  "intrathecal_therapy": 0,
+  "intrathecal_methotrexate": 0
+ },
+ "exposure": [],
+ "adverse_events": [
+  {
+   "term": "coughing",
+   "serious": false,
+   "grade": 1,
+   "onset": 3,
+   "source": "safety_v3:PARTIAL",
+   "end": 10
+  },
+  {
+   "term": "epistaxis",
+   "serious": false,
+   "grade": 1,
+   "onset": 5,
+   "source": "safety_v3:PARTIAL",
+   "end": 12
+  },
+  {
+   "term": "fever",
+   "serious": false,
+   "grade": 2,
+   "onset": 6,
+   "source": "safety_v3:PARTIAL",
+   "end": 13
+  },
+  {
+   "term": "dyspnea",
+   "serious": true,
+   "grade": 3,
+   "onset": 6,
+   "source": "safety_v3:PARTIAL",
+   "end": 20
+  },
+  {
+   "term": "anemia",
+   "serious": false,
+   "grade": 1,
+   "onset": 7,
+   "source": "safety_v3:PARTIAL",
+   "end": 14
+  },
+  {
+   "term": "inflammatory_disease_of_mucous_membrane",
+   "serious": false,
+   "grade": 1,
+   "onset": 11,
+   "source": "safety_v3:PARTIAL",
+   "end": 18
+  },
+  {
+   "term": "asthenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 14,
+   "source": "safety_v3:PARTIAL",
+   "end": 21
+  },
+  {
+   "term": "abdominal_pain",
+   "serious": false,
+   "grade": 2,
+   "onset": 18,
+   "source": "safety_v3:PARTIAL",
+   "end": 25
+  },
+  {
+   "term": "alanine_aminotransferase_increased",
+   "serious": false,
+   "grade": 1,
+   "onset": 24,
+   "source": "safety_v3:PARTIAL",
+   "end": 31
+  },
+  {
+   "term": "headache",
+   "serious": false,
+   "grade": 2,
+   "onset": 31,
+   "source": "safety_v3:PARTIAL",
+   "end": 38
+  }
+ ],
+ "events": [
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 40.05, female, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -1,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start intrathecal_therapy",
+   "result": "dose not compiled",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX004",
+   "quote": null
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start intrathecal_methotrexate",
+   "result": "dose not compiled",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX012",
+   "quote": null
+  },
+  {
+   "day": 1,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "completed planned procedures",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 3,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "coughing",
+   "result": "grade 1; resolves by day 10",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 5,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "epistaxis",
+   "result": "grade 1; resolves by day 12",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 6,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "fever",
+   "result": "grade 2; resolves by day 13",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 6,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "dyspnea",
+   "result": "grade 3 serious; resolves by day 20",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 7,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "anemia",
+   "result": "grade 1; resolves by day 14",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 7,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "10.96 g/dL (grade 1)",
+   "consequence": "during anemia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for Hemoglobin (10-12 g/dL)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 11,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "inflammatory_disease_of_mucous_membrane",
+   "result": "grade 1; resolves by day 18",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 14,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "asthenia",
+   "result": "grade 2; resolves by day 21",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 18,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "abdominal_pain",
+   "result": "grade 2; resolves by day 25",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 24,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "alanine_aminotransferase_increased",
+   "result": "grade 1; resolves by day 31",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 24,
+   "visit": "unscheduled",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "2.84 x ULN (grade 1)",
+   "consequence": "during alanine_aminotransferase_increased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 1 range for ALT (1-3 x ULN)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 31,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "headache",
+   "result": "grade 2; resolves by day 38",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:PARTIAL; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  }
+ ]
+}

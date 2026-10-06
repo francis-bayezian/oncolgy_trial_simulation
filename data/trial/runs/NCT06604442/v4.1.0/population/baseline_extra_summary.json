@@ -1,0 +1,92 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT06604442\\v4.1.0\\population_base",
+  "family": "prostate",
+  "phase": "PHASE4",
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.593088113469681,
+     0.3820526869885448,
+     0.02444435215314461,
+     0.0003704581840841225,
+     4.438920454545455e-05
+    ],
+    "trial_range_10_90": [
+     [
+      0.321,
+      0.054,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.945,
+      0.61,
+      0.047,
+      0.001,
+      0.0
+     ]
+    ],
+    "trials": 22,
+    "participants": 8419,
+    "source": "registry baseline ECOG of enrolled participants (prostate; 22 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 81.91428543499511,
+    "sd": 15.792039776912745,
+    "trials": 34,
+    "participants": 10230,
+    "source": "registry baseline weight of enrolled participants (prostate; 34 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 172.7430429128739,
+    "sd": 8.295726642923148,
+    "trials": 13,
+    "participants": 5383,
+    "source": "registry baseline height of enrolled participants (prostate; 13 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "baseline PSA categories",
+    "variable": "var:baseline_psa_categories",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   },
+   {
+    "factor": "age (< 65 years, >= 65 years)",
+    "variable": "demographic:age",
+    "kind": "age",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  ]
+ }
+}

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="820" font-family="sans-serif" font-size="12">
+<rect width="900" height="820" fill="white"/>
+<text x="10" y="20" font-size="14" font-weight="bold">ORR difference: ARM4 vs ARM8</text>
+<text x="10" y="44" fill="#555">Subgroup (n)</text>
+<text x="810" y="44" fill="#555">Estimate (95% CI)</text>
+<line x1="587.9" y1="50" x2="587.9" y2="790" stroke="#999" stroke-dasharray="4,3"/>
+<text x="10" y="66">each  dose/expansion  cohort: Panobinostat 10 mg/Everolimu</text>
+<line x1="540.5" y1="62" x2="659.5" y2="62" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="596.0" y="58" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="66">8% (-30%, 45%)</text>
+<text x="10" y="86">    Panobinostat 20 mg/Everolimus 10 mg (17)</text>
+<line x1="483.6" y1="82" x2="568.6" y2="82" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="522.1" y="78" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="86">-38% (-65%, -12%)</text>
+<text x="10" y="106">    Panobinostat 20 mg/Everolimus 5 mg (15)</text>
+<line x1="567.2" y1="102" x2="706.3" y2="102" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="632.8" y="98" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="106">30% (-13%, 74%)</text>
+<text x="10" y="126">    Panobinostat 30 mg/Everolimus 10 mg (32)</text>
+<line x1="509.5" y1="122" x2="619.5" y2="122" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="560.5" y="118" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="126">-15% (-49%, 20%)</text>
+<text x="10" y="146">tumor  type/population: Disease Population Group 1 (27)</text>
+<line x1="509.1" y1="142" x2="641.4" y2="142" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="571.2" y="138" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="146">-8% (-49%, 33%)</text>
+<text x="10" y="166">    Disease Population Group 2 (35)</text>
+<line x1="559.0" y1="162" x2="665.1" y2="162" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="608.1" y="158" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="166">15% (-18%, 48%)</text>
+<text x="10" y="186">    Disease Population Group 3 (28)</text>
+<line x1="501.7" y1="182" x2="620.8" y2="182" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="557.3" y="178" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="186">-17% (-54%, 20%)</text>
+<text x="10" y="206">prior  treatment  cohort: No (51)</text>
+<line x1="539.0" y1="202" x2="627.8" y2="202" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="579.4" y="198" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="206">-3% (-30%, 25%)</text>
+<text x="10" y="226">    Yes (39)</text>
+<line x1="538.4" y1="222" x2="646.4" y2="222" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="588.4" y="218" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="226">3% (-31%, 36%)</text>
+<text x="10" y="246">genomic  alterations: Rearrangements of Ig / TCR genes &amp; t</text>
+<line x1="471.7" y1="242" x2="597.0" y2="242" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="530.3" y="238" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="246">-33% (-72%, 6%)</text>
+<text x="10" y="266">    Rearrangements of Ig / TCR genes only (22)</text>
+<line x1="535.0" y1="262" x2="671.1" y2="262" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="599.0" y="258" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="266">9% (-33%, 52%)</text>
+<text x="10" y="286">    bcr/abl translocation above detection limit (21)</text>
+<line x1="557.9" y1="282" x2="695.3" y2="282" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="622.6" y="278" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="286">24% (-19%, 67%)</text>
+<text x="10" y="306">    t(4;11) translocation above detection limit (23)</text>
+<line x1="513.6" y1="302" x2="651.5" y2="302" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="578.6" y="298" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="306">-3% (-46%, 40%)</text>
+<text x="10" y="326">presence  of  baseline  CNS  metas: No (53)</text>
+<line x1="520.9" y1="322" x2="606.0" y2="322" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="559.5" y="318" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="326">-15% (-42%, 11%)</text>
+<text x="10" y="346">    Yes (37)</text>
+<line x1="585.0" y1="342" x2="680.8" y2="342" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="628.9" y="338" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="346">28% (-2%, 58%)</text>
+<text x="10" y="366">ALK-positive: Negative (48)</text>
+<line x1="547.1" y1="362" x2="637.9" y2="362" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="588.5" y="358" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="366">3% (-25%, 31%)</text>
+<text x="10" y="386">    Positive (42)</text>
+<line x1="520.6" y1="382" x2="620.8" y2="382" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="566.7" y="378" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="386">-11% (-42%, 20%)</text>
+<text x="10" y="406">ALK-negative: Negative (40)</text>
+<line x1="515.4" y1="402" x2="613.7" y2="402" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="560.6" y="398" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="406">-15% (-45%, 16%)</text>
+<text x="10" y="426">    Positive (50)</text>
+<line x1="551.7" y1="422" x2="648.7" y2="422" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="596.2" y="418" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="426">8% (-23%, 38%)</text>
+<text x="10" y="446">central  testing  for  ALK  will  : No (39)</text>
+<line x1="579.5" y1="442" x2="682.9" y2="442" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="627.2" y="438" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="446">27% (-5%, 59%)</text>
+<text x="10" y="466">    Yes (51)</text>
+<line x1="506.1" y1="462" x2="593.2" y2="462" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="545.6" y="458" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="466">-24% (-51%, 3%)</text>
+<text x="10" y="486">Age (FDA standard age bands): 65-74 years (16)</text>
+<line x1="474.8" y1="482" x2="572.4" y2="482" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="519.6" y="478" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="486">-40% (-70%, -10%)</text>
+<text x="10" y="506">    &lt; 65 years (67)</text>
+<line x1="562.4" y1="502" x2="639.1" y2="502" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="596.7" y="498" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="506">8% (-16%, 32%)</text>
+<text x="10" y="526">    &gt;= 75 years (7)</text>
+<line x1="443.2" y1="522" x2="571.9" y2="522" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="503.5" y="518" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="526">-50% (-90%, -10%)</text>
+<text x="10" y="546">Sex: female (44)</text>
+<line x1="493.9" y1="542" x2="587.2" y2="542" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="536.6" y="538" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="546">-29% (-58%, -0%)</text>
+<text x="10" y="566">    male (46)</text>
+<line x1="580.4" y1="562" x2="672.0" y2="562" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="622.2" y="558" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="566">24% (-5%, 52%)</text>
+<text x="10" y="586">Race: asian (12)</text>
+<line x1="543.1" y1="582" x2="706.2" y2="582" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="620.7" y="578" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="586">23% (-28%, 74%)</text>
+<text x="10" y="606">    black_or_african_american (10)</text>
+<line x1="445.6" y1="602" x2="653.7" y2="602" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="545.6" y="598" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="606">-24% (-89%, 41%)</text>
+<text x="10" y="626">    unknown_or_not_reported (3)</text>
+<line x1="587.9" y1="622" x2="587.9" y2="622" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="583.9" y="618" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="626">0% (0%, 0%)</text>
+<text x="10" y="646">    white (64)</text>
+<line x1="532.0" y1="642" x2="612.8" y2="642" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="568.4" y="638" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="646">-10% (-35%, 15%)</text>
+<text x="10" y="666">Ethnicity: hispanic_or_latino (6)</text>
+<line x1="399.1" y1="662" x2="535.6" y2="662" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="463.3" y="658" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="666">-75% (-117%, -33%)</text>
+<text x="10" y="686">    not_hispanic_or_latino (80)</text>
+<line x1="552.5" y1="682" x2="625.8" y2="682" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="585.1" y="678" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="686">1% (-22%, 24%)</text>
+<text x="10" y="706">    unknown_or_not_reported (4)</text>
+<line x1="609.4" y1="702" x2="780.9" y2="702" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="691.1" y="698" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="706">67% (13%, 120%)</text>
+<text x="10" y="726">Ecog performance status: 0 (32)</text>
+<line x1="544.7" y1="722" x2="663.3" y2="722" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="600.0" y="718" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="726">10% (-27%, 47%)</text>
+<text x="10" y="746">    1 (52)</text>
+<line x1="531.9" y1="742" x2="620.8" y2="742" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="572.3" y="738" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="746">-7% (-35%, 20%)</text>
+<text x="10" y="766">    2 or more (6)</text>
+<line x1="466.6" y1="762" x2="709.2" y2="762" stroke="#1f4e79" stroke-width="1.5"/>
+<rect x="583.9" y="758" width="8" height="8" fill="#1f4e79"/>
+<text x="810" y="766">0% (-75%, 75%)</text>
+<text x="587.9" y="808" text-anchor="middle" fill="#555">favours control <- 0 -> favours arm</text></svg>

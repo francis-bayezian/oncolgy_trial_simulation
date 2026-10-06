@@ -1,0 +1,1107 @@
+{
+ "subject_id": "S0165",
+ "arm": "ARM2",
+ "agents": [
+  "vincristine",
+  "carboplatin",
+  "cisplatin",
+  "cyclophosphamide"
+ ],
+ "baseline": {
+  "patient_id": "P005409",
+  "demographic:age": {
+   "value": 16.69,
+   "unit": "year"
+  },
+  "demographic:sex": "male",
+  "demographic:race": "white",
+  "demographic:ethnicity": "not_hispanic_or_latino",
+  "umls:C0543478": {
+   "interval": [
+    null,
+    1.5
+   ],
+   "upper_inclusive": false,
+   "unit": "cm2"
+  },
+  "var:ecog_performance_status": {
+   "value": 0,
+   "unit": null
+  },
+  "var:dissemination_status": "M+"
+ },
+ "progression_day_latent": null,
+ "progression_detected_day": null,
+ "off_treatment": [
+  168,
+  "completed planned treatment"
+ ],
+ "dose": {
+  "vincristine": {
+   "value": 1.5,
+   "unit": "mg/m2/day",
+   "basis": "per_body_surface_area"
+  },
+  "carboplatin": {
+   "value": 35.0,
+   "unit": "mg/m2/day",
+   "basis": "per_body_surface_area"
+  },
+  "cisplatin": {
+   "value": 75.0,
+   "unit": "mg/m2",
+   "basis": "per_body_surface_area"
+  },
+  "cyclophosphamide": {
+   "value": null,
+   "label": "reduced x4 (level not stated)"
+  }
+ },
+ "reductions": {
+  "vincristine": 0,
+  "carboplatin": 0,
+  "cisplatin": 0,
+  "cyclophosphamide": 4
+ },
+ "exposure": [
+  {
+   "cycle": 1,
+   "agent": "vincristine",
+   "planned_administrations": 4,
+   "administrations": 4,
+   "dose": "1.5 mg/m2/day"
+  },
+  {
+   "cycle": 1,
+   "agent": "carboplatin",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "35 mg/m2/day"
+  },
+  {
+   "cycle": 1,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "75 mg/m2"
+  },
+  {
+   "cycle": 1,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "1000 mg/m2"
+  },
+  {
+   "cycle": 2,
+   "agent": "vincristine",
+   "planned_administrations": 4,
+   "administrations": 4,
+   "dose": "1.5 mg/m2/day"
+  },
+  {
+   "cycle": 2,
+   "agent": "carboplatin",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "35 mg/m2/day"
+  },
+  {
+   "cycle": 2,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "75 mg/m2"
+  },
+  {
+   "cycle": 2,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "1000 mg/m2"
+  },
+  {
+   "cycle": 3,
+   "agent": "vincristine",
+   "planned_administrations": 4,
+   "administrations": 4,
+   "dose": "1.5 mg/m2/day"
+  },
+  {
+   "cycle": 3,
+   "agent": "carboplatin",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "35 mg/m2/day"
+  },
+  {
+   "cycle": 3,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "75 mg/m2"
+  },
+  {
+   "cycle": 3,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "reduced x2 (level not stated)"
+  },
+  {
+   "cycle": 4,
+   "agent": "vincristine",
+   "planned_administrations": 4,
+   "administrations": 4,
+   "dose": "1.5 mg/m2/day"
+  },
+  {
+   "cycle": 4,
+   "agent": "carboplatin",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "35 mg/m2/day"
+  },
+  {
+   "cycle": 4,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "75 mg/m2"
+  },
+  {
+   "cycle": 4,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "reduced x2 (level not stated)"
+  },
+  {
+   "cycle": 5,
+   "agent": "vincristine",
+   "planned_administrations": 4,
+   "administrations": 4,
+   "dose": "1.5 mg/m2/day"
+  },
+  {
+   "cycle": 5,
+   "agent": "carboplatin",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "35 mg/m2/day"
+  },
+  {
+   "cycle": 5,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "75 mg/m2"
+  },
+  {
+   "cycle": 5,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "reduced x4 (level not stated)"
+  },
+  {
+   "cycle": 6,
+   "agent": "vincristine",
+   "planned_administrations": 4,
+   "administrations": 4,
+   "dose": "1.5 mg/m2/day"
+  },
+  {
+   "cycle": 6,
+   "agent": "carboplatin",
+   "planned_administrations": 28,
+   "administrations": 28,
+   "dose": "35 mg/m2/day"
+  },
+  {
+   "cycle": 6,
+   "agent": "cisplatin",
+   "planned_administrations": 1,
+   "administrations": 1,
+   "dose": "75 mg/m2"
+  },
+  {
+   "cycle": 6,
+   "agent": "cyclophosphamide",
+   "planned_administrations": 2,
+   "administrations": 2,
+   "dose": "reduced x4 (level not stated)"
+  }
+ ],
+ "adverse_events": [
+  {
+   "term": "nausea",
+   "serious": false,
+   "grade": 1,
+   "onset": 7,
+   "source": "safety_v3:RESOLVED",
+   "end": 8,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "fatigue",
+   "serious": false,
+   "grade": 1,
+   "onset": 13,
+   "source": "safety_v3:RESOLVED",
+   "end": 14,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "thrombocytopenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 34,
+   "source": "safety_v3:RESOLVED",
+   "end": 35,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "reduce_percent",
+     "value": 750.0,
+     "unit": "mg/m2/dose",
+     "percent": 25.0,
+     "resume": null,
+     "rule_id": "DM008",
+     "category": "Hematological Toxicity",
+     "quote": "the dose of cyclophosphamide should be reduced by 25% to 750 mg/m2/dose",
+     "undecidable": [
+      "DM007"
+     ]
+    }
+   }
+  },
+  {
+   "term": "decreased_platelet_count",
+   "serious": false,
+   "grade": 2,
+   "onset": 38,
+   "source": "safety_v3:RESOLVED",
+   "end": 39,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "reduce_percent",
+     "value": 750.0,
+     "unit": "mg/m2/dose",
+     "percent": 25.0,
+     "resume": null,
+     "rule_id": "DM008",
+     "category": "Hematological Toxicity",
+     "quote": "the dose of cyclophosphamide should be reduced by 25% to 750 mg/m2/dose",
+     "undecidable": [
+      "DM007"
+     ]
+    }
+   }
+  },
+  {
+   "term": "anorexia",
+   "serious": false,
+   "grade": 1,
+   "onset": 39,
+   "source": "safety_v3:RESOLVED",
+   "end": 40,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "weight_loss",
+   "serious": false,
+   "grade": 1,
+   "onset": 50,
+   "source": "safety_v3:RESOLVED",
+   "end": 51,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neutropenia",
+   "serious": false,
+   "grade": 2,
+   "onset": 55,
+   "source": "safety_v3:RESOLVED",
+   "end": 56,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "dizziness",
+   "serious": false,
+   "grade": 1,
+   "onset": 69,
+   "source": "safety_v3:RESOLVED",
+   "end": 70,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neutrophil_count_decreased",
+   "serious": false,
+   "grade": 2,
+   "onset": 76,
+   "source": "safety_v3:RESOLVED",
+   "end": 77,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "hypertriglyceridemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 100,
+   "source": "safety_v3:RESOLVED",
+   "end": 101,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "platelets",
+   "serious": true,
+   "grade": 3,
+   "onset": 106,
+   "source": "safety_v3:RESOLVED",
+   "end": 108,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "reduce_percent",
+     "value": 750.0,
+     "unit": "mg/m2/dose",
+     "percent": 25.0,
+     "resume": null,
+     "rule_id": "DM008",
+     "category": "Hematological Toxicity",
+     "quote": "the dose of cyclophosphamide should be reduced by 25% to 750 mg/m2/dose",
+     "undecidable": [
+      "DM007"
+     ]
+    }
+   }
+  },
+  {
+   "term": "platelets",
+   "serious": false,
+   "grade": 2,
+   "onset": 112,
+   "source": "safety_v3:RESOLVED",
+   "end": 113,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "reduce_percent",
+     "value": 750.0,
+     "unit": "mg/m2/dose",
+     "percent": 25.0,
+     "resume": null,
+     "rule_id": "DM008",
+     "category": "Hematological Toxicity",
+     "quote": "the dose of cyclophosphamide should be reduced by 25% to 750 mg/m2/dose",
+     "undecidable": [
+      "DM007"
+     ]
+    }
+   }
+  },
+  {
+   "term": "hemoglobin_normal_12_16_gm",
+   "serious": false,
+   "grade": 2,
+   "onset": 124,
+   "source": "safety_v3:RESOLVED",
+   "end": 125,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "muscle_weakness",
+   "serious": false,
+   "grade": 2,
+   "onset": 127,
+   "source": "safety_v3:RESOLVED",
+   "end": 128,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "myalgia",
+   "serious": false,
+   "grade": 2,
+   "onset": 132,
+   "source": "safety_v3:RESOLVED",
+   "end": 133,
+   "decisions": {
+    "vincristine": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "carboplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cisplatin": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    },
+    "cyclophosphamide": {
+     "action": "no_rule",
+     "rule_id": null,
+     "undecidable": []
+    }
+   }
+  },
+  {
+   "term": "neuropathy_-_sensory",
+   "serious": false,
+   "grade": 2,
+   "onset": 170,
+   "source": "safety_v3:RESOLVED",
+   "end": 177
+  },
+  {
+   "term": "anxiety",
+   "serious": false,
+   "grade": 1,
+   "onset": 188,
+   "source": "safety_v3:RESOLVED",
+   "end": 195
+  },
+  {
+   "term": "hyperkalemia",
+   "serious": false,
+   "grade": 2,
+   "onset": 197,
+   "source": "safety_v3:RESOLVED",
+   "end": 204
+  }
+ ],
+ "events": [
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "screening",
+   "item": "eligibility",
+   "result": "ELIGIBLE",
+   "consequence": "0 criteria not checkable with generated variables",
+   "evidence_level": "protocol",
+   "source": "eligibility stage (three-valued: eligible / ineligible / undetermined)",
+   "assumption": "A13_screening_day"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "baseline",
+   "item": "demographics",
+   "result": "age 16.69, male, white",
+   "consequence": "",
+   "evidence_level": "evidence",
+   "source": "population stage (V3 baseline parameters within the protocol's age limits)"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Hemoglobin",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "ALT",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": -7,
+   "visit": "SCREENING",
+   "category": "laboratory",
+   "item": "Creatinine",
+   "result": "within normal limits (value not simulated: no evidence)",
+   "consequence": "",
+   "evidence_level": "assumption",
+   "source": "within normal limits (no laboratory adverse event active); value not simulated",
+   "assumption": "A10_normal_baseline_labs"
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start vincristine",
+   "result": "1.5 mg/m2/day",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX002",
+   "quote": "VinCRIStine: IV push over 1 minute (or infusion via minibag as per institution policy)\n1.5 mg/m2/day (maximum single dose 2 mg) once weekly Weeks 1-6 during radiation for\na total of 6 doses. Vincristine should be started within the first week of starting radiation\ntherapy and given weekly thereafter. Administer prior to CARBOplatin."
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start carboplatin",
+   "result": "35 mg/m2/day",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX003",
+   "quote": "35 mg/m2/day given daily during radiation therapy for a total of 30 doses. The first dose of CARBOplatin should be administered on the first day of radiation therapy. CARBOplatin will be over 15 minutes 1-4 hours prior to radiation therapy."
+  },
+  {
+   "day": 1,
+   "visit": "C1D1",
+   "category": "treatment",
+   "item": "start cisplatin",
+   "result": "75 mg/m2",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX006",
+   "quote": "CISplatin: IV over 6 hours\n75 mg/m2 on Day 1"
+  },
+  {
+   "day": 2,
+   "visit": "C1D2",
+   "category": "treatment",
+   "item": "start cyclophosphamide",
+   "result": "1000 mg/m2",
+   "consequence": "first dose",
+   "evidence_level": "protocol",
+   "source": "intervention TX008",
+   "quote": "Cyclophosphamide: IV over 1 hour\n1000 mg/m2 on Day 2 and Day 3."
+  },
+  {
+   "day": 7,
+   "visit": "C1D7",
+   "category": "adverse event",
+   "item": "nausea",
+   "result": "grade 1; resolves by day 8",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 13,
+   "visit": "C1D13",
+   "category": "adverse event",
+   "item": "fatigue",
+   "result": "grade 1; resolves by day 14",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 34,
+   "visit": "C2D6",
+   "category": "adverse event",
+   "item": "thrombocytopenia",
+   "result": "grade 2; resolves by day 35",
+   "consequence": "cyclophosphamide reduced to reduced x1 (level not stated) from day 34 (DM008); undecidable: DM007",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 34,
+   "visit": "C2D6",
+   "category": "laboratory",
+   "item": "Platelet count",
+   "result": "74.73 10^9/L (grade 2)",
+   "consequence": "during thrombocytopenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Platelet count (50-75 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 38,
+   "visit": "C2D10",
+   "category": "adverse event",
+   "item": "decreased_platelet_count",
+   "result": "grade 2; resolves by day 39",
+   "consequence": "cyclophosphamide reduced to reduced x2 (level not stated) from day 38 (DM008); undecidable: DM007",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 39,
+   "visit": "C2D11",
+   "category": "adverse event",
+   "item": "anorexia",
+   "result": "grade 1; resolves by day 40",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 50,
+   "visit": "C2D22",
+   "category": "adverse event",
+   "item": "weight_loss",
+   "result": "grade 1; resolves by day 51",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 55,
+   "visit": "C2D27",
+   "category": "adverse event",
+   "item": "neutropenia",
+   "result": "grade 2; resolves by day 56",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 55,
+   "visit": "C2D27",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "1.45 10^9/L (grade 2)",
+   "consequence": "during neutropenia",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Absolute neutrophil count (1-1.5 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 69,
+   "visit": "C3D13",
+   "category": "adverse event",
+   "item": "dizziness",
+   "result": "grade 1; resolves by day 70",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 76,
+   "visit": "C3D20",
+   "category": "adverse event",
+   "item": "neutrophil_count_decreased",
+   "result": "grade 2; resolves by day 77",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 76,
+   "visit": "C3D20",
+   "category": "laboratory",
+   "item": "Absolute neutrophil count",
+   "result": "1.11 10^9/L (grade 2)",
+   "consequence": "during neutrophil_count_decreased",
+   "evidence_level": "assumption",
+   "source": "CTCAE v5.0 grade 2 range for Absolute neutrophil count (1-1.5 10^9/L)",
+   "assumption": "A5_lab_value_in_grade"
+  },
+  {
+   "day": 100,
+   "visit": "C4D16",
+   "category": "adverse event",
+   "item": "hypertriglyceridemia",
+   "result": "grade 2; resolves by day 101",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 106,
+   "visit": "C4D22",
+   "category": "adverse event",
+   "item": "platelets",
+   "result": "grade 3 serious; resolves by day 108",
+   "consequence": "cyclophosphamide reduced to reduced x3 (level not stated) from day 106 (DM008); undecidable: DM007",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 112,
+   "visit": "C4D28",
+   "category": "adverse event",
+   "item": "platelets",
+   "result": "grade 2; resolves by day 113",
+   "consequence": "cyclophosphamide reduced to reduced x4 (level not stated) from day 112 (DM008); undecidable: DM007",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 124,
+   "visit": "C5D12",
+   "category": "adverse event",
+   "item": "hemoglobin_normal_12_16_gm",
+   "result": "grade 2; resolves by day 125",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 127,
+   "visit": "C5D15",
+   "category": "adverse event",
+   "item": "muscle_weakness",
+   "result": "grade 2; resolves by day 128",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 132,
+   "visit": "C5D20",
+   "category": "adverse event",
+   "item": "myalgia",
+   "result": "grade 2; resolves by day 133",
+   "consequence": "no protocol rule applies",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 168,
+   "visit": "EOT",
+   "category": "disposition",
+   "item": "end of treatment",
+   "result": "completed planned treatment",
+   "consequence": "",
+   "evidence_level": "protocol",
+   "source": "protocol discontinuation rules"
+  },
+  {
+   "day": 170,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "neuropathy_-_sensory",
+   "result": "grade 2; resolves by day 177",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 188,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "anxiety",
+   "result": "grade 1; resolves by day 195",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  },
+  {
+   "day": 197,
+   "visit": "unscheduled",
+   "category": "adverse event",
+   "item": "hyperkalemia",
+   "result": "grade 2; resolves by day 204",
+   "consequence": "after treatment",
+   "evidence_level": "parameter",
+   "source": "occurrence: safety_v3:RESOLVED; onset A1, grade A2, resolution A3",
+   "assumption": "A1_ae_onset"
+  }
+ ]
+}

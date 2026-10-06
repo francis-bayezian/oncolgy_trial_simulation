@@ -1,0 +1,41 @@
+Factor,Level,Arm,N enrolled,N efficacy-evaluable at cut-off,Small n,ORR % (95% CI),DCR % (95% CI),CR/PR/SD/PD/NE,TTR median mo,DOR median mo,PFS median mo (events/n),PFS 12 m %,OS median mo (events/n),OS 12 m %
+patients previously treated or not with cabozantinib,Previously treated,ARM1,13,13,,15% (2-45),62% (32-86),0/2/6/5/0,2.76,4.39,7.15 (11/13 ev),26.4,19.34 (10/13 ev),83.3
+patients previously treated or not with cabozantinib,Previously treated,ARM2,12,12,,17% (2-48),58% (28-85),0/2/5/5/0,2.76,37.0,5.52 (11/12 ev),41.7,28.97 (9/12 ev),81.8
+patients previously treated or not with cabozantinib,Previously untreated,ARM1,16,16,,0% (0-21),62% (35-85),0/0/10/4/2,-,-,5.52 (14/16 ev),23.0,19.04 (12/16 ev),53.8
+patients previously treated or not with cabozantinib,Previously untreated,ARM2,16,16,,19% (4-46),56% (30-80),1/2/6/7/0,2.76,2.76,4.85 (16/16 ev),43.8,24.63 (13/16 ev),73.7
+bevacizumab pre-treated cohort,Prior bevacizumab treated,ARM1,12,12,,0% (0-26),75% (43-95),0/0/9/3/0,-,-,11.04 (11/12 ev),37.5,26.94 (8/12 ev),81.8
+bevacizumab pre-treated cohort,Prior bevacizumab treated,ARM2,10,10,,30% (7-65),80% (44-97),1/2/5/2/0,2.76,37.0,13.8 (9/10 ev),60.0,24.63 (9/10 ev),90.0
+bevacizumab pre-treated cohort,Prior bevacizumab untreated,ARM1,17,17,,12% (1-36),53% (28-77),0/2/7/6/2,2.76,4.39,4.16 (14/17 ev),10.8,16.98 (14/17 ev),56.7
+bevacizumab pre-treated cohort,Prior bevacizumab untreated,ARM2,18,18,,11% (1-35),44% (22-69),0/2/6/10/0,2.76,2.09,2.76 (18/18 ev),33.3,36.94 (13/18 ev),69.3
+Age (FDA standard age bands),65-74 years,ARM1,2,2,yes,0% (0-84),50% (1-99),0/0/1/1/0,-,-,2.76 (2/2 ev),-,28.77 (2/2 ev),100.0
+Age (FDA standard age bands),65-74 years,ARM2,7,7,yes,29% (4-71),71% (29-96),1/1/3/2/0,2.76,2.76,16.56 (7/7 ev),57.1,40.58 (6/7 ev),71.4
+Age (FDA standard age bands),< 65 years,ARM1,25,25,,8% (1-26),60% (39-79),0/2/13/8/2,2.76,4.39,5.52 (22/25 ev),26.7,18.41 (19/25 ev),62.7
+Age (FDA standard age bands),< 65 years,ARM2,21,21,,14% (3-36),52% (30-74),0/3/8/10/0,2.76,37.0,4.85 (20/21 ev),38.1,27.39 (16/21 ev),79.4
+Age (FDA standard age bands),>= 75 years,ARM1,2,2,yes,0% (0-84),100% (16-100),0/0/2/0/0,-,-,11.04 (1/2 ev),-,19.11 (1/2 ev),100.0
+Age (FDA standard age bands),>= 75 years,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Sex,female,ARM1,29,29,,7% (1-23),62% (42-79),0/2/16/9/2,2.76,4.39,5.52 (25/29 ev),24.0,19.11 (22/29 ev),67.0
+Sex,female,ARM2,28,28,,18% (6-37),57% (37-76),1/4/11/12/0,2.76,37.0,5.52 (27/28 ev),42.9,27.39 (22/28 ev),77.2
+Race,american_indian_or_alaska_native,ARM1,2,2,yes,0% (0-84),100% (16-100),0/0/2/0/0,-,-,4.16 (2/2 ev),-,4.16 (2/2 ev),50.0
+Race,american_indian_or_alaska_native,ARM2,1,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,22.08 (1/1 ev),100.0,24.63 (1/1 ev),100.0
+Race,asian,ARM1,2,2,yes,0% (0-84),100% (16-100),0/0/2/0/0,-,-,8.28 (1/2 ev),-,57.57 (1/2 ev),100.0
+Race,asian,ARM2,2,2,yes,0% (0-84),0% (0-84),0/0/0/2/0,-,-,2.76 (2/2 ev),-,NR (0/2 ev),100.0
+Race,black_or_african_american,ARM1,3,3,yes,0% (0-71),100% (29-100),0/0/3/0/0,-,-,11.04 (3/3 ev),33.3,26.94 (3/3 ev),100.0
+Race,black_or_african_american,ARM2,3,3,yes,33% (1-91),67% (9-99),0/1/1/1/0,2.76,2.76,5.52 (3/3 ev),33.3,22.89 (2/3 ev),66.7
+Race,more_than_one_race,ARM1,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,more_than_one_race,ARM2,1,1,yes,100% (2-100),100% (2-100),1/0/0/0/0,5.52,40.7,46.22 (1/1 ev),100.0,46.22 (1/1 ev),100.0
+Race,native_hawaiian_or_other_pacific_islander,ARM1,1,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,5.52 (1/1 ev),-,24.14 (1/1 ev),100.0
+Race,native_hawaiian_or_other_pacific_islander,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,unknown_or_not_reported,ARM1,1,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,16.56 (1/1 ev),100.0,18.41 (1/1 ev),100.0
+Race,unknown_or_not_reported,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Race,white,ARM1,20,20,,10% (1-32),45% (23-68),0/2/7/9/2,2.76,4.39,2.76 (17/20 ev),23.2,17.0 (14/20 ev),58.2
+Race,white,ARM2,21,21,,14% (3-36),57% (34-78),0/3/9/9/0,2.76,37.0,5.52 (20/21 ev),42.9,27.39 (18/21 ev),75.4
+Ethnicity,hispanic_or_latino,ARM1,1,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,13.8 (1/1 ev),100.0,26.94 (1/1 ev),100.0
+Ethnicity,hispanic_or_latino,ARM2,0,0,yes,-,-,-,-,-,-,-,-,-
+Ethnicity,not_hispanic_or_latino,ARM1,28,28,,7% (1-24),61% (41-78),0/2/15/9/2,2.76,4.39,5.52 (24/28 ev),20.9,19.04 (21/28 ev),65.8
+Ethnicity,not_hispanic_or_latino,ARM2,28,28,,18% (6-37),57% (37-76),1/4/11/12/0,2.76,37.0,5.52 (27/28 ev),42.9,27.39 (22/28 ev),77.2
+ECOG performance status,0,ARM1,14,14,,0% (0-23),79% (49-95),0/0/11/2/1,-,-,11.04 (12/14 ev),34.6,20.27 (11/14 ev),85.1
+ECOG performance status,0,ARM2,12,12,,8% (0-38),50% (21-79),0/1/5/6/0,2.76,2.09,2.76 (12/12 ev),33.3,18.43 (11/12 ev),66.7
+ECOG performance status,1,ARM1,14,14,,14% (2-43),43% (18-71),0/2/4/7/1,2.76,4.39,2.76 (12/14 ev),-,11.93 (10/14 ev),46.4
+ECOG performance status,1,ARM2,15,15,,27% (8-55),67% (38-88),1/3/6/5/0,2.76,37.0,16.56 (14/15 ev),53.3,27.39 (10/15 ev),84.6
+ECOG performance status,2 or more,ARM1,1,1,yes,0% (0-98),100% (2-100),0/0/1/0/0,-,-,16.56 (1/1 ev),100.0,18.41 (1/1 ev),100.0
+ECOG performance status,2 or more,ARM2,1,1,yes,0% (0-98),0% (0-98),0/0/0/1/0,-,-,2.76 (1/1 ev),-,36.94 (1/1 ev),100.0

@@ -1,0 +1,529 @@
+{
+ "journey_version": "journey-1.1.0",
+ "seed": 20260929,
+ "horizon_days": 730,
+ "cohort_file": "cohort_accrual_historical_7.9_per_year.jsonl",
+ "inputs": {
+  "studyspec": "0cc9e71cce40a2f7c144150475af7adc2485d80a8fbb3ce3efaa4dc7fa10bbab",
+  "schedule_facts": "schedule-facts-1.3.0"
+ },
+ "schedule": {
+  "cycle_length_days": {
+   "value": 28.0,
+   "evidence_level": "protocol",
+   "source": "treatment phase PH1",
+   "quote": "4-week cycle"
+  },
+  "screening_window_days": {
+   "value": 28.0,
+   "evidence_level": "protocol",
+   "source": "assessment schedule: pre-treatment window",
+   "quote": "Before\ninclusion\nwithin 28\ndays\nbefore\ndrug\ninitiation"
+  },
+  "tumour_assessment_interval_days": {
+   "value": 84.0,
+   "evidence_level": "protocol",
+   "source": "tumour assessment interval: schedule fact SF06 (REVIEW_REQUIRED: used under the accept-review decision, flagged)",
+   "quote": "Additional exams at D1 of cycle 4 and every 3 cycles (D1C7, D1C10…) (within 7 days):  Radiological assessment (will use the same exams as baseline)",
+   "time_origin": "cycle_day",
+   "status": "REVIEW_REQUIRED"
+  },
+  "lab_days_in_cycle": {
+   "value": [
+    1,
+    15
+   ],
+   "evidence_level": "protocol",
+   "source": "laboratory rows of the assessment schedule",
+   "quote": "Laboratory Assessments1\n- Blood assessment\n- Urinary assessment"
+  },
+  "follow_up_interval_days": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no follow-up visit interval stated"
+  },
+  "max_cycles": {
+   "value": null,
+   "evidence_level": "unsupported",
+   "source": "no maximum number of cycles: treatment continues until an off-treatment event"
+  },
+  "agents": {
+   "cabozantinib": {
+    "entries": [
+     {
+      "intervention_id": "TX001",
+      "arms": [],
+      "arm_ids": [
+       "ARM1",
+       "ARM2"
+      ],
+      "arm_labels": [
+       "Cabozantinib",
+       "BEVACIZUMAB"
+      ],
+      "dose": {
+       "value": {
+        "value": 60.0,
+        "unit": "mg",
+        "basis": "fixed"
+       },
+       "evidence_level": "protocol",
+       "source": "intervention TX001",
+       "quote": "Cabozantinib will be administered at the daily dose of 60 mg given orally in a 4-week cycle."
+      },
+      "route": "oral",
+      "dosing_days": {
+       "value": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+       ],
+       "evidence_level": "protocol",
+       "source": "daily dosing",
+       "quote": "daily"
+      },
+      "cycles": null
+     }
+    ],
+    "intervention_id": "TX001",
+    "dose": {
+     "value": {
+      "value": 60.0,
+      "unit": "mg",
+      "basis": "fixed"
+     },
+     "evidence_level": "protocol",
+     "source": "intervention TX001",
+     "quote": "Cabozantinib will be administered at the daily dose of 60 mg given orally in a 4-week cycle."
+    },
+    "route": "oral",
+    "dosing_days": {
+     "value": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+     ],
+     "evidence_level": "protocol",
+     "source": "daily dosing",
+     "quote": "daily"
+    },
+    "arms": [],
+    "arm_ids": [
+     "ARM1",
+     "ARM2"
+    ]
+   }
+  }
+ },
+ "dose_levels": {
+  "cabozantinib": {
+   "1": {
+    "value": 40.0,
+    "unit": "mg/day",
+    "rule_id": "DM004"
+   }
+  }
+ },
+ "progression": {
+  "ARM2": {
+   "value": {
+    "cure_fraction": 0.0,
+    "rate_per_year": 1.6529631623018566
+   },
+   "evidence_level": "assumption",
+   "source": "evidence median progression-free survival 5.0 months (whole disease family, 20 studies), exponential",
+   "assumption": "A7_progression_exponential",
+   "detail": {
+    "variable": "progression_free_survival",
+    "family": "gynecologic",
+    "subgroup": "whole disease family",
+    "median_months": 5.032033596644903,
+    "ci95": [
+     4.192284569487468,
+     6.039991250130887
+    ],
+    "single_trial_80": [
+     2.035841518535701,
+     12.43778648152125
+    ],
+    "studies": 20,
+    "arms": 68,
+    "patients": 5723
+   }
+  },
+  "ARM1": {
+   "value": {
+    "cure_fraction": 0.0,
+    "rate_per_year": 1.6529631623018566
+   },
+   "evidence_level": "assumption",
+   "source": "evidence median progression-free survival 5.0 months (whole disease family, 20 studies), exponential",
+   "assumption": "A7_progression_exponential",
+   "detail": {
+    "variable": "progression_free_survival",
+    "family": "gynecologic",
+    "subgroup": "whole disease family",
+    "median_months": 5.032033596644903,
+    "ci95": [
+     4.192284569487468,
+     6.039991250130887
+    ],
+    "single_trial_80": [
+     2.035841518535701,
+     12.43778648152125
+    ],
+    "studies": 20,
+    "arms": 68,
+    "patients": 5723
+   }
+  }
+ },
+ "withdrawal": {
+  "ARM2": {
+   "value": 0.07271292526603469,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (gynecologic): left by subject decision, loss to follow-up or physician decision; 630 trials, 85355 participants",
+   "detail": {
+    "estimate": 0.07271292526603469,
+    "ci95": [
+     0.06793924141824259,
+     0.07779403177678428
+    ],
+    "single_trial_80": [
+     0.023229104725762423,
+     0.2054387788669538
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.023230127816241716,
+     "p30": 0.04591620971793789,
+     "p50": 0.07271292526603469,
+     "p70": 0.11329123451037777,
+     "p90": 0.20543141876981016
+    },
+    "tau_logit": 0.9302011575590874,
+    "groups": 1394,
+    "trials": 630,
+    "participants": 85355
+   }
+  },
+  "ARM1": {
+   "value": 0.07271292526603469,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (gynecologic): left by subject decision, loss to follow-up or physician decision; 630 trials, 85355 participants",
+   "detail": {
+    "estimate": 0.07271292526603469,
+    "ci95": [
+     0.06793924141824259,
+     0.07779403177678428
+    ],
+    "single_trial_80": [
+     0.023229104725762423,
+     0.2054387788669538
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.023230127816241716,
+     "p30": 0.04591620971793789,
+     "p50": 0.07271292526603469,
+     "p70": 0.11329123451037777,
+     "p90": 0.20543141876981016
+    },
+    "tau_logit": 0.9302011575590874,
+    "groups": 1394,
+    "trials": 630,
+    "participants": 85355
+   }
+  }
+ },
+ "ae_discontinuation": {
+  "ARM2": {
+   "value": 0.04272168521985129,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (gynecologic): left for an adverse event; 630 trials, 85355 participants",
+   "detail": {
+    "estimate": 0.04272168521985129,
+    "ci95": [
+     0.03937110883157193,
+     0.04634364762530969
+    ],
+    "single_trial_80": [
+     0.011813729902886325,
+     0.14280734040836085
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.011814311064695715,
+     "p30": 0.025373143167394613,
+     "p50": 0.04272168521985129,
+     "p70": 0.07106712508658626,
+     "p90": 0.14280124669653863
+    },
+    "tau_logit": 1.026875408811139,
+    "groups": 1394,
+    "trials": 630,
+    "participants": 85355
+   }
+  },
+  "ARM1": {
+   "value": 0.04272168521985129,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (gynecologic): left for an adverse event; 630 trials, 85355 participants",
+   "detail": {
+    "estimate": 0.04272168521985129,
+    "ci95": [
+     0.03937110883157193,
+     0.04634364762530969
+    ],
+    "single_trial_80": [
+     0.011813729902886325,
+     0.14280734040836085
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.011814311064695715,
+     "p30": 0.025373143167394613,
+     "p50": 0.04272168521985129,
+     "p70": 0.07106712508658626,
+     "p90": 0.14280124669653863
+    },
+    "tau_logit": 1.026875408811139,
+    "groups": 1394,
+    "trials": 630,
+    "participants": 85355
+   }
+  }
+ },
+ "death": {
+  "ARM2": {
+   "value": 0.071776058401318,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (gynecologic): died during the study period; 630 trials, 85355 participants",
+   "detail": {
+    "estimate": 0.071776058401318,
+    "ci95": [
+     0.06538712361358977,
+     0.07873666117884251
+    ],
+    "single_trial_80": [
+     0.011813128832450798,
+     0.3334140891737725
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.011813952497910143,
+     "p30": 0.034769405771722446,
+     "p50": 0.071776058401318,
+     "p70": 0.1423612757852369,
+     "p90": 0.33339840842313995
+    },
+    "tau_logit": 1.455829333873385,
+    "groups": 1394,
+    "trials": 630,
+    "participants": 85355
+   }
+  },
+  "ARM1": {
+   "value": 0.071776058401318,
+   "evidence_level": "evidence",
+   "source": "registry participant flow (gynecologic): died during the study period; 630 trials, 85355 participants",
+   "detail": {
+    "estimate": 0.071776058401318,
+    "ci95": [
+     0.06538712361358977,
+     0.07873666117884251
+    ],
+    "single_trial_80": [
+     0.011813128832450798,
+     0.3334140891737725
+    ],
+    "single_trial_percentiles": {
+     "p10": 0.011813952497910143,
+     "p30": 0.034769405771722446,
+     "p50": 0.071776058401318,
+     "p70": 0.1423612757852369,
+     "p90": 0.33339840842313995
+    },
+    "tau_logit": 1.455829333873385,
+    "groups": 1394,
+    "trials": 630,
+    "participants": 85355
+   }
+  }
+ },
+ "assumptions": {
+  "A1_ae_onset": "an adverse event's onset day is uniform over the patient's reporting window (first dose to 30 days after the last dose): registries report cumulative incidence, not onset times",
+  "A2_ae_grade": "a serious adverse event is recorded at grade 3 (the lowest grade consistent with seriousness for most CTCAE terms); a non-serious event at grade 1 or 2 with equal probability; registries report seriousness, not grade",
+  "A3_ae_resolution": "a grade 1-2 event resolves by the next scheduled visit after onset; a grade 3 or higher event by the second: resolution is detected at visits",
+  "A4_relatedness": "adverse events generated by the safety model are treated as related to study treatment when a dose modification rule requires relatedness",
+  "A5_lab_value_in_grade": "during a laboratory-type adverse event, the laboratory value is drawn uniformly within that grade's CTCAE v5 range; outside events the baseline is carried forward",
+  "A6_withdrawal_timing": "a withdrawal (subject decision, loss to follow-up, physician decision) occurs at a uniformly distributed time over the patient's on-study period; its probability is from registry disposition",
+  "A7_progression_exponential": "when progression-free survival comes from a reported median only, progression times are exponential with that median",
+  "A8_resume_same_dose": "after a hold whose resume instruction the compiler could not type, treatment resumes at the current dose level",
+  "A9_supportive_care_given": "supportive care and prophylaxis are given as the protocol requires, so an adverse event that occurs is one that occurred despite them",
+  "A10_normal_baseline_labs": "laboratory values are within normal limits at baseline (patients met the protocol's organ function criteria); rules for patients abnormal at baseline are not applied",
+  "A11_grade3_clinically_significant": "an adverse event of grade 3 or higher is clinically significant where a rule requires it",
+  "A12_reference_limits": "laboratory reference limits (LLN: neutrophils 2.0, platelets 150, white cells 4.0 x10^9/L; hemoglobin 12.0 g/dL) are typical adult values; laboratories set their own",
+  "A13_screening_day": "the screening visit takes place at the start of the protocol's screening window",
+  "A14_ae_discontinuation": "beyond the protocol's own dose-modification rules, a patient stops treatment for an adverse event with the registry participant-flow probability, at a uniform time over planned treatment; a stop triggered by a protocol rule first takes precedence",
+  "A15_death_timing": "death in the study period has the registry participant-flow probability and occurs at a uniform time over the simulated horizon (registry flow periods span treatment and follow-up)",
+  "A16_unknown_criteria_calibrated": "eligibility criteria the generated patients cannot answer pass independently, with one probability chosen so that the eligible share matches the registry screen pass rate",
+  "A17_standard_3_plus_3": "when the protocol's escalation table cannot be compiled, the standard 3+3 table is simulated",
+  "A18_participation_years": "with no stated censoring rate, the registry study-period withdrawal share is spread over 2 years",
+  "A22_short_participation": "with no treatment cycles, participation ends after the last planned administration plus a 30-day reporting window, and the registry's whole-trial exit shares are scaled by that duration over a year",
+  "A23_cr_share": "when no complete-response input exists, complete responses are 15% of responses",
+  "A24_tumour_dynamics": "response depth is uniform within its category band, nadir is reached by the second assessment, progression is independent of response depth, and 35% of progressions are by a new lesion",
+  "A25_recist_defaults": "when the protocol compiles no response thresholds, RECIST 1.1 is used (PR 30% decrease, PD 20% and 5 mm increase)",
+  "A26_post_progression_survival": "death follows progression: post-progression survival is exponential with median equal to the arm's overall-survival input minus its progression median (at least 1 month; 12 months without an OS input); a patient who never progresses does not die of the disease within follow-up",
+  "A27_subgroup_prevalence_equal": "a protocol subgroup factor whose levels no registry baseline table (nor the protocol) reports is split equally across its stated levels",
+  "A28_prognostic_effects": "a subgroup effect from registry results by subgroup is prognostic: the same in every arm, multiplicative on the progression hazard and the response odds, independent across factors, and centred on the arm's patient mix so each arm's overall rate is unchanged",
+  "A21_day1_dosing": "an agent whose dosing days the protocol does not state is given on day 1 of each cycle",
+  "A20_assessment_lag": "with no stated time point or treatment length, the primary assessment is 6 months after entry",
+  "A19_unnamed_arm_is_comparator": "an arm that names no anticancer agent is the comparator: it receives the regimen of the arms without the investigational agent (the agent given in the most arms)"
+ },
+ "summary": {
+  "subjects": 57,
+  "traces": [
+   "S0050",
+   "S0005",
+   "S0007"
+  ],
+  "any_dose_hold": 4,
+  "any_dose_reduction": 0,
+  "discontinued_for_ae": 16,
+  "deaths": 3,
+  "deaths_on_treatment": 2,
+  "end_of_treatment_reasons": {
+   "adverse event (all agents discontinued)": 14,
+   "disease progression": 38,
+   "death": 2,
+   "withdrawal (subject, loss to follow-up or physician decision)": 1,
+   "adverse event (registry discontinuation rate)": 2
+  },
+  "median_rdi": 1.0,
+  "progression_detected": 38,
+  "adverse_events_after_reporting_window_dropped": 90,
+  "rules_undecidable": [
+   "DM026"
+  ],
+  "screening_funnel": {
+   "generated_patients": 10000,
+   "status_counts": {
+    "ELIGIBLE": 7713,
+    "UNDETERMINED": 0,
+    "INELIGIBLE": 2287
+   },
+   "not_ruled_out_share": 0.7713,
+   "undecidable_criteria": [
+    "EL001",
+    "EL002",
+    "EL008",
+    "EL009",
+    "EL011",
+    "EL012",
+    "EL013",
+    "EL014",
+    "EL016",
+    "EL018",
+    "EL019",
+    "EL020",
+    "EL021",
+    "EL022",
+    "EL023",
+    "EL025",
+    "EL026",
+    "EL027",
+    "EL028",
+    "EL029",
+    "EL030",
+    "EL032",
+    "EL033",
+    "EL035",
+    "EL036",
+    "EL038",
+    "EL039"
+   ],
+   "screen_pass_rate": {
+    "value": 0.7707550985161489,
+    "evidence_level": "evidence",
+    "source": "registry recruitment details stating screened and enrolled counts (gynecologic; 32 trials, 10296 screened)",
+    "detail": {
+     "estimate": 0.7707550985161489,
+     "ci95": [
+      0.7138113333547431,
+      0.819237823647475
+     ],
+     "single_trial_80": [
+      0.5454692007975063,
+      0.9040258399451788
+     ],
+     "single_trial_percentiles": {
+      "p10": 0.5454788536548562,
+      "p30": 0.6880560123296077,
+      "p50": 0.7707550985161489,
+      "p70": 0.8367323023419315,
+      "p90": 0.9040224619027316
+     },
+     "tau_logit": 0.7892683131050512,
+     "groups": 32,
+     "trials": 32,
+     "participants": 10296
+    }
+   },
+   "target": 57.0,
+   "patients_to_screen": {
+    "estimate": 74,
+    "range_80": [
+     64,
+     105
+    ],
+    "basis": "target / registry pass rate (the range is for a single new trial)"
+   }
+  }
+ }
+}

@@ -1,0 +1,425 @@
+{
+ "version": "subgroup-evidence-1.0.0",
+ "family": "lung",
+ "phase": null,
+ "factors": [
+  {
+   "key": "var:each_dose_expansion_cohort",
+   "text": "each dose/expansion cohort",
+   "levels": [
+    "Panobinostat 10 mg/Everolimus 5 mg",
+    "Panobinostat 20 mg/Everolimus 10 mg",
+    "Panobinostat 20 mg/Everolimus 5 mg",
+    "Panobinostat 30 mg/Everolimus 10 mg"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "Panobinostat 10 mg/Everolimus 5 mg",
+     "Panobinostat 20 mg/Everolimus 10 mg",
+     "Panobinostat 20 mg/Everolimus 5 mg",
+     "Panobinostat 30 mg/Everolimus 10 mg"
+    ],
+    "p": [
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "Panobinostat 10 mg/Everolimus 5 mg": 0.2517,
+    "Panobinostat 20 mg/Everolimus 10 mg": 0.2517,
+    "Panobinostat 20 mg/Everolimus 5 mg": 0.2415,
+    "Panobinostat 30 mg/Everolimus 10 mg": 0.2551
+   },
+   "effects": {
+    "reference_level": "Panobinostat 10 mg/Everolimus 5 mg",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:tumor_type_population",
+   "text": "tumor type/population",
+   "levels": [
+    "Disease Population Group 1",
+    "Disease Population Group 2",
+    "Disease Population Group 3"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "Disease Population Group 1",
+     "Disease Population Group 2",
+     "Disease Population Group 3"
+    ],
+    "p": [
+     0.3333,
+     0.3333,
+     0.3333
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "Disease Population Group 1": 0.3314,
+    "Disease Population Group 2": 0.3296,
+    "Disease Population Group 3": 0.339
+   },
+   "effects": {
+    "reference_level": "Disease Population Group 1",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:prior_treatment_cohort",
+   "text": "prior treatment cohort",
+   "levels": [
+    "No",
+    "Yes"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "No",
+     "Yes"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 2,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 2 trials, fewer than 3)"
+   },
+   "mix": {
+    "No": 0.5042,
+    "Yes": 0.4958
+   },
+   "effects": {
+    "reference_level": "No",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "Yes": {
+      "log_effect": 0.3386,
+      "trials": 5,
+      "range_10_90": [
+       -0.116,
+       0.605
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 5 trials; prognostic, A28)"
+   }
+  },
+  {
+   "key": "var:genomic_alterations",
+   "text": "genomic alterations",
+   "levels": [
+    "Rearrangements of Ig / TCR genes & translocations",
+    "Rearrangements of Ig / TCR genes only",
+    "bcr/abl translocation above detection limit",
+    "t(4;11) translocation above detection limit"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "Rearrangements of Ig / TCR genes & translocations",
+     "Rearrangements of Ig / TCR genes only",
+     "bcr/abl translocation above detection limit",
+     "t(4;11) translocation above detection limit"
+    ],
+    "p": [
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "Rearrangements of Ig / TCR genes & translocations": 0.25,
+    "Rearrangements of Ig / TCR genes only": 0.244,
+    "bcr/abl translocation above detection limit": 0.2551,
+    "t(4;11) translocation above detection limit": 0.2509
+   },
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor"
+   }
+  },
+  {
+   "key": "var:presence_of_baseline_cns_metastases_or_leptomeningeal_diseas",
+   "text": "presence of baseline CNS metastases or leptomeningeal disease",
+   "levels": [
+    "No",
+    "Unknown/Not Reported",
+    "Yes"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "RESOLVED",
+    "levels": [
+     "No",
+     "Unknown/Not Reported",
+     "Yes"
+    ],
+    "p": [
+     0.6347,
+     0.0,
+     0.3653
+    ],
+    "trial_range_10_90": [
+     [
+      0.26,
+      0.0,
+      0.07
+     ],
+     [
+      0.93,
+      0.0,
+      0.74
+     ]
+    ],
+    "trials": 4,
+    "participants": 724,
+    "measures": [
+     "CNS site of disease - Brain parenchima",
+     "Central Nervous System (CNS) Metastases",
+     "Presence of Brain Metastases at Baseline",
+     "Site of Metastatic Disease: CNS Leptomeningeal"
+    ],
+    "source": "registry baseline tables of enrolled participants (all oncology; 4 trials)"
+   },
+   "mix": {
+    "No": 0.6332,
+    "Unknown/Not Reported": 0.0,
+    "Yes": 0.3668
+   },
+   "effects": {
+    "reference_level": "No",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:alk_positive",
+   "text": "ALK-positive",
+   "levels": [
+    "Negative",
+    "Positive"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "Negative",
+     "Positive"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "Negative": 0.5006,
+    "Positive": 0.4994
+   },
+   "effects": {
+    "reference_level": "Negative",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:alk_negative",
+   "text": "ALK-negative",
+   "levels": [
+    "Negative",
+    "Positive"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "Negative",
+     "Positive"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 1,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)"
+   },
+   "mix": {
+    "Negative": 0.5038,
+    "Positive": 0.4962
+   },
+   "effects": {
+    "reference_level": "Negative",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:met_status_as_confirmed_centrally",
+   "text": "MET status as confirmed centrally",
+   "levels": [],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "NO_LEVELS",
+    "levels": [],
+    "p": [],
+    "source": "the protocol states no levels and no registry table reports the factor"
+   },
+   "effects": {
+    "status": "NO_EVIDENCE",
+    "source": "no levels"
+   }
+  },
+  {
+   "key": "var:central_testing_for_alk_will_no_longer_be_required",
+   "text": "central testing for ALK will no longer be required",
+   "levels": [
+    "No",
+    "Yes"
+   ],
+   "source": "protocol subgroup (analysis section)",
+   "kind": "generated",
+   "prevalence": {
+    "status": "ASSUMED",
+    "levels": [
+     "No",
+     "Yes"
+    ],
+    "p": [
+     0.5,
+     0.5
+    ],
+    "trials": 2,
+    "source": "assumption A27: levels equally likely (registry baseline tables: 2 trials, fewer than 3)"
+   },
+   "mix": {
+    "No": 0.5077,
+    "Yes": 0.4923
+   },
+   "effects": {
+    "reference_level": "No",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "var:ecog_performance_status",
+   "text": "ECOG performance status (0, 1, 2 or more)",
+   "levels": [
+    "0",
+    "1",
+    "2 or more"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "0": 0.3204,
+    "1": 0.5947,
+    "2 or more": 0.0849
+   },
+   "effects": {
+    "reference_level": "0",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  },
+  {
+   "key": "demographic:sex",
+   "text": "sex (female, male)",
+   "levels": [
+    "female",
+    "male"
+   ],
+   "source": "baseline factor",
+   "kind": "existing",
+   "mix": {
+    "female": 0.5038,
+    "male": 0.4962
+   },
+   "effects": {
+    "reference_level": "female",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {
+     "male": {
+      "log_effect": 0.0485,
+      "trials": 3,
+      "range_10_90": [
+       0.039,
+       0.24
+      ],
+      "evidence": "all oncology"
+     }
+    },
+    "status": "RESOLVED",
+    "source": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   }
+  },
+  {
+   "key": "demographic:age",
+   "text": "age (< 65 years, >= 65 years)",
+   "levels": [
+    "< 65 years",
+    ">= 65 years"
+   ],
+   "source": "baseline factor",
+   "kind": "age",
+   "mix": {
+    "< 65 years": 0.6871,
+    ">= 65 years": 0.3129
+   },
+   "effects": {
+    "reference_level": "< 65 years",
+    "log_odds_ratio": {},
+    "log_hazard_ratio": {},
+    "status": "NO_EVIDENCE",
+    "source": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  }
+ ],
+ "assumptions": [
+  "A27_subgroup_prevalence_equal",
+  "A28_prognostic_effects"
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "mode": "decision rules",
+ "unresolved_decision_rules": [],
+ "rules": [
+  {
+   "rule": "DR1",
+   "arm": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associa",
+   "cohort": "total of 17 patients",
+   "cited": [],
+   "p_interest_at_p0": 0.03905363467212025,
+   "p_interest_at_p1": 0.9069492500184148
+  },
+  {
+   "rule": "DR2",
+   "arm": "Phase I/II Study of Low Dose Cyclophosphamide, Tumor Associa",
+   "cohort": "up to six (6) consecutive subjects",
+   "cited": [],
+   "p_interest_at_p0": null,
+   "p_interest_at_p1": null
+  }
+ ],
+ "model_calls": 0
+}

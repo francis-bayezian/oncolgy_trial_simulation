@@ -1,0 +1,440 @@
+{
+ "report_version": "planning-report-1.1.0",
+ "protocol_id": "03859427",
+ "blind": true,
+ "note": "planning predictions locked before any registry timeline was read",
+ "inputs": {
+  "studyspec": "3c396a3eadb6a232eae3d1a03067dc1064f5d6d8c048e2096d32d7909fb40db9",
+  "cohorts": {
+   "cohort_accrual_historical_68.6_per_year.jsonl": "7f2bca81332e5c41cd6911b6a412f1d5769c7ec3cab95f054edefe5c315937ac",
+   "recruitment_report.md": "6195dcc9a39b6e15bbfdb108ef9befcc36388c7607d126eda7c4773b9e704465",
+   "recruitment_summary.json": "62318c9bb6a49ece7ac5fbd4c680bb75ec1c8fa6de7635a1de572ec6f52bf301"
+  },
+  "eligibility": {
+   "eligibility.jsonl": "2a792b632f5de88a32c2e8f0041c1f77475937268bcf6ad70a1290945f2b9eee",
+   "eligibility_summary.json": "e2987db6474e0098be47888f3df50d9b82d79d97330e2c25d016ef3e7f8eb494",
+   "feasibility_report.md": "92ee52815ae25e378e24bfc53f873c1bd630328854d66dc0e22bc3315fee8f51"
+  }
+ },
+ "population_feasibility": {
+  "eligible_fraction_bounds": [
+   0.8128,
+   0.8128
+  ],
+  "criteria_that_cannot_be_checked": [
+   "EL005",
+   "EL006",
+   "EL007",
+   "EL008",
+   "EL013",
+   "EL014",
+   "EL015",
+   "EL016",
+   "EL017",
+   "EL018",
+   "EL019",
+   "EL020",
+   "EL021",
+   "EL022",
+   "EL023",
+   "EL024",
+   "EL025",
+   "EL027",
+   "EL028",
+   "EL029"
+  ],
+  "screen_failure": {
+   "status": "RESOLVED",
+   "value": 0.1872,
+   "source": "eligibility stage (registry recruitment details stating screened and enrolled counts (myeloma_and_plasma_cell; 12 trials, 2371 screened))"
+  },
+  "patients_to_screen": {
+   "status": "RESOLVED",
+   "value": 566,
+   "target": 460.0
+  }
+ },
+ "accrual": {
+  "target_patients": 460,
+  "target_source": "target_accrual",
+  "stated_accrual_durations_years": [],
+  "protocol_scenarios": [
+   {
+    "scenario": "accrual_historical_68.6_per_year",
+    "source": "protocol (quoted)",
+    "wording": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+    "patients_per_year": 68.61422767895607,
+    "patients_per_month": 5.7178523065796725,
+    "enrolled": {
+     "median": 460.0,
+     "q10": 460.0,
+     "q25": 460.0,
+     "q75": 460.0,
+     "q90": 460.0
+    },
+    "enrollment_duration_years": {
+     "median": 6.683998077248203,
+     "q10": 6.28461001985897,
+     "q25": 6.4751001384479325,
+     "q75": 6.907826684795407,
+     "q90": 7.0979459298704235
+    },
+    "p_enrollment_complete_by": {
+     "1y": 0.0,
+     "2y": 0.0,
+     "3y": 0.0,
+     "5y": 0.0
+    },
+    "note": "Poisson arrivals at the stated rate; site activation and rate uncertainty are not included"
+   }
+  ],
+  "excluded_rates": [],
+  "stated_operational": {
+   "site_count": {
+    "status": "RESOLVED",
+    "value": 100,
+    "quote": "Approximately 100 investigative sites",
+    "source": "protocol (quoted)"
+   },
+   "sponsor_class": {
+    "status": "RESOLVED",
+    "value": "INDUSTRY",
+    "quote": "Amgen Inc.",
+    "source": "protocol (quoted): company legal form"
+   }
+  },
+  "historical_model": {
+   "status": "RESOLVED",
+   "source": "historical accrual model operational-2.0.0 (completed and terminated non-holdout trials)",
+   "features": {
+    "phase": "PHASE3",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2021,
+    "enrolled": 460,
+    "disease_family": "myeloma_and_plasma_cell",
+    "matched_disease": "Relapsed or Refractory Multiple Myeloma",
+    "condition": "Relapsed or Refractory Multiple Myeloma",
+    "listed_sites": null,
+    "site_count": null,
+    "arms": 2,
+    "sponsor_class": null
+   },
+   "site_count": "protocol (quoted): 'Approximately 100 investigative sites'",
+   "patients_per_month": {
+    "median": 9.171609441231062,
+    "q10": 2.311866386607145,
+    "q25": 4.447230817351855,
+    "q75": 18.995272845499212,
+    "q90": 36.991896487090585,
+    "percentiles": {
+     "p10": 2.311866386607145,
+     "p30": 5.188200825043949,
+     "p50": 9.171609441231062,
+     "p70": 16.30053097666293,
+     "p90": 36.991896487090585
+    }
+   },
+   "patients_per_year": {
+    "median": 110.05931329477275,
+    "q10": 27.742396639285744,
+    "q25": 53.36676980822226,
+    "q75": 227.94327414599053,
+    "q90": 443.9027578450871,
+    "percentiles": {
+     "p10": 27.742396639285744,
+     "p30": 62.25840990052738,
+     "p50": 110.05931329477275,
+     "p70": 195.60637171995515,
+     "p90": 443.9027578450871
+    }
+   },
+   "enrollment_duration_years": {
+    "median": 4.177723512190325,
+    "q10": 1.044467481846216,
+    "q25": 2.01897610417001,
+    "q75": 8.666961468250154,
+    "q90": 16.70237421875884,
+    "percentiles": {
+     "p10": 1.044467481846216,
+     "p30": 2.3479511861151625,
+     "p50": 4.177723512190325,
+     "p70": 7.381766869387134,
+     "p90": 16.70237421875884
+    }
+   },
+   "p_enrollment_complete_by": {
+    "1y": 0.094,
+    "2y": 0.247125,
+    "3y": 0.382125,
+    "5y": 0.564875
+   },
+   "calibration": [
+    {
+     "tau": 0.1,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4946168369948838,
+     "coverage": {
+      "0.5": 0.5197568389057751,
+      "0.8": 0.8191489361702128,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.5962582637550549
+    },
+    {
+     "tau": 0.25,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.4997714502412416,
+     "coverage": {
+      "0.5": 0.5121580547112462,
+      "0.8": 0.817629179331307,
+      "0.95": 0.9285714285714286
+     },
+     "median_relative_error_rate": 0.6012922897676359
+    },
+    {
+     "tau": 0.5,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5064525550973662,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8130699088145896,
+      "0.95": 0.9316109422492401
+     },
+     "median_relative_error_rate": 0.6167308384654644
+    },
+    {
+     "tau": 1.0,
+     "direct_trials": 658,
+     "mean_log_predictive_density": -1.5123565133693713,
+     "coverage": {
+      "0.5": 0.5030395136778115,
+      "0.8": 0.8085106382978723,
+      "0.95": 0.9376899696048632
+     },
+     "median_relative_error_rate": 0.6104886544938674
+    }
+   ],
+   "family_known": true
+  },
+  "failure_model": {
+   "status": "RESOLVED",
+   "source": "operational asset operational-2.0.0 failure model",
+   "features": {
+    "phase": "PHASE3",
+    "randomized": true,
+    "pediatric": false,
+    "start_year": 2021,
+    "arms": 2,
+    "disease_family": "myeloma_and_plasma_cell"
+   },
+   "sponsor_class": "INDUSTRY (protocol (quoted): company legal form: 'Amgen Inc.')",
+   "probabilities": {
+    "completed": 0.6168137982712575,
+    "terminated_accrual": 0.062348121595223835,
+    "terminated_other": 0.1841098780695396,
+    "withdrawn": 0.13672820206397887
+   },
+   "p_accrual_failure": 0.1990763236592027,
+   "base_rates": {
+    "completed": 0.7100366636113657,
+    "terminated_accrual": 0.08689275893675527,
+    "terminated_other": 0.13762603116406966,
+    "withdrawn": 0.06544454628780935
+   },
+   "calibration": {
+    "log_loss": 0.8503643359388284,
+    "base_rate_log_loss": 0.9068100252597384,
+    "accrual_failure_auc": 0.6824549455386848,
+    "accrual_failure_reliability": [
+     {
+      "decile": 1,
+      "predicted": 0.04526714618498051,
+      "observed": 0.043996333638863426,
+      "n": 2182
+     },
+     {
+      "decile": 2,
+      "predicted": 0.06582385594191868,
+      "observed": 0.061898211829436035,
+      "n": 2181
+     },
+     {
+      "decile": 3,
+      "predicted": 0.08541190620373353,
+      "observed": 0.0847846012832264,
+      "n": 2182
+     },
+     {
+      "decile": 4,
+      "predicted": 0.10297615074904815,
+      "observed": 0.11228230980751604,
+      "n": 2182
+     },
+     {
+      "decile": 5,
+      "predicted": 0.1206769839661363,
+      "observed": 0.13406795224977044,
+      "n": 2178
+     },
+     {
+      "decile": 6,
+      "predicted": 0.1401348921655667,
+      "observed": 0.15363511659807957,
+      "n": 2187
+     },
+     {
+      "decile": 7,
+      "predicted": 0.16418497645070887,
+      "observed": 0.16590284142988085,
+      "n": 2182
+     },
+     {
+      "decile": 8,
+      "predicted": 0.1979818128120265,
+      "observed": 0.18752865657955067,
+      "n": 2181
+     },
+     {
+      "decile": 9,
+      "predicted": 0.249067530516025,
+      "observed": 0.23281393217231897,
+      "n": 2182
+     },
+     {
+      "decile": 10,
+      "predicted": 0.35248555087014793,
+      "observed": 0.3463124141090243,
+      "n": 2183
+     }
+    ]
+   }
+  }
+ },
+ "sample_size": {
+  "maximum": 460,
+  "evaluable_targets": [],
+  "decision_rules": []
+ },
+ "timelines": {
+  "last_patient_in": {
+   "historical model (headline)": {
+    "median": 4.177723512190325,
+    "q10": 1.044467481846216,
+    "q25": 2.01897610417001,
+    "q75": 8.666961468250154,
+    "q90": 16.70237421875884,
+    "percentiles": {
+     "p10": 1.044467481846216,
+     "p30": 2.3479511861151625,
+     "p50": 4.177723512190325,
+     "p70": 7.381766869387134,
+     "p90": 16.70237421875884
+    }
+   },
+   "accrual_historical_68.6_per_year": {
+    "median": 6.683998077248203,
+    "q10": 6.28461001985897,
+    "q25": 6.4751001384479325,
+    "q75": 6.907826684795407,
+    "q90": 7.0979459298704235
+   }
+  },
+  "primary_analysis": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 5.097565824936711,
+     "q10": 1.9643097945926025,
+     "q25": 2.938818416916396,
+     "q75": 9.58680378099654,
+     "q90": 17.622216531505227
+    },
+    "accrual_historical_68.6_per_year": {
+     "median": 7.603840389994589,
+     "q10": 7.2044523326053564,
+     "q25": 7.394942451194319,
+     "q75": 7.827668997541793,
+     "q90": 8.01778824261681
+    }
+   },
+   "assessment_lag_months": 11.04,
+   "source": "planned treatment: cycle length x maximum cycles (protocol)"
+  },
+  "study_completion": {
+   "years_after_start": {
+    "historical model (headline)": {
+     "median": 9.177723512190326,
+     "q10": 6.044467481846216,
+     "q25": 7.01897610417001,
+     "q75": 13.666961468250154,
+     "q90": 21.70237421875884
+    },
+    "accrual_historical_68.6_per_year": {
+     "median": 11.683998077248203,
+     "q10": 11.28461001985897,
+     "q25": 11.475100138447932,
+     "q75": 11.907826684795406,
+     "q90": 12.097945929870423
+    }
+   },
+   "follow_up_years": 5.0,
+   "source": "endpoint follow-up (protocol, else 5 years)"
+  }
+ },
+ "retention": {
+  "discontinuation_before_endpoint": {
+   "status": "RESOLVED",
+   "withdrawal": {
+    "value": 0.0665911934427771,
+    "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left by subject decision, loss to follow-up or physician decision; 102 trials, 36525 participants"
+   },
+   "adverse_event": {
+    "value": 0.04429694061299699,
+    "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): left for an adverse event; 102 trials, 36525 participants"
+   },
+   "death": {
+    "value": 0.06223056094074519,
+    "source": "registry participant flow (myeloma_and_plasma_cell, PHASE3): died during the study period; 102 trials, 36525 participants"
+   }
+  }
+ },
+ "operational_risk": {
+  "p_enrollment_complete_by (historical model, headline)": {
+   "1y": 0.094,
+   "2y": 0.247125,
+   "3y": 0.382125,
+   "5y": 0.564875
+  },
+  "enrollment_duration_years (historical model, headline)": {
+   "median": 4.18,
+   "q10": 1.04,
+   "q25": 2.02,
+   "q75": 8.67,
+   "q90": 16.7,
+   "percentiles": {
+    "p10": 1.044467481846216,
+    "p30": 2.3479511861151625,
+    "p50": 4.177723512190325,
+    "p70": 7.381766869387134,
+    "p90": 16.70237421875884
+   }
+  },
+  "p_enrollment_complete_by (accrual_historical_68.6_per_year, conditional on the protocol's assumption)": {
+   "1y": 0.0,
+   "2y": 0.0,
+   "3y": 0.0,
+   "5y": 0.0
+  }
+ },
+ "assumption_stress_test": [
+  {
+   "assumption": "accrual 68.6142 patients/year",
+   "protocol": "historical accrual model median for this protocol (historical accrual model operational-2.0.0 (completed and terminated non-holdout trials))",
+   "evidence_estimate": {
+    "status": "RESOLVED",
+    "reason": "historical /year: p10 27.7 | p30 62.3 | p50 110.1 | p70 195.6 | p90 443.9"
+   },
+   "status": "plausible (protocol/historical median 0.62x)"
+  }
+ ]
+}

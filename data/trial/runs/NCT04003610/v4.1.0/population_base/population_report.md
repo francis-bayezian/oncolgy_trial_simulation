@@ -1,0 +1,158 @@
+# Source population (population-1.0.0)
+
+10000 simulated patients (seed 20260927); mean age 64.3 years, range 14.3-105.1.
+
+## Variables with a distribution
+
+- **demographic:age** from simulation_parameters_v3 (age): [null, null]
+- **demographic:sex** from simulation_parameters_v3 (categorical): {"female": 0.22926554873272195, "male": 0.770734451267278}
+- **demographic:race** from simulation_parameters_v3 (categorical): {"white": 0.8143167594384816, "asian": 0.060165732338294545, "unknown_or_not_reported": 0.035371990732514645, "black_or_african_american": 0.07697541395407108, "american_indian_or_alaska_native": 0.005739632159130082, "more_than_one_race": 0.005415406074321763, "native_hawaiian_or_other_pacific_isla
+- **demographic:ethnicity** from simulation_parameters_v3 (categorical): {"not_hispanic_or_latino": 0.905029651586102, "hispanic_or_latino": 0.063719540240192, "unknown_or_not_reported": 0.03125080817370596}
+- **umls:C0079083** from protocol_facts (categorical) facts ['F068']: {"not eligible": 0.19696969696969696, "__not_stated__": 0.803030303030303}
+- **var:pd_l1_cps_category** from protocol_facts (categorical) facts ['F070']: {"PD-L1 CPS < 10": 0.6818181818181818, "__not_stated__": 0.31818181818181823}
+
+## Unresolved variables (137): unknown for every patient
+
+- umls:C0002453
+- umls:C0003281
+- umls:C0004238
+- umls:C0004364
+- umls:C0005437
+- umls:C0005821
+- umls:C0012634
+- umls:C0017551
+- umls:C0018799
+- umls:C0019004
+- umls:C0019046
+- umls:C0019163
+- umls:C0019638
+- umls:C0019693
+- umls:C0020517
+- umls:C0020676
+- umls:C0021051
+- umls:C0031117
+- umls:C0035309
+- umls:C0036773
+- umls:C0036785
+- umls:C0036820
+- umls:C0138741
+- umls:C0151332
+- umls:C0194810
+- umls:C0206062
+- umls:C0236556
+- umls:C0242656
+- umls:C0279033
+- umls:C0280280
+- umls:C0430060
+- umls:C0454664
+- umls:C0475447
+- umls:C0494165
+- umls:C0549206
+- umls:C0681504
+- umls:C0686377
+- umls:C0810279
+- umls:C0810633
+- umls:C0812399
+- umls:C0851346
+- umls:C0871414
+- umls:C0948762
+- umls:C1513183
+- umls:C1527336
+- umls:C1623040
+- umls:C1827061
+- umls:C1882083
+- umls:C1959585
+- umls:C2986589
+- umls:C2986592
+- umls:C3203027
+- umls:C3831118
+- umls:C5552707
+- var:ability_to_comply_with_dose_schedule_and_study_evaluations
+- var:ability_to_swallow_and_retain_oral_medication
+- var:active_hcv_infection
+- var:additional_malignancy
+- var:additional_malignancy_type
+- var:adjuvant_platinum_based_chemotherapy
+- var:agreement_to_avoid_fathering_children
+- var:agreement_to_avoid_pregnancy
+- var:agreement_to_use_medically_acceptable_contraceptive_measures
+- var:allogenic_tissue_or_solid_organ_transplant
+- var:alt_and_ast
+- var:audiometric_hearing_loss
+- var:autoimmune_disease_with_systemic_treatment
+- var:calcium_and_phosphate_hemostasis_disorder
+- var:carboplatin_eligibility
+- var:clinically_significant_corneal_disorder
+- var:coagulation_tests
+- var:commonly_observed_soft_tissue_calcifications
+- var:concurrent_anticancer_therapy
+- var:contraindication_to_study_therapy
+- var:corticosteroid_requirement
+- var:current_pneumonitis
+- var:disease_suitable_for_curative_local_therapy
+- var:documented_visceral_metastatic_disease
+- var:ecog_performance_status
+- var:ectopic_soft_tissue_calcification
+- var:fgfr3_mutation
+- var:fgfr3_rearrangement
+- var:formalin_fixed_paraffin_embedded_tissue_blocks
+- var:gene_amplification_only
+- var:histologically_documented_urothelial_carcinoma
+- var:hypovitaminosis_d_requiring_supraphysiologic_doses
+- var:icf_comprehension
+- var:icf_signature
+- var:intermittent_treatment_use
+- var:laboratory_parameter
+- var:local_pd_l1_result
+- var:low_risk_prostate_cancer
+- var:measurable_target_lesion
+- var:metastatic_disease_pattern
+- var:monoclonal_antibody_hypersensitivity
+- var:neoadjuvant_platinum_based_chemotherapy
+- var:neuroendocrine_component
+- var:non_urothelial_carcinoma_of_urinary_tract
+- var:nyha_classification
+- var:other_reason_for_carboplatin_ineligibility
+- var:parental_or_legal_guardian_consent
+- var:participant_country
+- var:participant_nationality
+- var:participant_region
+- var:pd_l1_cps
+- var:pd_l1_test_result
+- var:permitted_contraceptive_methods_communication
+- var:potentially_curative_therapy
+- var:prior_anticancer_or_investigational_therapy_for_advanced_disease
+- var:prior_noninfectious_pneumonitis_requiring_steroids
+- var:prior_selective_fgfr_inhibitor_receipt
+- var:prior_systemic_chemotherapy_for_metastatic_unresectable_uc
+- var:prostate_cancer_free
+- var:prostate_cancer_history
+- var:psa_doubling_time
+- var:psychiatric_or_substance_abuse_disorder
+- var:pt_or_aptt
+- var:qtc_f_interval
+- var:recovery_from_major_surgery_toxicity_or_complications
+- var:recovery_from_radiation_related_toxicities
+- var:serum_albumin_corrected_calcium
+- var:severe_hypersensitivity_grade
+- var:severe_reaction
+- var:signs_of_cns_metastases
+- var:small_cell_component
+- var:soft_tissue_calcification_cause
+- var:study_region
+- var:surgical_sterility_status
+- var:symptoms_of_cns_metastases
+- var:systemic_corticosteroid_use
+- var:systemic_corticosteroid_use_duration
+- var:systemic_mineral_imbalance
+- var:systemic_steroid_dose
+- var:uncontrolled_arrhythmia
+- var:understanding_of_contraceptive_methods
+- var:unprotected_sex_with_women_of_childbearing_potential
+- var:urothelial_component
+
+## Fact bindings
+
+- [USABLE] votes ['FAITHFUL', 'FAITHFUL', 'FAITHFUL']: fact F068 is the share of patients whose carboplatin (umls:C0079083) is 'not eligible' (characteristic_distribution: 'Total (%)'; level 'Carboplatin-ineligible participants who will\nreceive pembrolizumab'; value 26 of 132 (20%) [read as proportion 0.197]; pop
+- [REVIEW_REQUIRED] votes ['INCORRECT', 'INCORRECT', 'INCORRECT']: fact F069 is the share of patients whose pd l1 cps category (var:pd_l1_cps_category) is 'PD-L1 CPS < 10' (characteristic_distribution: 'Total (%)'; level 'Carboplatin-eligible participants who will receive pembrolizumab (CPS ≥ 10)'; value 16 of 132 (12%) [read
+- [USABLE] votes ['FAITHFUL', 'FAITHFUL', 'FAITHFUL']: fact F070 is the share of patients whose pd l1 cps category (var:pd_l1_cps_category) is 'PD-L1 CPS < 10' (characteristic_distribution: 'Total (%)'; level 'Carboplatin-eligible participants who will\nreceive gemcitabine/carboplatin (CPS < 10)'; value 90 of 132 

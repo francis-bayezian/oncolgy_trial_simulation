@@ -1,0 +1,373 @@
+USUBJID,DSDECOD,DSSTDY,DSCAT
+S0001,completed planned treatment,84,END OF TREATMENT
+S0002,disease progression,64,END OF TREATMENT
+S0003,disease progression,64,END OF TREATMENT
+S0004,completed planned treatment,84,END OF TREATMENT
+S0005,disease progression,64,END OF TREATMENT
+S0006,"withdrawal (subject, loss to follow-up or physician decision)",56,END OF TREATMENT
+S0007,completed planned treatment,84,END OF TREATMENT
+S0008,disease progression,64,END OF TREATMENT
+S0009,completed planned treatment,84,END OF TREATMENT
+S0010,completed planned treatment,84,END OF TREATMENT
+S0011,completed planned treatment,84,END OF TREATMENT
+S0012,disease progression,64,END OF TREATMENT
+S0013,completed planned treatment,84,END OF TREATMENT
+S0014,completed planned treatment,84,END OF TREATMENT
+S0015,completed planned treatment,84,END OF TREATMENT
+S0016,completed planned treatment,84,END OF TREATMENT
+S0017,completed planned treatment,84,END OF TREATMENT
+S0018,completed planned treatment,84,END OF TREATMENT
+S0019,completed planned treatment,84,END OF TREATMENT
+S0020,disease progression,64,END OF TREATMENT
+S0021,completed planned treatment,84,END OF TREATMENT
+S0022,"withdrawal (subject, loss to follow-up or physician decision)",17,END OF TREATMENT
+S0023,completed planned treatment,84,END OF TREATMENT
+S0024,completed planned treatment,84,END OF TREATMENT
+S0025,adverse event (registry discontinuation rate),40,END OF TREATMENT
+S0026,completed planned treatment,84,END OF TREATMENT
+S0027,completed planned treatment,84,END OF TREATMENT
+S0028,completed planned treatment,84,END OF TREATMENT
+S0029,"withdrawal (subject, loss to follow-up or physician decision)",12,END OF TREATMENT
+S0030,completed planned treatment,84,END OF TREATMENT
+S0031,disease progression,64,END OF TREATMENT
+S0032,disease progression,64,END OF TREATMENT
+S0033,"withdrawal (subject, loss to follow-up or physician decision)",38,END OF TREATMENT
+S0034,completed planned treatment,84,END OF TREATMENT
+S0035,completed planned treatment,84,END OF TREATMENT
+S0036,completed planned treatment,84,END OF TREATMENT
+S0037,completed planned treatment,84,END OF TREATMENT
+S0038,disease progression,64,END OF TREATMENT
+S0039,completed planned treatment,84,END OF TREATMENT
+S0040,disease progression,64,END OF TREATMENT
+S0041,disease progression,64,END OF TREATMENT
+S0042,"withdrawal (subject, loss to follow-up or physician decision)",83,END OF TREATMENT
+S0043,disease progression,64,END OF TREATMENT
+S0044,completed planned treatment,84,END OF TREATMENT
+S0045,completed planned treatment,84,END OF TREATMENT
+S0046,disease progression,64,END OF TREATMENT
+S0047,completed planned treatment,84,END OF TREATMENT
+S0048,disease progression,64,END OF TREATMENT
+S0049,completed planned treatment,84,END OF TREATMENT
+S0050,completed planned treatment,84,END OF TREATMENT
+S0051,completed planned treatment,84,END OF TREATMENT
+S0052,"withdrawal (subject, loss to follow-up or physician decision)",59,END OF TREATMENT
+S0053,"withdrawal (subject, loss to follow-up or physician decision)",25,END OF TREATMENT
+S0054,disease progression,64,END OF TREATMENT
+S0055,completed planned treatment,84,END OF TREATMENT
+S0056,completed planned treatment,84,END OF TREATMENT
+S0057,disease progression,64,END OF TREATMENT
+S0058,completed planned treatment,84,END OF TREATMENT
+S0059,completed planned treatment,84,END OF TREATMENT
+S0060,completed planned treatment,84,END OF TREATMENT
+S0061,completed planned treatment,84,END OF TREATMENT
+S0062,completed planned treatment,84,END OF TREATMENT
+S0063,completed planned treatment,84,END OF TREATMENT
+S0064,disease progression,64,END OF TREATMENT
+S0065,completed planned treatment,84,END OF TREATMENT
+S0066,completed planned treatment,84,END OF TREATMENT
+S0067,disease progression,64,END OF TREATMENT
+S0068,completed planned treatment,84,END OF TREATMENT
+S0069,disease progression,64,END OF TREATMENT
+S0070,disease progression,64,END OF TREATMENT
+S0071,disease progression,64,END OF TREATMENT
+S0072,disease progression,64,END OF TREATMENT
+S0073,completed planned treatment,84,END OF TREATMENT
+S0074,completed planned treatment,84,END OF TREATMENT
+S0075,disease progression,64,END OF TREATMENT
+S0076,disease progression,64,END OF TREATMENT
+S0077,completed planned treatment,84,END OF TREATMENT
+S0078,disease progression,64,END OF TREATMENT
+S0079,disease progression,64,END OF TREATMENT
+S0080,"withdrawal (subject, loss to follow-up or physician decision)",7,END OF TREATMENT
+S0081,disease progression,64,END OF TREATMENT
+S0082,completed planned treatment,84,END OF TREATMENT
+S0083,disease progression,64,END OF TREATMENT
+S0084,completed planned treatment,84,END OF TREATMENT
+S0085,completed planned treatment,84,END OF TREATMENT
+S0086,completed planned treatment,84,END OF TREATMENT
+S0087,disease progression,64,END OF TREATMENT
+S0088,disease progression,64,END OF TREATMENT
+S0089,completed planned treatment,84,END OF TREATMENT
+S0090,completed planned treatment,84,END OF TREATMENT
+S0091,"withdrawal (subject, loss to follow-up or physician decision)",12,END OF TREATMENT
+S0092,disease progression,64,END OF TREATMENT
+S0093,completed planned treatment,84,END OF TREATMENT
+S0094,completed planned treatment,84,END OF TREATMENT
+S0095,disease progression,64,END OF TREATMENT
+S0096,disease progression,64,END OF TREATMENT
+S0097,completed planned treatment,84,END OF TREATMENT
+S0098,disease progression,64,END OF TREATMENT
+S0099,completed planned treatment,84,END OF TREATMENT
+S0100,completed planned treatment,84,END OF TREATMENT
+S0101,disease progression,64,END OF TREATMENT
+S0102,completed planned treatment,84,END OF TREATMENT
+S0103,completed planned treatment,84,END OF TREATMENT
+S0104,completed planned treatment,84,END OF TREATMENT
+S0105,completed planned treatment,84,END OF TREATMENT
+S0106,disease progression,64,END OF TREATMENT
+S0107,disease progression,64,END OF TREATMENT
+S0108,completed planned treatment,84,END OF TREATMENT
+S0109,completed planned treatment,84,END OF TREATMENT
+S0110,disease progression,64,END OF TREATMENT
+S0111,completed planned treatment,84,END OF TREATMENT
+S0112,completed planned treatment,84,END OF TREATMENT
+S0113,disease progression,64,END OF TREATMENT
+S0114,completed planned treatment,84,END OF TREATMENT
+S0115,disease progression,64,END OF TREATMENT
+S0116,completed planned treatment,84,END OF TREATMENT
+S0117,death,47,END OF TREATMENT
+S0118,"withdrawal (subject, loss to follow-up or physician decision)",69,END OF TREATMENT
+S0119,completed planned treatment,84,END OF TREATMENT
+S0120,"withdrawal (subject, loss to follow-up or physician decision)",63,END OF TREATMENT
+S0121,disease progression,64,END OF TREATMENT
+S0122,completed planned treatment,84,END OF TREATMENT
+S0123,disease progression,64,END OF TREATMENT
+S0124,completed planned treatment,84,END OF TREATMENT
+S0125,completed planned treatment,84,END OF TREATMENT
+S0126,disease progression,64,END OF TREATMENT
+S0127,disease progression,64,END OF TREATMENT
+S0128,completed planned treatment,84,END OF TREATMENT
+S0129,completed planned treatment,84,END OF TREATMENT
+S0130,completed planned treatment,84,END OF TREATMENT
+S0131,completed planned treatment,84,END OF TREATMENT
+S0132,completed planned treatment,84,END OF TREATMENT
+S0133,completed planned treatment,84,END OF TREATMENT
+S0134,completed planned treatment,84,END OF TREATMENT
+S0135,completed planned treatment,84,END OF TREATMENT
+S0136,completed planned treatment,84,END OF TREATMENT
+S0137,"withdrawal (subject, loss to follow-up or physician decision)",55,END OF TREATMENT
+S0138,completed planned treatment,84,END OF TREATMENT
+S0139,disease progression,64,END OF TREATMENT
+S0140,completed planned treatment,84,END OF TREATMENT
+S0141,disease progression,64,END OF TREATMENT
+S0142,completed planned treatment,84,END OF TREATMENT
+S0143,"withdrawal (subject, loss to follow-up or physician decision)",12,END OF TREATMENT
+S0144,disease progression,64,END OF TREATMENT
+S0145,completed planned treatment,84,END OF TREATMENT
+S0146,disease progression,64,END OF TREATMENT
+S0147,disease progression,64,END OF TREATMENT
+S0148,completed planned treatment,84,END OF TREATMENT
+S0149,completed planned treatment,84,END OF TREATMENT
+S0150,completed planned treatment,84,END OF TREATMENT
+S0151,disease progression,64,END OF TREATMENT
+S0152,disease progression,64,END OF TREATMENT
+S0153,completed planned treatment,84,END OF TREATMENT
+S0154,"withdrawal (subject, loss to follow-up or physician decision)",26,END OF TREATMENT
+S0155,disease progression,64,END OF TREATMENT
+S0156,disease progression,64,END OF TREATMENT
+S0157,disease progression,64,END OF TREATMENT
+S0158,completed planned treatment,84,END OF TREATMENT
+S0159,completed planned treatment,84,END OF TREATMENT
+S0160,completed planned treatment,84,END OF TREATMENT
+S0161,disease progression,64,END OF TREATMENT
+S0162,disease progression,64,END OF TREATMENT
+S0163,completed planned treatment,84,END OF TREATMENT
+S0164,completed planned treatment,84,END OF TREATMENT
+S0165,disease progression,64,END OF TREATMENT
+S0166,completed planned treatment,84,END OF TREATMENT
+S0167,completed planned treatment,84,END OF TREATMENT
+S0168,disease progression,64,END OF TREATMENT
+S0169,completed planned treatment,84,END OF TREATMENT
+S0170,disease progression,64,END OF TREATMENT
+S0171,completed planned treatment,84,END OF TREATMENT
+S0172,completed planned treatment,84,END OF TREATMENT
+S0173,completed planned treatment,84,END OF TREATMENT
+S0174,"withdrawal (subject, loss to follow-up or physician decision)",72,END OF TREATMENT
+S0175,completed planned treatment,84,END OF TREATMENT
+S0176,completed planned treatment,84,END OF TREATMENT
+S0177,completed planned treatment,84,END OF TREATMENT
+S0178,completed planned treatment,84,END OF TREATMENT
+S0179,completed planned treatment,84,END OF TREATMENT
+S0180,completed planned treatment,84,END OF TREATMENT
+S0181,completed planned treatment,84,END OF TREATMENT
+S0182,completed planned treatment,84,END OF TREATMENT
+S0183,disease progression,64,END OF TREATMENT
+S0184,disease progression,64,END OF TREATMENT
+S0185,"withdrawal (subject, loss to follow-up or physician decision)",47,END OF TREATMENT
+S0186,completed planned treatment,84,END OF TREATMENT
+S0187,completed planned treatment,84,END OF TREATMENT
+S0188,"withdrawal (subject, loss to follow-up or physician decision)",3,END OF TREATMENT
+S0189,"withdrawal (subject, loss to follow-up or physician decision)",26,END OF TREATMENT
+S0190,completed planned treatment,84,END OF TREATMENT
+S0191,completed planned treatment,84,END OF TREATMENT
+S0192,disease progression,64,END OF TREATMENT
+S0193,disease progression,64,END OF TREATMENT
+S0194,completed planned treatment,84,END OF TREATMENT
+S0195,disease progression,64,END OF TREATMENT
+S0196,completed planned treatment,84,END OF TREATMENT
+S0197,completed planned treatment,84,END OF TREATMENT
+S0198,disease progression,64,END OF TREATMENT
+S0199,disease progression,64,END OF TREATMENT
+S0200,"withdrawal (subject, loss to follow-up or physician decision)",54,END OF TREATMENT
+S0201,disease progression,64,END OF TREATMENT
+S0202,completed planned treatment,84,END OF TREATMENT
+S0203,completed planned treatment,84,END OF TREATMENT
+S0204,"withdrawal (subject, loss to follow-up or physician decision)",75,END OF TREATMENT
+S0205,disease progression,64,END OF TREATMENT
+S0206,completed planned treatment,84,END OF TREATMENT
+S0207,disease progression,64,END OF TREATMENT
+S0208,completed planned treatment,84,END OF TREATMENT
+S0209,completed planned treatment,84,END OF TREATMENT
+S0210,completed planned treatment,84,END OF TREATMENT
+S0211,adverse event (registry discontinuation rate),59,END OF TREATMENT
+S0212,completed planned treatment,84,END OF TREATMENT
+S0213,completed planned treatment,84,END OF TREATMENT
+S0214,completed planned treatment,84,END OF TREATMENT
+S0215,completed planned treatment,84,END OF TREATMENT
+S0216,disease progression,64,END OF TREATMENT
+S0217,completed planned treatment,84,END OF TREATMENT
+S0218,disease progression,64,END OF TREATMENT
+S0219,adverse event (registry discontinuation rate),3,END OF TREATMENT
+S0220,completed planned treatment,84,END OF TREATMENT
+S0221,completed planned treatment,84,END OF TREATMENT
+S0222,completed planned treatment,84,END OF TREATMENT
+S0223,completed planned treatment,84,END OF TREATMENT
+S0224,disease progression,64,END OF TREATMENT
+S0225,"withdrawal (subject, loss to follow-up or physician decision)",82,END OF TREATMENT
+S0226,completed planned treatment,84,END OF TREATMENT
+S0227,completed planned treatment,84,END OF TREATMENT
+S0228,disease progression,64,END OF TREATMENT
+S0229,disease progression,64,END OF TREATMENT
+S0230,completed planned treatment,84,END OF TREATMENT
+S0231,"withdrawal (subject, loss to follow-up or physician decision)",64,END OF TREATMENT
+S0232,adverse event (registry discontinuation rate),12,END OF TREATMENT
+S0233,disease progression,64,END OF TREATMENT
+S0234,disease progression,64,END OF TREATMENT
+S0235,completed planned treatment,84,END OF TREATMENT
+S0236,completed planned treatment,84,END OF TREATMENT
+S0237,completed planned treatment,84,END OF TREATMENT
+S0238,completed planned treatment,84,END OF TREATMENT
+S0239,disease progression,64,END OF TREATMENT
+S0240,completed planned treatment,84,END OF TREATMENT
+S0241,completed planned treatment,84,END OF TREATMENT
+S0242,completed planned treatment,84,END OF TREATMENT
+S0243,completed planned treatment,84,END OF TREATMENT
+S0244,completed planned treatment,84,END OF TREATMENT
+S0245,completed planned treatment,84,END OF TREATMENT
+S0246,completed planned treatment,84,END OF TREATMENT
+S0247,completed planned treatment,84,END OF TREATMENT
+S0248,completed planned treatment,84,END OF TREATMENT
+S0249,completed planned treatment,84,END OF TREATMENT
+S0250,completed planned treatment,84,END OF TREATMENT
+S0251,"withdrawal (subject, loss to follow-up or physician decision)",3,END OF TREATMENT
+S0252,disease progression,64,END OF TREATMENT
+S0253,completed planned treatment,84,END OF TREATMENT
+S0254,completed planned treatment,84,END OF TREATMENT
+S0255,completed planned treatment,84,END OF TREATMENT
+S0256,disease progression,64,END OF TREATMENT
+S0257,adverse event (registry discontinuation rate),39,END OF TREATMENT
+S0258,completed planned treatment,84,END OF TREATMENT
+S0259,completed planned treatment,84,END OF TREATMENT
+S0260,disease progression,64,END OF TREATMENT
+S0261,completed planned treatment,84,END OF TREATMENT
+S0262,disease progression,64,END OF TREATMENT
+S0263,disease progression,64,END OF TREATMENT
+S0264,disease progression,64,END OF TREATMENT
+S0265,completed planned treatment,84,END OF TREATMENT
+S0266,completed planned treatment,84,END OF TREATMENT
+S0267,disease progression,64,END OF TREATMENT
+S0268,disease progression,64,END OF TREATMENT
+S0269,completed planned treatment,84,END OF TREATMENT
+S0270,completed planned treatment,84,END OF TREATMENT
+S0271,completed planned treatment,84,END OF TREATMENT
+S0272,completed planned treatment,84,END OF TREATMENT
+S0273,disease progression,64,END OF TREATMENT
+S0274,completed planned treatment,84,END OF TREATMENT
+S0275,disease progression,64,END OF TREATMENT
+S0276,completed planned treatment,84,END OF TREATMENT
+S0277,completed planned treatment,84,END OF TREATMENT
+S0278,completed planned treatment,84,END OF TREATMENT
+S0279,disease progression,64,END OF TREATMENT
+S0280,completed planned treatment,84,END OF TREATMENT
+S0281,completed planned treatment,84,END OF TREATMENT
+S0282,completed planned treatment,84,END OF TREATMENT
+S0283,disease progression,64,END OF TREATMENT
+S0284,completed planned treatment,84,END OF TREATMENT
+S0285,disease progression,64,END OF TREATMENT
+S0286,completed planned treatment,84,END OF TREATMENT
+S0287,completed planned treatment,84,END OF TREATMENT
+S0288,completed planned treatment,84,END OF TREATMENT
+S0289,completed planned treatment,84,END OF TREATMENT
+S0290,completed planned treatment,84,END OF TREATMENT
+S0291,disease progression,64,END OF TREATMENT
+S0292,completed planned treatment,84,END OF TREATMENT
+S0293,disease progression,64,END OF TREATMENT
+S0294,completed planned treatment,84,END OF TREATMENT
+S0295,death,18,END OF TREATMENT
+S0296,disease progression,64,END OF TREATMENT
+S0297,completed planned treatment,84,END OF TREATMENT
+S0298,completed planned treatment,84,END OF TREATMENT
+S0299,completed planned treatment,84,END OF TREATMENT
+S0300,completed planned treatment,84,END OF TREATMENT
+S0301,"withdrawal (subject, loss to follow-up or physician decision)",38,END OF TREATMENT
+S0302,disease progression,64,END OF TREATMENT
+S0303,completed planned treatment,84,END OF TREATMENT
+S0304,disease progression,64,END OF TREATMENT
+S0305,disease progression,64,END OF TREATMENT
+S0306,disease progression,64,END OF TREATMENT
+S0307,disease progression,64,END OF TREATMENT
+S0308,completed planned treatment,84,END OF TREATMENT
+S0309,disease progression,64,END OF TREATMENT
+S0310,completed planned treatment,84,END OF TREATMENT
+S0311,completed planned treatment,84,END OF TREATMENT
+S0312,disease progression,64,END OF TREATMENT
+S0313,disease progression,64,END OF TREATMENT
+S0314,completed planned treatment,84,END OF TREATMENT
+S0315,completed planned treatment,84,END OF TREATMENT
+S0316,disease progression,64,END OF TREATMENT
+S0317,completed planned treatment,84,END OF TREATMENT
+S0318,completed planned treatment,84,END OF TREATMENT
+S0319,completed planned treatment,84,END OF TREATMENT
+S0320,completed planned treatment,84,END OF TREATMENT
+S0321,disease progression,64,END OF TREATMENT
+S0322,completed planned treatment,84,END OF TREATMENT
+S0323,adverse event (registry discontinuation rate),55,END OF TREATMENT
+S0324,completed planned treatment,84,END OF TREATMENT
+S0325,disease progression,64,END OF TREATMENT
+S0326,disease progression,64,END OF TREATMENT
+S0327,"withdrawal (subject, loss to follow-up or physician decision)",43,END OF TREATMENT
+S0328,completed planned treatment,84,END OF TREATMENT
+S0329,disease progression,64,END OF TREATMENT
+S0330,completed planned treatment,84,END OF TREATMENT
+S0331,completed planned treatment,84,END OF TREATMENT
+S0332,completed planned treatment,84,END OF TREATMENT
+S0333,completed planned treatment,84,END OF TREATMENT
+S0334,disease progression,64,END OF TREATMENT
+S0335,"withdrawal (subject, loss to follow-up or physician decision)",25,END OF TREATMENT
+S0336,completed planned treatment,84,END OF TREATMENT
+S0337,completed planned treatment,84,END OF TREATMENT
+S0338,completed planned treatment,84,END OF TREATMENT
+S0339,"withdrawal (subject, loss to follow-up or physician decision)",28,END OF TREATMENT
+S0340,completed planned treatment,84,END OF TREATMENT
+S0341,completed planned treatment,84,END OF TREATMENT
+S0342,completed planned treatment,84,END OF TREATMENT
+S0343,completed planned treatment,84,END OF TREATMENT
+S0344,completed planned treatment,84,END OF TREATMENT
+S0345,disease progression,64,END OF TREATMENT
+S0346,"withdrawal (subject, loss to follow-up or physician decision)",41,END OF TREATMENT
+S0347,disease progression,64,END OF TREATMENT
+S0348,completed planned treatment,84,END OF TREATMENT
+S0349,completed planned treatment,84,END OF TREATMENT
+S0350,completed planned treatment,84,END OF TREATMENT
+S0351,"withdrawal (subject, loss to follow-up or physician decision)",68,END OF TREATMENT
+S0352,"withdrawal (subject, loss to follow-up or physician decision)",35,END OF TREATMENT
+S0353,disease progression,64,END OF TREATMENT
+S0354,completed planned treatment,84,END OF TREATMENT
+S0355,adverse event (registry discontinuation rate),8,END OF TREATMENT
+S0356,completed planned treatment,84,END OF TREATMENT
+S0357,disease progression,64,END OF TREATMENT
+S0358,completed planned treatment,84,END OF TREATMENT
+S0359,"withdrawal (subject, loss to follow-up or physician decision)",34,END OF TREATMENT
+S0360,completed planned treatment,84,END OF TREATMENT
+S0361,completed planned treatment,84,END OF TREATMENT
+S0362,death,37,END OF TREATMENT
+S0363,completed planned treatment,84,END OF TREATMENT
+S0364,disease progression,64,END OF TREATMENT
+S0365,completed planned treatment,84,END OF TREATMENT
+S0366,completed planned treatment,84,END OF TREATMENT
+S0367,"withdrawal (subject, loss to follow-up or physician decision)",16,END OF TREATMENT
+S0368,"withdrawal (subject, loss to follow-up or physician decision)",12,END OF TREATMENT
+S0369,completed planned treatment,84,END OF TREATMENT
+S0370,disease progression,64,END OF TREATMENT
+S0371,completed planned treatment,84,END OF TREATMENT
+S0372,disease progression,64,END OF TREATMENT

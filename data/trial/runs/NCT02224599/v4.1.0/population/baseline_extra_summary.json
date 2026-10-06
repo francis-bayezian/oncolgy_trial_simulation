@@ -1,0 +1,85 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT02224599\\v4.1.0\\population_base",
+  "family": "mixed_solid_tumors",
+  "phase": null,
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.4332518781159932,
+     0.4853120586993852,
+     0.07868674010074034,
+     0.0024805556285353737,
+     0.0002687674553457233
+    ],
+    "trial_range_10_90": [
+     [
+      0.176,
+      0.257,
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.711,
+      0.7,
+      0.197,
+      0.0,
+      0.0
+     ]
+    ],
+    "trials": 490,
+    "participants": 96209,
+    "source": "registry baseline ECOG of enrolled participants (all oncology; 490 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 75.74317947841375,
+    "sd": 18.7644853295554,
+    "trials": 284,
+    "participants": 40952,
+    "source": "registry baseline weight of enrolled participants (all oncology; 284 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 167.10206402942504,
+    "sd": 10.915550440259919,
+    "trials": 199,
+    "participants": 26644,
+    "source": "registry baseline height of enrolled participants (all oncology; 199 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   },
+   {
+    "factor": "age (< 65 years, >= 65 years)",
+    "variable": "demographic:age",
+    "kind": "age",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  ]
+ }
+}

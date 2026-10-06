@@ -1,0 +1,31 @@
+{
+ "control_arm_id": null,
+ "control_efs": {
+  "status": "NOT_APPLICABLE",
+  "reason": "the primary endpoint is not time-to-event: the journey takes progression from its own ladder (protocol-cited figure, then evidence)",
+  "protocol": "the protocol's control EFS model or cure rate is not established"
+ },
+ "loss_to_follow_up": {
+  "status": "RESOLVED",
+  "annual_probability": 0.04464458766513446,
+  "rate_per_year": 0.04567184822263323,
+  "source": "evidence",
+  "wording": "registry participant flow (sarcoma): left by subject decision, loss to follow-up or physician decision; 403 trials, 28713 participants: 8.7% over the study, spread over 2 years (assumption A18)"
+ },
+ "off_study_limit": null,
+ "analysis_rule": {
+  "evaluable_target": null,
+  "min_followup_years": null,
+  "population": null,
+  "wording": null,
+  "excluded_share": null
+ },
+ "design_alternatives": [],
+ "protocol_toxicities": 24,
+ "asset_ae_signature": {
+  "ARM2": "radiotherapy_or_radiopharmaceutical+vegfr_multikinase_inhibitor"
+ },
+ "bindings_usable": 24,
+ "bindings": 30,
+ "model_calls": 0
+}

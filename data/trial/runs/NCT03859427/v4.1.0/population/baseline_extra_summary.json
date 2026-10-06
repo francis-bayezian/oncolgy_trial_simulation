@@ -1,0 +1,155 @@
+{
+ "summary": {
+  "base_population": "data\\trial\\runs\\NCT03859427\\v4.1.0\\population_base",
+  "family": "myeloma_and_plasma_cell",
+  "phase": "PHASE3",
+  "added_variables": {
+   "var:ecog_performance_status": {
+    "status": "RESOLVED",
+    "levels": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "p": [
+     0.4069438091937568,
+     0.47319256829791795,
+     0.11872051759832898,
+     0.0011431049099963023,
+     0.0
+    ],
+    "trial_range_10_90": [
+     [
+      0.291,
+      0.43,
+      0.06,
+      0.0,
+      0.0
+     ],
+     [
+      0.5,
+      0.537,
+      0.201,
+      0.003,
+      0.0
+     ]
+    ],
+    "trials": 10,
+    "participants": 6424,
+    "source": "registry baseline ECOG of enrolled participants (myeloma_and_plasma_cell, PHASE3; 10 trials)"
+   },
+   "var:weight": {
+    "status": "RESOLVED",
+    "mean": 75.13096344086023,
+    "sd": 17.255875951479744,
+    "trials": 17,
+    "participants": 2325,
+    "source": "registry baseline weight of enrolled participants (myeloma_and_plasma_cell; 17 trials)"
+   },
+   "var:height": {
+    "status": "RESOLVED",
+    "mean": 166.62383042394018,
+    "sd": 10.623511027822975,
+    "trials": 16,
+    "participants": 2005,
+    "source": "registry baseline height of enrolled participants (myeloma_and_plasma_cell; 16 trials)"
+   }
+  },
+  "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)",
+  "subgroup_factors": [
+   {
+    "factor": "original ISS stage at study entry (stage 1 or 2 vs stage 3)",
+    "variable": "var:iss_stage_at_study_entry",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 7 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "prior lenalidomide treatment (yes vs no)",
+    "variable": "var:prior_lenalidomide_treatment",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "prior PI treatment (yes vs no)",
+    "variable": "var:prior_pi_treatment",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "prior anti-CD38 exposure (yes vs no)",
+    "variable": "var:prior_anti_cd_exposure",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "prior bortezomib treatment (yes, no)",
+    "variable": "var:prior_bortezomib_treatment",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (all oncology; 3 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "number of prior therapies (1 vs > 1; 1 vs 2 vs > 2)",
+    "variable": "var:number_of_prior_therapies",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (all oncology; 9 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "cytogenetic risk measured by FISH (high-risk vs standard risk)",
+    "variable": "var:cytogenetic_risk_measured_by_fish",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "bortezomib refractory status (yes vs no)",
+    "variable": "var:bortezomib_refractory_status",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "lenalidomide refractory status (yes vs no)",
+    "variable": "var:lenalidomide_refractory_status",
+    "kind": "generated",
+    "prevalence": "assumption A27: levels equally likely (registry baseline tables: 1 trials, fewer than 3)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "prior transplant (yes vs no)",
+    "variable": "var:prior_transplant",
+    "kind": "generated",
+    "prevalence": "registry baseline tables of enrolled participants (myeloma_and_plasma_cell; 4 trials)",
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "ECOG performance status (0, 1, 2 or more)",
+    "variable": "var:ecog_performance_status",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   },
+   {
+    "factor": "sex (female, male)",
+    "variable": "demographic:sex",
+    "kind": "existing",
+    "prevalence": null,
+    "effect": "registry results reported by this subgroup (up to 3 trials; prognostic, A28)"
+   },
+   {
+    "factor": "age (< 65 years, >= 65 years)",
+    "variable": "demographic:age",
+    "kind": "age",
+    "prevalence": null,
+    "effect": "no registry results table reports outcomes by this factor in enough trials"
+   }
+  ]
+ }
+}

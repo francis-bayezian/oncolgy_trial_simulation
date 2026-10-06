@@ -1,0 +1,153 @@
+Factor,Level,Arm,N,Any TEAE,Grade >= 3,SAE,AE -> discontinuation,AE -> dose modification,Deaths,Disposition
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM3,14,14 (100%),3 (21%),3 (21%),1 (7%),0 (0%),1 (7%),disease progression: 13; adverse event (registry discontinuation rate): 1
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM4,16,16 (100%),4 (25%),4 (25%),0 (0%),0 (0%),1 (6%),"disease progression: 14; withdrawal (subject, loss to follow-up or physician decision): 1; death: 1"
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM5,17,17 (100%),6 (35%),6 (35%),0 (0%),0 (0%),3 (18%),disease progression: 15; death: 2
+each  dose/expansion  cohort,Panobinostat 10 mg/Everolimus 5 mg,ARM8,10,10 (100%),4 (40%),4 (40%),0 (0%),0 (0%),1 (10%),disease progression: 10
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM3,9,9 (100%),3 (33%),3 (33%),0 (0%),0 (0%),1 (11%),disease progression: 8; death: 1
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM4,13,13 (100%),3 (23%),3 (23%),1 (8%),0 (0%),0 (0%),"disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 1; adverse event (registry discontinuation rate): 1"
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM5,17,17 (100%),6 (35%),6 (35%),0 (0%),0 (0%),1 (6%),disease progression: 17
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 10 mg,ARM8,4,4 (100%),2 (50%),2 (50%),0 (0%),0 (0%),0 (0%),disease progression: 4
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM3,12,12 (100%),3 (25%),3 (25%),0 (0%),0 (0%),0 (0%),"disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 1"
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM4,8,8 (100%),4 (50%),4 (50%),1 (12%),0 (0%),1 (12%),disease progression: 6; adverse event (registry discontinuation rate): 1; end of simulated follow-up: 1
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM5,10,10 (100%),2 (20%),2 (20%),0 (0%),0 (0%),1 (10%),disease progression: 8; death: 1; end of simulated follow-up: 1
+each  dose/expansion  cohort,Panobinostat 20 mg/Everolimus 5 mg,ARM8,7,7 (100%),4 (57%),4 (57%),0 (0%),0 (0%),1 (14%),disease progression: 7
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM3,14,14 (100%),2 (14%),2 (14%),0 (0%),0 (0%),2 (14%),disease progression: 12; death: 1; end of simulated follow-up: 1
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM4,19,19 (100%),10 (53%),10 (53%),0 (0%),0 (0%),0 (0%),disease progression: 17; end of simulated follow-up: 2
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM5,7,7 (100%),3 (43%),3 (43%),0 (0%),0 (0%),0 (0%),disease progression: 7
+each  dose/expansion  cohort,Panobinostat 30 mg/Everolimus 10 mg,ARM8,13,13 (100%),4 (31%),4 (31%),1 (8%),0 (0%),2 (15%),disease progression: 11; adverse event (registry discontinuation rate): 1; death: 1
+tumor  type/population,Disease Population Group 1,ARM3,13,13 (100%),3 (23%),3 (23%),0 (0%),0 (0%),0 (0%),"disease progression: 11; end of simulated follow-up: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+tumor  type/population,Disease Population Group 1,ARM4,19,19 (100%),8 (42%),8 (42%),1 (5%),0 (0%),1 (5%),disease progression: 16; end of simulated follow-up: 2; adverse event (registry discontinuation rate): 1
+tumor  type/population,Disease Population Group 1,ARM5,15,15 (100%),5 (33%),5 (33%),0 (0%),0 (0%),2 (13%),disease progression: 13; death: 1; end of simulated follow-up: 1
+tumor  type/population,Disease Population Group 1,ARM8,8,8 (100%),4 (50%),4 (50%),0 (0%),0 (0%),1 (12%),disease progression: 8
+tumor  type/population,Disease Population Group 2,ARM3,19,19 (100%),4 (21%),4 (21%),1 (5%),0 (0%),2 (11%),disease progression: 16; death: 2; adverse event (registry discontinuation rate): 1
+tumor  type/population,Disease Population Group 2,ARM4,20,20 (100%),9 (45%),9 (45%),0 (0%),0 (0%),0 (0%),"disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 1; end of simulated follow-up: 1"
+tumor  type/population,Disease Population Group 2,ARM5,14,14 (100%),4 (29%),4 (29%),0 (0%),0 (0%),2 (14%),disease progression: 13; death: 1
+tumor  type/population,Disease Population Group 2,ARM8,15,15 (100%),5 (33%),5 (33%),1 (7%),0 (0%),1 (7%),disease progression: 13; adverse event (registry discontinuation rate): 1; death: 1
+tumor  type/population,Disease Population Group 3,ARM3,17,17 (100%),4 (24%),4 (24%),0 (0%),0 (0%),2 (12%),disease progression: 17
+tumor  type/population,Disease Population Group 3,ARM4,17,17 (100%),4 (24%),4 (24%),1 (6%),0 (0%),1 (6%),"disease progression: 14; withdrawal (subject, loss to follow-up or physician decision): 1; adverse event (registry discontinuation rate): 1"
+tumor  type/population,Disease Population Group 3,ARM5,22,22 (100%),8 (36%),8 (36%),0 (0%),0 (0%),1 (5%),disease progression: 21; death: 1
+tumor  type/population,Disease Population Group 3,ARM8,11,11 (100%),5 (45%),5 (45%),0 (0%),0 (0%),2 (18%),disease progression: 11
+prior  treatment  cohort,No,ARM3,21,21 (100%),5 (24%),5 (24%),1 (5%),0 (0%),3 (14%),disease progression: 17; death: 2; adverse event (registry discontinuation rate): 1
+prior  treatment  cohort,No,ARM4,29,29 (100%),8 (28%),8 (28%),1 (3%),0 (0%),1 (3%),"disease progression: 25; end of simulated follow-up: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+prior  treatment  cohort,No,ARM5,17,17 (100%),2 (12%),2 (12%),0 (0%),0 (0%),1 (6%),disease progression: 15; death: 1; end of simulated follow-up: 1
+prior  treatment  cohort,No,ARM8,22,22 (100%),11 (50%),11 (50%),1 (5%),0 (0%),4 (18%),disease progression: 20; adverse event (registry discontinuation rate): 1; death: 1
+prior  treatment  cohort,Yes,ARM3,28,28 (100%),6 (21%),6 (21%),0 (0%),0 (0%),1 (4%),"disease progression: 27; withdrawal (subject, loss to follow-up or physician decision): 1"
+prior  treatment  cohort,Yes,ARM4,27,27 (100%),13 (48%),13 (48%),1 (4%),0 (0%),1 (4%),"disease progression: 23; withdrawal (subject, loss to follow-up or physician decision): 1; end of simulated follow-up: 1"
+prior  treatment  cohort,Yes,ARM5,34,34 (100%),15 (44%),15 (44%),0 (0%),0 (0%),4 (12%),disease progression: 32; death: 2
+prior  treatment  cohort,Yes,ARM8,12,12 (100%),3 (25%),3 (25%),0 (0%),0 (0%),0 (0%),disease progression: 12
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM3,18,18 (100%),5 (28%),5 (28%),1 (6%),0 (0%),1 (6%),disease progression: 15; death: 1; adverse event (registry discontinuation rate): 1
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM4,15,15 (100%),6 (40%),6 (40%),0 (0%),0 (0%),1 (7%),disease progression: 14; end of simulated follow-up: 1
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM5,19,19 (100%),6 (32%),6 (32%),0 (0%),0 (0%),2 (11%),disease progression: 18; death: 1
+genomic  alterations,Rearrangements of Ig / TCR genes & translocations,ARM8,9,9 (100%),3 (33%),3 (33%),0 (0%),0 (0%),1 (11%),disease progression: 9
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM3,14,14 (100%),1 (7%),1 (7%),0 (0%),0 (0%),2 (14%),"disease progression: 12; death: 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM4,13,13 (100%),3 (23%),3 (23%),0 (0%),0 (0%),0 (0%),"disease progression: 11; withdrawal (subject, loss to follow-up or physician decision): 1; end of simulated follow-up: 1"
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM5,12,12 (100%),3 (25%),3 (25%),0 (0%),0 (0%),2 (17%),disease progression: 11; death: 1
+genomic  alterations,Rearrangements of Ig / TCR genes only,ARM8,9,9 (100%),3 (33%),3 (33%),0 (0%),0 (0%),1 (11%),disease progression: 9
+genomic  alterations,bcr/abl translocation above detection limit,ARM3,10,10 (100%),4 (40%),4 (40%),0 (0%),0 (0%),0 (0%),disease progression: 10
+genomic  alterations,bcr/abl translocation above detection limit,ARM4,13,13 (100%),7 (54%),7 (54%),1 (8%),0 (0%),0 (0%),"disease progression: 10; withdrawal (subject, loss to follow-up or physician decision): 1; adverse event (registry discontinuation rate): 1"
+genomic  alterations,bcr/abl translocation above detection limit,ARM5,14,14 (100%),3 (21%),3 (21%),0 (0%),0 (0%),1 (7%),disease progression: 12; death: 1; end of simulated follow-up: 1
+genomic  alterations,bcr/abl translocation above detection limit,ARM8,8,8 (100%),4 (50%),4 (50%),1 (12%),0 (0%),0 (0%),disease progression: 7; adverse event (registry discontinuation rate): 1
+genomic  alterations,t(4;11) translocation above detection limit,ARM3,7,7 (100%),1 (14%),1 (14%),0 (0%),0 (0%),1 (14%),disease progression: 7
+genomic  alterations,t(4;11) translocation above detection limit,ARM4,15,15 (100%),5 (33%),5 (33%),1 (7%),0 (0%),1 (7%),disease progression: 13; adverse event (registry discontinuation rate): 1; death: 1
+genomic  alterations,t(4;11) translocation above detection limit,ARM5,6,6 (100%),5 (83%),5 (83%),0 (0%),0 (0%),0 (0%),disease progression: 6
+genomic  alterations,t(4;11) translocation above detection limit,ARM8,8,8 (100%),4 (50%),4 (50%),0 (0%),0 (0%),2 (25%),disease progression: 7; death: 1
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM3,30,30 (100%),8 (27%),8 (27%),1 (3%),0 (0%),0 (0%),"disease progression: 28; adverse event (registry discontinuation rate): 1; withdrawal (subject, loss to follow-up or physician decision): 1"
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM4,30,30 (100%),12 (40%),12 (40%),2 (7%),0 (0%),1 (3%),"disease progression: 26; adverse event (registry discontinuation rate): 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM5,32,32 (100%),13 (41%),13 (41%),0 (0%),0 (0%),4 (12%),disease progression: 28; death: 3; end of simulated follow-up: 1
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,No,ARM8,23,23 (100%),11 (48%),11 (48%),0 (0%),0 (0%),4 (17%),disease progression: 22; death: 1
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM3,19,19 (100%),3 (16%),3 (16%),0 (0%),0 (0%),4 (21%),disease progression: 16; death: 2; end of simulated follow-up: 1
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM4,26,26 (100%),9 (35%),9 (35%),0 (0%),0 (0%),1 (4%),"disease progression: 22; end of simulated follow-up: 3; withdrawal (subject, loss to follow-up or physician decision): 1"
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM5,19,19 (100%),4 (21%),4 (21%),0 (0%),0 (0%),1 (5%),disease progression: 19
+presence  of  baseline  CNS  metastases  or  leptomeningeal  disease,Yes,ARM8,11,11 (100%),3 (27%),3 (27%),1 (9%),0 (0%),0 (0%),disease progression: 10; adverse event (registry discontinuation rate): 1
+ALK-positive,Negative,ARM3,26,26 (100%),5 (19%),5 (19%),1 (4%),0 (0%),3 (12%),disease progression: 23; death: 1; adverse event (registry discontinuation rate): 1
+ALK-positive,Negative,ARM4,28,28 (100%),10 (36%),10 (36%),2 (7%),0 (0%),0 (0%),"disease progression: 23; withdrawal (subject, loss to follow-up or physician decision): 2; adverse event (registry discontinuation rate): 2"
+ALK-positive,Negative,ARM5,23,23 (100%),5 (22%),5 (22%),0 (0%),0 (0%),2 (9%),disease progression: 21; death: 1; end of simulated follow-up: 1
+ALK-positive,Negative,ARM8,20,20 (100%),7 (35%),7 (35%),1 (5%),0 (0%),2 (10%),disease progression: 18; adverse event (registry discontinuation rate): 1; death: 1
+ALK-positive,Positive,ARM3,23,23 (100%),6 (26%),6 (26%),0 (0%),0 (0%),1 (4%),disease progression: 21; death: 1; end of simulated follow-up: 1
+ALK-positive,Positive,ARM4,28,28 (100%),11 (39%),11 (39%),0 (0%),0 (0%),2 (7%),disease progression: 25; end of simulated follow-up: 2; death: 1
+ALK-positive,Positive,ARM5,28,28 (100%),12 (43%),12 (43%),0 (0%),0 (0%),3 (11%),disease progression: 26; death: 2
+ALK-positive,Positive,ARM8,14,14 (100%),7 (50%),7 (50%),0 (0%),0 (0%),2 (14%),disease progression: 14
+ALK-negative,Negative,ARM3,19,19 (100%),5 (26%),5 (26%),0 (0%),0 (0%),0 (0%),disease progression: 19
+ALK-negative,Negative,ARM4,21,21 (100%),10 (48%),10 (48%),2 (10%),0 (0%),0 (0%),disease progression: 19; adverse event (registry discontinuation rate): 2
+ALK-negative,Negative,ARM5,22,22 (100%),6 (27%),6 (27%),0 (0%),0 (0%),2 (9%),disease progression: 20; death: 2
+ALK-negative,Negative,ARM8,19,19 (100%),8 (42%),8 (42%),0 (0%),0 (0%),3 (16%),disease progression: 18; death: 1
+ALK-negative,Positive,ARM3,30,30 (100%),6 (20%),6 (20%),1 (3%),0 (0%),4 (13%),disease progression: 25; death: 2; adverse event (registry discontinuation rate): 1
+ALK-negative,Positive,ARM4,35,35 (100%),11 (31%),11 (31%),0 (0%),0 (0%),2 (6%),"disease progression: 29; end of simulated follow-up: 3; withdrawal (subject, loss to follow-up or physician decision): 2"
+ALK-negative,Positive,ARM5,29,29 (100%),11 (38%),11 (38%),0 (0%),0 (0%),3 (10%),disease progression: 27; death: 1; end of simulated follow-up: 1
+ALK-negative,Positive,ARM8,15,15 (100%),6 (40%),6 (40%),1 (7%),0 (0%),1 (7%),disease progression: 14; adverse event (registry discontinuation rate): 1
+central  testing  for  ALK  will  no  longer  be  required,No,ARM3,25,25 (100%),9 (36%),9 (36%),0 (0%),0 (0%),3 (12%),disease progression: 23; death: 1; end of simulated follow-up: 1
+central  testing  for  ALK  will  no  longer  be  required,No,ARM4,26,26 (100%),8 (31%),8 (31%),1 (4%),0 (0%),1 (4%),disease progression: 25; adverse event (registry discontinuation rate): 1
+central  testing  for  ALK  will  no  longer  be  required,No,ARM5,27,27 (100%),8 (30%),8 (30%),0 (0%),0 (0%),2 (7%),disease progression: 26; death: 1
+central  testing  for  ALK  will  no  longer  be  required,No,ARM8,13,13 (100%),2 (15%),2 (15%),0 (0%),0 (0%),2 (15%),disease progression: 12; death: 1
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM3,24,24 (100%),2 (8%),2 (8%),1 (4%),0 (0%),1 (4%),disease progression: 21; adverse event (registry discontinuation rate): 1; death: 1
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM4,30,30 (100%),13 (43%),13 (43%),1 (3%),0 (0%),1 (3%),"disease progression: 23; end of simulated follow-up: 3; withdrawal (subject, loss to follow-up or physician decision): 2"
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM5,24,24 (100%),9 (38%),9 (38%),0 (0%),0 (0%),3 (12%),disease progression: 21; death: 2; end of simulated follow-up: 1
+central  testing  for  ALK  will  no  longer  be  required,Yes,ARM8,21,21 (100%),12 (57%),12 (57%),1 (5%),0 (0%),2 (10%),disease progression: 20; adverse event (registry discontinuation rate): 1
+Age (FDA standard age bands),65-74 years,ARM3,16,16 (100%),5 (31%),5 (31%),1 (6%),0 (0%),1 (6%),disease progression: 13; adverse event (registry discontinuation rate): 1; death: 1
+Age (FDA standard age bands),65-74 years,ARM4,10,10 (100%),6 (60%),6 (60%),2 (20%),0 (0%),0 (0%),"disease progression: 6; adverse event (registry discontinuation rate): 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Age (FDA standard age bands),65-74 years,ARM5,11,11 (100%),1 (9%),1 (9%),0 (0%),0 (0%),2 (18%),disease progression: 9; death: 2
+Age (FDA standard age bands),65-74 years,ARM8,6,6 (100%),3 (50%),3 (50%),0 (0%),0 (0%),0 (0%),disease progression: 6
+Age (FDA standard age bands),< 65 years,ARM3,30,30 (100%),6 (20%),6 (20%),0 (0%),0 (0%),3 (10%),disease progression: 28; death: 1; end of simulated follow-up: 1
+Age (FDA standard age bands),< 65 years,ARM4,40,40 (100%),14 (35%),14 (35%),0 (0%),0 (0%),2 (5%),"disease progression: 36; end of simulated follow-up: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Age (FDA standard age bands),< 65 years,ARM5,35,35 (100%),13 (37%),13 (37%),0 (0%),0 (0%),3 (9%),disease progression: 33; death: 1; end of simulated follow-up: 1
+Age (FDA standard age bands),< 65 years,ARM8,27,27 (100%),10 (37%),10 (37%),1 (4%),0 (0%),4 (15%),disease progression: 25; adverse event (registry discontinuation rate): 1; death: 1
+Age (FDA standard age bands),>= 75 years,ARM3,3,3 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),disease progression: 3
+Age (FDA standard age bands),>= 75 years,ARM4,6,6 (100%),1 (17%),1 (17%),0 (0%),0 (0%),0 (0%),disease progression: 6
+Age (FDA standard age bands),>= 75 years,ARM5,5,5 (100%),3 (60%),3 (60%),0 (0%),0 (0%),0 (0%),disease progression: 5
+Age (FDA standard age bands),>= 75 years,ARM8,1,1 (100%),1 (100%),1 (100%),0 (0%),0 (0%),0 (0%),disease progression: 1
+Sex,female,ARM3,22,22 (100%),3 (14%),3 (14%),1 (5%),0 (0%),1 (5%),disease progression: 18; death: 1; adverse event (registry discontinuation rate): 1
+Sex,female,ARM4,28,28 (100%),13 (46%),13 (46%),1 (4%),0 (0%),1 (4%),"disease progression: 24; withdrawal (subject, loss to follow-up or physician decision): 1; end of simulated follow-up: 1"
+Sex,female,ARM5,26,26 (100%),8 (31%),8 (31%),0 (0%),0 (0%),2 (8%),disease progression: 25; death: 1
+Sex,female,ARM8,16,16 (100%),6 (38%),6 (38%),0 (0%),0 (0%),1 (6%),disease progression: 16
+Sex,male,ARM3,27,27 (100%),8 (30%),8 (30%),0 (0%),0 (0%),3 (11%),disease progression: 26; death: 1
+Sex,male,ARM4,28,28 (100%),8 (29%),8 (29%),1 (4%),0 (0%),1 (4%),"disease progression: 24; end of simulated follow-up: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Sex,male,ARM5,25,25 (100%),9 (36%),9 (36%),0 (0%),0 (0%),3 (12%),disease progression: 22; death: 2; end of simulated follow-up: 1
+Sex,male,ARM8,18,18 (100%),8 (44%),8 (44%),1 (6%),0 (0%),3 (17%),disease progression: 16; adverse event (registry discontinuation rate): 1; death: 1
+Race,asian,ARM3,6,6 (100%),1 (17%),1 (17%),0 (0%),0 (0%),0 (0%),"disease progression: 5; withdrawal (subject, loss to follow-up or physician decision): 1"
+Race,asian,ARM4,7,7 (100%),1 (14%),1 (14%),1 (14%),0 (0%),0 (0%),disease progression: 6; adverse event (registry discontinuation rate): 1
+Race,asian,ARM5,6,6 (100%),3 (50%),3 (50%),0 (0%),0 (0%),0 (0%),disease progression: 6
+Race,asian,ARM8,5,5 (100%),2 (40%),2 (40%),1 (20%),0 (0%),1 (20%),disease progression: 3; adverse event (registry discontinuation rate): 1; death: 1
+Race,black_or_african_american,ARM3,3,3 (100%),1 (33%),1 (33%),0 (0%),0 (0%),0 (0%),disease progression: 3
+Race,black_or_african_american,ARM4,7,7 (100%),4 (57%),4 (57%),0 (0%),0 (0%),0 (0%),disease progression: 7
+Race,black_or_african_american,ARM5,4,4 (100%),2 (50%),2 (50%),0 (0%),0 (0%),0 (0%),disease progression: 4
+Race,black_or_african_american,ARM8,3,3 (100%),2 (67%),2 (67%),0 (0%),0 (0%),0 (0%),disease progression: 3
+Race,more_than_one_race,ARM3,0,0,0,0,0,0,0,
+Race,more_than_one_race,ARM4,0,0,0,0,0,0,0,
+Race,more_than_one_race,ARM5,1,1 (100%),0 (0%),0 (0%),0 (0%),0 (0%),1 (100%),disease progression: 1
+Race,more_than_one_race,ARM8,0,0,0,0,0,0,0,
+Race,native_hawaiian_or_other_pacific_islander,ARM3,0,0,0,0,0,0,0,
+Race,native_hawaiian_or_other_pacific_islander,ARM4,0,0,0,0,0,0,0,
+Race,native_hawaiian_or_other_pacific_islander,ARM5,0,0,0,0,0,0,0,
+Race,native_hawaiian_or_other_pacific_islander,ARM8,1,1 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),disease progression: 1
+Race,unknown_or_not_reported,ARM3,2,2 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),disease progression: 2
+Race,unknown_or_not_reported,ARM4,1,1 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),disease progression: 1
+Race,unknown_or_not_reported,ARM5,4,4 (100%),0 (0%),0 (0%),0 (0%),0 (0%),1 (25%),disease progression: 3; death: 1
+Race,unknown_or_not_reported,ARM8,2,2 (100%),1 (50%),1 (50%),0 (0%),0 (0%),1 (50%),disease progression: 2
+Race,white,ARM3,38,38 (100%),9 (24%),9 (24%),1 (3%),0 (0%),4 (11%),disease progression: 34; death: 2; adverse event (registry discontinuation rate): 1
+Race,white,ARM4,41,41 (100%),16 (39%),16 (39%),1 (2%),0 (0%),2 (5%),"disease progression: 34; end of simulated follow-up: 3; withdrawal (subject, loss to follow-up or physician decision): 2"
+Race,white,ARM5,36,36 (100%),12 (33%),12 (33%),0 (0%),0 (0%),3 (8%),disease progression: 33; death: 2; end of simulated follow-up: 1
+Race,white,ARM8,23,23 (100%),9 (39%),9 (39%),0 (0%),0 (0%),2 (9%),disease progression: 23
+Ethnicity,hispanic_or_latino,ARM3,3,3 (100%),1 (33%),1 (33%),0 (0%),0 (0%),0 (0%),"disease progression: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Ethnicity,hispanic_or_latino,ARM4,4,4 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),disease progression: 4
+Ethnicity,hispanic_or_latino,ARM5,3,3 (100%),1 (33%),1 (33%),0 (0%),0 (0%),0 (0%),disease progression: 3
+Ethnicity,hispanic_or_latino,ARM8,2,2 (100%),1 (50%),1 (50%),0 (0%),0 (0%),0 (0%),disease progression: 2
+Ethnicity,not_hispanic_or_latino,ARM3,43,43 (100%),10 (23%),10 (23%),0 (0%),0 (0%),4 (9%),disease progression: 40; death: 2; end of simulated follow-up: 1
+Ethnicity,not_hispanic_or_latino,ARM4,51,51 (100%),20 (39%),20 (39%),2 (4%),0 (0%),2 (4%),"disease progression: 43; end of simulated follow-up: 3; withdrawal (subject, loss to follow-up or physician decision): 2"
+Ethnicity,not_hispanic_or_latino,ARM5,47,47 (100%),15 (32%),15 (32%),0 (0%),0 (0%),5 (11%),disease progression: 43; death: 3; end of simulated follow-up: 1
+Ethnicity,not_hispanic_or_latino,ARM8,29,29 (100%),13 (45%),13 (45%),1 (3%),0 (0%),4 (14%),disease progression: 27; adverse event (registry discontinuation rate): 1; death: 1
+Ethnicity,unknown_or_not_reported,ARM3,3,3 (100%),0 (0%),0 (0%),1 (33%),0 (0%),0 (0%),disease progression: 2; adverse event (registry discontinuation rate): 1
+Ethnicity,unknown_or_not_reported,ARM4,1,1 (100%),1 (100%),1 (100%),0 (0%),0 (0%),0 (0%),disease progression: 1
+Ethnicity,unknown_or_not_reported,ARM5,1,1 (100%),1 (100%),1 (100%),0 (0%),0 (0%),0 (0%),disease progression: 1
+Ethnicity,unknown_or_not_reported,ARM8,3,3 (100%),0 (0%),0 (0%),0 (0%),0 (0%),0 (0%),disease progression: 3
+Ecog performance status,0,ARM3,16,16 (100%),3 (19%),3 (19%),0 (0%),0 (0%),1 (6%),"disease progression: 15; withdrawal (subject, loss to follow-up or physician decision): 1"
+Ecog performance status,0,ARM4,22,22 (100%),8 (36%),8 (36%),1 (5%),0 (0%),1 (5%),"disease progression: 18; withdrawal (subject, loss to follow-up or physician decision): 1; adverse event (registry discontinuation rate): 1"
+Ecog performance status,0,ARM5,15,15 (100%),6 (40%),6 (40%),0 (0%),0 (0%),0 (0%),disease progression: 15
+Ecog performance status,0,ARM8,10,10 (100%),4 (40%),4 (40%),0 (0%),0 (0%),1 (10%),disease progression: 10
+Ecog performance status,1,ARM3,24,24 (100%),6 (25%),6 (25%),1 (4%),0 (0%),2 (8%),disease progression: 20; death: 2; adverse event (registry discontinuation rate): 1
+Ecog performance status,1,ARM4,31,31 (100%),12 (39%),12 (39%),1 (3%),0 (0%),1 (3%),"disease progression: 27; end of simulated follow-up: 2; withdrawal (subject, loss to follow-up or physician decision): 1"
+Ecog performance status,1,ARM5,31,31 (100%),11 (35%),11 (35%),0 (0%),0 (0%),4 (13%),disease progression: 28; death: 2; end of simulated follow-up: 1
+Ecog performance status,1,ARM8,21,21 (100%),9 (43%),9 (43%),1 (5%),0 (0%),3 (14%),disease progression: 19; adverse event (registry discontinuation rate): 1; death: 1
+Ecog performance status,2 or more,ARM3,9,9 (100%),2 (22%),2 (22%),0 (0%),0 (0%),1 (11%),disease progression: 9
+Ecog performance status,2 or more,ARM4,3,3 (100%),1 (33%),1 (33%),0 (0%),0 (0%),0 (0%),disease progression: 3
+Ecog performance status,2 or more,ARM5,5,5 (100%),0 (0%),0 (0%),0 (0%),0 (0%),1 (20%),disease progression: 4; death: 1
+Ecog performance status,2 or more,ARM8,3,3 (100%),1 (33%),1 (33%),0 (0%),0 (0%),0 (0%),disease progression: 3
