@@ -70,7 +70,7 @@ def letter(ax, s, x=-0.02, y=1.02):
 
 
 def obs_star(ax, x, y, label=True):
-    ax.plot(x, y, marker="*", ms=10, color=OBS_C, mec="white", mew=0.5, zorder=6, label="Observed (NCT06604442)" if label else None)
+    ax.plot(x, y, marker="*", ls="none", ms=10, color=OBS_C, mec="white", mew=0.5, zorder=6, label="Observed trial result" if label else None)
 
 
 def q(v, p):
