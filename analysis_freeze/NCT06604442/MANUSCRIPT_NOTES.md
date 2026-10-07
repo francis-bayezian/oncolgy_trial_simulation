@@ -1,7 +1,7 @@
 # Manuscript wording rules (from the review of 2026-10-07)
 
 1. **Design of the validation.**
-   - Write "retrospective held-out comparison using frozen computational inputs".
+   - Write "retrospective comparison using prespecified, outcome-independent computational inputs". Describe version locking and checksums once, in Methods or the Supplement.
    - Do not write "blinded", "prospective external validation" or "results unseen until after the model freeze".
    - The firewall shows that observed outcomes were not model inputs. Disclose what was seen (`step1_baseline/disclosures.md`).
 2. **Freeze record.** Cite `FREEZE_AMENDMENT.md` for the actual eligibility seed (S + 7) and the meaning of `registry_sha256`. The original freeze files are unchanged.

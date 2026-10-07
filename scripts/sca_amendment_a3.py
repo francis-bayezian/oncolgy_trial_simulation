@@ -17,7 +17,7 @@ from scipy import stats
 F = Path(sys.argv[1] if len(sys.argv) > 1 else "analysis_freeze/NCT06604442")
 REPS = int(sys.argv[2]) if len(sys.argv) > 2 else 2000
 EFFECTS = np.round(np.arange(0, 20.01, 1.0), 2)
-NS = list(range(30, 82, 4))
+NS = list(range(30, 82, 2))                 # step 2: N = 52 (the protocol target) is a grid point
 
 if __name__ == "__main__":
     sd = json.loads((F / "inputs" / "endpoint_source_design.json").read_text(encoding="utf-8"))["sd_diff"]

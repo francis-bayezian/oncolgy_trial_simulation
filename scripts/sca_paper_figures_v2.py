@@ -176,7 +176,7 @@ def fig2():
     gs = fig.add_gridspec(2, 2, height_ratios=[0.62, 1.35], hspace=0.45, wspace=0.35)
     ax = fig.add_subplot(gs[0, :])
     ax.set_xlim(0, 100)
-    ax.set_ylim(0, 10)
+    ax.set_ylim(0, 10.5)
     ax.axis("off")
     el, scr, use = col(LIT, "eligible_pct"), col(LIT, "screened_to_target"), col(LIT, "usable_pairs")
     nodes = [("10,000", "candidates", "generated per trial"),
@@ -184,13 +184,16 @@ def fig2():
              (f"{np.median(scr):.0f}", "screened", f"p10-p90 {q(scr, 10):.0f}-{q(scr, 90):.0f}"),
              ("52", "enrolled", "protocol target"),
              (f"{np.median(use):.0f}", "analysable pairs", f"p10-p90 {q(use, 10):.0f}-{q(use, 90):.0f}")]
-    for i, (big, lab, sub) in enumerate(nodes):
-        x = 8 + i * 21
-        ax.text(x, 6.6, big, ha="center", fontsize=11, fontweight="bold", color=BLUE)
-        ax.text(x, 4.4, lab, ha="center", fontsize=7.5)
-        ax.text(x, 2.5, sub, ha="center", fontsize=6.3, color=GREY)
-        if i:
-            ax.add_patch(FancyArrowPatch((x - 15, 7.1), (x - 6, 7.1), arrowstyle="-|>", mutation_scale=8, color=GREY, lw=0.8))
+    xs = [7, 24, 52, 70, 88]                    # population characterisation | operational burden
+    for i, ((big, lab, sub), x) in enumerate(zip(nodes, xs)):
+        ax.text(x, 6.0, big, ha="center", fontsize=11, fontweight="bold", color=BLUE if i < 2 else GREEN)
+        ax.text(x, 3.8, lab, ha="center", fontsize=7.5)
+        ax.text(x, 1.9, sub, ha="center", fontsize=6.3, color=GREY)
+        if i and i != 2:
+            ax.add_patch(FancyArrowPatch((xs[i - 1] + 6.5, 6.5), (x - 6.5, 6.5), arrowstyle="-|>", mutation_scale=8, color=GREY, lw=0.8))
+    ax.plot([38, 38], [0.5, 10], color=GREY, lw=0.6, ls=":")
+    ax.text(15.5, 9.6, "Population characterisation", ha="center", fontsize=7, fontweight="bold", color=BLUE)
+    ax.text(70, 9.6, "Operational burden (screen until 52 eligible)", ha="center", fontsize=7, fontweight="bold", color=GREEN)
     letter(ax, "A", x=0.0, y=0.95)
     deltas = eligibility_deltas()
     keys = list(deltas)
@@ -267,14 +270,13 @@ def fig4():
     cs = ax.contour(effs, ns, Z, levels=[0.5, 0.8, 0.9, 0.95], colors="white", linewidths=0.8)
     ax.clabel(cs, fmt=lambda v: f"{100 * v:.0f}%", fontsize=6.5, inline_spacing=2)
     ax.plot(10, 52, "D", ms=6, color="white", mec=INK, mew=0.8, label="Protocol design (N = 52, effect 10)")
-    ax.plot(OBS["endpoint"]["paired_difference"]["median"], OBS["endpoint"]["evaluable"], "*", ms=12, color=OBS_C, mec="white", mew=0.5,
-            label=f"Observed (N = {OBS['endpoint']['evaluable']}, median difference {OBS['endpoint']['paired_difference']['median']:g})")
     ax.set_xlabel("True mean paired difference in bladder SUVmean")
     ax.set_ylabel("Analysable participants (N)")
     cb = fig.colorbar(cf, ax=ax, fraction=0.05, pad=0.02, ticks=[0, 0.25, 0.5, 0.75, 1])
     cb.set_label("P(significant, comparator higher)", fontsize=7)
     cb.ax.tick_params(labelsize=6.5)
-    ax.legend(loc="lower right", frameon=True, framealpha=0.9, edgecolor="none")
+    ax.axhline(52, color="white", lw=0.5, ls=":", alpha=0.8)
+    ax.legend(loc="upper left", frameon=True, framealpha=0.9, edgecolor="none")
     save(fig, "Figure4")
 
 
@@ -348,8 +350,8 @@ def half_violin(ax, v, y, c, h=0.35):
 
 def fig6():
     e, c = OBS["endpoint"], OBS["conduct"]
-    fig, axes = plt.subplots(2, 2, figsize=(W2, 4.4))
-    plt.subplots_adjust(hspace=0.62, wspace=0.42)
+    fig, axes = plt.subplots(2, 2, figsize=(W2, 5.4))
+    plt.subplots_adjust(hspace=0.5, wspace=0.42)
     # A recruitment
     ax = axes[0, 0]
     t = np.logspace(np.log10(3), np.log10(400), 400)
@@ -377,16 +379,24 @@ def fig6():
     ax.set_ylim(-0.4, 1.55)
     ax.set_xlabel("Median paired difference in bladder SUVmean")
     letter(ax, "B")
-    # C comparator level
-    ax = axes[1, 0]
-    for y, name, colr, lab in ((1, "SCA-B", BLUE, "P1 evidence\n(25.7 median)"), (0, "SCA-A", ORANGE, "P2 evidence\n(SUVmax-converted)")):
-        half_violin(ax, [x["synthetic_comparator"]["median"] for x in SCA if x["experiment"] == name], y, colr)
-    for y in (1, 0):
-        obs_star(ax, e["comparator_piflufolastat"]["median"], y - 0.06, label=(y == 1))
-    ax.set_yticks([0, 1], ["P2 evidence\n(SUVmax-converted)", "P1 evidence"])
-    ax.set_ylim(-0.4, 1.55)
-    ax.set_xlabel("Synthetic piflufolastat bladder SUVmean (median)")
-    letter(ax, "C")
+    # C synthetic comparator: its level, and the paired difference it produces
+    axes[1, 0].remove()
+    sub = axes[1, 1].get_gridspec()[1, 0].subgridspec(2, 1, hspace=0.95)
+    for k, (key, xlabel, obs_v) in enumerate((("synthetic_comparator", "Synthetic comparator level: piflufolastat SUVmean", e["comparator_piflufolastat"]["median"]),
+                                             ("sca_contrast", "Resulting paired difference (synthetic - flotufolastat)", e["paired_difference"]["median"]))):
+        ax = fig.add_subplot(sub[k])
+        for y, name, colr in ((1, "SCA-B", BLUE), (0, "SCA-A", ORANGE)):
+            v = [x[key]["median"] if key == "synthetic_comparator" else x[key] for x in SCA if x["experiment"] == name]
+            half_violin(ax, v, y, colr, h=0.6)
+            ax.text(np.median(v), y - 0.2, f"{np.median(v):.1f}", ha="center", va="top", fontsize=6.2, color=colr)
+            obs_star(ax, obs_v, y - 0.06, label=False)
+        ax.text(obs_v, 1.95, f"observed {obs_v:g}", ha="center", fontsize=6.2, color=OBS_C)
+        ax.axvline(obs_v, color=OBS_C, lw=0.5, ls=":")
+        ax.set_yticks([0, 1], ["P2", "P1"])
+        ax.set_ylim(-0.75, 2.2)
+        ax.set_xlabel(xlabel, fontsize=6.8)
+        if k == 0:
+            letter(ax, "C")
     # D missingness
     ax = axes[1, 1]
     miss = 100 * col(LIT, "missing_pairs") / 52

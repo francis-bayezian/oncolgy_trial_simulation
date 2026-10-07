@@ -6,7 +6,7 @@
 - **(C)** The scientific questions addressed in Figures 2-5.
 
 **Figure 2. Eligibility pressure and screening burden (100 virtual trials).**
-- **(A)** Screening flow per virtual trial, median with the 10th-90th percentile.
+- **(A)** Left: population characterisation, the eligible share of the 10,000 generated candidates. Right: operational burden, the number screened in random order until 52 eligible participants are found, the enrolled and the analysable pairs. These are two separate calculations, not one funnel. Median with the 10th-90th percentile.
 - **(B, C)** Counterfactual feasibility: the change in eligible share (B) and in patients screened to reach 52 (C) when each of the three criteria excluding the most candidates is removed in turn. Median and 10th-90th percentile over 50 virtual trials.
 - Criteria the generated candidates cannot carry were resolved by calibration to registry screen-pass rates. Their exclusion rates are therefore calibrated, not criterion-specific evidence, and removing a criterion is not a recommendation.
 
@@ -17,7 +17,8 @@
 
 **Figure 4. Operating characteristics of the primary analysis.**
 - **What is shown:** probability that the two-sided paired Wilcoxon signed-rank test (alpha 0.05) is significant with the comparator higher, by true mean paired difference and analysable sample size. The SD of paired differences is 25.2, as implied by the protocol's power statement; 4,000 simulated trials per grid point.
-- **Markers:** the diamond marks the protocol design (N = 52, difference 10; success probability 0.787). The star marks the completed study (N = 55, observed median paired difference 15.1).
+- **Markers:** the diamond marks the protocol design (N = 52, mean difference 10; success probability 0.787). The dotted line marks N = 52, which is a grid point.
+- **No observed value is plotted:** the surface is indexed by the true mean paired difference, while the completed trial reports a median paired difference (15.1).
 - **Type I error:** at a true difference of 0 the two-sided rejection rate is 0.049 (Supplementary Figure S2).
 
 **Figure 5. Can external evidence reconstruct a masked comparator?**
@@ -35,15 +36,17 @@
 - Results were unchanged for within-patient correlations of 0.3-0.7 (Supplementary Figure S4).
 
 **Figure 6. Benchmark against the completed NCT06604442 (native units).**
-- **Common elements:** distributions are from the simulation, built from computational inputs fixed before the trial's results were used. The open circle and bar are the median and 10th-90th percentile; stars are the published NCT06604442 values.
+- **Common elements:** distributions are from the simulation, built from prespecified, outcome-independent computational inputs. The open circle and bar are the median and 10th-90th percentile; stars are the published NCT06604442 values.
 - **(A)** Months to enrol 52 participants, prespecified predictive distribution. The observed value is at the 8th percentile.
 - **(B)** Median paired difference in bladder SUVmean across 100 virtual trials:
   - with per-scan levels from pre-result literature;
   - under the protocol's design assumption.
   - Observed 15.1.
-- **(C)** Synthetic piflufolastat bladder SUVmean (median per virtual trial) from the P1 and P2 evidence. Observed 29.0.
+- **(C)** Synthetic comparator from the P1 and P2 evidence:
+  - upper panel: its level, as median piflufolastat bladder SUVmean per virtual trial (P1 25.9; P2 43.9; observed 29.0);
+  - lower panel: the paired difference it produces against flotufolastat (P1 11.9; P2 30.4; observed 15.1).
 - **(D)** Participants without an analysable pair across virtual trials. Observed 11.3% (7 of 62 dosed).
-- This is a retrospective held-out comparison using frozen computational inputs, not a blinded or prospective validation.
+- This is a retrospective comparison using prespecified, outcome-independent computational inputs.
 
 **Supplementary Figure S1. One synthetic participant's longitudinal record.**
 - Screening, piflufolastat scan (day 1), flotufolastat scan (day 10) and the end of the 30-day reporting window, with the simulated bladder SUVmean of each scan.

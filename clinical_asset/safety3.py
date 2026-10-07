@@ -32,6 +32,8 @@ import random
 import re
 from collections import defaultdict
 from concurrent.futures import ProcessPoolExecutor
+
+JOB_BATCH = 256                        # events per submission to the process pool (bounded memory)
 from pathlib import Path
 
 import numpy as np
@@ -294,13 +296,23 @@ def fit_all(arms: list[dict], observations: list[dict], events: list[tuple], cov
     by_event: dict[tuple, dict] = defaultdict(dict)
     for o in observations:
         by_event[(o["event"], o["seriousness"])][o["arm"]] = (o["y"], o["n"])
-    jobs = []
-    for key in events:
-        rows, y, n, cens = event_data(arms, by_event.get(key, {}), key[1])
-        if len(rows) >= 10 and (y[~cens] > 0).sum() >= 2:
-            jobs.append((key, X[rows], sd, y, n, cens))
+    # jobs are built and submitted in bounded batches: building every event's design-matrix copy up front (and
+    # ProcessPoolExecutor.map submits its whole iterable at once) exhausted memory on the 5,000-trial corpus (L046)
+    def jobs():
+        for key in events:
+            rows, y, n, cens = event_data(arms, by_event.get(key, {}), key[1])
+            if len(rows) >= 10 and (y[~cens] > 0).sum() >= 2:
+                yield (key, X[rows], sd, y, n, cens)
+    fits = {}
     with ProcessPoolExecutor(workers) as pool:
-        fits = dict(pool.map(_fit_job, jobs, chunksize=8))
+        batch = []
+        for job in jobs():
+            batch.append(job)
+            if len(batch) >= JOB_BATCH:
+                fits.update(pool.map(_fit_job, batch, chunksize=8))
+                batch = []
+        if batch:
+            fits.update(pool.map(_fit_job, batch, chunksize=8))
     return fits, {"levels": levels, "cols": cols, "covariates": covariates}
 
 

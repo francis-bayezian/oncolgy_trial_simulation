@@ -1,6 +1,6 @@
 # Lessons learned
 
-Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2026-10-06. Each lesson has a regression check; the agent loop runs them before accepting any change.
+Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2026-10-07. Each lesson has a regression check; the agent loop runs them before accepting any change.
 
 ## L001 — protocol compiler (PASS)
 
@@ -87,7 +87,7 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **What went wrong:** new journey modules embedded clinical terms in code, breaking the vocabulary guard
 - **General rule:** clinical vocabulary lives in versioned reference data (clinical_asset/reference), never in pipeline code
 - **Where:** `clinical_asset/reference/clinical_vocabulary.json`
-- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 1.89s
+- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 1.83s
 - **Recorded:** 2026-09-29 (project history)
 
 ## L012 — code hygiene (PASS)
@@ -361,3 +361,11 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **Where:** `trial.recruitment.historical_scenario trial.eligibility.build_eligibility cli build-eligibility --seed`
 - **Check:** `chk_recruitment_uses_stated_operations` — recruitment passes the protocol's stated site count and sponsor class to the accrual model; eligibility calibration is seeded per run
 - **Recorded:** 2026-10-06 (project history)
+
+## L046 — operations (PASS)
+
+- **What went wrong:** the v2 safety build ran out of memory twice on the 5,000-trial corpus (6 workers, then 2): every event's design-matrix copy was built up front and ProcessPoolExecutor.map submitted them all at once; after the main process failed, an orphaned worker kept the chain waiting for hours without logging the failure
+- **General rule:** build pool jobs lazily and submit them in bounded batches; watch the step's own log for failure as well as the chain log
+- **Where:** `safety3.fit_all JOB_BATCH`
+- **Check:** `chk_safety_jobs_batched` — the safety build submits event fits in bounded batches (no up-front list of design-matrix copies)
+- **Recorded:** 2026-10-07 (project history)

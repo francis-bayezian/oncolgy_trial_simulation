@@ -502,6 +502,12 @@ def chk_recruitment_uses_stated_operations():
     return ok, "recruitment passes the protocol's stated site count and sponsor class to the accrual model; eligibility calibration is seeded per run"
 
 
+def chk_safety_jobs_batched():
+    src = Path("clinical_asset/safety3.py").read_text(encoding="utf-8")
+    ok = "JOB_BATCH" in src and "def jobs():" in src and "jobs.append((key, X[rows]" not in src
+    return ok, "the safety build submits event fits in bounded batches (no up-front list of design-matrix copies)"
+
+
 def chk_no_control_characters():
     bad = [str(p) for root in ("clinical_asset", "scripts") for p in Path(root).rglob("*.py")
            if any(c < 32 and c not in (9, 10, 13) for c in p.read_bytes())]
@@ -643,6 +649,9 @@ SEED = [
     ("L045", "recruitment", "the recruitment stage enrolled at 10.8 patients/year while the planning report predicted 16.4 for the same protocol: recruitment called the accrual model without the protocol's stated site count ('10 centers'), so it averaged over other trials' site counts; and the eligibility calibration used one fixed seed, so per-criterion exclusions were identical across 100 replicates",
      "every stage that calls the accrual model passes the protocol's stated operational facts (site count, sponsor class) exactly as planning does; stochastic stages take the run's seed",
      "trial.recruitment.historical_scenario trial.eligibility.build_eligibility cli build-eligibility --seed", "chk_recruitment_uses_stated_operations"),
+    ("L046", "operations", "the v2 safety build ran out of memory twice on the 5,000-trial corpus (6 workers, then 2): every event's design-matrix copy was built up front and ProcessPoolExecutor.map submitted them all at once; after the main process failed, an orphaned worker kept the chain waiting for hours without logging the failure",
+     "build pool jobs lazily and submit them in bounded batches; watch the step's own log for failure as well as the chain log",
+     "safety3.fit_all JOB_BATCH", "chk_safety_jobs_batched"),
 ]
 
 
