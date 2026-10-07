@@ -1,0 +1,50 @@
+{
+ "SCA-A": {
+  "truth_source": "literature",
+  "comparator_input": "P2 (pre-start, independent)",
+  "lognormal_mu": 3.8088822465086327,
+  "lognormal_sigma": 0.9357011815842744,
+  "evidence": {
+   "median": 45.1,
+   "q1": 24.0,
+   "q3": 84.8,
+   "input": "P2",
+   "tracer": "18F-piflufolastat"
+  },
+  "role": "primary: comparator from an independent allowed source",
+  "draws_per_trial": 200,
+  "uses_masked_values": false
+ },
+ "SCA-B": {
+  "truth_source": "literature",
+  "comparator_input": "P1 (same evidence as the truth)",
+  "lognormal_mu": 3.246490991901174,
+  "lognormal_sigma": 0.53626525680299,
+  "evidence": {
+   "median": 25.7,
+   "q1": 17.9,
+   "q3": 36.9,
+   "input": "P1",
+   "tracer": "18F-piflufolastat"
+  },
+  "role": "self-consistency bound (same evidence; within-patient link unknown)",
+  "draws_per_trial": 200,
+  "uses_masked_values": false
+ },
+ "SCA-R": {
+  "truth_source": "prestart",
+  "comparator_input": "P1 (pre-results, independent of P2)",
+  "lognormal_mu": 3.246490991901174,
+  "lognormal_sigma": 0.53626525680299,
+  "evidence": {
+   "median": 25.7,
+   "q1": 17.9,
+   "q3": 36.9,
+   "input": "P1",
+   "tracer": "18F-piflufolastat"
+  },
+  "role": "reverse check: truth from P2, comparator from P1",
+  "draws_per_trial": 200,
+  "uses_masked_values": false
+ }
+}

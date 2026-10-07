@@ -540,7 +540,9 @@ def run(spec_lock: Path, journey_lock: Path, safety_lock: Path, eligibility_lock
     tables["Table 4. Patient disposition"] = t4
     # Table 5: exposure
     t5 = [["Parameter", *head[1:-1]]]
-    dur = {a["arm_id"]: np.array([float(r["TRTEDY"]) - float(r["TRTSDY"]) + 1 for r in adsl if r["ARMCD"] == a["arm_id"]]) for a in arms}
+    # exposure duration of records that started (a later period after the participant left has none, L044)
+    dur = {a["arm_id"]: np.array([float(r["TRTEDY"]) - float(r["TRTSDY"]) + 1 for r in adsl if r["ARMCD"] == a["arm_id"] and r["TRTSDY"]] or [0.0])
+           for a in arms}
     t5.append(["Duration of treatment, days: mean (SD)"] + [f"{dur[a['arm_id']].mean():.1f} ({dur[a['arm_id']].std(ddof=1):.1f})" for a in arms])
     t5.append(["Median (min, max)"] + [f"{np.median(dur[a['arm_id']]):.0f} ({dur[a['arm_id']].min():.0f}, {dur[a['arm_id']].max():.0f})" for a in arms])
     t5.append(["Total exposure, person-years"] + [f"{dur[a['arm_id']].sum() / DAY:.1f}" for a in arms])

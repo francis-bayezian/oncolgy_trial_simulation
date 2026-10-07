@@ -87,7 +87,7 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **What went wrong:** new journey modules embedded clinical terms in code, breaking the vocabulary guard
 - **General rule:** clinical vocabulary lives in versioned reference data (clinical_asset/reference), never in pipeline code
 - **Where:** `clinical_asset/reference/clinical_vocabulary.json`
-- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 2.15s
+- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 1.89s
 - **Recorded:** 2026-09-29 (project history)
 
 ## L012 — code hygiene (PASS)
@@ -344,4 +344,20 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **General rule:** restore from the verified quotes: a range dose is a range, 'up to' is a maximum, a flattened power of ten is restored, word-number offsets get value and unit (equal bounds are exact); an unstated endpoint type is shown as the compiler's classification; the resolver tries a quote-backed patch and then re-extraction before an item is left; a faithful rule generated patients cannot carry is FAITHFUL_NOT_EXECUTABLE, not REVIEW_REQUIRED
 - **Where:** `protocol.qualifiers protocol.render protocol.resolver protocol.compiler._finalise_status`
 - **Check:** `chk_doses_offsets_and_types_render_as_stated` — range, exact word-number offset, flattened power of ten and unstated endpoint type rendered as stated: True
+- **Recorded:** 2026-10-06 (project history)
+
+## L044 — patient journey (PASS)
+
+- **What went wrong:** QC of 100 replicates of a paired imaging study: 169 scan records ended with 'disease progression' inside a 10-day procedure window, and exits were drawn per scan record, so a participant who left for an adverse event after scan 1 still completed scan 2
+- **General rule:** in a procedure-only study disease progression does not end the planned procedures; in a within-patient design exits are person-level: leaving in a period means the later periods are not started (no exposure, no adverse events, the person's death day kept)
+- **Where:** `trial.journey.person_level_exits trial.journey (procedure-only exits) trial.export_clinical`
+- **Check:** `chk_person_level_exits` — an exit in period 1 ends later periods (not started: left the study in period 1 (adverse event)); progression does not end a procedure-only study
+- **Recorded:** 2026-10-06 (project history)
+
+## L045 — recruitment (PASS)
+
+- **What went wrong:** the recruitment stage enrolled at 10.8 patients/year while the planning report predicted 16.4 for the same protocol: recruitment called the accrual model without the protocol's stated site count ('10 centers'), so it averaged over other trials' site counts; and the eligibility calibration used one fixed seed, so per-criterion exclusions were identical across 100 replicates
+- **General rule:** every stage that calls the accrual model passes the protocol's stated operational facts (site count, sponsor class) exactly as planning does; stochastic stages take the run's seed
+- **Where:** `trial.recruitment.historical_scenario trial.eligibility.build_eligibility cli build-eligibility --seed`
+- **Check:** `chk_recruitment_uses_stated_operations` — recruitment passes the protocol's stated site count and sponsor class to the accrual model; eligibility calibration is seeded per run
 - **Recorded:** 2026-10-06 (project history)

@@ -1,0 +1,5 @@
+{"name": "literature", "kind": "per_exposure",
+ "reference": {"median": 25.7, "q1": 17.9, "q3": 36.9, "input": "P1", "tracer": "18F-piflufolastat"},
+ "index": {"median": 12.5, "q1": 7.0, "q3": 19.3, "input": "F1", "tracer": "18F-flotufolastat"},
+ "correlation": 0.5, "correlation_input": "A29",
+ "provenance": "SCA_ALLOWED_INPUTS.csv P1 (piflufolastat, pre-results preprint 2025-05-08) and F1 (flotufolastat, Mol Imaging Biol 2023-11); lognormal per exposure; within-patient log-scale correlation 0.5 (assumption A29)"}

@@ -1,0 +1,19 @@
+{
+ "study": "NCT06604442",
+ "replicates": 100,
+ "replicates_with_problems": 0,
+ "problems_by_kind": {},
+ "exit_reasons_all_records": {
+  "completed planned procedures": 10301,
+  "adverse event (registry discontinuation rate)": 40,
+  "withdrawal (subject, loss to follow-up or physician decision)": 36,
+  "not started: left the study in period 1 (adverse event (registry discontinuation rate))": 16,
+  "death": 7
+ },
+ "firewall": {
+  "excluded_from_evidence": true,
+  "present_in_evidence_asset": false,
+  "replicate_inputs_name_registry_results": false
+ },
+ "issues": []
+}

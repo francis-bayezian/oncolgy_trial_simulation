@@ -1,0 +1,5 @@
+{"name": "prestart", "kind": "per_exposure",
+ "reference": {"median": 45.1, "q1": 24.0, "q3": 84.8, "input": "P2", "tracer": "18F-piflufolastat"},
+ "index": {"median": 12.5, "q1": 7.0, "q3": 19.3, "input": "F1", "tracer": "18F-flotufolastat"},
+ "correlation": 0.5, "correlation_input": "A29",
+ "provenance": "strict pre-start evidence: P2 (Donswijk 2022 SUVmax converted with the flotufolastat SUVmean/SUVmax ratio 0.731, an assumption) and F1"}

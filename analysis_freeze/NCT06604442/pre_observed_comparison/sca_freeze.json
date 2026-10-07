@@ -1,0 +1,12 @@
+{
+ "frozen_at": "2026-10-06T22:18:43+00:00",
+ "scope": "steps 7-10: synthetic comparator models (allowed inputs only) and the internal experiment, frozen before any observed NCT06604442 result is read",
+ "base_freeze_id": "4b73c22574d361898125452c241fc1ecfb8b9c2fc6b9e8090677328497d9a4e2",
+ "files": {
+  "analysis_freeze/NCT06604442/step10_sca_internal/sca_experiment.md": "79053ad4946f178cdd258f27f106092f9f49a34cacbbe1537f6eb8bf5389bc49",
+  "analysis_freeze/NCT06604442/step10_sca_internal/sca_models.json": "b891e0f4c2d19a5d4df433b9c1dc10e42236b597941b26aa0dff848311172e45",
+  "analysis_freeze/NCT06604442/step10_sca_internal/sca_per_trial.jsonl": "41aee9eab8750d5d28dbcd90be96506fd36e23d3826c3e647cc50f3e70521815",
+  "scripts/sca_experiment.py": "f3637d3c5c088c743acb134cb1f3da5b5fd2d0d31f8e5cf2e96586bf86b5e8d9"
+ },
+ "observed_results_used": false
+}

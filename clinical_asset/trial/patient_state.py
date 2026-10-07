@@ -64,6 +64,8 @@ ASSUMPTIONS = {
     "A28_prognostic_effects": "a subgroup effect from registry results by subgroup is prognostic: the same in every arm, "
                               "multiplicative on the progression hazard and the response odds, independent across factors, and "
                               "centred on the arm's patient mix so each arm's overall rate is unchanged",
+    "A29_within_patient_correlation": "the two measurements of the same participant (one per exposure) are correlated on the log "
+                                      "scale with correlation 0.5 when no source reports it (varied 0.3 and 0.7 in sensitivity)",
     "A21_day1_dosing": "an agent whose dosing days the protocol does not state is given on day 1 of each cycle",
     "A20_assessment_lag": "with no stated time point or treatment length, the primary assessment is 6 months after entry",
     "A19_unnamed_arm_is_comparator": "an arm that names no anticancer agent is the comparator: it receives the regimen of the "

@@ -1,0 +1,11 @@
+{"source": "Eur J Nucl Med Mol Imaging. 2026 Feb 23;53(6):3529-3541 (PMC13121232; doi 10.1007/s00259-025-07732-y)",
+ "read_at": "2026-10-06, after the step 6 and step 10 freezes",
+ "verified_against_user_plan": true,
+ "endpoint": {"evaluable": 55, "comparator_piflufolastat": {"median": 29.0, "q1": 18.9, "q3": 40.8},
+              "index_flotufolastat": {"median": 10.9, "q1": 6.0, "q3": 18.5},
+              "paired_difference": {"median": 15.1, "q1": 8.5, "q3": 27.0}, "test": "Wilcoxon signed-rank", "p": "<0.001",
+              "lower_with_index": 53, "equal": 1, "suvmax_median": {"comparator": 54.7, "index": 18.1}},
+ "conduct": {"screened": 67, "dosed": 62, "evaluable": 55, "missing_pairs": 7, "missing_reasons": "5 without the flotufolastat scan; 2 non-evaluable scans",
+             "sites": 9, "enrolment_period": "October 2024 to June 2025", "enrolment_months_approx": 8,
+             "scan_interval": "at least 24 hours, at most 10 days"},
+ "baseline": {"age_mean": 67.9, "age_range": [39, 83], "psa_mean": 0.28, "psa_range": [0.09, 0.50], "rp_only_pct": 90.9}}

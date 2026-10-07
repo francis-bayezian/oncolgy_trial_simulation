@@ -1,0 +1,14 @@
+Quantity,Protocol value,Evidence / source,Generated quantity,Assumption,Used in
+Eligibility rules,"13 inclusion/exclusion criteria (StudySpec, 100% faithful)",protocol,"per-patient eligibility of 10,000 generated patients",criteria patients cannot carry resolved to the registry screen-pass rate (A16),feasibility
+"Age, sex, race, ethnicity",men >= 18 years,simulation parameter asset V3 (registry baselines),baseline demographics,-,feasibility
+Performance status,-,"registry baseline ECOG (prostate, phase 4)",per-patient ECOG,-,feasibility
+Evaluable target,52 (60 to be screened),protocol section 15,enrolment stops at 52 participants,-,feasibility
+Accrual rate,10 centers (protocol),historical accrual model historical accrual model operational-2.0.0 (completed and terminated non-holdout trials),"Poisson arrivals, median 16.4/year (p10-p90 4.2-65.9)",site count from the protocol; rate uncertainty from the model,feasibility
+Exposures and order,piflufolastat then flotufolastat 1-10 days later,protocol,two records per participant,exits person-level (L044),"feasibility, SCA"
+"Exits (withdrawal, AE stop, death)",-,"registry disposition rates (prostate, phase 4)",per-participant exits in the procedure window,registry whole-trial rates scaled to the window (A22),feasibility
+Flotufolastat bladder SUVmean,-,"F1: Kuo et al., Mol Imaging Biol 2023 (n=718)",per-participant index value,lognormal from median and IQR,SCA (truth and models)
+Piflufolastat bladder SUVmean (truth),-,"P1: preprint 2025-05 (n=50, independent)",per-participant comparator value (masked),lognormal from median and range,SCA truth
+Piflufolastat bladder SUVmean (independent model),-,P2: Donswijk 2022 SUVmax (n=51) x 0.731,synthetic comparator SCA-A,SUVmax-to-SUVmean ratio from flotufolastat,SCA comparator
+Within-patient correlation,-,none reported,log-scale correlation of the two exposures,0.5 (A29),SCA truth
+Design effect,"mean paired difference 10, SD 25, 80% power",protocol (68Ga-PSMA-11 stand-in),design-assumption endpoint source,"reported as a sensitivity, never as truth",feasibility (design check)
+Primary analysis,"two-sided paired Wilcoxon signed rank, alpha 0.05",protocol,per-trial p-value and success,-,"feasibility, SCA"

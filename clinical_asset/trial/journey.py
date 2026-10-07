@@ -152,8 +152,10 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
         else:
             detect = prog_day
     end_candidates = [(plan_end, end_label)]
-    if detect is not None and end_label == "completed planned procedures" and detect > plan_end:
-        detect = None                                   # progression after the last procedure is outside participation
+    if detect is not None and end_label == "completed planned procedures":
+        # a procedure-only study (no treatment cycles, e.g. paired imaging): disease progression is not a reason to stop
+        # the planned procedures, inside or after them (L044); withdrawal, adverse-event and death exits still apply
+        detect = None
     if detect is not None:
         end_candidates.append((detect, "disease progression"))
     if withdraw_day is not None:
@@ -286,6 +288,33 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
     return st
 
 
+def person_level_exits(states: list, cohort: list[dict]) -> int:
+    """Within-patient designs (one record per period of the same person): a participant who leaves the study in a
+    period (adverse event, withdrawal, death; anything but completion) does not start the later periods. Those records
+    keep the person's death day and carry no exposure or adverse events (L044). Returns the records changed."""
+    period = {c["subject_id"]: (c.get("patient_subject"), c.get("period") or 0) for c in cohort}
+    by_person: dict = {}
+    for st in states:
+        person, k = period.get(st.subject_id, (None, 0))
+        if person:
+            by_person.setdefault(person, []).append((k, st))
+    changed = 0
+    for recs in by_person.values():
+        left = None
+        for k, st in sorted(recs, key=lambda x: x[0]):
+            if left is not None:
+                st.off_treatment = (0, f"not started: left the study in period {left[0]} ({left[1]})")
+                st.exposure, st.ae, st.holds, st.reductions = [], [], [], {}
+                st.events = [e for e in st.events if e["day"] <= 0]
+                st.death_day, st.progression_day, st.progression_detected_day = left[2], None, None
+                changed += 1
+                continue
+            reason = (st.off_treatment or (0, "completed"))[1]
+            if not reason.startswith("completed"):
+                left = (k, reason, st.death_day)
+    return changed
+
+
 def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_lock: Path, safety_lock: Path, outcomes_lock: Path,
         schedule_facts: Path | None, out_dir: Path, scenario: str | None = None, horizon_days: int = 730, seed: int = 20260929,
         traces: int = 3, facts_lock: Path | None = None) -> dict:
@@ -337,6 +366,7 @@ def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_loc
             prog = {**prog, "value": {**prog["value"], "rate_per_year": prog["value"]["rate_per_year"] * math.exp(log_hr)}}
         states.append(simulate_patient(s, ae_by.get(s["subject_id"], []), elig.get(s["patient_id"]), spec, sched, rules, levels,
                                        prog, wd_by_arm[arm], rng, horizon_days, ae_by_arm[arm], death_by_arm[arm]))
+    person_level_exits(states, cohort)
     from .export_clinical import write
     from .journey_evidence import screen_pass_rate
     summary = write(states, spec, sched, out_dir, traces)

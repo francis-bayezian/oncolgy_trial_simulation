@@ -62,7 +62,8 @@ def write(states: list, spec: dict, sched: dict, out_dir: Path, traces: int = 3)
         ds.append({"USUBJID": usub, "DSDECOD": st.off_treatment[1], "DSSTDY": st.off_treatment[0], "DSCAT": "END OF TREATMENT"})
         planned = sum(x["planned_administrations"] for x in st.exposure)
         given = sum(x["administrations"] for x in st.exposure)
-        adsl.append({**dm_[-1], "TRTSDY": 1, "TRTEDY": st.off_treatment[0], "EOTREAS": st.off_treatment[1],
+        started = not st.off_treatment[1].startswith("not started")     # a later period after the person left (L044)
+        adsl.append({**dm_[-1], "TRTSDY": 1 if started else None, "TRTEDY": st.off_treatment[0] if started else None, "EOTREAS": st.off_treatment[1],
                      "N_CYCLES": max((x["cycle"] for x in st.exposure), default=0), "N_REDUCTIONS": sum(st.reductions.values()),
                      "N_HOLDS": len(st.holds), "RDI": round(given / planned, 3) if planned else None,
                      "ANY_SAE": "Y" if any(e["serious"] for e in st.ae) else "N", "ANY_GR3": "Y" if any(e["grade"] >= 3 for e in st.ae) else "N",

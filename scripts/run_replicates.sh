@@ -21,25 +21,26 @@ one() {   # replicate number
   [ -d "$K/analysis_v$tag" ] && { echo "r$r exists"; return 0; }
   mkdir -p "$T"
   lk() { [ -d "$K/$2_v$tag" ] || $P lock-stage --stage "$1" --out "$K/$2_v$tag" --kind "$2" --version "$tag" "${@:3}" --code clinical_asset > /dev/null; }
+  sk() { [ -d "$K/$1_v$tag" ] && return 0; shift; "$@"; }   # a stage already locked (e.g. reused unchanged) is skipped
   {
-    $P build-population --studyspec "$SPEC" --facts "$FACTS" --out "$T/population_base" --n 10000 --seed $S &&
-    $P augment-population --population "$T/population_base" --studyspec "$SPEC" --condition-family "data/trial/runs/$ID/v$V/condition_family.json" --out "$T/population" &&
+    sk population $P build-population --studyspec "$SPEC" --facts "$FACTS" --out "$T/population_base" --n 10000 --seed $S &&
+    sk population $P augment-population --population "$T/population_base" --studyspec "$SPEC" --condition-family "data/trial/runs/$ID/v$V/condition_family.json" --out "$T/population" &&
     lk "$T/population" population --input studyspec=$SPEC/lock.json &&
-    $P build-eligibility --studyspec "$SPEC" --population "$K/population_v$tag" --out "$T/eligibility" &&
+    sk eligibility $P build-eligibility --studyspec "$SPEC" --population "$K/population_v$tag" --out "$T/eligibility" --seed $((S + 7)) &&
     lk "$T/eligibility" eligibility --input population=$K/population_v$tag/lock.json &&
-    $P build-cohorts --studyspec "$SPEC" --population "$K/population_v$tag" --eligibility "$K/eligibility_v$tag" --out "$T/cohorts" --seed $((S + 1)) &&
+    sk cohorts $P build-cohorts --studyspec "$SPEC" --population "$K/population_v$tag" --eligibility "$K/eligibility_v$tag" --out "$T/cohorts" --seed $((S + 1)) &&
     lk "$T/cohorts" cohorts --input eligibility=$K/eligibility_v$tag/lock.json &&
-    $P run-safety --outcomes "$OUT" --cohorts "$K/cohorts_v$tag" --out "$T/safety" --safety-asset "$SAFETY" --seed $((S + 2)) &&
+    sk safety $P run-safety --outcomes "$OUT" --cohorts "$K/cohorts_v$tag" --out "$T/safety" --safety-asset "$SAFETY" --seed $((S + 2)) &&
     lk "$T/safety" safety --input cohorts=$K/cohorts_v$tag/lock.json &&
-    $P build-trial-outputs --studyspec "$SPEC" --eligibility "$K/eligibility_v$tag" --cohorts "$K/cohorts_v$tag" --outcomes "$OUT" \
+    sk outputs $P build-trial-outputs --studyspec "$SPEC" --eligibility "$K/eligibility_v$tag" --cohorts "$K/cohorts_v$tag" --outcomes "$OUT" \
       --safety "$K/safety_v$tag" --planning "$L/planning_v$V" --results "$L/results_v$V" --accrual-asset "$ASSET" --out "$T/outputs" --seed $((S + 3)) &&
     lk "$T/outputs" outputs --input safety=$K/safety_v$tag/lock.json &&
-    $P run-journey --studyspec "$SPEC" --protocol "$PDF" --cohorts "$K/cohorts_v$tag" --eligibility "$K/eligibility_v$tag" --outputs "$K/outputs_v$tag" \
+    sk journey $P run-journey --studyspec "$SPEC" --protocol "$PDF" --cohorts "$K/cohorts_v$tag" --eligibility "$K/eligibility_v$tag" --outputs "$K/outputs_v$tag" \
       --safety "$K/safety_v$tag" --outcomes "$OUT" --facts "$FACTS" --out "$T/journey" --seed $((S + 4)) &&
     lk "$T/journey" journey --input outputs=$K/outputs_v$tag/lock.json &&
-    $P run-endpoints --studyspec "$SPEC" --journey "$K/journey_v$tag" --safety "$K/safety_v$tag" --facts "$FACTS" --out "$T/endpoints" --seed $((S + 5)) &&
+    sk endpoints $P run-endpoints --studyspec "$SPEC" --journey "$K/journey_v$tag" --safety "$K/safety_v$tag" --facts "$FACTS" --out "$T/endpoints" --seed $((S + 5)) &&
     lk "$T/endpoints" endpoints --input journey=$K/journey_v$tag/lock.json &&
-    $P build-analysis-results --studyspec "$SPEC" --journey "$K/journey_v$tag" --safety "$K/safety_v$tag" --eligibility "$K/eligibility_v$tag" \
+    sk analysis $P build-analysis-results --studyspec "$SPEC" --journey "$K/journey_v$tag" --safety "$K/safety_v$tag" --eligibility "$K/eligibility_v$tag" \
       --outcomes "$OUT" --facts "$FACTS" --out "$T/analysis" --seed $((S + 6)) &&
     lk "$T/analysis" analysis --input journey=$K/journey_v$tag/lock.json
   } > "$T/replicate.log" 2>&1 && echo "r$r done $(date +%T)" || echo "r$r FAILED: $(tail -1 "$T/replicate.log")"

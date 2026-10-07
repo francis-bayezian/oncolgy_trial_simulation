@@ -476,6 +476,32 @@ def chk_doses_offsets_and_types_render_as_stated():
     return ok, f"range, exact word-number offset, flattened power of ten and unstated endpoint type rendered as stated: {ok}"
 
 
+def chk_person_level_exits():
+    from types import SimpleNamespace
+
+    from clinical_asset.trial.journey import person_level_exits
+
+    mk = lambda sid, reason, death=None: SimpleNamespace(subject_id=sid, off_treatment=(1, reason), exposure=[1], ae=[1], holds=[],  # noqa: E731
+                                                       reductions={}, events=[{"day": 0}, {"day": 5}], death_day=death,
+                                                       progression_day=None, progression_detected_day=None)
+    a1, a2 = mk("S1-P1", "adverse event"), mk("S1-P2", "completed planned procedures")
+    b1, b2 = mk("S2-P1", "completed planned procedures"), mk("S2-P2", "completed planned procedures")
+    cohort = [{"subject_id": s, "patient_subject": s.split("-")[0], "period": int(s[-1])} for s in ("S1-P1", "S1-P2", "S2-P1", "S2-P2")]
+    n = person_level_exits([a1, a2, b1, b2], cohort)
+    src = Path("clinical_asset/trial/journey.py").read_text(encoding="utf-8")
+    ok = n == 1 and a2.off_treatment[1].startswith("not started") and not a2.ae and b2.off_treatment[1].startswith("completed") \
+        and 'if detect is not None and end_label == "completed planned procedures":' in src
+    return ok, f"an exit in period 1 ends later periods ({a2.off_treatment[1]}); progression does not end a procedure-only study"
+
+
+def chk_recruitment_uses_stated_operations():
+    src = Path("clinical_asset/trial/recruitment.py").read_text(encoding="utf-8")
+    elig = Path("clinical_asset/trial/eligibility.py").read_text(encoding="utf-8")
+    ok = ("_historical(asset, spec, target, stated=stated)" in src and "historical_scenario(spec, plan[\"target\"][\"patients\"], spec_lock)" in src
+          and "assess(spec, patients, screening_evidence(spec), seed=seed)" in elig)
+    return ok, "recruitment passes the protocol's stated site count and sponsor class to the accrual model; eligibility calibration is seeded per run"
+
+
 def chk_no_control_characters():
     bad = [str(p) for root in ("clinical_asset", "scripts") for p in Path(root).rglob("*.py")
            if any(c < 32 and c not in (9, 10, 13) for c in p.read_bytes())]
@@ -611,6 +637,12 @@ SEED = [
     ("L043", "protocol compiler", "renderings the verifiers rejected although the extraction held the facts: a dose range '12.5-50 mg' shown as a fixed 12.5 mg, 'up to 1 x 107 DC' read as 1 'x', 'Thirty minutes prior' rendered 'at least {text: Thirty}', and every endpoint labelled with the compiler's type as if the protocol stated it; the resolver also gave up after one attempt per item",
      "restore from the verified quotes: a range dose is a range, 'up to' is a maximum, a flattened power of ten is restored, word-number offsets get value and unit (equal bounds are exact); an unstated endpoint type is shown as the compiler's classification; the resolver tries a quote-backed patch and then re-extraction before an item is left; a faithful rule generated patients cannot carry is FAITHFUL_NOT_EXECUTABLE, not REVIEW_REQUIRED",
      "protocol.qualifiers protocol.render protocol.resolver protocol.compiler._finalise_status", "chk_doses_offsets_and_types_render_as_stated"),
+    ("L044", "patient journey", "QC of 100 replicates of a paired imaging study: 169 scan records ended with 'disease progression' inside a 10-day procedure window, and exits were drawn per scan record, so a participant who left for an adverse event after scan 1 still completed scan 2",
+     "in a procedure-only study disease progression does not end the planned procedures; in a within-patient design exits are person-level: leaving in a period means the later periods are not started (no exposure, no adverse events, the person's death day kept)",
+     "trial.journey.person_level_exits trial.journey (procedure-only exits) trial.export_clinical", "chk_person_level_exits"),
+    ("L045", "recruitment", "the recruitment stage enrolled at 10.8 patients/year while the planning report predicted 16.4 for the same protocol: recruitment called the accrual model without the protocol's stated site count ('10 centers'), so it averaged over other trials' site counts; and the eligibility calibration used one fixed seed, so per-criterion exclusions were identical across 100 replicates",
+     "every stage that calls the accrual model passes the protocol's stated operational facts (site count, sponsor class) exactly as planning does; stochastic stages take the run's seed",
+     "trial.recruitment.historical_scenario trial.eligibility.build_eligibility cli build-eligibility --seed", "chk_recruitment_uses_stated_operations"),
 ]
 
 

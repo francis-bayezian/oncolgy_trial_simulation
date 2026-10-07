@@ -176,7 +176,7 @@ def _decisive(results: list[dict], field: str) -> dict:
     return dict(sorted(counts.items(), key=lambda kv: -kv[1]))
 
 
-def build_eligibility(spec_lock: Path, population_lock: Path, out_dir: Path) -> dict:
+def build_eligibility(spec_lock: Path, population_lock: Path, out_dir: Path, seed: int = 20261005) -> dict:
     from .lock import verify
     from .studyspec import load_studyspec
 
@@ -184,7 +184,7 @@ def build_eligibility(spec_lock: Path, population_lock: Path, out_dir: Path) -> 
     pop_record = verify(population_lock)
     with open(Path(population_lock) / "population.jsonl", encoding="utf-8") as fh:
         patients = [json.loads(line) for line in fh]
-    results, summary = assess(spec, patients, screening_evidence(spec))
+    results, summary = assess(spec, patients, screening_evidence(spec), seed=seed)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     doc = {"eligibility_version": ELIGIBILITY_VERSION,

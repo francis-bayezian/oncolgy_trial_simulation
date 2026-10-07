@@ -114,15 +114,19 @@ def _stratum(strata: list[dict], patient: dict, rng: np.random.Generator) -> dic
     return {"stratum": strata[int(rng.integers(len(strata)))]["stratum_id"], "stratum_assigned": "at random (patient data cannot decide it)"}
 
 
-def historical_scenario(spec: dict, target: int) -> dict | None:
-    """The historical accrual model's median rate for this protocol (the planning headline, L024), as a scenario."""
+def historical_scenario(spec: dict, target: int, spec_lock: Path | None = None) -> dict | None:
+    """The historical accrual model's median rate for this protocol (the planning headline, L024), as a scenario, with
+    the protocol's stated operational facts (site count, sponsor class) exactly as the planning report uses them (L045)."""
     import os
 
-    from ..planning.report import _historical
+    from ..planning.report import _historical, _protocol_text, sponsor_class, stated_site_count
 
     asset = Path(os.environ.get("OPERATIONAL_ASSET") or _assets.path("operational"))
+    text = _protocol_text(spec_lock) if spec_lock else None
+    stated = {"site_count": stated_site_count(text) if text else {"status": "UNRESOLVED", "reason": "locked protocol PDF not available"},
+              "sponsor_class": sponsor_class(spec)}
     try:
-        h = _historical(asset, spec, target)
+        h = _historical(asset, spec, target, stated=stated)
     except Exception:  # noqa: BLE001 - no historical model: the protocol's own rates only
         return None
     if h.get("status") != "RESOLVED":
@@ -214,7 +218,7 @@ def build_cohorts(spec_lock: Path, population_lock: Path, eligibility_lock: Path
         if not stages:
             raise ValueError("the protocol states no enrollment target and no decision-rule sample size")
         plan["target"] = {"patients": int(max(stages)), "source": "largest decision-rule stage size (no stated target accrual)"}
-    hist = historical_scenario(spec, plan["target"]["patients"])
+    hist = historical_scenario(spec, plan["target"]["patients"], spec_lock)
     if hist:                                    # the evidence scenario first: the headline for every later stage (L024)
         plan["scenarios"] = [hist] + plan["scenarios"]
     if not plan["scenarios"]:

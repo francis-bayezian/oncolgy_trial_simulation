@@ -1,0 +1,84 @@
+# Analysis manifest: NCT06604442 synthetic-comparator study
+
+Every number in the text, tables and figures traces to one file below. Seeds: replicate r uses 20270000 + 97 r (+0 population, +1 cohorts, +2 safety, +3 outputs, +4 journey, +5 endpoints, +6 analysis, +7 eligibility, +11 screening order, +13 paired measurements, +21 accrual stress, +31 completeness stress, +41 synthetic comparator).
+
+## Commands (in order)
+
+1. `bash scripts/run_replicates.sh NCT06604442 4.1.0 100 4`
+2. `python scripts/replicate_master_table.py NCT06604442 4.1.0 <inputs/endpoint_source_{design,literature,prestart}.json> step2_master`
+3. `python scripts/replicate_qc.py NCT06604442 4.1.0 step3_qc`
+4. `python scripts/baseline_summary.py NCT06604442 4.1.0 step2_master step4_baseline`
+5. `python scripts/stress_tests.py NCT06604442 4.1.0 inputs step2_master step5_stress`
+6. `python scripts/freeze_manifest.py NCT06604442 4.1.0 pre_observed_comparison (step 6; then outputs hashed)`
+7. `python scripts/sca_experiment.py NCT06604442 4.1.0 inputs step10_sca_internal (then sca_freeze.json)`
+8. `python scripts/observed_comparison.py NCT06604442 4.1.0 . post_reveal/observed_targets.json post_reveal`
+9. `.venv-figures python scripts/sca_paper_figures.py`
+10. `python scripts/sca_paper_tables.py`
+
+## Freezes
+
+- `pre_observed_comparison/freeze_manifest.json` and `FREEZE_ID.txt`: steps 1-5.
+- `pre_observed_comparison/sca_freeze.json`: steps 7-10.
+- Observed results read only after both (`post_reveal/observed_targets.json`).
+
+## Files and checksums (sha256)
+
+- `analysis_freeze/NCT06604442/figures/fig1_chain.pdf` dd4870deb8cd4601b0b2ebb3a379661832eba5bba9497f08e87f1807fecc1d34
+- `analysis_freeze/NCT06604442/figures/fig1_chain.png` 394ab3b5453edc5f7cd8f050cd4a43367fd86ab79c31ace362ad0285cca47bc3
+- `analysis_freeze/NCT06604442/figures/fig1_chain.svg` 59a83cf8b573e734565f1ce09d3728834c44fa1fa685e80865f922746cd23337
+- `analysis_freeze/NCT06604442/figures/fig2_screening.pdf` 23694936677b180ccfc18a1a9e9c3156fd1980bb7540901ee007c36e97f8f467
+- `analysis_freeze/NCT06604442/figures/fig2_screening.png` d2223a73e71b48b4e4b95da2da6ec44ca275befbf8085e473869b818c858f6a0
+- `analysis_freeze/NCT06604442/figures/fig2_screening.svg` 8d71822da8b78b7a4f36ce2c9919944a6a736b9fc85937acf058f206ab8cc5dc
+- `analysis_freeze/NCT06604442/figures/fig3_recruitment.pdf` eb68c98124a98d6cd8a0ba94bbc648648210d559b98f0fbf52d73db2680939ca
+- `analysis_freeze/NCT06604442/figures/fig3_recruitment.png` 31ef9cf77fa15e29edbfc2041f55c2c64a1a64578ba7872da3072ae36b684b54
+- `analysis_freeze/NCT06604442/figures/fig3_recruitment.svg` 4883cf281188637cf67f0d6c94c4927e9f9f831c432e12e5010e044e4ed49c6e
+- `analysis_freeze/NCT06604442/figures/fig4_participant.pdf` ae968a8732dc818ddaba91a42a9c1b9a97a5089d5c4c6b77bf48133446a7056e
+- `analysis_freeze/NCT06604442/figures/fig4_participant.png` 4c2fa7ea6821ea1b6a312cda4513fda49f348b23a34f0dc7616792525c38bbff
+- `analysis_freeze/NCT06604442/figures/fig4_participant.svg` a9d62c35c5a68733dd1e4ac9ef1150500cc8491e74bd199169632725f72c63ea
+- `analysis_freeze/NCT06604442/figures/fig5_sca.pdf` a52a235a6efcccbd57167029e1018be07cfcb08e69d7d636877859b31fb79d11
+- `analysis_freeze/NCT06604442/figures/fig5_sca.png` a41886d3fce91a87ab9079e70278db0c858b18ba8955ef27a18a897bece48988
+- `analysis_freeze/NCT06604442/figures/fig5_sca.svg` 00944c7878c3992b76a55a3ace4142088778898a7dbcc499d433efdabcaf8dbb
+- `analysis_freeze/NCT06604442/figures/fig6_reality_check.pdf` e1eef458f0ca41dce66a59cb8043d8959d770a07d42732a03b515d452b38efc5
+- `analysis_freeze/NCT06604442/figures/fig6_reality_check.png` ee4da37e0fd1c6d14a939e471d60f9a101aec02eb438272344c515fb57cf9e9e
+- `analysis_freeze/NCT06604442/figures/fig6_reality_check.svg` 10a6c8bca0cb9abeabeb3c74175fd231de2ea989cb6f1ffe81ee2c0bbd051223
+- `analysis_freeze/NCT06604442/inputs/endpoint_source_design.json` 66e2fe5862a457964e75cf884edd80182f36ce7824a4a843d7a2555475bcedc6
+- `analysis_freeze/NCT06604442/inputs/endpoint_source_literature.json` cc0234bed5e2e404657c1be564ff1a091e11b28af9c8aaf289879371254483f6
+- `analysis_freeze/NCT06604442/inputs/endpoint_source_prestart.json` 95a6c4f910908ee4a8151b65f4be733602f21d2253e7ac3ad3ada23ee61a21b1
+- `analysis_freeze/NCT06604442/inputs/SCA_ALLOWED_INPUTS.csv` 8339c9aaa7f38db4605df4b314634642dfd51bc549cae34074522ccbfcafd024
+- `analysis_freeze/NCT06604442/post_reveal/observed_comparison.md` 978d1b0506c9632dfd73618920bd6ba27415877ff248797bc76e641f2056bbb3
+- `analysis_freeze/NCT06604442/post_reveal/observed_targets.json` 07a2dce915c66cc89383a6da17a280c55a6809bc841976ee62f8858b26add2d5
+- `analysis_freeze/NCT06604442/pre_observed_comparison/FREEZE_ID.txt` 05b2da87a89f445aaf06ff1789747215378a4ded9580488726d7e31e8158cd39
+- `analysis_freeze/NCT06604442/pre_observed_comparison/freeze_manifest.json` 8c7fc8b95efdf655ecfa7fed15f58769d5915f7ce9d3fcfa70e52c8d4375d311
+- `analysis_freeze/NCT06604442/pre_observed_comparison/SCA_ALLOWED_INPUTS.csv` 8339c9aaa7f38db4605df4b314634642dfd51bc549cae34074522ccbfcafd024
+- `analysis_freeze/NCT06604442/pre_observed_comparison/sca_freeze.json` d1ae6076cb80cc22557a0532d907ba7db7a4eccff92a98bbb868ea3414ea186b
+- `analysis_freeze/NCT06604442/step10_sca_internal/sca_experiment.md` 79053ad4946f178cdd258f27f106092f9f49a34cacbbe1537f6eb8bf5389bc49
+- `analysis_freeze/NCT06604442/step10_sca_internal/sca_models.json` b891e0f4c2d19a5d4df433b9c1dc10e42236b597941b26aa0dff848311172e45
+- `analysis_freeze/NCT06604442/step10_sca_internal/sca_per_trial.jsonl` 41aee9eab8750d5d28dbcd90be96506fd36e23d3826c3e647cc50f3e70521815
+- `analysis_freeze/NCT06604442/step1_baseline/disclosures.md` 560836bfbc6b0096988d249bbaa8081268e7907136ac0f96603e3593be89632e
+- `analysis_freeze/NCT06604442/step1_baseline/freeze_manifest.json` 42dc603fc7256c9f8e6ec33f1b06ef44e136ecdaafafd3d8612722b938e94bee
+- `analysis_freeze/NCT06604442/step2_master/master_simulation_design.csv` 794066acee54219ada2cdfdbb1a157ec647ed6b3464f739bec06df6f84c3fb98
+- `analysis_freeze/NCT06604442/step2_master/master_simulation_literature.csv` 2b5f4e7fa3000beef9418088396b2303a02af1775b0b1e61999ca8f15127864b
+- `analysis_freeze/NCT06604442/step2_master/master_simulation_prestart.csv` b2bec2282ff08ec54766ddd0a44530f9b96cbb756750cbf4702d9bd6119957b2
+- `analysis_freeze/NCT06604442/step2_master_pre_fix/master_simulation_design.csv` fef633251e881d97340cc6cf9b3ab17599975da4edd2d130aff177265120626c
+- `analysis_freeze/NCT06604442/step2_master_preL045/master_simulation_design.csv` 3cb25f16e7125e3f2096eae17c04cce5d7e091f61ac4092e7c624ea64f16e7c2
+- `analysis_freeze/NCT06604442/step2_master_preL045/master_simulation_literature.csv` a382327613a61a99d469c62ce9d5a187a08351835f18c7b265dbc68288928f76
+- `analysis_freeze/NCT06604442/step2_master_preL045/master_simulation_prestart.csv` 2560c8e31e6845beaf55f86148791479fac83c9f0543dc38eaf54ce1b94fbc5b
+- `analysis_freeze/NCT06604442/step3_qc/qc_report.json` 84ff574aaf225c3fd5411715d5c458a728b18c04d9aacc3b64c073ce8a81924f
+- `analysis_freeze/NCT06604442/step3_qc/qc_report.md` 69b64718786db44f0e2533927ee31d52f5d165dd49685a44cf7268d60c2fc7d6
+- `analysis_freeze/NCT06604442/step3_qc_pre_fix/qc_report.json` 2bf0d09599aa90bff93643f921614fa04b804e07678bbe33fc5b814b82fc484e
+- `analysis_freeze/NCT06604442/step3_qc_pre_fix/qc_report.md` 342b902a40ce2e85df2f61c14b4ee986251745fb36f2f94acb95297482d7ee3e
+- `analysis_freeze/NCT06604442/step3_qc_preL045/qc_report.json` 84ff574aaf225c3fd5411715d5c458a728b18c04d9aacc3b64c073ce8a81924f
+- `analysis_freeze/NCT06604442/step3_qc_preL045/qc_report.md` 69b64718786db44f0e2533927ee31d52f5d165dd49685a44cf7268d60c2fc7d6
+- `analysis_freeze/NCT06604442/step4_baseline/baseline_summary.csv` 2cc9961597f860e4ae4584f7558b515671043807f66ec9e0cf7d946a4cae0460
+- `analysis_freeze/NCT06604442/step4_baseline/baseline_summary.md` e7da11225c066dbe2bf0be1c44f9c8464ffa47b8d5684bda2740f7123802039d
+- `analysis_freeze/NCT06604442/step4_baseline/qc_eligible_share.svg` e7e7647c518acfcf9a98a56a76e6c196611556fde4402235fddea7262f921c38
+- `analysis_freeze/NCT06604442/step4_baseline/qc_enrolment_days.svg` 533c5c404bb915a3691f9b2176c968645e20cf46145fa1bff9b983e3a8473fef
+- `analysis_freeze/NCT06604442/step4_baseline_preL045/baseline_summary.csv` 06d897b3cf6a0fc04d67751b7f2d8c35d915af5658ad4649c87a69f805b74433
+- `analysis_freeze/NCT06604442/step4_baseline_preL045/baseline_summary.md` 53e5598e1637c76e4a13e52240725cc0a13caff1cfe6e082c8aed9c02c332d82
+- `analysis_freeze/NCT06604442/step4_baseline_preL045/qc_eligible_share.svg` cb4cc52b4c7bc747dcf566f16e1f5b9a13a1c04c401ef7acf564a22df6323b18
+- `analysis_freeze/NCT06604442/step4_baseline_preL045/qc_enrolment_days.svg` fee428c58b2f2144781b8dc649b8dbd4786284d04623655182e1c12ed6764310
+- `analysis_freeze/NCT06604442/step5_stress/stress_tests.csv` a56988dac50089e12ddf95f1de54e9175367fc15b5471c564b6ec97afa2a6af0
+- `analysis_freeze/NCT06604442/step5_stress/stress_tests.md` 78941a4da9b3fc891716d0348ae5864564af1023ef2e7070a4789e145bd1ac60
+- `analysis_freeze/NCT06604442/tables/table1_provenance.csv` ef717443b2e2a4b0934623316dbe54c79b453152c75d3056ec2a2ec155a259fa
+- `analysis_freeze/NCT06604442/tables/table2_frozen_vs_observed.csv` e4baa62a338fdd92d2ef60a3fe261ecb2c0662e676dff0840f6f72784f146597
+- `analysis_freeze/NCT06604442/tables/tables.md` 34cad8029c8a6371403a8900f55d9702963ede47574cde79520686411a464614

@@ -190,6 +190,7 @@ def main(argv: list[str] | None = None) -> int:
     be.add_argument("--studyspec", type=Path, required=True)
     be.add_argument("--population", type=Path, required=True, help="locked population directory")
     be.add_argument("--out", type=Path, required=True)
+    be.add_argument("--seed", type=int, default=20261005, help="seed of the calibration of criteria generated patients cannot decide (A16)")
     bc = commands.add_parser("build-cohorts", help="Milestones 7-8: recruitment, randomization and enrolled cohorts per accrual scenario.")
     bc.add_argument("--studyspec", type=Path, required=True)
     bc.add_argument("--population", type=Path, required=True)
@@ -447,7 +448,7 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "build-eligibility":
             from .trial.eligibility import build_eligibility
-            summary = build_eligibility(args.studyspec, args.population, args.out)
+            summary = build_eligibility(args.studyspec, args.population, args.out, args.seed)
             print(json.dumps({k: summary[k] for k in ("patients", "status_counts", "proven_eligible_share", "not_proven_ineligible_share",
                                                       "decisive_exclusions")}, indent=1))
             return 0
