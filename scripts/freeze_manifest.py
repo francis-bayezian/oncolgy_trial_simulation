@@ -1,5 +1,5 @@
 """Freeze record of a replicate experiment (paper step 1 / step 6): checksums of everything the simulations rest on,
-written before any observed result of the trial is used.
+written before any observed result of the trial is used as a computational input (observed values may have been seen; see disclosures).
 
 Records: the protocol PDF; the locked StudySpec, protocol facts, outcome model, engine results and planning of the base
 run; the evidence assets of the profile (manifests / locks); the code (git commit, whether the tree differs from it,
@@ -52,8 +52,8 @@ def main(study: str, version: str, out: Path) -> Path:
     code = {str(p).replace("\\", "/"): sha(p) for p in sorted(Path("clinical_asset").rglob("*.py"))}
     code.update({str(p).replace("\\", "/"): sha(p) for p in sorted(Path("scripts").glob("*")) if p.is_file()})
     doc = {"study": study, "base_version": version, "frozen_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
-           "purpose": "simulation outputs fixed before any observed result of the trial is used (pre-observed comparison)",
-           "protocol": {"pdf": proto["pdf"], "sha256": sha(Path(proto["pdf"])), "registry_sha256": proto.get("pdf_sha256")},
+           "purpose": "computational inputs and simulation outputs fixed before any observed result of the trial is used as an input (retrospective held-out comparison)",
+           "protocol": {"pdf": proto["pdf"], "sha256": sha(Path(proto["pdf"])), "protocols_manifest_sha256": proto.get("pdf_sha256")},
            "base_run_locks": base,
            "evidence_profile": assets.profile() if hasattr(assets, "profile") else "v1 (default)",
            "evidence_assets": {k: {"path": str(p).replace("\\", "/"), "sha256": sha(p)} for k, p in asset_files.items()},
@@ -64,7 +64,7 @@ def main(study: str, version: str, out: Path) -> Path:
                     "files": code},
            "seed_scheme": {"replicate r base seed": "20270000 + 97 * r", "population": "+0", "cohorts": "+1", "safety": "+2",
                            "outputs": "+3", "journey": "+4", "endpoints": "+5", "analysis": "+6",
-                           "eligibility": "internal fixed seed 20261005 (patients differ per replicate)"},
+                           "eligibility": "+7 (build-eligibility --seed)", "screening order": "+11", "paired measurements": "+13"},
            "replicates": {"n": len(replicate_locks), "analysis_locks": replicate_locks},
            "observed_results_used": False}
     out.mkdir(parents=True, exist_ok=True)

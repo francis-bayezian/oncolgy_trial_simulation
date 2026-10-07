@@ -18,6 +18,8 @@ from pathlib import Path
 
 import numpy as np
 
+sys.path.insert(0, ".")
+
 F = Path(sys.argv[1] if len(sys.argv) > 1 else "analysis_freeze/NCT06604442")
 
 
@@ -71,17 +73,29 @@ def table2() -> list[list]:
         q = np.percentile(v, [10, 50, 90])
         lo, hi = np.percentile(v, [5, 95])
         rows.append([name, " / ".join(fmt.format(x) for x in q), fmt.format(o), f"{pr(v, o):.0f}", "yes" if lo <= o <= hi else "no"])
-    add("Screen-pass rate, %", col(lit, "eligible_pct"), 100 * c["dosed"] / c["screened"])
+    q = np.percentile(col(lit, "eligible_pct"), [10, 50, 90])
+    rows.append(["Screen-pass rate, % (contextual: simulated = eligible share of generated candidates; observed = dosed among formally screened)",
+                 " / ".join(f"{x:.1f}" for x in q), f"{100 * c['dosed'] / c['screened']:.1f}", "not comparable", "-"])
     add("Missing paired endpoints, % of enrolled", 100 * col(lit, "missing_pairs") / 52, 100 * c["missing_pairs"] / c["dosed"])
-    add("Months to enrol (central accrual)", col(lit, "enrol_days_to_target") / 30.44, c["enrolment_months_approx"])
+    plan = json.loads(Path("data/locked/NCT06604442/planning_v4.1.0/planning_report.json").read_text(encoding="utf-8"))
+    acc = plan["accrual"]["historical_model"]["enrollment_duration_years"]["percentiles"]
+    from clinical_asset.trial.predictive import percentile_from_quantiles
+    pctl = percentile_from_quantiles(acc, c["enrolment_months_approx"] / 12)
+    rows.append(["Months to enrol, full prespecified accrual uncertainty (frozen planning report)",
+                 f"{12 * acc['p10']:.1f} / {12 * acc['p50']:.1f} / {12 * acc['p90']:.1f}", f"{c['enrolment_months_approx']:.1f}", f"{pctl:.0f}",
+                 "yes" if 5 <= pctl <= 95 else "no"])
+    add("Months to enrol, central accrual rate only", col(lit, "enrol_days_to_target") / 30.44, c["enrolment_months_approx"])
     add("Paired contrast, median (literature truth)", col(lit, "median_difference"), e["paired_difference"]["median"])
     add("Paired contrast, median (design assumption)", col(des, "median_difference"), e["paired_difference"]["median"])
-    for name, label in (("SCA-B", "Synthetic comparator median, P1 model"), ("SCA-A", "Synthetic comparator median, P2 model")):
+    for name, label in (("SCA-A", "Synthetic comparator median, SCA-A independent (P2)"),
+                        ("SCA-B", "Synthetic comparator median, SCA-B self-consistency (P1, same evidence as the simulated truth)")):
         add(label, [x["synthetic_comparator"]["median"] for x in sca if x["experiment"] == name], e["comparator_piflufolastat"]["median"])
-    for name, label in (("SCA-B", "Synthetic-comparator contrast, P1 model"), ("SCA-A", "Synthetic-comparator contrast, P2 model")):
+    for name, label in (("SCA-A", "Synthetic-comparator contrast, SCA-A independent (P2)"),
+                        ("SCA-B", "Synthetic-comparator contrast, SCA-B self-consistency (P1)")):
         add(label, [x["sca_contrast"] for x in sca if x["experiment"] == name], e["paired_difference"]["median"])
     rows.append(["Direction (comparator higher)", "100/100 trials (all sources)", f"{e['lower_with_index']}/{e['evaluable']} lower with flotufolastat", "-", "yes"])
-    rows.append(["Significant at alpha 0.05", f"literature 100/100; design {sum(r['success'] == 'True' for r in des)}/100; SCA 99-100/100", f"yes (p {e['p']})", "-", "yes"])
+    rows.append(["Two-sided rejection at alpha 0.05 (positive-direction success identical here)",
+                 f"literature 100/100; design {sum(float(r['p_value']) < 0.05 for r in des)}/100; SCA 99-100/100", f"yes (p {e['p']})", "-", "yes"])
     return rows
 
 

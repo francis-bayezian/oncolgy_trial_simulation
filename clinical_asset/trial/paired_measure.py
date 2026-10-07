@@ -50,7 +50,8 @@ def analyse(diff: np.ndarray, test: str = "wilcoxon", alpha: float = 0.05, two_s
     w = diff[:, None] + diff[None, :]
     hl = float(np.median(w[np.triu_indices(len(diff))]) / 2)          # Hodges-Lehmann estimate of the paired shift
     return {"n": int(len(diff)), "mean_difference": float(np.mean(diff)), "median_difference": float(np.median(diff)),
-            "hodges_lehmann": hl, "p_value": float(p), "success": bool(p < alpha and np.median(diff) > 0),
+            "hodges_lehmann": hl, "p_value": float(p), "rejected": bool(p < alpha),          # two-sided rejection
+            "success": bool(p < alpha and np.median(diff) > 0),                             # rejection in the expected direction
             "lower_in_index": int((diff > 0).sum()), "equal": int((diff == 0).sum())}
 
 
@@ -67,3 +68,16 @@ def simulated_power(effect: float, sd_diff: float, n: int, replicates: int, seed
     ok = sum(analyse(rng.normal(effect, sd_diff, n), alpha=alpha)["success"] for _ in range(replicates))
     p = ok / replicates
     return {"power": p, "mc_se": math.sqrt(p * (1 - p) / replicates), "replicates": replicates, "seed": seed}
+
+
+def simulated_rates(effect: float, sd_diff: float, n: int, replicates: int, seed: int, alpha: float = 0.05) -> dict:
+    """Two quantities of the protocol's two-sided test, from the same simulated trials, reported separately: the
+    two-sided rejection rate (at effect 0, the type I error) and the positive-direction success rate (rejection with
+    the comparator higher), each with its Monte Carlo standard error."""
+    rng = np.random.default_rng(seed)
+    res = [analyse(rng.normal(effect, sd_diff, n), alpha=alpha) for _ in range(replicates)]
+    out = {"replicates": replicates, "seed": seed}
+    for key in ("rejected", "success"):
+        p = sum(r[key] for r in res) / replicates
+        out[key] = {"rate": p, "mc_se": math.sqrt(p * (1 - p) / replicates)}
+    return out

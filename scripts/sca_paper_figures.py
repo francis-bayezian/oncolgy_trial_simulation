@@ -14,6 +14,8 @@ import matplotlib as mpl
 mpl.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
+
+sys.path.insert(0, ".")
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch  # noqa: E402
 
 F = Path(sys.argv[1] if len(sys.argv) > 1 else "analysis_freeze/NCT06604442")
@@ -115,15 +117,19 @@ def fig3():
     ax.set_title("A. Frozen baseline (100 trials)", loc="left")
     ax = axes[1]
     names = ["slow", "central", "fast"]
+    plan = json.loads(Path("data/locked/NCT06604442/planning_v4.1.0/planning_report.json").read_text(encoding="utf-8"))
+    acc = plan["accrual"]["historical_model"]["enrollment_duration_years"]["percentiles"]
+    ax.plot([12 * acc["p10"], 12 * acc["p90"]], [3, 3], color=ORANGE, lw=6, alpha=0.6)
+    ax.plot(12 * acc["p50"], 3, "o", color=ORANGE)
     for i, n in enumerate(names):
         r = stress[n]
         ax.plot([float(r["v1"]), float(r["v3"])], [i, i], color=BLUE, lw=6, alpha=0.5)
         ax.plot(float(r["v2"]), i, "o", color=BLUE)
     ax.axvline(OBS["conduct"]["enrolment_months_approx"], color=RED, ls="--")
-    ax.set_yticks(range(3), [f"{n}\n({float(stress[n]['v5']):.1f}/year)" for n in names])
+    ax.set_yticks(range(4), [f"{n}\n({float(stress[n]['v5']):.1f}/year)" for n in names] + ["full prespecified\nuncertainty"])
     ax.set_xscale("log")
     ax.set_xlabel("months to enrol (log scale; p10-p90, median)")
-    ax.set_title("B. Accrual stress test", loc="left")
+    ax.set_title("B. Prespecified accrual uncertainty and fixed-rate scenarios", loc="left")
     fig.tight_layout()
     save(fig, "fig3_recruitment")
 
@@ -170,9 +176,10 @@ def fig5():
     arrow(ax, (0.95, 2.6), (1.6, 0.95))
     ax.set_title("A. Design (internal validation)", loc="left")
     ax = axes[1]
+    tags = {"SCA-A": "independent (P2)", "SCA-B": "self-consistency, not independent (P1)", "SCA-R": "reverse independent (P1 vs P2 truth)"}
     for name, c in (("SCA-A", ORANGE), ("SCA-B", BLUE), ("SCA-R", GREEN)):
         b = [x["signed_bias"] for x in SCA if x["experiment"] == name]
-        ax.hist(b, bins=20, alpha=0.6, color=c, label=f"{name}: bias {np.mean(b):+.1f}, conclusion agrees "
+        ax.hist(b, bins=20, alpha=0.6, color=c, label=f"{name} {tags[name]}: bias {np.mean(b):+.1f}, conclusion agrees "
                 f"{sum(x['same_conclusion'] for x in SCA if x['experiment'] == name)}/100")
     ax.axvline(0, color="black", lw=0.8)
     ax.set_xlabel("synthetic-comparator contrast minus true contrast (SUVmean)")
@@ -186,19 +193,27 @@ def fig5():
 # ---------------------------------------------------------------- Figure 6: reality check
 def fig6():
     e, c = OBS["endpoint"], OBS["conduct"]
+    ACC = json.loads(Path("data/locked/NCT06604442/planning_v4.1.0/planning_report.json").read_text(encoding="utf-8"))["accrual"]["historical_model"]["enrollment_duration_years"]["percentiles"]
     sca_b = [x for x in SCA if x["experiment"] == "SCA-B"]
     sca_a = [x for x in SCA if x["experiment"] == "SCA-A"]
     rows = [("paired contrast (literature truth)", col(LIT, "median_difference"), e["paired_difference"]["median"]),
             ("paired contrast (design assumption)", col(DES, "median_difference"), e["paired_difference"]["median"]),
-            ("synthetic comparator median (P1 model)", np.array([x["synthetic_comparator"]["median"] for x in sca_b]), e["comparator_piflufolastat"]["median"]),
-            ("synthetic comparator median (P2 model)", np.array([x["synthetic_comparator"]["median"] for x in sca_a]), e["comparator_piflufolastat"]["median"]),
-            ("screen-pass rate, %", col(LIT, "eligible_pct"), 100 * c["dosed"] / c["screened"]),
+            ("SCA-A comparator median (independent, P2)", np.array([x["synthetic_comparator"]["median"] for x in sca_a]), e["comparator_piflufolastat"]["median"]),
+            ("SCA-A contrast (independent, P2)", np.array([x["sca_contrast"] for x in sca_a]), e["paired_difference"]["median"]),
+            ("SCA-B comparator median (self-consistency, P1)", np.array([x["synthetic_comparator"]["median"] for x in sca_b]), e["comparator_piflufolastat"]["median"]),
+            ("SCA-B contrast (self-consistency, P1)", np.array([x["sca_contrast"] for x in sca_b]), e["paired_difference"]["median"]),
             ("missing pairs, % of enrolled", 100 * col(LIT, "missing_pairs") / 52, 100 * c["missing_pairs"] / c["dosed"]),
-            ("months to enrol (central)", col(LIT, "enrol_days_to_target") / 30.44, c["enrolment_months_approx"])]
-    fig, ax = plt.subplots(figsize=(9.5, 4.2))
+            ("months to enrol, full prespecified uncertainty", ACC, c["enrolment_months_approx"])]
+    fig, ax = plt.subplots(figsize=(9.5, 4.6))
     for i, (lab, v, o) in enumerate(rows):
-        lo, md, hi = np.percentile(v, [10, 50, 90])
-        lo5, hi95 = np.percentile(v, [5, 95])
+        if isinstance(v, dict):                     # a distribution known by its frozen quantiles (months)
+            lo, md, hi = 12 * v["p10"], 12 * v["p50"], 12 * v["p90"]
+            from clinical_asset.trial.predictive import percentile_from_quantiles
+            pc = percentile_from_quantiles(v, o / 12)
+            lo5, hi95 = (o, o) if 5 <= pc <= 95 else (o + 1, o + 2)
+        else:
+            lo, md, hi = np.percentile(v, [10, 50, 90])
+            lo5, hi95 = np.percentile(v, [5, 95])
         inside = lo5 <= o <= hi95
         ax.plot([lo / md, hi / md], [i, i], color=BLUE, lw=6, alpha=0.45)
         ax.plot(1, i, "o", color=BLUE)

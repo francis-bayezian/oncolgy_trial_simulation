@@ -23,7 +23,7 @@ while pgrep -f "clinical_asset.cli build-parameters$" > /dev/null 2>&1 || powers
 done
 step params_v1 data/corpus_v2/simulation_parameters_v1/manifest.json $P build-parameters
 step params_v2 data/corpus_v2/simulation_parameters_v2/manifest.json $P build-parameters-v2
-step safety data/corpus_v2/safety_asset/manifest.json $P build-safety-asset-v3 --created "$TODAY"
+step safety data/corpus_v2/safety_asset/manifest.json $P build-safety-asset-v3 --created "$TODAY" --workers "${SAFETY_WORKERS:-2}"   # 6 workers ran out of memory on 5,000 trials
 step operational data/corpus_v2/operational/manifest.json $P build-operational-asset --holdout data/manifest/corpus_v2_holdout.json \
   --family-map data/corpus_v2/simulation_parameters_v2/hierarchy/disease_family_map.parquet --out data/corpus_v2/operational --created "$TODAY"
 step params_v3 data/corpus_v2/simulation_parameters_v3/manifest.json $P build-parameters-v3
