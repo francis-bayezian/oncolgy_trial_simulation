@@ -66,9 +66,7 @@ def pct(x, d=0):
 def frame(title: str, conclusion: str):
     fig = plt.figure(figsize=(W, H))
     fig.text(0.04, 0.945, title, fontsize=19, fontweight="bold", color=INK, va="center")
-    fig.text(0.04, 0.035, conclusion, fontsize=14, color=INK, va="center", style="italic",
-             bbox={"boxstyle": "round,pad=0.45", "fc": "#F4F4F4", "ec": "none"})
-    return fig
+    return fig                      # the one-line conclusion is not drawn on the figure
 
 
 def save(fig, name: str):
