@@ -299,6 +299,10 @@ def main(argv: list[str] | None = None) -> int:
     cr.add_argument("--registry", type=Path, required=True)
     cr.add_argument("--fetched-at", required=True)
     cr.add_argument("--out", type=Path, required=True)
+    fz = commands.add_parser("build-feasibility", help="Protocol feasibility from a locked run (funnel, subgroups, evaluability, burden, scenarios).")
+    fz.add_argument("--id", required=True)
+    fz.add_argument("--version", required=True)
+    fz.add_argument("--out", type=Path, required=True)
     pce = commands.add_parser("predict-control-external", help="Hidden-control prediction of a trial outside the corpus, scored against its posted control arm.")
     pce.add_argument("--registry", type=Path, required=True)
     pce.add_argument("--safety", type=Path, required=True, help="locked safety stage (control arm drug classes and family)")
@@ -634,6 +638,12 @@ def main(argv: list[str] | None = None) -> int:
             doc = compare_ratio_ni(args.results, args.registry, args.fetched_at, args.out)
             print(json.dumps({"order_verified": doc["order_verified"], "items": [(i["analysis_id"], i["status"], i.get("conclusion_agrees"))
                                                                                for i in doc["items"]]}, indent=1))
+            return 0
+        if args.command == "build-feasibility":
+            from .trial.feasibility import build as build_feasibility
+
+            doc = build_feasibility(args.id, args.version, args.out)
+            print(json.dumps({"eligibility_yield": round(doc["eligibility_yield"], 3), "scenarios": len(doc["scenarios"])}))
             return 0
         if args.command == "predict-control-external":
             from .trial.control_benchmark import external

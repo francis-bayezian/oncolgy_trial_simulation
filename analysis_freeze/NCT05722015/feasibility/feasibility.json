@@ -1,0 +1,1981 @@
+{
+ "version": "feasibility-1.0.0",
+ "nct_id": "NCT05722015",
+ "run_version": "1.2.0",
+ "target": 378,
+ "protocol": {
+  "target_enrolment": 378,
+  "allocation": [
+   2.0,
+   1.0
+  ],
+  "arms": [
+   "Subcutaneous Pembrolizumab Coformulated With Hyaluronidase (MK-3475A)",
+   "Intravenous Pembrolizumab, Administered With Chemotherapy"
+  ],
+  "primary_endpoints": [
+   "Cycle 1 AUC0-6wks",
+   "Steady-state (Cycle 3) Ctrough"
+  ],
+  "required_evaluable": {
+   "Cycle 1 AUC0-6wks": 318,
+   "Steady-state (Cycle 3) Ctrough": 240
+  },
+  "criteria": 45,
+  "cycle_days": 42.0,
+  "max_cycles": 18,
+  "tumour_assessment_days": 84.0,
+  "follow_up_days": 84.0
+ },
+ "candidates": 10000,
+ "eligible": 7125,
+ "eligibility_yield": 0.7125,
+ "screened_per_enrollee": 1.4035087719298245,
+ "screened_for_target": 530.5263157894736,
+ "enrolled": 378,
+ "treated": 378,
+ "funnel": [
+  {
+   "step": "Potential candidates",
+   "remaining": 10000
+  },
+  {
+   "step": "Disease and stage",
+   "lost": 1930,
+   "remaining": 8070,
+   "pct_remaining": 0.807,
+   "pct_lost_at_step": 0.193
+  },
+  {
+   "step": "Prior treatment",
+   "lost": 183,
+   "remaining": 7887,
+   "pct_remaining": 0.7887,
+   "pct_lost_at_step": 0.02267657992565056
+  },
+  {
+   "step": "Performance status",
+   "lost": 462,
+   "remaining": 7425,
+   "pct_remaining": 0.7425,
+   "pct_lost_at_step": 0.058577405857740586
+  },
+  {
+   "step": "Laboratory and organ function",
+   "lost": 47,
+   "remaining": 7378,
+   "pct_remaining": 0.7378,
+   "pct_lost_at_step": 0.00632996632996633
+  },
+  {
+   "step": "Reproductive and contraception",
+   "lost": 20,
+   "remaining": 7358,
+   "pct_remaining": 0.7358,
+   "pct_lost_at_step": 0.0027107617240444567
+  },
+  {
+   "step": "Comorbidity and other exclusions",
+   "lost": 233,
+   "remaining": 7125,
+   "pct_remaining": 0.7125,
+   "pct_lost_at_step": 0.03166621364501223
+  }
+ ],
+ "criteria": [
+  {
+   "criterion": "EL005",
+   "label": "Non small cell lung cancer diagnosis; disease\u2026",
+   "category": "Disease and stage",
+   "excluded": 1841,
+   "pct_excluded": 0.1841,
+   "gain_if_relaxed": 1615,
+   "eligible_if_relaxed_pct": 0.874
+  },
+  {
+   "criterion": "EL012",
+   "label": "ECOG performance status",
+   "category": "Performance status",
+   "excluded": 568,
+   "pct_excluded": 0.0568,
+   "gain_if_relaxed": 424,
+   "eligible_if_relaxed_pct": 0.7549
+  },
+  {
+   "criterion": "EL039",
+   "label": "Allogenic tissue or solid organ transplant",
+   "category": "Prior treatment",
+   "excluded": 34,
+   "pct_excluded": 0.0034,
+   "gain_if_relaxed": 25,
+   "eligible_if_relaxed_pct": 0.715
+  },
+  {
+   "criterion": "EL017",
+   "label": "Erythropoietin dependency; packed red blood ce\u2026",
+   "category": "Laboratory and organ function",
+   "excluded": 32,
+   "pct_excluded": 0.0032,
+   "gain_if_relaxed": 20,
+   "eligible_if_relaxed_pct": 0.7145
+  },
+  {
+   "criterion": "EL066",
+   "label": "HIV infection history",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 30,
+   "pct_excluded": 0.003,
+   "gain_if_relaxed": 24,
+   "eligible_if_relaxed_pct": 0.7149
+  },
+  {
+   "criterion": "EL031",
+   "label": "Active autoimmune disease requiring systemic t\u2026",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 30,
+   "pct_excluded": 0.003,
+   "gain_if_relaxed": 24,
+   "eligible_if_relaxed_pct": 0.7149
+  },
+  {
+   "criterion": "EL013",
+   "label": "Life Expectancy",
+   "category": "Performance status",
+   "excluded": 29,
+   "pct_excluded": 0.0029,
+   "gain_if_relaxed": 16,
+   "eligible_if_relaxed_pct": 0.7141
+  },
+  {
+   "criterion": "EL036",
+   "label": "Potential excluding circumstance; might confou\u2026",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 29,
+   "pct_excluded": 0.0029,
+   "gain_if_relaxed": 23,
+   "eligible_if_relaxed_pct": 0.7148
+  },
+  {
+   "criterion": "EL021",
+   "label": "Prior Therapy",
+   "category": "Prior treatment",
+   "excluded": 29,
+   "pct_excluded": 0.0029,
+   "gain_if_relaxed": 23,
+   "eligible_if_relaxed_pct": 0.7148
+  },
+  {
+   "criterion": "EL019",
+   "label": "Small cell carcinoma of lung; small cell eleme\u2026",
+   "category": "Disease and stage",
+   "excluded": 27,
+   "pct_excluded": 0.0027,
+   "gain_if_relaxed": 19,
+   "eligible_if_relaxed_pct": 0.7144
+  },
+  {
+   "criterion": "EL037",
+   "label": "Psychiatric or substance abuse disorder interf\u2026",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 27,
+   "pct_excluded": 0.0027,
+   "gain_if_relaxed": 18,
+   "eligible_if_relaxed_pct": 0.7143
+  },
+  {
+   "criterion": "EL033",
+   "label": "Active infection requiring systemic therapy",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 25,
+   "pct_excluded": 0.0025,
+   "gain_if_relaxed": 19,
+   "eligible_if_relaxed_pct": 0.7144
+  },
+  {
+   "criterion": "EL024",
+   "label": "Radiation therapy to lung; radiation therapy t\u2026",
+   "category": "Prior treatment",
+   "excluded": 25,
+   "pct_excluded": 0.0025,
+   "gain_if_relaxed": 21,
+   "eligible_if_relaxed_pct": 0.7146
+  },
+  {
+   "criterion": "EL030",
+   "label": "Hypersensitivity grade; hypersensitivity target",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 25,
+   "pct_excluded": 0.0025,
+   "gain_if_relaxed": 18,
+   "eligible_if_relaxed_pct": 0.7143
+  },
+  {
+   "criterion": "EL058",
+   "label": "Hearing impairment",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 25,
+   "pct_excluded": 0.0025,
+   "gain_if_relaxed": 18,
+   "eligible_if_relaxed_pct": 0.7143
+  },
+  {
+   "criterion": "EL054",
+   "label": "Person of childbearing potential; sexual partn\u2026",
+   "category": "Reproductive and contraception",
+   "excluded": 25,
+   "pct_excluded": 0.0025,
+   "gain_if_relaxed": 19,
+   "eligible_if_relaxed_pct": 0.7144
+  },
+  {
+   "criterion": "EL008",
+   "label": "Measurable Disease; lesions in previously irra\u2026",
+   "category": "Disease and stage",
+   "excluded": 23,
+   "pct_excluded": 0.0023,
+   "gain_if_relaxed": 15,
+   "eligible_if_relaxed_pct": 0.714
+  },
+  {
+   "criterion": "EL014",
+   "label": "Adverse events due to previous anticancer ther\u2026",
+   "category": "Prior treatment",
+   "excluded": 23,
+   "pct_excluded": 0.0023,
+   "gain_if_relaxed": 16,
+   "eligible_if_relaxed_pct": 0.7141
+  },
+  {
+   "criterion": "EL006",
+   "label": "Small cell elements",
+   "category": "Disease and stage",
+   "excluded": 23,
+   "pct_excluded": 0.0023,
+   "gain_if_relaxed": 19,
+   "eligible_if_relaxed_pct": 0.7144
+  },
+  {
+   "criterion": "EL032",
+   "label": "History of noninfectious pneumonitis or inters\u2026",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 22,
+   "pct_excluded": 0.0022,
+   "gain_if_relaxed": 16,
+   "eligible_if_relaxed_pct": 0.7141
+  },
+  {
+   "criterion": "EL016",
+   "label": "Absolute neutrophil count; Blood Platelets",
+   "category": "Laboratory and organ function",
+   "excluded": 22,
+   "pct_excluded": 0.0022,
+   "gain_if_relaxed": 15,
+   "eligible_if_relaxed_pct": 0.714
+  },
+  {
+   "criterion": "EL051",
+   "label": "Sex; hrt use",
+   "category": "Prior treatment",
+   "excluded": 22,
+   "pct_excluded": 0.0022,
+   "gain_if_relaxed": 19,
+   "eligible_if_relaxed_pct": 0.7144
+  },
+  {
+   "criterion": "EL027",
+   "label": "Immunologic Deficiency Syndromes; chronic syst\u2026",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 21,
+   "pct_excluded": 0.0021,
+   "gain_if_relaxed": 17,
+   "eligible_if_relaxed_pct": 0.7142
+  },
+  {
+   "criterion": "EL029",
+   "label": "Active CNS metastases; Meningeal Carcinomatosis",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 21,
+   "pct_excluded": 0.0021,
+   "gain_if_relaxed": 15,
+   "eligible_if_relaxed_pct": 0.714
+  },
+  {
+   "criterion": "EL064",
+   "label": "Sperm production capability; local label contr\u2026",
+   "category": "Prior treatment",
+   "excluded": 20,
+   "pct_excluded": 0.002,
+   "gain_if_relaxed": 15,
+   "eligible_if_relaxed_pct": 0.714
+  },
+  {
+   "criterion": "EL011",
+   "label": "Archival tumor tissue sample; new tumor biopsy",
+   "category": "Disease and stage",
+   "excluded": 20,
+   "pct_excluded": 0.002,
+   "gain_if_relaxed": 9,
+   "eligible_if_relaxed_pct": 0.7134
+  },
+  {
+   "criterion": "EL038",
+   "label": "Major surgery; ongoing surgical complications",
+   "category": "Prior treatment",
+   "excluded": 19,
+   "pct_excluded": 0.0019,
+   "gain_if_relaxed": 12,
+   "eligible_if_relaxed_pct": 0.7137
+  },
+  {
+   "criterion": "EL052",
+   "label": "Sex; Hormone replacement therapy",
+   "category": "Prior treatment",
+   "excluded": 19,
+   "pct_excluded": 0.0019,
+   "gain_if_relaxed": 12,
+   "eligible_if_relaxed_pct": 0.7137
+  },
+  {
+   "criterion": "EL007",
+   "label": "Tumor histology; tumor activating egfr mutations",
+   "category": "Disease and stage",
+   "excluded": 19,
+   "pct_excluded": 0.0019,
+   "gain_if_relaxed": 15,
+   "eligible_if_relaxed_pct": 0.714
+  },
+  {
+   "criterion": "EL035",
+   "label": "History of hepatitis B; active hepatitis c vir\u2026",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 17,
+   "pct_excluded": 0.0017,
+   "gain_if_relaxed": 12,
+   "eligible_if_relaxed_pct": 0.7137
+  },
+  {
+   "criterion": "EL023",
+   "label": "Prior radiotherapy from start of study interve\u2026",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 17,
+   "pct_excluded": 0.0017,
+   "gain_if_relaxed": 16,
+   "eligible_if_relaxed_pct": 0.7141
+  },
+  {
+   "criterion": "EL034",
+   "label": "HIV Infections",
+   "category": "Comorbidity and other exclusions",
+   "excluded": 15,
+   "pct_excluded": 0.0015,
+   "gain_if_relaxed": 12,
+   "eligible_if_relaxed_pct": 0.7137
+  },
+  {
+   "criterion": "EL065",
+   "label": "Sex; Patient currently pregnant",
+   "category": "Laboratory and organ function",
+   "excluded": 15,
+   "pct_excluded": 0.0015,
+   "gain_if_relaxed": 8,
+   "eligible_if_relaxed_pct": 0.7133
+  },
+  {
+   "criterion": "EL020",
+   "label": "Systemic anticancer therapy for metastatic nsclc",
+   "category": "Prior treatment",
+   "excluded": 15,
+   "pct_excluded": 0.0015,
+   "gain_if_relaxed": 14,
+   "eligible_if_relaxed_pct": 0.7139
+  },
+  {
+   "criterion": "EL028",
+   "label": "Additional malignancy; Active Method",
+   "category": "Prior treatment",
+   "excluded": 14,
+   "pct_excluded": 0.0014,
+   "gain_if_relaxed": 10,
+   "eligible_if_relaxed_pct": 0.7135
+  }
+ ],
+ "categories": {
+  "EL005": "Disease and stage",
+  "EL006": "Disease and stage",
+  "EL007": "Disease and stage",
+  "EL008": "Disease and stage",
+  "EL009": "Comorbidity and other exclusions",
+  "EL011": "Disease and stage",
+  "EL012": "Performance status",
+  "EL013": "Performance status",
+  "EL014": "Prior treatment",
+  "EL015": "Comorbidity and other exclusions",
+  "EL016": "Laboratory and organ function",
+  "EL017": "Laboratory and organ function",
+  "EL019": "Disease and stage",
+  "EL020": "Prior treatment",
+  "EL021": "Prior treatment",
+  "EL022": "Prior treatment",
+  "EL023": "Comorbidity and other exclusions",
+  "EL024": "Prior treatment",
+  "EL025": "Prior treatment",
+  "EL026": "Prior treatment",
+  "EL027": "Comorbidity and other exclusions",
+  "EL028": "Prior treatment",
+  "EL029": "Comorbidity and other exclusions",
+  "EL030": "Comorbidity and other exclusions",
+  "EL031": "Comorbidity and other exclusions",
+  "EL032": "Comorbidity and other exclusions",
+  "EL033": "Comorbidity and other exclusions",
+  "EL034": "Comorbidity and other exclusions",
+  "EL035": "Comorbidity and other exclusions",
+  "EL036": "Comorbidity and other exclusions",
+  "EL037": "Comorbidity and other exclusions",
+  "EL038": "Prior treatment",
+  "EL039": "Prior treatment",
+  "EL042": "Reproductive and contraception",
+  "EL043": "Reproductive and contraception",
+  "EL044": "Reproductive and contraception",
+  "EL045": "Reproductive and contraception",
+  "EL051": "Prior treatment",
+  "EL052": "Prior treatment",
+  "EL054": "Reproductive and contraception",
+  "EL055": "Reproductive and contraception",
+  "EL058": "Comorbidity and other exclusions",
+  "EL064": "Prior treatment",
+  "EL065": "Laboratory and organ function",
+  "EL066": "Comorbidity and other exclusions"
+ },
+ "evaluability": [
+  {
+   "endpoint": "Cycle 1 AUC0-6wks",
+   "cycle": 1,
+   "on_study_day": 42.0,
+   "rule": "on study through day 42 (end of cycle 1's dosing interval)",
+   "required": 318,
+   "evaluable": 376,
+   "share": 0.9947089947089947
+  },
+  {
+   "endpoint": "Steady-state (Cycle 3) Ctrough",
+   "cycle": 3,
+   "on_study_day": 126.0,
+   "rule": "on study through day 126 (end of cycle 3's dosing interval)",
+   "required": 240,
+   "evaluable": 243,
+   "share": 0.6428571428571429
+  }
+ ],
+ "evaluable_curve": [
+  {
+   "enrolled": 302,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 0.0,
+    "median": 301.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.0,
+    "median": 194.0
+   },
+   "p_all": 0.0
+  },
+  {
+   "enrolled": 321,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 0.85825,
+    "median": 320.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.001,
+    "median": 207.0
+   },
+   "p_all": 0.001
+  },
+  {
+   "enrolled": 340,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 339.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.035,
+    "median": 219.0
+   },
+   "p_all": 0.035
+  },
+  {
+   "enrolled": 350,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 349.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.124,
+    "median": 225.0
+   },
+   "p_all": 0.124
+  },
+  {
+   "enrolled": 359,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 358.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.2505,
+    "median": 231.0
+   },
+   "p_all": 0.2505
+  },
+  {
+   "enrolled": 378,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 376.5
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.614,
+    "median": 243.0
+   },
+   "p_all": 0.614
+  },
+  {
+   "enrolled": 397,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 395.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.88175,
+    "median": 256.0
+   },
+   "p_all": 0.88175
+  },
+  {
+   "enrolled": 400,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 398.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.902,
+    "median": 257.0
+   },
+   "p_all": 0.902
+  },
+  {
+   "enrolled": 416,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 414.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.9735,
+    "median": 267.0
+   },
+   "p_all": 0.9735
+  },
+  {
+   "enrolled": 420,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 418.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.97975,
+    "median": 270.0
+   },
+   "p_all": 0.97975
+  },
+  {
+   "enrolled": 435,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 433.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.9975,
+    "median": 280.0
+   },
+   "p_all": 0.9975
+  },
+  {
+   "enrolled": 454,
+   "Cycle 1 AUC0-6wks": {
+    "p_meets": 1.0,
+    "median": 452.0
+   },
+   "Steady-state (Cycle 3) Ctrough": {
+    "p_meets": 0.9995,
+    "median": 292.0
+   },
+   "p_all": 0.9995
+  }
+ ],
+ "subgroups": {
+  "Age": {
+   "<65 years": {
+    "candidates": 6470,
+    "candidate_share": 0.647,
+    "eligible": 4618,
+    "p_eligible": 0.7137557959814529,
+    "eligible_share": 0.648140350877193,
+    "enrolled": 248,
+    "enrolled_share": 0.656084656084656,
+    "p_enrolled_given_eligible": 0.053702901689042876,
+    "sae": 130,
+    "sae_rate": 0.5241935483870968,
+    "sae_ci": [
+     0.462142121161966,
+     0.5855068772560872
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.9919354838709677,
+     "Steady-state (Cycle 3) Ctrough": 0.6330645161290323
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19227202472952087,
+     "Prior treatment": 0.023183925811437404,
+     "Performance status": 0.05455950540958269,
+     "Laboratory and organ function": 0.0077279752704791345,
+     "Reproductive and contraception": 0.0032457496136012367,
+     "Comorbidity and other exclusions": 0.03153013910355487
+    }
+   },
+   "65 years or older": {
+    "candidates": 3530,
+    "candidate_share": 0.353,
+    "eligible": 2507,
+    "p_eligible": 0.7101983002832861,
+    "eligible_share": 0.35185964912280704,
+    "enrolled": 130,
+    "enrolled_share": 0.3439153439153439,
+    "p_enrolled_given_eligible": 0.051854806541683285,
+    "sae": 66,
+    "sae_rate": 0.5076923076923077,
+    "sae_ci": [
+     0.42277206871603834,
+     0.5921709684263747
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.6615384615384615
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.1943342776203966,
+     "Prior treatment": 0.019546742209631728,
+     "Performance status": 0.0679886685552408,
+     "Laboratory and organ function": 0.00538243626062323,
+     "Reproductive and contraception": 0.0011331444759206798,
+     "Comorbidity and other exclusions": 0.028045325779036828
+    }
+   }
+  },
+  "Sex": {
+   "female": {
+    "candidates": 5574,
+    "candidate_share": 0.5574,
+    "eligible": 3959,
+    "p_eligible": 0.7102619303911015,
+    "eligible_share": 0.5556491228070175,
+    "enrolled": 218,
+    "enrolled_share": 0.5767195767195767,
+    "p_enrolled_given_eligible": 0.05506441020459712,
+    "sae": 113,
+    "sae_rate": 0.518348623853211,
+    "sae_ci": [
+     0.45227766332481395,
+     0.583784103269008
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.9954128440366973,
+     "Steady-state (Cycle 3) Ctrough": 0.6330275229357798
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.1917832795120201,
+     "Prior treatment": 0.023860782203085754,
+     "Performance status": 0.06207391460351633,
+     "Laboratory and organ function": 0.006996770721205597,
+     "Reproductive and contraception": 0.0023322569070685323,
+     "Comorbidity and other exclusions": 0.033010405453893076
+    }
+   },
+   "male": {
+    "candidates": 4426,
+    "candidate_share": 0.4426,
+    "eligible": 3166,
+    "p_eligible": 0.7153185720741075,
+    "eligible_share": 0.44435087719298244,
+    "enrolled": 160,
+    "enrolled_share": 0.42328042328042326,
+    "p_enrolled_given_eligible": 0.05053695514845231,
+    "sae": 83,
+    "sae_rate": 0.51875,
+    "sae_ci": [
+     0.44180083048790497,
+     0.5948199056377189
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.99375,
+     "Steady-state (Cycle 3) Ctrough": 0.65625
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19453230908269317,
+     "Prior treatment": 0.019430637144148215,
+     "Performance status": 0.055806597379123364,
+     "Laboratory and organ function": 0.006778129236330773,
+     "Reproductive and contraception": 0.0027112516945323093,
+     "Comorbidity and other exclusions": 0.026886579304112066
+    }
+   }
+  },
+  "Race": {
+   "White": {
+    "candidates": 7634,
+    "candidate_share": 0.7634,
+    "eligible": 5463,
+    "p_eligible": 0.7156143568247315,
+    "eligible_share": 0.7667368421052632,
+    "enrolled": 299,
+    "enrolled_share": 0.791005291005291,
+    "p_enrolled_given_eligible": 0.054731832326560495,
+    "sae": 147,
+    "sae_rate": 0.4916387959866221,
+    "sae_ci": [
+     0.43543838317125017,
+     0.5480513355463899
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.6421404682274248
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.18954676447471835,
+     "Prior treatment": 0.021744825779407912,
+     "Performance status": 0.06078071784123657,
+     "Laboratory and organ function": 0.006287660466334818,
+     "Reproductive and contraception": 0.003143830233167409,
+     "Comorbidity and other exclusions": 0.029211422583180508
+    }
+   },
+   "Asian": {
+    "candidates": 915,
+    "candidate_share": 0.0915,
+    "eligible": 658,
+    "p_eligible": 0.7191256830601093,
+    "eligible_share": 0.09235087719298246,
+    "enrolled": 28,
+    "enrolled_share": 0.07407407407407407,
+    "p_enrolled_given_eligible": 0.0425531914893617,
+    "sae": 17,
+    "sae_rate": 0.6071428571428571,
+    "sae_ci": [
+     0.42408726034906297,
+     0.7643454817241996
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.4642857142857143
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19781420765027322,
+     "Prior treatment": 0.024043715846994537,
+     "Performance status": 0.05245901639344262,
+     "Laboratory and organ function": 0.007650273224043716,
+     "Reproductive and contraception": 0.0,
+     "Comorbidity and other exclusions": 0.02622950819672131
+    }
+   },
+   "Black or African American": {
+    "candidates": 777,
+    "candidate_share": 0.0777,
+    "eligible": 519,
+    "p_eligible": 0.667953667953668,
+    "eligible_share": 0.07284210526315789,
+    "enrolled": 29,
+    "enrolled_share": 0.07671957671957672,
+    "p_enrolled_given_eligible": 0.055876685934489405,
+    "sae": 18,
+    "sae_rate": 0.6206896551724138,
+    "sae_ci": [
+     0.4400222620928496,
+     0.7731220426913266
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.9310344827586207,
+     "Steady-state (Cycle 3) Ctrough": 0.7586206896551724
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.2187902187902188,
+     "Prior treatment": 0.019305019305019305,
+     "Performance status": 0.06177606177606178,
+     "Laboratory and organ function": 0.01287001287001287,
+     "Reproductive and contraception": 0.0,
+     "Comorbidity and other exclusions": 0.04247104247104247
+    }
+   },
+   "Other or not reported": {
+    "candidates": 674,
+    "candidate_share": 0.0674,
+    "eligible": 485,
+    "p_eligible": 0.7195845697329377,
+    "eligible_share": 0.06807017543859649,
+    "enrolled": 22,
+    "enrolled_share": 0.0582010582010582,
+    "p_enrolled_given_eligible": 0.04536082474226804,
+    "sae": 14,
+    "sae_rate": 0.6363636363636364,
+    "sae_ci": [
+     0.4295134934371804,
+     0.802670272273921
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.7272727272727273
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19584569732937684,
+     "Prior treatment": 0.02373887240356083,
+     "Performance status": 0.04896142433234421,
+     "Laboratory and organ function": 0.005934718100890208,
+     "Reproductive and contraception": 0.001483679525222552,
+     "Comorbidity and other exclusions": 0.03412462908011869
+    }
+   }
+  },
+  "Ethnicity": {
+   "Not Hispanic or Latino": {
+    "candidates": 9132,
+    "candidate_share": 0.9132,
+    "eligible": 6489,
+    "p_eligible": 0.7105781865965834,
+    "eligible_share": 0.9107368421052632,
+    "enrolled": 346,
+    "enrolled_share": 0.9153439153439153,
+    "p_enrolled_given_eligible": 0.05332100477731546,
+    "sae": 178,
+    "sae_rate": 0.5144508670520231,
+    "sae_ci": [
+     0.46191876874866894,
+     0.5666655962896798
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.9942196531791907,
+     "Steady-state (Cycle 3) Ctrough": 0.638728323699422
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19437144108628998,
+     "Prior treatment": 0.02222952255803767,
+     "Performance status": 0.0588042049934297,
+     "Laboratory and organ function": 0.007227332457293035,
+     "Reproductive and contraception": 0.0022996057818659658,
+     "Comorbidity and other exclusions": 0.03120893561103811
+    }
+   },
+   "Hispanic or Latino": {
+    "candidates": 542,
+    "candidate_share": 0.0542,
+    "eligible": 390,
+    "p_eligible": 0.7195571955719557,
+    "eligible_share": 0.05473684210526316,
+    "enrolled": 19,
+    "enrolled_share": 0.05026455026455026,
+    "p_enrolled_given_eligible": 0.04871794871794872,
+    "sae": 11,
+    "sae_rate": 0.5789473684210527,
+    "sae_ci": [
+     0.36275551465160105,
+     0.7685837960796962
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.7894736842105263
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.1937269372693727,
+     "Prior treatment": 0.016605166051660517,
+     "Performance status": 0.06273062730627306,
+     "Laboratory and organ function": 0.005535055350553505,
+     "Reproductive and contraception": 0.0036900369003690036,
+     "Comorbidity and other exclusions": 0.02029520295202952
+    }
+   },
+   "Not reported": {
+    "candidates": 326,
+    "candidate_share": 0.0326,
+    "eligible": 246,
+    "p_eligible": 0.754601226993865,
+    "eligible_share": 0.03452631578947368,
+    "enrolled": 13,
+    "enrolled_share": 0.03439153439153439,
+    "p_enrolled_given_eligible": 0.052845528455284556,
+    "sae": 7,
+    "sae_rate": 0.5384615384615384,
+    "sae_ci": [
+     0.2914343243183205,
+     0.7679424569851186
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.5384615384615384
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.15337423312883436,
+     "Prior treatment": 0.02147239263803681,
+     "Performance status": 0.06748466257668712,
+     "Laboratory and organ function": 0.0,
+     "Reproductive and contraception": 0.006134969325153374,
+     "Comorbidity and other exclusions": 0.02147239263803681
+    }
+   }
+  },
+  "ECOG": {
+   "ECOG 1": {
+    "candidates": 6093,
+    "candidate_share": 0.6093,
+    "eligible": 4612,
+    "p_eligible": 0.7569341867717052,
+    "eligible_share": 0.647298245614035,
+    "enrolled": 258,
+    "enrolled_share": 0.6825396825396826,
+    "p_enrolled_given_eligible": 0.055941023417172595,
+    "sae": 131,
+    "sae_rate": 0.5077519379844961,
+    "sae_ci": [
+     0.447082465556789,
+     0.5681939458308592
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.9922480620155039,
+     "Steady-state (Cycle 3) Ctrough": 0.6317829457364341
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19317249302478254,
+     "Prior treatment": 0.021007713769899884,
+     "Performance status": 0.0022977186935828,
+     "Laboratory and organ function": 0.006072542261611686,
+     "Reproductive and contraception": 0.002461841457410143,
+     "Comorbidity and other exclusions": 0.030362711308058427
+    }
+   },
+   "ECOG 0": {
+    "candidates": 3339,
+    "candidate_share": 0.3339,
+    "eligible": 2513,
+    "p_eligible": 0.7526205450733753,
+    "eligible_share": 0.3527017543859649,
+    "enrolled": 120,
+    "enrolled_share": 0.31746031746031744,
+    "p_enrolled_given_eligible": 0.0477516912057302,
+    "sae": 65,
+    "sae_rate": 0.5416666666666666,
+    "sae_ci": [
+     0.4526080815617851,
+     0.6281402291835539
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.6666666666666666
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19197364480383347,
+     "Prior treatment": 0.023060796645702306,
+     "Performance status": 0.0032943995208146153,
+     "Laboratory and organ function": 0.007786762503743636,
+     "Reproductive and contraception": 0.0026954177897574125,
+     "Comorbidity and other exclusions": 0.030847559149445942
+    }
+   },
+   "ECOG 2 or more": {
+    "candidates": 568,
+    "candidate_share": 0.0568,
+    "eligible": 0,
+    "p_eligible": 0.0,
+    "eligible_share": 0.0,
+    "enrolled": 0,
+    "enrolled_share": 0.0,
+    "p_enrolled_given_eligible": null,
+    "sae": 0,
+    "sae_rate": null,
+    "sae_ci": null,
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": null,
+     "Steady-state (Cycle 3) Ctrough": null
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19718309859154928,
+     "Prior treatment": 0.02464788732394366,
+     "Performance status": 1.0,
+     "Laboratory and organ function": 0.01056338028169014,
+     "Reproductive and contraception": 0.0017605633802816902,
+     "Comorbidity and other exclusions": 0.02640845070422535
+    }
+   }
+  },
+  "Region": {
+   "North America/Western Europe/Australia/New Zealand": {
+    "candidates": 4516,
+    "candidate_share": 0.4516,
+    "eligible": 3259,
+    "p_eligible": 0.7216563330380869,
+    "eligible_share": 0.4574035087719298,
+    "enrolled": 171,
+    "enrolled_share": 0.4523809523809524,
+    "p_enrolled_given_eligible": 0.05247008284749923,
+    "sae": 91,
+    "sae_rate": 0.5321637426900585,
+    "sae_ci": [
+     0.4574925849109942,
+     0.6054215041845071
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.631578947368421
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.1862267493356953,
+     "Prior treatment": 0.020814880425155006,
+     "Performance status": 0.058237378210806025,
+     "Laboratory and organ function": 0.006200177147918512,
+     "Reproductive and contraception": 0.0022143489813994687,
+     "Comorbidity and other exclusions": 0.029229406554472984
+    }
+   },
+   "Rest of the World": {
+    "candidates": 3825,
+    "candidate_share": 0.3825,
+    "eligible": 2687,
+    "p_eligible": 0.702483660130719,
+    "eligible_share": 0.37712280701754386,
+    "enrolled": 153,
+    "enrolled_share": 0.40476190476190477,
+    "p_enrolled_given_eligible": 0.056940826200223296,
+    "sae": 83,
+    "sae_rate": 0.5424836601307189,
+    "sae_ci": [
+     0.46346712324992,
+     0.6194190498062079
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.9934640522875817,
+     "Steady-state (Cycle 3) Ctrough": 0.6535947712418301
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.19555555555555557,
+     "Prior treatment": 0.022745098039215685,
+     "Performance status": 0.06431372549019608,
+     "Laboratory and organ function": 0.005751633986928104,
+     "Reproductive and contraception": 0.0036601307189542483,
+     "Comorbidity and other exclusions": 0.03215686274509804
+    }
+   },
+   "East Asia": {
+    "candidates": 1659,
+    "candidate_share": 0.1659,
+    "eligible": 1179,
+    "p_eligible": 0.7106690777576854,
+    "eligible_share": 0.16547368421052633,
+    "enrolled": 54,
+    "enrolled_share": 0.14285714285714285,
+    "p_enrolled_given_eligible": 0.04580152671755725,
+    "sae": 22,
+    "sae_rate": 0.4074074074074074,
+    "sae_ci": [
+     0.2867801518924045,
+     0.5403338975114846
+    ],
+    "evaluable_share": {
+     "Cycle 1 AUC0-6wks": 0.9814814814814815,
+     "Steady-state (Cycle 3) Ctrough": 0.6481481481481481
+    },
+    "lost_by_category": {
+     "Disease and stage": 0.2055455093429777,
+     "Prior treatment": 0.022905364677516575,
+     "Performance status": 0.05063291139240506,
+     "Laboratory and organ function": 0.011452682338758288,
+     "Reproductive and contraception": 0.0006027727546714888,
+     "Comorbidity and other exclusions": 0.028933092224231464
+    }
+   }
+  }
+ },
+ "recruitment": {
+  "historical_lognormal": {
+   "mu": 4.1445207281470084,
+   "sd": 1.4323609020034358
+  },
+  "historical_median_per_year": 63.08737865008831,
+  "historical_percentiles": {
+   "p10": 9.555359737651614,
+   "p30": 30.255171725337956,
+   "p50": 66.6569973509205,
+   "p70": 139.6212521520318,
+   "p90": 371.42272565019726
+  },
+  "planned_years": 0.833,
+  "required_rate_per_year": 453.78151260504205,
+  "required_rate_percentile": 0.9158230797614162,
+  "p_complete_in_planned_window": 0.08417692023858381,
+  "p_complete_in_planned_window_report": {
+   "0.833y": 0.075875
+  },
+  "completion_curve": [
+   {
+    "months": 1,
+    "p_complete": 0.0014189183806790906
+   },
+   {
+    "months": 2,
+    "p_complete": 0.006194621209175688
+   },
+   {
+    "months": 3,
+    "p_complete": 0.013284764214398503
+   },
+   {
+    "months": 4,
+    "p_complete": 0.021850896361920613
+   },
+   {
+    "months": 5,
+    "p_complete": 0.031361315553195435
+   },
+   {
+    "months": 6,
+    "p_complete": 0.041471006452112436
+   },
+   {
+    "months": 7,
+    "p_complete": 0.051948757568767934
+   },
+   {
+    "months": 8,
+    "p_complete": 0.0626354063386041
+   },
+   {
+    "months": 9,
+    "p_complete": 0.07341910769355386
+   },
+   {
+    "months": 10,
+    "p_complete": 0.0842200763464962
+   },
+   {
+    "months": 11,
+    "p_complete": 0.09498081874613962
+   },
+   {
+    "months": 12,
+    "p_complete": 0.10565967690730993
+   },
+   {
+    "months": 13,
+    "p_complete": 0.11622644357412915
+   },
+   {
+    "months": 14,
+    "p_complete": 0.126659314171071
+   },
+   {
+    "months": 15,
+    "p_complete": 0.13694272531628582
+   },
+   {
+    "months": 16,
+    "p_complete": 0.14706579541428533
+   },
+   {
+    "months": 17,
+    "p_complete": 0.15702118269773524
+   },
+   {
+    "months": 18,
+    "p_complete": 0.16680423803128908
+   },
+   {
+    "months": 19,
+    "p_complete": 0.17641236922924186
+   },
+   {
+    "months": 20,
+    "p_complete": 0.18584455933833155
+   },
+   {
+    "months": 21,
+    "p_complete": 0.19510099843483764
+   },
+   {
+    "months": 22,
+    "p_complete": 0.204182800074453
+   },
+   {
+    "months": 23,
+    "p_complete": 0.2130917815223412
+   },
+   {
+    "months": 24,
+    "p_complete": 0.22183029248260222
+   },
+   {
+    "months": 25,
+    "p_complete": 0.23040108101502166
+   },
+   {
+    "months": 26,
+    "p_complete": 0.23880718817963675
+   },
+   {
+    "months": 27,
+    "p_complete": 0.24705186502406562
+   },
+   {
+    "months": 28,
+    "p_complete": 0.25513850705322383
+   },
+   {
+    "months": 29,
+    "p_complete": 0.2630706024527827
+   },
+   {
+    "months": 30,
+    "p_complete": 0.27085169118539265
+   },
+   {
+    "months": 31,
+    "p_complete": 0.27848533271900755
+   },
+   {
+    "months": 32,
+    "p_complete": 0.2859750806340766
+   },
+   {
+    "months": 33,
+    "p_complete": 0.2933244627301297
+   },
+   {
+    "months": 34,
+    "p_complete": 0.3005369655408068
+   },
+   {
+    "months": 35,
+    "p_complete": 0.30761602239051733
+   },
+   {
+    "months": 36,
+    "p_complete": 0.31456500430104173
+   },
+   {
+    "months": 37,
+    "p_complete": 0.32138721319396957
+   },
+   {
+    "months": 38,
+    "p_complete": 0.32808587694350777
+   },
+   {
+    "months": 39,
+    "p_complete": 0.3346641459203904
+   },
+   {
+    "months": 40,
+    "p_complete": 0.3411250907362926
+   },
+   {
+    "months": 41,
+    "p_complete": 0.34747170095312074
+   },
+   {
+    "months": 42,
+    "p_complete": 0.3537068845656901
+   },
+   {
+    "months": 43,
+    "p_complete": 0.35983346810188355
+   },
+   {
+    "months": 44,
+    "p_complete": 0.36585419721316914
+   },
+   {
+    "months": 45,
+    "p_complete": 0.37177173765169613
+   },
+   {
+    "months": 46,
+    "p_complete": 0.3775886765491878
+   },
+   {
+    "months": 47,
+    "p_complete": 0.38330752392832923
+   },
+   {
+    "months": 48,
+    "p_complete": 0.38893071439002735
+   },
+   {
+    "months": 49,
+    "p_complete": 0.3944606089302798
+   },
+   {
+    "months": 50,
+    "p_complete": 0.3998994968489171
+   },
+   {
+    "months": 51,
+    "p_complete": 0.4052495977194752
+   },
+   {
+    "months": 52,
+    "p_complete": 0.4105130633952242
+   },
+   {
+    "months": 53,
+    "p_complete": 0.4156919800311294
+   },
+   {
+    "months": 54,
+    "p_complete": 0.42078837010543846
+   },
+   {
+    "months": 55,
+    "p_complete": 0.42580419442782547
+   },
+   {
+    "months": 56,
+    "p_complete": 0.4307413541236995
+   },
+   {
+    "months": 57,
+    "p_complete": 0.4356016925864812
+   },
+   {
+    "months": 58,
+    "p_complete": 0.4403869973914869
+   },
+   {
+    "months": 59,
+    "p_complete": 0.4450990021665555
+   },
+   {
+    "months": 60,
+    "p_complete": 0.449739388415789
+   },
+   {
+    "months": 61,
+    "p_complete": 0.4543097872938102
+   },
+   {
+    "months": 62,
+    "p_complete": 0.45881178132876177
+   },
+   {
+    "months": 63,
+    "p_complete": 0.4632469060929717
+   },
+   {
+    "months": 64,
+    "p_complete": 0.4676166518207592
+   },
+   {
+    "months": 65,
+    "p_complete": 0.47192246497331214
+   },
+   {
+    "months": 66,
+    "p_complete": 0.47616574975093573
+   },
+   {
+    "months": 67,
+    "p_complete": 0.4803478695532638
+   },
+   {
+    "months": 68,
+    "p_complete": 0.4844701483882571
+   },
+   {
+    "months": 69,
+    "p_complete": 0.4885338722309941
+   },
+   {
+    "months": 70,
+    "p_complete": 0.49254029033340674
+   },
+   {
+    "months": 71,
+    "p_complete": 0.4964906164862094
+   },
+   {
+    "months": 72,
+    "p_complete": 0.5003860302343561
+   },
+   {
+    "months": 73,
+    "p_complete": 0.5042276780474069
+   },
+   {
+    "months": 74,
+    "p_complete": 0.5080166744462239
+   },
+   {
+    "months": 75,
+    "p_complete": 0.51175410308743
+   },
+   {
+    "months": 76,
+    "p_complete": 0.5154410178070715
+   },
+   {
+    "months": 77,
+    "p_complete": 0.5190784436249176
+   },
+   {
+    "months": 78,
+    "p_complete": 0.5226673777108155
+   },
+   {
+    "months": 79,
+    "p_complete": 0.5262087903145001
+   },
+   {
+    "months": 80,
+    "p_complete": 0.5297036256602241
+   },
+   {
+    "months": 81,
+    "p_complete": 0.5331528028075545
+   },
+   {
+    "months": 82,
+    "p_complete": 0.5365572164796318
+   },
+   {
+    "months": 83,
+    "p_complete": 0.5399177378601664
+   },
+   {
+    "months": 84,
+    "p_complete": 0.543235215360399
+   },
+   {
+    "months": 85,
+    "p_complete": 0.5465104753572141
+   },
+   {
+    "months": 86,
+    "p_complete": 0.5497443229035577
+   },
+   {
+    "months": 87,
+    "p_complete": 0.5529375424122678
+   },
+   {
+    "months": 88,
+    "p_complete": 0.5560908983143885
+   },
+   {
+    "months": 89,
+    "p_complete": 0.5592051356929952
+   },
+   {
+    "months": 90,
+    "p_complete": 0.5622809808935225
+   },
+   {
+    "months": 91,
+    "p_complete": 0.5653191421115458
+   },
+   {
+    "months": 92,
+    "p_complete": 0.5683203099589319
+   },
+   {
+    "months": 93,
+    "p_complete": 0.5712851580092332
+   },
+   {
+    "months": 94,
+    "p_complete": 0.5742143433231716
+   },
+   {
+    "months": 95,
+    "p_complete": 0.5771085069550141
+   },
+   {
+    "months": 96,
+    "p_complete": 0.5799682744406187
+   },
+   {
+    "months": 97,
+    "p_complete": 0.5827942562678878
+   },
+   {
+    "months": 98,
+    "p_complete": 0.5855870483303429
+   },
+   {
+    "months": 99,
+    "p_complete": 0.5883472323644988
+   },
+   {
+    "months": 100,
+    "p_complete": 0.5910753763716885
+   },
+   {
+    "months": 101,
+    "p_complete": 0.5937720350249649
+   },
+   {
+    "months": 102,
+    "p_complete": 0.5964377500616735
+   },
+   {
+    "months": 103,
+    "p_complete": 0.5990730506622693
+   },
+   {
+    "months": 104,
+    "p_complete": 0.6016784538159257
+   },
+   {
+    "months": 105,
+    "p_complete": 0.6042544646734562
+   },
+   {
+    "months": 106,
+    "p_complete": 0.6068015768880546
+   },
+   {
+    "months": 107,
+    "p_complete": 0.6093202729443281
+   },
+   {
+    "months": 108,
+    "p_complete": 0.6118110244760875
+   },
+   {
+    "months": 109,
+    "p_complete": 0.6142742925733309
+   },
+   {
+    "months": 110,
+    "p_complete": 0.6167105280788413
+   },
+   {
+    "months": 111,
+    "p_complete": 0.6191201718748053
+   },
+   {
+    "months": 112,
+    "p_complete": 0.6215036551598314
+   },
+   {
+    "months": 113,
+    "p_complete": 0.6238613997167428
+   },
+   {
+    "months": 114,
+    "p_complete": 0.626193818171497
+   },
+   {
+    "months": 115,
+    "p_complete": 0.6285013142435676
+   },
+   {
+    "months": 116,
+    "p_complete": 0.6307842829881166
+   },
+   {
+    "months": 117,
+    "p_complete": 0.633043111030266
+   },
+   {
+    "months": 118,
+    "p_complete": 0.6352781767917643
+   },
+   {
+    "months": 119,
+    "p_complete": 0.6374898507103367
+   },
+   {
+    "months": 120,
+    "p_complete": 0.6396784954519883
+   }
+  ],
+  "protocol_rate": {
+   "per_year": 453.59999999999997,
+   "p_complete_by": {
+    "0.833y": 0.5294
+   }
+  },
+  "site_count": "SITE_COUNT_UNKNOWN: averaged over the site counts of historical trials of the same phase"
+ },
+ "completeness": [
+  {
+   "assessment": "Tumour assessment 1 (day 84)",
+   "day": 84.0,
+   "on_study": 0.9814814814814815,
+   "alive": 0.9920634920634921
+  },
+  {
+   "assessment": "Tumour assessment 2 (day 168)",
+   "day": 168.0,
+   "on_study": 0.6296296296296297,
+   "alive": 0.9682539682539683
+  },
+  {
+   "assessment": "Tumour assessment 3 (day 252)",
+   "day": 252.0,
+   "on_study": 0.3968253968253968,
+   "alive": 0.9417989417989417
+  },
+  {
+   "assessment": "Tumour assessment 4 (day 336)",
+   "day": 336.0,
+   "on_study": 0.24338624338624337,
+   "alive": 0.9285714285714286
+  },
+  {
+   "assessment": "Tumour assessment 5 (day 420)",
+   "day": 420.0,
+   "on_study": 0.17195767195767195,
+   "alive": 0.9047619047619048
+  },
+  {
+   "assessment": "Tumour assessment 6 (day 504)",
+   "day": 504.0,
+   "on_study": 0.1111111111111111,
+   "alive": 0.8968253968253969
+  },
+  {
+   "assessment": "Tumour assessment 7 (day 588)",
+   "day": 588.0,
+   "on_study": 0.07407407407407407,
+   "alive": 0.8783068783068783
+  },
+  {
+   "assessment": "Tumour assessment 8 (day 672)",
+   "day": 672.0,
+   "on_study": 0.05026455026455026,
+   "alive": 0.8650793650793651
+  },
+  {
+   "assessment": "Cycle 1 AUC0-6wks sampling",
+   "day": 42.0,
+   "on_study": 0.9947089947089947,
+   "alive": 1.0
+  },
+  {
+   "assessment": "Steady-state (Cycle 3) Ctrough sampling",
+   "day": 126.0,
+   "on_study": 0.6428571428571429,
+   "alive": 0.9867724867724867
+  }
+ ],
+ "burden": {
+  "Clinic visit days": {
+   "median": 19.0,
+   "q25": 14.0,
+   "q75": 24.0,
+   "total": 7242.0
+  },
+  "Drug administrations": {
+   "median": 71.0,
+   "q25": 39.0,
+   "q75": 104.5,
+   "total": 34683.0
+  },
+  "Laboratory draws": {
+   "median": 8.0,
+   "q25": 6.0,
+   "q75": 9.0,
+   "total": 2934.0
+  },
+  "Tumour scans": {
+   "median": 2.0,
+   "q25": 1.0,
+   "q75": 3.0,
+   "total": 1005.0
+  },
+  "Follow-up visits": {
+   "median": 1.0,
+   "q25": 1.0,
+   "q75": 1.0,
+   "total": 350.0
+  },
+  "Clinic visit days per month on study": {
+   "median": 3.062011834319527
+  }
+ },
+ "withdrawal_rate": {
+  "ARM1": 0.050964163458226366,
+  "ARM2": 0.050964163458226366
+ },
+ "safety": {
+  "Serious adverse event": {
+   "n": 196,
+   "share": 0.5185185185185185,
+   "ci": [
+    0.46821471098338974,
+    0.5684497069323114
+   ],
+   "per_target": 196.0
+  },
+  "Treatment interruption (dose hold)": {
+   "n": 19,
+   "share": 0.05026455026455026,
+   "ci": [
+    0.03241173836433607,
+    0.07716668368292122
+   ],
+   "per_target": 19.0
+  },
+  "Dose reduction": {
+   "n": 0,
+   "share": 0.0,
+   "ci": [
+    0.0,
+    0.0100607162760684
+   ],
+   "per_target": 0.0
+  },
+  "Discontinuation for an adverse event": {
+   "n": 6,
+   "share": 0.015873015873015872,
+   "ci": [
+    0.007294425281661691,
+    0.03419293492215057
+   ],
+   "per_target": 6.0
+  },
+  "Death during follow-up": {
+   "n": 53,
+   "share": 0.1402116402116402,
+   "ci": [
+    0.1088178673413117,
+    0.17884487029649415
+   ],
+   "per_target": 53.0
+  },
+  "Death before day 126 (last primary sampling)": {
+   "n": 5,
+   "share": 0.013227513227513227,
+   "ci": [
+    0.005662798346489794,
+    0.03058678786936516
+   ],
+   "per_target": 5.0
+  }
+ },
+ "overall_sae": 0.5185185185185185,
+ "p_primary_success_at_design": 0.9995,
+ "scenarios": [
+  {
+   "scenario": "Original protocol",
+   "how": "the locked simulation",
+   "eligible_pct": 0.7125,
+   "screened_per_enrollee": 1.4035087719298245,
+   "screened_for_target": 530.5263157894736,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.08417692023858381,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5556491228070175,
+   "age65_pct": 0.35185964912280704,
+   "sae_rate": 0.5197909687261633,
+   "sae_patients": 196.4809861784897,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 377.0,
+    "Steady-state (Cycle 3) Ctrough": 242.0
+   },
+   "p_evaluable_all": 0.579,
+   "p_objectives": 0.5787105,
+   "fu_visits_per_patient": 1.0,
+   "visit_days_per_patient": 19.0,
+   "asian_pct": 0.09235087719298246,
+   "hispanic_pct": 0.05473684210526316
+  },
+  {
+   "scenario": "Relax: ECOG performance status",
+   "how": "patients failing only EL012 become eligible; enrolment rate scales with the eligible yield at a fixed screening throughput; their adverse-event and evaluability risk follows their age and sex as in the simulated patients",
+   "eligible_pct": 0.7549,
+   "screened_per_enrollee": 1.3246787653993906,
+   "screened_for_target": 500.72857332096964,
+   "median_recruitment_months": 67.86189874269402,
+   "p_recruit_in_window": 0.0905858887041564,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5563650814677441,
+   "age65_pct": 0.3558087163862763,
+   "sae_rate": 0.5198392531115553,
+   "sae_patients": 196.49923767616792,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 377.0,
+    "Steady-state (Cycle 3) Ctrough": 243.0
+   },
+   "p_evaluable_all": 0.593,
+   "p_objectives": 0.5927035,
+   "fu_visits_per_patient": 1.0,
+   "visit_days_per_patient": 19.0,
+   "asian_pct": 0.09235087719298246,
+   "hispanic_pct": 0.05473684210526316
+  },
+  {
+   "scenario": "20% more sites",
+   "how": "enrolment rate x 1.2^0.468 (the historical accrual model's site coefficient)",
+   "eligible_pct": 0.7125,
+   "screened_per_enrollee": 1.4035087719298245,
+   "screened_for_target": 530.5263157894736,
+   "median_recruitment_months": 66.02302928823559,
+   "p_recruit_in_window": 0.0937556886354396,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5556491228070175,
+   "age65_pct": 0.35185964912280704,
+   "sae_rate": 0.5197909687261633,
+   "sae_patients": 196.4809861784897,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 377.0,
+    "Steady-state (Cycle 3) Ctrough": 243.0
+   },
+   "p_evaluable_all": 0.58275,
+   "p_objectives": 0.582458625,
+   "fu_visits_per_patient": 1.0,
+   "visit_days_per_patient": 19.0,
+   "asian_pct": 0.09235087719298246,
+   "hispanic_pct": 0.05473684210526316
+  },
+  {
+   "scenario": "Recruitment window +6 months",
+   "how": "the planned window extended by 6 months",
+   "eligible_pct": 0.7125,
+   "screened_per_enrollee": 1.4035087719298245,
+   "screened_for_target": 530.5263157894736,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.14702563325629225,
+   "window_months": 15.995999999999999,
+   "female_pct": 0.5556491228070175,
+   "age65_pct": 0.35185964912280704,
+   "sae_rate": 0.5197909687261633,
+   "sae_patients": 196.4809861784897,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 377.0,
+    "Steady-state (Cycle 3) Ctrough": 243.0
+   },
+   "p_evaluable_all": 0.58425,
+   "p_objectives": 0.5839578750000001,
+   "fu_visits_per_patient": 1.0,
+   "visit_days_per_patient": 19.0,
+   "asian_pct": 0.09235087719298246,
+   "hispanic_pct": 0.05473684210526316
+  },
+  {
+   "scenario": "Regional mix: +20 points East Asia",
+   "how": "eligible candidates re-weighted to 37% from East Asia (from 17%)",
+   "eligible_pct": 0.7125,
+   "screened_per_enrollee": 1.4035087719298245,
+   "screened_for_target": 530.5263157894736,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.08417692023858381,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5576594121884516,
+   "age65_pct": 0.3527047443779315,
+   "sae_rate": 0.5197909687261633,
+   "sae_patients": 196.4809861784897,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 376.0,
+    "Steady-state (Cycle 3) Ctrough": 242.0
+   },
+   "p_evaluable_all": 0.5785,
+   "p_objectives": 0.57821075,
+   "fu_visits_per_patient": 1.0,
+   "visit_days_per_patient": 19.0,
+   "asian_pct": 0.09074875666635156,
+   "hispanic_pct": 0.0556445021397258
+  },
+  {
+   "scenario": "50% female target",
+   "how": "enrolment held to 50% women; the scarcer sex limits accrual",
+   "eligible_pct": 0.7125,
+   "screened_per_enrollee": 1.5792798483891342,
+   "screened_for_target": 596.9677826910927,
+   "median_recruitment_months": 80.9048442211935,
+   "p_recruit_in_window": 0.07216021817229279,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5,
+   "age65_pct": 0.35185964912280704,
+   "sae_rate": 0.5197909687261633,
+   "sae_patients": 196.4809861784897,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 377.0,
+    "Steady-state (Cycle 3) Ctrough": 243.0
+   },
+   "p_evaluable_all": 0.5925,
+   "p_objectives": 0.59220375,
+   "fu_visits_per_patient": 1.0,
+   "visit_days_per_patient": 19.0,
+   "asian_pct": 0.09235087719298246,
+   "hispanic_pct": 0.05473684210526316
+  },
+  {
+   "scenario": "Enrolment +10%",
+   "how": "416 enrolled",
+   "eligible_pct": 0.7125,
+   "screened_per_enrollee": 1.4035087719298245,
+   "screened_for_target": 583.859649122807,
+   "median_recruitment_months": 79.1283471720696,
+   "p_recruit_in_window": 0.0743148074895712,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5556491228070175,
+   "age65_pct": 0.35185964912280704,
+   "sae_rate": 0.5197909687261633,
+   "sae_patients": 216.2330429900839,
+   "enrolled": 416,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 414.0,
+    "Steady-state (Cycle 3) Ctrough": 267.0
+   },
+   "p_evaluable_all": 0.9695,
+   "p_objectives": 0.9690152500000001,
+   "fu_visits_per_patient": 1.0,
+   "visit_days_per_patient": 19.0,
+   "asian_pct": 0.09235087719298246,
+   "hispanic_pct": 0.05473684210526316
+  },
+  {
+   "scenario": "One fewer follow-up visit",
+   "how": "one follow-up visit removed per patient; the simulated withdrawal rate does not depend on visit burden, so retention is unchanged",
+   "eligible_pct": 0.7125,
+   "screened_per_enrollee": 1.4035087719298245,
+   "screened_for_target": 530.5263157894736,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.08417692023858381,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5556491228070175,
+   "age65_pct": 0.35185964912280704,
+   "sae_rate": 0.5197909687261633,
+   "sae_patients": 196.4809861784897,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 377.0,
+    "Steady-state (Cycle 3) Ctrough": 242.0
+   },
+   "p_evaluable_all": 0.5855,
+   "p_objectives": 0.5852072500000001,
+   "fu_visits_per_patient": 0.0,
+   "visit_days_per_patient": 18.0,
+   "asian_pct": 0.09235087719298246,
+   "hispanic_pct": 0.05473684210526316
+  }
+ ],
+ "derivations": {
+  "eligibility": "each simulated candidate's eligibility outcome; sequential funnel removes a candidate at the first category it fails",
+  "gain_if_relaxed": "candidates who fail only that criterion",
+  "evaluable": "treated and on study through the endpoint's sampling day (end of treatment or death ends it); sample collection itself is not simulated",
+  "evaluable_probability": "Bayesian bootstrap of the simulated patients (4,000 draws), joint across endpoints",
+  "recruitment": "log-normal fitted to the planning report's historical accrual percentiles; duration = enrolment / rate",
+  "objectives": "P(every evaluable count meets its requirement) x P(all primary hypotheses succeed at the design ratios)"
+ }
+}

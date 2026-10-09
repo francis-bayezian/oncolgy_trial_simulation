@@ -30,6 +30,11 @@ CATEGORY_ORDER = ("Disease and stage", "Prior treatment", "Performance status", 
                   "Reproductive and contraception", "Comorbidity and other exclusions")
 DISEASE_TYPES = {"diagnosis", "disease_stage", "histology", "biomarker", "imaging", "pathology_review", "molecular_subtype"}
 REPRO_TYPES = {"sex", "reproductive_status", "contraception", "pregnancy"}
+ACRONYMS = {"ecog", "hiv", "cns", "alt", "ast", "anc", "ctcae", "pk", "auc", "hbv", "hcv"}
+
+
+def _ordinal(n: int) -> str:
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
 
 def category(kind: str, types: set[str]) -> str:
@@ -58,6 +63,7 @@ def _label(c: dict, labels: dict) -> str:
         if n and n.lower() not in [x.lower() for x in names]:
             names.append(n)
     text = "; ".join(names[:2]) or c["criterion_id"]
+    text = " ".join(w.upper() if w.lower().strip(";,") in ACRONYMS else w for w in text.split())
     text = text[0].upper() + text[1:]
     return text if len(text) <= 48 else text[:46].rstrip() + "…"
 
@@ -113,11 +119,15 @@ def _pk_windows(spec: dict, cycle_days: float) -> list[dict]:
     """Primary endpoints measured in a stated treatment cycle, and the day a patient must still be on study to give
     them: a pre-dose measurement needs the start of cycle k; any other (over the dosing interval, or at its end) needs
     the end of cycle k's dosing interval."""
-    out = []
+    out, seen = [], set()
     for e in spec.get("endpoints") or []:
         if e.get("role") != "primary":
             continue
         name = _text(e.get("name")) or e.get("endpoint_id")
+        key = re.sub(r"[^a-z0-9]", "", name.lower())
+        if key in seen:                       # the same endpoint extracted twice (spacing or punctuation differs)
+            continue
+        seen.add(key)
         m = re.search(r"cycle\s*(\d+)", name, re.I)
         if not m:
             continue
@@ -471,12 +481,13 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     (out / "feasibility.json").write_text(json.dumps(doc, indent=1, default=str), encoding="utf-8")
+    (out / "FEASIBILITY.md").write_text(render(doc), encoding="utf-8")
     return doc
 
 
 def _protocol_summary(spec: dict, journey: dict, windows: list[dict], target: int) -> dict:
     sched = journey.get("schedule") or {}
-    arms = [a.get("label") for a in spec.get("arms") or []]
+    arms = [_text(a.get("label")) for a in spec.get("arms") or []]
     alloc = ((spec.get("design") or {}).get("allocation") or {}).get("ratio")
     return {"target_enrolment": target, "allocation": alloc, "arms": arms,
             "primary_endpoints": [w["endpoint"] for w in windows], "required_evaluable": {w["endpoint"]: w.get("required") for w in windows},
@@ -484,3 +495,72 @@ def _protocol_summary(spec: dict, journey: dict, windows: list[dict], target: in
             "cycle_days": (sched.get("cycle_length_days") or {}).get("value"), "max_cycles": (sched.get("max_cycles") or {}).get("value"),
             "tumour_assessment_days": (sched.get("tumour_assessment_interval_days") or {}).get("value"),
             "follow_up_days": (sched.get("follow_up_interval_days") or {}).get("value")}
+
+
+def _p(x, d=0) -> str:
+    return "—" if x is None else f"{100 * x:.{d}f}%"
+
+
+def render(doc: dict) -> str:
+    """The feasibility report: one section per planning question, every number from the locked simulation."""
+    P, R = doc["protocol"], doc["recruitment"]
+    L = [f"# {doc['nct_id']}: protocol feasibility (run v{doc['run_version']}, {doc['version']})", "",
+         "Every number below comes from the locked simulation run (screened population, eligibility, enrolled cohort, patient "
+         "journey, planning report, primary-engine results). How each is derived is stated with it and in section 9.", "",
+         "## 1. What the protocol demands", "",
+         f"- Target enrolment {P['target_enrolment']}, allocation {':'.join(f'{x:g}' for x in P['allocation'] or [])}, arms: {'; '.join(P['arms'])}",
+         f"- Primary endpoints and required evaluable participants: "
+         + "; ".join(f"{k} ({v})" for k, v in P["required_evaluable"].items()),
+         f"- {P['criteria']} executable eligibility criteria; cycle {P['cycle_days']} days, up to {P['max_cycles']} cycles; tumour assessment "
+         f"every {P['tumour_assessment_days']} days; follow-up every {P['follow_up_days']} days", "",
+         "## 2. Screening funnel", "",
+         "| Step | Lost | Remaining | % of candidates | Lost at this step |", "| --- | ---: | ---: | ---: | ---: |"]
+    for f in doc["funnel"]:
+        L.append(f"| {f['step']} | {f.get('lost', '')} | {f['remaining']:,} | {_p(f.get('pct_remaining', 1.0), 1)} | {_p(f.get('pct_lost_at_step'), 1) if 'lost' in f else ''} |")
+    L += ["", f"Eligibility yield **{_p(doc['eligibility_yield'], 1)}**; patients screened per enrollee **{doc['screened_per_enrollee']:.2f}**; "
+          f"screened to enrol {doc['target']}: **{doc['screened_for_target']:.0f}**.", "",
+          "## 3. Criterion bottlenecks", "", "| Criterion | Category | Excluded | Gain if relaxed (points) |", "| --- | --- | ---: | ---: |"]
+    for c in doc["criteria"][:15]:
+        L.append(f"| {c['criterion']} {c['label']} | {c['category']} | {_p(c['pct_excluded'], 1)} | +{100 * c['gain_if_relaxed'] / doc['candidates']:.1f} |")
+    L += ["", "## 4. Subgroups: availability, screening yield, representation, safety", "",
+          "| Subgroup | Candidates | P(eligible) | Eligible share | Enrolled share | Serious AE (95% CI) |", "| --- | ---: | ---: | ---: | ---: | --- |"]
+    for dim, levels in doc["subgroups"].items():
+        for lv, r in levels.items():
+            ci = r.get("sae_ci")
+            sae = f"{_p(r['sae_rate'])} ({_p(ci[0])}-{_p(ci[1])})" if r.get("sae_rate") is not None else "—"
+            L.append(f"| {dim}: {lv} | {_p(r['candidate_share'])} | {_p(r['p_eligible'])} | {_p(r['eligible_share'])} | {_p(r['enrolled_share'])} | {sae} |")
+    L += ["", "## 5. Recruitment demand", "",
+          f"- Required rate {R['required_rate_per_year']:.0f}/year ({doc['target']} in {R['planned_years'] * 12:.0f} months) = "
+          f"{_ordinal(round(R['required_rate_percentile'] * 100))} percentile of comparable trials (historical median {R['historical_median_per_year']:.0f}/year).",
+          f"- P(all {doc['target']} enrolled within the planned window): {_p(R['p_complete_in_planned_window'])} (planning report: "
+          f"{_p(next(iter(R['p_complete_in_planned_window_report'].values()), None))}).",
+          f"- Site count: {R['site_count']}.", "",
+          "## 6. Endpoint evaluability", ""]
+    for w in doc["evaluability"]:
+        L.append(f"- {w['endpoint']}: {w['evaluable']} of {doc['enrolled']} evaluable ({_p(w['share'])}); rule: {w['rule']}; required {w['required']}")
+    L += ["", "| Enrolled | " + " | ".join(f"P({w['endpoint']} ≥ {w['required']})" for w in doc["evaluability"] if w["required"]) + " | P(all) |",
+          "| ---: | " + " | ".join("---:" for w in doc["evaluability"] if w["required"]) + " | ---: |"]
+    for r in doc["evaluable_curve"]:
+        L.append(f"| {r['enrolled']} | " + " | ".join(_p(r[w["endpoint"]]["p_meets"]) for w in doc["evaluability"] if w["required"]) + f" | {_p(r['p_all'])} |")
+    L += ["", "## 7. Completeness, burden and safety", "", "| Assessment | On study | Alive |", "| --- | ---: | ---: |"]
+    for c in doc["completeness"]:
+        L.append(f"| {c['assessment']} | {_p(c['on_study'])} | {_p(c['alive'])} |")
+    L += ["", "| Burden per patient | Median | IQR |", "| --- | ---: | --- |"]
+    for k, v in doc["burden"].items():
+        L.append(f"| {k} | {v['median']:.1f} | {v.get('q25', float('nan')):.0f}-{v.get('q75', float('nan')):.0f} |" if "q25" in v else f"| {k} | {v['median']:.2f} | |")
+    L += ["", f"Withdrawal rate used by the journey (constant, not burden-dependent): {doc['withdrawal_rate']}", "",
+          "| Safety | Share (95% CI) | Patients of the target |", "| --- | --- | ---: |"]
+    for k, s in doc["safety"].items():
+        L.append(f"| {k} | {_p(s['share'], 1)} ({_p(s['ci'][0], 1)}-{_p(s['ci'][1], 1)}) | {s['per_target']:.0f} |")
+    L += ["", "## 8. Scenario stress test", "",
+          "| Scenario | Eligible | Screened/enrollee | Months to recruit | P(in window) | Women | Age ≥65 | Serious AE patients | Visit days | "
+          + " | ".join(f"Evaluable {w['endpoint']}" for w in doc["evaluability"]) + " | P(objectives) |",
+          "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | " + " | ".join("---:" for _ in doc["evaluability"]) + " | ---: |"]
+    for s in doc["scenarios"]:
+        L.append(f"| {s['scenario']} | {_p(s['eligible_pct'])} | {s['screened_per_enrollee']:.2f} | {s['median_recruitment_months']:.0f} | "
+                 f"{_p(s['p_recruit_in_window'])} | {_p(s['female_pct'])} | {_p(s['age65_pct'])} | {s['sae_patients']:.0f} | {s['visit_days_per_patient']:.0f} | "
+                 + " | ".join(f"{s['evaluable_median'][w['endpoint']]:.0f}" for w in doc["evaluability"]) + f" | {_p(s['p_objectives'])} |")
+    L += ["", "How each scenario is derived:", ""] + [f"- **{s['scenario']}**: {s['how']}" for s in doc["scenarios"]]
+    L += ["", "## 9. Derivations", ""] + [f"- {k}: {v}" for k, v in doc["derivations"].items()]
+    L += ["", "Figures: `figures/Figure1-9` (PNG, SVG, PDF).", ""]
+    return "\n".join(L)
