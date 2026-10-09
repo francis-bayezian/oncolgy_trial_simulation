@@ -44,7 +44,8 @@ MODALITY_GUIDE = (
     "instructions), PROHIBITED ('must not', 'should not be used', 'avoid', 'no ... permitted'), OPTIONAL ('may', "
     "'can', 'as needed', 'if desired'), RECOMMENDED ('should', 'recommended', 'preferred', 'suggested'), "
     "STRONGLY_RECOMMENDED ('strongly encouraged', 'strongly recommended'). Never turn 'may' or 'should' into "
-    "REQUIRED."
+    "REQUIRED. Wording given as an illustration ('for example', 'e.g.', 'such as', 'a typical regimen') is not a "
+    "requirement: its modality is OPTIONAL."
 )
 
 RULE_TYPES = ("age", "sex", "diagnosis", "disease_stage", "histology", "molecular_subtype", "biomarker",
@@ -106,7 +107,11 @@ NODE_GUIDE = (
     "relative to an anchor event (see temporal rules); 'event_state' = a treatment or schedule event is in a "
     "state (subject_quote/canonical_subject the event, event_state the state: 'if chemotherapy is due' -> "
     "event_state DUE on canonical_subject 'next_chemotherapy_cycle'; 'if a radiation treatment is not given' -> "
-    "NOT_ADMINISTERED); 'event_count' = how many times an event has happened ('after two cycles' -> "
+    "NOT_ADMINISTERED; a change of state of a condition or a procedure: 'resolves to Grade 1 or baseline' -> "
+    "RESOLVED with the level reached in qualifier_quote ('to Grade 1 or baseline'), 'does not resolve' -> "
+    "NOT_RESOLVED, 'improves to' -> IMPROVED, 'worsens' -> WORSENED, 'is diagnosed' -> DIAGNOSED, 'must undergo "
+    "testing' or 'a biopsy must be performed' -> PERFORMED on the procedure, never a flag on its result; a "
+    "deadline for the change ('within 7 days') is a separate window leaf on the same event); 'event_count' = how many times an event has happened ('after two cycles' -> "
     "canonical_subject 'completed_cycles', comparator_quote 'After', value_quote 'two'); 'unresolved' = a "
     "requirement that cannot be expressed (quote it in source_quote). reference_quote holds a relative reference "
     "('upper limit of normal (ULN) for age', 'baseline value') when the threshold is a multiple of it. "
@@ -136,7 +141,33 @@ NODE_GUIDE = (
     "canonical_subject 'age'/'sex'. (h) flag expected 'present' when the item must exist or have been done; "
     "'absent' only when it must not. Invented example: 'Stage II disease with tumour > 2 cm, or any stage with "
     "feature Z; not eligible if on drug Q' -> inclusion OR(AND(category stage in ['Stage II'], compare tumour > 2 "
-    "cm), category feature in ['feature Z']) and a separate exclusion flag drug Q present."
+    "cm), category feature in ['feature Z']) and a separate exclusion flag drug Q present. "
+    "(i) Scope: a requirement stated only for some subjects (a country or region, a subgroup, one sex, an arm, "
+    "subjects with or without a feature) is IF(condition on that characteristic, requirement), never applied to "
+    "everyone; a country is canonical_subject 'country'. (j) Exceptions ('unless', 'except', 'with the exception of', "
+    "'does not apply if', 'are eligible if'): for an inclusion the exception is an OR branch; for an exclusion the "
+    "logic is AND(excluded condition, NOT(exception)). (k) 'The longer of A or B' (e.g. two washout periods) is AND "
+    "of both requirements; 'the shorter of A or B' for a maximum is AND of both maximums. (l) Permissions ('results "
+    "within N days may be used', 'X is acceptable') are OR alternatives or IF conditions, never mandatory "
+    "requirements. (m) A judgement ('in the opinion of the Investigator', 'that would interfere with participation', "
+    "'clinically significant') is its own flag leaf on the judged property and is never dropped. (n) Notes, "
+    "sub-bullets and footnotes under a criterion (exceptions, clarifications, numbers) belong to that criterion's "
+    "logic. (o) Every stated value is quoted: never leave value_quote empty when the text gives the number, and keep "
+    "its reference (reference_quote 'ULN') with it. (p) 'X or as determined by the Investigator' keeps both "
+    "alternatives. (q) A duration measured from an event ('up to 12 weeks from the last dose', 'within 7 days of "
+    "onset') is a window leaf with that event as anchor, never a compare with a reference. (r) Durations and counts "
+    "exactly as written: 'for 3 days' is not 'at least 3 days'; keep 'approximately' in qualifier_quote. (s) A "
+    "condition that is 'not yet' reached or 'not optimised' is a state of that condition (category or event_state), "
+    "not the absence of the thing named. (w) 'The Nth occurrence' (or episode) of an event is an event_count leaf: "
+    "canonical_subject '<event>_occurrences', value_quote the ordinal as written ('third'); 'recurrence' or "
+    "'recurs' is a count of at least two. (x) A maximum stated with 'up to', 'no more than', 'a maximum of' or "
+    "'not to exceed' keeps that wording in its quote (duration_quote 'up to 21 days'), never an exact amount. (y) A "
+    "dose level named by a label ('DL-1', 'dose level -2', 'starting dose') is quoted with its label in "
+    "action_value_quote, never as a bare number. (t) 'One or more of' the agents, therapies or alterations listed (in the "
+    "text or a supplied table) is a category leaf whose category_quotes are the listed names, never unresolved. "
+    "(u) A timing stated for an assessment ('within 7 days before randomization') stays on that criterion as its "
+    "time_quote or a window leaf, with the anchor exactly as written. (v) Possibility wording ('may interfere', "
+    "'could increase the risk') is kept as worded in the flag leaf's subject, not turned into a certainty."
 )
 
 # ----------------------------------------------------------------------------- tasks
@@ -171,7 +202,9 @@ METADATA_INSTRUCTIONS = (
     "group, version date, amendment number, activation and closure dates, the condition studied, the population, "
     "and a one-sentence design summary. List every treatment arm or regimen named, with a canonical_arm label "
     "(for example 'regimen_a') and its status in THIS version: 'closed' only when the text says enrollment or "
-    "randomization to it stopped. amendment_notes lists statements describing what an earlier amendment changed."
+    "randomization to it stopped; 'open' when the arm is part of the design the protocol describes and no stop is "
+    "stated (status_quote the wording that assigns or randomizes subjects to it); 'unclear' only when the text says "
+    "its status is undecided or pending. amendment_notes lists statements describing what an earlier amendment changed."
 )
 
 ELIGIBILITY = obj({"criteria": {"type": "array", "items": obj({
@@ -210,6 +243,7 @@ TREATMENT = obj({
         "modality": enum(*MODALITY),
         "dose_quote": TEXT, "dose_unit_quote": TEXT, "day_quote": TEXT, "week_quote": TEXT, "frequency_quote": TEXT,
         "dose_count_quote": TEXT, "max_dose_quote": TEXT, "rounding_quote": TEXT, "alternative_to_quote": TEXT,
+        "alternative_condition_quote": TEXT, "timing_quotes": QUOTES,
         "administration_options": {"type": "array", "items": obj({
             "route_quote": TEXT, "canonical_route": TEXT, "duration_quote": TEXT, "policy_quote": TEXT})},
         "linked_events": {"type": "array", "items": obj({
@@ -242,6 +276,13 @@ TREATMENT_INSTRUCTIONS = (
     "with testable start conditions (counts, and window leaves such as 'must begin within 31 days of diagnostic "
     "surgery' with its business-day adjustment, or 'off myeloid growth factor for at least 24 hours'). Ordering "
     "words ('following radiation') are expressed by sequence_number, not start_nodes.\n"
+    "Counts keep their unit and bound as written: cycle_count_quote / dose_count_quote '18 treatments', 'up to 9 "
+    "cycles', 'two 42-day cycles' (never only the number). An agent that may replace another only under a "
+    "condition ('switch to X if an infusion reaction occurs, at the Investigator's discretion') has alternative_to_quote "
+    "the agent it replaces and alternative_condition_quote that condition; without a stated condition it is "
+    "interchangeable. timing_quotes lists, word for word, every stated timing of this agent relative to other agents "
+    "or to the course ('the day before, the day of and the day after drug X', 'starting 7 days before the first "
+    "dose and continuing until 21 days after the last dose', 'during the first four infusions').\n"
     "interventions: every drug, growth factor or supportive agent given in a phase (radiation goes in "
     "radiotherapy, not here). dose_quote is only the number and dose_unit_quote the unit as written; the schedule "
     "is split into day_quote (days only), week_quote (weeks only), frequency_quote, dose_count_quote, "
@@ -310,11 +351,13 @@ DOSE_MODIFICATION_INSTRUCTIONS = (
 )
 
 ASSESSMENTS = obj({
+    "table_kind": enum("schedule", "component_list", "other"),
     "anchor_quote": TEXT,
     "canonical_anchor": TEXT,
     "arm_label_quotes": QUOTES,
     "assessments": {"type": "array", "items": obj({
         "assessment_quote": TEXT,
+        "component_quotes": QUOTES,
         "timepoints": {"type": "array", "items": obj({
             "header_quote": TEXT, "cell_quote": TEXT, "frequency_quote": TEXT, "condition_quote": TEXT})}})},
     "footnotes": {"type": "array", "items": obj({"symbol_quote": TEXT, "text_quote": TEXT})},
@@ -325,7 +368,12 @@ ASSESSMENTS_INSTRUCTIONS = (
     "label. arm_label_quotes lists the arms the table applies to as written in the title (empty when all). For every "
     "assessment row, list each column in which it is required: header_quote the column header, cell_quote the "
     "cell content, frequency_quote any frequency written in the cell or header ('Weekly', '3x/Week'), and "
-    "condition_quote the text of any footnote attached to that cell by a symbol. footnotes lists each footnote."
+    "condition_quote the text of any footnote attached to that cell by a symbol. footnotes lists each footnote. "
+    "header_quote also carries the period labels that place the time point (the cycle, day or visit of its column or "
+    "row group) when the table states them. table_kind: 'schedule' for a grid of assessments by time point; "
+    "'component_list' for a table that lists what an assessment consists of (the tests of a laboratory panel, the "
+    "items of an examination), with no time points: then each assessment lists its components in component_quotes "
+    "(every listed test or item, as written) and timepoints is empty."
 )
 
 STATISTICS = obj({
@@ -337,7 +385,8 @@ STATISTICS = obj({
         "role": enum("primary", "secondary", "exploratory", "safety", "substudy"),
         "type": enum("time_to_event", "binary", "continuous", "count", "ordinal", "other"),
         "event_quotes": QUOTES, "time_origin_quote": TEXT, "canonical_origin_event": TEXT, "censoring_quotes": QUOTES,
-        "population_quote": TEXT, "evidence_quote": TEXT})},
+        "population_quote": TEXT, "definition_quote": TEXT, "assessment_quote": TEXT, "schedule_quote": TEXT,
+        "per_group_quote": TEXT, "summary_measures_quote": TEXT, "evidence_quote": TEXT})},
     "analyses": {"type": "array", "items": obj({
         "analysis_id": TEXT, "endpoint_name_quote": TEXT, "is_primary": {"type": "boolean"}, "method_quote": TEXT,
         "test_family": enum("logrank", "stratified_logrank", "cox", "kaplan_meier", "binomial_test", "proportion_test",
@@ -347,11 +396,14 @@ STATISTICS = obj({
         "effect_quotes": QUOTES, "scenarios": {"type": "array", "items": obj({
             "effect_quote": TEXT, "power_quote": TEXT, "assumption_quote": TEXT})},
         "stratification_quotes": QUOTES, "population_quote": TEXT,
-        "multiplicity_quote": TEXT, "evidence_quote": TEXT})},
+        "multiplicity_quote": TEXT, "estimate_quote": TEXT, "per_group_quote": TEXT, "summary_measures_quote": TEXT,
+        "timing_quote": TEXT, "hypothesis_quote": TEXT, "condition_quote": TEXT, "evidence_quote": TEXT})},
     "sample_size": {"type": "array", "items": obj({
-        "quantity": enum("target_accrual", "evaluable_target", "maximum_accrual", "full_information_events",
-                         "accrual_rate", "accrual_duration", "followup_duration", "censoring_rate", "other"),
-        "value_quote": TEXT, "unit_quote": TEXT, "evidence_quote": TEXT})},
+        "quantity": enum("target_accrual", "target_accrual_per_arm", "evaluable_target", "maximum_accrual",
+                         "full_information_events",
+                         "interim_events", "accrual_rate", "accrual_duration", "ramp_up_duration", "followup_duration",
+                         "analysis_timing", "censoring_rate", "subgroup_minimum", "other"),
+        "value_quote": TEXT, "unit_quote": TEXT, "refers_to_quote": TEXT, "evidence_quote": TEXT})},
     "interim": {"type": "array", "items": obj({
         "purpose": enum("efficacy", "futility", "safety", "other"), "endpoint_quote": TEXT,
         "method_family": enum("ALPHA_SPENDING", "CONDITIONAL_POWER", "BAYESIAN_POSTERIOR", "OTHER"),
@@ -377,7 +429,23 @@ STATISTICS_INSTRUCTIONS = (
     "exponent in 'αt2' is quoted as 't2'), information_quote ('110 events'), prior_quote ('Beta (2,12)'), "
     "threshold_quote ('p0=15%'), posterior_cutoff_quote ('85%'), futility_cutoff_quote ('10%'), boundary_quote "
     "(operational stopping boundaries such as '4 patients ... in the first 10 patients'), schedule_quote. "
-    "allocation_ratio_quote only when the ratio is written."
+    "allocation_ratio_quote only when the ratio is written. "
+    "Every stated detail of an endpoint or analysis has a field and is never dropped: endpoint definition_quote (what "
+    "the endpoint is), assessment_quote (who or what criteria assess it, e.g. 'by blinded central review per the "
+    "named criteria'), schedule_quote (when it is measured), per_group_quote ('by treatment arm'), "
+    "summary_measures_quote ('change from baseline', 'descriptive statistics'); analysis estimate_quote (what is "
+    "estimated with its confidence level and interval method), per_group_quote, summary_measures_quote (tables, "
+    "plots, statistics to present), timing_quote (when the analysis is done: the event count, follow-up or other "
+    "analysis that triggers it), hypothesis_quote (the tested hypothesis: superiority, noninferiority with its margin), "
+    "condition_quote (when the analysis is done only under a condition: 'if sample size permits', 'if the first "
+    "hypothesis is rejected', 'optional'); method_quote names the stated method exactly (e.g. the named confidence "
+    "interval or stratified test method). sample_size quantity: interim_events = events expected at an interim analysis; "
+    "ramp_up_duration = a site activation or enrolment ramp-up period, not the accrual duration; analysis_timing = "
+    "when a number of events or an analysis is expected (a month from the start), not a follow-up duration; "
+    "subgroup_minimum = a minimum number or proportion of a subgroup, not the target accrual; "
+    "target_accrual_per_arm = subjects to randomize or enrol in each arm ('295 subjects per arm'); evaluable_target "
+    "only when the text says the number must be evaluable. refers_to_quote is "
+    "the wording saying what the number is about ('projected to be observed at the interim analysis')."
 )
 
 STRATIFICATION = obj({
@@ -501,6 +569,12 @@ REPAIR_PREFIX = (
     "pregnancy test', 'lactating females must agree not to breast-feed') is IF subgroup THEN requirement, never "
     "subgroup AND requirement, which would exclude every patient outside the subgroup. "
     "All instructions below still apply.\n"
+)
+
+LIST_COMPLETE_PREFIX = (
+    "COMPLETENESS PASS. An earlier pass over this text missed the items in completeness.missing_items (each quoted "
+    "by its opening words). Compile exactly those items, each completely, following the instructions below; do not "
+    "repeat other items. "
 )
 
 COMPLETE_PREFIX = (

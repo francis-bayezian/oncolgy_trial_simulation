@@ -37,6 +37,20 @@ def _q(x: dict | str | None) -> str:
     return (x or {}).get("text") or ""
 
 
+APPROX = re.compile(r"(?:approximately|approx\.?|about|around|~|≈)\s*$", re.IGNORECASE)
+
+
+def _approx(x: dict | None, evidence: str) -> str:
+    """'approximately ' when the protocol states the quantity as approximate (the word before its quote)."""
+    quote = _q((x or {}).get("text")) or _q((x or {}).get("quote"))
+    if quote and re.search(r"\b(?:approximately|approx\.?|about|around)\b|~|≈", quote, re.IGNORECASE):
+        return "approximately "                       # the quoted wording itself says so
+    if not quote or not evidence:
+        return ""
+    at = evidence.find(quote)
+    return "approximately " if at > 0 and APPROX.search(evidence[max(0, at - 20):at]) else ""
+
+
 def _qty(x: dict | None) -> str:
     if not x or x.get("value") is None:
         return _q(x) if x else ""
@@ -65,7 +79,9 @@ def rule(node: dict | None, labels: dict[str, str], depth: int = 0) -> str:
         body = f"{name} is {node['event_state']}"
     elif leaf == "compare":
         if node.get("reference"):
-            body = f"{name} {OPS.get(node.get('op'), node.get('op'))} {_num(node.get('value'))} times {node['reference']['text']}"
+            pct = (node.get("unit") or "").strip() in ("%", "percent")
+            body = (f"{name} {OPS.get(node.get('op'), node.get('op'))} {_num(node.get('value'))}"
+                    + (f"% relative to {node['reference']['text']}" if pct else f" times {node['reference']['text']}"))
         else:
             body = f"{name} {OPS.get(node.get('op'), node.get('op'))} {_num(node.get('value'))}{_unit(node.get('unit'))}"
     elif leaf == "range":
@@ -132,7 +148,9 @@ def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> st
     elif d.get("basis") == "maximum":
         dose_text = f"dose up to {amount} {d['unit'] or ''}"
     else:
-        dose_text = (f"dose {amount} {d['unit'] or ''} ({d['basis']})"
+        stated = _q(d.get("quote")) + (" " + _q(d.get("unit_quote")) if _q(d.get("unit_quote")) else "")
+        dose_text = (f"dose {_approx(d, _q(it.get('evidence')))}{amount} {d['unit'] or ''} ({d['basis']})"
+                     + (f" stated as {stated.strip()!r}" if re.search(r"[A-Za-z]", _q(d.get("quote"))) else "")
                      + (f" with tolerance {_tol(d['tolerance'])}" if d.get("tolerance") else ""))
     parts = [f"{MODAL.get(it.get('modality', 'REQUIRED'), '')}phase {phases.get(it.get('phase_id') or '', '?')!r}",
              f"arms {[_q(a) for a in it['arms']] or 'all'}", f"agent {_q(it.get('agent'))!r} ({it.get('category')})", dose_text]
@@ -142,7 +160,9 @@ def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> st
     for opt in it.get("administration_options") or []:
         text = f"route option {_q(opt.get('route'))!r}"
         if (opt.get("duration") or {}).get("value") is not None:
-            text += f" over {_qty(opt['duration'])}"
+            worded = _q(opt["duration"].get("text"))
+            text += (f" over {worded!r}" if re.search(r"\d\s*(?:to|-|–)\s*\d", worded)
+                     else f" over {_approx(opt['duration'], _q(it.get('evidence')))}{_qty(opt['duration'])}")
         if opt.get("institutional_policy"):
             text += f" per {_q(opt['institutional_policy'])!r}"
         parts.append(text)
@@ -153,8 +173,14 @@ def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> st
         parts.append(f"in weeks {s['weeks']}")
     if s.get("frequency"):
         parts.append(f"frequency {_q(s['frequency'])!r}")
-    if s.get("dose_count") is not None:
+    worded_count = _q(s.get("dose_count_text"))
+    if worded_count and re.search(r"[A-Za-z]", re.sub(r"\b(one|two|three|four|five|six|seven|eight|nine|ten)\b", "", worded_count, flags=re.I)):
+        parts.append(f"count {worded_count!r}")          # the protocol's own unit and bound ('two 42-day cycles')
+    elif s.get("dose_count") is not None:
         parts.append(f"{_num(s['dose_count'])} doses in total")
+    for t in it.get("timing") or []:
+        if _q(t):
+            parts.append(f"timing {_q(t)!r}")
     if (it.get("max_dose") or {}).get("value") is not None:
         parts.append(f"maximum {_qty(it['max_dose'])}")
     if (it.get("rounding") or {}).get("text"):
@@ -177,13 +203,17 @@ def intervention(it: dict, phases: dict[str, str], labels: dict[str, str]) -> st
         parts.append(f"WHEN {rule(r.get('condition'), labels)} give on {r.get('weekdays') or _q(r.get('administer_days'))}"
                      + (f" ({_q(r.get('timing'))})" if r.get("timing") else ""))
     if (it.get("min_duration") or {}).get("value") is not None:
-        parts.append(f"for at least {_qty(it['min_duration'])}")
+        worded = _q((it["min_duration"] or {}).get("text"))
+        minimum = re.search(r"\b(at least|minimum|no (?:less|fewer) than|or (?:more|longer))\b", worded, re.I) if worded else True
+        parts.append(f"for {'at least ' if minimum else ''}{_qty(it['min_duration'])}")
     if it.get("stop_condition"):
         parts.append(f"until {rule(it['stop_condition']['logic'], labels)}")
     if it.get("condition"):
         parts.append(f"only when {rule(it['condition']['logic'], labels)}")
     if it.get("alternative_to"):
-        parts.append(f"interchangeable alternative to {_q(it['alternative_to'])!r}")
+        cond = _q(it.get("alternative_condition"))
+        parts.append(f"alternative to {_q(it['alternative_to'])!r} only {cond!r}" if cond
+                     else f"interchangeable alternative to {_q(it['alternative_to'])!r}")
     return "; ".join(parts)
 
 
@@ -230,7 +260,10 @@ def dose_modification(m: dict, labels: dict[str, str]) -> str:
             step += f": obtain {_q(s.get('assessment'))!r}"
         elif verb:
             step += f": {verb}"
-        if a.get("value") is not None and a["type"] not in {"give_supportive_care", "obtain_assessment"}:
+        worded = _q(a.get("text"))
+        if worded and re.search(r"[A-Za-z]", worded) and a["type"] not in {"give_supportive_care", "obtain_assessment"}:
+            step += f" {worded!r}"                       # a labelled level ('DL-1') or a worded amount, as stated
+        elif a.get("value") is not None and a["type"] not in {"give_supportive_care", "obtain_assessment"}:
             step += f" {_num(a['value'])}{a['unit'] or ''}"
         if a.get("reduction_percent") is not None:
             step += f" (a {_num(a['reduction_percent'])}% reduction)"
@@ -241,7 +274,9 @@ def dose_modification(m: dict, labels: dict[str, str]) -> str:
         if s.get("frequency"):
             step += f" {_q(s['frequency'])}"
         if (s.get("duration") or {}).get("value") is not None:
-            step += f" for {_qty(s['duration'])}"
+            maximum = re.search(r"\b(up to|no more than|a maximum of|maximum|not to exceed|not exceeding|at most|within)\b",
+                                _q((s["duration"] or {}).get("text")), re.I)
+            step += f" for {'up to ' if maximum else ''}{_qty(s['duration'])}"
         if s.get("scope"):
             step += f" [applies to: {_q(s['scope'])}]"
         text += step
@@ -256,7 +291,8 @@ def phase(p: dict, labels: dict[str, str]) -> str:
         if (p.get(f) or {}).get("value") is not None:
             parts.append(f"{f.replace('_', ' ')} {_qty(p[f])}")
     if (p.get("cycle_count") or {}).get("value") is not None:
-        parts.append(f"{_num(p['cycle_count']['value'])} cycles")
+        worded = _q((p["cycle_count"] or {}).get("text"))
+        parts.append(f"count {worded!r}" if worded and re.search(r"[A-Za-z]", worded) else f"{_num(p['cycle_count']['value'])} cycles")
     if (p.get("cycle_start_day") or {}).get("value") is not None:
         parts.append(f"next cycle starts on day {_num(p['cycle_start_day']['value'])}")
     if (p.get("max_delay") or {}).get("value") is not None:
@@ -290,6 +326,8 @@ def endpoint(e: dict) -> str:
         parts.append(f"assessed by {_q(e.get('assessment'))!r}")
     if _q(e.get("definition")):
         parts.append(f"defined as {_q(e.get('definition'))!r}")
+    if _q(e.get("schedule")):
+        parts.append(f"measured {_q(e.get('schedule'))!r}")
     if e.get("events"):
         parts.append("events: " + "; ".join(_q(x) for x in e["events"] if x))
     if e.get("type") != "time_to_event":                 # time origin and censoring belong to time-to-event endpoints only
@@ -310,6 +348,12 @@ def endpoint(e: dict) -> str:
 def analysis(a: dict) -> str:
     test = " ".join(a.get("design_qualifiers") or []) + (" " if a.get("design_qualifiers") else "") + str(a["test_family"])
     parts = [f"{'primary ' if a.get('primary') else ''}analysis of {_q(a.get('endpoint'))!r}: {test} ({a['sidedness']})"]
+    if _q(a.get("method")):
+        parts.append(f"method {_q(a.get('method'))!r}")
+    if _q(a.get("hypothesis")):
+        parts.append(f"hypothesis {_q(a.get('hypothesis'))!r}")
+    if _q(a.get("condition")):
+        parts.append(f"only {_q(a.get('condition'))!r}")
     if _q(a.get("summary_measures")):
         parts.append(f"summarised as {_q(a.get('summary_measures'))}")
     if a["alpha"].get("value") is not None:
@@ -326,6 +370,9 @@ def analysis(a: dict) -> str:
                      + (f" assuming {_q(sc_.get('assumption'))!r}" if sc_.get("assumption") else ""))
     if a.get("population"):
         parts.append(f"population {_q(a['population'])!r}")
+    for key, word in (("estimate", "estimates"), ("per_group", "reported"), ("timing", "performed")):
+        if _q(a.get(key)):
+            parts.append(f"{word} {_q(a.get(key))!r}")
     if a.get("multiplicity"):
         parts.append(f"multiplicity {_q(a['multiplicity'])!r}")
     return "; ".join(parts)

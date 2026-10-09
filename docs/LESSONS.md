@@ -1,6 +1,6 @@
 # Lessons learned
 
-Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2026-10-07. Each lesson has a regression check; the agent loop runs them before accepting any change.
+Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2026-10-08. Each lesson has a regression check; the agent loop runs them before accepting any change.
 
 ## L001 — protocol compiler (PASS)
 
@@ -87,7 +87,7 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **What went wrong:** new journey modules embedded clinical terms in code, breaking the vocabulary guard
 - **General rule:** clinical vocabulary lives in versioned reference data (clinical_asset/reference), never in pipeline code
 - **Where:** `clinical_asset/reference/clinical_vocabulary.json`
-- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 1.83s
+- **Check:** `chk_no_vocabulary_in_code` — 1 passed in 3.03s
 - **Recorded:** 2026-09-29 (project history)
 
 ## L012 — code hygiene (PASS)

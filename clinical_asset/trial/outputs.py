@@ -100,7 +100,8 @@ def copula_rho(p: np.ndarray, target: float) -> tuple[float, str]:
     return (lo + hi) / 2, "matched"
 
 
-def adverse_event_rows(safety: dict, adsl: list[dict], rng: np.random.Generator, context: dict | None = None) -> tuple[list[dict], dict]:
+def adverse_event_rows(safety: dict, adsl: list[dict], rng: np.random.Generator, context: dict | None = None,
+                       seed: int | None = None) -> tuple[list[dict], dict]:
     """Patient-level adverse events. Each event's trial-level rate is drawn from its predictive distribution; events
     cluster in patients through a one-factor Gaussian copula (marginals unchanged) whose correlation is set so that
     the share of patients with any serious event equals a draw from the evidence build's prior for 'any serious
@@ -108,6 +109,7 @@ def adverse_event_rows(safety: dict, adsl: list[dict], rng: np.random.Generator,
     from scipy import stats
 
     from . import efficacy_prior as ep
+    from . import patient_risk
     from .safety import draw_rates
 
     rows, notes = [], {}
@@ -121,6 +123,10 @@ def adverse_event_rows(safety: dict, adsl: list[dict], rng: np.random.Generator,
         if not subjects or not events:
             continue
         p = np.array([float(draw_rates(e, rng, 1)[0]) for e in events])     # this simulated trial's rate per event
+        # a drawn rate never exceeds what comparable registry arms report for that event (L061)
+        upper = np.array([e.get("plausible_upper", 1.0) for e in events])
+        capped = int(np.sum(p > upper))
+        p = np.minimum(p, upper)
         serious = np.array([e["seriousness"] == "serious" for e in events])
         feats = (arm.get("safety_v3") or {}).get("features") or {}
         # the share with any serious event: the subgroup estimate (most similar studies by age group, phase and drug
@@ -160,7 +166,20 @@ def adverse_event_rows(safety: dict, adsl: list[dict], rng: np.random.Generator,
             notes[arm["arm_id"]] = {"copula_rho": 0.0, "fit": "no any-serious prior: independent events"}
         z = rng.standard_normal(len(subjects))
         latent = math.sqrt(rho) * z[:, None] + math.sqrt(1 - rho) * rng.standard_normal((len(subjects), len(events)))
-        hit = latent < stats.norm.ppf(np.clip(p, 1e-9, 1 - 1e-9))[None, :]
+        # each patient's own risk (L055): the event's rate moved by the patient's age, sex and ECOG from the corpus average
+        risk = patient_risk.load(seed)       # one posterior draw of the effects per replicate (L056)
+        base = [{"demographic:age": {"value": s.get("AGE")}, "demographic:sex": s.get("SEX"),
+                 "var:ecog_performance_status": {"value": s.get("ECOG")} if s.get("ECOG") is not None else None} for s in subjects]
+        d_ser = np.array([patient_risk.shift(risk, "serious_ae", b) for b in base])
+        d_oth = np.array([patient_risk.shift(risk, "other_ae", b) for b in base])
+        logit = np.log(np.clip(p, 1e-9, 1 - 1e-9) / (1 - np.clip(p, 1e-9, 1 - 1e-9)))
+        p_ij = 1 / (1 + np.exp(-(logit[None, :] + np.where(serious[None, :], d_ser[:, None], d_oth[:, None]))))
+        hit = latent < stats.norm.ppf(np.clip(p_ij, 1e-9, 1 - 1e-9))
+        notes[arm["arm_id"]]["rates_capped_at_registry_bound"] = capped
+        notes[arm["arm_id"]]["patient_risk"] = {
+            "model": (risk or {}).get("model", "none: every patient has the arm rate"),
+            "serious_shift_mean": round(float(d_ser.mean()), 3), "serious_shift_range": [round(float(d_ser.min()), 3), round(float(d_ser.max()), 3)],
+            "basis": (risk or {}).get("kind")}
         for i, s in enumerate(subjects):
             for j in np.flatnonzero(hit[i]):
                 e = events[j]
@@ -292,12 +311,13 @@ def build(spec_lock: Path, eligibility_lock: Path, cohorts_lock: Path, outcomes_
              "STRATUM": c.get("stratum"), "AGE": (c["baseline"].get("demographic:age") or {}).get("value"),
              "SEX": c["baseline"].get("demographic:sex"), "RACE": c["baseline"].get("demographic:race"),
              "ETHNIC": c["baseline"].get("demographic:ethnicity"), "ENROLLMENT_DAY": c.get("enrollment_day"),
+             "ECOG": (c["baseline"].get("var:ecog_performance_status") or {}).get("value"),
              "UNCHECKED_CRITERIA": len(c.get("unchecked_criteria") or [])} for c in cohort]
     from .subgroups import arm_age_group
 
     phase = planning["accrual"]["historical_model"].get("features", {}).get("phase") if planning["accrual"].get("historical_model") else None
     context = {"age_group": arm_age_group(spec), "phase": phase}
-    adae, ae_notes = adverse_event_rows(safety, adsl, rng, context)
+    adae, ae_notes = adverse_event_rows(safety, adsl, rng, context, seed)
     adtte = tte_rows(adsl, model, rng)
     target = (recruitment["accrual_plan"].get("target") or {}).get("patients")
     stated = planning["accrual"].get("stated_accrual_durations_years") or []
@@ -332,9 +352,17 @@ def _decisions(results_lock: Path | None) -> dict:
 
     if results_lock is None:
         return {"status": "UNRESOLVED", "reason": "no science results"}
-    for name in ("binary_results.json", "trial_results.json", "escalation_results.json", "ni_results.json", "continuous_results.json"):
+    for name in ("binary_results.json", "trial_results.json", "escalation_results.json", "ni_results.json", "continuous_results.json",
+                 "ratio_ni_results.json"):
         if (Path(results_lock) / name).exists():
             r = load_locked(results_lock, name)
+            if name == "ratio_ni_results.json":
+                return {"kind": "ratio noninferiority", "analyses": [{k: a.get(k) for k in ("analysis_id", "endpoint", "margin", "design_ratio", "alpha", "n")}
+                                                                    for a in r.get("analyses") or []],
+                        "scenarios": [{"variability": sc["variability"], "status": sc["status"],
+                                       "p_success": [{"true_ratios": g["true_ratios"], "all_succeed": g["all_endpoints_succeed"],
+                                                      **{k: v["p_success"] for k, v in g["per_endpoint"].items()}} for g in sc.get("grid") or []]}
+                                      for sc in r.get("scenarios") or []]}
             if name == "continuous_results.json":
                 return {"kind": "continuous", "design": {k: (r.get("design") or {}).get(k) for k in ("effect", "sd", "sd_source", "n", "paired", "rank_test")},
                         "success_curve": [{"true_effect": c["true_effect"], "p_success": c["p_success"]} for c in r.get("success_curve") or []],

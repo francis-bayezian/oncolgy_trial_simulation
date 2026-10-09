@@ -352,6 +352,8 @@ def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_loc
     from . import subgroup_evidence as sge
 
     sg_evidence = sge.load(cohorts_lock)              # the protocol's subgroup factors and their prognostic effects (A28)
+    from . import patient_risk
+    risk_model = patient_risk.load(seed)              # this replicate's draw of the patient-level effects (L055, L056)
     for s in cohort:
         arm = s["arm_id"]
         if arm not in prog_by_arm:
@@ -362,10 +364,15 @@ def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_loc
             death_by_arm[arm] = death_probability(f.get("disease_family"), phase)
         prog = prog_by_arm[arm]
         log_hr = sge.patient_log_effects(s["baseline"], sg_evidence)[0]
+        # exits by the patient's own risk (L055): the arm's evidence probability moved by age, sex and ECOG
+        own = {}
+        for kind, d in (("withdrawal", wd_by_arm[arm]), ("ae_discontinuation", ae_by_arm[arm]), ("death", death_by_arm[arm])):
+            v = (d or {}).get("value")
+            own[kind] = {**d, "value": patient_risk.adjust(v, patient_risk.shift(risk_model, kind, s["baseline"]))} if v else d
         if log_hr and (prog.get("value") or {}).get("rate_per_year"):
             prog = {**prog, "value": {**prog["value"], "rate_per_year": prog["value"]["rate_per_year"] * math.exp(log_hr)}}
         states.append(simulate_patient(s, ae_by.get(s["subject_id"], []), elig.get(s["patient_id"]), spec, sched, rules, levels,
-                                       prog, wd_by_arm[arm], rng, horizon_days, ae_by_arm[arm], death_by_arm[arm]))
+                                       prog, own["withdrawal"], rng, horizon_days, own["ae_discontinuation"], own["death"]))
     person_level_exits(states, cohort)
     from .export_clinical import write
     from .journey_evidence import screen_pass_rate

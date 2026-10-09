@@ -17,11 +17,11 @@ PROFILES = {
     "v1": {"raw_ctgov": "data/raw/ctgov", "asset": "data/asset_v1", "params_v1": "data/simulation_parameters_v1",
            "params_v2": "data/simulation_parameters_v2", "params_v3": "data/simulation_parameters_v3",
            "safety": "data/locked/safety_asset/v3.1.0", "safety_build": "data/safety_asset_v3",
-           "operational": "data/planning_asset_v2_2/operational", "spa_work": "data/spa_work"},
+           "operational": "data/planning_asset_v2_2/operational", "spa_work": "data/spa_work", "patient_risk": "data/patient_risk_v1"},
     "v2": {"raw_ctgov": "data/corpus_v2/raw/ctgov", "asset": "data/corpus_v2/asset_v2", "params_v1": "data/corpus_v2/simulation_parameters_v1",
            "params_v2": "data/corpus_v2/simulation_parameters_v2", "params_v3": "data/corpus_v2/simulation_parameters_v3",
-           "safety": "data/corpus_v2/safety_asset", "safety_build": "data/corpus_v2/safety_asset",
-           "operational": "data/corpus_v2/operational", "spa_work": "data/spa_work"},
+           "safety": "data/locked/safety_asset/corpus_v2_v1.0.0", "safety_build": "data/corpus_v2/safety_asset",
+           "operational": "data/locked/planning_asset/corpus_v2_operational_v1.0.0", "spa_work": "data/spa_work", "patient_risk": "data/corpus_v2/patient_risk"},
 }
 
 

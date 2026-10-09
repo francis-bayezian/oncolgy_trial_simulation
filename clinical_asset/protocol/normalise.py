@@ -377,6 +377,13 @@ def compile_leaf(n: dict, source: Source, prov: Provenance, variables: Variables
     for f in ("comparator_quote", "upper_comparator_quote", "value_quote", "upper_value_quote", "unit_quote",
               "reference_quote", "time_quote"):
         if n.get(f) and not prov.add(source, n[f], component, f)["verified"]:
+            if f == "comparator_quote" and n.get("leaf_kind") == "category" and not re.search(
+                    r"\b(not|no|non|except|other than|excluding)\b", n[f].casefold()):
+                # a category test's comparison word only matters when it negates: a paraphrased 'is one of' is the
+                # default membership test, so it is dropped instead of rejecting a leaf whose categories are quoted (L062)
+                warnings.append(f"comparator wording not literal, membership test used: {n[f]!r}")
+                n = {**n, "comparator_quote": ""}
+                continue
             issues.append(f"{f} not found in source: {n[f]!r}")
     subject = (n.get("subject_quote") or "").strip()
     canonical = (n.get("canonical_subject") or "").strip()
@@ -481,6 +488,11 @@ def compile_leaf(n: dict, source: Source, prov: Provenance, variables: Variables
         op = ex.parse_comparator(n.get("comparator_quote"))
         if op is None and re.search(r"\b(after|following|completion|completed)\b", (n.get("comparator_quote") or "").casefold()):
             op = ">="  # 'after two cycles' = at least two completed
+        if op is None and value is not None:
+            # 'the third occurrence', '2nd episode': exactly that count; 'recurrence' or a plain count: at least it
+            wording = " ".join(n.get(k) or "" for k in ("value_quote", "comparator_quote", "source_quote")).casefold()
+            ordinal = re.search(r"\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|\d+(?:st|nd|rd|th))\b", wording)
+            op = "==" if ordinal else ">="
         if value is None or op in (None, "between"):
             issues.append("event count needs a number and a comparison")
         leaf.update(kind="compare", op=op, value=value, unit=None,

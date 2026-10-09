@@ -12,6 +12,10 @@ def choose(spec: dict) -> str:
 
     if any(r.get("kind") == "dose_escalation" for r in spec.get("decision_rules") or []):
         return "escalation"
+    from .ratio_ni import design as ratio_design
+
+    if ratio_design(spec).get("status") == "RESOLVED":          # geometric-mean-ratio noninferiority with a margin (L060)
+        return "ratio_ni"
     from .continuous import design as continuous_design
 
     if continuous_design(spec).get("status") == "RESOLVED":     # a continuous comparison with a stated design (L034)

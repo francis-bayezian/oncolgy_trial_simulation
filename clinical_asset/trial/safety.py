@@ -333,7 +333,13 @@ def v3_features(spec: dict, arm_label: str, class_map: dict, dose_reference: dic
         c = drug_class(name, class_map)
         if c == "unclassified":
             c = drug_class(_text(it.get("agent")).casefold(), class_map)
-        agents.append({"agent": name, "class": c})
+        source = "class map"
+        if c in ("unclassified", "other"):                 # a registry synonym found by the self-review (L059)
+            from .review import synonym
+            alt = synonym(name)
+            if alt:
+                c, source = drug_class(alt, class_map), f"class of registry synonym '{alt}' (self-review correction)"
+        agents.append({"agent": name, "class": c, "class_source": source})
         if modality(c) not in {"supportive_care", "placebo_or_no_treatment"}:
             classes.add(c)
         dose = it.get("dose") or {}
@@ -367,16 +373,24 @@ def v3_arm_events(spec: dict, arm: dict, model: dict, asset: dict, class_map: di
 
     feats = v3_features(spec, arm["label"], class_map, refs, family_map_file)
     pred = predict_arm(asset, feats)
+    from .safety_calibration import calibrate                # implausible rates against comparable registry arms (L061)
+    pred["events"], calibration = calibrate(pred.get("events") or [], feats)
     out = [{"term": e["event"], "seriousness": e["seriousness"], "source": f"safety_v3:{pred['status']}", "logit_mu": e["logit_mu"],
-            "logit_sigma": e["logit_sigma"], "rate_median": e["rate"]} for e in pred["events"]]
+            "logit_sigma": e["logit_sigma"], "rate_median": e["rate"],
+            **({"plausible_upper": e["plausible_upper"]["rate"]} if e.get("plausible_upper") else {}),
+            **({"calibrated_from": e["calibrated_from"]["rate"]} if e.get("calibrated_from") else {})} for e in pred["events"]]
     cited = [e for e in arm_events({**model, "adverse_events_asset": {}}, arm["arm_id"])]          # protocol-stated incidences
     out += cited
+    from .review import excluded_terms
+    dropped = excluded_terms()                          # terms the self-review found are not events (L059)
+    out = [e for e in out if e["term"] not in dropped]
     status, reason = pred["status"], pred.get("reason")
     if status == "UNRESOLVED":                  # no drug class in the asset (L034): the protocol's own figures, else none
         status = "PROTOCOL_CITED" if cited else "NO_EVIDENCE"
         reason = (f"{reason}; the protocol's cited incidences are used ({len(cited)} events)" if cited else
                   f"{reason}; the protocol cites no incidence for this arm: no source quantifies its adverse events, so none are simulated")
-    return out, {"status": status, "reason": reason, "features": feats, "classes_without_data": pred.get("classes_without_data")}
+    return out, {"status": status, "reason": reason, "features": feats, "classes_without_data": pred.get("classes_without_data"),
+                 "calibration": calibration}
 
 
 # ----------------------------------------------------------------------------- drug classes of agents new to the class map

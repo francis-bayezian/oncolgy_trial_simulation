@@ -133,10 +133,17 @@ def augment(population_lock: Path, family: str | None, phase: str | None, out_di
     height = continuous_distribution("height", family, r"cm|centimet", 120, 200)
     added = {}
     if ecog["status"] == "RESOLVED":
-        levels = rng.choice(5, size=len(pats), p=np.array(ecog["p"]) / sum(ecog["p"]))
-        for p, lvl in zip(pats, levels, strict=True):
-            p["var:ecog_performance_status"] = {"value": int(lvl), "unit": None}
-        added["var:ecog_performance_status"] = ecog
+        # each patient's ECOG follows their age (corpus regression of the ECOG >= 1 share on age, L055), around the
+        # population's mean age so the population's ECOG distribution stays the evidence's
+        from . import patient_risk
+        risk = patient_risk.load(seed)
+        ages = [(p.get("demographic:age") or {}).get("value") for p in pats]
+        known = [a for a in ages if a is not None]
+        mean_age = sum(known) / len(known) if known else None
+        for p, age in zip(pats, ages, strict=True):
+            probs = patient_risk.ecog_given_age(ecog["p"], age, mean_age, risk)
+            p["var:ecog_performance_status"] = {"value": int(rng.choice(5, p=np.array(probs) / sum(probs))), "unit": None}
+        added["var:ecog_performance_status"] = {**ecog, "by_age": (risk or {}).get("ecog_by_age") or {"status": "NOT_ESTIMATED"}}
     for var, dist, lo, hi, unit in (("var:weight", weight, 30, 200, "kg"), ("var:height", height, 120, 210, "cm")):
         if dist["status"] == "RESOLVED":
             for p in pats:
@@ -146,7 +153,14 @@ def augment(population_lock: Path, family: str | None, phase: str | None, out_di
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     subgroups = None
+    disease = None
     if spec is not None and model is not None:
+        # the target disease's own characteristics (histology, stage, biomarkers) from registry baseline tables (L062)
+        from ..cutoff import excluded
+        from . import disease_variables as dv
+
+        disease = dv.generate(model, spec, pats, family, phase, set(excluded()) | ({own_nct} if own_nct else set()),
+                              np.random.default_rng(seed + 11))
         from . import subgroup_evidence as sge
 
         subgroups = sge.build(model, spec, pats, family, phase, own_nct, np.random.default_rng(seed + 7))
@@ -158,6 +172,17 @@ def augment(population_lock: Path, family: str | None, phase: str | None, out_di
             (out / f).write_text((Path(population_lock) / f).read_text(encoding="utf-8"), encoding="utf-8")
     summary = {"base_population": str(population_lock), "family": family, "phase": phase, "added_variables": added,
                "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)"}
+    if disease:
+        summary["disease_variables"] = disease
+        rep = out / "population_report.md"
+        L = ["", "## Disease characteristics from registry evidence (L062)", "",
+             "| Variable | Shares | Trials | Source |", "| --- | --- | ---: | --- |"]
+        L += [f"| {g['key']} | {', '.join(f'{lv} {p:.0%}' for lv, p in zip(g['levels'], g['p'], strict=True))} | {g['trials']} | {g['source']} |"
+              for g in disease["generated"]]
+        L += ["", "Still unknown (no sufficient evidence): " + ", ".join(f"{u['key']} ({u['reason'][:60]})" for u in disease["unresolved"])]
+        if added:
+            L += ["", "## Baseline variables added from evidence", ""] + [f"- {k}" for k in added]
+        rep.write_text((rep.read_text(encoding="utf-8") if rep.exists() else "") + "\n".join(L) + "\n", encoding="utf-8")
     if subgroups:
         summary["subgroup_factors"] = [{"factor": f["text"], "variable": f["key"], "kind": f["kind"],
                                         "prevalence": (f.get("prevalence") or {}).get("source"),

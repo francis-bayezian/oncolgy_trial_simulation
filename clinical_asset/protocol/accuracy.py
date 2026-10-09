@@ -23,7 +23,12 @@ def _items(spec: dict):
         if isinstance(val, dict):                     # stratification holds its strata in a list
             val = val.get("strata")
         for it in val or []:
-            if isinstance(it, dict):
+            if not isinstance(it, dict):
+                continue
+            if sec == "assessments":                 # a schedule is scored by its rows, each one item
+                for row in it.get("assessments") or []:
+                    yield sec, row
+            else:
                 yield sec, it
 
 

@@ -99,7 +99,13 @@ class ArmResolver:
                 score[k] = len(carried & named) / len(carried | named)
         best = max(score.values(), default=0.0)
         top = [k for k, v in score.items() if v == best]
-        return top if best >= MIN_JACCARD and len(top) == 1 else None
+        if best >= MIN_JACCARD and len(top) == 1:
+            return top
+        # a numbered designator ('Arm 2') whose agents only one arm's label names, and that arm is also the protocol's
+        # n-th arm: two independent signals agree (L058); a weak overlap alone is never enough
+        if best > 0 and len(top) == 1 and d.isdigit() and 1 <= int(d) <= len(self.ids) and self.ids[int(d) - 1] == top[0]:
+            return top
+        return None
 
     def resolve(self, ref_text: str) -> list[str] | None:
         """The arm ids one arm reference names, or None when it cannot be resolved."""
@@ -110,6 +116,8 @@ class ArmResolver:
     def _resolve(self, ref: list[str]) -> list[str] | None:
         if not ref:
             return None
+        if ref in (["both", "arms"], ["all", "arms"], ["each", "arm"], ["both", "groups"], ["all", "groups"], ["all", "participants"]):
+            return list(self.ids)                           # a reference to every arm
         exact = [k for k in self.ids if any(t == ref for t in self.texts[k])]
         if exact:
             return exact

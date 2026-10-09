@@ -71,6 +71,9 @@ case "$ENGINE" in
   ni)
     $P run-ni-binary --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json ;;
+  ratio_ni)
+    $P run-ratio-ni --studyspec "$SPEC" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
+    lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json ;;
   continuous)
     $P run-continuous --studyspec "$SPEC" --out "$T/results" > "$T/results.log" 2>&1 || unresolved_results
     lock "$T/results" "$L/results_v$V" results --input studyspec=$SPEC/lock.json ;;

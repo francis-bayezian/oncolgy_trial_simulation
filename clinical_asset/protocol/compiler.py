@@ -27,7 +27,7 @@ from . import design_rules as drules
 from . import expressions as ex
 from . import ir, render, report, typecheck
 from . import schemas as sc
-from .ingest import Document, Section, extract, normalise
+from .ingest import Document, Section, Table, extract, normalise
 from .normalise import (
     Provenance,
     Source,
@@ -43,6 +43,14 @@ from .normalise import (
 COMPILER_VERSION = "protocol-compiler-1.1.0"
 OUT = Path("data/protocol_specs")
 CHUNK_CHARS = 80000  # one coherent read per component where it fits; split only very long protocols
+# Components whose answer grows with every item (criteria, toxicity rules, reasons to stop, definitions): their
+# sections are cut by code at numbered-item boundaries (tables by rows) into small reads, so no answer is long (L047)
+LIST_TASKS = {"eligibility", "dose_modification", "discontinuation", "definitions", "response"}
+LIST_CHUNK_CHARS = 8000
+TASK_CHUNK_CHARS = {"dose_modification": 16000}
+HEADING = re.compile(r"^\s*(?:\d+(?:\.\d+)+\.?\s+\S.*|[A-Z][^.;:!?]{1,70})$")   # a numbered or short title-like line
+STATISTICS_CHUNK_CHARS = 30000
+ITEM_START = re.compile(r"^\s*(?:\(?\d{1,2}[.)]|\(?[a-z][.)]|\(?[ivx]{1,4}[.)]|[•\u2022\u25cf\u25aa\-–])\s")
 
 TASKS = {
     "eligibility": ({"eligibility"}, sc.ELIGIBILITY, sc.ELIGIBILITY_INSTRUCTIONS),
@@ -60,12 +68,19 @@ TASKS = {
 # Components whose critical items can be re-extracted one at a time, and the task that extracts them.
 REPAIRABLE = {"eligibility": "eligibility", "dose_modification": "dose_modification", "stratification": "stratification",
               "treatment": "treatment", "radiotherapy": "treatment", "endpoints": "statistics", "analyses": "statistics",
-              "decision_rules": "design_rules"}
+              "decision_rules": "design_rules", "discontinuation": "discontinuation", "sample_size": "statistics",
+              "assessments": "assessments"}
 
 # ----------------------------------------------------------------------------- helpers
 
 
 REPAIR_ROUNDS = 5  # automatic repair rounds for every failing item (L030)
+# The fast flow (L049): one check per item (batched), one repair round for what fails; the compile is the whole
+# extraction, with no separate resolver run afterwards.
+FAST_VOTES = 1
+VERIFY_TEXT_CHARS = 40000   # above this a component's items are judged against their own sections
+FAST_VERIFY_BATCH = 15
+FAST_REPAIR_ROUNDS = 1
 
 def _raw_treatment_gaps(treatment: list[dict], dose_rules: list[dict]) -> list[str]:
     """Treatment gaps in raw extraction outputs (see typecheck.treatment_gaps); phases are identified by name."""
@@ -92,13 +107,100 @@ def _section_payload(sections: list[Section]) -> dict:
                           "tables": [{"page": t.page, "rows": t.rows} for t in s.tables]} for s in sections]}
 
 
+def _size(s: Section) -> int:
+    return len(s.text()) + sum(len(json.dumps(t.rows)) for t in s.tables) + 100
+
+
+def _pieces(s: Section, limit: int, headings: bool = False) -> list[Section]:
+    """A section longer than `limit` cut into parts that keep its number: text at numbered-item boundaries where
+    possible, each table by rows with its header row repeated. Quotes are still verified against the whole section."""
+    if _size(s) <= limit:
+        return [s]
+    out, cur, size = [], [], 0
+    for ln in s.lines:
+        n = len(ln.text) + 1
+        if cur and size + n > limit:
+            # cut at the last heading-like line, else the last item start, else here: related rules stay together
+            cut = headings and max((k for k in range(1, len(cur)) if HEADING.match(cur[k].text)), default=0) or \
+                max((k for k in range(1, len(cur)) if ITEM_START.match(cur[k].text)), default=len(cur))
+            out.append(cur[:cut])
+            cur, size = cur[cut:], sum(len(x.text) + 1 for x in cur[cut:])
+        cur.append(ln)
+        size += n
+    if cur:
+        out.append(cur)
+    parts = [Section(s.number, s.title, s.level, s.page_start, s.page_end, s.top, ls, []) for ls in out]
+    for t in s.tables:
+        head, rows, cur, size = t.rows[:1], t.rows[1:], [], 0
+        for row in rows:
+            n = len(json.dumps(row))
+            if cur and size + n > limit:
+                parts.append(Section(s.number, s.title, s.level, s.page_start, s.page_end, s.top, [], [Table(t.page, t.top, head + cur)]))
+                cur, size = [], 0
+            cur.append(row)
+            size += n
+        parts.append(Section(s.number, s.title, s.level, s.page_start, s.page_end, s.top, [], [Table(t.page, t.top, head + cur)]))
+    return parts
+
+
+COUNTED_TASKS = {"eligibility", "discontinuation"}
+NUMBERED = re.compile(r"^\s*\(?(\d{1,2})[.)]\s+\S")
+BULLET = re.compile(r"^\s*[•\u2022\u25cf\u25aa]\s+\S")
+
+
+def _listed_items(group: list[Section]) -> list[str]:
+    """The numbered items (else the bulleted items) of a read, each as its opening wording."""
+    lines = [ln.text for s in group for ln in s.lines]
+    pattern = NUMBERED if any(NUMBERED.match(t) for t in lines) else BULLET
+    items, cur = [], None
+    for t in lines:
+        if pattern.match(t):
+            cur = [t]
+            items.append(cur)
+        elif cur is not None and sum(len(x) for x in cur) < 200:
+            cur.append(t)
+    return [" ".join(i) for i in items]
+
+
+def _unmatched(group: list[Section], output: dict, only: list[str] | None = None) -> list[str]:
+    """Listed items whose opening words match no returned item's evidence or label."""
+    got = [_key(" ".join(x.get(k) or "" for k in ("evidence_quote", "label_quote", "criterion_quote"))) for x in output.get("criteria") or []]
+    out = []
+    for item in only if only is not None else _listed_items(group):
+        words = _key(re.sub(r"^\s*\(?\d{1,2}[.)]\s*|^\s*[•\u2022\u25cf\u25aa]\s*", "", item))
+        head = words[:30]
+        if len(head) < 12:
+            continue
+        if not any(head in g or (len(g) > 20 and g[:30] in words) for g in got):
+            out.append(item[:200])
+    return out
+
+
+def _limit(task: str) -> int:
+    if task in TASK_CHUNK_CHARS:
+        return TASK_CHUNK_CHARS[task]
+    return LIST_CHUNK_CHARS if task in LIST_TASKS else STATISTICS_CHUNK_CHARS if task == "statistics" else CHUNK_CHARS
+
+
+def _own_pieces(sections: list[Section], item: dict, task: str) -> list[Section]:
+    """The pieces of an item's sections (cut as for extraction) that hold its evidence wording, so a repair
+    re-reads the item's own lines; the whole sections when the wording is not found."""
+    quote = _key(render._q(item.get("evidence")) or render._q(item.get("criterion")) or render._q(item.get("text")))[:80]
+    if len(quote) < 12:
+        return sections
+    limit = _limit(task)
+    hits = [p for s in sections for p in _pieces(s, limit, task in TASK_CHUNK_CHARS)
+            if quote in _key(p.text() + " " + " ".join(" ".join(r) for t in p.tables for r in t.rows))]
+    return hits or sections
+
+
 def _chunks(sections: list[Section], limit: int = CHUNK_CHARS) -> list[list[Section]]:
     """Group consecutive sections, keeping a level-2 subtree together where it fits."""
     groups: list[list[Section]] = []
     current: list[Section] = []
     size = 0
     for s in sections:
-        n = len(s.text()) + sum(len(json.dumps(t.rows)) for t in s.tables) + 100
+        n = _size(s)
         top2 = ".".join(s.number.split(".")[:2])
         same_subtree = current and ".".join(current[-1].number.split(".")[:2]) == top2
         if current and size + n > limit and not (same_subtree and size + n <= 2 * limit):
@@ -119,7 +221,10 @@ def _key(text: str | None) -> str:
 
 
 class ProtocolCompiler:
-    def __init__(self, model: Any, terminology: Any | None = None, workers: int = 6, critical_votes: int = 3) -> None:
+    def __init__(self, model: Any, terminology: Any | None = None, workers: int = 6, critical_votes: int = 3,
+                 repair_rounds: int = REPAIR_ROUNDS, verify_batch: int = 1) -> None:
+        self.repair_rounds = repair_rounds
+        self.verify_batch = max(1, verify_batch)
         self.model = model
         self.terminology = terminology
         self.workers = workers
@@ -148,6 +253,11 @@ class ProtocolCompiler:
         extracted once more with the gaps named. Its results are merged by the normal builder."""
         treatment = [r for r in raw_results if r["task"] == "treatment" and "output" in r]
         gaps = _raw_treatment_gaps(treatment, [r for r in raw_results if r["task"] == "dose_modification" and "output" in r])
+        read = {(r["document"], n) for r in treatment for n in r["sections"]}
+        secs = [by_doc[d].section(n) for d, n in read if by_doc.get(d) and by_doc[d].section(n)]
+        given = [(_agent_key(i), _arm_tokens(i["arm_label_quotes"])) for r in treatment for i in r["output"]["interventions"]]
+        self._dosing_required = _dosing_requirements(secs)
+        gaps += _administration_gaps(self._dosing_required, given)
         self._completion = {"gaps_before": gaps, "results": []}
         if not gaps or not treatment:
             return self._completion
@@ -170,13 +280,92 @@ class ProtocolCompiler:
             self._completion["results"] = list(pool.map(run, treatment))
         return self._completion
 
+    def _copy_to_table_arms(self, spec: dict, docs: list[Document], prov: Provenance) -> list[dict]:
+        """A model may attach an administration shared by several arms to one arm only. When the protocol's dosing table
+        lists the agent for another arm with the same dose cell as an arm already compiled, the administration is copied
+        to that arm by code: the arm label is the table cell (a verified quote), the copy records the row it comes from,
+        and it is verified like any item. A different dose for the arm is never copied, only reported (L054)."""
+        req = [r for r in getattr(self, "_dosing_required", []) if r.get("arm_cell") and r["arms"]]
+        added = []
+        for r in req:
+            key = _key(r["agent"])
+            mine = [i for i in spec["interventions"] if _same_agent(key, _agent_key(i))]
+            if not mine:
+                continue
+            arm_sets = [_arm_tokens([render._q(a) for a in i["arms"] if a]) for i in mine]
+            if any(not a for a in arm_sets):              # an administration without arms covers every arm
+                continue
+            covered = set().union(*arm_sets)
+            for arm in sorted(r["arms"] - covered):
+                twin = next((x for x in req if x is not r and _same_agent(key, _key(x["agent"])) and x["dose"] and x["dose"] == r["dose"]
+                             and x["arms"] & covered), None)
+                if twin is None:
+                    continue
+                base = next(i for i, a in zip(mine, arm_sets) if a & twin["arms"])
+                doc = next((d for d in docs if d.section(r["section"]) is not None), None)
+                if doc is None:
+                    continue
+                prov.doc = doc
+                label = self._q(prov, Source.of([doc.section(r["section"])]), r["arm_cell"], "interventions", "arm")
+                if not label or not label.get("verified"):  # the arm must be the protocol's own wording
+                    continue
+                base_phase = next((p for p in spec["treatment_phases"] if p["phase_id"] == base.get("phase_id")), {})
+                phase = next((p for p in spec["treatment_phases"] if arm in _arm_tokens([render._q(a) for a in p.get("arms") or [] if a])
+                              and p.get("canonical_phase") == base_phase.get("canonical_phase")), None) or \
+                    next((p for p in spec["treatment_phases"] if arm in _arm_tokens([render._q(a) for a in p.get("arms") or [] if a])
+                          and p.get("sequence_number") == base_phase.get("sequence_number")), None)
+                new = json.loads(json.dumps({k: v for k, v in base.items()
+                                             if k not in ("verification", "semantic_status", "rendering", "repair", "status")}))
+                new.update({"intervention_id": f"TX{len(spec['interventions']) + 1:03d}", "arms": [label],
+                            "phase_id": phase["phase_id"] if phase else base.get("phase_id"),
+                            "derived_from": {"intervention": base["intervention_id"], "table_page": r["page"],
+                                             "rule": "the dosing table gives this agent the same dose for this arm"}})
+                spec["interventions"].append(new)
+                covered.add(arm)
+                added.append({"agent": r["agent"], "arm": arm, "from": base["intervention_id"], "as": new["intervention_id"]})
+        return added
+
+    def complete_lists(self, raw_results: list[dict]) -> list[dict]:
+        """Completeness of numbered lists, checked by code. A model can return fewer items than a text lists without
+        any error (23 numbered exclusion criteria, 2 returned). Every numbered item of an eligibility or
+        discontinuation read is matched to the returned items by its opening words; the unmatched ones are asked for
+        once more, by name, from the same text. Whatever is still unmatched is recorded for review (L050)."""
+        todo = []
+        for r in raw_results:
+            if r["task"] not in COUNTED_TASKS or "output" not in r or not r.get("_group"):
+                continue
+            missing = _unmatched(r["_group"], r["output"])
+            if missing:
+                todo.append((r, missing))
+        self._list_gaps = []
+
+        def run(job):
+            r, missing = job
+            _, schema, instructions = TASKS[r["task"]]
+            try:
+                out = self._call(r["task"], schema, sc.LIST_COMPLETE_PREFIX + instructions, r["_group"],
+                                 {"completeness": {"missing_items": missing}})
+            except Exception as exc:  # noqa: BLE001 - the gap stays recorded
+                return {"task": r["task"], "sections": r["sections"], "document": r.get("document"), "error": repr(exc)}
+            return {"task": r["task"], "sections": r["sections"], "document": r.get("document"), "output": out,
+                    "completion": True, "_group": r["_group"], "asked_for": missing}
+        with ThreadPoolExecutor(self.workers) as pool:
+            added = list(pool.map(run, todo))
+        for (r, missing), a in zip(todo, added):
+            still = _unmatched(r["_group"], {"criteria": (r["output"].get("criteria") or []) + ((a.get("output") or {}).get("criteria") or [])},
+                               only=missing)
+            self._list_gaps.append({"task": r["task"], "sections": r["sections"], "missed_first": len(missing), "still_missing": still})
+        return added
+
     def extract_components(self, doc: Document, types: dict[str, list[str]]) -> list[dict]:
         jobs = []
         front = Section("front", "Front matter", 0, 1, doc.sections[0].page_start if doc.sections else 1, 0.0, doc.front_matter, [])
         jobs.append(("metadata", [front], sc.METADATA, sc.METADATA_INSTRUCTIONS, None))
         for task, (wanted, schema, instructions) in TASKS.items():
             chosen = [s for s in doc.sections if set(types.get(s.number, [])) & wanted and (s.lines or s.tables)]
-            for group in _chunks(chosen):
+            limit = _limit(task)
+            pieces = [x for s in chosen for x in _pieces(s, limit, task in TASK_CHUNK_CHARS)]          # cut by code, before any model call
+            for group in _chunks(pieces, limit):
                 jobs.append((task, group, schema, instructions, None))
         for s in doc.sections:
             if set(types.get(s.number, [])) & {"assessments", "follow_up"}:
@@ -184,15 +373,20 @@ class ProtocolCompiler:
                     jobs.append(("assessments", [s], sc.ASSESSMENTS, sc.ASSESSMENTS_INSTRUCTIONS,
                                  {"table": {"page": table.page, "rows": table.rows}, "table_index": i}))
 
-        def run(job):
+        def run(job, retry=True):
             task, group, schema, instructions, extra = job
             try:
-                return {"task": task, "sections": [s.number for s in group], "extra": extra,
-                        "output": self._call(task, schema, instructions, group, extra)}
+                return [{"task": task, "sections": [s.number for s in group], "extra": extra, "_group": group,
+                         "output": self._call(task, schema, instructions, group, extra)}]
             except Exception as exc:  # noqa: BLE001 - recorded and surfaced as a REVIEW_REQUIRED gap
-                return {"task": task, "sections": [s.number for s in group], "extra": extra, "error": repr(exc)}
+                if retry and extra is None and "completed structured response" in repr(exc):
+                    half = max(2000, sum(_size(s) for s in group) // 2)
+                    pieces = [x for s in group for x in _pieces(s, half)]
+                    if len(pieces) > 1:          # the answer did not fit: re-read in halves, once (L047)
+                        return [r for g in _chunks(pieces, half) for r in run((task, g, schema, instructions, extra), False)]
+                return [{"task": task, "sections": [s.number for s in group], "extra": extra, "error": repr(exc)}]
         with ThreadPoolExecutor(self.workers) as pool:
-            return list(pool.map(run, jobs))
+            return [r for rs in pool.map(run, jobs) for r in rs]
 
     # ---------------------------------------------------------------- assembly
     def compile(self, protocol: Path, sap: Path | None = None, out_dir: Path | None = None) -> dict:
@@ -213,6 +407,7 @@ class ProtocolCompiler:
         by_doc = {d.doc_id: d for d in docs}
         completion = self.complete_treatment(by_doc, raw_results)
         raw_results += completion["results"]
+        raw_results += self.complete_lists(raw_results)          # numbered items the extraction skipped (L050)
         prov = Provenance(doc, COMPILER_VERSION)
         variables = Variables(self.terminology)
         review: list[dict] = []
@@ -241,6 +436,7 @@ class ProtocolCompiler:
         spec["randomization"], spec["stratification"] = self._stratification(of("stratification"), source_of, prov, variables, flag)
         spec["treatment_phases"], spec["interventions"], spec["radiotherapy"] = self._treatment(
             of("treatment"), source_of, prov, variables, flag)
+        spec["treatment_arm_copies"] = self._copy_to_table_arms(spec, docs, prov)
         spec["dose_modifications"] = self._dose_mods(of("dose_modification"), source_of, prov, variables, flag)
         spec["assessments"] = self._assessments(of("assessments"), source_of, prov, flag)
         spec["discontinuation_rules"] = self._discontinuation(of("discontinuation"), source_of, prov, flag)
@@ -258,10 +454,10 @@ class ProtocolCompiler:
         spec["static_issues"] = global_static
         for g in global_static:
             flag("static_check", "spec", g)
-        self.verify(spec, docs, flag)
+        self.verify(spec, docs, flag, batch=self.verify_batch)
         repaired: list[str] = []
         failing_before = None
-        for _round in range(REPAIR_ROUNDS):              # resolve loop (L030): stop when all faithful or no progress
+        for _round in range(self.repair_rounds):              # resolve loop (L030): stop when all faithful or no progress
             failing = sorted(_item_id(i) for _, i, _ in self._items(spec) if i.get("semantic_status") in {"INCOMPLETE", "INCORRECT", "UNVERIFIED"})
             if not failing or failing == failing_before:
                 break
@@ -281,10 +477,18 @@ class ProtocolCompiler:
                     for issue in item["static_issues"]:
                         flag("static_check", _item_id(item), issue)
             spec["static_issues"] = global_static
-            self.verify(spec, docs, flag, only=set(fixed) | unverified)     # repaired items and items never judged
+            self.verify(spec, docs, flag, batch=self.verify_batch, only=set(fixed) | unverified)  # repaired and never-judged items
         spec["repaired_items"] = repaired
         spec["unresolved_extraction"] = _classify_residual(spec, self._items(spec))
-        spec["treatment_completion"] = {"gaps_before": completion["gaps_before"],
+        spec["list_completeness"] = getattr(self, "_list_gaps", [])
+        for g in spec["list_completeness"]:
+            for item in g["still_missing"]:
+                flag(g["task"], ",".join(g["sections"]), "numbered item not extracted after the completeness pass", None, item)
+        built = [(_agent_key(i), _arm_tokens([render._q(a) for a in i["arms"] if a])) for i in spec["interventions"]]
+        still = _administration_gaps(getattr(self, "_dosing_required", []), built)
+        for g in still:
+            flag("treatment", "interventions", g)
+        spec["treatment_completion"] = {"gaps_before": completion["gaps_before"], "administration_gaps_after": still,
                                         "passes": len([r for r in completion["results"] if "output" in r]),
                                         "gaps_after": [g for g in spec["static_issues"] if g.startswith("treatment incomplete")]}
         for x in review:
@@ -308,7 +512,8 @@ class ProtocolCompiler:
         (target / "audit.json").write_text(json.dumps(audit, indent=1, ensure_ascii=False), encoding="utf-8")
         (target / "review_required.json").write_text(json.dumps(review, indent=1, ensure_ascii=False), encoding="utf-8")
         (target / "validation_report.json").write_text(json.dumps(validation, indent=1, ensure_ascii=False), encoding="utf-8")
-        (target / "extraction_raw.json").write_text(json.dumps(raw_results, indent=1, ensure_ascii=False), encoding="utf-8")
+        (target / "extraction_raw.json").write_text(json.dumps([{k: v for k, v in r.items() if k != "_group"} for r in raw_results],
+                                                               indent=1, ensure_ascii=False), encoding="utf-8")
         (target / "studyspec_review.md").write_text(report.build(spec, audit, review, validation), encoding="utf-8")
         (target / "unresolved_extraction.json").write_text(json.dumps(spec["unresolved_extraction"], indent=1, ensure_ascii=False), encoding="utf-8")
         _to_agent_backlog(protocol_id, spec["unresolved_extraction"])
@@ -458,12 +663,19 @@ class ProtocolCompiler:
                        tuple(sorted(_key(a) for a in it["arm_label_quotes"])), local.get(it["phase_id"], it["phase_id"]))
                 if sig in seen:
                     continue
+                if r.get("completion") and _agent_key(it) in {_agent_key(x) for x in interventions if not x.get("from_completion")} \
+                        and _arm_tokens(it["arm_label_quotes"]) <= set().union(*[_arm_tokens([render._q(a) for a in x["arms"] if a])
+                                                                                 for x in interventions if _agent_key(x) == _agent_key(it)] or [set()]):
+                    # a completeness pass re-reads the whole treatment text: it only adds agents not compiled yet, never a
+                    # second partial copy of an agent already there (L053)
+                    continue
                 seen.add(sig)
                 iid = f"TX{len(interventions) + 1:03d}"
                 dose = ex.parse_number(it["dose_quote"])
                 unit = ex.parse_unit(it["dose_unit_quote"])
                 entry = {
                     "intervention_id": iid, "phase_id": local.get(it["phase_id"]), "category": it["category"],
+                    **({"from_completion": True} if r.get("completion") else {}),
                     "modality": it["modality"], "canonical_agent": canonical_label(it["canonical_agent"]) or canonical_label(it["agent_quote"]),
                     "agent": self._q(prov, src, it["agent_quote"], "interventions", "agent"),
                     "arms": [self._q(prov, src, a, "interventions", "arm") for a in it["arm_label_quotes"]],
@@ -477,6 +689,8 @@ class ProtocolCompiler:
                          "institutional_policy": self._q(prov, src, a["policy_quote"], "interventions", "policy")}
                         for a in it["administration_options"]],
                     "alternative_to": self._q(prov, src, it["alternative_to_quote"], "interventions", "alternative_to"),
+                    "alternative_condition": self._q(prov, src, it.get("alternative_condition_quote"), "interventions", "condition"),
+                    "timing": [self._q(prov, src, t, "interventions", "condition") for t in it.get("timing_quotes") or [] if t],
                     "schedule": {"days": parse_days(it["day_quote"]) if _mentions(it["day_quote"], "day") else None,
                                  "weeks": parse_days(it["week_quote"] or (it["day_quote"] if _mentions(it["day_quote"], "week") else ""))
                                  if _mentions(it["week_quote"] or it["day_quote"], "week") else None,
@@ -635,14 +849,18 @@ class ProtocolCompiler:
                     if parsed.get("kind") == "unparsed":
                         flag("assessments", sid, f"time point not parsed: {header!r}", point["header"]["provenance"] if point["header"] else None, header)
                     points.append(point)
-                items.append({"assessment": self._q(prov, src, a["assessment_quote"], "assessments", "assessment"), "timepoints": points})
+                items.append({"row_id": f"{sid}.R{len(items) + 1:02d}", "schedule": sid,
+                              "assessment": self._q(prov, src, a["assessment_quote"], "assessments", "assessment"), "timepoints": points,
+                              "components": [self._q(prov, src, c, "assessments", "description") for c in a.get("component_quotes") or [] if c],
+                              "table_page": table["page"], "sections": r["sections"], "document": r.get("document")})
             schedules.append({"schedule_id": sid, "section": r["sections"][0], "table_page": table["page"],
+                              "table_kind": o.get("table_kind", "schedule"),
                               "anchor": self._q(prov, src, o["anchor_quote"], "assessments", "anchor"),
                               "canonical_anchor": canonical_label(o["canonical_anchor"]),
                               "arms": [self._q(prov, src, a, "assessments", "arm") for a in o["arm_label_quotes"]],
                               "footnotes": [{"symbol": f["symbol_quote"], "text": self._q(prov, src, f["text_quote"], "assessments", "footnote")}
                                             for f in o["footnotes"]],
-                              "assessments": items})
+                              "assessments": items, "sections": r["sections"], "document": r.get("document")})
         return schedules
 
     def _discontinuation(self, results, source_of, prov, flag):
@@ -662,7 +880,7 @@ class ProtocolCompiler:
                               "time_limit": {"value": value, "unit": unit, "days": ex.to_days(value, unit),
                                              "anchor": self._q(prov, src, c["anchor_quote"], "discontinuation", "anchor"),
                                              "canonical_anchor": canonical_label(c["canonical_anchor"])}
-                              if c["trigger"] == "time_limit" else None})
+                              if c["trigger"] == "time_limit" else None, "sections": r["sections"], "document": r.get("document")})
                 if c["trigger"] == "time_limit" and (value is None or not unit):
                     flag("discontinuation", rules[-1]["rule_id"], "time limit without parsable value or unit", None, c["criterion_quote"])
         return rules
@@ -698,6 +916,8 @@ class ProtocolCompiler:
                                   "canonical_origin_event": canonical_label(e["canonical_origin_event"]) if e["time_origin_quote"] else None,
                                   "censoring": [self._q(prov, src, q, "endpoints", "censoring") for q in e["censoring_quotes"]],
                                   "population": self._q(prov, src, e["population_quote"], "endpoints", "population"),
+                                  **{f: self._q(prov, src, e.get(f + "_quote"), "endpoints", f)
+                                     for f in ("definition", "assessment", "schedule", "per_group", "summary_measures")},
                                   "evidence": self._q(prov, src, e["evidence_quote"], "endpoints", "evidence"), "sections": r["sections"], "document": r["document"]})
             for a in o["analyses"]:
                 k = "|".join([_key(a["endpoint_name_quote"]), a["test_family"], a["sidedness"], _key(a["alpha_quote"]),
@@ -722,6 +942,8 @@ class ProtocolCompiler:
                                  "stratification": [self._q(prov, src, q, "analyses", "stratification") for q in a["stratification_quotes"]],
                                  "population": self._q(prov, src, a["population_quote"], "analyses", "population"),
                                  "multiplicity": self._q(prov, src, a["multiplicity_quote"], "analyses", "multiplicity"),
+                                 **{f: self._q(prov, src, a.get(f + "_quote"), "analyses", f)
+                                    for f in ("estimate", "per_group", "summary_measures", "timing", "hypothesis", "condition")},
                                  "evidence": self._q(prov, src, a["evidence_quote"], "analyses", "evidence"),
                                  "sections": r["sections"], "document": r.get("document")})
             for s in o["sample_size"]:
@@ -731,7 +953,9 @@ class ProtocolCompiler:
                 seen["ss"].add(k)
                 sample.append({"quantity": s["quantity"], "value": ex.parse_number(s["value_quote"]), "unit": _unit_or_text(s["unit_quote"]),
                                "text": self._q(prov, src, s["value_quote"], "sample_size", "value"),
-                               "evidence": self._q(prov, src, s["evidence_quote"], "sample_size", "evidence")})
+                               "refers_to": self._q(prov, src, s.get("refers_to_quote"), "sample_size", "description"),
+                               "evidence": self._q(prov, src, s["evidence_quote"], "sample_size", "evidence"),
+                               "sample_size_id": f"SS{len(sample) + 1:02d}", "sections": r["sections"], "document": r.get("document")})
             for i in o["interim"]:
                 k = i["purpose"] + _key(i["evidence_quote"])
                 if k in seen["im"]:
@@ -921,6 +1145,15 @@ class ProtocolCompiler:
             yield "interim", i, []
         for r in spec.get("decision_rules") or []:
             yield "decision_rules", r, []
+        # scored by the accuracy report, so judged, investigated and repaired like every other item
+        for d in spec.get("discontinuation_rules") or []:
+            yield "discontinuation", d, []
+        for k, q in enumerate(spec.get("sample_size") or [], 1):
+            q.setdefault("sample_size_id", f"SS{k:02d}")
+            yield "sample_size", q, []
+        for a in spec.get("assessments") or []:              # each row of a schedule is one item (L051)
+            for row in a.get("assessments") or []:
+                yield "assessments", row, []
 
     def _runtime_and_criticality(self, spec: dict) -> None:
         for component, item, trees in self._items(spec):
@@ -1027,6 +1260,8 @@ class ProtocolCompiler:
                 continue
             failed = item.get("semantic_status") in {"INCOMPLETE", "INCORRECT"} or item.get("static_status") == "FAIL" \
                 or item.get("runtime_status") == "UNSUPPORTED_RULE_TYPE"
+            if item.get("semantic_status") == "FAITHFUL":   # only unfaithful items are re-extracted: a faithful one is kept
+                failed = False
             if not failed:
                 continue
             doc = by_doc.get(item.get("document"))
@@ -1034,7 +1269,14 @@ class ProtocolCompiler:
             if not sections:
                 continue
             task = REPAIRABLE[component]
-            _, schema, instructions = TASKS[task]
+            if task == "assessments":                          # a schedule row is re-read from its own table
+                schema, instructions = sc.ASSESSMENTS, sc.ASSESSMENTS_INSTRUCTIONS
+                table = _row_table(sections, item)
+                if table is None:
+                    continue
+            else:
+                _, schema, instructions = TASKS[task]
+                table = None
             v = item.get("verification") or {}
             problem = {"compiled_item": item.get("rendering") or "", "evidence": render._q(item.get("evidence")),
                        "verifier_verdict": v.get("verdict"), "verifier_note": v.get("reviewer_note"),
@@ -1044,15 +1286,19 @@ class ProtocolCompiler:
                        "investigation": item.get("investigation"),        # the targeted resolver's finding (L033)
                        "unresolved_parts": [leaf.get("text") for t in self._trees_of(item) for leaf in ex.leaves(t)
                                             if leaf.get("status") != "EXECUTABLE"]}
-            jobs.append((component, item, task, schema, sc.REPAIR_PREFIX + instructions, sections, problem))
+            if table is not None:
+                problem["table"] = table
+            jobs.append((component, item, task, schema, sc.REPAIR_PREFIX + instructions, _own_pieces(sections, item, task), problem))
         if not jobs:
             return []
 
         def run(job):
             _component, _item, task, schema, instructions, sections, problem = job
             try:
+                table = problem.get("table")
                 out = self.model.extract(f"protocol_{task}", schema, {"instructions": instructions, **_section_payload(sections),
-                                                                      "repair": problem})
+                                                                      **({"table": table} if table else {}),
+                                                                      "repair": {k: v for k, v in problem.items() if k != "table"}})
                 return job, out
             except Exception as exc:  # noqa: BLE001 - an item that cannot be repaired keeps its original compilation
                 return job, {"error": repr(exc)}
@@ -1064,7 +1310,8 @@ class ProtocolCompiler:
             if "error" in out:
                 flag(component, iid, f"automatic repair failed: {out['error']}")
                 continue
-            r = {"task": task, "sections": item["sections"], "document": item["document"], "output": out}
+            r = {"task": task, "sections": item["sections"], "document": item["document"], "output": out,
+                 "extra": {"table": problem["table"]} if problem.get("table") else None}
             src_doc = by_doc[item["document"]]
 
             def source_of(_r, d=src_doc, secs=sections):
@@ -1161,6 +1408,22 @@ class ProtocolCompiler:
             if new is not None:
                 new["course_id"] = old["course_id"]
             key = "target_id"
+        elif component == "assessments":
+            rows = [x for s in self._assessments([r], source_of, prov, flag) for x in s["assessments"]]
+            same = [x for x in rows if _key(render._q(x.get("assessment"))) == _key(render._q(old.get("assessment")))]
+            new = same[0] if same else (rows[0] if len(rows) == 1 else None)
+            if new is not None:
+                new["schedule"] = old.get("schedule")
+            key = "row_id"
+        elif component == "discontinuation":
+            rules = [x for x in self._discontinuation([r], source_of, prov, flag) if x["scope"] == old["scope"]]
+            new = next((x for x in rules if x["trigger"] == old["trigger"]), rules[0] if len(rules) == 1 else None)
+            key = "rule_id"
+        elif component == "sample_size":
+            stats = self._statistics([r], source_of, prov, flag)
+            same = [q for q in stats["sample_size"] if q["quantity"] == old["quantity"]]
+            new = same[0] if len(same) == 1 else next((q for q in same if q["value"] == old.get("value")), same[0] if same else None)
+            key = "sample_size_id"
         else:
             return None
         if new is None:
@@ -1201,6 +1464,9 @@ class ProtocolCompiler:
             groups.setdefault("statistics", []).append((q, _render_quantity(q), _evidence(q, None)))
         for d in spec.get("discontinuation_rules") or []:
             groups.setdefault("discontinuation", []).append((d, _render_discontinuation(d), _evidence(d, None, "criterion")))
+        for a in spec.get("assessments") or []:
+            for row in a.get("assessments") or []:
+                groups.setdefault("assessments", []).append((row, _render_row(a, row), _render_row(a, row, evidence=True)))
         for r in spec.get("decision_rules") or []:
             groups.setdefault("design_rules", []).append((r, drules.render_rule(r), " | ".join(
                 dict.fromkeys(x for x in [render._q(r.get("evidence"))] + _verified_quotes(r) if x))))  # a rule is built from several passages
@@ -1211,7 +1477,7 @@ class ProtocolCompiler:
         def related(component: str, it: dict) -> list[str]:
             """Other compiled items that together with this one express the same protocol text."""
             iid = _item_id(it)
-            if component in {"eligibility", "stratification", "statistics", "design_rules"}:
+            if component in {"eligibility", "stratification", "statistics", "design_rules", "discontinuation", "assessments"}:
                 ids = [_item_id(x) for x, _, _ in groups[component]]
                 extra = []
             elif component == "radiotherapy":
@@ -1235,13 +1501,20 @@ class ProtocolCompiler:
 
         jobs = []
         for component, items in groups.items():
-            text = self._component_text(docs, component)
+            whole = self._component_text(docs, component)
             selected = [x for x in items if only is None or _item_id(x[0]) in only]
-            for start in range(0, len(selected), batch):
-                chunk = selected[start:start + batch]
-                votes = self.critical_votes                # every rule item, whatever its criticality (L030)
-                for vote in range(votes):
-                    jobs.append((component, [(it, r, e, related(component, it)) for it, r, e in chunk], text, vote, votes))
+            # a long component: each item is judged against its own sections, and items read from the same sections
+            # share a call (the whole component text, up to 120,000 characters, made every call large; L048)
+            by_text: dict[str, list] = {}
+            for x in selected:
+                own = whole if len(whole) <= VERIFY_TEXT_CHARS else self._own_text(docs, x[0]) or whole
+                by_text.setdefault(own, []).append(x)
+            for text, xs in by_text.items():
+                for start in range(0, len(xs), batch):
+                    chunk = xs[start:start + batch]
+                    votes = self.critical_votes                # every rule item, whatever its criticality (L030)
+                    for vote in range(votes):
+                        jobs.append((component, [(it, r, e, related(component, it)) for it, r, e in chunk], text, vote, votes))
 
         def run(job):
             _component, items, text, vote, votes = job
@@ -1336,8 +1609,33 @@ class ProtocolCompiler:
                     "policy": "accepted: every problem the reviewers named leaves the executed rule unchanged (user decision 2026-09-28)"}
                 flag(box["component"], iid, "accepted: the reviewers' objections were judged not to change execution (majority)")
 
+    def _own_text(self, docs: list[Document], item: dict) -> str:
+        """The sections an item was compiled from (an assessment schedule: its own table), for its verification."""
+        doc = next((d for d in docs if d.doc_id == item.get("document")), docs[0] if len(docs) == 1 else None)
+        if doc is None:
+            return ""
+        secs = [doc.section(n) for n in item.get("sections") or [] if doc.section(n)]
+        if item.get("table_page") is not None and secs:
+            tables = [t for t in secs[0].tables if t.page == item.get("table_page")] or secs[0].tables
+            return "\n".join([f"{secs[0].number} {secs[0].title}"] + ["TABLE: " + json.dumps(t.rows, ensure_ascii=False) for t in tables])[:VERIFY_TEXT_CHARS]
+        own = {s.number for s in secs}
+        texts = {s.number: _key(s.text()) for s in doc.sections}
+        for quote in _verified_texts(item):
+            k = _key(quote)[:120]
+            if len(k) < 15 or any(k in texts[n] for n in own):
+                continue
+            where = next((s for s in doc.sections if k in texts[s.number]), None)
+            if where is not None and where.number not in own:
+                secs.append(where)
+                own.add(where.number)
+        parts = [f"{s.number} {s.title}\n{s.text()}" for s in secs] + \
+                ["TABLE: " + json.dumps(t.rows, ensure_ascii=False) for s in secs for t in s.tables]
+        return "\n".join(parts)[:VERIFY_TEXT_CHARS]
+
     def _component_text(self, docs: list[Document], component: str) -> str:
         wanted = TASKS[component][0] if component in TASKS else set()
+        if component == "assessments":
+            wanted = {"assessments", "follow_up"}
         if component == "radiotherapy":
             wanted = TASKS["treatment"][0]
         parts = []
@@ -1597,10 +1895,166 @@ def _to_agent_backlog(protocol_id: str, residual: list[dict]) -> None:
             fh.write(json.dumps({"recorded": stamp, "protocol": protocol_id, **r}, ensure_ascii=False) + "\n")
 
 
+def _verified_texts(node) -> list[str]:
+    """Every verified quote an item carries (any depth)."""
+    out = []
+    if isinstance(node, dict):
+        if node.get("verified") is True and isinstance(node.get("text"), str):
+            out.append(node["text"])
+        for k, v in node.items():
+            if k not in ("verification", "repair", "rendering"):
+                out += _verified_texts(v)
+    elif isinstance(node, list):
+        for v in node:
+            out += _verified_texts(v)
+    return out
+
+
+AGENT_COLUMN = re.compile(r"intervention\s*name|drug\s*name|agent|investigational\s*product|study\s*(?:drug|intervention|treatment)|"
+                          r"treatment\s*name|product\s*name|^\s*(?:drug|intervention|treatment)\s*$", re.I)
+ARM_COLUMN = re.compile(r"\barm\b|\bgroup\b|\bcohort\b", re.I)
+DOSE_COLUMN = re.compile(r"dosage|dose\s*level|^\s*dose\b", re.I)
+ARM_TOKEN = re.compile(r"\b(arm|group|cohort)\s*([A-Za-z]?\d+[A-Za-z]?|[A-Z])\b", re.I)
+DOSE_AFTER_NAME = re.compile(r"\b([A-Z][A-Za-z][A-Za-z0-9\-]{2,}(?:\s[A-Za-z][A-Za-z0-9\-]*)?)\s*(?:\(|,|:|at|of)?\s*"
+                             r"(?:\d+(?:\.\d+)?(?:\s*(?:to|-|–)\s*\d+(?:\.\d+)?)?\s*(?:mg/m2|mg/m²|mg/kg|mg|mcg|µg|μg|ug|g/m2|g/m²|"
+                             r"IU/m2|IU|units/m2|units)\b|AUC\s*\d)")
+NOT_AGENT = {"day", "days", "cycle", "cycles", "week", "weeks", "dose", "doses", "total", "maximum", "minimum", "approximately",
+             "each", "the", "arm", "group", "table", "section", "level", "reduce", "reduced", "given", "patients", "participants",
+             "subjects", "body", "surface", "area", "starting", "daily", "once", "twice", "then", "followed", "with", "plus",
+             "and", "or", "for", "per", "over", "infusion", "target", "dosage", "strength", "unit", "volume", "weight",
+             "solution", "distribution", "formulation", "concentration", "vial", "vials", "dilution", "diluted",
+             "reconstituted", "bag", "syringe", "injection", "tablet", "tablets", "capsule", "capsules", "label",
+             "cmax", "cmin", "ctrough", "tmax", "achieved", "exposure", "exposures", "clearance", "observed", "predicted",
+             "once-weekly", "twice-weekly", "once-daily", "twice-daily", "weekly", "within", "every", "until"}
+
+
+def _arm_tokens(labels) -> set:
+    """Arm identifiers written in labels ('Arm 1 and Arm 2 (...)' -> {'arm 1', 'arm 2'}); empty when none is written."""
+    return {f"{m.group(1).lower()} {m.group(2).lower()}" for lab in labels or [] for m in ARM_TOKEN.finditer(lab or "")}
+
+
+def _dosing_requirements(sections: list[Section]) -> list[dict]:
+    """What the protocol says is administered, read by code: each agent of a dosing table with the arms of its row
+    (tables whose header names an agent column and an arm column), and each name written directly before a dose with
+    a unit or a target AUC in the text. No list of drugs: the structure of the text decides."""
+    req = []
+    for s in sections:
+        for t in s.tables:
+            head = [c or "" for c in t.rows[0]] if t.rows else []
+            ai = next((k for k, h in enumerate(head) if AGENT_COLUMN.search(h)), None)
+            ri = next((k for k, h in enumerate(head) if ARM_COLUMN.search(h) and k != ai), None)
+            di = next((k for k, h in enumerate(head) if DOSE_COLUMN.search(h) and not re.search(r"formulation|strength", h, re.I)), None)
+            if ai is None:
+                continue
+            for row in t.rows[1:]:
+                name = " ".join((row[ai] if ai < len(row) else "").split())
+                # a name starts with a letter and is not a schedule or formulation phrase
+                if re.match(r"[A-Za-z]", name) and len(_key(name).replace(" ", "")) >= 4 and not set(name.casefold().split()) & NOT_AGENT:
+                    arms = _arm_tokens([row[ri]]) if ri is not None and ri < len(row) else set()
+                    req.append({"agent": name, "arms": arms, "source": f"table, page {t.page}", "section": s.number, "page": t.page,
+                                "arm_cell": row[ri] if ri is not None and ri < len(row) else "",
+                                "dose": " ".join((row[di] if di is not None and di < len(row) else "").split())})
+        for ln in s.lines:
+            for m in DOSE_AFTER_NAME.finditer(ln.text):
+                if not set(m.group(1).casefold().split()) & NOT_AGENT:
+                    req.append({"agent": m.group(1), "arms": set(), "source": f"text, page {ln.page}"})
+    return req
+
+
+def _same_agent(a: str, b: str) -> bool:
+    """Agent names compared without spaces (table cells break words) and allowing a misspelling."""
+    from difflib import SequenceMatcher
+    a, b = a.replace(" ", "").replace("_", ""), b.replace(" ", "").replace("_", "")
+    # a name may carry a trailing word ('X prophylaxis'), never a leading one: 'nab-X' is another agent than 'X'
+    return bool(a and b) and (a.startswith(b) or b.startswith(a) or SequenceMatcher(None, a, b).ratio() >= 0.85)
+
+
+def _administration_gaps(required: list[dict], given: list[tuple[str, set]]) -> list[str]:
+    """Agents the protocol administers that no extracted administration covers, and agent-arm pairs a dosing table
+    lists that the extracted administrations of that agent do not cover (an administration without arms covers all)."""
+    gaps, seen = [], set()
+    for r in required:
+        key = _key(r["agent"])
+        mine = [arms for agent, arms in given if _same_agent(key, agent)]
+        if not mine:
+            msg = f"treatment incomplete: '{r['agent']}' is administered ({r['source']}) but no administration of it was compiled"
+        else:
+            missing = {a for a in r["arms"] if not any(not arms or a in arms for arms in mine)}
+            if not missing:
+                continue
+            msg = (f"treatment incomplete: '{r['agent']}' is given in {', '.join(sorted(missing))} ({r['source']}) but no "
+                   f"compiled administration of it covers {'that arm' if len(missing) == 1 else 'those arms'}")
+        if msg not in seen:
+            seen.add(msg)
+            gaps.append(msg)
+    return gaps
+
+
+def _agent_key(it: dict) -> str:
+    """One agent, whether a raw extraction (agent_quote, canonical_agent) or a built intervention (agent, canonical_agent)."""
+    return canonical_label(it.get("canonical_agent")) or _key(it.get("agent_quote") or render._q(it.get("agent")))
+
+
+def _row_table(sections: list[Section], row: dict) -> dict | None:
+    """The table a schedule row was read from (its section's table on the row's page)."""
+    for s in sections:
+        for t in s.tables:
+            if t.page == row.get("table_page"):
+                return {"page": t.page, "rows": t.rows}
+    return None
+
+
+def _render_row(a: dict, row: dict, evidence: bool = False) -> str:
+    """One assessment row in plain words: what is assessed, at which time points (frequency, condition), its components,
+    in which schedule (table page, anchor, arms)."""
+    q = render._q
+    if evidence:
+        return " | ".join(dict.fromkeys(x for x in [q(row.get("assessment"))] + [q(tp.get("cell")) for tp in row.get("timepoints") or []]
+                                        + [q(c) for c in row.get("components") or []] if x))[:4000]
+    pts = []
+    for tp in row.get("timepoints") or []:
+        extra = [x for x in (q(tp.get("cell")), q(tp.get("frequency")), q(tp.get("condition"))) if x]
+        pts.append((q(tp.get("header")) or "?") + (f" ({'; '.join(extra)})" if extra else ""))
+    comps = [q(c) for c in row.get("components") or [] if q(c)]
+    arms = [q(x) for x in a.get("arms") or [] if q(x)]
+    where = (f"list of components (table, page {a.get('table_page')})" if a.get("table_kind") == "component_list" else
+             f"schedule (table, page {a.get('table_page')}) anchored at {q(a.get('anchor')) or a.get('canonical_anchor') or 'unstated'}")
+    return (f"Assessment {q(row.get('assessment'))!r} in the {where}" + (f", arms {', '.join(arms)}" if arms else "") + ": "
+            + ("; ".join(pts) if pts else "no time point") + (f"; components: {', '.join(comps)}" if comps else ""))
+
+
+def _render_schedule(a: dict, evidence: bool = False) -> str:
+    """A schedule of assessments in plain words: what is assessed at which time points (and how often), per arm."""
+    q = render._q
+    if evidence:      # the table cells the schedule was read from
+        return " | ".join(dict.fromkeys(x for it in a.get("assessments") or [] for x in
+                                        [q(it.get("assessment"))] + [q(tp.get("cell")) for tp in it.get("timepoints") or []] if x))[:4000]
+    if a.get("table_kind") == "component_list":
+        head = f"List of assessment components (table, page {a.get('table_page')}), no time points"
+    else:
+        head = f"Schedule of assessments (table, page {a.get('table_page')}) anchored at {q(a.get('anchor')) or a.get('canonical_anchor') or 'unstated'}"
+    arms = [q(x) for x in a.get("arms") or [] if q(x)]
+    lines = [head + (f"; arms: {', '.join(arms)}" if arms else "") + "."]
+    for it in a.get("assessments") or []:
+        pts = []
+        for tp in it.get("timepoints") or []:
+            p = q(tp.get("header")) or "?"
+            extra = [x for x in (q(tp.get("frequency")), q(tp.get("condition"))) if x]
+            pts.append(p + (f" ({'; '.join(extra)})" if extra else ""))
+        comps = [q(c) for c in it.get("components") or [] if q(c)]
+        lines.append(f"- {q(it.get('assessment'))}: {', '.join(pts) or 'no time point'}"
+                     + (f"; components: {', '.join(comps)}" if comps else ""))
+    lines += [f"Footnote {f.get('symbol')}: {q(f.get('text'))}" for f in a.get("footnotes") or [] if q(f.get("text"))]
+    return "\n".join(lines)
+
+
 def _render_quantity(q: dict) -> str:
     """A sample-size statement in plain words (quantity, value, unit, and the stated text)."""
     t = render._q(q.get("text")) or ""
-    return f"{(q.get('quantity') or '').replace('_', ' ')}: {q.get('value')} {q.get('unit') or ''}".strip() + (f" (stated as '{t}')" if t else "")
+    about = render._q(q.get("refers_to"))
+    approx = "approximately " if re.search(r"\b(?:approximately|approx\.?|about|around)\b|~", t + " " + render._q(q.get("evidence"))[:60], re.I) else ""
+    return (f"{(q.get('quantity') or '').replace('_', ' ')}: {approx}{q.get('value')} {q.get('unit') or ''}".strip() + (f" (stated as '{t}')" if t else "")
+            + (f"; refers to '{about}'" if about else ""))
 
 
 def _render_discontinuation(d: dict) -> str:
@@ -1614,7 +2068,7 @@ def _render_discontinuation(d: dict) -> str:
 def _item_id(item: dict) -> str:
     # most specific first: an intervention also carries the phase_id of its phase
     for k in ("intervention_id", "target_id", "criterion_id", "stratum_id", "rule_id", "decision_rule_id", "endpoint_id", "analysis_id",
-              "interim_id", "scale_id", "sample_size_id", "phase_id"):
+              "interim_id", "scale_id", "sample_size_id", "row_id", "schedule_id", "phase_id"):
         if k in item:
             return item[k]
     return "?"

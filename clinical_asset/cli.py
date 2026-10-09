@@ -161,9 +161,11 @@ def main(argv: list[str] | None = None) -> int:
     cp.add_argument("--protocol", type=Path, required=True)
     cp.add_argument("--sap", type=Path, default=None)
     cp.add_argument("--out", type=Path, default=None)
-    cp.add_argument("--workers", type=int, default=6)
-    cp.add_argument("--effort", default="high", choices=["low", "medium", "high"])
-    cp.add_argument("--verifier-votes", type=int, default=3, help="independent verifier votes per CRITICAL item (majority wins)")
+    cp.add_argument("--workers", type=int, default=24)
+    cp.add_argument("--effort", default="medium", choices=["low", "medium", "high"])
+    cp.add_argument("--verifier-votes", type=int, default=1, help="independent verifier votes per item (majority wins)")
+    cp.add_argument("--repair-rounds", type=int, default=3, help="repair rounds for items the verifier rejects")
+    cp.add_argument("--verify-batch", type=int, default=15, help="items judged per verifier call")
     cp.add_argument("--max-calls", type=int, default=2000, help="budget of new (uncached) model calls for this compilation")
     fx = commands.add_parser("extract-facts", help="Quantitative protocol facts (population, accrual, historical outcomes) with quotes.")
     fx.add_argument("--protocol", type=Path, required=True)
@@ -292,7 +294,19 @@ def main(argv: list[str] | None = None) -> int:
     cp.add_argument("--registry", type=Path, required=True)
     cp.add_argument("--fetched-at", required=True)
     cp.add_argument("--out", type=Path, required=True)
-    ba = commands.add_parser("build-accrual-asset", help="Planning asset 1: historical accrual evidence and model (holdouts excluded).")
+    cr = commands.add_parser("compare-registry-ratio-ni", help="Blind comparison of locked ratio-noninferiority predictions with the registry.")
+    cr.add_argument("--results", type=Path, required=True, help="locked results directory holding ratio_ni_results.json")
+    cr.add_argument("--registry", type=Path, required=True)
+    cr.add_argument("--fetched-at", required=True)
+    cr.add_argument("--out", type=Path, required=True)
+    pce = commands.add_parser("predict-control-external", help="Hidden-control prediction of a trial outside the corpus, scored against its posted control arm.")
+    pce.add_argument("--registry", type=Path, required=True)
+    pce.add_argument("--safety", type=Path, required=True, help="locked safety stage (control arm drug classes and family)")
+    pce.add_argument("--adsl", type=Path, required=True, help="locked simulated ADSL (protocol-only population)")
+    pce.add_argument("--control-arm", required=True)
+    pce.add_argument("--experimental-arm", required=True)
+    pce.add_argument("--out", type=Path, required=True)
+    ba = commands.add_parser("build-accrual-asset",help="Planning asset 1: historical accrual evidence and model (holdouts excluded).")
     ba.add_argument("--raw-dir", type=Path, default=Path("data/raw/ctgov"))
     ba.add_argument("--holdout", type=Path, default=Path("data/manifest/holdout_test_trials.json"))
     ba.add_argument("--family-map", type=Path, default=Path("data/simulation_parameters_v2/hierarchy/disease_family_map.parquet"))
@@ -351,6 +365,12 @@ def main(argv: list[str] | None = None) -> int:
         ren.add_argument(f"--{name}", type=Path, required=True)
     ren.add_argument("--facts", type=Path, default=None)
     ren.add_argument("--seed", type=int, default=20261005)
+    rni = commands.add_parser("run-ratio-ni", help="Primary engine: geometric-mean-ratio noninferiority (any protocol stating it).")
+    rni.add_argument("--studyspec", type=Path, required=True)
+    rni.add_argument("--out", type=Path, required=True)
+    rv = commands.add_parser("review-run", help="Self-review of a finished run: ask, answer from evidence, correct or ask the human.")
+    rv.add_argument("--id", required=True)
+    rv.add_argument("--version", required=True)
     aud = commands.add_parser("audit-run", help="Completeness audit of one protocol run: anything undetermined, unresolved or missing.")
     aud.add_argument("--id", required=True)
     aud.add_argument("--version", required=True)
@@ -391,6 +411,21 @@ def main(argv: list[str] | None = None) -> int:
             doc = run_endpoints(args.studyspec, args.journey, args.safety, args.out, args.facts, seed=args.seed)
             print(json.dumps(doc["counts"]))
             return 0
+        if args.command == "run-ratio-ni":
+            from .trial.ratio_ni import run as run_ratio_ni
+
+            doc = run_ratio_ni(args.studyspec, args.out)
+            print(json.dumps({"status": doc["status"]}, indent=1))
+            return 0
+        if args.command == "review-run":
+            from .trial.review import review_run
+            from .trial.studyspec import load_studyspec
+
+            spec, _ = load_studyspec(Path(f"data/locked/{args.id}/studyspec_v{args.version}"))
+            doc = review_run(Path(f"data/trial/runs/{args.id}/v{args.version}"), spec)
+            print(json.dumps({k: doc[k] for k in ("questions_asked", "problems", "corrections_applied", "rerun_needed", "model_calls")}
+                             | {"questions_for_human": len(doc["questions_for_human"])}, indent=1, default=str))
+            return 0 if not doc["rerun_needed"] else 10
         if args.command == "audit-run":
             from .trial.audit import audit
 
@@ -593,6 +628,19 @@ def main(argv: list[str] | None = None) -> int:
             doc = run_escalation_compare(args.results, args.registry, args.fetched_at, args.out)
             print(json.dumps({"order_verified": doc["order_verified"], "items": [i["status"] for i in doc["items"]]}, indent=1))
             return 0
+        if args.command == "compare-registry-ratio-ni":
+            from .trial.ratio_ni_compare import compare as compare_ratio_ni
+
+            doc = compare_ratio_ni(args.results, args.registry, args.fetched_at, args.out)
+            print(json.dumps({"order_verified": doc["order_verified"], "items": [(i["analysis_id"], i["status"], i.get("conclusion_agrees"))
+                                                                               for i in doc["items"]]}, indent=1))
+            return 0
+        if args.command == "predict-control-external":
+            from .trial.control_benchmark import external
+
+            doc = external(args.registry, args.safety, args.adsl, args.control_arm, args.experimental_arm, args.out)
+            print(json.dumps([(r["outcome"], r["population"], r["method"], round(r["predicted"], 3), r["covered"]) for r in doc["rows"]]))
+            return 0
         if args.command == "compare-registry-planning":
             from .llm import LunaClient
             from .planning.validate import run as run_planning_compare
@@ -673,7 +721,10 @@ def main(argv: list[str] | None = None) -> int:
             model = LunaClient(cache_dir=Path("data/cache/llm_protocol"), max_calls=args.max_calls, effort=args.effort,
                                max_output_tokens=32000, system=PROTOCOL_SYSTEM, timeout=900)
             terminology = UmlsTerminology()
-            result = ProtocolCompiler(model, terminology, workers=args.workers, critical_votes=args.verifier_votes).compile(args.protocol, args.sap, args.out)
+            started = time.monotonic()
+            result = ProtocolCompiler(model, terminology, workers=args.workers, critical_votes=args.verifier_votes,
+                                      repair_rounds=args.repair_rounds, verify_batch=args.verify_batch).compile(args.protocol, args.sap, args.out)
+            result["seconds"] = round(time.monotonic() - started)
             terminology.save()
             result["model_calls"], result["input_tokens"], result["output_tokens"] = model.calls, model.input_tokens, model.output_tokens
             print(json.dumps(result, indent=1, default=str))

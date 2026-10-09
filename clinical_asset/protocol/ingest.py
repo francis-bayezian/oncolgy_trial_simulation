@@ -20,7 +20,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 CACHE = Path("data/protocol_work/documents")
-EXTRACTOR_VERSION = "ingest-1.1.0"
+EXTRACTOR_VERSION = "ingest-1.2.0"
 NUMBERED = re.compile(r"^(\d{1,2}(?:\.\d{1,2}){0,4})\.?\s+(\S.{1,200})$")
 APPENDIX = re.compile(r"^(APPENDIX\s+[A-Z0-9IVXLC]+)\s*[:.\-]?\s*(.*)$", re.IGNORECASE)
 TOC_LINE = re.compile(r"\.{3,}\s*\d+\s*$|\s\d{1,3}$")
@@ -127,7 +127,7 @@ def _heading_weight(title: str) -> float:
     return max(w, 0.25)
 
 
-def _outline_chain(candidates: list[tuple[int, tuple[int, ...], str | None, float]]) -> set[int]:
+def _outline_chain(candidates: list[tuple[int, tuple[int, ...], str | None, float]], first_chapter: bool = False) -> set[int]:
     """The numbered headings of the document: among candidate lines (position, outline key, top-level style, weight),
     the chain of valid successors starting at 1 with the largest total weight. Choosing the chain globally avoids
     locking onto a false '1' (a table row or list item) and then following a list's numbering."""
@@ -137,7 +137,8 @@ def _outline_chain(candidates: list[tuple[int, tuple[int, ...], str | None, floa
         score: list[float] = []
         back: list[int | None] = []
         for i, (_, key, _, w) in enumerate(usable):
-            s_best, j_best = (w, None) if key == (1,) else (float("-inf"), None)
+            starts = key == (1,) or (first_chapter and key[0] == 1)   # an outline whose "1" heading is not in the text
+            s_best, j_best = (w, None) if starts else (float("-inf"), None)
             for j in range(i):
                 if score[j] > float("-inf") and _valid_successor(usable[j][1], key) and score[j] + w > s_best:
                     s_best, j_best = score[j] + w, j
@@ -252,7 +253,9 @@ def extract(path: Path, use_cache: bool = True) -> Document:
                 key = _outline_key(m.group(1))
                 candidates.append((position, key, _top_style(m.group(1)) if len(key) == 1 else None, _heading_weight(m.group(2))))
             position += 1
-    chosen = _outline_chain(candidates)
+    # a document whose first chapter heading is not readable (an image, or text the reader misses) may start its
+    # outline at a 1.x heading; only when no outline starting at "1" exists
+    chosen = _outline_chain(candidates) or _outline_chain(candidates, first_chapter=True)
 
     sections: list[Section] = []
     front: list[Line] = []
