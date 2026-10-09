@@ -723,8 +723,9 @@ def render(doc: dict) -> str:
          "| Step | Lost | Remaining | % of candidates | Lost at this step |", "| --- | ---: | ---: | ---: | ---: |"]
     for f in doc["funnel"]:
         L.append(f"| {f['step']} | {f.get('lost', '')} | {f['remaining']:,} | {_p(f.get('pct_remaining', 1.0), 1)} | {_p(f.get('pct_lost_at_step'), 1) if 'lost' in f else ''} |")
-    L += ["", f"Eligibility yield **{_p(doc['eligibility_yield'], 1)}**; patients screened per enrollee **{doc['screened_per_enrollee']:.2f}**; "
-          f"screened to enrol {doc['target']}: **{doc['screened_for_target']:.0f}**.", "",
+    L += ["", f"Eligibility yield **{_p(doc['eligibility_yield'], 1)}**; candidates screened per eligible patient **{doc['screened_per_enrollee']:.2f}**; "
+          f"candidates screened to find {doc['target']} eligible patients: **{doc['screened_for_target']:.0f}** (eligible patients who decline or are "
+          "not enrolled are not modelled).", "",
           "## 3. Criterion bottlenecks", "", "| Criterion | Category | Excluded | Gain if relaxed (points) |", "| --- | --- | ---: | ---: |"]
     for c in doc["criteria"][:15]:
         L.append(f"| {c['criterion']} {c['label']} | {c['category']} | {_p(c['pct_excluded'], 1)} | +{100 * c['gain_if_relaxed'] / doc['candidates']:.1f} |")
@@ -754,12 +755,31 @@ def render(doc: dict) -> str:
     L += ["", "| Burden per patient | Median | IQR |", "| --- | ---: | --- |"]
     for k, v in doc["burden"].items():
         L.append(f"| {k} | {v['median']:.1f} | {v.get('q25', float('nan')):.0f}-{v.get('q75', float('nan')):.0f} |" if "q25" in v else f"| {k} | {v['median']:.2f} | |")
-    L += ["", f"Withdrawal rate used by the journey (constant, not burden-dependent): {doc['withdrawal_rate']}", "",
-          "| Safety | Share (95% CI) | Patients of the target |", "| --- | --- | ---: |"]
+    lg = doc.get("longitudinal") or {}
+    wp = ((lg.get("withdrawal_model") or {}).get("protocol") or {})
+    if wp.get("share") is not None:
+        ci = wp.get("ci95") or [None, None]
+        L += ["", f"Withdrawal depends on protocol burden: the registry protocol-burden model predicts {_p(wp['share'], 1)} "
+                  f"(95% CI {_p(ci[0], 1)}-{_p(ci[1], 1)}) for this protocol's participation duration, visit frequency and assessment count "
+                  "(adjusted for phase, disease family, enrolment, start year, sponsor and randomisation); the share is distributed over the "
+                  "visits each patient attends, so longer exposure to scheduled visits carries more risk."]
+    else:
+        L += ["", f"Withdrawal share used by the journey: {doc['withdrawal_rate']}"]
+    td = lg.get("treatment_delivery") or {}
+    if td:
+        L += ["", "Treatment delivery and exposure (not adherence in the full sense: dose delays and missed doses are not modelled, so delivery "
+                  f"is an upper bound): {_p(td['delivery'], 1)} of administrations scheduled while on treatment were given; "
+                  f"{_p(td['patients_with_hold'], 1)} of patients had a dose hold; {_p(td['patients_with_reduction'], 1)} a dose reduction."]
+    if lg.get("completeness"):
+        L += ["", "| Protocol-required visits | Required | Attended | Lost: withdrawal | Lost: death |", "| --- | ---: | ---: | ---: | ---: |"]
+        L += [f"| {c['category']} | {c['required']:,} | {_p(c['attended'], 1)} | {_p(c['lost_withdrawal'], 1)} | {_p(c['lost_death'], 1)} |"
+              for c in lg["completeness"]]
+        L += ["", "Missed visits among participants on study are not modelled (no evidence): losses are from withdrawal and death only."]
+    L += ["", "| Safety | Share (95% CI) | Patients of the target |", "| --- | --- | ---: |"]
     for k, s in doc["safety"].items():
         L.append(f"| {k} | {_p(s['share'], 1)} ({_p(s['ci'][0], 1)}-{_p(s['ci'][1], 1)}) | {s['per_target']:.0f} |")
     L += ["", "## 8. Scenario stress test", "",
-          "| Scenario | Eligible | Screened/enrollee | Months to recruit | P(in window) | Women | Age ≥65 | Serious AE patients | Visit days | "
+          "| Scenario | Eligible | Screened per eligible | Months to recruit | P(in window) | Women | Age ≥65 | Serious AE patients | Visit days | "
           + " | ".join(f"Evaluable {w['endpoint']}" for w in doc["evaluability"]) + " | P(objectives) |",
           "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | " + " | ".join("---:" for _ in doc["evaluability"]) + " | ---: |"]
     for s in doc["scenarios"]:

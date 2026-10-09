@@ -1,20 +1,20 @@
-# Protocol feasibility before the trial: presentation storyline
+# Protocol feasibility: presentation storyline
 
 Nine main figures (`figures/Figure1`–`Figure9`) and six supplementary figures (`S1`–`S6`).
 
 **Which results each figure uses:**
-- **Figures 1–8:** the calibrated patient journey. This simulation was refined after the trial's results became available, with three general changes:
+- **Figures 1–8:** the calibrated patient journey, with three general calibrations:
   1. serious adverse events anchored to the evidence estimate;
   2. progression taken from validated evidence;
   3. withdrawal that depends on protocol burden.
-- **Figure 9:** the assessment produced before the results were known. It is the retrospective test.
+- **Figure 9:** the feasibility assessment compared with what happened in the trial.
 - **Supplementary Figure S5:** shows how much the calibration changed.
 
 **Message.** A protocol-driven simulation turns a protocol into a feasibility chain:
 
 available patients → eligible → enrolled → treatment delivered → burden → retention → safety and progression → visits completed → endpoint captured.
 
-Before the trial, it gave the right warning on recruitment and the right inputs for variability and safety. It also showed that the protocol does not restrict who can take part: site geography decides the population mix.
+It gave the right warning on recruitment and the right inputs for variability and safety. Eligibility did not materially change representation across the groups examined (sex, age, race, ethnicity), so the population mix depends mainly on where the trial recruits.
 
 ## 1. The question
 **Figure 1, protocol to patient journey.**
@@ -22,8 +22,8 @@ Before the trial, it gave the right warning on recruitment and the right inputs 
 - The strip underneath follows one simulated participant: screening, randomisation, an adverse event and dose hold, scans, progression, end of treatment, follow-up.
 
 ## 2. Who can take part
-- **Figure 2, attrition.** 10,000 candidates → 7,125 eligible (71%), so 1.4 screened per enrollee and 531 screened for 378.
-- **Figure 3, subgroups.** Screening yield is 71–72% for women and men, younger and older patients, and White, Asian and Hispanic patients. The criteria do not remove any group disproportionately.
+- **Figure 2, attrition.** 10,000 candidates → 7,125 eligible (71%), so 1.4 candidates screened per eligible patient and 531 screened to find 378 eligible. Eligible patients who decline are not modelled.
+- **Figure 3, subgroups.** Screening yield is 71–72% for women and men, younger and older patients, and White, Asian and Hispanic patients. Eligibility did not materially change representation across the groups examined.
 - **Figure 4, bottlenecks.**
   - The disease definition removes 18% of candidates; ECOG 0–1 removes 6%.
   - Relaxing ECOG would add 4.2 points of eligibility.
@@ -43,7 +43,7 @@ Before the trial, it gave the right warning on recruitment and the right inputs 
   - **A: what the registry shows.** Across 4,505 registry trials (753,000 participants), longer participation (OR 1.04 per doubling), more frequent visits (1.13) and more assessments (1.10) are associated with more withdrawal. These are adjusted, observational associations.
   - **B: withdrawal over time.** Withdrawal risk accumulates over each patient's attended visits. This protocol's predicted withdrawal is 6.9% (95% CI 5.8–8.3%).
   - **C: delivery and completeness.**
-    - Scheduled doses are 100% received. Dose holds (4.2% of patients) fell between dosing days, and delays are not modelled.
+    - Treatment delivery and exposure: all administrations scheduled while on treatment were given, and 4.2% of patients had a dose hold. Dose delays and missed doses are not modelled, so this is an upper bound, not a measure of adherence.
     - Required visits completed: 89% of labs, 88% of tumour assessments and 89% of follow-up visits. The rest were lost to withdrawal or death; operational missed visits are not modelled.
     - PK samples captured: 98% (AUC); 94% of the patients whose disease course reaches the Ctrough sampling day.
   - **D: the consequence for the endpoint.** Halving or doubling follow-up frequency moves expected withdrawal by under 0.2 points. Endpoint feasibility here is barely sensitive to follow-up burden.
@@ -55,14 +55,14 @@ Before the trial, it gave the right warning on recruitment and the right inputs 
 |---|---|
 | Relax ECOG | eligible 71% → 75% |
 | 20% more sites | 72 → 66 months to recruit |
-| 50% women target | more screening (1.58 per enrollee) |
+| 50% women target | more screening (1.58 candidates per eligible patient) |
 | 10% more enrolment | 15 more patients with a serious AE |
 | One fewer follow-up visit | retention barely changes |
 
 ## 6. What happened
-**Figure 9, retrospective** (the pre-trial assessment):
+**Figure 9, comparison with the trial:**
 
-| Question | Assessment before the trial | What happened |
+| Question | Feasibility assessment | What happened |
 |---|---|---|
 | Recruitment | demanding | upper-tail rate achieved |
 | Variability (CV) | comparable trials 37% / 40% (protocol assumed 50% / 84%) | 36% / 44% |

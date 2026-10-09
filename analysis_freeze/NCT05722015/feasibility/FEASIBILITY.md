@@ -20,7 +20,7 @@ Every number below comes from the locked simulation run (screened population, el
 | Reproductive and contraception | 20 | 7,358 | 73.6% | 0.3% |
 | Comorbidity and other exclusions | 233 | 7,125 | 71.2% | 3.2% |
 
-Eligibility yield **71.2%**; patients screened per enrollee **1.40**; screened to enrol 378: **531**.
+Eligibility yield **71.2%**; candidates screened per eligible patient **1.40**; candidates screened to find 378 eligible patients: **531** (eligible patients who decline or are not enrolled are not modelled).
 
 ## 3. Criterion bottlenecks
 
@@ -114,7 +114,19 @@ Eligibility yield **71.2%**; patients screened per enrollee **1.40**; screened t
 | Follow-up visits | 5.0 | 1-6 |
 | Clinic visit days per month on study | 3.10 | |
 
-Withdrawal rate used by the journey (constant, not burden-dependent): {'ARM1': 0.06926478693405927, 'ARM2': 0.06926478693405927}
+Withdrawal depends on protocol burden: the registry protocol-burden model predicts 6.9% (95% CI 5.8%-8.3%) for this protocol's participation duration, visit frequency and assessment count (adjusted for phase, disease family, enrolment, start year, sponsor and randomisation); the share is distributed over the visits each patient attends, so longer exposure to scheduled visits carries more risk.
+
+Treatment delivery and exposure (not adherence in the full sense: dose delays and missed doses are not modelled, so delivery is an upper bound): 100.0% of administrations scheduled while on treatment were given; 4.2% of patients had a dose hold; 0.0% a dose reduction.
+
+| Protocol-required visits | Required | Attended | Lost: withdrawal | Lost: death |
+| --- | ---: | ---: | ---: | ---: |
+| Cycle day-1 clinic visits | 3,110 | 89.5% | 5.4% | 5.1% |
+| Drug administration visits | 49,582 | 89.2% | 5.6% | 5.3% |
+| Laboratory (safety) assessments | 5,843 | 89.2% | 5.5% | 5.2% |
+| Tumour assessments | 1,339 | 87.8% | 6.3% | 5.9% |
+| Survival follow-up visits | 1,683 | 88.9% | 5.1% | 6.1% |
+
+Missed visits among participants on study are not modelled (no evidence): losses are from withdrawal and death only.
 
 | Safety | Share (95% CI) | Patients of the target |
 | --- | --- | ---: |
@@ -127,7 +139,7 @@ Withdrawal rate used by the journey (constant, not burden-dependent): {'ARM1': 0
 
 ## 8. Scenario stress test
 
-| Scenario | Eligible | Screened/enrollee | Months to recruit | P(in window) | Women | Age ≥65 | Serious AE patients | Visit days | Evaluable Cycle 1 AUC0-6wks | Evaluable Steady-state (Cycle 3) Ctrough | P(objectives) |
+| Scenario | Eligible | Screened per eligible | Months to recruit | P(in window) | Women | Age ≥65 | Serious AE patients | Visit days | Evaluable Cycle 1 AUC0-6wks | Evaluable Steady-state (Cycle 3) Ctrough | P(objectives) |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Original protocol | 71% | 1.40 | 72 | 8% | 56% | 35% | 146 | 23 | 370 | 272 | 99% |
 | Relax: ECOG performance status | 75% | 1.32 | 68 | 9% | 56% | 36% | 146 | 23 | 370 | 272 | 99% |

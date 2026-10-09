@@ -196,7 +196,7 @@ def figure2():
     fu = F["funnel"]
     fig = frame("Patient attrition across the trial pathway",
                 f"{pct(F['eligibility_yield'])} of candidates remained eligible after all protocol criteria; "
-                f"{F['screened_per_enrollee']:.1f} patients must be screened per enrollee.")
+                f"{F['screened_per_enrollee']:.1f} candidates must be screened per eligible patient.")
     ax = fig.add_axes([0.22, 0.13, 0.33, 0.68])
     rows = [f for f in fu]
     labels = [r["step"] for r in rows] + ["Eligible"]
@@ -237,8 +237,8 @@ def figure2():
     bx.set_xlim(0, F["enrolled"] * 1.35)
     bx.set_xlabel("Participants")
     bx.set_title("B. After enrolment", loc="left", fontweight="bold")
-    fig.text(0.04, 0.875, f"Eligibility yield {pct(F['eligibility_yield'])}   ·   Screened per enrollee {F['screened_per_enrollee']:.1f}   ·   "
-             f"Screened for {TARGET}: {F['screened_for_target']:.0f}", fontsize=12.5, color=INK, ha="left")
+    fig.text(0.04, 0.875, f"Eligibility yield {pct(F['eligibility_yield'])}   ·   Candidates screened per eligible patient {F['screened_per_enrollee']:.1f}   ·   "
+             f"Screened to find {TARGET} eligible: {F['screened_for_target']:.0f}", fontsize=12.5, color=INK, ha="left")
     save(fig, "Figure2_attrition")
 
 
@@ -531,7 +531,7 @@ def figure8():
     req_eps = [w for w in EVW if w.get("required")]
     weak = min(req_eps, key=lambda w: w["share"])
     cols = [("Eligible\npopulation", "eligible_pct", +1, lambda v: pct(v)),
-            ("Screened\nper enrollee", "screened_per_enrollee", -1, lambda v: f"{v:.2f}"),
+            ("Screened per\neligible patient", "screened_per_enrollee", -1, lambda v: f"{v:.2f}"),
             ("Months to\nrecruit", "median_recruitment_months", -1, lambda v: f"{v:.0f}"),
             ("P(recruit\nin window)", "p_recruit_in_window", +1, lambda v: pct(v)),
             ("Women", "female_pct", 0, lambda v: pct(v)),
@@ -583,11 +583,11 @@ def figure9():
     comp = CMP / "comparison"
     reg = json.loads(Path(f"data/holdout_comparison/{NCT}.json").read_text(encoding="utf-8"))
     rs = reg.get("resultsSection") or {}
-    rni = json.loads((LOCK / f"results_v{CMP_VER}" / "ratio_ni_results.json").read_text(encoding="utf-8"))
+    rni = json.loads((LOCK / f"results_v{VER}" / "ratio_ni_results.json").read_text(encoding="utf-8"))
     rcmp = json.loads((comp / "ratio_ni" / "ratio_ni_comparison.json").read_text(encoding="utf-8"))
-    outs = json.loads((LOCK / f"outputs_v{CMP_VER}" / "trial_outputs.json").read_text(encoding="utf-8"))
+    outs = json.loads((LOCK / f"outputs_v{VER}" / "trial_outputs.json").read_text(encoding="utf-8"))
     sae_est = outs["feasibility"]["subgroup_estimates"]["arms"]["ARM1"]["serious_adverse_event"]["headline"]["estimate"]
-    R = FB["recruitment"]
+    R = F["recruitment"]
     var = rni["variability"]
     reg_cv = [var[a]["registry"]["median_cv"] for a in ("AN1", "AN2")]
     prot_cv = [var[a]["protocol_derived_cv"] for a in ("AN1", "AN2")]
@@ -606,8 +606,8 @@ def figure9():
     hisp = base.get(("Ethnicity", "Hispanic or Latino"), 0) / n_tot if n_tot else None
     female = base.get(("Sex", "Female"), 0) / n_tot if n_tot else None
     ev_act = {i["endpoint"]: sum(i["actual"]["n"].values()) for i in rcmp["items"] if i["status"] == "SCORED"}
-    at = next(r for r in FB["evaluable_curve"] if r["enrolled"] == TARGET)
-    sg = FB["subgroups"]
+    at = next(r for r in F["evaluable_curve"] if r["enrolled"] == TARGET)
+    sg = F["subgroups"]
     fem_sim = sg["Sex"]["female"]["eligible_share"]
     asian_sim = sg["Race"].get("Asian", {}).get("eligible_share", 0)
     hisp_sim = sg["Ethnicity"].get("Hispanic or Latino", {}).get("eligible_share", 0)
@@ -626,18 +626,18 @@ def figure9():
              f"Simulated eligible pool: {pct(fem_sim)} women, {pct(asian_sim)} Asian,\n{pct(hisp_sim)} Hispanic (one global mix)",
              f"{pct(female)} women, {pct(asian)} Asian, {pct(hisp)} Hispanic:\nrecruitment geography shaped the mix" if n_tot else "—"),
             ("Will the required PK numbers be retained?",
-             "; ".join(f"P({short(w['endpoint']).split(',')[0]} ≥ {w['required']}) {pct(at[w['endpoint']]['p_meets'])}" for w in FB["evaluability"] if w.get("required"))
+             "; ".join(f"P({short(w['endpoint']).split(',')[0]} ≥ {w['required']}) {pct(at[w['endpoint']]['p_meets'])}" for w in F["evaluability"] if w.get("required"))
              + f"\nat {TARGET} enrolled",
              " / ".join(f"{v}" for v in ev_act.values()) + " evaluable (AUC / Ctrough)")]
-    fig = frame("Retrospective evaluation of pre-trial feasibility signals in the case-study trial",
-                "The pre-trial assessment flagged the demanding accrual and gave realistic variability and safety inputs; "
+    fig = frame("Feasibility signals compared with what happened in the case-study trial",
+                "The feasibility assessment flagged the demanding accrual and gave realistic variability and safety inputs; "
                 "composition depended on geography.")
     ax = fig.add_axes([0.03, 0.37, 0.94, 0.52])
     ax.axis("off")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, len(rows) + 0.8)
     ax.invert_yaxis()
-    xs = [(0.0, 0.25, "Planning question", INK), (0.27, 0.42, "Feasibility assessment (before the trial)", ENR),
+    xs = [(0.0, 0.25, "Planning question", INK), (0.27, 0.42, "Feasibility assessment", ENR),
           (0.71, 0.29, "What subsequently occurred", OBS)]
     for x, w, t, col in xs:
         ax.text(x, 0.35, t, fontsize=13.5, fontweight="bold", color=col, va="center")
@@ -646,7 +646,6 @@ def figure9():
         ax.add_patch(plt.Rectangle((0, yv - 0.45), 1, 0.9, color=PALE if i % 2 == 0 else "white", lw=0))
         for (x, w, _, col), txt in zip(xs, r, strict=True):
             ax.text(x + 0.005, yv, txt, fontsize=11, va="center", color=col if col != INK else INK, fontweight="bold" if x == 0 else "normal")
-    fig.text(0.04, 0.895, "Assessment column: produced before the trial's results were available.", fontsize=11, color=MUTED)
     _synthetic_control_panel(fig)
     save(fig, "Figure9_retrospective")
 
@@ -740,7 +739,7 @@ def figure7():
     # C: treatment delivery and data completeness
     c = fig.add_axes([0.27, 0.15, 0.2, 0.25])
     td = LONG.get("treatment_delivery") or {}
-    rows = [("Scheduled doses received\n(while on treatment)", td.get("delivery"), 0.0, 0.0)] if td.get("delivery") is not None else []
+    rows = [("Treatment delivery\n(doses given / scheduled)", td.get("delivery"), 0.0, 0.0)] if td.get("delivery") is not None else []
     for comp in LONG.get("completeness") or []:
         if comp["category"] in ("Laboratory (safety) assessments", "Tumour assessments", "Survival follow-up visits"):
             rows.append((comp["category"].replace(" (safety)", ""), comp["attended"], comp["lost_withdrawal"], comp["lost_death"]))
@@ -761,6 +760,7 @@ def figure7():
     fig.text(0.27, 0.075, "■ captured", color=ENR, fontsize=10)
     fig.text(0.325, 0.075, "■ lost: withdrawal", color=LOSS, fontsize=10)
     fig.text(0.415, 0.075, "■ lost: death", color=DEATH, fontsize=10)
+    fig.text(0.27, 0.052, "Dose delays and missed doses are not modelled: delivery is an upper bound.", color=MUTED, fontsize=9)
     # D: endpoint consequence by schedule
     d = fig.add_axes([0.68, 0.15, 0.29, 0.25])
     names = [n for n in ("Less frequent follow-up", "One fewer follow-up visit", "Original protocol", "Higher-burden follow-up") if n in bs]
@@ -931,8 +931,8 @@ def supp_s5_sensitivity():
     ax.set_yticklabels([r[0] for r in rows], fontsize=11.5)
     ax.set_xlim(0, 1.05)
     ax.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
-    fig.text(0.38, 0.84, "● before calibration (pre-trial assessment)", color="#8A8A8A", fontsize=12)
-    fig.text(0.62, 0.84, "● after calibration (after the results were known)", color=ENR, fontsize=12)
+    fig.text(0.38, 0.84, "● uncalibrated journey", color="#8A8A8A", fontsize=12)
+    fig.text(0.56, 0.84, "● calibrated journey", color=ENR, fontsize=12)
     save(fig, "S5_sensitivity")
 
 
