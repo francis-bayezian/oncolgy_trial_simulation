@@ -571,8 +571,16 @@ def figure8():
     for i, s in enumerate(sc):
         fig.text(0.195, 0.84 - (i + 0.5) * 0.74 / nr, tidy(s["scenario"]), ha="right", va="center", fontsize=12,
                  fontweight="bold" if i == 0 else "normal", color=ALT if i else INK)
-    fig.text(0.2, 0.065, "Teal: more favourable than the original protocol · Orange: greater feasibility burden · Grey: within 3% of the original, or descriptive",
-             fontsize=10.5, color=MUTED)
+    from matplotlib.patches import Patch
+    tint = lambda c, f: tuple(neutral + (np.array(mpl.colors.to_rgb(c)) - neutral) * f)  # noqa: E731
+    handles = [Patch(facecolor=tint(ELIG, 1.0), label="Much more favourable"),
+               Patch(facecolor=tint(ELIG, 0.4), label="Slightly more favourable"),
+               Patch(facecolor=PALE, label="Unchanged (within 3%) or descriptive"),
+               Patch(facecolor=tint(SAFE, 0.4), label="Slightly greater burden"),
+               Patch(facecolor=tint(SAFE, 1.0), label="Much greater burden")]
+    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.005), ncol=5, frameon=False, fontsize=10.5,
+               handlelength=1.6, handleheight=1.1, columnspacing=1.4,
+               title="Cell colour: change compared with the original protocol (shade = size of the change)", title_fontsize=11)
     save(fig, "Figure8_tradeoffs")
 
 
