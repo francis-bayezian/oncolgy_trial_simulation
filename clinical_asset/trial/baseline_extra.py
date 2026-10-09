@@ -13,6 +13,7 @@ the patients the sources excluded. Every added value names its source.
 """
 
 import json
+import math
 import re
 from functools import lru_cache
 from pathlib import Path
@@ -118,6 +119,59 @@ def continuous_distribution(variable: str, family: str | None, unit_pattern: str
     return {"status": "UNSUPPORTED", "reason": f"fewer than {MIN_TRIALS} trials report {variable} as mean and SD"}
 
 
+# further baseline variables reported in registry baseline tables (L065): (key, registry variable, unit pattern, plausible
+# range, unit) for continuous ones; (key, registry variable, label -> level map) for categorical ones. Each is generated
+# only from at least MIN_TRIALS comparable trials (disease family, else all oncology), independently of the others (the
+# registry tables give no joint distribution); anything else stays not simulated.
+CONTINUOUS_EXTRA = (("var:body_mass_index", "body_mass_index", r"kg|kilogram", 12, 60, "kg/m2"),
+                    ("var:body_surface_area", "body_surface_area", r"m\^?2|m²|square", 1.0, 3.0, "m2"),
+                    ("var:hemoglobin", "hemoglobin", r"g/dl|gram per deciliter", 5, 20, "g/dL"),
+                    ("var:heart_rate", "heart_rate", r"beat|bpm", 40, 160, "beats/min"),
+                    ("var:systolic_blood_pressure", "systolic_blood_pressure", r"mm\s*hg", 80, 220, "mmHg"),
+                    ("var:diastolic_blood_pressure", "diastolic_blood_pressure", r"mm\s*hg", 40, 130, "mmHg"),
+                    ("var:creatinine_clearance", "creatinine_clearance", r"ml/min", 15, 250, "mL/min"),
+                    ("var:left_ventricular_ejection_fraction", "left_ventricular_ejection_fraction", r"%|percent", 20, 85, "%"))
+SMOKING = ((r"^\s*(never|non[- ]?smoker|never smok)", "never"), (r"^\s*(former|ex[- ]?smoker|past|previous|quit)", "former"),
+           (r"^\s*current", "current"))
+YES_NO = ((r"^\s*(yes|present)\b", "present"), (r"^\s*(no|absent)\b", "absent"))
+CATEGORICAL_EXTRA = (("var:smoking_status", "smoking_status", SMOKING, ("never", "former", "current")),
+                     ("var:diabetes", "diabetes", YES_NO, ("present", "absent")),
+                     ("var:hypertension", "hypertension", YES_NO, ("present", "absent")))
+
+
+def categorical_distribution(variable: str, family: str | None, mapping: tuple, levels: tuple) -> dict:
+    """Pooled category shares (equal weight per trial) from trials reporting at least two mapped levels: the disease
+    family, then all oncology, with at least MIN_TRIALS trials."""
+    per: dict = {}
+    for r in _rows():
+        if r["variable"] != variable or r["param_type"] not in ("COUNT_OF_PARTICIPANTS", "NUMBER") or r["value"] is None:
+            continue
+        label = (r["category"] or r["class_title"] or "").strip()
+        lv = next((name for pat, name in mapping if re.search(pat, label, re.I)), None)
+        if lv is None:
+            continue
+        t = per.setdefault(r["nct_id"], {"family": _family(r["condition_mesh"]), "total": {}, "groups": {}})
+        target = t["total"] if r["is_total_group"] else t["groups"].setdefault(r["group_id"], {})
+        target[lv] = target.get(lv, 0) + r["value"]
+    trials = []
+    for t in per.values():
+        counts = dict(t["total"])
+        if not counts:
+            for g in t["groups"].values():
+                for k, v in g.items():
+                    counts[k] = counts.get(k, 0) + v
+        n = sum(counts.values())
+        if n >= 5 and len(counts) >= 2:
+            trials.append({"family": t["family"], "n": n, "p": [counts.get(k, 0) / n for k in levels]})
+    for label, sel in ((family, [t for t in trials if t["family"] == family]), ("all oncology", trials)):
+        if len(sel) >= MIN_TRIALS:
+            P = np.array([t["p"] for t in sel])
+            return {"status": "RESOLVED", "levels": list(levels), "p": P.mean(axis=0).tolist(), "trials": len(sel),
+                    "participants": int(sum(t["n"] for t in sel)), "trial_range_10_90": np.quantile(P, [0.1, 0.9], axis=0).round(3).tolist(),
+                    "source": f"registry baseline {variable} of enrolled participants ({label}; {len(sel)} trials)"}
+    return {"status": "UNSUPPORTED", "reason": f"fewer than {MIN_TRIALS} trials report {variable} by category"}
+
+
 def augment(population_lock: Path, family: str | None, phase: str | None, out_dir: Path, seed: int = 20260929,
             spec: dict | None = None, model=None, own_nct: str | None = None) -> dict:
     """`population_lock` may be a locked population or a population stage directory not yet locked. With the StudySpec
@@ -150,6 +204,43 @@ def augment(population_lock: Path, family: str | None, phase: str | None, out_di
                 if (p.get("demographic:age") or {}).get("value", 99) >= 18:        # adult distributions only
                     p[var] = {"value": round(float(np.clip(rng.normal(dist["mean"], dist["sd"]), lo, hi)), 1), "unit": unit}
             added[var] = dist
+    # further baseline characteristics: vitals, laboratory values, comorbidities and smoking history (L065)
+    rng_x = np.random.default_rng(seed + 23)
+    not_simulated = []
+    for var, reg, unit_pat, lo, hi, unit in CONTINUOUS_EXTRA:
+        if any(var in p for p in pats[:50]):
+            continue
+        if var in ("var:body_mass_index", "var:body_surface_area") and all(k in added for k in ("var:weight", "var:height")):
+            # derived from the patient's own weight and height (BMI; Mosteller BSA), never drawn independently of them
+            for p in pats:
+                w, h = (p.get("var:weight") or {}).get("value"), (p.get("var:height") or {}).get("value")
+                if w and h:
+                    v = w / (h / 100) ** 2 if var == "var:body_mass_index" else math.sqrt(w * h / 3600)
+                    p[var] = {"value": round(float(v), 2 if var == "var:body_surface_area" else 1), "unit": unit}
+            added[var] = {"status": "RESOLVED", "source": "derived from the patient's weight and height"
+                          + (" (Mosteller)" if var == "var:body_surface_area" else "")}
+            continue
+        dist = continuous_distribution(reg, family, unit_pat, lo, hi)
+        if dist["status"] != "RESOLVED":
+            not_simulated.append({"variable": var, "reason": dist["reason"]})
+            continue
+        for p in pats:
+            if (p.get("demographic:age") or {}).get("value", 99) >= 18:
+                p[var] = {"value": round(float(np.clip(rng_x.normal(dist["mean"], dist["sd"]), lo, hi)), 1), "unit": unit}
+        added[var] = {**dist, "note": "generated independently of the other baseline variables (no joint registry distribution)"}
+    for var, reg, mapping, levels_x in CATEGORICAL_EXTRA:
+        if any(var in p for p in pats[:50]):
+            continue
+        dist = categorical_distribution(reg, family, mapping, levels_x)
+        if dist["status"] != "RESOLVED":
+            not_simulated.append({"variable": var, "reason": dist["reason"]})
+            continue
+        draws = rng_x.choice(len(levels_x), size=len(pats), p=np.array(dist["p"]) / sum(dist["p"]))
+        for p, i in zip(pats, draws, strict=True):
+            lv = levels_x[int(i)]
+            p[var] = {"value": lv == "present", "unit": None} if set(levels_x) == {"present", "absent"} else lv
+        added[var] = {**dist, "note": "generated independently of the other baseline variables (no joint registry distribution)"}
+    not_simulated.append({"variable": "concomitant medications", "reason": "registry baseline tables do not report medications"})
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     subgroups = None
@@ -171,6 +262,7 @@ def augment(population_lock: Path, family: str | None, phase: str | None, out_di
         if (Path(population_lock) / f).exists():
             (out / f).write_text((Path(population_lock) / f).read_text(encoding="utf-8"), encoding="utf-8")
     summary = {"base_population": str(population_lock), "family": family, "phase": phase, "added_variables": added,
+               "not_simulated": not_simulated,
                "caveat": "baseline distributions of enrolled participants in similar trials (truncated by their eligibility)"}
     if disease:
         summary["disease_variables"] = disease

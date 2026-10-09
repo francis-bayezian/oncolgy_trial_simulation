@@ -21,7 +21,7 @@ from .patient_state import sourced
 IMAGING = re.compile(r"\b(ct|mri|pet|imaging|scan|radiolog|tumou?r (assessment|evaluation|measurement)|recist|response (assessment|evaluation)|disease (assessment|evaluation))", re.I)
 LAB = re.compile(r"laborator|haematolog|hematolog|\bcbc\b|biochem|chemistr|blood (count|assessment)", re.I)
 EVERY = re.compile(r"(?:every|each|q)\s*(\d+)\s*(?:-|to)?\s*(weeks?|wks?|w\b|cycles?|months?|days?)", re.I)
-DAY_COL = re.compile(r"^\s*(?:c\d+\s*)?d(?:ay)?\s*(\d+)\s*$", re.I)
+DAY_COL = re.compile(r"^\s*(?:c\d+\s*|cycle\s*)?d(?:ay)?\s*:?\s*(\d+)\s*$", re.I)    # 'D8', 'Day 8', 'C2D8', 'Cycle Day: 8'
 
 
 def _t(x):

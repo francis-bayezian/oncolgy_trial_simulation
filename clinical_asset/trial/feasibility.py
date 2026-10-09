@@ -452,6 +452,22 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
         if "asian_pct" not in s:
             s["asian_pct"] = sum(cand_g[pid].get("Race") == "Asian" for pid in eligible) / len(eligible)
             s["hispanic_pct"] = sum(cand_g[pid].get("Ethnicity") == "Hispanic or Latino" for pid in eligible) / len(eligible)
+    longitudinal = _longitudinal(nct, version, st, journey, windows, target, rng) if (st("journey") / "visit_schedule.csv").exists() else None
+    if longitudinal:
+        bs = {b["scenario"]: b for b in longitudinal["burden_scenarios"]}
+        orig = bs.get("Original protocol")
+        for s in scen:
+            s["withdrawal_pct"] = orig["withdrawn_share"] if orig else None
+        fewer = bs.get("One fewer follow-up visit")
+        row = next((s for s in scen if s["scenario"] == "One fewer follow-up visit"), None)
+        if fewer and row:
+            # the burden-dependent journey for this schedule (L064): withdrawal, evaluable data and the objectives move with it
+            row.update({"how": fewer["how"] + "; withdrawal from the registry burden association for the change in visits per "
+                               "patient-month, distributed over each patient's attended visits",
+                        "withdrawal_pct": fewer["withdrawn_share"], "evaluable_median": fewer["evaluable"],
+                        "p_evaluable_all": fewer["p_all_required"],
+                        "p_objectives": fewer["p_all_required"] * (p_ni if p_ni is not None else 1.0),
+                        "visit_days_per_patient": row["visit_days_per_patient"]})
 
     doc = {"version": VERSION, "nct_id": nct, "run_version": version, "target": target,
            "protocol": _protocol_summary(spec, journey, windows, target),
@@ -470,6 +486,7 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
                            "site_count": hist.get("site_count")},
            "completeness": completeness, "burden": burden, "withdrawal_rate": {a: v.get("value") for a, v in withdrawal.items()},
            "safety": safety, "overall_sae": overall_sae, "p_primary_success_at_design": p_ni, "scenarios": scen,
+           "longitudinal": longitudinal,
            "derivations": {
                "eligibility": "each simulated candidate's eligibility outcome; sequential funnel removes a candidate at the first category it fails",
                "gain_if_relaxed": "candidates who fail only that criterion",
@@ -483,6 +500,195 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
     (out / "feasibility.json").write_text(json.dumps(doc, indent=1, default=str), encoding="utf-8")
     (out / "FEASIBILITY.md").write_text(render(doc), encoding="utf-8")
     return doc
+
+
+ITEM_CATEGORY = (("dose ", "Drug administration visits"), ("laboratory", "Laboratory (safety) assessments"),
+                 ("tumour assessment", "Tumour assessments"), ("clinical assessment", "Cycle day-1 clinic visits"),
+                 ("follow-up visit", "Survival follow-up visits"))
+
+
+def _withdrawn(st) -> int | None:
+    """The day a participant withdrew (on treatment or from follow-up), or None."""
+    if st.off_study and "withdrawal" in st.off_study[1]:
+        return st.off_study[0]
+    if st.off_treatment and st.off_treatment[1].startswith("withdrawal"):
+        return st.off_treatment[0]
+    return None
+
+
+def _bootstrap_meets(E: np.ndarray, required: list, n: int, rng, draws: int = DRAWS) -> tuple[list, float]:
+    """P(each evaluable count >= its requirement) and P(all) for n enrolled (Bayesian bootstrap of the patients)."""
+    m = len(E)
+    ok = np.zeros((draws, E.shape[1]), bool)
+    for d in range(draws):
+        idx = rng.choice(m, size=n, p=rng.dirichlet(np.ones(m)))
+        ok[d] = E[idx].sum(axis=0) >= np.array([r or 0 for r in required])
+    return ok.mean(axis=0).tolist(), float(ok.all(axis=1).mean())
+
+
+def _longitudinal(nct: str, version: str, st, journey: dict, windows: list[dict], target: int, rng) -> dict:
+    """Protocol burden, retention, treatment delivery, monitoring intensity and data completeness (L064-L066)."""
+    from . import journey as jr
+    from . import withdrawal_burden as wb
+
+    out: dict = {}
+    model = wb.load()
+    wd = next(iter((journey.get("withdrawal") or {}).values()), {}) or {}
+    if model:
+        keep = ["log2_duration_months", "log2_visits_per_month", "log2_outcome_measures", "log2_enrolled", "start_year_decade", "industry",
+                "randomized"]
+        out["withdrawal_model"] = {"trials": model["trials"], "participants": model["participants"], "overall_share": model["overall_share"],
+                                   "coverage": model["coverage"], "coefficients": {k: model["coefficients"][k] for k in keep},
+                                   "curves": model["curves"], "modifiers": model["modifiers"], "definitions": model["definitions"],
+                                   "protocol": {"share": wd.get("value"), **(wd.get("detail") or {})}}
+    # burden scenarios on the same locked patients: the registry association for the change in visits per patient-month,
+    # distributed over each patient's attended visits
+    ctx, sched, horizon, seed = jr.context_from_locks(nct, version)
+    fu = (sched.get("follow_up_interval_days") or {}).get("value")
+    cyc = (sched.get("cycle_length_days") or {}).get("value")
+    variants = [("Original protocol", sched, "the protocol's schedule")]
+    if fu:
+        variants += [("One fewer follow-up visit", {**sched, "follow_up_skip": 1}, "the first survival follow-up visit after treatment dropped"),
+                     ("Less frequent follow-up", {**sched, "follow_up_interval_days": {**sched["follow_up_interval_days"], "value": 2 * fu}},
+                      f"survival follow-up every {2 * fu / 7:g} weeks instead of every {fu / 7:g}")]
+        if cyc and cyc < fu:
+            variants.append(("Higher-burden follow-up", {**sched, "follow_up_interval_days": {**sched["follow_up_interval_days"], "value": cyc}},
+                             f"survival follow-up every {cyc / 7:g} weeks (the treatment cycle length) instead of every {fu / 7:g}"))
+    scenarios, ref_rate = [], None
+    for name, sch, how in variants:
+        states, _, wds, _, _, pilot = jr.simulate_cohort(ctx, sch, horizon, seed, reference_visit_rate=ref_rate, return_pilot=True)
+        w0 = next(iter(wds.values()))
+        rate = w0["detail"].get("visits_per_patient_month") if w0.get("detail") else None
+        if ref_rate is None:
+            ref_rate = rate
+        # expected values over each patient's own course (the no-withdrawal pass has the same disease courses): the chance
+        # of still being on study at a day is (1 - per-visit hazard) ^ (visits attended before it); one random draw of
+        # withdrawal would move these by more than the schedule does
+        hz = {a: (w.get("detail") or {}).get("per_visit_hazard") or 0.0 for a, w in wds.items()}
+        keep = []
+        for s in pilot:
+            days = sorted(d for d, _, _ in s.attended)
+            keep.append((hz.get(s.arm_id, 0.0), days, bool(s.exposure), s.off_treatment[0]))
+
+        def p_on(h, days, t):
+            return (1 - h) ** sum(1 for d in days if d <= t)
+        P = np.array([[float(tr and off >= w["on_study_day"]) * p_on(h, days, w["on_study_day"]) for w in windows] for h, days, tr, off in keep])
+        draws = np.empty((2000, len(windows)))
+        for k in range(2000):
+            idx = rng.choice(len(P), size=target, p=rng.dirichlet(np.ones(len(P))))
+            draws[k] = (rng.random((target, len(windows))) < P[idx]).sum(axis=0)
+        req_n = np.array([w.get("required") or 0 for w in windows])
+        ok = draws >= req_n
+        exp_withdraw = float(np.mean([1 - (1 - h) ** len(days) for h, days, _, _ in keep]))
+        visits_exp = sum(sum((1 - h) ** j for j in range(len(days))) for h, days, _, _ in keep)
+        visits_all = sum(len(days) for _, days, _, _ in keep)
+        scenarios.append({"scenario": name, "how": how, "predicted_withdrawal_share": w0.get("value"),
+                          "per_visit_hazard": (w0.get("detail") or {}).get("per_visit_hazard"), "visits_per_patient_month": rate,
+                          "withdrawn_share": exp_withdraw,
+                          "withdrawn_share_one_draw": sum(_withdrawn(s) is not None for s in states) / len(states),
+                          "retention": [{"day": t, "not_withdrawn": float(np.mean([p_on(h, days, t) for h, days, _, _ in keep]))}
+                                        for t in range(0, horizon + 1, 14)],
+                          "evaluable": {w["endpoint"]: round(float(P[:, j].sum()), 1) for j, w in enumerate(windows)},
+                          "p_required": {w["endpoint"]: float(ok[:, j].mean()) for j, w in enumerate(windows)},
+                          "p_all_required": float(ok.all(axis=1).mean()),
+                          "visits_completed_expected": visits_exp / visits_all if visits_all else None,
+                          "visits_per_patient": visits_all / len(keep),
+                          "basis": "expected values over the patients' own disease courses (no-withdrawal pass) and the per-visit hazard"})
+    out["burden_scenarios"] = scenarios
+    # completeness of every protocol-required visit (locked journey): attended, or not attended because of withdrawal or death
+    vs = _read_csv(st("journey") / "visit_schedule.csv") if (st("journey") / "visit_schedule.csv").exists() else []
+    comp = {}
+    for r in vs:
+        for item in (r["PLANNED"] or "").split(";"):
+            cat = next((c for key, c in ITEM_CATEGORY if item.startswith(key)), None)
+            if not cat:
+                continue
+            c = comp.setdefault(cat, Counter())
+            c["required"] += 1
+            c[r["STATUS"]] += 1
+    out["completeness"] = [{"category": cat, "required": c["required"], "attended": c["attended"] / c["required"],
+                            "lost_withdrawal": c["not attended: withdrew"] / c["required"], "lost_death": c["not attended: died"] / c["required"],
+                            "lost_operational": c["not attended"] / c["required"]} for cat, c in comp.items()]
+    by_pt: dict = defaultdict(list)
+    for r in vs:
+        by_pt[r["USUBJID"]].append(r)
+    pk = []
+    for w in windows:
+        need = got = lost_w = lost_d = 0
+        for rows in by_pt.values():
+            tx = [r for r in rows if not r["VISIT"].startswith("FU") and int(r["DAY"]) >= w["on_study_day"]]
+            if tx:
+                need += 1
+                if any(r["STATUS"] == "attended" for r in tx):
+                    got += 1
+                elif any(r["STATUS"] == "not attended: withdrew" for r in tx):
+                    lost_w += 1
+                else:
+                    lost_d += 1
+        pk.append({"endpoint": w["endpoint"], "enrolled": len(by_pt), "protocol_course_reaches": need, "captured": got,
+                   "lost_withdrawal": lost_w, "lost_death": lost_d, "required": w.get("required")})
+    out["pk_capture"] = pk
+    out["operational_missingness"] = "not modelled: no evidence for missed visits among participants on study (zero by construction)"
+    # treatment delivery (administered treatment: received / scheduled while on treatment)
+    ex = _read_csv(st("journey") / "ex.csv")
+    adsl = {r["USUBJID"]: r for r in _read_csv(st("journey") / "adsl.csv")}
+    per = defaultdict(lambda: [0, 0])
+    for r in ex:
+        per[r["USUBJID"]][0] += int(r["PLANNED_ADMIN"] or 0)
+        per[r["USUBJID"]][1] += int(r["ACTUAL_ADMIN"] or 0)
+    planned, given = sum(v[0] for v in per.values()), sum(v[1] for v in per.values())
+    rdi = [float(a["RDI"]) for a in adsl.values() if a.get("RDI") not in (None, "")]
+
+    def delivery(ids):
+        p, g = sum(per[i][0] for i in ids), sum(per[i][1] for i in ids)
+        return {"patients": len(ids), "delivery": g / p if p else None, "all_doses": sum(per[i][0] == per[i][1] for i in ids) / len(ids) if ids else None}
+    groups = {"All": list(adsl)}
+    for i, a in adsl.items():
+        groups.setdefault(f"Arm {a['ARMCD']}", []).append(i)
+        groups.setdefault("Age 65 or older" if float(a["AGE"]) >= 65 else "Age under 65", []).append(i)
+        groups.setdefault("With a serious AE" if a["ANY_SAE"] == "Y" else "Without a serious AE", []).append(i)
+    out["treatment_delivery"] = {"administrations_scheduled": planned, "administrations_received": given,
+                                 "delivery": given / planned if planned else None, "missed": planned - given,
+                                 "patients_all_doses": sum(v[0] == v[1] for v in per.values()) / len(per) if per else None,
+                                 "patients_with_hold": sum(int(a["N_HOLDS"] or 0) > 0 for a in adsl.values()) / len(adsl),
+                                 "patients_with_reduction": sum(int(a["N_REDUCTIONS"] or 0) > 0 for a in adsl.values()) / len(adsl),
+                                 "rdi_median": float(np.median(rdi)) if rdi else None,
+                                 "rdi_iqr": [float(np.quantile(rdi, 0.25)), float(np.quantile(rdi, 0.75))] if rdi else None,
+                                 "by_group": {k: delivery(v) for k, v in groups.items()},
+                                 "definition": "administrations received / administrations scheduled while on treatment; delays are not simulated"}
+    # monitoring intensity: what the protocol asks of a participant per month on study
+    att = [r for r in vs if r["STATUS"] == "attended"]
+    months = sum(max(int(r["DAY"]) for r in rows) for rows in by_pt.values() if rows) / 30.44
+    cnt = Counter()
+    for r in att:
+        for item in (r["PLANNED"] or "").split(";"):
+            cat = next((c for key, c in ITEM_CATEGORY if item.startswith(key)), None)
+            if cat:
+                cnt[cat] += 1
+    out["monitoring"] = {"per_patient_month": {k: v / months for k, v in cnt.items()} if months else {},
+                         "clinic_visit_days_per_patient_month": len({(r["USUBJID"], r["DAY"]) for r in att}) / months if months else None,
+                         "patient_months": months}
+    # one simulated baseline patient and one longitudinal trace (synthetic EHR)
+    pop_summary = json.loads((st("population") / "baseline_extra_summary.json").read_text(encoding="utf-8"))["summary"]
+    out["baseline_sources"] = {k: v.get("source") for k, v in pop_summary["added_variables"].items()}
+    out["not_simulated"] = pop_summary.get("not_simulated") or []
+    tdir = st("journey") / "traces"
+    if not tdir.exists():                          # a stage lock keeps the top-level files; the traces stay in the run folder
+        tdir = Path("data/trial/runs") / nct / f"v{version}" / "journey" / "traces"
+    traces = sorted(tdir.glob("patient_trace_*.json"))
+    chosen = None
+    for t in traces:
+        d = json.loads(t.read_text(encoding="utf-8"))
+        cats = {e["category"] for e in d["events"]}
+        score = ("adverse event" in cats) + bool(d.get("progression_detected_day")) + ("follow-up" in cats) + 2 * any(
+            "held" in (e.get("consequence") or "") for e in d["events"])
+        if chosen is None or score > chosen[0]:
+            chosen = (score, d)
+    if chosen:
+        d = chosen[1]
+        out["trace"] = {"subject_id": d["subject_id"], "arm": d["arm"], "baseline": d["baseline"],
+                        "events": [{k: e.get(k) for k in ("day", "visit", "category", "item", "result", "consequence")} for e in d["events"]]}
+    return out
 
 
 def _protocol_summary(spec: dict, journey: dict, windows: list[dict], target: int) -> dict:

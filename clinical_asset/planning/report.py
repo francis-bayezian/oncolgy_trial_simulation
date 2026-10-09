@@ -219,6 +219,23 @@ def _load_results(lock_dir: Path) -> dict | None:
 ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4"}
 
 
+def protocol_start_year(spec: dict) -> int | None:
+    """The activation date's year; else the earliest amendment date (a revised protocol's version date is its latest
+    amendment, years after the trial opened); else the version date."""
+    meta = spec.get("metadata") or {}
+
+    def year_of(text: str) -> int | None:
+        m = re.search(r"(?:19|20)\d{2}", text) or re.search(r"/(\d{2})\s*$", text)     # a four-digit year first
+        return (int(m.group(0)) if len(m.group(0)) == 4 else 2000 + int(m.group(1))) if m else None
+
+    year = year_of(_q(meta.get("activation_date")) or "")
+    if year is None:
+        amended = [y for y in (year_of(_q(a.get("date")) or "") for a in spec.get("amendment_history") or []) if y]
+        version = year_of(_q(meta.get("version_date")) or "")
+        year = min(amended + ([version] if version else [])) if amended or version else None
+    return year
+
+
 def protocol_features(spec: dict, n_max: int | None, family_map_file: Path, family_model=None) -> dict:
     """The planning features of a protocol, from its locked StudySpec."""
     import re
@@ -228,17 +245,7 @@ def protocol_features(spec: dict, n_max: int | None, family_map_file: Path, fami
     meta = spec["metadata"]
     phase_text = (_q(meta.get("phase")) or "").casefold()
     phases = sorted({f"PHASE{ROMAN.get(x, x)}" for x in re.findall(r"\b(iv|iii|ii|i|[1-4])\b", phase_text.replace("/", " "))})
-    def year_of(text: str) -> int | None:
-        m = re.search(r"(?:19|20)\d{2}", text) or re.search(r"/(\d{2})\s*$", text)     # a four-digit year first
-        return (int(m.group(0)) if len(m.group(0)) == 4 else 2000 + int(m.group(1))) if m else None
-
-    # start year: the activation date; else the earliest amendment date (a revised protocol's version date is its latest
-    # amendment, years after the trial opened); else the version date
-    year = year_of(_q(meta.get("activation_date")) or "")
-    if year is None:
-        amended = [y for y in (year_of(_q(a.get("date")) or "") for a in spec.get("amendment_history") or []) if y]
-        version = year_of(_q(meta.get("version_date")) or "")
-        year = min(amended + ([version] if version else [])) if amended or version else None
+    year = protocol_start_year(spec)
     hi = age_limits(spec)[1]
     from .operational import condition_family
 

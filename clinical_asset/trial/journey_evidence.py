@@ -45,7 +45,7 @@ def _disposition() -> list[dict]:
         if r["period_index"] != 0 or not r["started"] or r["nct_id"] in drop:
             continue                                  # the first period: participants who started the trial
         g = per.setdefault((r["nct_id"], r["group_title"]), {"nct_id": r["nct_id"], "phase": r["phase"], "mesh": r["condition_mesh"],
-                                                             "started": r["started"], "by_reason": {}})
+                                                             "group_title": r["group_title"], "started": r["started"], "by_reason": {}})
         if r["reason"] and r["count"]:
             g["by_reason"][r["reason"]] = g["by_reason"].get(r["reason"], 0.0) + r["count"]
     fam: dict = {}

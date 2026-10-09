@@ -129,7 +129,11 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
         plan_end = int(max(days)) if days else 1
         horizon_days = plan_end + REPORTING_WINDOW_DAYS
         scale, end_label = min(1.0, horizon_days / REFERENCE_PARTICIPATION_DAYS), "completed planned procedures"
-    withdraw_day = int(rng.integers(1, plan_end + 1)) if withdraw["value"] and rng.random() < withdraw["value"] * scale else None
+    hazard = withdraw.get("per_visit_hazard") if withdraw else None       # burden-dependent withdrawal (L064)
+    if hazard is None:
+        withdraw_day = int(rng.integers(1, plan_end + 1)) if withdraw["value"] and rng.random() < withdraw["value"] * scale else None
+    else:
+        withdraw_day = None                   # drawn below, visit by visit, among the visits the patient attends
     # registry competing exits (L021): treatment stopped for an adverse event (A14), death in the study period (A15)
     ae_stop_day = int(rng.integers(1, plan_end + 1)) if ae_stop and ae_stop["value"] and rng.random() < ae_stop["value"] * scale else None
     death_day = int(rng.integers(1, horizon_days + 1)) if death and death["value"] and rng.random() < death["value"] * scale else None
@@ -158,6 +162,11 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
         detect = None
     if detect is not None:
         end_candidates.append((detect, "disease progression"))
+    if hazard:
+        # each attended on-treatment visit carries the per-visit withdrawal hazard; visits stop at any earlier exit
+        off_other = min(end_candidates + [(ae_stop_day, "")] * (ae_stop_day is not None) + [(death_day, "")] * (death_day is not None))[0]
+        wrng = withdraw.get("rng") or rng
+        withdraw_day = next((d for d in visit_days if 1 <= d <= off_other and wrng.random() < hazard), None)
     if withdraw_day is not None:
         end_candidates.append((withdraw_day, "withdrawal (subject, loss to follow-up or physician decision)"))
     if ae_stop_day is not None:
@@ -275,8 +284,48 @@ def simulate_patient(subject: dict, ae_rows: list[dict], eligibility: dict | Non
     st.log(off_day, "EOT", "disposition", "end of treatment", off_reason, evidence_level="evidence" if hit else "protocol",
            source=hit[0]["source"] if hit else "protocol discontinuation rules", **({"assumption": hit[1]} if hit and hit[1] else {}))
     fu = sched["follow_up_interval_days"]
-    if fu["value"] and (death_day is None or off_day + int(fu["value"]) < death_day):
-        st.log(off_day + int(fu["value"]), "FU1", "follow-up", "follow-up visit", "attended", evidence_level="protocol", source=fu["source"])
+    st.attended = [(v["day"], v["name"], list(v["planned"])) for v in visits if 1 <= v["day"] <= off_day]
+    withdrew = off_reason.startswith("withdrawal")
+    if hazard is None:
+        if fu["value"] and (death_day is None or off_day + int(fu["value"]) < death_day):
+            st.log(off_day + int(fu["value"]), "FU1", "follow-up", "follow-up visit", "attended", evidence_level="protocol", source=fu["source"])
+            st.attended.append((off_day + int(fu["value"]), "FU1", ["follow-up visit"]))
+    elif fu["value"] and not withdrew:
+        # follow-up visits at the protocol's interval until death, withdrawal or the end of the simulated horizon; each
+        # attended visit carries the same per-visit withdrawal hazard (L064)
+        k, d = 1, off_day + int(fu["value"]) * (1 + int(sched.get("follow_up_skip") or 0))   # a scenario may drop the first visit(s)
+        wrng = withdraw.get("rng") or rng
+        while d <= horizon_days and (death_day is None or d < death_day):
+            if wrng.random() < hazard:
+                st.off_study = (d, "withdrawal from follow-up (subject, loss to follow-up or physician decision)")
+                st.log(d, f"FU{k}", "disposition", "withdrawal", "withdrew from follow-up", "no further visits or data",
+                       evidence_level="evidence", source=withdraw.get("source"))
+                break
+            st.log(d, f"FU{k}", "follow-up", "follow-up visit", "attended", evidence_level="protocol", source=fu["source"])
+            st.attended.append((d, f"FU{k}", ["follow-up visit"]))
+            k, d = k + 1, d + int(fu["value"])
+    if withdrew and hazard is not None:
+        st.off_study = (off_day, off_reason)
+    # the visits the protocol requires given the disease course (completion, progression, adverse-event stops), and
+    # what happened at each: attended, or not attended because the participant had withdrawn or died (L066). No
+    # evidence supports further operational missingness (missed visits among those on study): it is zero, not modelled.
+    ends = [plan_end] + [x for x in (detect, ae_stop_day) if x is not None] + ([off_day] if off_reason.startswith("adverse event") else [])
+    req_end = off_day if not (withdrew or off_reason == "death") else min(ends)
+    required = [(v["day"], v["name"], list(v["planned"])) for v in visits if 1 <= v["day"] <= req_end]
+    if fu["value"]:
+        k, d = 1, req_end + int(fu["value"]) * (1 + int(sched.get("follow_up_skip") or 0))
+        while d <= horizon_days:
+            required.append((d, f"FU{k}", ["follow-up visit"]))
+            k, d = k + 1, d + int(fu["value"])
+    seen = {d for d, _, _ in st.attended}
+    left_day = st.off_study[0] if st.off_study else None
+    st.required = [(d, name, planned, "attended" if d in seen else
+                    "not attended: died" if death_day is not None and d >= death_day else
+                    "not attended: withdrew" if left_day is not None and d >= left_day else "not attended")
+                   for d, name, planned in required]
+    left = st.off_study[0] if st.off_study else None
+    if death_day is not None and left is not None and death_day > left:
+        st.death_day = death_day = None       # a death after the participant left the study is not observed (L064)
     if death_day is not None and death_day > off_day:
         st.log(death_day, "follow-up", "disposition", "death", "died during follow-up", evidence_level="evidence",
                source=death["source"], assumption="A15_death_timing")
@@ -315,6 +364,146 @@ def person_level_exits(states: list, cohort: list[dict]) -> int:
     return changed
 
 
+def burden_withdrawal(ctx: dict, sched: dict, family: str | None) -> dict | None:
+    """The protocol's trial-level withdrawal share from the registry burden model (L064), or None without the model."""
+    from ..planning.report import protocol_start_year, sponsor_class
+    from . import withdrawal_burden as wb
+
+    model = wb.load()
+    if not model:
+        return None
+    spec = ctx["spec"]
+    feats = wb.protocol_features(spec, sched, family, ctx["phase"], len(ctx["cohort"]), protocol_start_year(spec),
+                                 sponsor_class(spec).get("value") == "INDUSTRY", len(spec.get("arms") or []) > 1, REPORTING_WINDOW_DAYS)
+    pred = wb.predict(model, feats)
+    out = sourced(pred["share"], "evidence", f"registry protocol-burden model {model['version']} ({model['trials']} trials): "
+                  "withdrawal predicted from this protocol's participation duration, visit frequency, assessment count, phase, "
+                  "disease family, enrolment, start year, sponsor class and randomisation")
+    out["detail"] = {"ci95": pred["ci95"], "features": {k: v for k, v in feats.items() if k != "definitions"},
+                     "definitions": feats["definitions"], "visit_frequency_log_or": model["coefficients"]["log2_visits_per_month"]["log_odds"]}
+    return out
+
+
+def _simulate_all(ctx: dict, sched: dict, horizon_days: int, rng, wd: dict, prog_by_arm: dict, ae_by_arm: dict, death_by_arm: dict,
+                  hazard_by_arm: dict | None, seed_base: int = 0) -> list:
+    from . import patient_risk
+    from . import subgroup_evidence as sge
+
+    states = []
+    # one stream per patient, drawn from the cohort stream: a patient's disease course does not depend on how many random
+    # numbers earlier patients used (common random numbers across schedule scenarios, L064)
+    pseeds = rng.integers(0, 2 ** 32, size=len(ctx["cohort"])) if hazard_by_arm is not None else None
+    for i, s in enumerate(ctx["cohort"]):
+        arm = s["arm_id"]
+        prog = prog_by_arm[arm]
+        log_hr = sge.patient_log_effects(s["baseline"], ctx["sg"])[0]
+        # exits by the patient's own risk (L055): the arm's evidence probability moved by age, sex and ECOG
+        own = {}
+        for kind, d in (("withdrawal", wd[arm]), ("ae_discontinuation", ae_by_arm[arm]), ("death", death_by_arm[arm])):
+            v = (d or {}).get("value")
+            own[kind] = {**d, "value": patient_risk.adjust(v, patient_risk.shift(ctx["risk"], kind, s["baseline"]))} if v else d
+        if hazard_by_arm is not None:
+            base = wd[arm].get("value") or 0.0
+            mult = own["withdrawal"]["value"] / base if base and own["withdrawal"].get("value") else 1.0
+            # withdrawal draws from the patient's own stream: every schedule scenario keeps the same disease courses
+            # (common random numbers), so scenario differences are the schedule's, not simulation noise
+            own["withdrawal"] = {**own["withdrawal"], "per_visit_hazard": min(0.5, hazard_by_arm[arm] * mult),
+                                 "rng": np.random.default_rng([seed_base, int.from_bytes(s["subject_id"].encode()[-6:], "big")])}
+        if log_hr and (prog.get("value") or {}).get("rate_per_year"):
+            prog = {**prog, "value": {**prog["value"], "rate_per_year": prog["value"]["rate_per_year"] * math.exp(log_hr)}}
+        states.append(simulate_patient(s, ctx["ae_by"].get(s["subject_id"], []), ctx["elig"].get(s["patient_id"]), ctx["spec"], sched,
+                                       ctx["rules"], ctx["levels"], prog, own["withdrawal"],
+                                       np.random.default_rng(int(pseeds[i])) if pseeds is not None else rng, horizon_days, own["ae_discontinuation"],
+                                       own["death"]))
+    return states
+
+
+def visits_per_patient_month(states: list, horizon_days: int) -> float:
+    """Attended visits per patient-month of participation, from the first dose to death or the end of the simulated
+    follow-up (the pilot pass has no withdrawal): a schedule with fewer visits lowers it."""
+    days = sum(min(s.death_day or horizon_days, horizon_days) for s in states)
+    return sum(len(s.attended) for s in states) / (days / 30.44) if days else 0.0
+
+
+def simulate_cohort(ctx: dict, sched: dict, horizon_days: int, seed: int, withdrawal_logit_shift: float = 0.0, return_pilot: bool = False,
+                    reference_visit_rate: float | None = None) -> tuple:
+    """The cohort's journeys. With the registry burden model, withdrawal is the protocol's predicted trial-level share
+    distributed over the visits each patient attends: a pilot pass without withdrawal gives every patient's attended
+    visits, and the per-visit hazard is solved so that the expected share withdrawing equals the predicted share (L064).
+    A schedule scenario passes `reference_visit_rate` (the original schedule's visits per patient-month): its predicted
+    share moves by the registry's visit-frequency association for the change in visits per patient-month."""
+    prog_by_arm, wd_by_arm, ae_by_arm, death_by_arm = {}, {}, {}, {}
+    for s in ctx["cohort"]:
+        arm = s["arm_id"]
+        if arm in prog_by_arm:
+            continue
+        f = ctx["feats"].get(arm) or next(iter(ctx["feats"].values()), {})
+        prog_by_arm[arm] = progression_model(ctx["model"], f, ctx["spec"], ctx["facts"], arm)
+        # the protocol's own burden features (a schedule scenario changes withdrawal only through visits per patient-month)
+        wd_by_arm[arm] = burden_withdrawal(ctx, ctx["sched"], f.get("disease_family")) or withdrawal_probability(f.get("disease_family"), ctx["phase"])
+        ae_by_arm[arm] = ae_discontinuation_probability(f.get("disease_family"), ctx["phase"])
+        death_by_arm[arm] = death_probability(f.get("disease_family"), ctx["phase"])
+    burden = all("burden model" in (w.get("source") or "") for w in wd_by_arm.values())
+    if not burden:
+        rng = np.random.default_rng(seed)
+        return _simulate_all(ctx, sched, horizon_days, rng, wd_by_arm, prog_by_arm, ae_by_arm, death_by_arm, None, seed), prog_by_arm, wd_by_arm, ae_by_arm, death_by_arm
+    pilot = _simulate_all(ctx, sched, horizon_days, np.random.default_rng(seed), wd_by_arm, prog_by_arm, ae_by_arm, death_by_arm,
+                          {a: 0.0 for a in wd_by_arm}, seed)
+    rate = visits_per_patient_month(pilot, horizon_days)
+    beta_v = next(iter(wd_by_arm.values()))["detail"]["visit_frequency_log_or"]
+    shift = withdrawal_logit_shift + (beta_v * math.log2(rate / reference_visit_rate) if reference_visit_rate else 0.0)
+    hazard_by_arm = {}
+    for arm, w in wd_by_arm.items():
+        p = 1 / (1 + math.exp(-(math.log(w["value"] / (1 - w["value"])) + shift)))
+        v = np.array([len(st.attended) for st, s in zip(pilot, ctx["cohort"], strict=True) if s["arm_id"] == arm], float)
+        lo, hi = 0.0, 0.5
+        for _ in range(60):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if float(np.mean(1 - (1 - mid) ** v)) < p else (lo, mid)
+        hazard_by_arm[arm] = (lo + hi) / 2
+        wd_by_arm[arm] = {**w, "value": p, "detail": {**w["detail"], "per_visit_hazard": hazard_by_arm[arm], "visits_per_patient_month": rate,
+                                                     "reference_visits_per_patient_month": reference_visit_rate, "logit_shift": shift,
+                                                     "mean_attended_visits_without_withdrawal": float(v.mean())}}
+    states = _simulate_all(ctx, sched, horizon_days, np.random.default_rng(seed), wd_by_arm, prog_by_arm, ae_by_arm, death_by_arm, hazard_by_arm, seed)
+    if return_pilot:
+        return states, prog_by_arm, wd_by_arm, ae_by_arm, death_by_arm, pilot
+    return states, prog_by_arm, wd_by_arm, ae_by_arm, death_by_arm
+
+
+def context_from_locks(nct: str, version: str) -> tuple[dict, dict, int, int]:
+    """The locked journey's inputs (the same ones run() used), for schedule scenarios on the same patients."""
+    from . import patient_risk
+    from . import subgroup_evidence as sge
+    from .studyspec import load_facts, load_studyspec
+
+    L = Path("data/locked") / nct
+    st = lambda s: L / f"{s}_v{version}"  # noqa: E731
+    js = json.loads((st("journey") / "journey_summary.json").read_text(encoding="utf-8"))
+    spec, _ = load_studyspec(st("studyspec"))
+    ref = (json.loads((st("journey") / "lock.json").read_text(encoding="utf-8")).get("inputs") or {}).get("facts")
+    facts_lock = Path(ref["path"]).parent if ref else None          # the facts lock the journey itself used
+    sf = st("journey") / "schedule_facts.json"
+    sched = schedule(spec, json.loads(sf.read_text(encoding="utf-8")) if sf.exists() else None)
+    rules = dm.compile_rules(spec)
+    cohort = [json.loads(x) for x in open(st("cohorts") / js["cohort_file"], encoding="utf-8")]
+    elig = {}
+    with open(st("eligibility") / "eligibility.jsonl", encoding="utf-8") as fh:
+        for line in fh:
+            r = json.loads(line)
+            elig[r["patient_id"]] = r
+    ae_by: dict = {}
+    with open(st("outputs") / "adae.csv", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            ae_by.setdefault(r["USUBJID"], []).append(r)
+    safety = json.loads((st("safety") / "safety_results.json").read_text(encoding="utf-8"))
+    ctx = {"spec": spec, "sched": sched, "rules": rules, "levels": dm.dose_levels(rules), "cohort": cohort, "elig": elig, "ae_by": ae_by,
+           "feats": {a["arm_id"]: ((a.get("safety_v3") or {}).get("features") or {}) for a in safety["arms"]},
+           "model": json.loads((st("outcomes") / "outcome_model.json").read_text(encoding="utf-8")), "phase": registry_phase(spec),
+           "facts": load_facts(facts_lock)[0] if facts_lock and Path(facts_lock).exists() else None, "sg": sge.load(st("cohorts")),
+           "risk": patient_risk.load(js["seed"])}
+    return ctx, sched, int(js["horizon_days"]), int(js["seed"])
+
+
 def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_lock: Path, safety_lock: Path, outcomes_lock: Path,
         schedule_facts: Path | None, out_dir: Path, scenario: str | None = None, horizon_days: int = 730, seed: int = 20260929,
         traces: int = 3, facts_lock: Path | None = None) -> dict:
@@ -347,32 +536,14 @@ def run(spec_lock: Path, cohorts_lock: Path, eligibility_lock: Path, outputs_loc
     feats = {a["arm_id"]: ((a.get("safety_v3") or {}).get("features") or {}) for a in safety["arms"]}
     model = json.loads((Path(outcomes_lock) / "outcome_model.json").read_text(encoding="utf-8"))
     phase = registry_phase(spec)
-    rng = np.random.default_rng(seed)
-    states, prog_by_arm, wd_by_arm, ae_by_arm, death_by_arm = [], {}, {}, {}, {}
     from . import subgroup_evidence as sge
 
     sg_evidence = sge.load(cohorts_lock)              # the protocol's subgroup factors and their prognostic effects (A28)
     from . import patient_risk
     risk_model = patient_risk.load(seed)              # this replicate's draw of the patient-level effects (L055, L056)
-    for s in cohort:
-        arm = s["arm_id"]
-        if arm not in prog_by_arm:
-            f = feats.get(arm) or next(iter(feats.values()), {})
-            prog_by_arm[arm] = progression_model(model, f, spec, protocol_facts, arm)
-            wd_by_arm[arm] = withdrawal_probability(f.get("disease_family"), phase)
-            ae_by_arm[arm] = ae_discontinuation_probability(f.get("disease_family"), phase)
-            death_by_arm[arm] = death_probability(f.get("disease_family"), phase)
-        prog = prog_by_arm[arm]
-        log_hr = sge.patient_log_effects(s["baseline"], sg_evidence)[0]
-        # exits by the patient's own risk (L055): the arm's evidence probability moved by age, sex and ECOG
-        own = {}
-        for kind, d in (("withdrawal", wd_by_arm[arm]), ("ae_discontinuation", ae_by_arm[arm]), ("death", death_by_arm[arm])):
-            v = (d or {}).get("value")
-            own[kind] = {**d, "value": patient_risk.adjust(v, patient_risk.shift(risk_model, kind, s["baseline"]))} if v else d
-        if log_hr and (prog.get("value") or {}).get("rate_per_year"):
-            prog = {**prog, "value": {**prog["value"], "rate_per_year": prog["value"]["rate_per_year"] * math.exp(log_hr)}}
-        states.append(simulate_patient(s, ae_by.get(s["subject_id"], []), elig.get(s["patient_id"]), spec, sched, rules, levels,
-                                       prog, own["withdrawal"], rng, horizon_days, own["ae_discontinuation"], own["death"]))
+    ctx = {"spec": spec, "sched": sched, "rules": rules, "levels": levels, "cohort": cohort, "elig": elig, "ae_by": ae_by,
+           "feats": feats, "model": model, "phase": phase, "facts": protocol_facts, "sg": sg_evidence, "risk": risk_model}
+    states, prog_by_arm, wd_by_arm, ae_by_arm, death_by_arm = simulate_cohort(ctx, sched, horizon_days, seed)
     person_level_exits(states, cohort)
     from .export_clinical import write
     from .journey_evidence import screen_pass_rate

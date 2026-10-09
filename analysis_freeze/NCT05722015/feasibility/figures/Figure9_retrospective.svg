@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-09T16:45:33.790894</dc:date>
+    <dc:date>2026-10-09T19:58:55.472731</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -30,112 +30,258 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 28.7928 128.668966 
-L 930.9672 128.668966 
-L 930.9672 192.351724 
-L 28.7928 192.351724 
+    <path d="M 28.7928 95.710345 
+L 930.9672 95.710345 
+L 930.9672 139.282759 
+L 28.7928 139.282759 
 z
-" clip-path="url(#p67bd7a04dc)" style="fill: #efefef"/>
+" clip-path="url(#paf4fe3f4bf)" style="fill: #efefef"/>
    </g>
    <g id="patch_3">
-    <path d="M 28.7928 199.427586 
-L 930.9672 199.427586 
-L 930.9672 263.110345 
-L 28.7928 263.110345 
+    <path d="M 28.7928 144.124138 
+L 930.9672 144.124138 
+L 930.9672 187.696552 
+L 28.7928 187.696552 
 z
-" clip-path="url(#p67bd7a04dc)" style="fill: #ffffff"/>
+" clip-path="url(#paf4fe3f4bf)" style="fill: #ffffff"/>
    </g>
    <g id="patch_4">
-    <path d="M 28.7928 270.186207 
-L 930.9672 270.186207 
-L 930.9672 333.868966 
-L 28.7928 333.868966 
+    <path d="M 28.7928 192.537931 
+L 930.9672 192.537931 
+L 930.9672 236.110345 
+L 28.7928 236.110345 
 z
-" clip-path="url(#p67bd7a04dc)" style="fill: #efefef"/>
+" clip-path="url(#paf4fe3f4bf)" style="fill: #efefef"/>
    </g>
    <g id="patch_5">
-    <path d="M 28.7928 340.944828 
-L 930.9672 340.944828 
-L 930.9672 404.627586 
-L 28.7928 404.627586 
+    <path d="M 28.7928 240.951724 
+L 930.9672 240.951724 
+L 930.9672 284.524138 
+L 28.7928 284.524138 
 z
-" clip-path="url(#p67bd7a04dc)" style="fill: #ffffff"/>
+" clip-path="url(#paf4fe3f4bf)" style="fill: #ffffff"/>
    </g>
    <g id="patch_6">
-    <path d="M 28.7928 411.703448 
-L 930.9672 411.703448 
-L 930.9672 475.386207 
-L 28.7928 475.386207 
+    <path d="M 28.7928 289.365517 
+L 930.9672 289.365517 
+L 930.9672 332.937931 
+L 28.7928 332.937931 
 z
-" clip-path="url(#p67bd7a04dc)" style="fill: #efefef"/>
+" clip-path="url(#paf4fe3f4bf)" style="fill: #efefef"/>
    </g>
    <g id="text_1">
-    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="28.7928" y="103.859038" transform="rotate(-0 28.7928 103.859038)">Planning question</text>
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="28.7928" y="79.838348" transform="rotate(-0 28.7928 79.838348)">Planning question</text>
    </g>
    <g id="text_2">
-    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Arial'; text-anchor: start; fill: #0072b2" x="272.379888" y="103.859038" transform="rotate(-0 272.379888 103.859038)">Feasibility assessment (before the trial)</text>
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Arial'; text-anchor: start; fill: #0072b2" x="272.379888" y="79.838348" transform="rotate(-0 272.379888 79.838348)">Feasibility assessment (before the trial)</text>
    </g>
    <g id="text_3">
-    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="669.336624" y="103.859038" transform="rotate(-0 669.336624 103.859038)">What subsequently occurred</text>
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="669.336624" y="79.838348" transform="rotate(-0 669.336624 79.838348)">What subsequently occurred</text>
    </g>
    <g id="text_4">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="163.615696" transform="rotate(-0 33.303672 163.615696)">Is recruitment demanding?</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="120.343124" transform="rotate(-0 33.303672 120.343124)">Is recruitment demanding?</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 157.085306)">Planned 454/year = 92nd percentile of comparable trials;</text>
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 170.146087)">8% chance of finishing in 10 months</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 114.356933)">Planned 454/year = 92nd percentile of comparable trials;</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 126.329315)">8% chance of finishing in 10 months</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 157.085423)">377 enrolled at ≥268/year:</text>
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 170.146204)">upper-tail performance was achieved</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 114.35704)">377 enrolled at ≥268/year:</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 126.329423)">upper-tail performance was achieved</text>
    </g>
    <g id="text_7">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="234.374317" transform="rotate(-0 33.303672 234.374317)">Are the variability assumptions realistic?</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="168.756917" transform="rotate(-0 33.303672 168.756917)">Are the variability assumptions realistic?</text>
    </g>
    <g id="text_8">
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 227.844044)">Comparable trials: CV 37% (AUC), 40% (Ctrough)</text>
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 240.904825)">Protocol assumed 50% and 84%</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 162.770833)">Comparable trials: CV 37% (AUC), 40% (Ctrough)</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 174.743216)">Protocol assumed 50% and 84%</text>
    </g>
    <g id="text_9">
-    <text style="font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="673.847496" y="234.377833" transform="rotate(-0 673.847496 234.377833)">Observed CV 36% and 44%</text>
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="673.847496" y="168.76014" transform="rotate(-0 673.847496 168.76014)">Observed CV 36% and 44%</text>
    </g>
    <g id="text_10">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="305.132938" transform="rotate(-0 33.303672 305.132938)">What safety burden should sites expect?</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="217.17071" transform="rotate(-0 33.303672 217.17071)">What safety burden should sites expect?</text>
    </g>
    <g id="text_11">
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 298.602664)">Comparable trials: 39.5% with a serious AE</text>
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 311.663211)">(≈149 of 378 patients)</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 211.184626)">Comparable trials: 39.5% with a serious AE</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 223.156794)">(≈149 of 378 patients)</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="673.847496" y="305.132938" transform="rotate(-0 673.847496 305.132938)">39.0% / 40.5% (subcutaneous / intravenous)</text>
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="673.847496" y="217.17071" transform="rotate(-0 673.847496 217.17071)">39.0% / 40.5% (subcutaneous / intravenous)</text>
    </g>
    <g id="text_13">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="375.891676" transform="rotate(-0 33.303672 375.891676)">Is the population composition fixed?</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="265.584611" transform="rotate(-0 33.303672 265.584611)">Is the population composition fixed?</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 369.361168)">Simulated eligible pool: 56% women, 9% Asian,</text>
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 382.421949)">5% Hispanic (one global mix)</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 259.598312)">Simulated eligible pool: 56% women, 9% Asian,</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 271.570695)">5% Hispanic (one global mix)</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 369.361285)">29% women, 29% Asian, 31% Hispanic:</text>
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 382.421832)">recruitment geography shaped the mix</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 259.598419)">29% women, 29% Asian, 31% Hispanic:</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #222222" transform="translate(673.847496 271.570587)">recruitment geography shaped the mix</text>
    </g>
    <g id="text_16">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="446.650296" transform="rotate(-0 33.303672 446.650296)">Will the required PK numbers be retained?</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="33.303672" y="313.998404" transform="rotate(-0 33.303672 313.998404)">Will the required PK numbers be retained?</text>
    </g>
    <g id="text_17">
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 440.119906)">P(AUC 0-6 weeks ≥ 318) 100%; P(Ctrough ≥ 240) 61%</text>
-    <text style="font-size: 12px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 453.180687)">at 378 enrolled</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 308.012212)">P(AUC 0-6 weeks ≥ 318) 100%; P(Ctrough ≥ 240) 61%</text>
+    <text style="font-size: 11px; font-family: 'Arial'; fill: #0072b2" transform="translate(276.89076 319.984595)">at 378 enrolled</text>
    </g>
    <g id="text_18">
-    <text style="font-size: 12px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="673.847496" y="446.650179" transform="rotate(-0 673.847496 446.650179)">371 / 303 evaluable (AUC / Ctrough)</text>
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="673.847496" y="313.998296" transform="rotate(-0 673.847496 313.998296)">371 / 303 evaluable (AUC / Ctrough)</text>
    </g>
   </g>
-  <g id="text_19">
-   <text style="font-weight: 700; font-size: 19px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="38.3904" y="34.616807" transform="rotate(-0 38.3904 34.616807)">Retrospective evaluation of pre-trial feasibility signals in NCT05722015</text>
-  </g>
-  <g id="text_20">
+  <g id="axes_2">
    <g id="patch_7">
+    <path d="M 287.928 486 
+L 671.832 486 
+L 671.832 378 
+L 287.928 378 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m4f23a16809" d="M 0 0 
+L 0 3.5 
+" style="stroke: #444444; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4f23a16809" x="287.928" y="486" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #444444" x="287.928" y="501.736328" transform="rotate(-0 287.928 501.736328)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m4f23a16809" x="364.7088" y="486" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #444444" x="364.7088" y="501.736328" transform="rotate(-0 364.7088 501.736328)">20%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m4f23a16809" x="441.4896" y="486" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #444444" x="441.4896" y="501.736328" transform="rotate(-0 441.4896 501.736328)">40%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m4f23a16809" x="518.2704" y="486" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #444444" x="518.2704" y="501.736328" transform="rotate(-0 518.2704 501.736328)">60%</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m4f23a16809" x="595.0512" y="486" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #444444" x="595.0512" y="501.736328" transform="rotate(-0 595.0512 501.736328)">80%</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m4f23a16809" x="671.832" y="486" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_24">
+      <text style="font-size: 12px; font-family: 'Arial'; text-anchor: middle; fill: #444444" x="671.832" y="501.736328" transform="rotate(-0 671.832 501.736328)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="line2d_7">
+    <path d="M 336.677714 459 
+L 507.301714 459 
+" clip-path="url(#pff2350416d)" style="fill: none; stroke: #8a8a8a; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <defs>
+     <path id="mab7fd8c0d8" d="M 0 4.5 
+C 1.193414 4.5 2.338109 4.025852 3.181981 3.181981 
+C 4.025852 2.338109 4.5 1.193414 4.5 0 
+C 4.5 -1.193414 4.025852 -2.338109 3.181981 -3.181981 
+C 2.338109 -4.025852 1.193414 -4.5 0 -4.5 
+C -1.193414 -4.5 -2.338109 -4.025852 -3.181981 -3.181981 
+C -4.025852 -2.338109 -4.5 -1.193414 -4.5 0 
+C -4.5 1.193414 -4.025852 2.338109 -3.181981 3.181981 
+C -2.338109 4.025852 -1.193414 4.5 0 4.5 
+z
+" style="stroke: #8a8a8a"/>
+    </defs>
+    <g clip-path="url(#pff2350416d)">
+     <use xlink:href="#mab7fd8c0d8" x="412.239605" y="459" style="fill: #8a8a8a; stroke: #8a8a8a"/>
+    </g>
+   </g>
+   <g id="line2d_9">
+    <path d="M 309.256 414 
+L 653.627029 414 
+" clip-path="url(#pff2350416d)" style="fill: none; stroke: #cc79a7; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <defs>
+     <path id="mf30df23ac7" d="M 0 4.5 
+C 1.193414 4.5 2.338109 4.025852 3.181981 3.181981 
+C 4.025852 2.338109 4.5 1.193414 4.5 0 
+C 4.5 -1.193414 4.025852 -2.338109 3.181981 -3.181981 
+C 2.338109 -4.025852 1.193414 -4.5 0 -4.5 
+C -1.193414 -4.5 -2.338109 -4.025852 -3.181981 -3.181981 
+C -4.025852 -2.338109 -4.5 -1.193414 -4.5 0 
+C -4.5 1.193414 -4.025852 2.338109 -3.181981 3.181981 
+C -2.338109 4.025852 -1.193414 4.5 0 4.5 
+z
+" style="stroke: #cc79a7"/>
+    </defs>
+    <g clip-path="url(#pff2350416d)">
+     <use xlink:href="#mf30df23ac7" x="488.562927" y="414" style="fill: #cc79a7; stroke: #cc79a7"/>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 443.317714 486 
+L 443.317714 378 
+" clip-path="url(#pff2350416d)" style="fill: none; stroke: #222222; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 287.928 486 
+L 671.832 486 
+" style="fill: none; stroke: #444444; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: end" x="280.24992" y="461.846572" transform="rotate(-0 280.24992 461.846572)">Historical controls (meta-analytic)</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: end" x="280.24992" y="416.846572" transform="rotate(-0 280.24992 416.846572)">Synthetic control (contextual model)</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #222222" x="443.317714" y="384.75" transform="rotate(-0 443.317714 384.75)">observed control arm 40.5%</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 12.5px; font-family: 'Arial'; text-anchor: start" x="287.928" y="372" transform="rotate(-0 287.928 372)">Synthetic-control exploration: control-arm serious AE (95% interval)</text>
+   </g>
+  </g>
+  <g id="text_29">
+   <text style="font-weight: 700; font-size: 19px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="38.3904" y="34.616807" transform="rotate(-0 38.3904 34.616807)">Retrospective evaluation of pre-trial feasibility signals in the case-study trial</text>
+  </g>
+  <g id="text_30">
+   <g id="patch_9">
     <path d="M 38.3904 533.969473 
 L 913.585088 533.969473 
 Q 919.885088 533.969473 919.885088 527.669473 
@@ -150,10 +296,21 @@ z
    </g>
    <text style="font-style: italic; font-size: 14px; font-family: 'Arial'; text-anchor: start; fill: #222222" x="38.3904" y="524.72291" transform="rotate(-0 38.3904 524.72291)">The pre-trial assessment flagged the demanding accrual and gave realistic variability and safety inputs; composition depended on geography.</text>
   </g>
+  <g id="text_31">
+   <text style="font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #6b6b6b" x="38.3904" y="56.7" transform="rotate(-0 38.3904 56.7)">Assessment column: produced before the trial's results were available.</text>
+  </g>
+  <g id="text_32">
+   <text style="font-size: 11.5px; font-family: 'Arial'; fill: #222222" transform="translate(691.0272 422.45938)">Generating a synthetic control was feasible,</text>
+   <text style="font-size: 11.5px; font-family: 'Arial'; fill: #222222" transform="translate(691.0272 434.975962)">but its uncertainty was too wide to</text>
+   <text style="font-size: 11.5px; font-family: 'Arial'; fill: #222222" transform="translate(691.0272 447.492544)">support replacing the control arm.</text>
+  </g>
  </g>
  <defs>
-  <clipPath id="p67bd7a04dc">
-   <rect x="28.7928" y="75.6" width="902.1744" height="410.4"/>
+  <clipPath id="paf4fe3f4bf">
+   <rect x="28.7928" y="59.4" width="902.1744" height="280.8"/>
+  </clipPath>
+  <clipPath id="pff2350416d">
+   <rect x="287.928" y="378" width="383.904" height="108"/>
   </clipPath>
  </defs>
 </svg>

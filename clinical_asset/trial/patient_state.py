@@ -106,6 +106,8 @@ class PatientState:
     death_day: int | None = None
     off_study: tuple | None = None
     events: list = field(default_factory=list)          # the trace: one dict per clinical event, in time order
+    attended: list = field(default_factory=list)        # (day, visit, planned items) of every visit attended (L064)
+    required: list = field(default_factory=list)        # (day, visit, planned items, status) the protocol requires (L066)
 
     def log(self, day, visit, category, item, result, consequence="", **provenance):
         self.events.append({"day": int(day), "visit": visit, "category": category, "item": item, "result": result,

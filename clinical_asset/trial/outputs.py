@@ -173,6 +173,22 @@ def adverse_event_rows(safety: dict, adsl: list[dict], rng: np.random.Generator,
         d_ser = np.array([patient_risk.shift(risk, "serious_ae", b) for b in base])
         d_oth = np.array([patient_risk.shift(risk, "other_ae", b) for b in base])
         logit = np.log(np.clip(p, 1e-9, 1 - 1e-9) / (1 - np.clip(p, 1e-9, 1 - 1e-9)))
+        target = notes[arm["arm_id"]].get("any_serious_target")
+        if target is not None and serious.any() and len(d_ser):
+            # the patient shifts are measured from the corpus-average patient, not from the comparable trials behind the
+            # arm's any-serious estimate: one arm-level offset keeps each patient's relative risk and makes the arm's
+            # expected share with any serious event equal that estimate (anchoring, L063)
+            def mean_any(c):
+                ps = 1 / (1 + np.exp(-(logit[None, serious] + (d_ser - c)[:, None])))
+                return float(np.mean([p_any(row, rho) for row in ps]))
+            lo, hi = -10.0, 10.0
+            for _ in range(50):
+                mid = (lo + hi) / 2
+                lo, hi = (mid, hi) if mean_any(mid) > target else (lo, mid)
+            offset = (lo + hi) / 2
+            d_ser = d_ser - offset
+            notes[arm["arm_id"]]["serious_anchor_offset"] = round(offset, 4)
+            notes[arm["arm_id"]]["expected_any_serious_after_anchor"] = round(mean_any(0.0), 4)
         p_ij = 1 / (1 + np.exp(-(logit[None, :] + np.where(serious[None, :], d_ser[:, None], d_oth[:, None]))))
         hit = latent < stats.norm.ppf(np.clip(p_ij, 1e-9, 1 - 1e-9))
         notes[arm["arm_id"]]["rates_capped_at_registry_bound"] = capped

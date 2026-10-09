@@ -25,6 +25,11 @@ LOCK = Path("data/locked") / NCT
 OUT = RUN / "feasibility" / "figures"
 OUT.mkdir(parents=True, exist_ok=True)
 F = json.loads((RUN / "feasibility" / "feasibility.json").read_text(encoding="utf-8"))
+CMP_VER = sys.argv[3] if len(sys.argv) > 3 else "1.2.0"     # the blind run compared with the registry (Figure 9)
+CMP = Path("data/trial/runs") / NCT / f"v{CMP_VER}"
+FB = json.loads((CMP / "feasibility" / "feasibility.json").read_text(encoding="utf-8")) if (CMP / "feasibility" / "feasibility.json").exists() else F
+LONG = F.get("longitudinal") or {}
+DEATH = "#7A7A7A"
 
 CAND, ELIG, ENR, EVAL, SAFE, LOSS, OBS, ALT = "#BDBDBD", "#009E73", "#0072B2", "#005A8D", "#E69F00", "#D55E00", "#222222", "#CC79A7"
 INK, MUTED, PALE = "#222222", "#6B6B6B", "#EFEFEF"
@@ -44,6 +49,14 @@ def tidy(label: str) -> str:
 
 def ordinal(n: int) -> str:
     return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def arm_name(arm_id: str) -> str:
+    """A plain name for a protocol arm (no internal identifiers)."""
+    arms = (F.get("protocol") or {}).get("arms") or []
+    m = re.search(r"(\d+)$", arm_id or "")
+    label = arms[int(m.group(1)) - 1] if m and 0 < int(m.group(1)) <= len(arms) else arm_id
+    return re.split(r",| [Ww]ith | [Cc]oformulated| [Aa]dministered", label)[0].strip().lower()
 
 
 def pct(x, d=0):
@@ -77,7 +90,7 @@ TARGET = F["target"]
 def figure1():
     fig = frame("From protocol requirements to a feasible patient journey",
                 "Feasibility is decided at every step of the pathway, not only at enrolment.")
-    ax = fig.add_axes([0.03, 0.1, 0.94, 0.78])
+    ax = fig.add_axes([0.03, 0.4, 0.94, 0.5])
     ax.set_xlim(0, 7)
     ax.set_ylim(0, 3)
     ax.axis("off")
@@ -99,8 +112,83 @@ def figure1():
             ax.text(x + 0.42, 0.55, acts[i], ha="center", va="center", fontsize=12, color=MUTED)
             ax.plot([x + 0.42, x + 0.42], [0.85, 1.1], color=MUTED, lw=0.8)
     ax.text(0.0, 2.85, "Feasibility questions", fontsize=13, color=MUTED, fontweight="bold")
-    ax.text(0.0, 0.18, "What the protocol acts on", fontsize=13, color=MUTED, fontweight="bold")
+    ax.text(0.0, 0.0, "What the protocol acts on", fontsize=13, color=MUTED, fontweight="bold")
+    _trace_strip(fig)
     save(fig, "Figure1_patient_journey")
+
+
+TRACE_COLOURS = {"screening": CAND, "treatment": ENR, "adverse event": SAFE, "hold": SAFE, "tumour assessment": EVAL,
+                 "progression": LOSS, "disposition": OBS, "follow-up": "#8A8A8A", "withdrawal": LOSS, "death": OBS}
+
+
+def _milestones(events: list[dict]) -> list[tuple]:
+    """The milestones of one simulated patient's journey: screening, first dose, first adverse event and any dose hold,
+    the cycle-3 visit, tumour assessments, progression, end of treatment, follow-up, withdrawal or death."""
+    out, seen = [], set()
+
+    def add(day, label, kind):
+        out.append((int(day), label, kind))
+    for e in events:
+        cat, item, res, cons = e["category"], e.get("item") or "", e.get("result") or "", e.get("consequence") or ""
+        if cat == "screening" and "screening" not in seen:
+            seen.add("screening")
+            add(e["day"], "Screened,\neligible", "screening")
+        elif cat == "treatment" and str(item).startswith("start") and "start" not in seen:
+            seen.add("start")
+            add(e["day"], "Randomised,\ncycle 1", "treatment")
+        elif cat == "adverse event" and "ae" not in seen:
+            seen.add("ae")
+            add(e["day"], f"{str(item).replace('_', ' ')}\n({res.split(';')[0]})", "adverse event")
+            if "held" in cons and "hold" not in seen:
+                seen.add("hold")
+                add(e["day"] + 1, "Dose hold", "hold")
+        elif cat == "adverse event" and "held" in cons and "hold" not in seen:
+            seen.add("hold")
+            add(e["day"], "Dose hold", "hold")
+        elif e.get("visit") == "C3D1" and "c3" not in seen:
+            seen.add("c3")
+            add(e["day"], "Cycle 3", "treatment")
+        elif cat == "tumour assessment" and "progressive" in res:
+            add(e["day"], "Progression\nat scan", "progression")
+        elif cat == "tumour assessment" and "ta" not in seen:
+            seen.add("ta")
+            add(e["day"], "Tumour\nassessment", "tumour assessment")
+        elif cat == "disposition" and item == "end of treatment" and "eot" not in seen:
+            seen.add("eot")
+            add(e["day"], "End of\ntreatment", "disposition")
+        elif cat == "follow-up" and "fu" not in seen:
+            seen.add("fu")
+            add(e["day"], "Follow-up\nvisit", "follow-up")
+        elif cat == "disposition" and item == "withdrawal":
+            add(e["day"], "Withdrew", "withdrawal")
+        elif cat == "disposition" and item == "death":
+            add(e["day"], "Died", "death")
+    return sorted(out)
+
+
+def _trace_strip(fig):
+    tr = LONG.get("trace")
+    if not tr:
+        return
+    ms = _milestones(tr["events"])
+    ax = fig.add_axes([0.06, 0.12, 0.9, 0.2])
+    lo, hi = min(d for d, _, _ in ms), max(d for d, _, _ in ms)
+    span = hi - lo or 1
+    ax.plot([lo, hi], [0, 0], color="#CCCCCC", lw=3, zorder=1)
+    for i, (d, lab, kind) in enumerate(ms):
+        ax.plot(d, 0, "o", color=TRACE_COLOURS.get(kind, MUTED), ms=11, zorder=2)
+        up = i % 2 == 0
+        ax.text(d, 0.55 if up else -0.55, lab, ha="center", va="bottom" if up else "top", fontsize=10.5,
+                color=TRACE_COLOURS.get(kind, INK) if kind not in ("screening",) else INK)
+        ax.text(d, -0.12 if up else 0.12, f"day {d}", ha="center", va="top" if up else "bottom", fontsize=9, color=MUTED)
+    ax.set_xlim(lo - span * 0.03, hi + span * 0.03)
+    ax.set_ylim(-1.6, 1.6)
+    ax.axis("off")
+    b = tr.get("baseline") or {}
+    age = (b.get("demographic:age") or {}).get("value")
+    ecog = (b.get("var:ecog_performance_status") or {}).get("value")
+    fig.text(0.04, 0.345, f"One simulated participant ({arm_name(tr['arm'])} arm): {age:.0f}-year-old {b.get('demographic:sex')}, ECOG {ecog}"
+             if age is not None else "One simulated participant", fontsize=12, color=INK, fontweight="bold")
 
 
 # ---------------------------------------------------------------- Figure 2
@@ -295,7 +383,7 @@ def figure5():
 
 
 def _observed_rate():
-    f = RUN / "comparison" / "planning" / "planning_comparison.json"
+    f = CMP / "comparison" / "planning" / "planning_comparison.json"
     if f.exists():
         return json.loads(f.read_text(encoding="utf-8"))["historical_model"].get("observed_rate_per_year_lower_bound")
     return None
@@ -305,7 +393,7 @@ def _actual() -> dict:
     """What the trial later reported (only when the run has been compared with the registry): evaluable PK numbers and
     the share with a serious adverse event, for the known-limitation notes."""
     out = {}
-    f = RUN / "comparison" / "ratio_ni" / "ratio_ni_comparison.json"
+    f = CMP / "comparison" / "ratio_ni" / "ratio_ni_comparison.json"
     if f.exists():
         items = [i for i in json.loads(f.read_text(encoding="utf-8"))["items"] if i["status"] == "SCORED"]
         out["evaluable"] = {i["endpoint"]: sum(i["actual"]["n"].values()) for i in items}
@@ -379,10 +467,10 @@ def figure6():
 
 
 # ---------------------------------------------------------------- Figure 7
-def figure7():
+def supp_s6_safety():
     S = F["safety"]
     sae = S["Serious adverse event"]
-    fig = frame("Expected safety burden across the patient journey",
+    fig = frame("Supplementary Figure S6. Expected safety burden across the patient journey",
                 f"About {sae['share'] * TARGET:.0f} of {TARGET} enrolled patients may need serious-adverse-event management.")
     keys = list(S)
     y = np.arange(len(keys))[::-1]
@@ -422,10 +510,10 @@ def figure7():
     c.set_title("C. Serious AE by subgroup", loc="left", fontweight="bold")
     act = _actual()
     est = _sae_evidence()
-    if act.get("sae") and est is not None:
-        limitation(fig, f"patient-level events overshoot the evidence estimate ({pct(sae['share'])} simulated vs {pct(est, 1)} expected; "
+    if act.get("sae") and est is not None and abs(sae["share"] - est) >= 0.05:
+        limitation(fig, f"patient-level events differ from the evidence estimate ({pct(sae['share'])} simulated vs {pct(est, 1)} expected; "
                         f"the trial reported {' / '.join(pct(x, 1) for x in act['sae'])}).")
-    save(fig, "Figure7_safety_burden")
+    save(fig, "S6_safety_burden")
 
 
 def _sae_evidence():
@@ -448,6 +536,7 @@ def figure8():
             ("P(recruit\nin window)", "p_recruit_in_window", +1, lambda v: pct(v)),
             ("Women", "female_pct", 0, lambda v: pct(v)),
             ("Age ≥65", "age65_pct", 0, lambda v: pct(v)),
+            ("Withdrawal", "withdrawal_pct", -1, lambda v: pct(v, 1) if v is not None else "—"),
             ("Patients with\nserious AE", "sae_patients", -1, lambda v: f"{v:.0f}"),
             ("Visit days\nper patient", "visit_days_per_patient", -1, lambda v: f"{v:.0f}"),
             (f"Evaluable\n{short(weak['endpoint']).split(',')[0]}", ("evaluable_median", weak["endpoint"]), +1, lambda v: f"{v:.0f}"),
@@ -468,11 +557,11 @@ def figure8():
     good, bad = np.array(mpl.colors.to_rgb(ELIG)), np.array(mpl.colors.to_rgb(SAFE))
     neutral = np.array(mpl.colors.to_rgb(PALE))
     for j, (name, key, direction, fmt) in enumerate(cols):
-        ax.text(j + 0.5, -0.12, name, ha="center", va="bottom", fontsize=11.5, fontweight="bold")
+        ax.text(j + 0.5, -0.12, name, ha="center", va="bottom", fontsize=10.5, fontweight="bold")
         base = val(sc[0], key)
         for i, s in enumerate(sc):
             v = val(s, key)
-            rel = 0 if not base else (v - base) / abs(base)
+            rel = 0 if not base or v is None else (v - base) / abs(base)
             strength = min(1.0, abs(rel) / 0.25) if direction else 0
             col = neutral
             if direction and abs(rel) >= 0.03:          # smaller differences are within simulation noise
@@ -491,14 +580,14 @@ def figure8():
 
 # ---------------------------------------------------------------- Figure 9
 def figure9():
-    comp = RUN / "comparison"
+    comp = CMP / "comparison"
     reg = json.loads(Path(f"data/holdout_comparison/{NCT}.json").read_text(encoding="utf-8"))
     rs = reg.get("resultsSection") or {}
-    rni = json.loads((LOCK / f"results_v{VER}" / "ratio_ni_results.json").read_text(encoding="utf-8"))
+    rni = json.loads((LOCK / f"results_v{CMP_VER}" / "ratio_ni_results.json").read_text(encoding="utf-8"))
     rcmp = json.loads((comp / "ratio_ni" / "ratio_ni_comparison.json").read_text(encoding="utf-8"))
-    outs = json.loads((LOCK / f"outputs_v{VER}" / "trial_outputs.json").read_text(encoding="utf-8"))
+    outs = json.loads((LOCK / f"outputs_v{CMP_VER}" / "trial_outputs.json").read_text(encoding="utf-8"))
     sae_est = outs["feasibility"]["subgroup_estimates"]["arms"]["ARM1"]["serious_adverse_event"]["headline"]["estimate"]
-    R = F["recruitment"]
+    R = FB["recruitment"]
     var = rni["variability"]
     reg_cv = [var[a]["registry"]["median_cv"] for a in ("AN1", "AN2")]
     prot_cv = [var[a]["protocol_derived_cv"] for a in ("AN1", "AN2")]
@@ -517,8 +606,8 @@ def figure9():
     hisp = base.get(("Ethnicity", "Hispanic or Latino"), 0) / n_tot if n_tot else None
     female = base.get(("Sex", "Female"), 0) / n_tot if n_tot else None
     ev_act = {i["endpoint"]: sum(i["actual"]["n"].values()) for i in rcmp["items"] if i["status"] == "SCORED"}
-    at = next(r for r in F["evaluable_curve"] if r["enrolled"] == TARGET)
-    sg = F["subgroups"]
+    at = next(r for r in FB["evaluable_curve"] if r["enrolled"] == TARGET)
+    sg = FB["subgroups"]
     fem_sim = sg["Sex"]["female"]["eligible_share"]
     asian_sim = sg["Race"].get("Asian", {}).get("eligible_share", 0)
     hisp_sim = sg["Ethnicity"].get("Hispanic or Latino", {}).get("eligible_share", 0)
@@ -537,13 +626,13 @@ def figure9():
              f"Simulated eligible pool: {pct(fem_sim)} women, {pct(asian_sim)} Asian,\n{pct(hisp_sim)} Hispanic (one global mix)",
              f"{pct(female)} women, {pct(asian)} Asian, {pct(hisp)} Hispanic:\nrecruitment geography shaped the mix" if n_tot else "—"),
             ("Will the required PK numbers be retained?",
-             "; ".join(f"P({short(w['endpoint']).split(',')[0]} ≥ {w['required']}) {pct(at[w['endpoint']]['p_meets'])}" for w in EVW if w.get("required"))
+             "; ".join(f"P({short(w['endpoint']).split(',')[0]} ≥ {w['required']}) {pct(at[w['endpoint']]['p_meets'])}" for w in FB["evaluability"] if w.get("required"))
              + f"\nat {TARGET} enrolled",
              " / ".join(f"{v}" for v in ev_act.values()) + " evaluable (AUC / Ctrough)")]
-    fig = frame(f"Retrospective evaluation of pre-trial feasibility signals in {NCT}",
+    fig = frame("Retrospective evaluation of pre-trial feasibility signals in the case-study trial",
                 "The pre-trial assessment flagged the demanding accrual and gave realistic variability and safety inputs; "
                 "composition depended on geography.")
-    ax = fig.add_axes([0.03, 0.1, 0.94, 0.76])
+    ax = fig.add_axes([0.03, 0.37, 0.94, 0.52])
     ax.axis("off")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, len(rows) + 0.8)
@@ -556,10 +645,298 @@ def figure9():
         yv = i + 1.2
         ax.add_patch(plt.Rectangle((0, yv - 0.45), 1, 0.9, color=PALE if i % 2 == 0 else "white", lw=0))
         for (x, w, _, col), txt in zip(xs, r, strict=True):
-            ax.text(x + 0.005, yv, txt, fontsize=12, va="center", color=col if col != INK else INK, fontweight="bold" if x == 0 else "normal")
+            ax.text(x + 0.005, yv, txt, fontsize=11, va="center", color=col if col != INK else INK, fontweight="bold" if x == 0 else "normal")
+    fig.text(0.04, 0.895, "Assessment column: produced before the trial's results were available.", fontsize=11, color=MUTED)
+    _synthetic_control_panel(fig)
     save(fig, "Figure9_retrospective")
 
 
-for f in (figure1, figure2, figure3, figure4, figure5, figure6, figure7, figure8, figure9):
+def _synthetic_control_panel(fig):
+    """Synthetic-control exploration: the control arm's serious-AE share predicted without seeing it."""
+    f = CMP / "comparison" / "control" / "control_external.json"
+    if not f.exists():
+        return
+    rows = [r for r in json.loads(f.read_text(encoding="utf-8"))["rows"] if r["outcome"] == "serious_ae" and r["population"] == "registry_experimental"]
+    pick = [("map_prior", "Historical controls (meta-analytic)", CAND), ("contextual_robust", "Synthetic control (contextual model)", ALT)]
+    ax = fig.add_axes([0.3, 0.1, 0.4, 0.2])
+    for i, (m, lab, col) in enumerate(pick):
+        r = next((x for x in rows if x["method"] == m), None)
+        if not r:
+            continue
+        ax.plot([r["lower"], r["upper"]], [i, i], color=col if col != CAND else "#8A8A8A", lw=3)
+        ax.plot(r["predicted"], i, "o", color=col if col != CAND else "#8A8A8A", ms=9)
+        ax.text(-0.02, i, lab, ha="right", va="center", fontsize=11, transform=ax.get_yaxis_transform())
+        obs = r["observed"]
+    ax.axvline(obs, color=OBS, lw=2)
+    ax.text(obs, len(pick) - 0.35, f"observed control arm {pct(obs, 1)}", ha="center", fontsize=11, color=OBS)
+    ax.set_yticks([])
+    ax.set_ylim(-0.6, len(pick) - 0.2)
+    ax.set_xlim(0, 1)
+    ax.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
+    ax.spines["left"].set_visible(False)
+    ax.set_title("Synthetic-control exploration: control-arm serious AE (95% interval)", loc="left", fontsize=12.5, fontweight="bold")
+    fig.text(0.72, 0.2, "Generating a synthetic control was feasible,\nbut its uncertainty was too wide to\nsupport replacing the control arm.",
+             fontsize=11.5, color=INK, va="center")
+
+
+# ---------------------------------------------------------------- Figure 7
+SCEN_COLOURS = {"Original protocol": ENR, "Less frequent follow-up": ELIG, "One fewer follow-up visit": "#5FB89C",
+                "Higher-burden follow-up": SAFE}
+BURDEN_LABELS = {"log2_duration_months": "Participation duration (per doubling)", "log2_visits_per_month": "Visit frequency (per doubling)",
+                 "log2_outcome_measures": "Number of assessments (per doubling)", "log2_enrolled": "Enrolment (per doubling)",
+                 "start_year_decade": "Start year (per decade)", "industry": "Industry sponsor", "randomized": "Randomised design"}
+
+
+def figure7():
+    wm = LONG.get("withdrawal_model") or {}
+    bs = {b["scenario"]: b for b in LONG.get("burden_scenarios") or []}
+    orig, low, high = bs.get("Original protocol"), bs.get("Less frequent follow-up"), bs.get("Higher-burden follow-up")
+    ct = min((w for w in EVW if w.get("required")), key=lambda w: w["share"])
+    concl = "Protocol burden is associated with withdrawal; reducing follow-up burden changed endpoint feasibility only modestly."
+    if orig and low and high:
+        concl = (f"Changing follow-up frequency moved expected withdrawal by under "
+                 f"{max(abs(high['withdrawn_share'] - orig['withdrawn_share']), abs(low['withdrawn_share'] - orig['withdrawn_share'])) * 100 + 0.05:.1f} "
+                 f"points; endpoint feasibility is barely sensitive to follow-up burden.")
+    fig = frame("Protocol burden shapes retention and endpoint feasibility", concl)
+    # A: adjusted associations across registry trials
+    a = fig.add_axes([0.27, 0.53, 0.22, 0.33])
+    coefs = wm.get("coefficients") or {}
+    keys = [k for k in BURDEN_LABELS if k in coefs]
+    y = np.arange(len(keys))[::-1]
+    for yv, k in zip(y, keys, strict=True):
+        c = coefs[k]
+        burden = k in ("log2_duration_months", "log2_visits_per_month", "log2_outcome_measures")
+        col = ENR if burden else "#8FB8D8"
+        a.plot(c["ci95"], [yv, yv], color=col, lw=2.4)
+        a.plot(c["or"], yv, "o", color=col, ms=7 if burden else 5)
+        a.text(max(c["ci95"][1], 1.0) * 1.02, yv, f"{c['or']:.2f}", va="center", fontsize=10, color=col)
+    a.axvline(1, color=MUTED, lw=1)
+    a.set_xscale("log")
+    a.set_xticks([0.8, 1, 1.25, 1.6, 2])
+    a.set_xticklabels(["0.8", "1", "1.25", "1.6", "2"])
+    a.set_yticks(y)
+    a.set_yticklabels([BURDEN_LABELS[k] for k in keys], fontsize=10.5)
+    a.set_xlabel("Adjusted withdrawal odds ratio (95% CI)", fontsize=11)
+    a.set_title(f"A. Protocol characteristics associated with withdrawal\n({wm.get('trials', 0):,} registry trials, "
+                f"{wm.get('participants', 0) / 1e3:.0f}k participants)", loc="left", fontsize=12, fontweight="bold", x=-0.95)
+    # B: retention under three follow-up schedules
+    b = fig.add_axes([0.6, 0.53, 0.37, 0.33])
+    for name in ("Less frequent follow-up", "Original protocol", "Higher-burden follow-up"):
+        sc = bs.get(name)
+        if not sc:
+            continue
+        days = [r["day"] / 30.44 for r in sc["retention"]]
+        b.plot(days, [r["not_withdrawn"] for r in sc["retention"]], color=SCEN_COLOURS[name], lw=2.4)
+        k = ("Less frequent follow-up", "Original protocol", "Higher-burden follow-up").index(name)
+        how = sc["how"].split(" instead")[0].replace("survival follow-up ", "").split(" (")[0]
+        b.text(0.98, 0.95 - 0.08 * k, f"{name}: follow-up {how}" if name != "Original protocol" else "Original protocol",
+               transform=b.transAxes, ha="right", fontsize=10.5, color=SCEN_COLOURS[name])
+    b.yaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
+    b.set_xlabel("Months since enrolment", fontsize=11)
+    b.set_ylabel("Not withdrawn", fontsize=11)
+    b.set_xlim(0, (orig["retention"][-1]["day"] / 30.44 if orig else 24) + 1)
+    b.set_title("B. Withdrawal risk accumulates across the patient journey", loc="left", fontsize=12, fontweight="bold")
+    fig.text(0.6, 0.455, "Trial-level association; patient-level risk accrues over each patient's attended visits.", fontsize=9.5, color=MUTED)
+    # C: treatment delivery and data completeness
+    c = fig.add_axes([0.27, 0.15, 0.2, 0.25])
+    td = LONG.get("treatment_delivery") or {}
+    rows = [("Scheduled doses received\n(while on treatment)", td.get("delivery"), 0.0, 0.0)] if td.get("delivery") is not None else []
+    for comp in LONG.get("completeness") or []:
+        if comp["category"] in ("Laboratory (safety) assessments", "Tumour assessments", "Survival follow-up visits"):
+            rows.append((comp["category"].replace(" (safety)", ""), comp["attended"], comp["lost_withdrawal"], comp["lost_death"]))
+    for pkc in LONG.get("pk_capture") or []:
+        need = pkc["protocol_course_reaches"] or 1
+        rows.append((f"PK samples: {short(pkc['endpoint']).split(',')[0]}", pkc["captured"] / need, pkc["lost_withdrawal"] / need, pkc["lost_death"] / need))
+    yc = np.arange(len(rows))[::-1]
+    for yv, (lab, att, lw_, ld) in zip(yc, rows, strict=True):
+        c.barh(yv, att, color=ENR, height=0.6)
+        c.barh(yv, lw_, left=att, color=LOSS, height=0.6)
+        c.barh(yv, ld, left=att + lw_, color=DEATH, height=0.6)
+        c.text(1.01, yv, pct(att, 0), va="center", fontsize=10)
+    c.set_yticks(yc)
+    c.set_yticklabels([r[0] for r in rows], fontsize=10)
+    c.set_xlim(0, 1.12)
+    c.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
+    c.set_title("C. Treatment delivery and data completeness", loc="left", fontsize=12, fontweight="bold", x=-0.95)
+    fig.text(0.27, 0.075, "■ captured", color=ENR, fontsize=10)
+    fig.text(0.325, 0.075, "■ lost: withdrawal", color=LOSS, fontsize=10)
+    fig.text(0.415, 0.075, "■ lost: death", color=DEATH, fontsize=10)
+    # D: endpoint consequence by schedule
+    d = fig.add_axes([0.68, 0.15, 0.29, 0.25])
+    names = [n for n in ("Less frequent follow-up", "One fewer follow-up visit", "Original protocol", "Higher-burden follow-up") if n in bs]
+    yd = np.arange(len(names))[::-1]
+    for yv, n in zip(yd, names, strict=True):
+        sc = bs[n]
+        v = sc["evaluable"][ct["endpoint"]]
+        d.plot(v, yv, "o", color=SCEN_COLOURS[n], ms=10)
+        d.text(v + 4, yv, f"{v:.0f} evaluable · withdrawal {pct(sc['withdrawn_share'], 1)} · P(≥{ct['required']}) {pct(sc['p_required'][ct['endpoint']])}",
+               va="center", fontsize=10, color=SCEN_COLOURS[n])
+    d.axvline(ct["required"], color=OBS, lw=1.6)
+    d.text(ct["required"], len(names) - 0.4, f"required {ct['required']}", ha="center", fontsize=10, color=OBS)
+    d.set_yticks(yd)
+    d.set_yticklabels(names, fontsize=10.5)
+    lo_v = min(bs[n]["evaluable"][ct["endpoint"]] for n in names)
+    d.set_xlim(min(lo_v, ct["required"]) - 15, max(bs[n]["evaluable"][ct["endpoint"]] for n in names) + 175)
+    d.set_ylim(-0.6, len(names) - 0.1)
+    d.set_xlabel(f"{short(ct['endpoint']).split(',')[0]}-evaluable participants (of {TARGET})", fontsize=11)
+    d.set_title("D. Visit burden and evaluable endpoint data", loc="left", x=-0.3, fontsize=12, fontweight="bold")
+    save(fig, "Figure7_longitudinal")
+
+
+# ---------------------------------------------------------------- Supplementary figures
+def supp_s1_trace():
+    tr = LONG.get("trace")
+    if not tr:
+        return
+    lanes = [("Treatment", lambda e: e["category"] == "treatment"), ("Laboratory", lambda e: e["category"] == "laboratory"),
+             ("Adverse events", lambda e: e["category"] == "adverse event"), ("Tumour assessments", lambda e: e["category"] == "tumour assessment"),
+             ("Follow-up and disposition", lambda e: e["category"] in ("follow-up", "disposition", "screening", "baseline"))]
+    cols = {"Treatment": ENR, "Laboratory": "#8FB8D8", "Adverse events": SAFE, "Tumour assessments": EVAL, "Follow-up and disposition": OBS}
+    fig = frame(f"Supplementary Figure S1. One simulated participant's record ({arm_name(tr['arm'])} arm)",
+                "Every visit, administration, adverse event, assessment and exit is generated from the protocol and registry evidence.")
+    ax = fig.add_axes([0.42, 0.14, 0.55, 0.7])
+    for i, (lane, test) in enumerate(lanes):
+        ev = [e for e in tr["events"] if test(e)]
+        yv = len(lanes) - 1 - i
+        ax.scatter([e["day"] for e in ev], [yv] * len(ev), color=cols[lane], s=36, zorder=2)
+        for e in ev:
+            label = ((lane == "Adverse events" and "serious" in (e.get("result") or ""))
+                     or (lane == "Follow-up and disposition" and e["category"] in ("disposition", "screening"))
+                     or (lane == "Tumour assessments" and "progressive" in (e.get("result") or "")))
+            if label:
+                ax.text(e["day"], yv + 0.18, ("progressive disease" if lane == "Tumour assessments" else str(e.get("item") or "").replace("_", " ")[:22]), rotation=35, fontsize=9, color=cols[lane], ha="left")
+    ax.set_yticks(range(len(lanes)))
+    ax.set_yticklabels([lane for lane, _ in lanes][::-1])
+    ax.set_ylim(-0.6, len(lanes) - 0.2)
+    ax.set_xlabel("Study day")
+    b = tr.get("baseline") or {}
+    shown = []
+    for k, v in b.items():
+        if k == "patient_id":
+            continue
+        val = v.get("value") if isinstance(v, dict) else v
+        if isinstance(val, dict) or val is None:
+            continue
+        name = k.split(":", 1)[-1].replace("_", " ")
+        if k.startswith("umls:") or re.fullmatch(r"[Cc]\d{7}", name):
+            continue                                     # concept-coded variables are not shown by code
+        val = {True: "yes", False: "no"}.get(val, val) if isinstance(val, bool) else val
+        shown.append(f"{name}: {val:.1f}" if isinstance(val, float) else f"{name}: {str(val).replace('_', ' ')}")
+    fig.text(0.015, 0.84, "Baseline", fontsize=11, fontweight="bold")
+    fig.text(0.015, 0.82, "\n".join(shown[:22]), fontsize=8.5, va="top", color=INK)
+    save(fig, "S1_patient_record")
+
+
+def supp_s2_modifiers():
+    mod = ((LONG.get("withdrawal_model") or {}).get("modifiers") or {})
+    eff = mod.get("effects") or {}
+    if not eff:
+        return
+    fig = frame("Supplementary Figure S2. Evidence for patient-level modifiers of withdrawal",
+                "Arm-level (ecological) associations, reported for transparency and not applied to simulated patients.")
+    ax = fig.add_axes([0.3, 0.2, 0.6, 0.6])
+    labels = {"age_per_10_years": "Arm mean age (per 10 years)", "female_share": "All-female vs all-male arm",
+              "ecog1_share": "All ECOG ≥1 vs all ECOG 0 arm"}
+    keys = [k for k in labels if k in eff]
+    y = np.arange(len(keys))[::-1]
+    for yv, k in zip(y, keys, strict=True):
+        e = eff[k]
+        ax.plot(e["ci95"], [yv, yv], color=ENR, lw=2.4)
+        ax.plot(e["or"], yv, "o", color=ENR, ms=8)
+        ax.text(e["ci95"][1] * 1.05, yv, f"{e['or']:.2f} ({e['ci95'][0]:.2f}-{e['ci95'][1]:.2f})", va="center", fontsize=11)
+    ax.axvline(1, color=MUTED, lw=1)
+    ax.set_xscale("log")
+    ax.set_yticks(y)
+    ax.set_yticklabels([labels[k] for k in keys])
+    ax.set_xticks([0.5, 1, 2, 5, 10])
+    ax.set_xticklabels(["0.5", "1", "2", "5", "10"])
+    ax.set_xlabel("Adjusted withdrawal odds ratio (95% CI), arm level")
+    ax.set_title(f"{mod.get('arms', 0):,} arms of {mod.get('trials', 0):,} trials; adjusted for the trial's burden and design", loc="left",
+                 fontsize=12)
+    save(fig, "S2_withdrawal_modifiers")
+
+
+def supp_s3_control_benchmark():
+    f = Path("data/corpus_v2/patient_risk/benchmark/benchmark_summary.json")
+    if not f.exists():
+        return
+    summ = json.loads(f.read_text(encoding="utf-8"))["summary"]
+    methods = [("contextual_robust", "Synthetic control (contextual model)"), ("evidence_calibrated", "Evidence-calibrated"),
+               ("map_prior", "Meta-analytic prior"), ("outcome_regression", "Outcome regression"), ("naive_pooled", "Naive pooling")]
+    fig = frame("Supplementary Figure S3. Hidden-control benchmark across registry trials",
+                "Methods that cover the real control arm do so with wide intervals; narrow methods miss it often.")
+    for j, (outcome, title) in enumerate((("serious_ae", "Serious adverse event"), ("death", "Death"))):
+        ax = fig.add_axes([0.24 + j * 0.39, 0.15, 0.3, 0.68])
+        y = np.arange(len(methods))[::-1]
+        for yv, (m, lab) in zip(y, methods, strict=True):
+            r = summ.get(f"{outcome}|{m}")
+            if not r:
+                continue
+            ax.barh(yv, r["coverage_95"], color=ALT if m == "contextual_robust" else CAND, height=0.6)
+            ax.text(r["coverage_95"] + 0.01, yv, f"coverage {pct(r['coverage_95'])} · width {pct(r['median_interval_width'])} · "
+                    f"bias {r['bias'] * 100:+.1f} pts", va="center", fontsize=9.5)
+        ax.axvline(0.95, color=OBS, lw=1, ls="--")
+        ax.set_xlim(0, 1.9)
+        ax.set_xticks([0, 0.5, 0.95])
+        ax.set_xticklabels(["0%", "50%", "95%"])
+        ax.set_yticks(y)
+        ax.set_yticklabels([lab for _, lab in methods] if j == 0 else [], fontsize=10.5)
+        ax.set_title(f"{title} ({summ.get(f'{outcome}|contextual_robust', {}).get('trials', 0)} trials)", loc="left", fontweight="bold", fontsize=12)
+    save(fig, "S3_control_benchmark")
+
+
+def supp_s4_all_criteria():
+    cr = [c for c in F["criteria"] if c["excluded"] > 0]
+    fig = plt.figure(figsize=(W, max(H, 0.28 * len(cr) + 2)))
+    fig.text(0.04, 0.97, "Supplementary Figure S4. Candidates excluded by every eligibility criterion", fontsize=17, fontweight="bold", va="top")
+    ax = fig.add_axes([0.42, 0.05, 0.5, 0.86])
+    y = np.arange(len(cr))[::-1]
+    ax.barh(y, [c["pct_excluded"] for c in cr], color="#9A9A9A", height=0.65)
+    for yv, c in zip(y, cr, strict=True):
+        ax.text(c["pct_excluded"] + 0.002, yv, f"{pct(c['pct_excluded'], 1)}  (+{100 * c['gain_if_relaxed'] / F['candidates']:.1f} if relaxed)",
+                va="center", fontsize=9.5)
+    ax.set_yticks(y)
+    ax.set_yticklabels([f"{tidy(c['label'])} · {c['category']}" for c in cr], fontsize=9)
+    ax.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
+    ax.set_xlabel("Candidates excluded")
+    save(fig, "S4_all_criteria")
+
+
+def supp_s5_sensitivity():
+    if FB is F:
+        return
+
+    def ct_share(doc):
+        w = min((w for w in doc["evaluability"] if w.get("required")), key=lambda w: w["share"])
+        at = next(r for r in doc["evaluable_curve"] if r["enrolled"] == TARGET)
+        return w["share"], at[w["endpoint"]]["p_meets"]
+    rows = [("Serious AE, simulated patients", FB["overall_sae"], F["overall_sae"]),
+            ("On study at day 126 (Ctrough evaluable)", ct_share(FB)[0], ct_share(F)[0]),
+            ("P(≥240 Ctrough evaluable at 378)", ct_share(FB)[1], ct_share(F)[1]),
+            ("Withdrawal (any time)", (FB.get("withdrawal_rate") and next(iter(FB["withdrawal_rate"].values()))),
+             ((LONG.get("burden_scenarios") or [{}])[0].get("withdrawn_share")))]
+    fig = frame("Supplementary Figure S5. Sensitivity of feasibility outputs to the patient-journey calibration",
+                "The calibration anchors serious AEs to the evidence, takes progression from validated evidence and makes withdrawal burden-dependent.")
+    ax = fig.add_axes([0.38, 0.18, 0.55, 0.62])
+    y = np.arange(len(rows))[::-1]
+    for yv, (lab, a_, b_) in zip(y, rows, strict=True):
+        if a_ is None or b_ is None:
+            continue
+        ax.plot([a_, b_], [yv, yv], color="#BBBBBB", lw=2)
+        ax.plot(a_, yv, "o", color=CAND, ms=11)
+        ax.plot(b_, yv, "o", color=ENR, ms=11)
+        ax.text(a_, yv + 0.22, pct(a_, 1), ha="center", fontsize=10, color=MUTED)
+        ax.text(b_, yv - 0.32, pct(b_, 1), ha="center", fontsize=10, color=ENR)
+    ax.set_yticks(y)
+    ax.set_yticklabels([r[0] for r in rows], fontsize=11.5)
+    ax.set_xlim(0, 1.05)
+    ax.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
+    fig.text(0.38, 0.84, "● before calibration (pre-trial assessment)", color="#8A8A8A", fontsize=12)
+    fig.text(0.62, 0.84, "● after calibration (after the results were known)", color=ENR, fontsize=12)
+    save(fig, "S5_sensitivity")
+
+
+for f in (figure1, figure2, figure3, figure4, figure5, figure6, figure7, figure8, figure9,
+          supp_s1_trace, supp_s2_modifiers, supp_s3_control_benchmark, supp_s4_all_criteria, supp_s5_sensitivity, supp_s6_safety):
     f()
 print("figures written to", OUT)

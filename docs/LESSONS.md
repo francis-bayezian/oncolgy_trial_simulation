@@ -369,3 +369,35 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **Where:** `safety3.fit_all JOB_BATCH`
 - **Check:** `chk_safety_jobs_batched` — the safety build submits event fits in bounded batches (no up-front list of design-matrix copies)
 - **Recorded:** 2026-10-07 (project history)
+
+## L063 — patient-level safety (PASS)
+
+- **What went wrong:** simulated patients had 52% serious adverse events while the arm-level evidence estimate (and the trial) was about 39.5%: the any-serious calibration was done at arm level, then each patient's age, sex and ECOG shift (measured from the corpus-average patient, mean +0.36 to +0.44 on the logit scale) was added on top
+- **General rule:** patient-level shifts keep their relative differences, but one arm-level offset is solved so that the arm's expected share with any serious event equals the arm-level evidence estimate
+- **Where:** `trial.outputs.adverse_event_rows` (serious_anchor_offset)
+- **Check:** the expected any-serious share after anchoring equals the arm target (recorded in trial_outputs.json adverse_event_dependence)
+- **Recorded:** 2026-10-09 (NCT05722015 comparison)
+
+## L064 — protocol burden and withdrawal (PASS)
+
+- **What went wrong:** withdrawal was one registry probability per arm drawn on a random day, so protocol burden (visits, duration, assessments) could not change retention; only the first follow-up visit was simulated; deaths after a participant left the study were still observed
+- **General rule:** the protocol's trial-level withdrawal share comes from a registry model of withdrawal on protocol burden (participation duration, visit frequency, assessment count) adjusted for phase, disease family, enrolment, start year, sponsor and randomisation; it is distributed over the visits each patient attends (per-visit hazard solved on a pilot pass); schedule scenarios move the share by the registry visit-frequency association for the change in visits per patient-month (a fixed per-visit hazard alone would overstate burden effects against the evidence); follow-up visits continue at the protocol interval until death, withdrawal or the horizon; nothing is observed after a participant leaves; protocol features mirror what registries record (assessment intervals, not dosing; the objectives-and-endpoints list, not the restated statistical endpoints)
+- **Where:** `trial.withdrawal_burden`, `trial.journey.simulate_cohort`, `trial.journey.burden_withdrawal`
+- **Check:** registry model coefficients and coverage in data/corpus_v2/withdrawal_burden/model.json; the simulated withdrawal share equals the predicted share
+- **Recorded:** 2026-10-09
+
+## L065 — baseline variables beyond demographics (PASS)
+
+- **What went wrong:** simulated patients had no comorbidities, vitals or laboratory values although registry baseline tables report several; the generated laboratory values are named by variable (var:hemoglobin) while eligibility criteria name them by concept code (umls:...), so they are not yet used in screening
+- **General rule:** generate a baseline variable only from at least 5 comparable trials (disease family, else all oncology), independently, with its source; anything unsupported (e.g. medications, hypertension here) stays not simulated and is reported as such
+- **Where:** `trial.baseline_extra` (CONTINUOUS_EXTRA, CATEGORICAL_EXTRA)
+- **Check:** baseline_extra_summary.json lists every added variable's source and every not-simulated variable with its reason
+- **Recorded:** 2026-10-09
+
+## L066 — data completeness and endpoint capture (PASS)
+
+- **What went wrong:** evaluability was approximated by survival on study; the schedule lost the protocol's in-cycle laboratory days because the header 'Cycle Day: 1' was not recognised; survival PFS evidence used the serious-AE rung order and an 'overlapping drug classes' pool mixing later-line trials
+- **General rule:** record every protocol-required visit given the patient's disease course and whether it was attended or lost to withdrawal or death (operational missingness zero unless evidence supports it); accept 'Cycle Day: N' headers; choose survival-median evidence by its own leave-one-study-out ladder, which now includes similar drug-class-set rungs
+- **Where:** `trial.journey.simulate_patient` (required visits), `trial.export_clinical` (visit_schedule.csv), `trial.visits.DAY_COL`, `trial.subgroups.choose_median_ladder`
+- **Check:** median ladders in data/validation/subgroup_ladder.json (median:*) with held-out errors
+- **Recorded:** 2026-10-09

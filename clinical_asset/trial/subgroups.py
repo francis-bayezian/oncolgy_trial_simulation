@@ -158,14 +158,22 @@ def estimate(target_variable: str, family: str, classes: list[str], agents: list
             "family_mixture_studies": len({r["study"] for r in recs})}
 
 
-RUNG_KEYS = ("regimen", "age_phase_classes", "age_classes", "age_phase", "age", "classes", "phase")
+RUNG_KEYS = ("regimen", "similar_classes_75", "similar_classes_50", "age_phase_classes", "age_classes", "age_phase", "age", "classes", "phase")
+SIMILARITY_RUNGS = {"similar_classes_75": 0.75, "similar_classes_50": 0.5}      # Jaccard similarity of drug-class sets
 LADDER_FILE = Path("data/validation/subgroup_ladder.json")
+
+
+def _jaccard(a: set, b: set) -> float:
+    return len(a & b) / len(a | b) if a | b else 0.0
 
 
 def _rungs(recs, mine, agent_set, age_group, phase, regimen_of) -> dict:
     overlap = [r for r in recs if mine and _classes(r["class_signature"]) & mine]
     same_age = [r for r in recs if r["age_group"] == age_group]
-    return {"regimen": ("same regimen", [r for r in recs if agent_set and regimen_of(r) == agent_set]),
+    similar = {k: (f"trials with a similar drug-class set (Jaccard at least {t:g})",
+                   [r for r in recs if mine and _jaccard(_classes(r["class_signature"]) - {"other", "unclassified"}, mine) >= t])
+               for k, t in SIMILARITY_RUNGS.items()}
+    return {"regimen": ("same regimen", [r for r in recs if agent_set and regimen_of(r) == agent_set]), **similar,
             "age_phase_classes": (f"{age_group} {phase} trials with overlapping drug classes",
                                   [r for r in overlap if r["age_group"] == age_group and phase and r["phase"] == phase]),
             "age_classes": (f"{age_group} trials with overlapping drug classes", [r for r in overlap if r["age_group"] == age_group]),
@@ -182,6 +190,47 @@ def ladder_order(target_variable: str) -> list[str]:
         if target_variable in doc:
             return doc[target_variable]["order"]
     return ["regimen", "age_phase_classes", "age_classes", "age_phase", "age", "classes"]
+
+
+def _has_ladder(key: str) -> bool:
+    return LADDER_FILE.exists() and key in json.loads(LADDER_FILE.read_text(encoding="utf-8"))
+
+
+def choose_median_ladder(variable: str, min_studies: int = MIN_STUDIES, save: bool = True) -> dict:
+    """The rung order for a survival median, chosen like choose_ladder: leave-one-study-out, each rung alone (the disease
+    family when the rung holds fewer than `min_studies` other studies) predicts every held-out study's largest arm;
+    error = |log(predicted / observed median)|; rungs ordered by median error where they apply to at least 20 studies."""
+    recs = list(median_records(variable))
+    by_study: dict[str, list] = {}
+    for r in recs:
+        by_study.setdefault(r["study"], []).append(r)
+    errors: dict[str, list] = {k: [] for k in RUNG_KEYS}
+    family_errors = []
+    for study, arms in by_study.items():
+        a = max(arms, key=lambda r: r["n"])
+        others = [r for r in recs if r["disease_family"] == a["disease_family"] and r["study"] != study]
+        fam = pooled_median(others)
+        if fam is None:
+            continue
+        family_errors.append(abs(math.log(fam["median_months"] / a["months"])))
+        agents = {x.strip().casefold() for x in (a.get("regimen") or "").split("+") if x.strip()}
+        rungs = _rungs(others, _classes(a["class_signature"]) - {"other", "unclassified"}, agents, a["age_group"], a["phase"],
+                       lambda r: {x.strip().casefold() for x in (r.get("regimen") or "").split("+") if x.strip()})
+        for k, (_, rs) in rungs.items():
+            if len({r["study"] for r in rs}) >= min_studies:
+                errors[k].append(abs(math.log(pooled_median(rs)["median_months"] / a["months"])))
+    summary = {k: {"applies_to": len(v), "median_abs_log_error": float(np.median(v)) if v else None} for k, v in errors.items()}
+    usable = [k for k, v in summary.items() if v["median_abs_log_error"] is not None and v["applies_to"] >= 20]
+    order = sorted(usable, key=lambda k: summary[k]["median_abs_log_error"])
+    doc = {"order": order, "rungs": summary, "whole_family_median_abs_log_error": float(np.median(family_errors)) if family_errors else None,
+           "held_out_studies": len(family_errors), "rule": f"each rung alone, leave-one-study-out; at least {min_studies} other studies; "
+                                                          "at least 20 applicable studies; error |log(predicted/observed)|"}
+    if save:
+        LADDER_FILE.parent.mkdir(parents=True, exist_ok=True)
+        cur = json.loads(LADDER_FILE.read_text(encoding="utf-8")) if LADDER_FILE.exists() else {}
+        cur[f"median:{variable}"] = doc
+        LADDER_FILE.write_text(json.dumps(cur, indent=1), encoding="utf-8")
+    return doc
 
 
 def choose_ladder(target_variable: str, min_studies: int = MIN_STUDIES) -> dict:
@@ -299,6 +348,9 @@ def estimate_median(variable: str, family: str, classes: list[str], agents: list
     agent_set = {a.casefold() for a in agents if a}
     rungs = _rungs(recs, mine, agent_set, age_group, phase,
                    lambda r: {x.strip().casefold() for x in (r.get("regimen") or "").split("+") if x.strip()})
-    ladder = [(rungs[k][0], rungs[k][1]) for k in ladder_order("serious_adverse_event") if k in rungs] + [("whole disease family" if family is not None else "all oncology", recs)]
+    # the rung order validated on held-out medians of this variable (choose_median_ladder); before one is chosen, the
+    # serious-adverse-event order, as before
+    order = ladder_order(f"median:{variable}") if _has_ladder(f"median:{variable}") else ladder_order("serious_adverse_event")
+    ladder = [(rungs[k][0], rungs[k][1]) for k in order if k in rungs] + [("whole disease family" if family is not None else "all oncology", recs)]
     level, chosen = next(((lv, rs) for lv, rs in ladder if len({r["study"] for r in rs}) >= min_studies), ladder[-1])
     return {"status": "RESOLVED", "variable": variable, "family": family, "subgroup": level, **pooled_median(chosen)}

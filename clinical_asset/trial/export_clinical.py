@@ -37,10 +37,13 @@ def write(states: list, spec: dict, sched: dict, out_dir: Path, traces: int = 3)
     out.mkdir(parents=True, exist_ok=True)
     pid = (spec.get("metadata") or {}).get("protocol_id")
     study = (pid.get("text") if isinstance(pid, dict) else pid) or "STUDY"
-    dm_, ex, ae, lb, rs, ds, sv, adsl, adae, adtte = ([] for _ in range(10))
+    dm_, ex, ae, lb, rs, ds, sv, adsl, adae, adtte, schedule_rows = ([] for _ in range(11))
     for st in states:
         b = st.baseline
         usub = st.subject_id
+        for d, visit, planned, status in getattr(st, "required", []) or []:
+            # every visit the protocol requires given the disease course, and whether it was attended (L066)
+            schedule_rows.append({"USUBJID": usub, "ARMCD": st.arm_id, "DAY": d, "VISIT": visit, "PLANNED": ";".join(planned), "STATUS": status})
         dm_.append({"STUDYID": study, "USUBJID": usub, "ARMCD": st.arm_id, "AGE": (b.get("demographic:age") or {}).get("value"),
                     "SEX": b.get("demographic:sex"), "RACE": b.get("demographic:race"), "ETHNIC": b.get("demographic:ethnicity"),
                     "RFSTDTC_DAY": 1, "ENROLLMENT_DAY": round(st.enrollment_day, 1)})
@@ -81,7 +84,7 @@ def write(states: list, spec: dict, sched: dict, out_dir: Path, traces: int = 3)
                       "AVAL_DAYS": st.death_day if st.death_day is not None else last_seen, "CNSR": 0 if st.death_day is not None else 1,
                       "EVNTDESC": "death" if st.death_day is not None else "censored at last simulated contact"})
     for name, rows in (("dm", dm_), ("ex", ex), ("ae", ae), ("lb", lb), ("rs", rs), ("ds", ds), ("sv", sv),
-                       ("adsl", adsl), ("adae", adae), ("adtte", adtte)):
+                       ("adsl", adsl), ("adae", adae), ("adtte", adtte)) + ((("visit_schedule", schedule_rows),) if schedule_rows else ()):
         _csv(out / f"{name}.csv", rows)
     # traces: the subjects with the most eventful journeys (a dose modification first), then the first subjects
     ranked = sorted(states, key=lambda s: (-len(s.holds) - sum(s.reductions.values()), -len(s.ae), s.subject_id))
