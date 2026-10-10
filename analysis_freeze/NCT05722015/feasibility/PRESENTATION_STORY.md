@@ -34,7 +34,7 @@ Nine main figures (`figures/Figure1`–`Figure9`) and six supplementary figures 
 - One fewer follow-up visit: eligible 71%, 1.40 screened per eligible patient, 72 months, 150 with a serious AE, 263 Ctrough-evaluable
 
 ## 6. Comparison with the trial
-**Figure 9.** Variability: comparable trials CV 37% / 40% (protocol assumed 50% / 84%). Safety: historical arm-level estimate 39.5%; simulated cohort incidence 39.7% (150 of 378). Synthetic-control panel: control-arm serious AE (and response rate, when added).
+**Figure 9.** Variability: comparable trials CV 37% / 40% (protocol assumed 50% / 84%). Safety: historical arm-level estimate 39.5%; simulated cohort incidence 39.7% (150 of 378). Objective response: Subcutaneous Pembrolizumab simulated 43.7% (114 of 261), input 41.9%; Intravenous Pembrolizumab simulated 35.0% (41 of 117), input 41.9% (input level: same disease, similar drug-class set, same phase, same era; the trial has not posted response). Synthetic-control panel: serious AE: meta-analytic 32% (13%-57%), contextual 52% (6%-95%); observed 40.5%; response: meta-analytic 25% (3%-68%), contextual 40% (2%-92%); observed not posted.
 
 ## Supplementary figures
 S1 one participant's full record · S2 patient-level withdrawal modifiers (arm-level, not applied) · S3 control-arm benchmark · S4 every eligibility criterion · S5 effect of the journey calibration · S6 safety burden.

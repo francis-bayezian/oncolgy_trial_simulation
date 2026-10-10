@@ -411,6 +411,43 @@ def run(spec_lock: Path, journey_lock: Path, safety_lock: Path, eligibility_lock
     # the analysis data cut-off, as the protocol defines it (L037)
     cutoff = data_cutoff(patients, outcome_rule, spec, interval)
 
+    # response calibration (L069): the arm's response-rate input is a REPORTED response rate (best overall response,
+    # confirmed where the criteria require it); responders who progress before their response is seen would otherwise
+    # lower it. One logit shift per arm is solved on a pilot pass (its own stream) so the realised rate equals the input.
+    calibration = {}
+    for aid in {pt["aid"] for pt in patients}:
+        target = (inputs.get(aid, {}).get("response") or {}).get("value")
+        arm_pts = [pt for pt in patients if pt["aid"] == aid and pt["enrol"] <= cutoff["day"]]
+        if not target or not arm_pts or not 0 < target < 1:
+            continue
+
+        def realised(shift, arm_pts=arm_pts):
+            prng = np.random.default_rng(seed + 31)
+            hits = 0
+            for pt in arm_pts:
+                p = 1 / (1 + math.exp(-(math.log(pt["p_resp"] / (1 - pt["p_resp"])) + shift))) if 0 < pt["p_resp"] < 1 else pt["p_resp"]
+                horizon = max(0.0, cutoff["day"] - pt["enrol"])
+                death = pt["death"] if pt["death"] is not None and pt["death"] <= horizon else None
+                tum = simulate_tumour(pt["r"]["USUBJID"], aid, int(horizon), interval, p, pt["p_cr"], pt["prog"], death, pt["loss"], crit, prng)
+                hits += best_overall_response(tum["visits"], crit["confirm"])[0] in ("CR", "PR")
+            return hits / len(arm_pts)
+        lo, hi = 0.0, 8.0
+        base = realised(0.0)
+        if base < target:
+            if realised(hi) < target:
+                shift = hi                              # the input cannot be reached: progression truncates response
+            else:
+                for _ in range(18):
+                    mid = (lo + hi) / 2
+                    lo, hi = (mid, hi) if realised(mid) < target else (lo, mid)
+                shift = (lo + hi) / 2
+            for pt in arm_pts:
+                if 0 < pt["p_resp"] < 1:
+                    pt["p_resp"] = 1 / (1 + math.exp(-(math.log(pt["p_resp"] / (1 - pt["p_resp"])) + shift)))
+            calibration[aid] = {"target": target, "realised_before": base, "logit_shift": shift, "realised_after": realised(0.0)}
+        else:
+            calibration[aid] = {"target": target, "realised_before": base, "logit_shift": 0.0, "realised_after": base}
+
     # pass 2: measurements and response up to each patient's own follow-up at the cut-off
     # the analysis population at the cut-off: patients enrolled by then (as in a real interim or final analysis)
     cutoff["enrolled_by_cutoff"] = sum(pt["enrol"] <= cutoff["day"] for pt in patients)
@@ -634,7 +671,7 @@ def run(spec_lock: Path, journey_lock: Path, safety_lock: Path, eligibility_lock
     (out / "subgroups" / "subgroups.json").write_text(json.dumps(subgroups, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
     doc = {"analysis_version": ANALYSIS_VERSION, "seed": seed, "inputs": {"studyspec": rec["files"]["studyspec.json"]},
            "efficacy_scope": scope, "data_cutoff": cutoff if scope["any"] else None, "response_criteria": crit, "assessment_interval_days": interval, "follow_up_days": fu_days, "control_arm": control,
-           "latent_inputs": inputs, "efficacy": efficacy, "comparisons": comparisons, "censoring": subgroup_report.censoring(adtte),
+           "latent_inputs": inputs, "response_calibration": calibration, "efficacy": efficacy, "comparisons": comparisons, "censoring": subgroup_report.censoring(adtte),
            "safety_tables": list(tables), "terms_without_soc": unmapped,
            "subgroups": {"factors": subgroups["factors"], "files": sg_files},
            "standards": ["PharmaSUG 2018 DS06 (RECIST/Cheson/IMWG-type response derivation; SDTM TU/TR/RS; ADaM ADRS/ADTTE)",

@@ -354,7 +354,7 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
               "Discontinuation for an adverse event": share(lambda p: p["ae_disc"]),
               "Death during follow-up": share(lambda p: p["death_day"] is not None)}
     if last_window:
-        safety[f"Death before day {last_window:g} (last primary sampling)"] = share(lambda p: p["death_day"] is not None and p["death_day"] < last_window)
+        safety[f"Death within the primary sampling period (to day {last_window:g})"] = share(lambda p: p["death_day"] is not None and p["death_day"] < last_window)
 
     # ---- scenarios ----
     def cell(p):
@@ -471,6 +471,35 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
         {r["USUBJID"] for r in vs_rows if r["STATUS"] == "not attended: withdrew"}
     wd_sim = len(withdrawn) / n_enr
     death_sim = sum(r["DTHFL"] == "Y" for r in adsl) / n_enr
+    # per arm and the enrolled demographics, from the same patients; response from the analysis stage (the realised best
+    # overall response, next to the evidence input it was calibrated to; L069)
+    arm_label = {a.get("arm_id"): _text(a.get("label")) for a in spec.get("arms") or []}
+    an_file = st("analysis") / "analysis_results.json"
+    an = json.loads(an_file.read_text(encoding="utf-8")) if an_file.exists() else {}
+    eff = an.get("efficacy") or {}
+    eff = {} if eff.get("status") == "NOT_APPLICABLE" else eff
+    by_arm = {}
+    for aid in sorted({r["ARMCD"] for r in adsl}):
+        rows = [r for r in adsl if r["ARMCD"] == aid]
+        n_a = len(rows)
+        sae_a = sum(p["sae"] for p in pats if p["arm"] == aid)
+        orr = (eff.get(aid) or {}).get("objective_response") or {}
+        inp = ((an.get("latent_inputs") or {}).get(aid) or {}).get("response") or {}
+        by_arm[aid] = {"label": arm_label.get(aid, aid), "n": n_a, "sae_rate": sae_a / n_a, "sae_count": sae_a,
+                       "death_rate": sum(r["DTHFL"] == "Y" for r in rows) / n_a,
+                       "withdrawal_rate_simulated": len({r["USUBJID"] for r in rows} & withdrawn) / n_a,
+                       "response": {"rate": orr.get("rate"), "responders": orr.get("responders"), "n": (eff.get(aid) or {}).get("n"),
+                                    "ci95": orr.get("ci95_exact"),
+                                    "input": {k: inp.get(k) for k in ("value", "ci95", "level", "source")} if inp else None,
+                                    "calibration": (an.get("response_calibration") or {}).get(aid)}}
+    ages = [float(r["AGE"]) for r in adsl if r.get("AGE")]
+    race_lab = {"white": "White", "asian": "Asian", "black_or_african_american": "Black or African American"}
+    demographics = {"age_mean": float(np.mean(ages)) if ages else None, "age_sd": float(np.std(ages, ddof=1)) if len(ages) > 1 else None,
+                    "female_share": sum(r["SEX"] == "female" for r in adsl) / n_enr,
+                    "race_shares": {lab: sum(r["RACE"] == k for r in adsl) / n_enr for k, lab in race_lab.items()},
+                    "hispanic_share": sum(r["ETHNIC"] == "hispanic_or_latino" for r in adsl) / n_enr}
+    out_adsl = _read_csv(st("outputs") / "adsl.csv") if (st("outputs") / "adsl.csv").exists() else []
+    split_outputs = dict(Counter(r["ARM"] for r in out_adsl)) or None
     o = scen[0]
     o.update({"evaluable_median": dict(ev_canon), "p_requirement": dict(p_req), "p_evaluable_all": at["p_all"],
               "p_objectives": at["p_all"] * (p_ni if p_ni is not None else 1.0), "sae_rate": overall_sae, "sae_patients": overall_sae * target})
@@ -511,7 +540,8 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
             "p_primary_success_at_design": p_ni, "p_objectives": at["p_all"] * (p_ni if p_ni is not None else 1.0),
             "sae_rate_simulated": overall_sae, "sae_count_simulated": round(overall_sae * n_enr),
             "withdrawal_rate_simulated": wd_sim, "withdrawal_rate_predicted": ((longitudinal or {}).get("withdrawal_model") or {}).get("protocol", {}).get("share"),
-            "death_rate_simulated": death_sim,
+            "death_rate_simulated": death_sim, "demographics": demographics, "by_arm": by_arm,
+            "arm_split_outputs_stage": split_outputs,
             "recruitment": {"required_per_year": required_rate, "required_percentile": req_pct,
                             "p_complete_in_planned_window": p_complete_by(planned_years) if planned_years else None,
                             "median_months": median_years() * 12, "planned_months": planned_years * 12 if planned_years else None}},
@@ -530,6 +560,10 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
             "sae_rate_arm_level": "historical arm-level estimate from comparable registry trials (evidence, not a simulated value)",
             "withdrawal_rate_simulated": "share of this run's patients who withdrew (on treatment or from follow-up)",
             "withdrawal_rate_predicted": "registry protocol-burden model's prediction for this protocol",
+            "by_arm.response.rate": "simulated best overall response (CR or PR) per arm at the analysis data cut-off (this run)",
+            "by_arm.response.input": "the arm's response-rate input: same disease first, then similar drug classes, phase and era "
+                                     "(evidence, not a simulated value)",
+            "demographics": "simulated enrolled patients (this run)",
             "scenarios": "each scenario reports its own values; scenarios that do not change a quantity carry the original value exactly"}}
 
     doc = {"version": VERSION, "nct_id": nct, "run_version": version, "target": target,
@@ -790,11 +824,20 @@ def render(doc: dict) -> str:
               f"| Serious AE, simulated cohort incidence | {_p(o['sae_rate_simulated'], 1)} ({o['sae_count_simulated']} of {o['enrolled']}) |",
               f"| Withdrawal, simulated cohort | {_p(o['withdrawal_rate_simulated'], 1)} |",
               f"| Withdrawal, registry burden model prediction | {_p(o['withdrawal_rate_predicted'], 1)} |",
-              f"| Death, simulated cohort | {_p(o['death_rate_simulated'], 1)} |", "",
+              f"| Death, simulated cohort | {_p(o['death_rate_simulated'], 1)} |"]
+        for a in (o.get("by_arm") or {}).values():
+            r = a.get("response") or {}
+            if r.get("rate") is not None:
+                L.append(f"| Objective response, simulated, {a['label']} | {_p(r['rate'], 1)} ({r['responders']} of {r['n']}; 95% CI "
+                         f"{_p(r['ci95'][0], 1)}-{_p(r['ci95'][1], 1)}) |")
+        L += ["",
               "Historical evidence (not simulated values): "
               f"serious AE arm-level estimate {_p(h['sae_rate_arm_level'], 1)}; recruitment median {h['recruitment_median_per_year']:.0f}/year; "
               f"PK CV {_p(h['pk_cv_auc_registry'])} (AUC) and {_p(h['pk_cv_ctrough_registry'])} (Ctrough) in comparable trials, "
-              f"{_p(h['pk_cv_auc_protocol'])} and {_p(h['pk_cv_ctrough_protocol'])} assumed by the protocol.", ""]
+              f"{_p(h['pk_cv_auc_protocol'])} and {_p(h['pk_cv_ctrough_protocol'])} assumed by the protocol."
+              + "".join(f" Response-rate input, {a['label']}: {_p(i['value'], 1)} (95% CI {_p(i['ci95'][0], 1)}-{_p(i['ci95'][1], 1)}; "
+                        f"{i['level']}; {i['source']})." for a in (o.get("by_arm") or {}).values()
+                        for i in [((a.get("response") or {}).get("input") or {})] if i.get("value") is not None and i.get("ci95")), ""]
     L += ["## 1. What the protocol demands", "",
          f"- Target enrolment {P['target_enrolment']}, allocation {':'.join(f'{x:g}' for x in P['allocation'] or [])}, arms: {'; '.join(P['arms'])}",
          f"- Primary endpoints and required evaluable participants: "

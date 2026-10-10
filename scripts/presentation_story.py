@@ -4,6 +4,7 @@ usage: python scripts/presentation_story.py NCT VERSION OUT_FILE
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -26,6 +27,36 @@ def short(ep):
 
 def ordinal(n):
     return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def response_text():
+    """Simulated best overall response per arm next to its evidence input (canonical summary)."""
+    parts = []
+    for a in (O.get("by_arm") or {}).values():
+        r = a.get("response") or {}
+        i = r.get("input") or {}
+        if r.get("rate") is not None:
+            parts.append(f"{re.split(r',| [Ww]ith | [Cc]oformulated| [Aa]dministered', a['label'])[0].strip()} simulated {pct(r['rate'], 1)} ({r['responders']} of {r['n']}), input {pct(i.get('value'), 1)}")
+        lvl = i.get("level")
+    return ("; ".join(parts) + (f" (input level: {lvl}; the trial has not posted response)." if parts else "")) if parts else "not simulated."
+
+
+def control_text():
+    """Control-arm intervals of the two methods drawn in Figure 9 (registry population)."""
+    d = Path("data/trial/runs") / NCT / f"v{VER}" / "comparison" / "control"
+    out = []
+    for name, lab in (("control_external.json", "serious AE"), ("control_external_response.json", "response")):
+        f = d / name
+        if not f.exists():
+            continue
+        rows = [r for r in json.loads(f.read_text(encoding="utf-8"))["rows"] if r["population"] == "registry_experimental"
+                and (lab == "response" or r["outcome"] == "serious_ae")]
+        txt = ", ".join(f"{m} {pct(r['predicted'])} ({pct(r['lower'])}-{pct(r['upper'])})"
+                        for m, k in (("meta-analytic", "map_prior"), ("contextual", "contextual_robust"))
+                        for r in rows if r["method"] == k)
+        obs = next((r["observed"] for r in rows if r.get("observed") is not None), None)
+        out.append(f"{lab}: {txt}; observed {pct(obs, 1) if obs is not None else 'not posted'}")
+    return "; ".join(out) + "." if out else "not available."
 
 
 req = {w["endpoint"]: w.get("required") for w in F["evaluability"]}
@@ -95,7 +126,7 @@ lines = [
     f"**Figure 9.** Variability: comparable trials CV {pct(H['pk_cv_auc_registry'])} / {pct(H['pk_cv_ctrough_registry'])} "
     f"(protocol assumed {pct(H['pk_cv_auc_protocol'])} / {pct(H['pk_cv_ctrough_protocol'])}). Safety: historical arm-level estimate "
     f"{pct(H['sae_rate_arm_level'], 1)}; simulated cohort incidence {pct(O['sae_rate_simulated'], 1)} ({O['sae_count_simulated']} of "
-    f"{O['enrolled']}). Synthetic-control panel: control-arm serious AE (and response rate, when added).", "",
+    f"{O['enrolled']}). Objective response: " + response_text() + " Synthetic-control panel: " + control_text(), "",
     "## Supplementary figures",
     "S1 one participant's full record · S2 patient-level withdrawal modifiers (arm-level, not applied) · S3 control-arm benchmark · "
     "S4 every eligibility criterion · S5 effect of the journey calibration · S6 safety burden.", "",

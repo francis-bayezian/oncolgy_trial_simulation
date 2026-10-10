@@ -1,4 +1,4 @@
-# NCT05722015: protocol feasibility (run v1.3.3, feasibility-1.0.0)
+# NCT05722015: protocol feasibility (run v1.3.4, feasibility-1.0.0)
 
 Every number below comes from the locked simulation run (screened population, eligibility, enrolled cohort, patient journey, planning report, primary-engine results). How each is derived is stated with it and in section 9.
 
@@ -18,8 +18,10 @@ Every number below comes from the locked simulation run (screened population, el
 | Withdrawal, simulated cohort | 7.7% |
 | Withdrawal, registry burden model prediction | 6.9% |
 | Death, simulated cohort | 12.4% |
+| Objective response, simulated, Subcutaneous Pembrolizumab Coformulated With Hyaluronidase (MK-3475A) | 43.7% (114 of 261; 95% CI 37.6%-49.9%) |
+| Objective response, simulated, Intravenous Pembrolizumab, Administered With Chemotherapy | 35.0% (41 of 117; 95% CI 26.5%-44.4%) |
 
-Historical evidence (not simulated values): serious AE arm-level estimate 39.5%; recruitment median 63/year; PK CV 37% (AUC) and 40% (Ctrough) in comparable trials, 50% and 84% assumed by the protocol.
+Historical evidence (not simulated values): serious AE arm-level estimate 39.5%; recruitment median 63/year; PK CV 37% (AUC) and 40% (Ctrough) in comparable trials, 50% and 84% assumed by the protocol. Response-rate input, Subcutaneous Pembrolizumab Coformulated With Hyaluronidase (MK-3475A): 41.9% (95% CI 32.5%-52.0%; same disease, similar drug-class set, same phase, same era; evidence arms reporting objective_response_rate (10 studies)). Response-rate input, Intravenous Pembrolizumab, Administered With Chemotherapy: 41.9% (95% CI 32.5%-52.0%; same disease, similar drug-class set, same phase, same era; evidence arms reporting objective_response_rate (10 studies)).
 
 ## 1. What the protocol demands
 
@@ -154,7 +156,7 @@ Missed visits among participants on study are not modelled (no evidence): losses
 | Dose reduction | 0.0% (0.0%-1.0%) | 0 |
 | Discontinuation for an adverse event | 0.8% (0.3%-2.3%) | 3 |
 | Death during follow-up | 12.4% (9.5%-16.1%) | 47 |
-| Death before day 126 (last primary sampling) | 3.2% (1.8%-5.5%) | 12 |
+| Death within the primary sampling period (to day 126) | 3.2% (1.8%-5.5%) | 12 |
 
 ## 8. Scenario stress test
 

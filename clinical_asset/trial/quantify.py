@@ -89,7 +89,7 @@ def quantify(spec: dict, arm_id: str, kind: str, variable: str | None, features:
              design: dict | None = None) -> dict:
     """{'status': 'RESOLVED', 'value', 'unit', 'level', 'source'} for one arm (or NOT_SIMULATED with its kind)."""
     from .journey_evidence import registry_phase
-    from .subgroups import arm_age_group, estimate, estimate_median
+    from .subgroups import RESPONSE_VARIABLES, arm_age_group, estimate, estimate_median, estimate_response
 
     if kind == "not_simulated":
         return {"status": "NOT_SIMULATED", "kind": variable, "reason": "the generated patients carry no such measurement"}
@@ -117,7 +117,16 @@ def quantify(spec: dict, arm_id: str, kind: str, variable: str | None, features:
         return {"status": "RESOLVED", "value": cited[0], "unit": "proportion", "level": "protocol-cited, same regimen",
                 "source": f"protocol fact {cited[1]} ({cited[2]}" + (f", n = {cited[3]:g})" if cited[3] else ")"),
                 "small_sample": bool(cited[3]) and cited[3] < 20}
-    est = estimate(variable, family, classes, agents, age, phase) if variable else {"status": "UNRESOLVED"}
+    if variable in RESPONSE_VARIABLES:
+        # response rates: same disease first, then drug-class similarity, phase and era, then the family (L069)
+        from ..planning.operational import condition_family
+        from ..planning.report import protocol_start_year
+
+        cond = (spec.get("metadata") or {}).get("condition")
+        disease = condition_family(" ".join(((cond.get("text") if isinstance(cond, dict) else cond) or "").split()))[1]
+        est = estimate_response(variable, family, disease, classes, phase, protocol_start_year(spec))
+    else:
+        est = estimate(variable, family, classes, agents, age, phase) if variable else {"status": "UNRESOLVED"}
     if est.get("status") == "RESOLVED" and est.get("headline"):
         h = est["headline"]
         return {"status": "RESOLVED", "value": h["estimate"], "unit": "proportion", "level": _level({**est, "subgroup": est.get("headline_subgroup")}),

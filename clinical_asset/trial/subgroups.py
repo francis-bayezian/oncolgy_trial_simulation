@@ -354,3 +354,99 @@ def estimate_median(variable: str, family: str, classes: list[str], agents: list
     ladder = [(rungs[k][0], rungs[k][1]) for k in order if k in rungs] + [("whole disease family" if family is not None else "all oncology", recs)]
     level, chosen = next(((lv, rs) for lv, rs in ladder if len({r["study"] for r in rs}) >= min_studies), ladder[-1])
     return {"status": "RESOLVED", "variable": variable, "family": family, "subgroup": level, **pooled_median(chosen)}
+
+
+# ----------------------------------------------------------------------------- response rates: disease first (L069)
+
+RESPONSE_VARIABLES = {"objective_response_rate", "complete_response"}
+MIN_RESPONSE_STUDIES = 5
+ERA_YEARS = 10
+@lru_cache(maxsize=1)
+def _disease_words() -> tuple[frozenset, dict]:
+    """Stage and setting words, and disease-name synonyms (reference vocabulary: no medical terms in code)."""
+    from ..reference import vocabulary
+
+    w = vocabulary()["disease_name_words"]
+    return frozenset(w["stage_and_setting"]), dict(w["synonyms"])
+
+
+def disease_core(name: str | None) -> frozenset:
+    """A disease name as a word set, without stage or setting words and with the synonyms above read as one word: two
+    names that differ only in stage, setting or synonym are the same disease; a name with an extra or different
+    qualifying word (a histology, a cell type) is a different disease."""
+    stage, synonyms = _disease_words()
+    words = [synonyms.get(w, w) for w in re.findall(r"[a-z0-9]+", (name or "").lower())]
+    return frozenset(w for w in words if w not in stage)
+
+
+@lru_cache(maxsize=None)
+def start_year(nct: str) -> int | None:
+    path = RAW / f"{nct}.json"
+    if not path.exists():
+        return None
+    d = ((json.loads(path.read_text(encoding="utf-8")).get("protocolSection") or {}).get("statusModule") or {}).get("startDateStruct") or {}
+    y = (d.get("date") or "")[:4]
+    return int(y) if y.isdigit() else None
+
+
+def response_hierarchy(recs: list[dict], family: str | None, disease: str | None, classes: list[str], phase: str | None,
+                       year: int | None) -> list[tuple[str, list[dict]]]:
+    """The evidence hierarchy for a response rate, most specific first: same disease, then drug-class similarity,
+    phase and era within it; the disease family next; all oncology last (flagged). Line of therapy is not recorded in
+    the evidence and cannot be matched."""
+    mine = set(classes) - {"other", "unclassified"}
+    core = disease_core(disease) if disease else frozenset()
+    same = [r for r in recs if core and disease_core(r["disease"]) == core]
+    fam = [r for r in recs if family and r["disease_family"] == family]
+
+    def sim(rs, t):
+        return [r for r in rs if mine and _jaccard(_classes(r["class_signature"]) - {"other", "unclassified"}, mine) >= t]
+
+    def era(rs):
+        return [r for r in rs if year and start_year(r["study"]) and start_year(r["study"]) >= year - ERA_YEARS]
+    return [("same disease, similar drug-class set, same phase, same era", era([r for r in sim(same, 0.75) if phase and r["phase"] == phase])),
+            ("same disease, similar drug-class set, same era", era(sim(same, 0.75))),
+            ("same disease, similar drug-class set", sim(same, 0.75)),
+            ("same disease, related drug-class set", sim(same, 0.5)),
+            ("same disease family, similar drug-class set", sim(fam, 0.75)),
+            ("same disease family, related drug-class set", sim(fam, 0.5)),
+            ("same disease, any regimen", same),
+            ("same disease family, any regimen", fam),
+            ("all oncology, similar drug-class set (last resort)", sim(recs, 0.75)),
+            ("all oncology (last resort)", recs)]
+
+
+def estimate_response(variable: str, family: str | None, disease: str | None, classes: list[str], phase: str | None,
+                      year: int | None, exclude_studies: set | None = None, min_studies: int = MIN_RESPONSE_STUDIES) -> dict:
+    """A response rate from the first level of the hierarchy holding at least `min_studies` studies."""
+    recs = [r for r in records(variable) if r["study"] not in (exclude_studies or set())]
+    if not recs:
+        return {"status": "UNRESOLVED", "reason": f"no study of {variable} in the evidence"}
+    ladder = response_hierarchy(recs, family, disease, classes, phase, year)
+    support = [{"level": lab, "studies": len({r["study"] for r in rs})} for lab, rs in ladder]
+    level, chosen = next(((lab, rs) for lab, rs in ladder if len({r["study"] for r in rs}) >= min_studies), ladder[-1])
+    return {"status": "RESOLVED", "target": variable, "headline_subgroup": level, "headline": pooled(chosen), "hierarchy": support,
+            "last_resort": "last resort" in level, "disease": disease, "era_from": (year - ERA_YEARS) if year else None,
+            "not_matched": "line of therapy (not recorded in the evidence)"}
+
+
+def validate_response_hierarchy(variable: str = "objective_response_rate") -> dict:
+    """Leave-one-study-out over the evidence: the hierarchy predicts each held-out study's largest arm (from that arm's
+    own disease, drug classes, phase and start year); compared with the generic ladder on the same studies."""
+    recs = records(variable)
+    by_study: dict[str, list] = {}
+    for r in recs:
+        by_study.setdefault(r["study"], []).append(r)
+    err_h, err_g, levels = [], [], {}
+    for study, arms in by_study.items():
+        a = max(arms, key=lambda r: r["n"])
+        obs = a["count"] / a["n"]
+        h = estimate_response(variable, a["disease_family"], a["disease"], list(_classes(a["class_signature"])), a["phase"],
+                              start_year(study), exclude_studies={study})
+        g = estimate(variable, a["disease_family"], list(_classes(a["class_signature"])), [], a["age_group"], a["phase"], exclude_studies={study})
+        if h.get("headline") and g.get("headline"):
+            err_h.append(abs(h["headline"]["estimate"] - obs))
+            err_g.append(abs(g["headline"]["estimate"] - obs))
+            levels[h["headline_subgroup"]] = levels.get(h["headline_subgroup"], 0) + 1
+    return {"held_out_studies": len(err_h), "hierarchy_median_abs_error": float(np.median(err_h)) if err_h else None,
+            "generic_ladder_median_abs_error": float(np.median(err_g)) if err_g else None, "levels_used": levels}

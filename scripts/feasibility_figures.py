@@ -661,31 +661,60 @@ def figure9():
 
 
 def _synthetic_control_panel(fig):
-    """Synthetic-control exploration: the control arm's serious-AE share predicted without seeing it."""
-    f = CMP / "comparison" / "control" / "control_external.json"
-    if not f.exists():
+    """Synthetic-control exploration: the control arm's serious-AE share and response rate predicted without seeing it,
+    next to the simulated control arm of this run (canonical summary) and, where posted, the observed control arm."""
+    d = CMP / "comparison" / "control"
+    docs = {"serious_ae": d / "control_external.json", "response": d / "control_external_response.json"}
+    docs = {k: json.loads(f.read_text(encoding="utf-8")) for k, f in docs.items() if f.exists()}
+    if not docs:
         return
-    rows = [r for r in json.loads(f.read_text(encoding="utf-8"))["rows"] if r["outcome"] == "serious_ae" and r["population"] == "registry_experimental"]
-    pick = [("map_prior", "Historical controls (meta-analytic)", CAND), ("contextual_robust", "Synthetic control (contextual model)", ALT)]
-    ax = fig.add_axes([0.3, 0.1, 0.4, 0.2])
-    for i, (m, lab, col) in enumerate(pick):
-        r = next((x for x in rows if x["method"] == m), None)
-        if not r:
+    ctl = next(iter(docs.values()))["control_arm"]
+    sim = (CO.get("by_arm") or {}).get(ctl) or {}
+    pick = [("map_prior", "Historical controls (meta-analytic)", "#8A8A8A"), ("contextual_robust", "Synthetic control (contextual model)", ALT),
+            ("simulated", "Simulated control arm (this run)", ENR)]
+    panels = [("serious_ae", "Serious adverse event", [0.27, 0.07, 0.3, 0.17]), ("response", "Objective response", [0.66, 0.07, 0.3, 0.17])]
+    fig.text(0.04, 0.3, "Synthetic-control exploration: control arm (95% interval)", fontsize=12.5, fontweight="bold", color=INK, va="center")
+    fig.text(0.96, 0.3, "Feasible to generate; too uncertain to replace the control arm", fontsize=11, color=MUTED, va="center", ha="right")
+    for key, title, box in panels:
+        doc = docs.get(key)
+        if not doc:
             continue
-        ax.plot([r["lower"], r["upper"]], [i, i], color=col if col != CAND else "#8A8A8A", lw=3)
-        ax.plot(r["predicted"], i, "o", color=col if col != CAND else "#8A8A8A", ms=9)
-        ax.text(-0.02, i, lab, ha="right", va="center", fontsize=11, transform=ax.get_yaxis_transform())
-        obs = r["observed"]
-    ax.axvline(obs, color=OBS, lw=2)
-    ax.text(obs, len(pick) - 0.35, f"observed control arm {pct(obs, 1)}", ha="center", fontsize=11, color=OBS)
-    ax.set_yticks([])
-    ax.set_ylim(-0.6, len(pick) - 0.2)
-    ax.set_xlim(0, 1)
-    ax.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
-    ax.spines["left"].set_visible(False)
-    ax.set_title("Synthetic-control exploration: control-arm serious AE (95% interval)", loc="left", fontsize=12.5, fontweight="bold")
-    fig.text(0.72, 0.2, "Generating a synthetic control was feasible,\nbut its uncertainty was too wide to\nsupport replacing the control arm.",
-             fontsize=11.5, color=INK, va="center")
+        ax = fig.add_axes(box)
+        rows = [r for r in doc["rows"] if r["population"] == "registry_experimental"]
+        obs = next((r.get("observed") for r in rows if r.get("observed") is not None), None)
+        if key == "serious_ae":
+            k, n = sim.get("sae_count"), sim.get("n")
+            simrow = (sim.get("sae_rate"), *stats.binomtest(k, n).proportion_ci(method="exact")) if k is not None and n else None
+        else:
+            r_ = sim.get("response") or {}
+            simrow = (r_.get("rate"), *(r_.get("ci95") or [None, None])) if r_.get("rate") is not None else None
+        for i, (m, lab, col) in enumerate(pick):
+            yv = len(pick) - 1 - i
+            if m == "simulated":
+                if not simrow:
+                    continue
+                est, lo, hi = simrow
+            else:
+                r = next((x for x in rows if x["method"] == m), None)
+                if not r:
+                    continue
+                est, lo, hi = r["predicted"], r["lower"], r["upper"]
+            ax.plot([lo, hi], [yv, yv], color=col, lw=3)
+            ax.plot(est, yv, "o", color=col, ms=8)
+            if key == "serious_ae":
+                ax.text(-0.03, yv, lab, ha="right", va="center", fontsize=10.5, transform=ax.get_yaxis_transform())
+        if obs is not None:
+            ax.axvline(obs, color=OBS, lw=2)
+            ax.text(obs + 0.015, len(pick) - 0.45, f"observed {pct(obs, 1)}", ha="left", fontsize=10.5, color=OBS)
+        else:
+            ax.text(0.99, len(pick) - 0.45, "observed: not yet posted", ha="right", fontsize=10.5, color=MUTED)
+        ax.set_yticks([])
+        ax.set_ylim(-0.6, len(pick) - 0.1)
+        ax.set_xlim(0, 1)
+        ax.xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1, decimals=0))
+        ax.tick_params(axis="x", labelsize=10.5)
+        ax.spines["left"].set_visible(False)
+        ax.set_title(title, loc="left", fontsize=11.5, fontweight="bold", pad=14)
 
 
 # ---------------------------------------------------------------- Figure 7
@@ -871,22 +900,29 @@ def supp_s3_control_benchmark():
     if not f.exists():
         return
     summ = json.loads(f.read_text(encoding="utf-8"))["summary"]
+    fr = Path("data/corpus_v2/patient_risk/benchmark_response/benchmark_summary.json")
+    if fr.exists():
+        summ.update(json.loads(fr.read_text(encoding="utf-8"))["summary"])
+    outcomes = [o for o in (("serious_ae", "Serious adverse event"), ("death", "Death"), ("response", "Objective response"))
+                if any(k.startswith(o[0] + "|") for k in summ)]
     methods = [("contextual_robust", "Synthetic control (contextual model)"), ("evidence_calibrated", "Evidence-calibrated"),
                ("map_prior", "Meta-analytic prior"), ("outcome_regression", "Outcome regression"), ("naive_pooled", "Naive pooling")]
     fig = frame("Supplementary Figure S3. Hidden-control benchmark across registry trials",
                 "Methods that cover the real control arm do so with wide intervals; narrow methods miss it often.")
-    for j, (outcome, title) in enumerate((("serious_ae", "Serious adverse event"), ("death", "Death"))):
-        ax = fig.add_axes([0.24 + j * 0.39, 0.15, 0.3, 0.68])
+    wd = 0.72 / len(outcomes)
+    for j, (outcome, title) in enumerate(outcomes):
+        ax = fig.add_axes([0.24 + j * (wd + 0.015), 0.15, wd - 0.015, 0.68])
         y = np.arange(len(methods))[::-1]
         for yv, (m, lab) in zip(y, methods, strict=True):
             r = summ.get(f"{outcome}|{m}")
             if not r:
+                ax.text(0.02, yv, "not defined for this outcome", va="center", fontsize=9.5, color=MUTED)
                 continue
-            ax.barh(yv, r["coverage_95"], color=ALT if m == "contextual_robust" else CAND, height=0.6)
-            ax.text(r["coverage_95"] + 0.01, yv, f"coverage {pct(r['coverage_95'])} · width {pct(r['median_interval_width'])} · "
-                    f"bias {r['bias'] * 100:+.1f} pts", va="center", fontsize=9.5)
+            ax.barh(yv, r["coverage_95"], color=ALT if m == "contextual_robust" else CAND, height=0.42)
+            ax.text(0.02, yv + 0.36, f"coverage {pct(r['coverage_95'])} · width {pct(r['median_interval_width'])} · "
+                    f"bias {r['bias'] * 100:+.1f} pts", va="center", fontsize=8.5)
         ax.axvline(0.95, color=OBS, lw=1, ls="--")
-        ax.set_xlim(0, 1.9)
+        ax.set_xlim(0, 1.05)
         ax.set_xticks([0, 0.5, 0.95])
         ax.set_xticklabels(["0%", "50%", "95%"])
         ax.set_yticks(y)

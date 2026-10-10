@@ -38,6 +38,7 @@ from . import patient_risk as pr
 
 CONTROL_TYPES = {"ACTIVE_COMPARATOR", "PLACEBO_COMPARATOR", "SHAM_COMPARATOR", "NO_INTERVENTION"}
 OUTCOMES = ("serious_ae", "death")
+ALL_OUTCOMES = OUTCOMES + ("response",)          # objective response: the efficacy outcome of the control arm
 POWER_ODDS_RATIOS = (0.67, 1.5)      # the effects at which power is reported (a setting, stated in the report)
 PREDICTIVE_DRAWS = 2000
 SYNTHESIS_DRAWS = 1000
@@ -93,7 +94,31 @@ def _records() -> tuple[list[dict], list[dict], dict]:
         x = rct(t)
         if x:
             trials.append(x)
+    _attach_response(recs)
     return recs, trials, model
+
+
+def _attach_response(recs: list[dict]) -> None:
+    """Each arm's objective response (responders, evaluated) from the evidence table, matched to the arm by its registry
+    group title (the same title, else the one title containing or contained in it)."""
+    from . import subgroups as sg
+
+    by_trial: dict[str, dict] = {}
+    for r in sg.records("objective_response_rate"):
+        nct, _, group = r["arm"].partition("|")
+        if r.get("count") is not None and r.get("n"):
+            by_trial.setdefault(nct, {})[_norm(group)] = (int(r["count"]), int(r["n"]))
+    for rec in recs:
+        arms = by_trial.get(rec["nct_id"])
+        if not arms:
+            continue
+        g = _norm(rec["group"])
+        hit = arms.get(g)
+        if hit is None:
+            near = [v for k, v in arms.items() if k and (k in g or g in k)]
+            hit = near[0] if len(near) == 1 else None
+        if hit and 0 <= hit[0] <= hit[1]:
+            rec["response"] = hit
 
 
 def _ctx_design(recs: list[dict], ref: dict, controls: dict) -> np.ndarray:
@@ -161,19 +186,20 @@ def _predict(S: dict, target: dict, outcome: str, keep: np.ndarray, params: dict
     preds["outcome_regression"] = _expit(rng.normal(mu_or, math.sqrt(var_or), PREDICTIVE_DRAWS))
     # evidence-calibrated: context part from the regression, population part from the synthesis (refit without
     # the trial), plus between-trial heterogeneity
-    evid = [e for e in led.entries() if e["tier"] != 3]
-    for c, col in zip(("age10", "female", "ecog1", "asian", "black"), char_cols, strict=True):
-        evid.append({"characteristic": c, "estimand": led.SIMULATED[outcome], "tier": 3, "estimate": float(beta[col]),
-                     "se": float(se[col]), "citation": "leave-one-trial-out corpus regression"})
-    syn = es.synthesise(evid, draws=SYNTHESIS_DRAWS, seed=S["seed"])
-    ctx = float(xt @ beta) - float(sum(xt[col] * beta[col] for col in char_cols))
-    draws_eta = np.full(SYNTHESIS_DRAWS, ctx)
-    for c, col in zip(("age10", "female", "ecog1", "asian", "black"), char_cols, strict=True):
-        eff = syn["effects"].get(f"{c}|{led.SIMULATED[outcome]}")
-        if eff:
-            draws_eta = draws_eta + np.array(eff["draws"]) * xt[col]
-    draws_eta = draws_eta + rng.normal(0, math.sqrt(tau2 + var_or), SYNTHESIS_DRAWS)
-    preds["evidence_calibrated"] = _expit(draws_eta)
+    if outcome in led.SIMULATED:          # the evidence synthesis holds patient-level estimands for these outcomes only
+        evid = [e for e in led.entries() if e["tier"] != 3]
+        for c, col in zip(("age10", "female", "ecog1", "asian", "black"), char_cols, strict=True):
+            evid.append({"characteristic": c, "estimand": led.SIMULATED[outcome], "tier": 3, "estimate": float(beta[col]),
+                         "se": float(se[col]), "citation": "leave-one-trial-out corpus regression"})
+        syn = es.synthesise(evid, draws=SYNTHESIS_DRAWS, seed=S["seed"])
+        ctx = float(xt @ beta) - float(sum(xt[col] * beta[col] for col in char_cols))
+        draws_eta = np.full(SYNTHESIS_DRAWS, ctx)
+        for c, col in zip(("age10", "female", "ecog1", "asian", "black"), char_cols, strict=True):
+            eff = syn["effects"].get(f"{c}|{led.SIMULATED[outcome]}")
+            if eff:
+                draws_eta = draws_eta + np.array(eff["draws"]) * xt[col]
+        draws_eta = draws_eta + rng.normal(0, math.sqrt(tau2 + var_or), SYNTHESIS_DRAWS)
+        preds["evidence_calibrated"] = _expit(draws_eta)
     # historical controls: other trials' control arms in the same disease family
     hist = [i for i, r in role.items() if r == "control" and recs[i]["nct_id"] != target["nct_id"] and recs[i].get(outcome)
             and recs[i].get("family") == target.get("family")]
@@ -218,8 +244,8 @@ def _setup(seed: int) -> tuple[dict, list[dict], dict]:
                 role[i] = "experimental"
     Xc_all = _ctx_design(recs, ref, controls)
     all_classes = sorted({c for r in recs for c in r.get("classes") or ()})
-    pools = {o: cm.Pool([r for r in recs if r.get(o)], all_classes) for o in OUTCOMES}
-    pool_pos = {o: {i: j for j, i in enumerate(i for i, r in enumerate(recs) if r.get(o))} for o in OUTCOMES}
+    pools = {o: cm.Pool([r for r in recs if r.get(o)], all_classes) for o in ALL_OUTCOMES}
+    pool_pos = {o: {i: j for j, i in enumerate(i for i, r in enumerate(recs) if r.get(o))} for o in ALL_OUTCOMES}
     S = {"recs": recs, "ref": ref, "controls": controls, "X_all": X_all, "Xc_all": Xc_all, "char_cols": char_cols, "role": role,
          "pools": pools, "pool_pos": pool_pos, "rng": rng, "seed": seed, "all_classes": all_classes}
     return S, trials, by_trial
@@ -248,12 +274,12 @@ def _learn(S: dict, outcome: str, train: np.ndarray, label: str) -> tuple[dict, 
     return params, {**info, "training_targets": len(targets), "tau_global2": round(tau_g2, 4)}
 
 
-def run(max_trials: int | None = None, seed: int = 20261008, out: Path | None = None) -> dict:
+def run(max_trials: int | None = None, seed: int = 20261008, out: Path | None = None, outcomes: tuple = OUTCOMES) -> dict:
     S, trials, by_trial = _setup(seed)
     recs, role, rng = S["recs"], S["role"], S["rng"]
     # contextual robust model: settings learned per fold and outcome on trials outside the fold
     fold_params, fold_info = {}, {}
-    for outcome in OUTCOMES:
+    for outcome in outcomes:
         has = np.array([bool(r.get(outcome)) for r in recs])
         for f in range(cm.FOLDS):
             cm.log(f"learning {outcome} fold {f}")
@@ -279,7 +305,7 @@ def run(max_trials: int | None = None, seed: int = 20261008, out: Path | None = 
             pop[c] = sum(a * w for a, w in v) / sum(w for _, w in v) if v and sum(w for _, w in v) else None
         target = {**ctrl, **{c: pop[c] for c in pop}}           # the control's context with the experimental population
         keep = np.array([recs[i]["nct_id"] != t["nct_id"] for i in range(len(recs))])
-        for outcome in OUTCOMES:
+        for outcome in outcomes:
             if not ctrl.get(outcome):
                 continue
             k_obs, n_obs = ctrl[outcome]
@@ -308,14 +334,14 @@ def run(max_trials: int | None = None, seed: int = 20261008, out: Path | None = 
 
     methods = ("contextual_robust", "evidence_calibrated", "outcome_regression", "map_prior", "naive_pooled")
     by_band = {}
-    for outcome in OUTCOMES:
+    for outcome in outcomes:
         for method in methods:
             for band in range(cm.BANDS):
                 rs = [r for r in rows if r["outcome"] == outcome and r["method"] == method and r["similarity_band"] == band]
                 if rs:
                     by_band[f"{outcome}|{method}|band{band}"] = metrics(rs)
     summary = {}
-    for outcome in OUTCOMES:
+    for outcome in outcomes:
         for method in methods:
             rs = [r for r in rows if r["outcome"] == outcome and r["method"] == method]
             if not rs:
@@ -354,7 +380,7 @@ def _population_from_adsl(adsl: Path, arm: str) -> dict:
 
 
 def external(registry_file: Path, safety_dir: Path, adsl: Path, control_arm: str, experimental_arm: str, out: Path,
-             seed: int = 20261008) -> dict:
+             seed: int = 20261008, outcomes: tuple = OUTCOMES, out_name: str = "control_external") -> dict:
     """Predict the control arm of a trial OUTSIDE the corpus with every benchmark method, and score it against the
     trial's posted control arm.
 
@@ -398,10 +424,12 @@ def external(registry_file: Path, safety_dir: Path, adsl: Path, control_arm: str
         raise ValueError(f"{nct} is in the corpus: use the cross-validated benchmark")
     keep = np.ones(len(recs), dtype=bool)
     rows, learning = [], {}
-    for outcome in OUTCOMES:
-        if not ctrl_obs.get(outcome):
+    ctrl_n = int((ctrl_obs.get("serious_ae") or (0, 0))[1])
+    for outcome in outcomes:
+        # an outcome the trial has not posted is still predicted (for the control arm's size); 'observed' stays empty
+        k_obs, n_obs = ctrl_obs[outcome] if ctrl_obs.get(outcome) else (None, ctrl_n)
+        if not n_obs:
             continue
-        k_obs, n_obs = ctrl_obs[outcome]
         cm.log(f"learning {outcome} on all corpus trials")
         params, learning[outcome] = _learn(S, outcome, np.array([bool(r.get(outcome)) for r in recs]), f"{outcome} all")
         for variant, pop in variants.items():
@@ -409,10 +437,11 @@ def external(registry_file: Path, safety_dir: Path, adsl: Path, control_arm: str
             preds, band, smax, _, hist = _predict(S, target, outcome, keep, params)
             for method, pd in preds.items():
                 lo, hi = _interval_counts(pd, int(n_obs), rng)
-                rows.append({"outcome": outcome, "population": variant, "method": method, "observed": k_obs / n_obs, "k": int(k_obs),
-                             "n": int(n_obs), "predicted": float(pd.mean()), "median": float(np.median(pd)),
-                             "lower": lo / n_obs, "upper": hi / n_obs, "covered": bool(lo <= k_obs <= hi),
-                             "interval_score": _interval_score(lo / n_obs, hi / n_obs, k_obs / n_obs),
+                posted = k_obs is not None
+                rows.append({"outcome": outcome, "population": variant, "method": method, "observed": k_obs / n_obs if posted else None,
+                             "k": int(k_obs) if posted else None, "n": int(n_obs), "predicted": float(pd.mean()), "median": float(np.median(pd)),
+                             "lower": lo / n_obs, "upper": hi / n_obs, "covered": bool(lo <= k_obs <= hi) if posted else None,
+                             "interval_score": _interval_score(lo / n_obs, hi / n_obs, k_obs / n_obs) if posted else None,
                              "similarity_band": band, "best_similarity": smax, "historical_arms": len(hist)})
     doc = {"nct_id": nct, "control_group": roles["control"], "control_arm": control_arm, "experimental_arm": experimental_arm,
            "context": {k: (list(v) if isinstance(v, tuple) else v) for k, v in context.items()}, "populations": variants,
@@ -420,8 +449,8 @@ def external(registry_file: Path, safety_dir: Path, adsl: Path, control_arm: str
            "benchmark_reference": "data/corpus_v2/patient_risk/benchmark/benchmark_summary.json (cross-validated, corpus trials)"}
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
-    (out / "control_external.json").write_text(json.dumps(doc, indent=1, default=str), encoding="utf-8")
-    (out / "control_external.md").write_text(render_external(doc), encoding="utf-8")
+    (out / f"{out_name}.json").write_text(json.dumps(doc, indent=1, default=str), encoding="utf-8")
+    (out / f"{out_name}.md").write_text(render_external(doc), encoding="utf-8")
     return doc
 
 
@@ -434,15 +463,16 @@ def render_external(doc: dict) -> str:
          "`simulated_protocol` = the simulated experimental arm (protocol and evidence only).", ""]
     for k, v in doc["populations"].items():
         L.append(f"- {k}: " + ", ".join(f"{a} {x:.3g}" if x is not None else f"{a} n/a" for a, x in v.items()))
-    for outcome in OUTCOMES:
+    for outcome in dict.fromkeys(r["outcome"] for r in doc["rows"]):
         rs = [r for r in doc["rows"] if r["outcome"] == outcome]
-        if not rs:
-            continue
-        L += ["", f"## {outcome}: observed {rs[0]['k']}/{rs[0]['n']} = {rs[0]['observed']:.1%}", "",
+        head = (f"observed {rs[0]['k']}/{rs[0]['n']} = {rs[0]['observed']:.1%}" if rs[0]["observed"] is not None
+                else f"not posted by the trial: predicted for a control arm of {rs[0]['n']}")
+        L += ["", f"## {outcome}: {head}", "",
               "| population | method | predicted mean | 95% predictive interval | covered | interval score | similarity band |",
               "| --- | --- | ---: | --- | --- | ---: | ---: |"]
         for r in rs:
-            L.append(f"| {r['population']} | {r['method']} | {r['predicted']:.1%} | {r['lower']:.1%}-{r['upper']:.1%} | {r['covered']} "
-                     f"| {r['interval_score']:.3f} | {r['similarity_band']} |")
+            score = f"{r['interval_score']:.3f}" if r["interval_score"] is not None else "—"
+            L.append(f"| {r['population']} | {r['method']} | {r['predicted']:.1%} | {r['lower']:.1%}-{r['upper']:.1%} | "
+                     f"{'—' if r['covered'] is None else r['covered']} | {score} | {r['similarity_band']} |")
     L += ["", "One trial is one draw: the methods' calibration is the cross-validated benchmark over the corpus.", ""]
     return "\n".join(L)

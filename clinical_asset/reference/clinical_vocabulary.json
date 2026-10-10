@@ -792,5 +792,41 @@
   "unicancer",
   "medical school",
   "health service"
- ]
+ ],
+ "disease_name_words": {
+  "about": "words dropped from, or read as one word in, a disease name when comparing diseases (trial.subgroups.disease_core)",
+  "stage_and_setting": [
+   "advanced",
+   "and",
+   "diagnosed",
+   "extensive",
+   "in",
+   "limited",
+   "locally",
+   "metastatic",
+   "newly",
+   "of",
+   "or",
+   "previously",
+   "recurrent",
+   "refractory",
+   "relapsed",
+   "stage",
+   "the",
+   "treated",
+   "unresectable",
+   "untreated",
+   "with"
+  ],
+  "synonyms": {
+   "carcinoma": "cancer",
+   "carcinomas": "cancer",
+   "neoplasm": "cancer",
+   "neoplasms": "cancer",
+   "tumor": "cancer",
+   "tumour": "cancer",
+   "tumors": "cancer",
+   "cancers": "cancer"
+  }
+ }
 }

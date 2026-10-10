@@ -22,6 +22,87 @@
   "withdrawal_rate_simulated": 0.07671957671957672,
   "withdrawal_rate_predicted": 0.06926478693405927,
   "death_rate_simulated": 0.12433862433862433,
+  "demographics": {
+   "age_mean": 62.575555555555546,
+   "age_sd": 8.697585129854714,
+   "female_share": 0.3941798941798942,
+   "race_shares": {
+    "White": 0.6640211640211641,
+    "Asian": 0.164021164021164,
+    "Black or African American": 0.07936507936507936
+   },
+   "hispanic_share": 0.05026455026455026
+  },
+  "by_arm": {
+   "ARM1": {
+    "label": "Subcutaneous Pembrolizumab Coformulated With Hyaluronidase (MK-3475A)",
+    "n": 261,
+    "sae_rate": 0.41379310344827586,
+    "sae_count": 108,
+    "death_rate": 0.1111111111111111,
+    "withdrawal_rate_simulated": 0.0842911877394636,
+    "response": {
+     "rate": 0.4368,
+     "responders": 114,
+     "n": 261,
+     "ci95": [
+      0.37571632243747677,
+      0.49929900361969076
+     ],
+     "input": {
+      "value": 0.4194189873399625,
+      "ci95": [
+       0.32478099118246206,
+       0.5203807256913683
+      ],
+      "level": "same disease, similar drug-class set, same phase, same era",
+      "source": "evidence arms reporting objective_response_rate (10 studies)"
+     },
+     "calibration": {
+      "target": 0.4194189873399625,
+      "realised_before": 0.2681992337164751,
+      "logit_shift": 1.1398773193359375,
+      "realised_after": 0.41762452107279696
+     }
+    }
+   },
+   "ARM2": {
+    "label": "Intravenous Pembrolizumab, Administered With Chemotherapy",
+    "n": 117,
+    "sae_rate": 0.358974358974359,
+    "sae_count": 42,
+    "death_rate": 0.15384615384615385,
+    "withdrawal_rate_simulated": 0.05982905982905983,
+    "response": {
+     "rate": 0.3504,
+     "responders": 41,
+     "n": 117,
+     "ci95": [
+      0.2645360523102602,
+      0.4440912765731548
+     ],
+     "input": {
+      "value": 0.4194189873399625,
+      "ci95": [
+       0.32478099118246206,
+       0.5203807256913683
+      ],
+      "level": "same disease, similar drug-class set, same phase, same era",
+      "source": "evidence arms reporting objective_response_rate (10 studies)"
+     },
+     "calibration": {
+      "target": 0.4194189873399625,
+      "realised_before": 0.26495726495726496,
+      "logit_shift": 0.9975128173828125,
+      "realised_after": 0.4358974358974359
+     }
+    }
+   }
+  },
+  "arm_split_outputs_stage": {
+   "ARM2": 140,
+   "ARM1": 238
+  },
   "recruitment": {
    "required_per_year": 453.78151260504205,
    "required_percentile": 0.9158230797614162,
@@ -160,8 +241,8 @@
    "median_recruitment_months": 71.90027699769786,
    "p_recruit_in_window": 0.08417692023858381,
    "window_months": 9.995999999999999,
-   "female_pct": 0.39755555420294564,
-   "age65_pct": 0.4246884152774745,
+   "female_pct": 0.3975555542029453,
+   "age65_pct": 0.4246884152774735,
    "sae_rate": 0.3968253968253968,
    "sae_patients": 150.0,
    "enrolled": 378,
@@ -177,8 +258,8 @@
    "p_objectives": 0.9657668750000001,
    "fu_visits_per_patient": 5.0,
    "visit_days_per_patient": 23.0,
-   "asian_pct": 0.15572100615393258,
-   "hispanic_pct": 0.0531874281883282,
+   "asian_pct": 0.15572100615393256,
+   "hispanic_pct": 0.053187428188328216,
    "withdrawal_pct": 0.07671957671957672
   },
   {
@@ -1281,6 +1362,9 @@
   "sae_rate_arm_level": "historical arm-level estimate from comparable registry trials (evidence, not a simulated value)",
   "withdrawal_rate_simulated": "share of this run's patients who withdrew (on treatment or from follow-up)",
   "withdrawal_rate_predicted": "registry protocol-burden model's prediction for this protocol",
+  "by_arm.response.rate": "simulated best overall response (CR or PR) per arm at the analysis data cut-off (this run)",
+  "by_arm.response.input": "the arm's response-rate input: same disease first, then similar drug classes, phase and era (evidence, not a simulated value)",
+  "demographics": "simulated enrolled patients (this run)",
   "scenarios": "each scenario reports its own values; scenarios that do not change a quantity carry the original value exactly"
  }
 }

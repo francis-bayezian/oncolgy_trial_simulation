@@ -409,3 +409,19 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **Where:** `trial.population.protocol_query`, `spa3.protocol.query_path`
 - **Check:** retrieval records show matched_level 'disease' for a protocol whose condition names a disease the model holds
 - **Recorded:** 2026-10-10
+
+## L068 — one canonical value per case-study quantity (PASS)
+
+- **What went wrong:** the same quantity appeared with different values in different reports (Ctrough-evaluable count, P(at least the required number evaluable), serious-AE count), because figures, the feasibility report and the story each recomputed it, scenarios were simulated as separate noisy runs, and a historical arm-level estimate was shown next to a simulated incidence without saying which was which
+- **General rule:** the feasibility build writes `case_study_summary.json` (original protocol, scenarios kept apart, burden scenarios reported as the original value plus the expected change, historical evidence, definitions); every figure, report and story reads it and never recomputes; scenarios use common random numbers and expected values; a historical estimate is always labelled as evidence, a simulated value as this run's cohort
+- **Where:** `trial.feasibility.build` (case_study block), `scripts/feasibility_figures.py`, `scripts/presentation_story.py`, `scripts/comparison_report.py`
+- **Check:** one value per quantity across FEASIBILITY.md, PRESENTATION_STORY.md, COMPARISON.md and the figures
+- **Recorded:** 2026-10-10
+
+## L069 — response rates: same disease first, and the realised rate matches the input (PASS)
+
+- **What went wrong:** the response-rate input came from the generic subgroup ladder (all adult trials of the family, 26%), and the analysis stage realised a lower best overall response than its input because confirmation, assessment timing and the cut-off remove responders
+- **General rule:** a response-rate input walks a disease-first hierarchy over the evidence (same disease and similar drug-class set, same phase and era; then related classes; then the disease family; all oncology only as a flagged last resort), with the disease read as a word set without stage or setting words (word lists in the reference vocabulary); the analysis stage shifts each arm's latent response on the logit scale (pilot pass, own stream) so that the realised response equals the input in expectation; the realised rate of the final pass is reported as the simulated value, next to the input
+- **Where:** `trial.subgroups.response_hierarchy`, `estimate_response`, `disease_core`; `trial.quantify` (response variables); `trial.analysis_results` (response_calibration)
+- **Check:** data/validation/response_hierarchy.json: 2,099 held-out studies, median absolute error 0.152 against 0.186 for the generic ladder
+- **Recorded:** 2026-10-10
