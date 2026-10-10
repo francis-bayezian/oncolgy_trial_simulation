@@ -648,7 +648,7 @@ def figure9():
              f"{sae_act} (subcutaneous / intravenous)"),
             ("Is the population composition fixed?",
              f"Simulated eligible pool: {pct(fem_sim)} women, {pct(asian_sim)} Asian,\n{pct(hisp_sim)} Hispanic (one global mix)",
-             f"{pct(female)} women, {pct(asian)} Asian, {pct(hisp)} Hispanic:\nrecruitment geography shaped the mix" if n_tot else "—"),
+             f"{pct(female)} women, {pct(asian)} Asian, {pct(hisp)} Hispanic:\nrecruited population differed from the modelled global mix" if n_tot else "—"),
             ("Will the required PK numbers be retained?",
              "; ".join(f"P({short(w['endpoint']).split(',')[0]} ≥ {w['required']}) {pct(CO['p_requirement'][w['endpoint']], 1)}" for w in F["evaluability"] if w.get("required"))
              + f"\nat {TARGET} enrolled",
@@ -662,7 +662,7 @@ def figure9():
     ax.set_ylim(0, len(rows) + 0.8)
     ax.invert_yaxis()
     xs = [(0.0, 0.25, "Planning question", INK), (0.27, 0.42, "Feasibility assessment", ENR),
-          (0.71, 0.29, "What subsequently occurred", OBS)]
+          (0.68, 0.32, "What subsequently occurred", OBS)]
     for x, w, t, col in xs:
         ax.text(x, 0.35, t, fontsize=13.5, fontweight="bold", color=col, va="center")
     for i, r in enumerate(rows):
