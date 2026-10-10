@@ -401,3 +401,11 @@ Generated from `data/agent/lessons.jsonl` by `clinical_asset.agent.lessons` on 2
 - **Where:** `trial.journey.simulate_patient` (required visits), `trial.export_clinical` (visit_schedule.csv), `trial.visits.DAY_COL`, `trial.subgroups.choose_median_ladder`
 - **Check:** median ladders in data/validation/subgroup_ladder.json (median:*) with held-out errors
 - **Recorded:** 2026-10-09
+
+## L067 — disease-specific demographics (PASS)
+
+- **What went wrong:** simulated lung-cancer patients were 52-55% women (all-cancer average) although lung trials enrol about 40%: the population stage passed only the disease family to the demographic model, so the protocol was treated as a new, unseen disease of the family and the family's large between-disease spread (logit SD 1.45) pulled every share towards one half; the lung family also holds lymphangioleiomyomatosis (almost all women), raising the family-level share to 57%
+- **General rule:** the demographic query carries the protocol's mapped disease as well as its family, and each context level is resolved to the model's own node name (letter case, else the closest name of the same parent by word overlap, Jaccard at least 0.6)
+- **Where:** `trial.population.protocol_query`, `spa3.protocol.query_path`
+- **Check:** retrieval records show matched_level 'disease' for a protocol whose condition names a disease the model holds
+- **Recorded:** 2026-10-10

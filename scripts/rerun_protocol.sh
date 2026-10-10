@@ -46,7 +46,7 @@ lock "$T/cohorts" "$L/cohorts_v$V" cohorts --input studyspec=$SPEC/lock.json --i
   --input eligibility=$L/eligibility_v$V/lock.json
 locked "$L/outcomes_v$V" || $P build-outcome-model --studyspec "$SPEC" --facts "$FACTS_LOCK" --out "$T/outcomes" > "$T/outcomes.log"
 lock "$T/outcomes" "$L/outcomes_v$V" outcomes --input studyspec=$SPEC/lock.json --input facts=$FACTS_LOCK/lock.json \
-  --input simulation_parameters_v3=$V3_DIR/manifest.json --input simulation_parameters_v2=data/simulation_parameters_v2/manifest.json
+  --input simulation_parameters_v3=$V3_DIR/manifest.json --input simulation_parameters_v2=$(profile_path params_v2)/manifest.json
 OUT=$L/outcomes_v$V
 
 if [ "$ENGINE" = auto ]; then

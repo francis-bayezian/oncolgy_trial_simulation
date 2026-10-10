@@ -239,6 +239,8 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
     E = np.array([[p["evaluable"][w["endpoint"]] for w in windows] for p in pats], dtype=float)
 
     def evaluable_draws(n: int, weights: np.ndarray | None = None) -> np.ndarray:
+        # one fixed stream per enrolment size: the same question asked twice gets the same answer (canonical values)
+        rng = np.random.default_rng(20261009 + n)
         out = np.empty((DRAWS, len(windows)))
         base_w = weights if weights is not None else np.ones(n_enr)
         for d in range(DRAWS):
@@ -390,8 +392,12 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
     def scenario(name, how, pool=None, n=target, rate_mult=1.0, window=planned_years, female_target=None, fu_less=0):
         pool = pool if pool is not None else sorted(eligible)
         y = len(pool) / n_cand
-        w = composition_weights(pool)
-        sae = float(np.sum(w * np.array([p["sae"] for p in pats])) / np.sum(w))
+        # weights relative to the original eligible pool: a scenario that does not change who is eligible has weight 1
+        # for every patient and returns the original protocol's values exactly
+        w = composition_weights(pool) / composition_weights(sorted(eligible))
+        w = None if np.allclose(w, 1.0) else w
+        ws = np.ones(n_enr) if w is None else w
+        sae = float(np.sum(ws * np.array([p["sae"] for p in pats])) / np.sum(ws))
         fem_pool = sum(cand_g[pid].get("Sex") == "female" for pid in pool) / len(pool)
         old = sum(cand_g[pid].get("Age") == "65 years or older" for pid in pool) / len(pool)
         screen_mult = 1.0
@@ -407,13 +413,15 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
         ok = np.ones(DRAWS, bool)
         evals = {}
         for j, ww in enumerate(windows):
-            evals[ww["endpoint"]] = float(np.median(d[:, j]))
+            # expected evaluable count (deterministic): the original protocol gives the simulated count itself
+            evals[ww["endpoint"]] = float(n * np.sum(ws * E[:, j]) / np.sum(ws))
             if ww["required"]:
                 ok &= d[:, j] >= ww["required"]
         return {"scenario": name, "how": how, "eligible_pct": y, "screened_per_enrollee": nns, "screened_for_target": n * nns,
                 "median_recruitment_months": median_years(n, mult) * 12, "p_recruit_in_window": p_complete_by(window, n, mult) if window else None,
                 "window_months": window * 12 if window else None, "female_pct": fem, "age65_pct": old,
                 "sae_rate": sae, "sae_patients": sae * n, "enrolled": n, "evaluable_median": evals,
+                "p_requirement": {ww["endpoint"]: float((d[:, j] >= ww["required"]).mean()) for j, ww in enumerate(windows) if ww["required"]},
                 "p_evaluable_all": float(ok.mean()), "p_objectives": float(ok.mean()) * (p_ni if p_ni is not None else 1.0),
                 "fu_visits_per_patient": burden["Follow-up visits"]["median"] - fu_less,
                 "visit_days_per_patient": burden["Clinic visit days"]["median"] - fu_less}
@@ -453,21 +461,76 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
             s["asian_pct"] = sum(cand_g[pid].get("Race") == "Asian" for pid in eligible) / len(eligible)
             s["hispanic_pct"] = sum(cand_g[pid].get("Ethnicity") == "Hispanic or Latino" for pid in eligible) / len(eligible)
     longitudinal = _longitudinal(nct, version, st, journey, windows, target, rng) if (st("journey") / "visit_schedule.csv").exists() else None
+    # ---- the canonical case-study values (L068): every report and figure reads these; scenario values are kept apart,
+    # and a scenario's change is added to the original protocol's value, never substituted for it
+    at = next(r for r in curve if r["enrolled"] == target)
+    ev_canon = {w["endpoint"]: w["evaluable"] for w in windows}
+    p_req = {w["endpoint"]: at[w["endpoint"]]["p_meets"] for w in windows if w["required"]}
+    vs_rows = _read_csv(st("journey") / "visit_schedule.csv") if (st("journey") / "visit_schedule.csv").exists() else []
+    withdrawn = {r["USUBJID"] for r in adsl if (r["EOTREAS"] or "").startswith("withdrawal")} | \
+        {r["USUBJID"] for r in vs_rows if r["STATUS"] == "not attended: withdrew"}
+    wd_sim = len(withdrawn) / n_enr
+    death_sim = sum(r["DTHFL"] == "Y" for r in adsl) / n_enr
+    o = scen[0]
+    o.update({"evaluable_median": dict(ev_canon), "p_requirement": dict(p_req), "p_evaluable_all": at["p_all"],
+              "p_objectives": at["p_all"] * (p_ni if p_ni is not None else 1.0), "sae_rate": overall_sae, "sae_patients": overall_sae * target})
+    for s in scen:
+        s["withdrawal_pct"] = wd_sim
     if longitudinal:
         bs = {b["scenario"]: b for b in longitudinal["burden_scenarios"]}
-        orig = bs.get("Original protocol")
-        for s in scen:
-            s["withdrawal_pct"] = orig["withdrawn_share"] if orig else None
+        b0 = bs.get("Original protocol")
+        for b in longitudinal["burden_scenarios"]:
+            d_ev = {ep: b["evaluable"][ep] - b0["evaluable"][ep] for ep in b["evaluable"]}
+            d_p = {ep: b["p_required"][ep] - b0["p_required"][ep] for ep in b["p_required"]}
+            b["reported"] = {"withdrawal_rate": wd_sim + (b["withdrawn_share"] - b0["withdrawn_share"]),
+                             "evaluable": {ep: ev_canon[ep] + d_ev[ep] for ep in d_ev},
+                             "p_requirement": {ep: min(1.0, max(0.0, p_req.get(ep, 0.0) + d_p[ep])) for ep in d_p if ep in p_req},
+                             "p_joint": min(1.0, max(0.0, at["p_all"] + b["p_all_required"] - b0["p_all_required"])),
+                             "basis": "original protocol's simulated value plus this schedule's expected change"}
         fewer = bs.get("One fewer follow-up visit")
         row = next((s for s in scen if s["scenario"] == "One fewer follow-up visit"), None)
         if fewer and row:
-            # the burden-dependent journey for this schedule (L064): withdrawal, evaluable data and the objectives move with it
+            rp = fewer["reported"]
             row.update({"how": fewer["how"] + "; withdrawal from the registry burden association for the change in visits per "
-                               "patient-month, distributed over each patient's attended visits",
-                        "withdrawal_pct": fewer["withdrawn_share"], "evaluable_median": fewer["evaluable"],
-                        "p_evaluable_all": fewer["p_all_required"],
-                        "p_objectives": fewer["p_all_required"] * (p_ni if p_ni is not None else 1.0),
-                        "visit_days_per_patient": row["visit_days_per_patient"]})
+                               "patient-month, distributed over each patient's attended visits; reported as the original protocol's "
+                               "value plus the schedule's expected change",
+                        "withdrawal_pct": rp["withdrawal_rate"], "evaluable_median": rp["evaluable"], "p_requirement": rp["p_requirement"],
+                        "p_evaluable_all": rp["p_joint"], "p_objectives": rp["p_joint"] * (p_ni if p_ni is not None else 1.0)})
+    hist_sae = None
+    tof = st("outputs") / "trial_outputs.json"
+    if tof.exists():
+        arms_e = ((json.loads(tof.read_text(encoding="utf-8")).get("feasibility") or {}).get("subgroup_estimates") or {}).get("arms") or {}
+        vals = [a["serious_adverse_event"]["headline"]["estimate"] for a in arms_e.values() if a.get("serious_adverse_event")]
+        hist_sae = sum(vals) / len(vals) if vals else None
+    var = (rni or {}).get("variability") or {}
+    case_study = {
+        "original_protocol": {
+            "enrolled": n_enr, "candidates": n_cand, "eligible": len(eligible), "eligible_rate": yield_,
+            "screened_per_eligible": 1 / yield_, "screened_to_find_target": target / yield_,
+            "evaluable": ev_canon, "p_requirement": p_req, "p_joint_requirement": at["p_all"],
+            "p_primary_success_at_design": p_ni, "p_objectives": at["p_all"] * (p_ni if p_ni is not None else 1.0),
+            "sae_rate_simulated": overall_sae, "sae_count_simulated": round(overall_sae * n_enr),
+            "withdrawal_rate_simulated": wd_sim, "withdrawal_rate_predicted": ((longitudinal or {}).get("withdrawal_model") or {}).get("protocol", {}).get("share"),
+            "death_rate_simulated": death_sim,
+            "recruitment": {"required_per_year": required_rate, "required_percentile": req_pct,
+                            "p_complete_in_planned_window": p_complete_by(planned_years) if planned_years else None,
+                            "median_months": median_years() * 12, "planned_months": planned_years * 12 if planned_years else None}},
+        "scenarios": scen,
+        "burden_scenarios": (longitudinal or {}).get("burden_scenarios"),
+        "historical_evidence": {
+            "sae_rate_arm_level": hist_sae, "recruitment_median_per_year": math.exp(mu),
+            "pk_cv_auc_registry": (var.get("AN1") or {}).get("registry", {}).get("median_cv"),
+            "pk_cv_ctrough_registry": (var.get("AN2") or {}).get("registry", {}).get("median_cv"),
+            "pk_cv_auc_protocol": (var.get("AN1") or {}).get("protocol_derived_cv"),
+            "pk_cv_ctrough_protocol": (var.get("AN2") or {}).get("protocol_derived_cv")},
+        "definitions": {
+            "evaluable": "simulated patients treated and on study through the endpoint's sampling day (this run's count)",
+            "p_requirement": "Bayesian bootstrap of this run's patients at the target enrolment (4,000 draws, fixed stream)",
+            "sae_rate_simulated": "simulated cohort incidence of any serious adverse event (this run)",
+            "sae_rate_arm_level": "historical arm-level estimate from comparable registry trials (evidence, not a simulated value)",
+            "withdrawal_rate_simulated": "share of this run's patients who withdrew (on treatment or from follow-up)",
+            "withdrawal_rate_predicted": "registry protocol-burden model's prediction for this protocol",
+            "scenarios": "each scenario reports its own values; scenarios that do not change a quantity carry the original value exactly"}}
 
     doc = {"version": VERSION, "nct_id": nct, "run_version": version, "target": target,
            "protocol": _protocol_summary(spec, journey, windows, target),
@@ -486,7 +549,7 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
                            "site_count": hist.get("site_count")},
            "completeness": completeness, "burden": burden, "withdrawal_rate": {a: v.get("value") for a, v in withdrawal.items()},
            "safety": safety, "overall_sae": overall_sae, "p_primary_success_at_design": p_ni, "scenarios": scen,
-           "longitudinal": longitudinal,
+           "longitudinal": longitudinal, "case_study": case_study,
            "derivations": {
                "eligibility": "each simulated candidate's eligibility outcome; sequential funnel removes a candidate at the first category it fails",
                "gain_if_relaxed": "candidates who fail only that criterion",
@@ -498,6 +561,7 @@ def build(nct: str, version: str, out_dir: Path) -> dict:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     (out / "feasibility.json").write_text(json.dumps(doc, indent=1, default=str), encoding="utf-8")
+    (out / "case_study_summary.json").write_text(json.dumps(case_study, indent=1, default=str), encoding="utf-8")
     (out / "FEASIBILITY.md").write_text(render(doc), encoding="utf-8")
     return doc
 
@@ -574,9 +638,10 @@ def _longitudinal(nct: str, version: str, st, journey: dict, windows: list[dict]
             return (1 - h) ** sum(1 for d in days if d <= t)
         P = np.array([[float(tr and off >= w["on_study_day"]) * p_on(h, days, w["on_study_day"]) for w in windows] for h, days, tr, off in keep])
         draws = np.empty((2000, len(windows)))
+        brng = np.random.default_rng(20261010)          # the same stream for every schedule: differences are the schedule's
         for k in range(2000):
-            idx = rng.choice(len(P), size=target, p=rng.dirichlet(np.ones(len(P))))
-            draws[k] = (rng.random((target, len(windows))) < P[idx]).sum(axis=0)
+            idx = brng.choice(len(P), size=target, p=brng.dirichlet(np.ones(len(P))))
+            draws[k] = (brng.random((target, len(windows))) < P[idx]).sum(axis=0)
         req_n = np.array([w.get("required") or 0 for w in windows])
         ok = draws >= req_n
         exp_withdraw = float(np.mean([1 - (1 - h) ** len(days) for h, days, _, _ in keep]))
@@ -712,8 +777,25 @@ def render(doc: dict) -> str:
     P, R = doc["protocol"], doc["recruitment"]
     L = [f"# {doc['nct_id']}: protocol feasibility (run v{doc['run_version']}, {doc['version']})", "",
          "Every number below comes from the locked simulation run (screened population, eligibility, enrolled cohort, patient "
-         "journey, planning report, primary-engine results). How each is derived is stated with it and in section 9.", "",
-         "## 1. What the protocol demands", "",
+         "journey, planning report, primary-engine results). How each is derived is stated with it and in section 9.", ""]
+    cs = doc.get("case_study")
+    if cs:
+        o, h = cs["original_protocol"], cs["historical_evidence"]
+        L += ["## 0. Case-study values (canonical: every figure and table uses these)", "", "| Quantity | Value |", "| --- | ---: |",
+              f"| Enrolled | {o['enrolled']} |", f"| Eligible rate | {_p(o['eligible_rate'], 1)} |",
+              f"| Candidates screened per eligible patient | {o['screened_per_eligible']:.2f} |"]
+        L += [f"| Evaluable: {ep} | {n} |" for ep, n in o["evaluable"].items()]
+        L += [f"| P(evaluable {ep} meets its requirement) | {_p(p, 1)} |" for ep, p in o["p_requirement"].items()]
+        L += [f"| P(all requirements met) | {_p(o['p_joint_requirement'], 1)} |",
+              f"| Serious AE, simulated cohort incidence | {_p(o['sae_rate_simulated'], 1)} ({o['sae_count_simulated']} of {o['enrolled']}) |",
+              f"| Withdrawal, simulated cohort | {_p(o['withdrawal_rate_simulated'], 1)} |",
+              f"| Withdrawal, registry burden model prediction | {_p(o['withdrawal_rate_predicted'], 1)} |",
+              f"| Death, simulated cohort | {_p(o['death_rate_simulated'], 1)} |", "",
+              "Historical evidence (not simulated values): "
+              f"serious AE arm-level estimate {_p(h['sae_rate_arm_level'], 1)}; recruitment median {h['recruitment_median_per_year']:.0f}/year; "
+              f"PK CV {_p(h['pk_cv_auc_registry'])} (AUC) and {_p(h['pk_cv_ctrough_registry'])} (Ctrough) in comparable trials, "
+              f"{_p(h['pk_cv_auc_protocol'])} and {_p(h['pk_cv_ctrough_protocol'])} assumed by the protocol.", ""]
+    L += ["## 1. What the protocol demands", "",
          f"- Target enrolment {P['target_enrolment']}, allocation {':'.join(f'{x:g}' for x in P['allocation'] or [])}, arms: {'; '.join(P['arms'])}",
          f"- Primary endpoints and required evaluable participants: "
          + "; ".join(f"{k} ({v})" for k, v in P["required_evaluable"].items()),

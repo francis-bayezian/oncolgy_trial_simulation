@@ -1,0 +1,1286 @@
+{
+ "original_protocol": {
+  "enrolled": 378,
+  "candidates": 10000,
+  "eligible": 7124,
+  "eligible_rate": 0.7124,
+  "screened_per_eligible": 1.403705783267827,
+  "screened_to_find_target": 530.6007860752386,
+  "evaluable": {
+   "Cycle 1 AUC0-6wks": 366,
+   "Steady-state (Cycle 3) Ctrough": 263
+  },
+  "p_requirement": {
+   "Cycle 1 AUC0-6wks": 1.0,
+   "Steady-state (Cycle 3) Ctrough": 0.96625
+  },
+  "p_joint_requirement": 0.96625,
+  "p_primary_success_at_design": 0.9995,
+  "p_objectives": 0.9657668750000001,
+  "sae_rate_simulated": 0.3968253968253968,
+  "sae_count_simulated": 150,
+  "withdrawal_rate_simulated": 0.07671957671957672,
+  "withdrawal_rate_predicted": 0.06926478693405927,
+  "death_rate_simulated": 0.12433862433862433,
+  "recruitment": {
+   "required_per_year": 453.78151260504205,
+   "required_percentile": 0.9158230797614162,
+   "p_complete_in_planned_window": 0.08417692023858381,
+   "median_months": 71.90027699769786,
+   "planned_months": 9.995999999999999
+  }
+ },
+ "scenarios": [
+  {
+   "scenario": "Original protocol",
+   "how": "the locked simulation",
+   "eligible_pct": 0.7124,
+   "screened_per_enrollee": 1.403705783267827,
+   "screened_for_target": 530.6007860752386,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.08417692023858381,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.397950589556429,
+   "age65_pct": 0.4249017405951713,
+   "sae_rate": 0.3968253968253968,
+   "sae_patients": 150.0,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 366,
+    "Steady-state (Cycle 3) Ctrough": 263
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.96625
+   },
+   "p_evaluable_all": 0.96625,
+   "p_objectives": 0.9657668750000001,
+   "fu_visits_per_patient": 5.0,
+   "visit_days_per_patient": 23.0,
+   "asian_pct": 0.15398652442448063,
+   "hispanic_pct": 0.05221785513756317,
+   "withdrawal_pct": 0.07671957671957672
+  },
+  {
+   "scenario": "Relax: ECOG performance status",
+   "how": "patients failing only EL012 become eligible; enrolment rate scales with the eligible yield at a fixed screening throughput; their adverse-event and evaluability risk follows their age and sex as in the simulated patients",
+   "eligible_pct": 0.7557,
+   "screened_per_enrollee": 1.323276432446738,
+   "screened_for_target": 500.198491464867,
+   "median_recruitment_months": 67.78054430747648,
+   "p_recruit_in_window": 0.09072261758535749,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.40042344845838296,
+   "age65_pct": 0.4280799258965198,
+   "sae_rate": 0.3966674272739179,
+   "sae_patients": 149.94028750954098,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 366.03095541177976,
+    "Steady-state (Cycle 3) Ctrough": 263.0022926583403
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.966
+   },
+   "p_evaluable_all": 0.966,
+   "p_objectives": 0.9655170000000001,
+   "fu_visits_per_patient": 5.0,
+   "visit_days_per_patient": 23.0,
+   "asian_pct": 0.15398652442448063,
+   "hispanic_pct": 0.05221785513756317,
+   "withdrawal_pct": 0.07671957671957672
+  },
+  {
+   "scenario": "20% more sites",
+   "how": "enrolment rate x 1.2^0.468 (the historical accrual model's site coefficient)",
+   "eligible_pct": 0.7124,
+   "screened_per_enrollee": 1.403705783267827,
+   "screened_for_target": 530.6007860752386,
+   "median_recruitment_months": 66.02302928823559,
+   "p_recruit_in_window": 0.0937556886354396,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.397950589556429,
+   "age65_pct": 0.4249017405951713,
+   "sae_rate": 0.3968253968253968,
+   "sae_patients": 150.0,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 366.0,
+    "Steady-state (Cycle 3) Ctrough": 263.0
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.96625
+   },
+   "p_evaluable_all": 0.96625,
+   "p_objectives": 0.9657668750000001,
+   "fu_visits_per_patient": 5.0,
+   "visit_days_per_patient": 23.0,
+   "asian_pct": 0.15398652442448063,
+   "hispanic_pct": 0.05221785513756317,
+   "withdrawal_pct": 0.07671957671957672
+  },
+  {
+   "scenario": "Recruitment window +6 months",
+   "how": "the planned window extended by 6 months",
+   "eligible_pct": 0.7124,
+   "screened_per_enrollee": 1.403705783267827,
+   "screened_for_target": 530.6007860752386,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.14702563325629225,
+   "window_months": 15.995999999999999,
+   "female_pct": 0.397950589556429,
+   "age65_pct": 0.4249017405951713,
+   "sae_rate": 0.3968253968253968,
+   "sae_patients": 150.0,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 366.0,
+    "Steady-state (Cycle 3) Ctrough": 263.0
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.96625
+   },
+   "p_evaluable_all": 0.96625,
+   "p_objectives": 0.9657668750000001,
+   "fu_visits_per_patient": 5.0,
+   "visit_days_per_patient": 23.0,
+   "asian_pct": 0.15398652442448063,
+   "hispanic_pct": 0.05221785513756317,
+   "withdrawal_pct": 0.07671957671957672
+  },
+  {
+   "scenario": "Regional mix: +20 points East Asia",
+   "how": "eligible candidates re-weighted to 37% from East Asia (from 17%)",
+   "eligible_pct": 0.7124,
+   "screened_per_enrollee": 1.403705783267827,
+   "screened_for_target": 530.6007860752386,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.08417692023858381,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.39755555420294564,
+   "age65_pct": 0.4246884152774745,
+   "sae_rate": 0.3968253968253968,
+   "sae_patients": 150.0,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 366.0,
+    "Steady-state (Cycle 3) Ctrough": 263.0
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.96625
+   },
+   "p_evaluable_all": 0.96625,
+   "p_objectives": 0.9657668750000001,
+   "fu_visits_per_patient": 5.0,
+   "visit_days_per_patient": 23.0,
+   "asian_pct": 0.15572100615393258,
+   "hispanic_pct": 0.0531874281883282,
+   "withdrawal_pct": 0.07671957671957672
+  },
+  {
+   "scenario": "50% female target",
+   "how": "enrolment held to 50% women; the scarcer sex limits accrual",
+   "eligible_pct": 0.7124,
+   "screened_per_enrollee": 1.763668430335097,
+   "screened_for_target": 666.6666666666666,
+   "median_recruitment_months": 90.33819635477947,
+   "p_recruit_in_window": 0.06216061980400467,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.5,
+   "age65_pct": 0.4249017405951713,
+   "sae_rate": 0.3968253968253968,
+   "sae_patients": 150.0,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 366.0,
+    "Steady-state (Cycle 3) Ctrough": 263.0
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.96625
+   },
+   "p_evaluable_all": 0.96625,
+   "p_objectives": 0.9657668750000001,
+   "fu_visits_per_patient": 5.0,
+   "visit_days_per_patient": 23.0,
+   "asian_pct": 0.15398652442448063,
+   "hispanic_pct": 0.05221785513756317,
+   "withdrawal_pct": 0.07671957671957672
+  },
+  {
+   "scenario": "Enrolment +10%",
+   "how": "416 enrolled",
+   "eligible_pct": 0.7124,
+   "screened_per_enrollee": 1.403705783267827,
+   "screened_for_target": 583.9416058394161,
+   "median_recruitment_months": 79.1283471720696,
+   "p_recruit_in_window": 0.0743148074895712,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.397950589556429,
+   "age65_pct": 0.4249017405951713,
+   "sae_rate": 0.3968253968253968,
+   "sae_patients": 165.07936507936506,
+   "enrolled": 416,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 402.7936507936508,
+    "Steady-state (Cycle 3) Ctrough": 289.4391534391534
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.99975
+   },
+   "p_evaluable_all": 0.99975,
+   "p_objectives": 0.9992501250000001,
+   "fu_visits_per_patient": 5.0,
+   "visit_days_per_patient": 23.0,
+   "asian_pct": 0.15398652442448063,
+   "hispanic_pct": 0.05221785513756317,
+   "withdrawal_pct": 0.07671957671957672
+  },
+  {
+   "scenario": "One fewer follow-up visit",
+   "how": "the first survival follow-up visit after treatment dropped; withdrawal from the registry burden association for the change in visits per patient-month, distributed over each patient's attended visits; reported as the original protocol's value plus the schedule's expected change",
+   "eligible_pct": 0.7124,
+   "screened_per_enrollee": 1.403705783267827,
+   "screened_for_target": 530.6007860752386,
+   "median_recruitment_months": 71.90027699769786,
+   "p_recruit_in_window": 0.08417692023858381,
+   "window_months": 9.995999999999999,
+   "female_pct": 0.397950589556429,
+   "age65_pct": 0.4249017405951713,
+   "sae_rate": 0.3968253968253968,
+   "sae_patients": 150.0,
+   "enrolled": 378,
+   "evaluable_median": {
+    "Cycle 1 AUC0-6wks": 366.0,
+    "Steady-state (Cycle 3) Ctrough": 262.90000000000003
+   },
+   "p_requirement": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.96575
+   },
+   "p_evaluable_all": 0.96575,
+   "p_objectives": 0.965267125,
+   "fu_visits_per_patient": 4.0,
+   "visit_days_per_patient": 22.0,
+   "asian_pct": 0.15398652442448063,
+   "hispanic_pct": 0.05221785513756317,
+   "withdrawal_pct": 0.07651907615408068
+  }
+ ],
+ "burden_scenarios": [
+  {
+   "scenario": "Original protocol",
+   "how": "the protocol's schedule",
+   "predicted_withdrawal_share": 0.06926478693405927,
+   "per_visit_hazard": 0.001554537016172419,
+   "visits_per_patient_month": 2.0453572152017077,
+   "withdrawn_share": 0.069264786934058,
+   "withdrawn_share_one_draw": 0.07671957671957672,
+   "retention": [
+    {
+     "day": 0,
+     "not_withdrawn": 1.0
+    },
+    {
+     "day": 14,
+     "not_withdrawn": 0.9968161296561985
+    },
+    {
+     "day": 28,
+     "not_withdrawn": 0.9936598460163516
+    },
+    {
+     "day": 42,
+     "not_withdrawn": 0.9905221487105025
+    },
+    {
+     "day": 56,
+     "not_withdrawn": 0.9873985409767458
+    },
+    {
+     "day": 70,
+     "not_withdrawn": 0.9843018012771971
+    },
+    {
+     "day": 84,
+     "not_withdrawn": 0.9812479991080374
+    },
+    {
+     "day": 98,
+     "not_withdrawn": 0.9785840635883742
+    },
+    {
+     "day": 112,
+     "not_withdrawn": 0.9763081435717296
+    },
+    {
+     "day": 126,
+     "not_withdrawn": 0.9740434936578433
+    },
+    {
+     "day": 140,
+     "not_withdrawn": 0.9717943918133454
+    },
+    {
+     "day": 154,
+     "not_withdrawn": 0.96956539958131
+    },
+    {
+     "day": 168,
+     "not_withdrawn": 0.9673435199862186
+    },
+    {
+     "day": 182,
+     "not_withdrawn": 0.9650892981403956
+    },
+    {
+     "day": 196,
+     "not_withdrawn": 0.9635532766043369
+    },
+    {
+     "day": 210,
+     "not_withdrawn": 0.9620221547155215
+    },
+    {
+     "day": 224,
+     "not_withdrawn": 0.9604959168219706
+    },
+    {
+     "day": 238,
+     "not_withdrawn": 0.9589784540459296
+    },
+    {
+     "day": 252,
+     "not_withdrawn": 0.9574697326254096
+    },
+    {
+     "day": 266,
+     "not_withdrawn": 0.9554567621704254
+    },
+    {
+     "day": 280,
+     "not_withdrawn": 0.9543470593314815
+    },
+    {
+     "day": 294,
+     "not_withdrawn": 0.9532408940105453
+    },
+    {
+     "day": 308,
+     "not_withdrawn": 0.9521382549143427
+    },
+    {
+     "day": 322,
+     "not_withdrawn": 0.9510434998851699
+    },
+    {
+     "day": 336,
+     "not_withdrawn": 0.9499681979352441
+    },
+    {
+     "day": 350,
+     "not_withdrawn": 0.9481669142145829
+    },
+    {
+     "day": 364,
+     "not_withdrawn": 0.9473947483653702
+    },
+    {
+     "day": 378,
+     "not_withdrawn": 0.9466291242778685
+    },
+    {
+     "day": 392,
+     "not_withdrawn": 0.9458617930913377
+    },
+    {
+     "day": 406,
+     "not_withdrawn": 0.9451046563004843
+    },
+    {
+     "day": 420,
+     "not_withdrawn": 0.9443572174507553
+    },
+    {
+     "day": 434,
+     "not_withdrawn": 0.942708055404782
+    },
+    {
+     "day": 448,
+     "not_withdrawn": 0.942154215145217
+    },
+    {
+     "day": 462,
+     "not_withdrawn": 0.9416021292247919
+    },
+    {
+     "day": 476,
+     "not_withdrawn": 0.9410476576592967
+    },
+    {
+     "day": 490,
+     "not_withdrawn": 0.9404951691560106
+    },
+    {
+     "day": 504,
+     "not_withdrawn": 0.9399442063341558
+    },
+    {
+     "day": 518,
+     "not_withdrawn": 0.9383793407483739
+    },
+    {
+     "day": 532,
+     "not_withdrawn": 0.937924384897422
+    },
+    {
+     "day": 546,
+     "not_withdrawn": 0.9374781756133034
+    },
+    {
+     "day": 560,
+     "not_withdrawn": 0.9370292559985756
+    },
+    {
+     "day": 574,
+     "not_withdrawn": 0.9365819879121642
+    },
+    {
+     "day": 588,
+     "not_withdrawn": 0.9361359167963188
+    },
+    {
+     "day": 602,
+     "not_withdrawn": 0.9346567374089367
+    },
+    {
+     "day": 616,
+     "not_withdrawn": 0.9343203015316806
+    },
+    {
+     "day": 630,
+     "not_withdrawn": 0.9339849331257367
+    },
+    {
+     "day": 644,
+     "not_withdrawn": 0.9336465083098295
+    },
+    {
+     "day": 658,
+     "not_withdrawn": 0.9333093821951362
+    },
+    {
+     "day": 672,
+     "not_withdrawn": 0.9329731031284991
+    },
+    {
+     "day": 686,
+     "not_withdrawn": 0.9315650249259162
+    },
+    {
+     "day": 700,
+     "not_withdrawn": 0.9313281729922163
+    },
+    {
+     "day": 714,
+     "not_withdrawn": 0.9310920727553517
+    },
+    {
+     "day": 728,
+     "not_withdrawn": 0.930852608284225
+    }
+   ],
+   "evaluable": {
+    "Cycle 1 AUC0-6wks": 370.4,
+    "Steady-state (Cycle 3) Ctrough": 267.2
+   },
+   "p_required": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.9885
+   },
+   "p_all_required": 0.9885,
+   "visits_completed_expected": 0.9528418409753753,
+   "visits_per_patient": 45.63227513227513,
+   "basis": "expected values over the patients' own disease courses (no-withdrawal pass) and the per-visit hazard",
+   "reported": {
+    "withdrawal_rate": 0.07671957671957672,
+    "evaluable": {
+     "Cycle 1 AUC0-6wks": 366.0,
+     "Steady-state (Cycle 3) Ctrough": 263.0
+    },
+    "p_requirement": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.96625
+    },
+    "p_joint": 0.9662500000000002,
+    "basis": "original protocol's simulated value plus this schedule's expected change"
+   }
+  },
+  {
+   "scenario": "One fewer follow-up visit",
+   "how": "the first survival follow-up visit after treatment dropped",
+   "predicted_withdrawal_share": 0.0690642863685635,
+   "per_visit_hazard": 0.0015777596304737405,
+   "visits_per_patient_month": 2.0090722532994687,
+   "withdrawn_share": 0.06906428636856198,
+   "withdrawn_share_one_draw": 0.07671957671957672,
+   "retention": [
+    {
+     "day": 0,
+     "not_withdrawn": 1.0
+    },
+    {
+     "day": 14,
+     "not_withdrawn": 0.996766030425551
+    },
+    {
+     "day": 28,
+     "not_withdrawn": 0.9935602628352006
+    },
+    {
+     "day": 42,
+     "not_withdrawn": 0.9903735385003966
+    },
+    {
+     "day": 56,
+     "not_withdrawn": 0.9872012814088681
+    },
+    {
+     "day": 70,
+     "not_withdrawn": 0.984056477867446
+    },
+    {
+     "day": 84,
+     "not_withdrawn": 0.9809554309131052
+    },
+    {
+     "day": 98,
+     "not_withdrawn": 0.9782504117315355
+    },
+    {
+     "day": 112,
+     "not_withdrawn": 0.9759395104320828
+    },
+    {
+     "day": 126,
+     "not_withdrawn": 0.9736401658074076
+    },
+    {
+     "day": 140,
+     "not_withdrawn": 0.9713567269127708
+    },
+    {
+     "day": 154,
+     "not_withdrawn": 0.96909383977766
+    },
+    {
+     "day": 168,
+     "not_withdrawn": 0.9668382875723148
+    },
+    {
+     "day": 182,
+     "not_withdrawn": 0.9649317912808011
+    },
+    {
+     "day": 196,
+     "not_withdrawn": 0.9633726637980493
+    },
+    {
+     "day": 210,
+     "not_withdrawn": 0.9618185882183109
+    },
+    {
+     "day": 224,
+     "not_withdrawn": 0.9602695481468259
+    },
+    {
+     "day": 238,
+     "not_withdrawn": 0.9587294892850567
+    },
+    {
+     "day": 252,
+     "not_withdrawn": 0.9571983766010598
+    },
+    {
+     "day": 266,
+     "not_withdrawn": 0.955488408901099
+    },
+    {
+     "day": 280,
+     "not_withdrawn": 0.9543623728308539
+    },
+    {
+     "day": 294,
+     "not_withdrawn": 0.9532399829645569
+    },
+    {
+     "day": 308,
+     "not_withdrawn": 0.9521212274772899
+    },
+    {
+     "day": 322,
+     "not_withdrawn": 0.9510145034779265
+    },
+    {
+     "day": 336,
+     "not_withdrawn": 0.9499236169856939
+    },
+    {
+     "day": 350,
+     "not_withdrawn": 0.9482886995294811
+    },
+    {
+     "day": 364,
+     "not_withdrawn": 0.9475054510572174
+    },
+    {
+     "day": 378,
+     "not_withdrawn": 0.9467288834874017
+    },
+    {
+     "day": 392,
+     "not_withdrawn": 0.9459548237534198
+    },
+    {
+     "day": 406,
+     "not_withdrawn": 0.9451869311141918
+    },
+    {
+     "day": 420,
+     "not_withdrawn": 0.9444330854781603
+    },
+    {
+     "day": 434,
+     "not_withdrawn": 0.9428930761760268
+    },
+    {
+     "day": 448,
+     "not_withdrawn": 0.9423315119805344
+    },
+    {
+     "day": 462,
+     "not_withdrawn": 0.9417717542818652
+    },
+    {
+     "day": 476,
+     "not_withdrawn": 0.9412095892040429
+    },
+    {
+     "day": 490,
+     "not_withdrawn": 0.9406494712693267
+    },
+    {
+     "day": 504,
+     "not_withdrawn": 0.940090918966609
+    },
+    {
+     "day": 518,
+     "not_withdrawn": 0.9385917999620808
+    },
+    {
+     "day": 532,
+     "not_withdrawn": 0.9381306108562982
+    },
+    {
+     "day": 546,
+     "not_withdrawn": 0.9376783069143811
+    },
+    {
+     "day": 560,
+     "not_withdrawn": 0.9372232610897362
+    },
+    {
+     "day": 574,
+     "not_withdrawn": 0.9367699207958076
+    },
+    {
+     "day": 588,
+     "not_withdrawn": 0.9363178075110676
+    },
+    {
+     "day": 602,
+     "not_withdrawn": 0.9348603894683932
+    },
+    {
+     "day": 616,
+     "not_withdrawn": 0.9345194506037974
+    },
+    {
+     "day": 630,
+     "not_withdrawn": 0.9341796103934944
+    },
+    {
+     "day": 644,
+     "not_withdrawn": 0.9338366716603748
+    },
+    {
+     "day": 658,
+     "not_withdrawn": 0.9334950748154365
+    },
+    {
+     "day": 672,
+     "not_withdrawn": 0.9331543444128292
+    },
+    {
+     "day": 686,
+     "not_withdrawn": 0.931776353629997
+    },
+    {
+     "day": 700,
+     "not_withdrawn": 0.9315364016644684
+    },
+    {
+     "day": 714,
+     "not_withdrawn": 0.9312972231337842
+    },
+    {
+     "day": 728,
+     "not_withdrawn": 0.9310546291036255
+    }
+   ],
+   "evaluable": {
+    "Cycle 1 AUC0-6wks": 370.4,
+    "Steady-state (Cycle 3) Ctrough": 267.1
+   },
+   "p_required": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.988
+   },
+   "p_all_required": 0.988,
+   "visits_completed_expected": 0.9523291372225069,
+   "visits_per_patient": 44.82275132275132,
+   "basis": "expected values over the patients' own disease courses (no-withdrawal pass) and the per-visit hazard",
+   "reported": {
+    "withdrawal_rate": 0.07651907615408068,
+    "evaluable": {
+     "Cycle 1 AUC0-6wks": 366.0,
+     "Steady-state (Cycle 3) Ctrough": 262.90000000000003
+    },
+    "p_requirement": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.96575
+    },
+    "p_joint": 0.96575,
+    "basis": "original protocol's simulated value plus this schedule's expected change"
+   }
+  },
+  {
+   "scenario": "Less frequent follow-up",
+   "how": "survival follow-up every 24 weeks instead of every 12",
+   "predicted_withdrawal_share": 0.06868585074983057,
+   "per_visit_hazard": 0.0016240505075886815,
+   "visits_per_patient_month": 1.9420755099178835,
+   "withdrawn_share": 0.06868585074983034,
+   "withdrawn_share_one_draw": 0.07936507936507936,
+   "retention": [
+    {
+     "day": 0,
+     "not_withdrawn": 1.0
+    },
+    {
+     "day": 14,
+     "not_withdrawn": 0.9966670688199234
+    },
+    {
+     "day": 28,
+     "not_withdrawn": 0.9933635633015507
+    },
+    {
+     "day": 42,
+     "not_withdrawn": 0.9900800166012855
+    },
+    {
+     "day": 56,
+     "not_withdrawn": 0.9868116984469518
+    },
+    {
+     "day": 70,
+     "not_withdrawn": 0.9835720015209043
+    },
+    {
+     "day": 84,
+     "not_withdrawn": 0.9803776938811776
+    },
+    {
+     "day": 98,
+     "not_withdrawn": 0.9775915886745231
+    },
+    {
+     "day": 112,
+     "not_withdrawn": 0.9752116573131208
+    },
+    {
+     "day": 126,
+     "not_withdrawn": 0.972843859586937
+    },
+    {
+     "day": 140,
+     "not_withdrawn": 0.9704926823057073
+    },
+    {
+     "day": 154,
+     "not_withdrawn": 0.9681629322734856
+    },
+    {
+     "day": 168,
+     "not_withdrawn": 0.9658409658752818
+    },
+    {
+     "day": 182,
+     "not_withdrawn": 0.9638785323281144
+    },
+    {
+     "day": 196,
+     "not_withdrawn": 0.962273840803705
+    },
+    {
+     "day": 210,
+     "not_withdrawn": 0.9606745084408032
+    },
+    {
+     "day": 224,
+     "not_withdrawn": 0.9590805173109311
+    },
+    {
+     "day": 238,
+     "not_withdrawn": 0.9574959215982758
+    },
+    {
+     "day": 252,
+     "not_withdrawn": 0.9559206836654061
+    },
+    {
+     "day": 266,
+     "not_withdrawn": 0.9541611544022979
+    },
+    {
+     "day": 280,
+     "not_withdrawn": 0.9530029336144182
+    },
+    {
+     "day": 294,
+     "not_withdrawn": 0.9518485782524194
+    },
+    {
+     "day": 308,
+     "not_withdrawn": 0.9506980753941223
+    },
+    {
+     "day": 322,
+     "not_withdrawn": 0.9495600786759355
+    },
+    {
+     "day": 336,
+     "not_withdrawn": 0.9484384943086053
+    },
+    {
+     "day": 350,
+     "not_withdrawn": 0.9471401532500079
+    },
+    {
+     "day": 364,
+     "not_withdrawn": 0.9463350708964774
+    },
+    {
+     "day": 378,
+     "not_withdrawn": 0.9455369447518699
+    },
+    {
+     "day": 392,
+     "not_withdrawn": 0.9447414747532028
+    },
+    {
+     "day": 406,
+     "not_withdrawn": 0.9439524125234406
+    },
+    {
+     "day": 420,
+     "not_withdrawn": 0.9431778552030128
+    },
+    {
+     "day": 434,
+     "not_withdrawn": 0.9419317947434663
+    },
+    {
+     "day": 448,
+     "not_withdrawn": 0.9413550076111402
+    },
+    {
+     "day": 462,
+     "not_withdrawn": 0.9407801322349264
+    },
+    {
+     "day": 476,
+     "not_withdrawn": 0.9402028251678017
+    },
+    {
+     "day": 490,
+     "not_withdrawn": 0.9396317542882436
+    },
+    {
+     "day": 504,
+     "not_withdrawn": 0.9390582697587112
+    },
+    {
+     "day": 518,
+     "not_withdrawn": 0.9380765910620242
+    },
+    {
+     "day": 532,
+     "not_withdrawn": 0.9376031387239843
+    },
+    {
+     "day": 546,
+     "not_withdrawn": 0.9371388476728185
+    },
+    {
+     "day": 560,
+     "not_withdrawn": 0.9366760998717687
+    },
+    {
+     "day": 574,
+     "not_withdrawn": 0.9362108247439489
+    },
+    {
+     "day": 588,
+     "not_withdrawn": 0.9357511480476883
+    },
+    {
+     "day": 602,
+     "not_withdrawn": 0.9347059524108545
+    },
+    {
+     "day": 616,
+     "not_withdrawn": 0.9343561616693168
+    },
+    {
+     "day": 630,
+     "not_withdrawn": 0.9340075323923392
+    },
+    {
+     "day": 644,
+     "not_withdrawn": 0.9336557313036766
+    },
+    {
+     "day": 658,
+     "not_withdrawn": 0.933309413381483
+    },
+    {
+     "day": 672,
+     "not_withdrawn": 0.932959946575826
+    },
+    {
+     "day": 686,
+     "not_withdrawn": 0.9321717164792191
+    },
+    {
+     "day": 700,
+     "not_withdrawn": 0.9319256774864493
+    },
+    {
+     "day": 714,
+     "not_withdrawn": 0.9316804556798367
+    },
+    {
+     "day": 728,
+     "not_withdrawn": 0.9314360483410864
+    }
+   ],
+   "evaluable": {
+    "Cycle 1 AUC0-6wks": 370.3,
+    "Steady-state (Cycle 3) Ctrough": 266.9
+   },
+   "p_required": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.9875
+   },
+   "p_all_required": 0.9875,
+   "visits_completed_expected": 0.950802030524298,
+   "visits_per_patient": 43.32804232804233,
+   "basis": "expected values over the patients' own disease courses (no-withdrawal pass) and the per-visit hazard",
+   "reported": {
+    "withdrawal_rate": 0.07614064053534905,
+    "evaluable": {
+     "Cycle 1 AUC0-6wks": 365.90000000000003,
+     "Steady-state (Cycle 3) Ctrough": 262.7
+    },
+    "p_requirement": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.96525
+    },
+    "p_joint": 0.96525,
+    "basis": "original protocol's simulated value plus this schedule's expected change"
+   }
+  },
+  {
+   "scenario": "Higher-burden follow-up",
+   "how": "survival follow-up every 6 weeks (the treatment cycle length) instead of every 12",
+   "predicted_withdrawal_share": 0.0704264457493244,
+   "per_visit_hazard": 0.0014259145037131547,
+   "visits_per_patient_month": 2.2667429141281144,
+   "withdrawn_share": 0.07042644574932498,
+   "withdrawn_share_one_draw": 0.082010582010582,
+   "retention": [
+    {
+     "day": 0,
+     "not_withdrawn": 1.0
+    },
+    {
+     "day": 14,
+     "not_withdrawn": 0.9970888088900046
+    },
+    {
+     "day": 28,
+     "not_withdrawn": 0.9942019788769618
+    },
+    {
+     "day": 42,
+     "not_withdrawn": 0.9913313438275732
+    },
+    {
+     "day": 56,
+     "not_withdrawn": 0.9884728244142378
+    },
+    {
+     "day": 70,
+     "not_withdrawn": 0.9856380849666082
+    },
+    {
+     "day": 84,
+     "not_withdrawn": 0.9828418972374487
+    },
+    {
+     "day": 98,
+     "not_withdrawn": 0.9804020497815672
+    },
+    {
+     "day": 112,
+     "not_withdrawn": 0.9783169949126643
+    },
+    {
+     "day": 126,
+     "not_withdrawn": 0.9762417056795029
+    },
+    {
+     "day": 140,
+     "not_withdrawn": 0.9738356043440598
+    },
+    {
+     "day": 154,
+     "not_withdrawn": 0.9717917779877151
+    },
+    {
+     "day": 168,
+     "not_withdrawn": 0.9697539133158034
+    },
+    {
+     "day": 182,
+     "not_withdrawn": 0.9676868709609736
+    },
+    {
+     "day": 196,
+     "not_withdrawn": 0.966277233345134
+    },
+    {
+     "day": 210,
+     "not_withdrawn": 0.9648717062656685
+    },
+    {
+     "day": 224,
+     "not_withdrawn": 0.9628215895498385
+    },
+    {
+     "day": 238,
+     "not_withdrawn": 0.9614278463253749
+    },
+    {
+     "day": 252,
+     "not_withdrawn": 0.9600417611023802
+    },
+    {
+     "day": 266,
+     "not_withdrawn": 0.958194940129036
+    },
+    {
+     "day": 280,
+     "not_withdrawn": 0.957171198659461
+    },
+    {
+     "day": 294,
+     "not_withdrawn": 0.9561540290630909
+    },
+    {
+     "day": 308,
+     "not_withdrawn": 0.9543288030120398
+    },
+    {
+     "day": 322,
+     "not_withdrawn": 0.9533215282167917
+    },
+    {
+     "day": 336,
+     "not_withdrawn": 0.9523318436234804
+    },
+    {
+     "day": 350,
+     "not_withdrawn": 0.9506752615364493
+    },
+    {
+     "day": 364,
+     "not_withdrawn": 0.9499604902659952
+    },
+    {
+     "day": 378,
+     "not_withdrawn": 0.9492513530466239
+    },
+    {
+     "day": 392,
+     "not_withdrawn": 0.9476206967534035
+    },
+    {
+     "day": 406,
+     "not_withdrawn": 0.946922791386448
+    },
+    {
+     "day": 420,
+     "not_withdrawn": 0.9462336759275075
+    },
+    {
+     "day": 434,
+     "not_withdrawn": 0.9447171734423455
+    },
+    {
+     "day": 448,
+     "not_withdrawn": 0.9442024531265903
+    },
+    {
+     "day": 462,
+     "not_withdrawn": 0.9436890402060686
+    },
+    {
+     "day": 476,
+     "not_withdrawn": 0.9422038752935576
+    },
+    {
+     "day": 490,
+     "not_withdrawn": 0.9416935915474445
+    },
+    {
+     "day": 504,
+     "not_withdrawn": 0.9411846029845546
+    },
+    {
+     "day": 518,
+     "not_withdrawn": 0.9397462844947081
+    },
+    {
+     "day": 532,
+     "not_withdrawn": 0.9393222471076255
+    },
+    {
+     "day": 546,
+     "not_withdrawn": 0.9389060223483228
+    },
+    {
+     "day": 560,
+     "not_withdrawn": 0.937487040506097
+    },
+    {
+     "day": 574,
+     "not_withdrawn": 0.9370733866190847
+    },
+    {
+     "day": 588,
+     "not_withdrawn": 0.9366607518963687
+    },
+    {
+     "day": 602,
+     "not_withdrawn": 0.9353020893659325
+    },
+    {
+     "day": 616,
+     "not_withdrawn": 0.9349870743986629
+    },
+    {
+     "day": 630,
+     "not_withdrawn": 0.9346727919657357
+    },
+    {
+     "day": 644,
+     "not_withdrawn": 0.933329470022461
+    },
+    {
+     "day": 658,
+     "not_withdrawn": 0.9330171643241403
+    },
+    {
+     "day": 672,
+     "not_withdrawn": 0.9327055839410137
+    },
+    {
+     "day": 686,
+     "not_withdrawn": 0.931413415346129
+    },
+    {
+     "day": 700,
+     "not_withdrawn": 0.9311902493056046
+    },
+    {
+     "day": 714,
+     "not_withdrawn": 0.930967550651805
+    },
+    {
+     "day": 728,
+     "not_withdrawn": 0.9296824888883549
+    }
+   ],
+   "evaluable": {
+    "Cycle 1 AUC0-6wks": 370.7,
+    "Steady-state (Cycle 3) Ctrough": 267.9
+   },
+   "p_required": {
+    "Cycle 1 AUC0-6wks": 1.0,
+    "Steady-state (Cycle 3) Ctrough": 0.99
+   },
+   "p_all_required": 0.99,
+   "visits_completed_expected": 0.955835554629594,
+   "visits_per_patient": 50.57142857142857,
+   "basis": "expected values over the patients' own disease courses (no-withdrawal pass) and the per-visit hazard",
+   "reported": {
+    "withdrawal_rate": 0.07788123553484369,
+    "evaluable": {
+     "Cycle 1 AUC0-6wks": 366.3,
+     "Steady-state (Cycle 3) Ctrough": 263.7
+    },
+    "p_requirement": {
+     "Cycle 1 AUC0-6wks": 1.0,
+     "Steady-state (Cycle 3) Ctrough": 0.96775
+    },
+    "p_joint": 0.96775,
+    "basis": "original protocol's simulated value plus this schedule's expected change"
+   }
+  }
+ ],
+ "historical_evidence": {
+  "sae_rate_arm_level": 0.3954217543502951,
+  "recruitment_median_per_year": 63.08737865008831,
+  "pk_cv_auc_registry": 0.37,
+  "pk_cv_ctrough_registry": 0.4,
+  "pk_cv_auc_protocol": 0.503,
+  "pk_cv_ctrough_protocol": 0.844
+ },
+ "definitions": {
+  "evaluable": "simulated patients treated and on study through the endpoint's sampling day (this run's count)",
+  "p_requirement": "Bayesian bootstrap of this run's patients at the target enrolment (4,000 draws, fixed stream)",
+  "sae_rate_simulated": "simulated cohort incidence of any serious adverse event (this run)",
+  "sae_rate_arm_level": "historical arm-level estimate from comparable registry trials (evidence, not a simulated value)",
+  "withdrawal_rate_simulated": "share of this run's patients who withdrew (on treatment or from follow-up)",
+  "withdrawal_rate_predicted": "registry protocol-burden model's prediction for this protocol",
+  "scenarios": "each scenario reports its own values; scenarios that do not change a quantity carry the original value exactly"
+ }
+}

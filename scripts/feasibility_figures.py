@@ -29,6 +29,9 @@ CMP_VER = sys.argv[3] if len(sys.argv) > 3 else "1.2.0"     # the blind run comp
 CMP = Path("data/trial/runs") / NCT / f"v{CMP_VER}"
 FB = json.loads((CMP / "feasibility" / "feasibility.json").read_text(encoding="utf-8")) if (CMP / "feasibility" / "feasibility.json").exists() else F
 LONG = F.get("longitudinal") or {}
+CS = F.get("case_study") or {}                  # the canonical case-study values: every number on a figure comes from here
+CO = CS.get("original_protocol") or {}
+HE = CS.get("historical_evidence") or {}
 DEATH = "#7A7A7A"
 
 CAND, ELIG, ENR, EVAL, SAFE, LOSS, OBS, ALT = "#BDBDBD", "#009E73", "#0072B2", "#005A8D", "#E69F00", "#D55E00", "#222222", "#CC79A7"
@@ -469,7 +472,7 @@ def supp_s6_safety():
     S = F["safety"]
     sae = S["Serious adverse event"]
     fig = frame("Supplementary Figure S6. Expected safety burden across the patient journey",
-                f"About {sae['share'] * TARGET:.0f} of {TARGET} enrolled patients may need serious-adverse-event management.")
+                f"About {CO.get('sae_count_simulated', round(sae['share'] * TARGET))} of {TARGET} enrolled patients may need serious-adverse-event management.")
     keys = list(S)
     y = np.arange(len(keys))[::-1]
     a = fig.add_axes([0.29, 0.14, 0.21, 0.7])
@@ -538,7 +541,7 @@ def figure8():
             ("Patients with\nserious AE", "sae_patients", -1, lambda v: f"{v:.0f}"),
             ("Visit days\nper patient", "visit_days_per_patient", -1, lambda v: f"{v:.0f}"),
             (f"Evaluable\n{short(weak['endpoint']).split(',')[0]}", ("evaluable_median", weak["endpoint"]), +1, lambda v: f"{v:.0f}"),
-            ("P(meeting trial\nobjectives)", "p_objectives", +1, lambda v: pct(v))]
+            ("P(meeting trial\nobjectives)", "p_objectives", +1, lambda v: pct(v, 1))]
 
     def val(s, key):
         return s[key[0]][key[1]] if isinstance(key, tuple) else s[key]
@@ -595,8 +598,8 @@ def figure9():
     sae_est = outs["feasibility"]["subgroup_estimates"]["arms"]["ARM1"]["serious_adverse_event"]["headline"]["estimate"]
     R = F["recruitment"]
     var = rni["variability"]
-    reg_cv = [var[a]["registry"]["median_cv"] for a in ("AN1", "AN2")]
-    prot_cv = [var[a]["protocol_derived_cv"] for a in ("AN1", "AN2")]
+    reg_cv = [HE.get("pk_cv_auc_registry"), HE.get("pk_cv_ctrough_registry")]
+    prot_cv = [HE.get("pk_cv_auc_protocol"), HE.get("pk_cv_ctrough_protocol")]
     act_cv = [i["variability_actual"]["pooled_geo_cv"] for i in rcmp["items"] if i["status"] == "SCORED"]
     groups = (rs.get("adverseEventsModule") or {}).get("eventGroups") or []
     sae_act = " / ".join(pct(g["seriousNumAffected"] / g["seriousNumAtRisk"], 1) for g in groups)
@@ -626,13 +629,14 @@ def figure9():
              f"Comparable trials: CV {pct(reg_cv[0])} (AUC), {pct(reg_cv[1])} (Ctrough)\nProtocol assumed {pct(prot_cv[0])} and {pct(prot_cv[1])}",
              f"Observed CV {pct(act_cv[0])} and {pct(act_cv[1])}" if len(act_cv) == 2 else "—"),
             ("What safety burden should sites expect?",
-             f"Comparable trials: {pct(sae_est, 1)} with a serious AE\n(≈{sae_est * TARGET:.0f} of {TARGET} patients)",
+             f"Historical arm-level estimate {pct(HE.get('sae_rate_arm_level', sae_est), 1)};\nsimulated cohort incidence "
+             f"{pct(CO['sae_rate_simulated'], 1)} ({CO['sae_count_simulated']} of {CO['enrolled']})",
              f"{sae_act} (subcutaneous / intravenous)"),
             ("Is the population composition fixed?",
              f"Simulated eligible pool: {pct(fem_sim)} women, {pct(asian_sim)} Asian,\n{pct(hisp_sim)} Hispanic (one global mix)",
              f"{pct(female)} women, {pct(asian)} Asian, {pct(hisp)} Hispanic:\nrecruitment geography shaped the mix" if n_tot else "—"),
             ("Will the required PK numbers be retained?",
-             "; ".join(f"P({short(w['endpoint']).split(',')[0]} ≥ {w['required']}) {pct(at[w['endpoint']]['p_meets'])}" for w in F["evaluability"] if w.get("required"))
+             "; ".join(f"P({short(w['endpoint']).split(',')[0]} ≥ {w['required']}) {pct(CO['p_requirement'][w['endpoint']], 1)}" for w in F["evaluability"] if w.get("required"))
              + f"\nat {TARGET} enrolled",
              " / ".join(f"{v}" for v in ev_act.values()) + " evaluable (AUC / Ctrough)")]
     fig = frame("Feasibility signals compared with what happened in the case-study trial",
@@ -700,7 +704,7 @@ def figure7():
     concl = "Protocol burden is associated with withdrawal; reducing follow-up burden changed endpoint feasibility only modestly."
     if orig and low and high:
         concl = (f"Changing follow-up frequency moved expected withdrawal by under "
-                 f"{max(abs(high['withdrawn_share'] - orig['withdrawn_share']), abs(low['withdrawn_share'] - orig['withdrawn_share'])) * 100 + 0.05:.1f} "
+                 f"{max(abs(high['reported']['withdrawal_rate'] - orig['reported']['withdrawal_rate']), abs(low['reported']['withdrawal_rate'] - orig['reported']['withdrawal_rate'])) * 100 + 0.05:.1f} "
                  f"points; endpoint feasibility is barely sensitive to follow-up burden.")
     fig = frame("Protocol burden shapes retention and endpoint feasibility", concl)
     # A: adjusted associations across registry trials
@@ -773,16 +777,16 @@ def figure7():
     yd = np.arange(len(names))[::-1]
     for yv, n in zip(yd, names, strict=True):
         sc = bs[n]
-        v = sc["evaluable"][ct["endpoint"]]
+        v = sc["reported"]["evaluable"][ct["endpoint"]]
         d.plot(v, yv, "o", color=SCEN_COLOURS[n], ms=10)
-        d.text(v + 4, yv, f"{v:.0f} evaluable · withdrawal {pct(sc['withdrawn_share'], 1)} · P(≥{ct['required']}) {pct(sc['p_required'][ct['endpoint']])}",
+        d.text(v + 4, yv, f"{v:.0f} evaluable · withdrawal {pct(sc['reported']['withdrawal_rate'], 1)} · P(≥{ct['required']}) {pct(sc['reported']['p_requirement'][ct['endpoint']], 1)}",
                va="center", fontsize=10, color=SCEN_COLOURS[n])
     d.axvline(ct["required"], color=OBS, lw=1.6)
     d.text(ct["required"], len(names) - 0.4, f"required {ct['required']}", ha="center", fontsize=10, color=OBS)
     d.set_yticks(yd)
     d.set_yticklabels(names, fontsize=10.5)
-    lo_v = min(bs[n]["evaluable"][ct["endpoint"]] for n in names)
-    d.set_xlim(min(lo_v, ct["required"]) - 15, max(bs[n]["evaluable"][ct["endpoint"]] for n in names) + 175)
+    lo_v = min(bs[n]["reported"]["evaluable"][ct["endpoint"]] for n in names)
+    d.set_xlim(min(lo_v, ct["required"]) - 15, max(bs[n]["reported"]["evaluable"][ct["endpoint"]] for n in names) + 175)
     d.set_ylim(-0.6, len(names) - 0.1)
     d.set_xlabel(f"{short(ct['endpoint']).split(',')[0]}-evaluable participants (of {TARGET})", fontsize=11)
     d.set_title("D. Visit burden and evaluable endpoint data", loc="left", x=-0.3, fontsize=12, fontweight="bold")
@@ -916,11 +920,11 @@ def supp_s5_sensitivity():
         w = min((w for w in doc["evaluability"] if w.get("required")), key=lambda w: w["share"])
         at = next(r for r in doc["evaluable_curve"] if r["enrolled"] == TARGET)
         return w["share"], at[w["endpoint"]]["p_meets"]
-    rows = [("Serious AE, simulated patients", FB["overall_sae"], F["overall_sae"]),
+    rows = [("Serious AE, simulated cohort", FB["overall_sae"], CO.get("sae_rate_simulated", F["overall_sae"])),
             ("On study at day 126 (Ctrough evaluable)", ct_share(FB)[0], ct_share(F)[0]),
             ("P(≥240 Ctrough evaluable at 378)", ct_share(FB)[1], ct_share(F)[1]),
-            ("Withdrawal (any time)", (FB.get("withdrawal_rate") and next(iter(FB["withdrawal_rate"].values()))),
-             ((LONG.get("burden_scenarios") or [{}])[0].get("withdrawn_share")))]
+            ("Withdrawal probability used by the journey", (FB.get("withdrawal_rate") and next(iter(FB["withdrawal_rate"].values()))),
+             CO.get("withdrawal_rate_predicted"))]
     fig = frame("Supplementary Figure S5. Sensitivity of feasibility outputs to the patient-journey calibration",
                 "The calibration anchors serious AEs to the evidence, takes progression from validated evidence and makes withdrawal burden-dependent.")
     ax = fig.add_axes([0.38, 0.18, 0.55, 0.62])

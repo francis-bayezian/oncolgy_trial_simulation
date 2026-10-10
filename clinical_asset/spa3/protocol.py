@@ -23,6 +23,7 @@ protocol's eligibility is reported, and flagged when the protocol lies outside t
 """
 
 import json
+import re
 import math
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -107,8 +108,30 @@ def _node_support(records: list[dict], levels: list[str], stop: int) -> dict:
     return {k: {"studies": len(v["studies"]), "N": v["N"], "study_ids": sorted(v["studies"])} for k, v in out.items()}
 
 
+def _tokens(text: str) -> set:
+    return set(re.findall(r"[a-z0-9]+", (text or "").lower()))
+
+
 def query_path(model: TargetModel, q: dict) -> tuple:
-    return tuple(q[level] for level in model.context_levels)
+    """The query's context path, each level's value resolved to the model's own name for it: the same name in another
+    letter case, else the name of the same parent sharing most words (Jaccard at least 0.6; most studies on a tie).
+    An unresolved value stays as given (a new context: its between-context spread is added, L067)."""
+    path: list = []
+    for level in model.context_levels:
+        v = q[level]
+        names = {k[len(path)] for k in model.nodes if len(k) == len(path) + 1 and list(k[:len(path)]) == path}
+        if v not in names and v and v != "__unknown__":
+            same = [n for n in names if str(n).lower() == str(v).lower()]
+            if same:
+                v = same[0]
+            else:
+                tv = _tokens(v)
+                scored = [(len(tv & _tokens(n)) / len(tv | _tokens(n)), model.nodes[(*path, n)]["studies"], n) for n in names if tv | _tokens(n)]
+                best = max(scored, default=None)
+                if best and best[0] >= 0.6:
+                    v = best[2]
+        path.append(v)
+    return tuple(path)
 
 
 def retrieve(model: TargetModel, q: dict, draws: int | None = None, seed: int = 0) -> dict:

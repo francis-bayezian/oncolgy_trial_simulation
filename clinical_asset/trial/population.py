@@ -429,9 +429,11 @@ def protocol_query(spec: dict):
 
     lo, hi = age_limits(spec)
     cond = spec["metadata"].get("condition")
-    family = condition_family(" ".join(((cond.get("text") if isinstance(cond, dict) else cond) or "").split()))[0]
+    family, disease = condition_family(" ".join(((cond.get("text") if isinstance(cond, dict) else cond) or "").split()))
+    # the disease as well as its family: without it the query is a new, unseen disease of the family and the family's
+    # between-disease spread pulls every share towards one half (L067)
     return ProtocolQuery(min_age=lo, max_age=hi, sex="ALL", age_class=age_class(*age_class_bounds(spec)),
-                         disease_family=None if family == "other" else family)
+                         disease_family=None if family == "other" else family, disease=None if family == "other" else disease)
 
 
 def age_class_mixture(generator: Any, query: Any) -> list[tuple[str, float]]:
