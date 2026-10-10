@@ -907,7 +907,7 @@ def supp_s2_modifiers():
     eff = mod.get("effects") or {}
     if not eff:
         return
-    fig = frame("Supplementary Figure S2. Evidence for patient-level modifiers of withdrawal",
+    fig = frame("Supplementary Figure S2. Arm-level associations with withdrawal",
                 "Arm-level (ecological) associations, reported for transparency and not applied to simulated patients.")
     ax = fig.add_axes([0.3, 0.2, 0.6, 0.6])
     labels = {"age_per_10_years": "Arm mean age (per 10 years)", "female_share": "All-female vs all-male arm",
