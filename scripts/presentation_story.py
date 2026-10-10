@@ -136,7 +136,7 @@ lines = [
       for n, s in sc.items() if n != "Original protocol"), "",
     "## 6. Comparison with the trial",
     f"**Figure 9.** Variability: comparable trials CV {pct(H['pk_cv_auc_registry'])} / {pct(H['pk_cv_ctrough_registry'])} "
-    f"(protocol assumed {pct(H['pk_cv_auc_protocol'])} / {pct(H['pk_cv_ctrough_protocol'])}). Safety: historical arm-level estimate "
+    f"(implied by the protocol's power statement: {pct(H['pk_cv_auc_protocol'])} / {pct(H['pk_cv_ctrough_protocol'])}). Safety: historical arm-level estimate "
     f"{pct(H['sae_rate_arm_level'], 1)}; simulated cohort incidence {pct(O['sae_rate_simulated'], 1)} ({O['sae_count_simulated']} of "
     f"{O['enrolled']}). Objective response: " + response_text() + " Synthetic-control panel: " + control_text(), "",
     "## Supplementary figures",

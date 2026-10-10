@@ -640,7 +640,7 @@ def figure9():
              (f"{obs['n']} randomised in {obs['months']:.1f} months (about {obs['rate']:.0f}/year):\nupper-tail performance was achieved"
               if obs and obs["exact"] else f"377 enrolled at ≥{obs['rate']:.0f}/year:\nupper-tail performance was achieved" if obs else "—")),
             ("Are the variability assumptions realistic?",
-             f"Comparable trials: CV {pct(reg_cv[0])} (AUC), {pct(reg_cv[1])} (Ctrough)\nProtocol assumed {pct(prot_cv[0])} and {pct(prot_cv[1])}",
+             f"Comparable trials: CV {pct(reg_cv[0])} (AUC), {pct(reg_cv[1])} (Ctrough)\nImplied by the protocol's power statement: CV {pct(prot_cv[0])} (AUC), {pct(prot_cv[1])} (Ctrough)",
              f"Observed CV {pct(act_cv[0])} and {pct(act_cv[1])}" if len(act_cv) == 2 else "—"),
             ("What safety burden should sites expect?",
              f"Historical arm-level estimate {pct(HE.get('sae_rate_arm_level', sae_est), 1)};\nsimulated cohort incidence "
