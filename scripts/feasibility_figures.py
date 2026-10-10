@@ -27,7 +27,9 @@ OUT.mkdir(parents=True, exist_ok=True)
 F = json.loads((RUN / "feasibility" / "feasibility.json").read_text(encoding="utf-8"))
 CMP_VER = sys.argv[3] if len(sys.argv) > 3 else "1.2.0"     # the blind run compared with the registry (Figure 9)
 CMP = Path("data/trial/runs") / NCT / f"v{CMP_VER}"
-FB = json.loads((CMP / "feasibility" / "feasibility.json").read_text(encoding="utf-8")) if (CMP / "feasibility" / "feasibility.json").exists() else F
+UNCAL_VER = sys.argv[4] if len(sys.argv) > 4 else "1.2.0"   # the uncalibrated-journey run (S5 only), independent of CMP_VER
+_fb = Path("data/trial/runs") / NCT / f"v{UNCAL_VER}" / "feasibility" / "feasibility.json"
+FB = json.loads(_fb.read_text(encoding="utf-8")) if _fb.exists() and UNCAL_VER != VER else None
 LONG = F.get("longitudinal") or {}
 CS = F.get("case_study") or {}                  # the canonical case-study values: every number on a figure comes from here
 CO = CS.get("original_protocol") or {}
@@ -949,7 +951,7 @@ def supp_s4_all_criteria():
 
 
 def supp_s5_sensitivity():
-    if FB is F:
+    if FB is None:
         return
 
     def ct_share(doc):
