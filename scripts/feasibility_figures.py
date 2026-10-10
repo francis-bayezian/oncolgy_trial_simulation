@@ -30,6 +30,8 @@ CMP = Path("data/trial/runs") / NCT / f"v{CMP_VER}"
 UNCAL_VER = sys.argv[4] if len(sys.argv) > 4 else "1.2.0"   # the uncalibrated-journey run (S5 only), independent of CMP_VER
 _fb = Path("data/trial/runs") / NCT / f"v{UNCAL_VER}" / "feasibility" / "feasibility.json"
 FB = json.loads(_fb.read_text(encoding="utf-8")) if _fb.exists() and UNCAL_VER != VER else None
+_pub = Path("data/holdout_comparison") / f"{NCT}_publication.json"
+PUB = json.loads(_pub.read_text(encoding="utf-8")) if _pub.exists() else {}   # results reported in the trial publication
 LONG = F.get("longitudinal") or {}
 CS = F.get("case_study") or {}                  # the canonical case-study values: every number on a figure comes from here
 CO = CS.get("original_protocol") or {}
@@ -358,8 +360,9 @@ def figure5():
     a.text(R["required_rate_per_year"] * 1.08, dens.max() * 0.75, f"planned requirement\n{R['required_rate_per_year']:.0f}/year",
            fontsize=12, color=ENR, fontweight="bold")
     if obs:
-        a.plot([obs], [dens.max() * 0.12], "o", color=OBS, ms=9)
-        a.annotate(f"what the trial later achieved\n(at least {obs:.0f}/year)", (obs, dens.max() * 0.12), (obs * 0.12, dens.max() * 0.38),
+        ob = obs["rate"]
+        a.plot([ob], [dens.max() * 0.12], "o", color=OBS, ms=9)
+        a.annotate(f"what the trial later achieved\n({'about' if obs['exact'] else 'at least'} {ob:.0f}/year)", (ob, dens.max() * 0.12), (ob * 0.12, dens.max() * 0.38),
                    fontsize=11, color=OBS, arrowprops={"arrowstyle": "-", "color": OBS, "lw": 0.8})
     a.set_yticks([])
     a.spines["left"].set_visible(False)
@@ -386,9 +389,17 @@ def figure5():
 
 
 def _observed_rate():
+    """The trial's accrual: from the publication's randomisation window when reported (exact), else the registry's
+    start-to-primary-completion window (a lower bound)."""
+    from datetime import date
+    e = PUB.get("enrolment") or {}
+    if e.get("first_randomised") and e.get("last_randomised") and e.get("randomised"):
+        days = (date.fromisoformat(e["last_randomised"]) - date.fromisoformat(e["first_randomised"])).days
+        return {"rate": e["randomised"] / (days / 365.25), "n": e["randomised"], "months": days / 30.4375, "exact": True}
     f = CMP / "comparison" / "planning" / "planning_comparison.json"
     if f.exists():
-        return json.loads(f.read_text(encoding="utf-8"))["historical_model"].get("observed_rate_per_year_lower_bound")
+        r = json.loads(f.read_text(encoding="utf-8"))["historical_model"].get("observed_rate_per_year_lower_bound")
+        return {"rate": r, "exact": False} if r else None
     return None
 
 
@@ -626,7 +637,8 @@ def figure9():
     rows = [("Is recruitment demanding?",
              f"Planned {R['required_rate_per_year']:.0f}/year = {ordinal(round(R['required_rate_percentile'] * 100))} percentile of comparable trials;\n"
              f"{pct(R['p_complete_in_planned_window'])} chance of finishing in {R['planned_years'] * 12:.0f} months",
-             f"377 enrolled at ≥{obs:.0f}/year:\nupper-tail performance was achieved" if obs else "—"),
+             (f"{obs['n']} randomised in {obs['months']:.1f} months (about {obs['rate']:.0f}/year):\nupper-tail performance was achieved"
+              if obs and obs["exact"] else f"377 enrolled at ≥{obs['rate']:.0f}/year:\nupper-tail performance was achieved" if obs else "—")),
             ("Are the variability assumptions realistic?",
              f"Comparable trials: CV {pct(reg_cv[0])} (AUC), {pct(reg_cv[1])} (Ctrough)\nProtocol assumed {pct(prot_cv[0])} and {pct(prot_cv[1])}",
              f"Observed CV {pct(act_cv[0])} and {pct(act_cv[1])}" if len(act_cv) == 2 else "—"),
@@ -644,7 +656,7 @@ def figure9():
     fig = frame("Feasibility signals compared with what happened in the case-study trial",
                 "The feasibility assessment flagged the demanding accrual and gave realistic variability and safety inputs; "
                 "composition depended on geography.")
-    ax = fig.add_axes([0.03, 0.37, 0.94, 0.52])
+    ax = fig.add_axes([0.03, 0.47, 0.94, 0.43])
     ax.axis("off")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, len(rows) + 0.8)
@@ -657,7 +669,7 @@ def figure9():
         yv = i + 1.2
         ax.add_patch(plt.Rectangle((0, yv - 0.45), 1, 0.9, color=PALE if i % 2 == 0 else "white", lw=0))
         for (x, w, _, col), txt in zip(xs, r, strict=True):
-            ax.text(x + 0.005, yv, txt, fontsize=11, va="center", color=col if col != INK else INK, fontweight="bold" if x == 0 else "normal")
+            ax.text(x + 0.005, yv, txt, fontsize=10.5, va="center", color=col if col != INK else INK, fontweight="bold" if x == 0 else "normal")
     _synthetic_control_panel(fig)
     save(fig, "Figure9_retrospective")
 
@@ -672,11 +684,22 @@ def _synthetic_control_panel(fig):
         return
     ctl = next(iter(docs.values()))["control_arm"]
     sim = (CO.get("by_arm") or {}).get(ctl) or {}
-    pick = [("map_prior", "Historical controls (meta-analytic)", "#8A8A8A"), ("contextual_robust", "Synthetic control (contextual model)", ALT),
-            ("simulated", "Simulated control arm (this run)", ENR)]
-    panels = [("serious_ae", "Serious adverse event", [0.27, 0.07, 0.3, 0.17]), ("response", "Objective response", [0.66, 0.07, 0.3, 0.17])]
-    fig.text(0.04, 0.3, "Synthetic-control exploration: control arm (95% interval)", fontsize=12.5, fontweight="bold", color=INK, va="center")
-    fig.text(0.96, 0.3, "Feasible to generate; too uncertain to replace the control arm", fontsize=11, color=MUTED, va="center", ha="right")
+    pick = [("historical", "Historical estimate (comparable trials)", "#5A5A5A"), ("outcome_regression", "Outcome regression", "#8A8A8A"),
+            ("naive_pooled", "Naive pooling", "#8A8A8A"), ("map_prior", "Historical controls (meta-analytic)", "#8A8A8A"),
+            ("contextual_robust", "Synthetic control (contextual model)", ALT), ("simulated", "Simulated control arm (this run)", ENR)]
+    panels = [("serious_ae", "Serious adverse event", [0.27, 0.06, 0.3, 0.27]), ("response", "Objective response", [0.66, 0.06, 0.3, 0.27])]
+    fig.text(0.04, 0.4, "Synthetic-control exploration: control arm (95% interval)", fontsize=12.5, fontweight="bold", color=INK, va="center")
+    fig.text(0.96, 0.4, "Feasible to generate; too uncertain to replace the control arm", fontsize=11, color=MUTED, va="center", ha="right")
+    hist_sae = None
+    tof = LOCK / f"outputs_v{VER}" / "trial_outputs.json"
+    if tof.exists():
+        h = ((json.loads(tof.read_text(encoding="utf-8")).get("feasibility") or {}).get("subgroup_estimates") or {}).get("arms", {}).get(ctl, {})
+        h = (h.get("serious_adverse_event") or {}).get("headline") or {}
+        hist_sae = (h["estimate"], *h["ci95"]) if h.get("estimate") is not None and h.get("ci95") else None
+    inp = (sim.get("response") or {}).get("input") or {}
+    hist = {"serious_ae": hist_sae,
+            "response": (inp["value"], *inp["ci95"]) if inp.get("value") is not None and inp.get("ci95") else None}
+    pub_resp = (((PUB.get("outcomes") or {}).get("objective_response_rate") or {}).get("arms") or {}).get("control") or {}
     for key, title, box in panels:
         doc = docs.get(key)
         if not doc:
@@ -684,6 +707,9 @@ def _synthetic_control_panel(fig):
         ax = fig.add_axes(box)
         rows = [r for r in doc["rows"] if r["population"] == "registry_experimental"]
         obs = next((r.get("observed") for r in rows if r.get("observed") is not None), None)
+        source = "registry"
+        if obs is None and key == "response" and pub_resp.get("rate") is not None:
+            obs, source = pub_resp["rate"], "publication"
         if key == "serious_ae":
             k, n = sim.get("sae_count"), sim.get("n")
             simrow = (sim.get("sae_rate"), *stats.binomtest(k, n).proportion_ci(method="exact")) if k is not None and n else None
@@ -696,20 +722,28 @@ def _synthetic_control_panel(fig):
                 if not simrow:
                     continue
                 est, lo, hi = simrow
+            elif m == "historical":
+                if not hist.get(key):
+                    continue
+                est, lo, hi = hist[key]
             else:
                 r = next((x for x in rows if x["method"] == m), None)
                 if not r:
                     continue
                 est, lo, hi = r["predicted"], r["lower"], r["upper"]
+            miss = m not in ("historical", "simulated") and obs is not None and not lo <= obs <= hi
             ax.plot([lo, hi], [yv, yv], color=col, lw=3)
-            ax.plot(est, yv, "o", color=col, ms=8)
+            ax.plot(est, yv, "o", color=col, ms=8, mfc="white" if miss else col, mew=2)
+            if miss:
+                ax.text(hi + 0.015, yv, "misses", va="center", fontsize=9.5, color=LOSS)
             if key == "serious_ae":
-                ax.text(-0.03, yv, lab, ha="right", va="center", fontsize=10.5, transform=ax.get_yaxis_transform())
+                ax.text(-0.03, yv, lab, ha="right", va="center", fontsize=10, transform=ax.get_yaxis_transform())
         if obs is not None:
             ax.axvline(obs, color=OBS, lw=2)
-            ax.text(obs + 0.015, len(pick) - 0.45, f"observed {pct(obs, 1)}", ha="left", fontsize=10.5, color=OBS)
+            ax.text(obs + 0.015, len(pick) - 0.45, f"observed {pct(obs, 1)}" + (" (publication)" if source == "publication" else ""),
+                    ha="left", fontsize=10, color=OBS)
         else:
-            ax.text(0.99, len(pick) - 0.45, "observed: not yet posted", ha="right", fontsize=10.5, color=MUTED)
+            ax.text(0.99, len(pick) - 0.45, "observed: not yet reported", ha="right", fontsize=10, color=MUTED)
         ax.set_yticks([])
         ax.set_ylim(-0.6, len(pick) - 0.1)
         ax.set_xlim(0, 1)

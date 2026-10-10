@@ -38,7 +38,14 @@ def response_text():
         if r.get("rate") is not None:
             parts.append(f"{re.split(r',| [Ww]ith | [Cc]oformulated| [Aa]dministered', a['label'])[0].strip()} simulated {pct(r['rate'], 1)} ({r['responders']} of {r['n']}), input {pct(i.get('value'), 1)}")
         lvl = i.get("level")
-    return ("; ".join(parts) + (f" (input level: {lvl}; the trial has not posted response)." if parts else "")) if parts else "not simulated."
+    if not parts:
+        return "not simulated."
+    pub = Path("data/holdout_comparison") / f"{NCT}_publication.json"
+    pr = ((json.loads(pub.read_text(encoding="utf-8")).get("outcomes") or {}).get("objective_response_rate") or {}) if pub.exists() else {}
+    arms = pr.get("arms") or {}
+    rep = (f"; reported in the publication: {pct(arms['experimental']['rate'], 1)} and {pct(arms['control']['rate'], 1)} (experimental / control)"
+           if "experimental" in arms and "control" in arms else "; not reported")
+    return "; ".join(parts) + f" (input level: {lvl}{rep})."
 
 
 def control_text():
@@ -55,7 +62,12 @@ def control_text():
                         for m, k in (("meta-analytic", "map_prior"), ("contextual", "contextual_robust"))
                         for r in rows if r["method"] == k)
         obs = next((r["observed"] for r in rows if r.get("observed") is not None), None)
-        out.append(f"{lab}: {txt}; observed {pct(obs, 1) if obs is not None else 'not posted'}")
+        src = ""
+        if obs is None and lab == "response":
+            pub = Path("data/holdout_comparison") / f"{NCT}_publication.json"
+            ctl = ((json.loads(pub.read_text(encoding="utf-8")).get("outcomes") or {}).get("objective_response_rate") or {}) if pub.exists() else {}
+            obs, src = ((ctl.get("arms") or {}).get("control") or {}).get("rate"), " (publication)"
+        out.append(f"{lab}: {txt}; observed {pct(obs, 1) + src if obs is not None else 'not reported'}")
     return "; ".join(out) + "." if out else "not available."
 
 
